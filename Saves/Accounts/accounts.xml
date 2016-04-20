@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<accounts count="1">
+	<account>
+		<username>admin</username>
+		<newCryptPassword>DD-94-70-95-28-BB-1C-83-D0-8F-30-88-D4-04-3F-47-42-89-1F-4F</newCryptPassword>
+		<accessLevel>Owner</accessLevel>
+		<created>2016-04-20T00:54:10.6462717+10:00</created>
+		<lastLogin>2016-04-20T02:38:09.9498768+10:00</lastLogin>
+		<totalGameTime>PT7M41.1613936S</totalGameTime>
+		<chars>
+			<char index="0">1</char>
+		</chars>
+		<addressList count="1">
+			<ip>192.168.1.101</ip>
+		</addressList>
+	</account>
+</accounts>
