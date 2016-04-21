@@ -8,7 +8,23 @@ namespace Server.Spells.First
 {
 	public class HealSpell : MagerySpell
 	{
-		private static SpellInfo m_Info = new SpellInfo(
+        public override Tuple<int, int> SphereDamage
+        {
+            get
+            {
+                return new Tuple<int, int>(1, 5);
+            }
+        }
+        public override int GetMana()
+        {
+            return 8;
+        }
+        public override TimeSpan GetCastDelay()
+        {
+            return TimeSpan.FromSeconds(1.5 * (int)Circle);
+        }
+
+        private static SpellInfo m_Info = new SpellInfo(
 				"Heal", "In Mani",
 				224,
 				9061,
@@ -80,9 +96,12 @@ namespace Server.Spells.First
 					toHeal = (int)(Caster.Skills[SkillName.Magery].Value * 0.1);
 					toHeal += Utility.Random( 1, 5 );
 				}
-
-				//m.Heal( toHeal, Caster );
-				SpellHelper.Heal( toHeal, m, Caster );
+                if(m is PlayerMobile && Caster is PlayerMobile)
+                {
+                    toHeal = GetSphereDamage(Caster, m, SphereDamage);
+                }
+                //m.Heal( toHeal, Caster );
+                SpellHelper.Heal( toHeal, m, Caster );
 
 				m.FixedParticles( 0x376A, 9, 32, 5005, EffectLayer.Waist );
 				m.PlaySound( 0x1F2 );

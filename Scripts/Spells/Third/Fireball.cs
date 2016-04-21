@@ -1,6 +1,7 @@
 using System;
 using Server.Targeting;
 using Server.Network;
+using Server.Mobiles;
 
 namespace Server.Spells.Third
 {
@@ -12,8 +13,14 @@ namespace Server.Spells.Third
 				9041,
 				Reagent.BlackPearl
 			);
-
-		public override SpellCircle Circle { get { return SpellCircle.Third; } }
+        public override Tuple<int, int> SphereDamage
+        {
+            get
+            {
+                return new Tuple<int, int>(8,16);
+            }
+        }
+        public override SpellCircle Circle { get { return SpellCircle.Third; } }
 
 		public FireballSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
@@ -62,8 +69,9 @@ namespace Server.Spells.Third
 
 				source.MovingParticles( m, 0x36D4, 7, 0, false, true, 9502, 4019, 0x160 );
 				source.PlaySound( Core.AOS ? 0x15E : 0x44B );
-
-				SpellHelper.Damage( this, m, damage, 0, 100, 0, 0, 0 );
+                if(m is PlayerMobile && Caster is PlayerMobile)
+                    damage = GetSphereDamage(source, m, SphereDamage);
+                SpellHelper.Damage( this, m, damage, 0, 100, 0, 0, 0 );
 			}
 
 			FinishSequence();

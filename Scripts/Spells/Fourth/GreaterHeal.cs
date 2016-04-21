@@ -17,8 +17,18 @@ namespace Server.Spells.Fourth
 				Reagent.MandrakeRoot,
 				Reagent.SpidersSilk
 			);
-
-		public override SpellCircle Circle { get { return SpellCircle.Fourth; } }
+        public override Tuple<int, int> SphereDamage
+        {
+            get
+            {
+                return new Tuple<int, int>(20, 40);
+            }
+        }
+        public override int GetMana()
+        {
+            return 11;
+        }
+        public override SpellCircle Circle { get { return SpellCircle.Fourth; } }
 
 		public GreaterHealSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
@@ -71,8 +81,11 @@ namespace Server.Spells.Fourth
 				int toHeal = (int)(Caster.Skills[SkillName.Magery].Value * 0.4);
 				toHeal += Utility.Random( 1, 10 );
 
-				//m.Heal( toHeal, Caster );
-				SpellHelper.Heal( toHeal, m, Caster );
+                if (m is PlayerMobile && Caster is PlayerMobile)
+                {
+                    toHeal = GetSphereDamage(Caster, m, SphereDamage);
+                }
+                SpellHelper.Heal( toHeal, m, Caster );
 
 				m.FixedParticles( 0x376A, 9, 32, 5030, EffectLayer.Waist );
 				m.PlaySound( 0x202 );

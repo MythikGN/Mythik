@@ -6,6 +6,9 @@ namespace Server.Spells
 {
 	public abstract class MagerySpell : Spell
 	{
+        public virtual Tuple<int, int> SphereDamage {
+            get; 
+        }
 		public MagerySpell( Mobile caster, Item scroll, SpellInfo info )
 			: base( caster, scroll, info )
 		{
@@ -96,6 +99,8 @@ namespace Server.Spells
 
 		public override TimeSpan GetCastDelay()
 		{
+            return TimeSpan.FromSeconds(0.5 * (int)Circle);
+
 			if( !Core.ML && Scroll is BaseWand )
 				return TimeSpan.Zero;
 

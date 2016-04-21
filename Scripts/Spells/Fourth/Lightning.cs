@@ -1,6 +1,7 @@
 using System;
 using Server.Targeting;
 using Server.Network;
+using Server.Mobiles;
 
 namespace Server.Spells.Fourth
 {
@@ -13,8 +14,14 @@ namespace Server.Spells.Fourth
 				Reagent.MandrakeRoot,
 				Reagent.SulfurousAsh
 			);
-
-		public override SpellCircle Circle { get { return SpellCircle.Fourth; } }
+        public override Tuple<int, int> SphereDamage
+        {
+            get
+            {
+                return new Tuple<int, int>(10,20);
+            }
+        }
+        public override SpellCircle Circle { get { return SpellCircle.Fourth; } }
 
 		public LightningSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
@@ -60,8 +67,9 @@ namespace Server.Spells.Fourth
 				}
 
 				m.BoltEffect( 0 );
-
-				SpellHelper.Damage( this, m, damage, 0, 0, 0, 0, 100 );
+                if (m is PlayerMobile && Caster is PlayerMobile)
+                    damage = GetSphereDamage(Caster, m, SphereDamage);
+                SpellHelper.Damage( this, m, damage, 0, 0, 0, 0, 100 );
 			}
 
 			FinishSequence();

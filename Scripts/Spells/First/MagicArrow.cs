@@ -1,12 +1,23 @@
 using System;
 using Server.Targeting;
 using Server.Network;
+using Server.Items;
+using Server.Mobiles;
 
 namespace Server.Spells.First
 {
 	public class MagicArrowSpell : MagerySpell
 	{
-		private static SpellInfo m_Info = new SpellInfo(
+        public override Tuple<int, int> SphereDamage
+        {
+            get
+            {
+                return new Tuple<int, int>(1, 5);
+            }
+        }
+        public override int Sound { get { return 0x1E5; } }
+
+        private static SpellInfo m_Info = new SpellInfo(
 				"Magic Arrow", "In Por Ylem",
 				212,
 				9041,
@@ -15,13 +26,44 @@ namespace Server.Spells.First
 
 		public override SpellCircle Circle { get { return SpellCircle.First; } }
 
-		public MagicArrowSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
+        public MagicArrowSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
 
         public override bool DelayedDamageStacking { get { return !Core.AOS; } }
 
-		public override void OnCast()
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is Mobile)
+                Target((Mobile)SphereSpellTarget);
+            else if (SphereSpellTarget is BaseExplosionPotion)
+                iTarget((BaseExplosionPotion)SphereSpellTarget);
+            else if (SphereSpellTarget is BaseWand)
+            {
+                BaseWand bw = SphereSpellTarget as BaseWand;
+               // bw.RechargeWand(Caster, this);
+            }
+            else
+                DoFizzle();
+        }
+        public void iTarget(BaseExplosionPotion pot) //Taran: When casted on explosion pots they explode
+        {
+            if (!Caster.CanSee(pot))
+                Caster.SendLocalizedMessage(500237); // Target can not be seen.
+            else if (CheckSequence())
+            {
+                Mobile source = Caster;
+
+                pot.Explode(source, true, pot.GetWorldLocation(), pot.Map);
+
+                source.MovingParticles(pot, 0x36E4, 5, 0, false, true, 3006, 4006, 0);
+                source.PlaySound(Sound);
+
+
+            }
+            FinishSequence();
+        }
+        public override void OnCast()
 		{
 			Caster.Target = new InternalTarget( this );
 		}
@@ -64,8 +106,9 @@ namespace Server.Spells.First
 
 				source.MovingParticles( m, 0x36E4, 5, 0, false, false, 3006, 0, 0 );
 				source.PlaySound( 0x1E5 );
-
-				SpellHelper.Damage( this, m, damage, 0, 100, 0, 0, 0 );
+                if (m is PlayerMobile && Caster is PlayerMobile)
+                    damage = GetSphereDamage(source, m, SphereDamage);
+                SpellHelper.Damage( this, m, damage, 0, 100, 0, 0, 0 );
 			}
 
 			FinishSequence();

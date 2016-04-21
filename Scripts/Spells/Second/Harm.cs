@@ -1,6 +1,7 @@
 using System;
 using Server.Targeting;
 using Server.Network;
+using Server.Mobiles;
 
 namespace Server.Spells.Second
 {
@@ -13,8 +14,19 @@ namespace Server.Spells.Second
 				Reagent.Nightshade,
 				Reagent.SpidersSilk
 			);
+        public override Tuple<int, int> SphereDamage
+        {
+            get
+            {
+                return new Tuple<int, int>(1, 4);
+            }
+        }
 
-		public override SpellCircle Circle { get { return SpellCircle.Second; } }
+        public override TimeSpan GetCastDelay()
+        {
+            return TimeSpan.FromSeconds(1.5);
+        }
+        public override SpellCircle Circle { get { return SpellCircle.Second; } }
 
 		public HarmSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
@@ -81,8 +93,9 @@ namespace Server.Spells.Second
 					m.FixedParticles( 0x374A, 10, 15, 5013, EffectLayer.Waist );
 					m.PlaySound( 0x1F1 );
 				}
-
-				SpellHelper.Damage( this, m, damage, 0, 0, 100, 0, 0 );
+                if (m is PlayerMobile && Caster is PlayerMobile)
+                    damage = GetSphereDamage(Caster, m, SphereDamage);
+                SpellHelper.Damage( this, m, damage, 0, 0, 100, 0, 0 );
 			}
 
 			FinishSequence();

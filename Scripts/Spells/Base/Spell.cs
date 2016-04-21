@@ -9,6 +9,8 @@ using Server.Spells.Ninjitsu;
 using System.Collections.Generic;
 using Server.Spells.Spellweaving;
 using Server.Spells.Bushido;
+using Server.Spells.Fourth;
+using Server.Spells.Sixth;
 
 namespace Server.Spells
 {
@@ -20,7 +22,18 @@ namespace Server.Spells
 		private SpellState m_State;
 		private DateTime m_StartCastTime;
 
-		public SpellState State{ get{ return m_State; } set{ m_State = value; } }
+        private object m_SphereSpellTarget;
+        private readonly PlayerMobile m_PlayerCaster;
+        public virtual int Sound { get; set; }
+        public virtual bool SpellDisabled { get { return false; } }
+        public virtual bool CanTargetGround { get { return false; } }
+        public virtual bool SpellFizzlesOnHurt { get { return false; } }
+        public virtual bool HasNoTarget { get { return false; } }
+        public object SphereSpellTarget { get { return m_SphereSpellTarget; } }
+        public PlayerMobile PlayerCaster { get { return m_PlayerCaster; } }
+        public virtual bool CheckLOS { get { return true; } }
+
+        public SpellState State{ get{ return m_State; } set{ m_State = value; } }
 		public Mobile Caster{ get{ return m_Caster; } }
 		public SpellInfo Info{ get{ return m_Info; } }
 		public string Name{ get{ return m_Info.Name; } }
@@ -108,9 +121,20 @@ namespace Server.Spells
 			m_Caster = caster;
 			m_Scroll = scroll;
 			m_Info = info;
-		}
+            if (m_Caster.Player && m_Caster is PlayerMobile)
+                m_PlayerCaster = (PlayerMobile)m_Caster;
+        }
+        public bool HasReagents()
+        {
+            if (m_Caster.Backpack != null &&
+                m_Info.Reagents.Length <= m_Caster.Backpack.FindItemsByType(m_Info.Reagents, true).Length)
+            {
+                return true;
+            }
 
-		public virtual int GetNewAosDamage( int bonus, int dice, int sides, Mobile singleTarget )
+            return false;
+        }
+        public virtual int GetNewAosDamage( int bonus, int dice, int sides, Mobile singleTarget )
 		{
 			if( singleTarget != null )
 			{
@@ -162,8 +186,24 @@ namespace Server.Spells
 
 			return damage / 100;
 		}
+        public virtual int GetSphereDamage(Mobile caster, Mobile target, Tuple<int,int> dam)
+        {
+            int baseDamage = new Random().Next(dam.Item1, dam.Item2);
+            return baseDamage;
+            var evalIntBonus = caster.Skills[DamageSkill].Value / 100;
+            var resist = target.Skills[SkillName.MagicResist].Value;
 
-		public virtual bool IsCasting{ get{ return m_State == SpellState.Casting; } }
+            if (evalIntBonus < 0.5)
+                evalIntBonus = 0.5;
+
+            resist /= 10;
+
+            var damage = baseDamage - resist;
+            damage *= evalIntBonus;
+
+            return (int)damage;
+        }
+        public virtual bool IsCasting{ get{ return m_State == SpellState.Casting; } }
 
 		public virtual void OnCasterHurt()
 		{
@@ -392,7 +432,7 @@ namespace Server.Spells
 		private CastTimer m_CastTimer;
 		private AnimTimer m_AnimTimer;
 
-		public void Disturb( DisturbType type )
+        public void Disturb( DisturbType type )
 		{
 			Disturb( type, true, false );
 		}
@@ -456,9 +496,11 @@ namespace Server.Spells
 
 		public virtual void OnDisturb( DisturbType type, bool message )
 		{
-			if ( message )
-				m_Caster.SendLocalizedMessage( 500641 ); // Your concentration is disturbed, thus ruining thy spell.
-		}
+            //if ( message )
+            //	m_Caster.SendLocalizedMessage( 500641 ); // Your concentration is disturbed, thus ruining thy spell.
+            m_Caster.FixedEffect(0x3735, 6, 30);
+            m_Caster.PlaySound(0x5C);
+        }
 
 		public virtual bool CheckCast()
 		{
@@ -479,115 +521,362 @@ namespace Server.Spells
 		public virtual bool BlocksMovement{ get{ return true; } }
 
 		public virtual bool CheckNextSpellTime{ get{ return !(m_Scroll is BaseWand); } }
+        public bool RequestTargetBeforCasting()
+        {
+            if (IsCastPossible())
+            {
+                if (m_Caster.Paralyzed && !m_Caster.HasFreeHand())
+                {
+                    return false;
+                }
 
-		public bool Cast()
+                if (m_Caster.Target != null)
+                {
+                    m_Caster.SendAsciiMessage("Targeting cancelled.");
+                    Caster.Target.Cancel(Caster, TargetCancelType.Canceled);
+                }
+
+                if (HasNoTarget) // If the spell doesn't require a target, just call the callback
+                    SphereCastCallback(m_Caster, m_Caster);
+                else
+                    m_Caster.BeginTarget(15, CanTargetGround, TargetFlags.None, SphereCastCallback).CheckLOS = CheckLOS;
+
+                return true;
+            }
+
+            return false;
+        }
+        public bool IsCastPossible()
+        {
+            //Nasir - GM's can cast anything
+            if (m_Caster.AccessLevel >= AccessLevel.GameMaster)
+                return true;
+
+            //if (m_PlayerCaster != null && m_PlayerCaster.Stoned)
+            //    return false;
+
+            if (SpellDisabled)
+            {
+                m_Caster.SendAsciiMessage("This spell has been disabled.");
+                return false;
+            }
+
+            if (!m_Caster.CheckAlive())
+            {
+                m_Caster.SendAsciiMessage("This is beyond your ability");
+                return false;
+            }
+            if (m_Scroll is BaseWand)
+            {
+                return true;
+            }
+            if (m_Scroll == null && !HasReagents())
+            {
+                DisplayMissingReagents();
+                return false;
+            }
+            if (m_Caster.Mana < ScaleMana(GetMana()))
+            {
+                m_Caster.SendAsciiMessage("You lack sufficient mana for this spell.");
+                return false;
+            }
+            return true;
+        }
+        //Maka
+        public void DisplayMissingReagents()
+        {
+            Caster.SendAsciiMessage("You lack reagents for this spell.");
+            return;
+           
+        }
+        public bool ValidTarget(Mobile from, object target)
+        {
+            var canCast = true;
+            //Nested the "if"s like this so that we do not have to make a second object check
+            if (target is RecallRune)
+            {
+                if (!(this is RecallSpell || this is MarkSpell || this is Seventh.GateTravelSpell))
+                    canCast = false;
+            }
+            else if (target is Runebook)
+            {
+                if (!(this is RecallSpell || this is Seventh.GateTravelSpell))
+                    canCast = false;
+            }
+            else if (target is Key)
+            {
+                if (!(this is RecallSpell))
+                    canCast = false;
+            }
+            else if (this is RecallSpell || this is MarkSpell || this is Seventh.GateTravelSpell)
+                canCast = false;
+            else if (target is PlayerMobile && ((PlayerMobile)target).AccessLevel > Caster.AccessLevel)
+            {
+                canCast = false;
+            }
+
+            if (!canCast)
+            {
+                Caster.SendAsciiMessage("You can't target that!");
+                return false;
+            }
+
+            #region Check if targets are inside or outside house and block cast if necessary
+            /*Taran: Why was this added? I remember adding it but not sure why...
+            if (target is Mobile && !(target is PlayerMobile))
+            {
+                var m_Target = (Mobile)target;
+                var house = BaseHouse.FindHouseAt(m_Caster);
+                var house2 = BaseHouse.FindHouseAt(m_Target);
+                if (house != null && house != house2)
+                {
+                    m_Caster.SendAsciiMessage("You cannot do this!");
+                    return false;
+                }
+            }
+            
+            else if (target is LandTarget)
+            {
+                var m_Target = (LandTarget)target;
+                var house = BaseHouse.FindHouseAt(m_Caster);
+                var house2 = BaseHouse.FindHouseAt(m_Target.Location, m_Caster.Map, m_Target.Location.Z);
+                if (house != house2)
+                {
+                    m_Caster.SendAsciiMessage("You cannot do this!");
+                    return false;
+                }
+            }
+            else if (target is StaticTarget)
+            {
+                var m_Target = (StaticTarget)target;
+                var house = BaseHouse.FindHouseAt(m_Caster);
+                var house2 = BaseHouse.FindHouseAt(m_Target.Location, m_Caster.Map, m_Target.Location.Z);
+                if (house != house2)
+                {
+                    m_Caster.SendAsciiMessage("You cannot do this!");
+                    return false;
+                }
+            }
+            else if (target is Item)
+            {
+                var m_Target = (Item)target;
+                var house = BaseHouse.FindHouseAt(m_Caster);
+                var house2 = BaseHouse.FindHouseAt(m_Target);
+                if (house != house2)
+                {
+                    m_Caster.SendAsciiMessage("You cannot do this!");
+                    return false;
+                }
+            }
+            */
+            #endregion
+
+            return true;
+        }
+        public void SphereCastCallback(Mobile caster, object target)
+        {
+            //Fixes some bugs with misstargeting.
+            if (!ValidTarget(caster, target))
+            {
+                if (m_Caster.Spell != null)
+                    ((Spell)m_Caster.Spell).DoFizzle();
+
+                return;
+            }
+
+            if (caster != target)
+                SpellHelper.Turn(Caster, target);
+
+            if (m_Caster.Spell != null && m_Caster.Spell.IsCasting)
+                ((Spell)m_Caster.Spell).DoFizzle();
+
+            SphereCast(caster, target);
+        }
+        public bool SphereCast(Mobile from, object obj)
+        {
+            m_StartCastTime = DateTime.Now;
+
+            if (m_PlayerCaster.Paralyzed && !m_PlayerCaster.HasFreeHand())
+            {
+                m_Caster.SendAsciiMessage(33, "You must have your hands free to cast while paralyzed!");
+                return false;
+            }
+
+            if (IsCastPossible())
+            {
+                m_SphereSpellTarget = obj;
+
+                if (m_Caster.CheckSpellCast(this) && CheckCast() && m_Caster.Region.OnBeginSpellCast(m_Caster, this))
+                {
+                    if (m_Caster is PlayerMobile && ClearHandsOnCast) //Mobiles don't need to disarm
+                        m_Caster.ClearHands();
+
+                    m_State = SpellState.Casting;
+
+                    m_Caster.Spell = this;
+
+                    //m_PlayerCaster.WeaponTimerCheck();
+                    //m_PlayerCaster.BandageCheck();
+
+                    //m_PlayerCaster.AbortCurrentPlayerAction();
+
+                    //Maka
+                    //if (RevealOnCast && !m_PlayerCaster.HiddenWithSpell)
+                   //     m_Caster.RevealingAction();
+
+                    SayMantra();
+
+                    var castDelay = GetCastDelay();
+
+                    var count = (int)Math.Ceiling(castDelay.TotalSeconds / AnimateDelay.TotalSeconds);
+
+                    if (count != 0)
+                    {
+                        m_AnimTimer = new AnimTimer(this, 1);
+                        m_AnimTimer.Start();
+                    }
+
+                    if (m_Info.LeftHandEffect > 0)
+                        Caster.FixedParticles(0, 10, 5, m_Info.LeftHandEffect, EffectLayer.LeftHand);
+
+                    if (m_Info.RightHandEffect > 0)
+                        Caster.FixedParticles(0, 10, 5, m_Info.RightHandEffect, EffectLayer.RightHand);
+
+                    if (Core.ML)
+                        WeaponAbility.ClearCurrentAbility(m_Caster);
+
+                    m_CastTimer = new CastTimer(this, castDelay);
+                    m_CastTimer.Start();
+
+                    OnBeginCast();
+                    return true;
+                }
+                return false;
+            }
+            return false;
+        }
+        public virtual bool Cast()
 		{
-			m_StartCastTime = DateTime.Now;
-
-			if ( Core.AOS && m_Caster.Spell is Spell && ((Spell)m_Caster.Spell).State == SpellState.Sequencing )
-				((Spell)m_Caster.Spell).Disturb( DisturbType.NewCast );
-
-			if ( !m_Caster.CheckAlive() )
-			{
-				return false;
-			}
-			else if ( m_Scroll is BaseWand && m_Caster.Spell != null && m_Caster.Spell.IsCasting )
-			{
-				m_Caster.SendLocalizedMessage( 502643 ); // You can not cast a spell while frozen.
-			}
-			else if ( m_Caster.Spell != null && m_Caster.Spell.IsCasting )
-			{
-				m_Caster.SendLocalizedMessage( 502642 ); // You are already casting a spell.
-			}
-			else if ( BlockedByHorrificBeast && TransformationSpellHelper.UnderTransformation( m_Caster, typeof( HorrificBeastSpell ) ) || ( BlockedByAnimalForm && AnimalForm.UnderTransformation( m_Caster ) ))
-			{
-				m_Caster.SendLocalizedMessage( 1061091 ); // You cannot cast that spell in this form.
-			}
-			else if ( !(m_Scroll is BaseWand) && (m_Caster.Paralyzed || m_Caster.Frozen) )
-			{
-				m_Caster.SendLocalizedMessage( 502643 ); // You can not cast a spell while frozen.
-			}
-			else if ( CheckNextSpellTime && DateTime.Now < m_Caster.NextSpellTime )
-			{
-				m_Caster.SendLocalizedMessage( 502644 ); // You have not yet recovered from casting a spell.
-			}
-			else if ( m_Caster is PlayerMobile && ( (PlayerMobile) m_Caster ).PeacedUntil > DateTime.Now )
-			{
-				m_Caster.SendLocalizedMessage( 1072060 ); // You cannot cast a spell while calmed.
-			}
-			#region Dueling
-			else if ( m_Caster is PlayerMobile && ((PlayerMobile)m_Caster).DuelContext != null && !((PlayerMobile)m_Caster).DuelContext.AllowSpellCast( m_Caster, this ) )
-			{
-			}
-			#endregion
-			else if ( m_Caster.Mana >= ScaleMana( GetMana() ) )
-			{
-				if ( m_Caster.Spell == null && m_Caster.CheckSpellCast( this ) && CheckCast() && m_Caster.Region.OnBeginSpellCast( m_Caster, this ) )
-				{
-					m_State = SpellState.Casting;
-					m_Caster.Spell = this;
-
-					if ( !( m_Scroll is BaseWand ) && RevealOnCast )
-						m_Caster.RevealingAction();
-
-					SayMantra();
-
-					TimeSpan castDelay = this.GetCastDelay();
-
-					if ( ShowHandMovement && ( m_Caster.Body.IsHuman || ( m_Caster.Player && m_Caster.Body.IsMonster ) ) )
-					{
-						int count = (int)Math.Ceiling( castDelay.TotalSeconds / AnimateDelay.TotalSeconds );
-
-						if ( count != 0 )
-						{
-							m_AnimTimer = new AnimTimer( this, count );
-							m_AnimTimer.Start();
-						}
-
-						if ( m_Info.LeftHandEffect > 0 )
-							Caster.FixedParticles( 0, 10, 5, m_Info.LeftHandEffect, EffectLayer.LeftHand );
-
-						if ( m_Info.RightHandEffect > 0 )
-							Caster.FixedParticles( 0, 10, 5, m_Info.RightHandEffect, EffectLayer.RightHand );
-					}
-
-					if ( ClearHandsOnCast )
-						m_Caster.ClearHands();
-
-					if ( Core.ML )
-						WeaponAbility.ClearCurrentAbility( m_Caster );
-
-					m_CastTimer = new CastTimer( this, castDelay );
-					//m_CastTimer.Start();
-
-					OnBeginCast();
-
-					if ( castDelay > TimeSpan.Zero ) {
-						m_CastTimer.Start();
-					} else {
-						m_CastTimer.Tick();
-					}
-
-					return true;
-				}
-				else
-				{
-					return false;
-				}
-			}
-			else
-			{
-				m_Caster.LocalOverheadMessage( MessageType.Regular, 0x22, 502625 ); // Insufficient mana
-			}
-
-			return false;
+            if (m_PlayerCaster != null) //Player cast
+                return RequestTargetBeforCasting();
+            return DirectCast();
 		}
+        public bool DirectCast()
+        {
+            m_StartCastTime = DateTime.Now;
+
+            if (Core.AOS && m_Caster.Spell is Spell && ((Spell)m_Caster.Spell).State == SpellState.Sequencing)
+                ((Spell)m_Caster.Spell).Disturb(DisturbType.NewCast);
+
+            if (!m_Caster.CheckAlive())
+            {
+                return false;
+            }
+            else if (m_Scroll is BaseWand && m_Caster.Spell != null && m_Caster.Spell.IsCasting)
+            {
+                m_Caster.SendLocalizedMessage(502643); // You can not cast a spell while frozen.
+            }
+            else if (m_Caster.Spell != null && m_Caster.Spell.IsCasting)
+            {
+                m_Caster.SendLocalizedMessage(502642); // You are already casting a spell.
+            }
+            else if (BlockedByHorrificBeast && TransformationSpellHelper.UnderTransformation(m_Caster, typeof(HorrificBeastSpell)) || (BlockedByAnimalForm && AnimalForm.UnderTransformation(m_Caster)))
+            {
+                m_Caster.SendLocalizedMessage(1061091); // You cannot cast that spell in this form.
+            }
+            else if (!(m_Scroll is BaseWand) && (m_Caster.Paralyzed || m_Caster.Frozen))
+            {
+                m_Caster.SendLocalizedMessage(502643); // You can not cast a spell while frozen.
+            }
+            else if (CheckNextSpellTime && DateTime.Now < m_Caster.NextSpellTime)
+            {
+                m_Caster.SendLocalizedMessage(502644); // You have not yet recovered from casting a spell.
+            }
+            else if (m_Caster is PlayerMobile && ((PlayerMobile)m_Caster).PeacedUntil > DateTime.Now)
+            {
+                m_Caster.SendLocalizedMessage(1072060); // You cannot cast a spell while calmed.
+            }
+            #region Dueling
+            else if (m_Caster is PlayerMobile && ((PlayerMobile)m_Caster).DuelContext != null && !((PlayerMobile)m_Caster).DuelContext.AllowSpellCast(m_Caster, this))
+            {
+            }
+            #endregion
+            else if (m_Caster.Mana >= ScaleMana(GetMana()))
+            {
+                if (m_Caster.Spell == null && m_Caster.CheckSpellCast(this) && CheckCast() && m_Caster.Region.OnBeginSpellCast(m_Caster, this))
+                {
+                    m_State = SpellState.Casting;
+                    m_Caster.Spell = this;
+
+                    if (!(m_Scroll is BaseWand) && RevealOnCast)
+                        m_Caster.RevealingAction();
+
+                    SayMantra();
+
+                    TimeSpan castDelay = this.GetCastDelay();
+
+                    if (ShowHandMovement && (m_Caster.Body.IsHuman || (m_Caster.Player && m_Caster.Body.IsMonster)))
+                    {
+                        int count = (int)Math.Ceiling(castDelay.TotalSeconds / AnimateDelay.TotalSeconds);
+
+                        if (count != 0)
+                        {
+                            m_AnimTimer = new AnimTimer(this, count);
+                            m_AnimTimer.Start();
+                        }
+
+                        if (m_Info.LeftHandEffect > 0)
+                            Caster.FixedParticles(0, 10, 5, m_Info.LeftHandEffect, EffectLayer.LeftHand);
+
+                        if (m_Info.RightHandEffect > 0)
+                            Caster.FixedParticles(0, 10, 5, m_Info.RightHandEffect, EffectLayer.RightHand);
+                    }
+
+                    if (ClearHandsOnCast)
+                        m_Caster.ClearHands();
+
+                    if (Core.ML)
+                        WeaponAbility.ClearCurrentAbility(m_Caster);
+
+                    m_CastTimer = new CastTimer(this, castDelay);
+                    //m_CastTimer.Start();
+
+                    OnBeginCast();
+
+                    if (castDelay > TimeSpan.Zero)
+                    {
+                        m_CastTimer.Start();
+                    }
+                    else {
+                        m_CastTimer.Tick();
+                    }
+
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                m_Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana
+            }
+
+            return false;
+        }
 
 		public abstract void OnCast();
 
-		public virtual void OnBeginCast()
+        public virtual void OnPlayerCast()
+        {
+            OnCast();
+        }
+
+        public virtual void OnBeginCast()
 		{
 		}
+
 
 		public virtual void GetCastSkills( out double min, out double max )
 		{
@@ -915,14 +1204,21 @@ namespace Server.Spells
 						m_Spell.m_Caster.Region.OnSpellCast( m_Spell.m_Caster, m_Spell );
 					m_Spell.m_Caster.NextSpellTime = DateTime.Now + m_Spell.GetCastRecovery();// Spell.NextSpellDelay;
 
-					Target originalTarget = m_Spell.m_Caster.Target;
+                    if (m_Spell.PlayerCaster != null)
+                        m_Spell.OnPlayerCast();
+                    else
+                    {
+                        Target originalTarget = m_Spell.m_Caster.Target;
 
-					m_Spell.OnCast();
+                        m_Spell.OnCast();
 
-					if ( m_Spell.m_Caster.Player && m_Spell.m_Caster.Target != originalTarget && m_Spell.Caster.Target != null )
-						m_Spell.m_Caster.Target.BeginTimeout( m_Spell.m_Caster, TimeSpan.FromSeconds( 30.0 ) );
+                        if (m_Spell.m_Caster.Player && m_Spell.m_Caster.Target != originalTarget && m_Spell.Caster.Target != null)
+                            m_Spell.m_Caster.Target.BeginTimeout(m_Spell.m_Caster, TimeSpan.FromSeconds(30.0));
 
-					m_Spell.m_CastTimer = null;
+                        m_Spell.m_CastTimer = null;
+                    }
+
+
 				}
 			}
 

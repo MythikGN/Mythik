@@ -13,8 +13,14 @@ namespace Server.Spells.Seventh
 				Reagent.SpidersSilk,
 				Reagent.SulfurousAsh
 			);
-
-		public override SpellCircle Circle { get { return SpellCircle.Seventh; } }
+        public override Tuple<int, int> SphereDamage
+        {
+            get
+            {
+                return new Tuple<int, int>(30,50);
+            }
+        }
+        public override SpellCircle Circle { get { return SpellCircle.Seventh; } }
 
 		public FlameStrikeSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
@@ -61,8 +67,9 @@ namespace Server.Spells.Seventh
 
 				m.FixedParticles( 0x3709, 10, 30, 5052, EffectLayer.LeftFoot );
 				m.PlaySound( 0x208 );
-
-				SpellHelper.Damage( this, m, damage, 0, 100, 0, 0, 0 );
+                if (m is PlayerMobile && Caster is PlayerMobile)
+                    damage = GetSphereDamage(Caster, m, SphereDamage);
+                SpellHelper.Damage( this, m, damage, 0, 100, 0, 0, 0 );
 			}
 
 			FinishSequence();

@@ -1,6 +1,7 @@
 using System;
 using Server.Targeting;
 using Server.Network;
+using Server.Mobiles;
 
 namespace Server.Spells.Sixth
 {
@@ -13,8 +14,18 @@ namespace Server.Spells.Sixth
 				Reagent.BlackPearl,
 				Reagent.Nightshade
 			);
-
-		public override SpellCircle Circle { get { return SpellCircle.Sixth; } }
+        public override Tuple<int, int> SphereDamage
+        {
+            get
+            {
+                return new Tuple<int, int>(10,45);
+            }
+        }
+        public override int GetMana()
+        {
+            return 20;
+        }
+        public override SpellCircle Circle { get { return SpellCircle.Sixth; } }
 
 		public EnergyBoltSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
@@ -65,9 +76,10 @@ namespace Server.Spells.Sixth
 				// Do the effects
 				source.MovingParticles( m, 0x379F, 7, 0, false, true, 3043, 4043, 0x211 );
 				source.PlaySound( 0x20A );
-
-				// Deal the damage
-				SpellHelper.Damage( this, m, damage, 0, 0, 0, 0, 100 );
+                if (m is PlayerMobile && Caster is PlayerMobile)
+                    damage = GetSphereDamage(Caster, m, SphereDamage);
+                // Deal the damage
+                SpellHelper.Damage( this, m, damage, 0, 0, 0, 0, 100 );
 			}
 
 			FinishSequence();
