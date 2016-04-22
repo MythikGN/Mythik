@@ -5,7 +5,7 @@ namespace Server
 {
 	public class CurrentExpansion
 	{
-		private static readonly Expansion Expansion = Expansion.T2A;
+		private static readonly Expansion Expansion = Expansion.AOS;
 
 		public static void Configure()
 		{
@@ -14,7 +14,7 @@ namespace Server
 			bool Enabled = Core.AOS;
 
 			Mobile.InsuranceEnabled = Enabled;
-			ObjectPropertyList.Enabled = Enabled;
+			ObjectPropertyList.Enabled = !Enabled;
 			Mobile.VisibleDamageType = Enabled ? VisibleDamageType.Related : VisibleDamageType.None;
 			Mobile.GuildClickMessage = !Enabled;
 			Mobile.AsciiClickMessage = !Enabled;
@@ -23,8 +23,10 @@ namespace Server
 			{
 				AOS.DisableStatInfluences();
 
-				if ( ObjectPropertyList.Enabled )
-					PacketHandlers.SingleClickProps = true; // single click for everything is overriden to check object property list
+                //Disable prop lists for now to keep 203 working, renable for 4+ only.
+
+				//if ( ObjectPropertyList.Enabled )
+				//	PacketHandlers.SingleClickProps = true; // single click for everything is overriden to check object property list
 			}
 		}
 	}
