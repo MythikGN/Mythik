@@ -2796,6 +2796,8 @@ namespace Server.Network
 				else
 					flags |= FeatureFlags.SixthCharacterSlot;
 			}
+            if (ns != null && ns.Version != null && ns.Version.Major <= 3)
+                flags = FeatureFlags.ExpansionT2A;
 
 			if ( ns.ExtendedSupportedFeatures ) {
 				m_Stream.Write( (uint) flags );
@@ -3030,10 +3032,12 @@ namespace Server.Network
 			m_Stream.Write( (short) m.HitsMax );
 
 			m_Stream.Write( m.CanBeRenamedBy( m ) );
+            if(ns.Version.Major >= 3)
+			    m_Stream.Write( (byte)(sendMLExtended ? 0x05 : Core.AOS ? 0x04 : 0x03) ); // type
+            else
+                m_Stream.Write((byte)(0x03)); // type
 
-			m_Stream.Write( (byte)(sendMLExtended ? 0x05 : Core.AOS ? 0x04 : 0x03) ); // type
-
-			m_Stream.Write( m.Female );
+            m_Stream.Write( m.Female );
 
 			m_Stream.Write( (short) m.Str );
 			m_Stream.Write( (short) m.Dex );
@@ -3060,7 +3064,7 @@ namespace Server.Network
 			m_Stream.Write( (byte) m.Followers );
 			m_Stream.Write( (byte) m.FollowersMax );
 
-			if ( Core.AOS )
+			if ( Core.AOS && ns.Version.Major >= 4)
 			{
 				m_Stream.Write( (short) m.FireResistance ); // Fire
 				m_Stream.Write( (short) m.ColdResistance ); // Cold
@@ -3111,9 +3115,12 @@ namespace Server.Network
 
 			if ( beholder == beheld )
 			{
-				m_Stream.Write( (byte)(sendMLExtended ? 0x05 : Core.AOS ? 0x04 : 0x03) ); // type
+                if (ns.Version.Major >= 3)
+                    m_Stream.Write((byte)(sendMLExtended ? 0x05 : Core.AOS ? 0x04 : 0x03)); // type
+                else
+                    m_Stream.Write((byte)(0x03)); // type
 
-				m_Stream.Write( beheld.Female );
+                m_Stream.Write( beheld.Female );
 
 				m_Stream.Write( (short) beheld.Str );
 				m_Stream.Write( (short) beheld.Dex );
@@ -3137,7 +3144,7 @@ namespace Server.Network
 				m_Stream.Write( (byte) beheld.Followers );
 				m_Stream.Write( (byte) beheld.FollowersMax );
 
-				if ( Core.AOS )
+				if ( Core.AOS && ns.Version.Major >= 4)
 				{
 					m_Stream.Write( (short) beheld.FireResistance ); // Fire
 					m_Stream.Write( (short) beheld.ColdResistance ); // Cold

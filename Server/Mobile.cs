@@ -3047,10 +3047,10 @@ namespace Server
 			}
 		}
 
-		private static TimeSpan m_WalkFoot = TimeSpan.FromSeconds( 0.4 );
-		private static TimeSpan m_RunFoot = TimeSpan.FromSeconds( 0.2 );
-		private static TimeSpan m_WalkMount = TimeSpan.FromSeconds( 0.2 );
-		private static TimeSpan m_RunMount = TimeSpan.FromSeconds( 0.1 );
+        private static TimeSpan m_WalkFoot = TimeSpan.FromSeconds(0.37);
+		private static TimeSpan m_RunFoot = TimeSpan.FromSeconds( 0.17);
+		private static TimeSpan m_WalkMount = TimeSpan.FromSeconds( 0.17);
+		private static TimeSpan m_RunMount = TimeSpan.FromSeconds( 0.09);
 
 		public static TimeSpan WalkFoot { get { return m_WalkFoot; } set { m_WalkFoot = value; } }
 		public static TimeSpan RunFoot { get { return m_RunFoot; } set { m_RunFoot = value; } }
@@ -3064,7 +3064,7 @@ namespace Server
 		private static AccessLevel m_FwdAccessOverride = AccessLevel.Counselor;
 		private static bool m_FwdEnabled = true;
 		private static bool m_FwdUOTDOverride = false;
-		private static int m_FwdMaxSteps = 4;
+		private static int m_FwdMaxSteps = 8; // was 4
 
 		public static AccessLevel FwdAccessOverride { get { return m_FwdAccessOverride; } set { m_FwdAccessOverride = value; } }
 		public static bool FwdEnabled { get { return m_FwdEnabled; } set { m_FwdEnabled = value; } }

@@ -597,7 +597,7 @@ namespace Server.Network {
                     var name = TileData.ItemTable[packet.m_ItemID & TileData.MaxItemValue];
                     var nameString = name.Name.Replace("%s", "");
                     Send(new AsciiMessage(packet.m_Serial, packet.m_ItemID, packet.type, packet.hue, packet.font, "", nameString));
-                    //return;
+                    return;
                 }
                 if(p is MessageLocalizedAffix)
                 {
