@@ -25,6 +25,13 @@ namespace Server.Spells.Sixth
         {
             return 20;
         }
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is Mobile)
+                Target((Mobile)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
         public override SpellCircle Circle { get { return SpellCircle.Sixth; } }
 
 		public EnergyBoltSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )

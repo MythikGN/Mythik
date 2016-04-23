@@ -126,6 +126,8 @@ namespace Server.Spells
         }
         public bool HasReagents()
         {
+            if (m_Caster.AccessLevel > AccessLevel.Player)
+                return true;
             if (m_Caster.Backpack != null &&
                 m_Info.Reagents.Length <= m_Caster.Backpack.FindItemsByType(m_Info.Reagents, true).Length)
             {
@@ -239,6 +241,7 @@ namespace Server.Spells
 
 		public virtual bool OnCasterMoving( Direction d )
 		{
+            return true;
 			if ( IsCasting && BlocksMovement )
 			{
 				m_Caster.SendLocalizedMessage( 500111 ); // You are frozen and can not move.
@@ -684,8 +687,8 @@ namespace Server.Spells
                 return;
             }
 
-            if (caster != target)
-                SpellHelper.Turn(Caster, target);
+           // if (caster != target)
+            //    SpellHelper.Turn(Caster, target);
 
             if (m_Caster.Spell != null && m_Caster.Spell.IsCasting)
                 ((Spell)m_Caster.Spell).DoFizzle();
@@ -725,9 +728,9 @@ namespace Server.Spells
                    //     m_Caster.RevealingAction();
 
                     SayMantra();
-
+                    
                     var castDelay = GetCastDelay();
-
+                    
                     var count = (int)Math.Ceiling(castDelay.TotalSeconds / AnimateDelay.TotalSeconds);
 
                     if (count != 0)
@@ -868,9 +871,13 @@ namespace Server.Spells
 
 		public abstract void OnCast();
 
+
         public virtual void OnPlayerCast()
         {
-            OnCast();
+           /*if (SphereSpellTarget is Mobile)
+                Target((Mobile)SphereSpellTarget);
+            else
+                DoFizzle();*/
         }
 
         public virtual void OnBeginCast()

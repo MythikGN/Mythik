@@ -21,6 +21,13 @@ namespace Server.Spells.Fourth
                 return new Tuple<int, int>(10,20);
             }
         }
+        public override int Sound
+        {
+            get
+            {
+                return base.Sound;
+            }
+        }
         public override SpellCircle Circle { get { return SpellCircle.Fourth; } }
 
 		public LightningSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
@@ -33,8 +40,14 @@ namespace Server.Spells.Fourth
 		}
 
 		public override bool DelayedDamage{ get{ return false; } }
-
-		public void Target( Mobile m )
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is Mobile)
+                 Target((Mobile)SphereSpellTarget);
+             else
+                 DoFizzle();
+        }
+        public void Target( Mobile m )
 		{
 			if ( !Caster.CanSee( m ) )
 			{
@@ -67,6 +80,10 @@ namespace Server.Spells.Fourth
 				}
 
 				m.BoltEffect( 0 );
+                if (Sound != 0)
+                    m.PlaySound(this.Sound);
+                else
+                    Console.WriteLine("Missing sound for spell: " + this.GetType().Name);
                 if (m is PlayerMobile && Caster is PlayerMobile)
                     damage = GetSphereDamage(Caster, m, SphereDamage);
                 SpellHelper.Damage( this, m, damage, 0, 0, 0, 0, 100 );

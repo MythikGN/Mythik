@@ -32,9 +32,15 @@ namespace Server.Spells.Seventh
 			Caster.Target = new InternalTarget( this );
 		}
 
-		public override bool DelayedDamage{ get{ return true; } }
-
-		public void Target( Mobile m )
+		public override bool DelayedDamage{ get{ return false; } }
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is Mobile)
+                Target((Mobile)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
+        public void Target( Mobile m )
 		{
 			if ( !Caster.CanSee( m ) )
 			{

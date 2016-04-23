@@ -108,8 +108,15 @@ namespace Server.Spells
 			return false;
 		}
 
+        /// <summary>
+        /// Turns Caster towards the target unless the caster is a player.
+        /// </summary>
+        /// <param name="from"></param>
+        /// <param name="to"></param>
 		public static void Turn( Mobile from, object to )
 		{
+            if (from is PlayerMobile)
+                return;
 			IPoint3D target = to as IPoint3D;
 
 			if( target == null )

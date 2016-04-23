@@ -38,11 +38,6 @@ namespace Server.Spells.First
                 Target((Mobile)SphereSpellTarget);
             else if (SphereSpellTarget is BaseExplosionPotion)
                 iTarget((BaseExplosionPotion)SphereSpellTarget);
-            else if (SphereSpellTarget is BaseWand)
-            {
-                BaseWand bw = SphereSpellTarget as BaseWand;
-               // bw.RechargeWand(Caster, this);
-            }
             else
                 DoFizzle();
         }
@@ -80,6 +75,7 @@ namespace Server.Spells.First
 			{
 				Mobile source = Caster;
 
+
 				SpellHelper.Turn( source, m );
 
 				SpellHelper.CheckReflect( (int)this.Circle, ref source, ref m );
@@ -105,7 +101,10 @@ namespace Server.Spells.First
 				}
 
 				source.MovingParticles( m, 0x36E4, 5, 0, false, false, 3006, 0, 0 );
-				source.PlaySound( 0x1E5 );
+                if (Sound != 0)
+                    m.PlaySound(this.Sound);
+                else
+                    Console.WriteLine("Missing sound for spell: " + this.GetType().Name);
                 if (m is PlayerMobile && Caster is PlayerMobile)
                     damage = GetSphereDamage(source, m, SphereDamage);
                 SpellHelper.Damage( this, m, damage, 0, 100, 0, 0, 0 );

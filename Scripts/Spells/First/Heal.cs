@@ -49,8 +49,14 @@ namespace Server.Spells.First
 
 			return base.CheckCast();
 		}
-
-		public override void OnCast()
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is Mobile)
+                Target((Mobile)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
+        public override void OnCast()
 		{
 			Caster.Target = new InternalTarget( this );
 		}

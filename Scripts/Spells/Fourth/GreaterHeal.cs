@@ -49,8 +49,14 @@ namespace Server.Spells.Fourth
 		{
 			Caster.Target = new InternalTarget( this );
 		}
-
-		public void Target( Mobile m )
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is Mobile)
+                Target((Mobile)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
+        public void Target( Mobile m )
 		{
 			if ( !Caster.CanSee( m ) )
 			{
