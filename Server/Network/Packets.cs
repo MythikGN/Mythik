@@ -3542,7 +3542,15 @@ namespace Server.Network
 
 	public sealed class UnicodeMessage : Packet
 	{
-		public UnicodeMessage( Serial serial, int graphic, MessageType type, int hue, int font, string lang, string name, string text ) : base( 0xAE )
+        public int _graphic;
+        public int _hue;
+        public int _font;
+        public string _name;
+        public Serial _serial;
+        public string _text;
+        public MessageType _type;
+
+        public UnicodeMessage( Serial serial, int graphic, MessageType type, int hue, int font, string lang, string name, string text ) : base( 0xAE )
 		{
 			if ( string.IsNullOrEmpty( lang ) ) lang = "ENU";
 			if ( name == null ) name = "";
@@ -3561,6 +3569,14 @@ namespace Server.Network
 			m_Stream.WriteAsciiFixed( lang, 4 );
 			m_Stream.WriteAsciiFixed( name, 30 );
 			m_Stream.WriteBigUniNull( text );
+
+            this._serial = serial;
+            this._graphic = graphic;
+            this._type = type;
+            this._hue = hue;
+            this._font = font;
+            this._name = name;
+            this._text = text;
 		}
 	}
 
