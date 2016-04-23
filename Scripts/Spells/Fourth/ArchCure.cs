@@ -28,9 +28,15 @@ namespace Server.Spells.Fourth
 		{
 			Caster.Target = new InternalTarget( this );
 		}
-
-		// Arch cure is now 1/4th of a second faster
-		public override TimeSpan CastDelayBase{ get{ return base.CastDelayBase - TimeSpan.FromSeconds( 0.25 ); } }
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is Mobile)
+                Target((Mobile)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
+        // Arch cure is now 1/4th of a second faster
+        //public override TimeSpan CastDelayBase{ get{ return base.CastDelayBase - TimeSpan.FromSeconds( 0.25 ); } }
 
 		public void Target( IPoint3D p )
 		{

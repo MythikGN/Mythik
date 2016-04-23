@@ -26,8 +26,14 @@ namespace Server.Spells.Fourth
 		{
 			Caster.Target = new InternalTarget( this );
 		}
-
-		private static Dictionary<Mobile, Timer> m_Table = new Dictionary<Mobile, Timer>();
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is Mobile)
+                Target((Mobile)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
+        private static Dictionary<Mobile, Timer> m_Table = new Dictionary<Mobile, Timer>();
 
 		private void AosDelay_Callback( object state )
 		{

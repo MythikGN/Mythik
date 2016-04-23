@@ -40,8 +40,44 @@ namespace Server.Spells.Seventh
 			else
 				Effect( m_Entry.Location, m_Entry.Map, true );
 		}
+        public override void OnPlayerCast()
+        {
+            var from = Caster;
 
-		public override bool CheckCast()
+            if (SphereSpellTarget is RecallRune)
+            {
+                RecallRune rune = (RecallRune)SphereSpellTarget;
+
+                if (rune.Marked)
+                    Effect(rune.Target, rune.TargetMap, true);
+                else
+                    from.SendLocalizedMessage(501803); // That rune is not yet marked.
+            }
+            else if (SphereSpellTarget is Runebook)
+            {
+                RunebookEntry e = ((Runebook)SphereSpellTarget).Default;
+
+                if (e != null)
+                    Effect(e.Location, e.Map, true);
+                else
+                    from.SendLocalizedMessage(502354); // Target is not marked.
+            }
+             
+            else if (SphereSpellTarget is HouseRaffleDeed && ((HouseRaffleDeed)SphereSpellTarget).ValidLocation())
+            {
+                HouseRaffleDeed deed = (HouseRaffleDeed)SphereSpellTarget;
+
+                Effect(deed.PlotLocation, deed.PlotFacet, true);
+            }
+            else
+            {
+                from.Send(new MessageLocalized(from.Serial, from.Body, MessageType.Regular, 0x3B2, 3, 501030, from.Name, "")); // I can not gate travel from that object.
+            DoFizzle();
+            }
+            
+                
+        }
+        public override bool CheckCast()
 		{
 			if ( Factions.Sigil.ExistsOn( Caster ) )
 			{

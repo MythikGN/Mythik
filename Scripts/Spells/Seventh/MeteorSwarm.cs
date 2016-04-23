@@ -31,8 +31,14 @@ namespace Server.Spells.Seventh
 		}
 
 		public override bool DelayedDamage{ get{ return true; } }
-
-		public void Target( IPoint3D p )
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is IPoint3D)
+                Target((IPoint3D)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
+        public void Target( IPoint3D p )
 		{
 			if ( !Caster.CanSee( p ) )
 			{

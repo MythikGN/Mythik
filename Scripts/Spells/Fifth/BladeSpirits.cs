@@ -49,8 +49,14 @@ namespace Server.Spells.Fifth
 		{
 			Caster.Target = new InternalTarget( this );
 		}
-
-		public void Target( IPoint3D p )
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is IPoint3D)
+                Target((IPoint3D)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
+        public void Target( IPoint3D p )
 		{
 			Map map = Caster.Map;
 

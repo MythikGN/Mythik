@@ -43,8 +43,14 @@ namespace Server.Spells.Second
 
 			return true;
 		}
-
-		private static Hashtable m_Table = new Hashtable();
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is Mobile)
+                Toggle(Caster,(Mobile)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
+        private static Hashtable m_Table = new Hashtable();
 
 		public static void Toggle( Mobile caster, Mobile target )
 		{

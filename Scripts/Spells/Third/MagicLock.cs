@@ -26,8 +26,14 @@ namespace Server.Spells.Third
 		{
 			Caster.Target = new InternalTarget( this );
 		}
-
-		public void Target( LockableContainer targ )
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is LockableContainer)
+                Target((LockableContainer)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
+        public void Target( LockableContainer targ )
 		{
 			if ( Multis.BaseHouse.CheckLockedDownOrSecured( targ ) )
 			{

@@ -35,8 +35,14 @@ namespace Server.Spells.Sixth
 
 			return SpellHelper.CheckTravel( Caster, TravelCheckType.Mark );
 		}
-
-		public void Target( RecallRune rune )
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is RecallRune)
+                Target((RecallRune)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
+        public void Target( RecallRune rune )
 		{
 			if ( !Caster.CanSee( rune ) )
 			{

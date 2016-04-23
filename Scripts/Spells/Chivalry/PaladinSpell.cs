@@ -27,6 +27,7 @@ namespace Server.Spells.Chivalry
 
 		public override bool CheckCast()
 		{
+            return false;
 			int mana = ScaleMana( RequiredMana );
 
 			if ( !base.CheckCast() )

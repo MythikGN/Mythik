@@ -86,8 +86,14 @@ namespace Server.Spells.Fifth
 
 			FinishSequence();
 		}
-
-		public override TimeSpan GetCastDelay()
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is IPoint3D)
+                OnCast();
+            else
+                DoFizzle();
+        }
+        public override TimeSpan GetCastDelay()
 		{
 			if ( Core.AOS )
 				return TimeSpan.FromTicks( base.GetCastDelay().Ticks * 5 );

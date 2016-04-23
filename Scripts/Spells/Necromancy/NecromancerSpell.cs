@@ -21,8 +21,12 @@ namespace Server.Spells.Necromancy
 		public NecromancerSpell( Mobile caster, Item scroll, SpellInfo info ) : base( caster, scroll, info )
 		{
 		}
-
-		public override int ComputeKarmaAward()
+        public override bool CheckCast()
+        {
+            return false;
+            return base.CheckCast();
+        }
+        public override int ComputeKarmaAward()
 		{
 			//TODO: Verify this formula being that Necro spells don't HAVE a circle.
 			//int karma = -(70 + (10 * (int)Circle));

@@ -44,9 +44,15 @@ namespace Server.Spells.Second
 		{
 			return 1.0; //This spell isn't affected by slayer spellbooks
 		}
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is Mobile)
+                Target((Mobile)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
 
-
-		public void Target( Mobile m )
+        public void Target( Mobile m )
 		{
 			if ( !Caster.CanSee( m ) )
 			{

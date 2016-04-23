@@ -21,8 +21,14 @@ namespace Server.Spells.Third
 		public TeleportSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
-
-		public override bool CheckCast()
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is IPoint3D)
+                Target((IPoint3D)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
+        public override bool CheckCast()
 		{
 			if ( Factions.Sigil.ExistsOn( Caster ) )
 			{

@@ -26,8 +26,14 @@ namespace Server.Spells.Third
 		{
 			Caster.Target = new InternalTarget( this );
 		}
-
-		public void Target( ITelekinesisable obj )
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is ITelekinesisable)
+                Target((ITelekinesisable)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
+        public void Target( ITelekinesisable obj )
 		{
 			if ( CheckSequence() )
 			{

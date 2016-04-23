@@ -28,8 +28,11 @@ namespace Server.Spells.Third
 		{
 			Caster.Target = new InternalTarget( this );
 		}
-
-		public void Target( IPoint3D p )
+        public override void OnPlayerCast()
+        {
+            Target((IPoint3D)SphereSpellTarget);
+        }
+        public void Target( IPoint3D p )
 		{
 			if ( !Caster.CanSee( p ) )
 			{

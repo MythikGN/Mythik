@@ -30,6 +30,7 @@ namespace Server.Spells.Bushido
 
 		public static bool CheckExpansion( Mobile from )
 		{
+            return false;
 			if ( !( from is PlayerMobile ) )
 				return true;
 

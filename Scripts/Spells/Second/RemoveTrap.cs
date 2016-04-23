@@ -26,8 +26,14 @@ namespace Server.Spells.Second
 			Caster.Target = new InternalTarget( this );
 			Caster.SendMessage( "What do you wish to untrap?" );
 		}
-
-		public void Target( TrapableContainer item )
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is TrapableContainer)
+                Target((TrapableContainer)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
+        public void Target( TrapableContainer item )
 		{
 			if ( !Caster.CanSee( item ) )
 			{

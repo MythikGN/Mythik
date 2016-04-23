@@ -25,8 +25,14 @@ namespace Server.Spells.First
 		{
 			Caster.Target = new NightSightTarget( this );
 		}
-
-		private class NightSightTarget : Target
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is Mobile)
+                Target((Mobile)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
+        private class NightSightTarget : Target
 		{
 			private Spell m_Spell;
 

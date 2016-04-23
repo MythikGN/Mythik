@@ -42,8 +42,14 @@ namespace Server.Spells.Fourth
 		{
 			return m_UnderEffect.Contains( m );
 		}
-
-		public void Target( Mobile m )
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is Mobile)
+                Target((Mobile)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
+        public void Target( Mobile m )
 		{
 			if ( !Caster.CanSee( m ) )
 			{

@@ -28,8 +28,14 @@ namespace Server.Spells.Fifth
 		{
 			Caster.Target = new InternalTarget( this );
 		}
-
-		public void Target( Item item )
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is Item)
+                Target((Item)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
+        public void Target( Item item )
 		{
 			Type t = item.GetType();
 

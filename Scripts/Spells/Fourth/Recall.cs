@@ -52,8 +52,49 @@ namespace Server.Spells.Fourth
 			else
 				Effect( m_Entry.Location, m_Entry.Map, true );
 		}
+        public override void OnPlayerCast()
+        {
+            var from = Caster;
+            var o = SphereSpellTarget;
+            if (o is RecallRune)
+            {
+                RecallRune rune = (RecallRune)o;
 
-		public override bool CheckCast()
+                if (rune.Marked)
+                    Effect(rune.Target, rune.TargetMap, true);
+                else
+                    from.SendLocalizedMessage(501805); // That rune is not yet marked.
+            }
+            else if (o is Runebook)
+            {
+                RunebookEntry e = ((Runebook)o).Default;
+
+                if (e != null)
+                    Effect(e.Location, e.Map, true);
+                else
+                    from.SendLocalizedMessage(502354); // Target is not marked.
+            }
+            else if (o is Key && ((Key)o).KeyValue != 0 && ((Key)o).Link is BaseBoat)
+            {
+                BaseBoat boat = ((Key)o).Link as BaseBoat;
+
+                if (!boat.Deleted && boat.CheckKey(((Key)o).KeyValue))
+                    Effect(boat.GetMarkedLocation(), boat.Map, false);
+                else
+                    from.Send(new MessageLocalized(from.Serial, from.Body, MessageType.Regular, 0x3B2, 3, 502357, from.Name, "")); // I can not recall from that object.
+            }
+            else if (o is HouseRaffleDeed && ((HouseRaffleDeed)o).ValidLocation())
+            {
+                HouseRaffleDeed deed = (HouseRaffleDeed)o;
+
+                Effect(deed.PlotLocation, deed.PlotFacet, true);
+            }
+            else
+            {
+                from.Send(new MessageLocalized(from.Serial, from.Body, MessageType.Regular, 0x3B2, 3, 502357, from.Name, "")); // I can not recall from that object.
+            }
+        }
+        public override bool CheckCast()
 		{
 			if ( Factions.Sigil.ExistsOn( Caster ) )
 			{

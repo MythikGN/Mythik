@@ -21,8 +21,14 @@ namespace Server.Spells.Sixth
 		public InvisibilitySpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
-
-		public override bool CheckCast()
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is Mobile)
+                Target((Mobile)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
+        public override bool CheckCast()
 		{
 			if ( Engines.ConPVP.DuelContext.CheckSuddenDeath( Caster ) )
 			{

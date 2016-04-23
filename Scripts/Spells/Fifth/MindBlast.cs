@@ -28,8 +28,14 @@ namespace Server.Spells.Fifth
 		{
 			Caster.Target = new InternalTarget( this );
 		}
-
-		private void AosDelay_Callback( object state )
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is Mobile)
+                Target((Mobile)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
+        private void AosDelay_Callback( object state )
 		{
 			object[] states = (object[])state;
 			Mobile caster = (Mobile)states[0];
