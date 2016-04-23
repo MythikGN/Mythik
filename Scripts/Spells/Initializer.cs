@@ -87,7 +87,7 @@ namespace Server.Spells
 			Register( 62, typeof( Eighth.FireElementalSpell ) );
 			Register( 63, typeof( Eighth.WaterElementalSpell ) );
 
-			if ( Core.AOS )
+            /*if ( Core.AOS )
 			{
 				// Necromancy spells
 				Register( 100, typeof( Necromancy.AnimateDeadSpell ) );
@@ -162,10 +162,10 @@ namespace Server.Spells
 					Register( 614, typeof( Spellweaving.GiftOfLifeSpell ) );
 					//Register( 615, typeof( Spellweaving.ArcaneEmpowermentSpell ) );
 				}
-			}
-		}
+			}*/
+        }
 
-		public static void Register( int spellID, Type type )
+        public static void Register( int spellID, Type type )
 		{
 			SpellRegistry.Register( spellID, type );
 		}

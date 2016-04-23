@@ -25,14 +25,11 @@ namespace Server.Spells.Fifth
         public override void OnPlayerCast()
         {
             if (SphereSpellTarget is Mobile)
-                Target((Mobile)SphereSpellTarget);
+                OnCast();
             else
                 DoFizzle();
         }
-        public void Target(Mobile toHide)
-        {
-            OnCast();
-        }
+       
 
         public override bool CheckCast()
 		{
