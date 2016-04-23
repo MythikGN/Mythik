@@ -4367,11 +4367,42 @@ namespace Server.Mobiles
 
 				PrivateOverheadMessage( MessageType.Regular, 0x3B2, number, from.NetState );
 			}
+            else
+            {
+                switch(AI)
+                {
+                    case AIType.AI_Animal:
+                        PrivateOverheadMessage(MessageType.Regular, 0x3b2, true, "[ Critter ]", from.NetState);
+                        break;
+                    case AIType.AI_Vendor:
+                        PrivateOverheadMessage(MessageType.Regular, 0x3b2, true, "[ Vendor ]", from.NetState);
+                        break;
+                    default:
+                        PrivateOverheadMessage(MessageType.Regular, 0x3b2, true, "[ " + GetMonsterDifficultyLevelText() + " ]", from.NetState);
+                        PrivateOverheadMessage(MessageType.Regular, 0x3b2, true, "[ HP: " + Hits + "/" + HitsMax + " ]", from.NetState);
+
+                        break;
+                }
+            }
 
 			base.OnSingleClick( from );
 		}
 
-		public virtual double TreasureMapChance{ get{ return TreasureMap.LootChance; } }
+        private string GetMonsterDifficultyLevelText()
+        {
+            var diff = BaseInstrument.GetBaseDifficulty(this);
+            if (diff < 25)
+                return "Easy";
+            if (diff < 50)
+                return "Moderate";
+            if (diff < 75)
+                return "Intermediate";
+            if (diff < 95)
+                return "Difficult";
+            return "Challenging";
+        }
+
+        public virtual double TreasureMapChance{ get{ return TreasureMap.LootChance; } }
 		public virtual int TreasureMapLevel{ get{ return -1; } }
 
 		public virtual bool IgnoreYoungProtection { get { return false; } }
