@@ -21,7 +21,14 @@ namespace Server.Spells.Seventh
 
 		public override SpellCircle Circle { get { return SpellCircle.Seventh; } }
 
-		public MeteorSwarmSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
+        public override bool CanTargetGround
+        {
+            get
+            {
+                return true;
+            }
+        }
+        public MeteorSwarmSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
 

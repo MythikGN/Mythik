@@ -20,7 +20,14 @@ namespace Server.Spells.Sixth
 				Reagent.SulfurousAsh
 			);
 
-		public override SpellCircle Circle { get { return SpellCircle.Sixth; } }
+        public override bool CanTargetGround
+        {
+            get
+            {
+                return true;
+            }
+        }
+        public override SpellCircle Circle { get { return SpellCircle.Sixth; } }
 
 		public MassCurseSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{

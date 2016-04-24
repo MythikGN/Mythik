@@ -20,7 +20,14 @@ namespace Server.Spells.Third
 
 		public override SpellCircle Circle { get { return SpellCircle.Third; } }
 
-		public WallOfStoneSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
+        public override bool CanTargetGround
+        {
+            get
+            {
+                return true;
+            }
+        }
+        public WallOfStoneSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
 

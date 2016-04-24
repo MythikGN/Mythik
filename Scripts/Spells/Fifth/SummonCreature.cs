@@ -17,8 +17,11 @@ namespace Server.Spells.Fifth
 			);
 
 		public override SpellCircle Circle { get { return SpellCircle.Fifth; } }
-
-		public SummonCreatureSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
+        public override bool HasNoTarget
+        {
+            get { return true; }
+        }
+        public SummonCreatureSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
 

@@ -15,8 +15,11 @@ namespace Server.Spells.First
 			);
 
 		public override SpellCircle Circle { get { return SpellCircle.First; } }
-
-		public CreateFoodSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
+        public override bool HasNoTarget
+        {
+            get { return true; }
+        }
+        public CreateFoodSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
 

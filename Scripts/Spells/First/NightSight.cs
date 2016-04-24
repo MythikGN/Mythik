@@ -20,11 +20,6 @@ namespace Server.Spells.First
 		public NightSightSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
-
-		public override void OnCast()
-		{
-			Caster.Target = new NightSightTarget( this );
-		}
         public override void OnPlayerCast()
         {
             if (SphereSpellTarget is Mobile)
@@ -32,6 +27,42 @@ namespace Server.Spells.First
             else
                 DoFizzle();
         }
+        public override void OnCast()
+		{
+			Caster.Target = new NightSightTarget( this );
+		}
+        void Target(object targeted)
+        {
+            if (targeted is Mobile && CheckBSequence((Mobile)targeted))
+            {
+                Mobile targ = (Mobile)targeted;
+
+                SpellHelper.Turn(Caster, targ);
+
+                if (targ.BeginAction(typeof(LightCycle)))
+                {
+                    new LightCycle.NightSightTimer(targ).Start();
+                    int level = (int)(LightCycle.DungeonLevel * ((Core.AOS ? targ.Skills[SkillName.Magery].Value : Caster.Skills[SkillName.Magery].Value) / 100));
+
+                    if (level < 0)
+                        level = 0;
+
+                    targ.LightLevel = level;
+
+                    targ.FixedParticles(0x376A, 9, 32, 5007, EffectLayer.Waist);
+                    targ.PlaySound(0x1E3);
+
+                    BuffInfo.AddBuff(targ, new BuffInfo(BuffIcon.NightSight, 1075643)); //Night Sight/You ignore lighting effects
+                }
+                else
+                {
+                    Caster.SendMessage("{0} already have nightsight.", Caster == targ ? "You" : "They");
+                }
+            }
+
+            FinishSequence();
+        }
+
         private class NightSightTarget : Target
 		{
 			private Spell m_Spell;

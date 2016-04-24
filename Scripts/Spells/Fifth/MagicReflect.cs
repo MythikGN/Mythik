@@ -22,14 +22,11 @@ namespace Server.Spells.Fifth
 		public MagicReflectSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
-        public override void OnPlayerCast()
+        public override bool HasNoTarget
         {
-            if (SphereSpellTarget is Mobile)
-                OnCast();
-            else
-                DoFizzle();
+            get { return true; }
         }
-       
+
 
         public override bool CheckCast()
 		{

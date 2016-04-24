@@ -30,7 +30,7 @@ namespace Server.Spells.First
 		{
 		}
 
-        public override bool DelayedDamageStacking { get { return !Core.AOS; } }
+        public override bool DelayedDamageStacking { get { return false; } }
 
         public override void OnPlayerCast()
         {

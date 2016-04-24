@@ -18,8 +18,11 @@ namespace Server.Spells.Eighth
 			);
 
 		public override SpellCircle Circle { get { return SpellCircle.Eighth; } }
-
-		public WaterElementalSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
+        public override bool HasNoTarget
+        {
+            get { return true; }
+        }
+        public WaterElementalSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
 

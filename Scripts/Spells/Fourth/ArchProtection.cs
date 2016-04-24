@@ -21,7 +21,14 @@ namespace Server.Spells.Fourth
 
 		public override SpellCircle Circle { get { return SpellCircle.Fourth; } }
 
-		public ArchProtectionSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
+        public override bool CanTargetGround
+        {
+            get
+            {
+                return true;
+            }
+        }
+        public ArchProtectionSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
 

@@ -20,7 +20,14 @@ namespace Server.Spells.Eighth
 
 		public override SpellCircle Circle { get { return SpellCircle.Eighth; } }
 
-		public EnergyVortexSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
+        public override bool CanTargetGround
+        {
+            get
+            {
+                return true;
+            }
+        }
+        public EnergyVortexSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
 

@@ -22,8 +22,14 @@ namespace Server.Spells.Seventh
 		public override SpellCircle Circle { get { return SpellCircle.Seventh; } }
 
 		private int m_NewBody;
-
-		public PolymorphSpell( Mobile caster, Item scroll, int body ) : base( caster, scroll, m_Info )
+        public override bool HasNoTarget
+        {
+            get
+            {
+                return true;
+            }
+        }
+        public PolymorphSpell( Mobile caster, Item scroll, int body ) : base( caster, scroll, m_Info )
 		{
 			m_NewBody = body;
 		}

@@ -21,8 +21,11 @@ namespace Server.Spells.Eighth
 			);
 
 		public override SpellCircle Circle { get { return SpellCircle.Eighth; } }
-
-		public SummonDaemonSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
+        public override bool HasNoTarget
+        {
+            get { return true; }
+        }
+        public SummonDaemonSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
 

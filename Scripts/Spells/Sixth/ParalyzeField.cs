@@ -21,7 +21,14 @@ namespace Server.Spells.Sixth
 
 		public override SpellCircle Circle { get { return SpellCircle.Sixth; } }
 
-		public ParalyzeFieldSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
+        public override bool CanTargetGround
+        {
+            get
+            {
+                return true;
+            }
+        }
+        public ParalyzeFieldSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
 

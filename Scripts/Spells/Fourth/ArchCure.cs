@@ -20,7 +20,14 @@ namespace Server.Spells.Fourth
 
 		public override SpellCircle Circle { get { return SpellCircle.Fourth; } }
 
-		public ArchCureSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
+        public override bool CanTargetGround
+        {
+            get
+            {
+                return true;
+            }
+        }
+        public ArchCureSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
 		}
 
@@ -30,8 +37,8 @@ namespace Server.Spells.Fourth
 		}
         public override void OnPlayerCast()
         {
-            if (SphereSpellTarget is Mobile)
-                Target((Mobile)SphereSpellTarget);
+            if (SphereSpellTarget is IPoint3D)
+                Target((IPoint3D)SphereSpellTarget);
             else
                 DoFizzle();
         }

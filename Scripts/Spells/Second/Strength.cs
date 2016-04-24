@@ -30,11 +30,6 @@ namespace Server.Spells.Second
 
 			return base.CheckCast();
 		}
-
-		public override void OnCast()
-		{
-			Caster.Target = new InternalTarget( this );
-		}
         public override void OnPlayerCast()
         {
             if (SphereSpellTarget is Mobile)
@@ -42,6 +37,11 @@ namespace Server.Spells.Second
             else
                 DoFizzle();
         }
+        public override void OnCast()
+		{
+			Caster.Target = new InternalTarget( this );
+		}
+       
         public void Target( Mobile m )
 		{
 			if ( !Caster.CanSee( m ) )
