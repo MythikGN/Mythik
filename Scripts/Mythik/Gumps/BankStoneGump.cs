@@ -1,4 +1,5 @@
-﻿using Server;
+﻿using Scripts.Mythik.Localizations;
+using Server;
 using Server.Gumps;
 using Server.Items;
 using Server.Mobiles;
@@ -28,7 +29,7 @@ namespace Scripts.Mythik.Gumps
             AddImageTiled(10, 10, 400, 20, 2624);
             AddAlphaRegion(10, 10, 400, 20);
 
-            AddHtml(10, 10, 400, 20, "<BASEFONT COLOR=\"#FFFFFF\"><CENTER>Mythik Bank Menu</CENTER></BASEFONT>", false, false);
+            AddHtml(10, 10, 400, 20, Locale.GetLocale(from).BANK_GUMP_TITLE, false, false);
 
             AddImageTiled(10, 40, 400, 250, 2624);
             AddAlphaRegion(10, 40, 400, 250);
@@ -39,19 +40,19 @@ namespace Scripts.Mythik.Gumps
             AddItem(25, 145, 0x1BF0);
             AddItem(30, 185, 0xE76);
 
-            AddHtml(210, 60, 190, 20, String.Format("<BASEFONT COLOR=\"#FFFFFF\">Hail, {0}!</BASEFONT>", m_Mobile.Name), false, false);
+            AddHtml(210, 60, 190, 20, String.Format(Locale.GetLocale(from).BANK_GUMP_HAIL, m_Mobile.Name), false, false);
 
-            AddHtml(35, 85, 150, 40, String.Format("<BASEFONT COLOR=\"#FFFFFF\"><CENTER>* Balance *<BR>{0}</CENTER></BASEFONT>", m_Mobile.BankBox.TotalGold), false, false);
-            AddHtml(35, 145, 150, 40, String.Format("<BASEFONT COLOR=\"#FFFFFF\"><CENTER>* Items *<BR>{0}</CENTER></BASEFONT>", m_Mobile.BankBox.TotalItems), false, false);
-            AddHtml(35, 185, 150, 40, String.Format("<BASEFONT COLOR=\"#FFFFFF\"><CENTER>* Weight *<BR>{0}</CENTER></BASEFONT>", m_Mobile.BankBox.TotalWeight), false, false);
+            AddHtml(35, 85, 150, 40, String.Format(Locale.GetLocale(from).BANK_GUMP_BALANCE, m_Mobile.BankBox.TotalGold), false, false);
+            AddHtml(35, 145, 150, 40, String.Format(Locale.GetLocale(from).BANK_GUMP_ITEMS, m_Mobile.BankBox.TotalItems), false, false);
+            AddHtml(35, 185, 150, 40, String.Format(Locale.GetLocale(from).BANK_GUMP_WEIGHT, m_Mobile.BankBox.TotalWeight), false, false);
 
-            AddHtml(270, 100, 100, 40, "<BASEFONT COLOR=\"#FFFFFF\">Open Bank Box<BR></BASEFONT>", false, false);
+            AddHtml(270, 100, 100, 40, Locale.GetLocale(from).BANK_GUMP_OPEN, false, false);
             AddButton(380, 102, 0x15E1, 0x15E5, 1, GumpButtonType.Reply, 0);
 
-            AddHtml(270, 160, 100, 40, "<BASEFONT COLOR=\"#FFFFFF\">Deposit Gold<BR></BASEFONT>", false, false);
+            AddHtml(270, 160, 100, 40, Locale.GetLocale(from).BANK_GUMP_DEPOSIT, false, false);
             AddButton(380, 162, 0x15E1, 0x15E5, 2, GumpButtonType.Reply, 0);
 
-            AddHtml(270, 220, 100, 40, "<BASEFONT COLOR=\"#FFFFFF\">Withdraw Gold<BR></BASEFONT>", false, false);
+            AddHtml(270, 220, 100, 40, Locale.GetLocale(from).BANK_GUMP_WITHDRAW, false, false);
             AddButton(380, 222, 0x15E1, 0x15E5, 3, GumpButtonType.Reply, 0);
         }
 
@@ -81,20 +82,20 @@ namespace Scripts.Mythik.Gumps
                                     BankCheck bc = new BankCheck(amount);
                                     m_Mobile.BankBox.DropItem(bc);
 
-                                    m_Mobile.SendMessage("A bank check for {0} gold has been deposited into your bank box.", amount);
+                                    m_Mobile.SendMessage(Locale.GetLocale(m_Mobile).BANK_STONE_DEPOSITED_CHEQUE, amount);
                                 }
                                 else
                                 {
                                     Gold g = new Gold(amount);
                                     m_Mobile.BankBox.DropItem(g);
 
-                                    m_Mobile.SendMessage("{0} gold pieces have been desposited into your bank box", amount);
+                                    m_Mobile.SendMessage(Locale.GetLocale(m_Mobile).BANK_STONE_DEPOSITED, amount);
                                 }
                             }
                         }
                         else
                         {
-                            m_Mobile.SendMessage("You must despoit gold in amounts higher then 50.");
+                            m_Mobile.SendMessage(Locale.GetLocale(m_Mobile).BANK_STONE_DEPOSIT_NOT_ENOUGH);
                         }
 
                         break;
@@ -108,7 +109,7 @@ namespace Scripts.Mythik.Gumps
                         }
                         else
                         {
-                            m_Mobile.SendMessage("You do not have any gold in your bank box.");
+                            m_Mobile.SendMessage(Locale.GetLocale(m_Mobile).BANK_STONE_NO_GOLD);
                         }
                         break;
                     }
@@ -133,12 +134,12 @@ namespace Scripts.Mythik.Gumps
             AddImageTiled(10, 10, 320, 20, 2624);
             AddAlphaRegion(10, 10, 320, 20);
 
-            AddHtml(15, 10, 320, 20, "<BASEFONT COLOR=\"#FFFFFF\"><CENTER>Mythik Bank Withdraw Menu</CENTER></BASEFONT>", false, false);
+            AddHtml(15, 10, 320, 20, Locale.GetLocale(m_Mobile).BANK_GUMP_WITHDRAW_TITLE, false, false);
 
             AddImageTiled(10, 40, 320, 60, 2624);
             AddAlphaRegion(10, 40, 320, 60);
 
-            AddLabel(30, 40, 0x481, "How much gold would you like to withdraw?");
+            AddLabel(30, 40, 0x481, Locale.GetLocale(m_Mobile).BANK_GUMP_WITHDRAW_AMOUNT);
 
             TextEntry(75, 70, 180, 20, 1, null);
 
@@ -166,24 +167,24 @@ namespace Scripts.Mythik.Gumps
                                     BankCheck bc = new BankCheck(amount);
                                     m_Mobile.Backpack.DropItem(bc);
 
-                                    m_Mobile.SendMessage("A check for {0} gold pieces has been dropped in your back pack.", amount);
+                                    m_Mobile.SendMessage(Locale.GetLocale(m_Mobile).BANK_STONE_WITHDRAW_GOT_CHEQUE, amount);
                                 }
                                 else
                                 {
                                     Gold g = new Gold(amount);
                                     m_Mobile.Backpack.DropItem(g);
 
-                                    m_Mobile.SendMessage("{0} gold pieces have been dropped in your back pack", amount);
+                                    m_Mobile.SendMessage(Locale.GetLocale(m_Mobile).BANK_STONE_WITHDRAW_GOT_GOLD, amount);
                                 }
                             }
                             else
                             {
-                                m_Mobile.SendMessage("You do not have that much gold in your bank box.");
+                                m_Mobile.SendMessage(Locale.GetLocale(m_Mobile).BANK_STONE_WITHDRAW_NOT_ENOUGH);
                             }
                         }
                         else
                         {
-                            m_Mobile.SendMessage("You must enter a valid number.");
+                            m_Mobile.SendMessage(Locale.GetLocale(m_Mobile).BANK_STONE_WITHDRAW_INVALID);
                         }
 
                         break;

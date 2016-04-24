@@ -1,4 +1,5 @@
 ﻿using Scripts.Mythik.Gumps;
+using Scripts.Mythik.Localizations;
 using Server;
 using Server.Items;
 using Server.Mobiles;
@@ -30,7 +31,7 @@ namespace Scripts.Mythik.Items.Stones
         }
 
         [Constructable]
-        public TravelStone() : base(0xED4)
+        public TravelStone() : base(0x0EDE)
         {
             Movable = false;
             Hue = 0x12D;
@@ -53,7 +54,7 @@ namespace Scripts.Mythik.Items.Stones
                 }
                 else
                 {
-                    pm.SendMessage("You are already being teleported elsewhere!");
+                    pm.SendMessage(Locale.GetLocale(from).TRAVEL_STONE_TRAVELING);
                 }
             }
             else
@@ -123,7 +124,7 @@ namespace Scripts.Mythik.Items.Stones
                 }
                 else
                 {
-                    m_Mobile.SendMessage(String.Format("You do not have {0} gold to pay for this service!", m_Price));
+                    m_Mobile.SendMessage(String.Format(Locale.GetLocale(m_Mobile).TRAVEL_STONE_NO_GOLD, m_Price));
                 }
 
                 Stop();

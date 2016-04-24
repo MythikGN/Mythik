@@ -11,7 +11,7 @@ namespace Scripts.Mythik.Items.Stones
     public class BankStone : Item
     {
         [Constructable]
-        public BankStone() : base(0xED4)
+        public BankStone() : base(0x1174)
         {
             Movable = false;
             Hue = 0x029;
