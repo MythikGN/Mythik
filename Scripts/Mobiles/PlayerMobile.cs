@@ -2290,6 +2290,7 @@ namespace Server.Mobiles
 
 		public override void OnDeath( Container c )
 		{
+            BeginAction(new Scripts.Mythik.Items.Stones.DeathTimer(this));
 			if (m_NonAutoreinsuredItems > 0)
 			{
 				SendLocalizedMessage(1061115);
