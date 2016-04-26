@@ -2101,7 +2101,7 @@ namespace Server.Network
 			CityInfo[] info = state.CityInfo;
 			IAccount a = state.Account;
 
-			if ( info == null || a == null || cityIndex < 0 || cityIndex >= info.Length )
+			if ( info == null || a == null )
 			{
 				state.Dispose();
 			}
@@ -2119,7 +2119,11 @@ namespace Server.Network
 						return;
 					}
 				}
-
+                //Fix char creation on 203
+                if (cityIndex < 0 || cityIndex >= info.Length)
+                {
+                    cityIndex = 0;
+                }
 				state.Flags = (ClientFlags)flags;
 
 				CharacterCreatedEventArgs args = new CharacterCreatedEventArgs(
