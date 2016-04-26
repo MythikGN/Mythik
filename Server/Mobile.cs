@@ -36,6 +36,7 @@ using Server.Mobiles;
 using Server.Network;
 using Server.Prompts;
 using Server.Targeting;
+using System.Linq;
 
 namespace Server
 {
@@ -1500,8 +1501,16 @@ namespace Server
 		{
 			return ( _actions == null || !_actions.Contains( toLock ) );
 		}
+        public T GetAction<T>() where T : class
+        {
+            if (_actions != null)
+            {
+                return (T)_actions.Where(a => (a as T) != null ).FirstOrDefault();
+            }
+            return default(T);
+        }
 
-		public void EndAction( object toLock )
+        public void EndAction( object toLock )
 		{
 			if ( _actions != null ) {
 				_actions.Remove( toLock );
@@ -10914,7 +10923,7 @@ namespace Server
 		public virtual void OnSkillsQuery( Mobile from )
 		{
 			if( from == this )
-				Send( new SkillUpdate( m_Skills ) );
+				Send( new SkillUpdate( m_Skills, from ) );
 		}
 
 		/// <summary>
