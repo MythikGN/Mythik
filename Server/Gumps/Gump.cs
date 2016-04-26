@@ -24,6 +24,7 @@ using System.Collections.Generic;
 using System.Text;
 using Server;
 using Server.Network;
+using System.Linq;
 
 namespace Server.Gumps
 {
@@ -397,7 +398,27 @@ namespace Server.Gumps
 			for ( int i = 0; i < count; ++i )
 			{
 				e = m_Entries[i];
+                if (ns.Version.Major <= 3 && e is GumpHtmlLocalized)
+                {
+                    
+                    var localized = e as GumpHtmlLocalized;
+                    if (localized.Type == GumpHtmlLocalizedType.Color)
+                        localized.Type = GumpHtmlLocalizedType.Plain;
+                    if(localized.Number > 1053000)
+                    {
+                        var text = GetClioc(ns).Entries.Where(cl => cl.Number == localized.Number).FirstOrDefault()?.Text;
 
+                        if (text == null)
+                            text = "Failed";
+                        if (!string.IsNullOrWhiteSpace(localized.Args) && !localized.Args.Equals("0"))
+                        {
+
+                        }
+                        e = new GumpHtml(localized.X, localized.Y, localized.Width, localized.Height, text , localized.Background, localized.Scrollbar);
+                        e.Parent = localized.Parent;
+                    }
+                   
+                }
 				disp.AppendLayout( m_BeginLayout );
 				e.AppendTo( disp );
 				disp.AppendLayout( m_EndLayout );
@@ -412,6 +433,11 @@ namespace Server.Gumps
 
 			return disp as Packet;
 		}
+        private static Ultima.StringList _eng = new Ultima.StringList("ENU");
+        private static Ultima.StringList GetClioc(NetState ns)
+        {
+            return _eng;
+        } 
 
 		public virtual void OnResponse( NetState sender, RelayInfo info )
 		{
