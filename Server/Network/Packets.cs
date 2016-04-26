@@ -2030,11 +2030,13 @@ namespace Server.Network
 
 	public sealed class SkillUpdate : Packet
 	{
-		public SkillUpdate( Skills skills ) : base( 0x3A )
+		public SkillUpdate( Skills skills, Mobile from ) : base( 0x3A )
 		{
 			this.EnsureCapacity( 6 + (skills.Length * 9) );
-
-			m_Stream.Write( (byte) 0x02 ); // type: absolute, capped
+            if (from.NetState.Version.Major <= 3)
+                m_Stream.Write((byte)0x00);
+            else
+            m_Stream.Write( (byte) 0x02 ); // type: absolute, capped
 
 			for ( int i = 0; i < skills.Length; ++i )
 			{
@@ -2049,10 +2051,15 @@ namespace Server.Network
 					uv = 0xFFFF;
 
 				m_Stream.Write( (ushort) (s.Info.SkillID + 1) );
-				m_Stream.Write( (ushort) uv );
+                m_Stream.Write( (ushort) uv );
 				m_Stream.Write( (ushort) s.BaseFixedPoint );
-				m_Stream.Write( (byte) s.Lock );
-				m_Stream.Write( (ushort) s.CapFixedPoint );
+                m_Stream.Write((byte)s.Lock);
+                if (from.NetState.Version.Major > 3)
+                {
+                    
+                    m_Stream.Write((ushort)s.CapFixedPoint);
+                }
+
 			}
 
 			m_Stream.Write( (short) 0 ); // terminate
