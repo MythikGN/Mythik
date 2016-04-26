@@ -591,26 +591,31 @@ namespace Server.Network {
 			}
             if(this.Version != null && this.Version.Major < 3)
             {
+                //skils gump, journal gump, char creation
                 //Lets check for unsupported packets.
                 if(p is MessageLocalized)
                 {
                     var packet = p as MessageLocalized;
-                    string nameString = "";
-                    if (packet.labelNumber > 0 || packet.m_ItemID > 0)
+                    if(packet.labelNumber > 1053000)
                     {
-                        var entry = _stringList.Entries.Where(x => x.Number == packet.labelNumber).FirstOrDefault();
-                        if(entry != null)
-                            nameString =  entry.Text.Replace("%", "");
-                        else
+                        string nameString = "";
+                        if (packet.labelNumber > 0 || packet.m_ItemID > 0)
                         {
-                            var name = TileData.ItemTable[packet.m_ItemID & TileData.MaxItemValue];
-                            nameString = name.Name.Replace("%", "");
+                            var entry = _stringList.Entries.Where(x => x.Number == packet.labelNumber).FirstOrDefault();
+                            if (entry != null)
+                                nameString = entry.Text.Replace("%", "");
+                            else
+                            {
+                                var name = TileData.ItemTable[packet.m_ItemID & TileData.MaxItemValue];
+                                nameString = name.Name.Replace("%", "");
+                            }
                         }
+                        Send(new AsciiMessage(packet.m_Serial, packet.m_ItemID, packet.type, packet.hue, packet.font, "", nameString));
                     }
-                    Send(new AsciiMessage(packet.m_Serial, packet.m_ItemID, packet.type, packet.hue, packet.font, "", nameString));
+                   
                     return;
                 }
-                if(p is MessageLocalizedAffix)
+                if (p is MessageLocalizedAffix)
                 {
                     var packet = p as MessageLocalizedAffix;
                     var nameString = "";
