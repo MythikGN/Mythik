@@ -42,12 +42,12 @@ namespace Server.Engines.Harvest
 			HarvestDefinition oreAndStone = m_OreAndStone = new HarvestDefinition();
 
 			// Resource banks are every 8x8 tiles
-			oreAndStone.BankWidth = 8;
-			oreAndStone.BankHeight = 8;
+			oreAndStone.BankWidth = 1;
+			oreAndStone.BankHeight = 1;
 
 			// Every bank holds from 10 to 34 ore
-			oreAndStone.MinTotal = 10;
-			oreAndStone.MaxTotal = 34;
+			oreAndStone.MinTotal = 5;
+			oreAndStone.MaxTotal = 15;
 
 			// A resource bank will respawn its content every 10 to 20 minutes
 			oreAndStone.MinRespawn = TimeSpan.FromMinutes( 10.0 );
@@ -112,20 +112,29 @@ namespace Server.Engines.Harvest
 
 			if ( Core.ML )
 			{
-				oreAndStone.BonusResources = new BonusHarvestResource[]
-				{
-					new BonusHarvestResource( 0, 99.4, null, null ),	//Nothing
+                oreAndStone.BonusResources = new BonusHarvestResource[]
+                {
+                    new BonusHarvestResource( 0, 98.5, null, null ),	//Nothing
 					new BonusHarvestResource( 100, .1, 1072562, typeof( BlueDiamond ) ),
-					new BonusHarvestResource( 100, .1, 1072567, typeof( DarkSapphire ) ),
-					new BonusHarvestResource( 100, .1, 1072570, typeof( EcruCitrine ) ),
-					new BonusHarvestResource( 100, .1, 1072564, typeof( FireRuby ) ),
-					new BonusHarvestResource( 100, .1, 1072566, typeof( PerfectEmerald ) ),
-					new BonusHarvestResource( 100, .1, 1072568, typeof( Turquoise ) )
-				};
+                    new BonusHarvestResource( 100, .1, 1072567, typeof( DarkSapphire ) ),
+                    new BonusHarvestResource( 100, .1, 1072570, typeof( EcruCitrine ) ),
+                    new BonusHarvestResource( 100, .1, 1072564, typeof( FireRuby ) ),
+                    new BonusHarvestResource( 100, .1, 1072566, typeof( PerfectEmerald ) ),
+                    new BonusHarvestResource( 100, .1, 1072568, typeof( Turquoise ) ),
+                    new BonusHarvestResource(100,.1,"You have found a ruby gem!",typeof(Ruby)),
+                    new BonusHarvestResource(100,.1,"You have found a emerald gem!",typeof(Emerald)),
+                    new BonusHarvestResource(100,.1,"You have found a sapphire gem!",typeof(Sapphire)),
+                    new BonusHarvestResource(100,.1,"You have found a amber gem!",typeof(Amber)),
+                    new BonusHarvestResource(100,.1,"You have found a star sapphire gem!",typeof(StarSapphire)),
+                    new BonusHarvestResource(100,.1,"You have found a tourmaline gem!",typeof(Tourmaline)),
+                    new BonusHarvestResource(100,.1,"You have found a citrine gem!",typeof(Citrine)),
+                    new BonusHarvestResource(100,.1,"You have found a amethyst gem!",typeof(Amethyst)),
+                    new BonusHarvestResource(100,.1,"You have found a diamond gem!",typeof(Diamond)),
+                };
 			}
 
 			oreAndStone.RaceBonus = Core.ML;
-			oreAndStone.RandomizeVeins = Core.ML;
+            oreAndStone.RandomizeVeins = true;// Core.ML;
 
 			Definitions.Add( oreAndStone );
 			#endregion
