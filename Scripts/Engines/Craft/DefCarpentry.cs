@@ -1,5 +1,7 @@
 using System;
 using Server.Items;
+using Server.Multis.Deeds;
+using Scripts.Mythik.Items.Craftables;
 
 namespace Server.Engines.Craft
 {
@@ -358,7 +360,15 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( WaterTroughEastDeed ), 1044299, 1044349, 94.7, 119.7, typeof( Log ), 1044041, 150, 1044351 );
 			AddCraft( typeof( WaterTroughSouthDeed ), 1044299, 1044350, 94.7, 119.7, typeof( Log ), 1044041, 150, 1044351 );
 
-			MarkOption = true;
+
+            index = AddCraft((typeof(HouseDeedPart)), 1060390, 1072600, 65.0, 110.0, typeof(Log), 1044041, 300);
+            AddRes(index, typeof(IronIngot), "Iron Ingots", 300);
+            AddRes(index, typeof(StoneIngot), "Stone Ingots", 300);
+            AddCraft(typeof(StonePlasterHouseDeed), 1060390, 1011303, 70.0, 100.0, typeof(HouseDeedPart), "House Parts", 8);
+            AddCraft(typeof(SmallBrickHouseDeed), 1060390, 1011305, 70.0, 100.0, typeof(HouseDeedPart), "House Parts", 8);
+            AddCraft(typeof(WoodPlasterHouseDeed), 1060390, 1011307, 70.0, 100.0, typeof(HouseDeedPart), "House Parts", 8);
+           
+            MarkOption = true;
 			Repair = Core.AOS;
 
 			SetSubRes( typeof( Log ), 1072643 );

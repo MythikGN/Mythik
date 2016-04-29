@@ -3,6 +3,8 @@ using Server;
 using Server.Items;
 using Server.Factions;
 using Server.Targeting;
+using Scripts.Mythik.Items.Craftables.Tinkering.GemArmor;
+using Scripts.Mythik.Items.Craftables.Tinkering;
 
 namespace Server.Engines.Craft
 {
@@ -335,10 +337,43 @@ namespace Server.Engines.Craft
 			// Faction trap removal kit
 			index = AddCraft( typeof( FactionTrapRemovalKit ), 1044052, 1046445, 90.0, 115.0, typeof( Silver ), 1044572, 500, 1044253 );
 			AddRes( index, typeof( IronIngot ), 1044036, 10, 1044037 );
-			#endregion
+            #endregion
 
-			// Set the overridable material
-			SetSubRes( typeof( IronIngot ), 1044022 );
+
+            #region GemArmor
+            #region Ruby
+            index = AddCraft(typeof(RubyPlateHelm), "Gem Armor", "Ruby Plate Helm", 122.0, 180.0, typeof(IronIngot), 1044036, 30);
+            AddSkill(index, SkillName.Blacksmith, 122.0, 160.0);
+            AddRes(index, typeof(Ruby), 1044234, 240);
+            index = AddCraft(typeof(RubyPlateGorgot), "Gem Armor", "Ruby Plate Gorgot", 122.0, 180.0, typeof(IronIngot), 1044036, 25);
+            AddSkill(index, SkillName.Blacksmith, 122.0, 150.0);
+            AddRes(index, typeof(Ruby), 1044234, 160);
+            index = AddCraft(typeof(RubyPlateChest), "Gem Armor", "Ruby Plate Chest", 122.0, 180.0, typeof(IronIngot), 1044036, 50);
+            AddSkill(index, SkillName.Blacksmith, 122.0, 180.0);
+            AddRes(index, typeof(Ruby), 1044234, 400);
+            index = AddCraft(typeof(RubyPlateArms), "Gem Armor", "Ruby Plate Arms", 122.0, 180.0, typeof(IronIngot), 1044036, 40);
+            AddSkill(index, SkillName.Blacksmith, 122.0, 160.0);
+            AddRes(index, typeof(Ruby), 1044234, 288);
+            index = AddCraft(typeof(RubyPlateGloves), "Gem Armor", "Ruby Plate Gloves", 122.0, 180.0, typeof(IronIngot), 1044036, 30);
+            AddSkill(index, SkillName.Blacksmith, 122.0, 160.0);
+            AddRes(index, typeof(Ruby), 1044234, 192);
+            index = AddCraft(typeof(RubyPlateLegs), "Gem Armor", "Ruby Plate Legs", 122.0, 180.0, typeof(IronIngot), 1044036, 40);
+            AddSkill(index, SkillName.Blacksmith, 122.0, 170.0);
+            AddRes(index, typeof(Ruby), 1044234, 320);
+            index = AddCraft(typeof(RubyHeaterShield), "Gem Armor", "Ruby Heater Shield", 122.0, 180.0, typeof(IronIngot), 1044036, 50);
+            AddSkill(index, SkillName.Blacksmith, 122.0, 180.0);
+            AddRes(index, typeof(Ruby), 1044234, 288);
+            #endregion
+
+
+
+            #endregion
+
+            index = AddCraft(typeof(FusionCube), 1044050, "Fusion Cube", 80.0, 110.0, typeof(IronIngot), 1044036, 500);
+            AddSkill(index, SkillName.Magery, 75.0, 100.0);
+            AddRes(index, typeof(GoldIngot), 1027146, 500);
+            // Set the overridable material
+            SetSubRes( typeof( IronIngot ), 1044022 );
 
 			// Add every material you want the player to be able to choose from
 			// This will override the overridable material
@@ -357,6 +392,8 @@ namespace Server.Engines.Craft
 			CanEnhance = Core.AOS;
 		}
 	}
+
+    
 
 	public abstract class TrapCraft : CustomCraft
 	{
