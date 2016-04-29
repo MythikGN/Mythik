@@ -7,6 +7,7 @@ using Server.Factions;
 using AMA = Server.Items.ArmorMeditationAllowance;
 using AMT = Server.Items.ArmorMaterialType;
 using ABT = Server.Items.ArmorBodyType;
+using Scripts.Mythik.Items.Craftables.Tinkering.GemArmor;
 
 namespace Server.Items
 {
@@ -678,7 +679,12 @@ namespace Server.Items
 
 				from.Delta( MobileDelta.Armor ); // Tell them armor rating has changed
 			}
-		}
+            if (this as IItemSet != null)
+            {
+                if (parent is Mobile)
+                    CheckSetPartAdded((Mobile)parent);
+            }
+        }
 
 		public virtual double ScaleArmorByDurability( double armor )
 		{
@@ -1282,8 +1288,12 @@ namespace Server.Items
 				((Mobile)parent).Delta( MobileDelta.Armor ); // Tell them armor rating has changed
 				m.CheckStatTimers();
 			}
-
-			base.OnRemoved( parent );
+            if (this as IItemSet != null)
+            {
+                if (parent is Mobile)
+                    CheckSetPartRemoved((Mobile)parent);
+            }
+            base.OnRemoved( parent );
 		}
 
 		public virtual int OnHit( BaseWeapon weapon, int damageTaken )

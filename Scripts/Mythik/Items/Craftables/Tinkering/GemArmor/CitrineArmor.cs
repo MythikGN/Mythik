@@ -9,25 +9,24 @@ using System.Threading.Tasks;
 namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
 {
    
-
-    public class RubyPlateChest : PlateChest, IItemSet
+    public class CitrinePlateChest : PlateChest, IItemSet
     {
         public BaseGearSet GetItemSet
         {
             get
             {
-                return ItemSets.RubySet; ;
+                return ItemSets.CitrineSet; ;
             }
         }
 
         [Constructable]
-        public RubyPlateChest() : base()
+        public CitrinePlateChest() : base()
         {
-            Name = "ruby platemail chest";
+            Name = "citrine platemail chest";
             Hue = GetItemSet.Hue;
             SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
         }
-        public RubyPlateChest(Serial serial) : base(serial)
+        public CitrinePlateChest(Serial serial) : base(serial)
         {
 
         }
@@ -41,24 +40,24 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         }
     }
 
-    public class RubyPlateLegs : PlateLegs, IItemSet
+    public class CitrinePlateLegs : PlateLegs, IItemSet
     {
         public BaseGearSet GetItemSet
         {
             get
             {
-                return ItemSets.RubySet; ;
+                return ItemSets.CitrineSet; ;
             }
         }
 
         [Constructable]
-        public RubyPlateLegs() : base()
+        public CitrinePlateLegs() : base()
         {
-            Name = "ruby platemail legs";
+            Name = "citrine platemail legs";
             Hue = GetItemSet.Hue;
             SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
         }
-        public RubyPlateLegs(Serial serial) : base(serial)
+        public CitrinePlateLegs(Serial serial) : base(serial)
         {
 
         }
@@ -72,24 +71,24 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         }
     }
 
-    public class RubyPlateHelm : PlateHelm, IItemSet
+    public class CitrinePlateHelm : PlateHelm, IItemSet
     {
         public BaseGearSet GetItemSet
         {
             get
             {
-                return ItemSets.RubySet; ;
+                return ItemSets.CitrineSet; ;
             }
         }
 
         [Constructable]
-        public RubyPlateHelm() : base()
+        public CitrinePlateHelm() : base()
         {
-            Name = "ruby platemail helm";
+            Name = "citrine platemail helm";
             Hue = GetItemSet.Hue;
             SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
         }
-        public RubyPlateHelm(Serial serial) : base(serial)
+        public CitrinePlateHelm(Serial serial) : base(serial)
         {
 
         }
@@ -103,24 +102,24 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         }
     }
 
-    public class RubyPlateGorgot : PlateGorget, IItemSet
+    public class CitrinePlateGorgot : PlateGorget, IItemSet
     {
         public BaseGearSet GetItemSet
         {
             get
             {
-                return ItemSets.RubySet; ;
+                return ItemSets.CitrineSet; ;
             }
         }
 
         [Constructable]
-        public RubyPlateGorgot() : base()
+        public CitrinePlateGorgot() : base()
         {
-            Name = "ruby platemail gorgot";
+            Name = "citrine platemail gorgot";
             Hue = GetItemSet.Hue;
             SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
         }
-        public RubyPlateGorgot(Serial serial) : base(serial)
+        public CitrinePlateGorgot(Serial serial) : base(serial)
         {
 
         }
@@ -133,24 +132,24 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
             base.Deserialize(reader);
         }
     }
-    public class RubyPlateArms : PlateArms, IItemSet
+    public class CitrinePlateArms : PlateArms, IItemSet
     {
         public BaseGearSet GetItemSet
         {
             get
             {
-                return ItemSets.RubySet; ;
+                return ItemSets.CitrineSet; ;
             }
         }
 
         [Constructable]
-        public RubyPlateArms() : base()
+        public CitrinePlateArms() : base()
         {
-            Name = "ruby platemail arms";
+            Name = "citrine platemail arms";
             Hue = GetItemSet.Hue;
             SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
         }
-        public RubyPlateArms(Serial serial) : base(serial)
+        public CitrinePlateArms(Serial serial) : base(serial)
         {
 
         }
@@ -163,24 +162,24 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
             base.Deserialize(reader);
         }
     }
-    public class RubyPlateGloves : PlateGloves, IItemSet
+    public class CitrinePlateGloves : PlateGloves, IItemSet
     {
         public BaseGearSet GetItemSet
         {
             get
             {
-                return ItemSets.RubySet; ;
+                return ItemSets.CitrineSet; ;
             }
         }
 
         [Constructable]
-        public RubyPlateGloves() : base()
+        public CitrinePlateGloves() : base()
         {
-            Name = "ruby platemail gloves";
+            Name = "citrine platemail gloves";
             Hue = GetItemSet.Hue;
             SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
         }
-        public RubyPlateGloves(Serial serial) : base(serial)
+        public CitrinePlateGloves(Serial serial) : base(serial)
         {
 
         }
@@ -194,24 +193,24 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         }
     }
 
-    public class RubyHeaterShield : HeaterShield, IItemSet
+    public class CitrineHeaterShield : HeaterShield, IItemSet
     {
         public BaseGearSet GetItemSet
         {
             get
             {
-                return ItemSets.RubySet; ;
+                return ItemSets.CitrineSet; ;
             }
         }
 
         [Constructable]
-        public RubyHeaterShield() : base()
+        public CitrineHeaterShield() : base()
         {
-            Name = "ruby heater shield";
+            Name = "citrine heater shield";
             Hue = GetItemSet.Hue;
             SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
         }
-        public RubyHeaterShield(Serial serial) : base(serial)
+        public CitrineHeaterShield(Serial serial) : base(serial)
         {
 
         }
