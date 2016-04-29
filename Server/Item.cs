@@ -2698,7 +2698,7 @@ namespace Server
 		}
 
 		public void SendInfoTo( NetState state ) {
-			SendInfoTo( state, ObjectPropertyList.Enabled );
+			SendInfoTo( state, ObjectPropertyList.Enabled && state?.Version?.Major > 3);
 		}
 
 		public virtual void SendInfoTo( NetState state, bool sendOplPacket ) {
@@ -4448,11 +4448,6 @@ namespace Server
 
 		public virtual void OnAosSingleClick( Mobile from )
 		{
-            if(from.NetState.Version.Major <= 3)
-            {
-                OnSingleClick(from);
-                return;
-            }
 			ObjectPropertyList opl = this.PropertyList;
 
 			if ( opl.Header > 0 )
@@ -4696,5 +4691,119 @@ namespace Server
 		public virtual void OnSectorDeactivate()
 		{
 		}
-	}
+
+       
+
+        internal int GetSetCount(Mobile from, Type type)
+        {
+            int TotalPieces = 0;
+
+            //Check our Hand Armor
+            if (from.HandArmor != null)
+            {
+                if (from.HandArmor.GetType().IsSubclassOf(type))
+                {
+                    TotalPieces++;
+                }
+            }
+
+            //Check our Chest Armor
+            if (from.ChestArmor != null)
+            {
+                if (from.ChestArmor.GetType().IsSubclassOf(type))
+                {
+                    TotalPieces++;
+                }
+            }
+
+            //Check our Legs Armor
+            if (from.LegsArmor != null)
+            {
+                if (from.LegsArmor.GetType().IsSubclassOf(type))
+                {
+                    TotalPieces++;
+                }
+            }
+
+            //Check our Neck Armor
+            if (from.NeckArmor != null)
+            {
+                if (from.NeckArmor.GetType().IsSubclassOf(type))
+                {
+                    TotalPieces++;
+                }
+            }
+
+            //Check our Head Armor
+            if (from.HeadArmor != null)
+            {
+                if (from.HeadArmor.GetType().IsSubclassOf(type))
+                {
+                    TotalPieces++;
+                }
+            }
+
+            //Check our Shield Armor
+            if (from.ShieldArmor != null)
+            {
+                if (from.ShieldArmor.GetType().IsSubclassOf(type))
+                {
+                    TotalPieces++;
+                }
+            }
+
+            //Check our Shield Armor
+            if (from.ArmsArmor != null)
+            {
+                if (from.ArmsArmor.GetType().IsSubclassOf(type))
+                {
+                    TotalPieces++;
+                }
+            }
+
+            return TotalPieces;
+        }
+        public void CheckSetPartRemoved(Mobile parent)
+        {
+            //already know we are an IItemSet
+            var setItem = this as IItemSet;
+            var cnt = GetSetCount(parent, setItem.GetItemSet.GetType());
+
+            if (cnt < setItem.GetItemSet.SetPiecesForBonus)
+            {
+                parent.RemoveSkillMod(setItem.GetItemSet.SetBonusSkillMod);
+            }
+        }
+
+        public void CheckSetPartAdded(Mobile parent)
+        {
+            var setItem = this as IItemSet;
+            var cnt = GetSetCount(parent, setItem.GetItemSet.GetType());
+
+            if (cnt >= setItem.GetItemSet.SetPiecesForBonus)
+            {
+                parent.AddSkillMod(setItem.GetItemSet.SetBonusSkillMod);
+            }
+        }
+    }
+    public interface IItemSet
+    {
+        BaseGearSet GetItemSet { get; }
+    }
+    public abstract class BaseGearSet
+    {
+        public SkillMod SetBonusSkillMod;
+        public int Hue;
+        public SkillMod ItemBonus;
+        public int SetPiecesForBonus;
+        //TODO extend to effects sounds etc
+
+        public BaseGearSet(SkillMod SetBonus, int setPieces, int hue, SkillMod ItemBonus)
+        {
+            SetBonusSkillMod = SetBonus;
+            SetPiecesForBonus = setPieces;
+            Hue = hue;
+            this.ItemBonus = ItemBonus;
+        }
+    }
 }
