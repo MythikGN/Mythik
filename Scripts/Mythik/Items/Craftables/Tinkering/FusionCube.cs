@@ -18,7 +18,6 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering
             new FusionCubeRecipe(typeof(IronIngot),"Iron Ingots", 1, typeof(Log),"Logs", 2,true),
             new FusionCubeRecipe(typeof(Log),"Logs", 1, typeof(IronIngot),"Iron Ingots", 2,true),
             new FusionCubeRecipe(typeof(GreaterHealPotion),"Greater Heal Potion", 1, typeof(HealPotion),"Heal Potion",3,true),
-            new FusionCubeRecipe(typeof(DullCopperIngot),"Dull Copper Ingot", 1, typeof(IronIngot),"Iron Ingots", 3,true),
         };
         class FusionCubeRecipe
         {
@@ -178,14 +177,14 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering
                 this.AddBackground(25, 25, 364, 436, 9300);
                 this.AddLabel(143, 32, 0, @"Fusion Recipes");
                 this.AddImage(200, 60, 2701);
-                this.AddLabel(50, 60, 0, @"Input");
+                this.AddLabel(90, 60, 0, @"Input");
                 this.AddLabel(290, 60, 0, @"Output");
                 this.AddButton(350, 30, 1151, 1150, 1, GumpButtonType.Reply, 0);
                 int y = 90;
                 foreach(var rec in FusionCube.m_Recipes)
                 {
-                    AddLabel(200, y, 0, rec.m_createdAmount + " " + rec.m_createdName.String);
-                    AddLabel(50, y, 0, rec.m_Resources[0].Amount + " " + rec.m_Resources[0].NameString);
+                    AddLabel(210, y, 0, rec.m_createdAmount + " " + rec.m_createdName.String);
+                    AddLabel(40, y, 0, rec.m_Resources[0].Amount + " " + rec.m_Resources[0].NameString);
                     y += 20;
                 }
                 
