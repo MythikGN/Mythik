@@ -13,20 +13,20 @@ namespace Server
 
 			bool Enabled = Core.AOS;
 
-			Mobile.InsuranceEnabled = Enabled;
-			ObjectPropertyList.Enabled = !Enabled;
+			Mobile.InsuranceEnabled = !Enabled;
+			ObjectPropertyList.Enabled = true;
 			Mobile.VisibleDamageType = Enabled ? VisibleDamageType.Related : VisibleDamageType.None;
 			Mobile.GuildClickMessage = !Enabled;
 			Mobile.AsciiClickMessage = !Enabled;
 
-			if ( Enabled )
+			if (true)
 			{
 				AOS.DisableStatInfluences();
 
                 //Disable prop lists for now to keep 203 working, renable for 4+ only.
 
-				//if ( ObjectPropertyList.Enabled )
-				//	PacketHandlers.SingleClickProps = true; // single click for everything is overriden to check object property list
+				if ( ObjectPropertyList.Enabled )
+					PacketHandlers.SingleClickProps = true; // single click for everything is overriden to check object property list
 			}
 		}
 	}
