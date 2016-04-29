@@ -1412,7 +1412,7 @@ namespace Server.Network
 
 				if ( m != null && from.CanSee( m ) && Utility.InUpdateRange( from, m ) )
 				{
-					if ( m_SingleClickProps )
+					if ( m_SingleClickProps && state?.Version?.Major > 3 )
 					{
 						m.OnAosSingleClick( from );
 					}
@@ -1429,7 +1429,7 @@ namespace Server.Network
 
 				if ( item != null && !item.Deleted && from.CanSee( item ) && Utility.InUpdateRange( from.Location, item.GetWorldLocation() ) )
 				{
-					if ( m_SingleClickProps )
+					if (m_SingleClickProps && state?.Version?.Major > 3)
 					{
 						item.OnAosSingleClick( from );
 					}

@@ -591,6 +591,10 @@ namespace Server.Network {
 			}
             if(this.Version != null && this.Version.Major < 3)
             {
+                if(p is ObjectPropertyList || p is OPLInfo)
+                {
+                    return;
+                }
                 //skils gump, journal gump, char creation
                 //Lets check for unsupported packets.
                 if(p is MessageLocalized)
