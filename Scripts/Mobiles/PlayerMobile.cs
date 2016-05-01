@@ -92,6 +92,8 @@ namespace Server.Mobiles
 			}
 		}
 
+        public bool HasSetLanguageSkills { get; set; }
+
 		private DesignContext m_DesignContext;
 
 		private NpcGuild m_NpcGuild;
@@ -3055,6 +3057,8 @@ namespace Server.Mobiles
 
 			if( Hidden )	//Hiding is the only buff where it has an effect that's serialized.
 				AddBuff( new BuffInfo( BuffIcon.HidingAndOrStealth, 1075655 ) );
+
+            HasSetLanguageSkills = reader.ReadBool();
 		}
 
 		public override void Serialize( GenericWriter writer )
@@ -3182,6 +3186,7 @@ namespace Server.Mobiles
 			writer.Write( m_LongTermElapse );
 			writer.Write( m_ShortTermElapse );
 			writer.Write( this.GameTime );
+            writer.Write(HasSetLanguageSkills);
 		}
 
 		public static void CheckAtrophies( Mobile m )

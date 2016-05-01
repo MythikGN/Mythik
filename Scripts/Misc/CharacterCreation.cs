@@ -663,7 +663,7 @@ namespace Server.Misc
 			AddBackpack( newChar );
 
 			SetStats( newChar, state, args.Str, args.Dex, args.Int );
-			SetSkills( newChar, args.Skills, args.Profession );
+			//SetSkills( newChar, args.Skills, args.Profession );
 
 			Race race = newChar.Race;
 
@@ -894,8 +894,8 @@ namespace Server.Misc
 				dex = 10;
 				intel = 10;
 			}
-
-			m.InitStats( str, dex, intel );
+            m.InitStats(75, 75, 75);
+			//m.InitStats( str, dex, intel );
 		}
 
 		private static void SetName( Mobile m, string name )
