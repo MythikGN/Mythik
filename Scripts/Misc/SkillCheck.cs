@@ -7,7 +7,7 @@ namespace Server.Misc
 {
 	public class SkillCheck
 	{
-		private static readonly bool AntiMacroCode = !Core.ML;		//Change this to false to disable anti-macro code
+        private static readonly bool AntiMacroCode = false;// !Core.ML;		//Change this to false to disable anti-macro code
 
 		public static TimeSpan AntiMacroExpire = TimeSpan.FromMinutes( 5.0 ); //How long do we remember targets/locations?
 		public const int Allowance = 3;	//How many times may we use the same location/target for gain
@@ -273,9 +273,9 @@ namespace Server.Misc
 
 			switch ( stat )
 			{
-				case Stat.Str: return ( from.StrLock == StatLockType.Up && from.RawStr < 125 );
-				case Stat.Dex: return ( from.DexLock == StatLockType.Up && from.RawDex < 125 );
-				case Stat.Int: return ( from.IntLock == StatLockType.Up && from.RawInt < 125 );
+				case Stat.Str: return ( from.StrLock == StatLockType.Up && from.RawStr < 100 );
+				case Stat.Dex: return ( from.DexLock == StatLockType.Up && from.RawDex < 100);
+				case Stat.Int: return ( from.IntLock == StatLockType.Up && from.RawInt < 100);
 			}
 
 			return false;
