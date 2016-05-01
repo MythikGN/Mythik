@@ -46,7 +46,7 @@ namespace Server.Mobiles
 
 		public virtual NpcGuild NpcGuild { get { return NpcGuild.None; } }
 
-		public virtual bool IsInvulnerable { get { return true; } }
+		public virtual bool IsInvulnerable { get { return false; } }
 
 		public virtual DateTime NextTrickOrTreat { get { return m_NextTrickOrTreat; } set { m_NextTrickOrTreat = value; } }
 
