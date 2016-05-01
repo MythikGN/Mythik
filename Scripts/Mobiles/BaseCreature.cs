@@ -15,6 +15,7 @@ using Server.SkillHandlers;
 using Server.Spells.Bushido;
 using Server.Spells.Spellweaving;
 using Server.Spells.Necromancy;
+using Scripts.Mythik.Systems.Loot;
 
 namespace Server.Mobiles
 {
@@ -4391,13 +4392,13 @@ namespace Server.Mobiles
         private string GetMonsterDifficultyLevelText()
         {
             var diff = BaseInstrument.GetBaseDifficulty(this);
-            if (diff < 25)
+            if (diff < 35)
                 return "Easy";
-            if (diff < 50)
+            if (diff < 60)
                 return "Moderate";
-            if (diff < 75)
+            if (diff < 85)
                 return "Intermediate";
-            if (diff < 95)
+            if (diff < 105)
                 return "Difficult";
             return "Challenging";
         }
@@ -4444,10 +4445,12 @@ namespace Server.Mobiles
 				}
 			}
 
-			if ( !Summoned && !NoKillAwards && !m_HasGeneratedLoot )
+            if ( !Summoned && !NoKillAwards && !m_HasGeneratedLoot )
 			{
-				m_HasGeneratedLoot = true;
+                MythikLootSystem.GenerateLoot(this);
+                m_HasGeneratedLoot = true;
 				GenerateLoot( false );
+
 			}
 
 			if ( !NoKillAwards && Region.IsPartOf( "Doom" ) )
@@ -4457,6 +4460,7 @@ namespace Server.Mobiles
 				if ( bones > 0 )
 					PackItem( new DaemonBone( bones ) );
 			}
+
 
 			if ( IsAnimatedDead )
 				Effects.SendLocationEffect( Location, Map, 0x3728, 13, 1, 0x461, 4 );
@@ -4735,6 +4739,7 @@ namespace Server.Mobiles
 					bool givenQuestKill = false;
 					bool givenFactionKill = false;
 					bool givenToTKill = false;
+                    bool givenMythikRare = false;
 
 					for ( int i = 0; i < list.Count; ++i )
 					{
@@ -4780,6 +4785,12 @@ namespace Server.Mobiles
 						}
 
 						OnKilledBy( ds.m_Mobile );
+                        if(!givenMythikRare)
+                        {
+                            givenMythikRare = true;
+                            MythikLootSystem.HandleKill(this, ds.m_Mobile);
+                        }
+                        
 
 						if ( !givenFactionKill )
 						{
