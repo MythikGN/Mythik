@@ -1022,7 +1022,7 @@ namespace Server
 		public Skills( Mobile owner )
 		{
 			m_Owner = owner;
-			m_Cap = 7000;
+			m_Cap = 70000;
 
 			SkillInfo[] info = SkillInfo.Table;
 
