@@ -984,6 +984,8 @@ namespace Server.Items
 
 		public virtual void OnBeforeSwing( Mobile attacker, Mobile defender )
 		{
+            if (attacker is PlayerMobile && defender is PlayerMobile)
+                return;
 			WeaponAbility a = WeaponAbility.GetCurrentAbility( attacker );
 
 			if( a != null && !a.OnBeforeSwing( attacker, defender ) )
@@ -2343,16 +2345,21 @@ namespace Server.Items
 
 		public virtual int ComputeDamage( Mobile attacker, Mobile defender )
 		{
-			if ( Core.AOS )
-				return ComputeDamageAOS( attacker, defender );
+            if(attacker is PlayerMobile && defender is PlayerMobile)
+            {
+                int damage = (int)ScaleDamageOld(attacker, GetBaseDamage(attacker), true);
 
-			int damage = (int)ScaleDamageOld( attacker, GetBaseDamage( attacker ), true );
+                // pre-AOS, halve damage if the defender is a player or the attacker is not a player
+                if (defender is PlayerMobile || !(attacker is PlayerMobile))
+                    damage = (int)(damage / 2.0);
 
-			// pre-AOS, halve damage if the defender is a player or the attacker is not a player
-			if ( defender is PlayerMobile || !( attacker is PlayerMobile ) )
-				damage = (int)(damage / 2.0);
+                return damage;
+            }
 
-			return damage;
+			//if ( Core.AOS )
+		    return ComputeDamageAOS( attacker, defender );
+
+			
 		}
 
 		public virtual void PlayHurtAnimation( Mobile from )

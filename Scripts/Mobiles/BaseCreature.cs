@@ -976,9 +976,9 @@ namespace Server.Mobiles
 			}
 
 			chance += bonus;
-
-			if ( chance >= 0 && chance < 200 )
-				chance = 200;
+            //Original min chance is 20% changed to 80%
+			if ( chance >= 0 && chance < 800 )
+				chance = 800;
 			else if ( chance > 990 )
 				chance = 990;
 
