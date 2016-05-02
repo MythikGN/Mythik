@@ -29,16 +29,18 @@ namespace Scripts.Mythik.Commands
         {
             if (Config.Enabled)
             {
-                //CommandSystem.Register("homehomehome", AccessLevel.Player, new CommandEventHandler(OnCommand));
-                CommandSystem.Register("HomeHomeHome", AccessLevel.Player, new CommandEventHandler(OnCommand));
-            }
+                    EventSink.Speech += new SpeechEventHandler(EventSink_Speed);
+              }
                 
         }
 
-        [Usage("HomeHomeHome")]
-        [Description("Teleports you to the Neutral Zone")]
-        static void OnCommand(CommandEventArgs e)
+        private static void EventSink_Speed(SpeechEventArgs e)
         {
+            if (e.Mobile.Alive)
+                return;
+            if (!Insensitive.StartsWith(e.Speech, "homehomehome"))
+                return;
+
             var m = e.Mobile;
             if(m.AccessLevel == AccessLevel.Player)
             {
