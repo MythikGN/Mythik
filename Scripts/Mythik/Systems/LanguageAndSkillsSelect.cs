@@ -32,7 +32,7 @@ namespace Scripts.Mythik.Systems
         {
             public SkillsSelectGump() : base(25,25)
             {
-                this.Closable = false;
+                this.Closable = true;
                 this.Disposable = true;
                 this.Dragable = false;
                 this.Resizable = false;
@@ -67,6 +67,7 @@ namespace Scripts.Mythik.Systems
                 {
                     sender.Mobile.SendMessage("Please select two Skills.");
                     sender.Mobile.SendGump(this);
+                    return;
                 }
                 var skillA = (SkillName)info.Switches[0];
                 var skillB = (SkillName)info.Switches[1];

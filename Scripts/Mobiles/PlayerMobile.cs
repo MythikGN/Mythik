@@ -93,8 +93,10 @@ namespace Server.Mobiles
 		}
 
         public bool HasSetLanguageSkills { get; set; }
+        public bool AuctionEnabled { get; internal set; }
 
-		private DesignContext m_DesignContext;
+
+        private DesignContext m_DesignContext;
 
 		private NpcGuild m_NpcGuild;
 		private DateTime m_NpcGuildJoinTime;
@@ -3059,6 +3061,7 @@ namespace Server.Mobiles
 				AddBuff( new BuffInfo( BuffIcon.HidingAndOrStealth, 1075655 ) );
 
             HasSetLanguageSkills = reader.ReadBool();
+            AuctionEnabled = reader.ReadBool();
 		}
 
 		public override void Serialize( GenericWriter writer )
@@ -3187,6 +3190,7 @@ namespace Server.Mobiles
 			writer.Write( m_ShortTermElapse );
 			writer.Write( this.GameTime );
             writer.Write(HasSetLanguageSkills);
+            writer.Write(AuctionEnabled);
 		}
 
 		public static void CheckAtrophies( Mobile m )
@@ -4376,11 +4380,13 @@ namespace Server.Mobiles
 			}
 		}
 
-		#endregion
 
-		#region Buff Icons
 
-		public void ResendBuffs()
+        #endregion
+
+        #region Buff Icons
+
+        public void ResendBuffs()
 		{
 			if( !BuffInfo.Enabled || m_BuffTable == null )
 				return;
