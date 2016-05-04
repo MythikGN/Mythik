@@ -677,6 +677,14 @@ namespace Server.Items
             if (from.NetState.Version.Major <= 3)
             {
                  base.OnSingleClick(from);
+                if(!SkillBonuses.IsEmpty)
+                {
+                    if(SkillBonuses.Skill_1_Value > 0)
+                        from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 1800, 1, "[ +" + SkillBonuses.Skill_1_Value + " " + SkillBonuses.Skill_1_Name.ToString() + " ]", ""));
+                    if (SkillBonuses.Skill_2_Value > 0)
+                        from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 1800, 1, "[ +" + SkillBonuses.Skill_2_Value + " " + SkillBonuses.Skill_2_Name.ToString() + " ]", ""));
+
+                }
                 return;
             }
                 

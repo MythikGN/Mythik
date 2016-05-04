@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Server;
 
 namespace Scripts.Mythik.Items.Uniques
 {
@@ -16,6 +17,7 @@ namespace Scripts.Mythik.Items.Uniques
                 return 2;
             }
         }
+        [Constructable]
         public TamingShirt()
         {
             Hue = 0xaa;
@@ -23,6 +25,17 @@ namespace Scripts.Mythik.Items.Uniques
             SkillBonuses.SetValues(0, Server.SkillName.AnimalTaming, 4.0);
         }
 
-       
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+            writer.Write((int)1);
+        }
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            var version = reader.ReadInt();
+        }
+
+
     }
 }
