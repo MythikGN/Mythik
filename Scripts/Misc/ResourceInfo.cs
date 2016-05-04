@@ -15,6 +15,17 @@ namespace Server.Items
 		Agapite,
 		Verite,
 		Valorite,
+        Rose,
+        Bloodrock,
+        Blackrock,
+        Stone,
+        Platnium,
+        Carbon,
+        Kevlar,
+        Delta,
+        Liquid,
+        Ragnarok,
+
 
 		RegularLeather = 101,
 		SpinedLeather,
@@ -34,7 +45,13 @@ namespace Server.Items
 		YewWood,
 		Heartwood,
 		Bloodwood,
-		Frostwood
+		Frostwood,
+
+        CedarWood,
+        WalnutWood,
+        WillowWood,
+        CyprussWood
+
 	}
 
 	public enum CraftResourceType
@@ -100,21 +117,40 @@ namespace Server.Items
 		public int RunicMinIntensity{ get{ return m_RunicMinIntensity; } set{ m_RunicMinIntensity = value; } }
 		public int RunicMaxIntensity{ get{ return m_RunicMaxIntensity; } set{ m_RunicMaxIntensity = value; } }
 
-		public CraftAttributeInfo()
+        //Old attribs for PvP
+        public int ArmorOldAR { get { return m_ArmorOldAR; } set { m_ArmorOldAR = value; } }
+
+        public CraftAttributeInfo()
 		{
 		}
 
 		public static readonly CraftAttributeInfo Blank;
 		public static readonly CraftAttributeInfo DullCopper, ShadowIron, Copper, Bronze, Golden, Agapite, Verite, Valorite;
-		public static readonly CraftAttributeInfo Spined, Horned, Barbed;
+        public static readonly CraftAttributeInfo Rose, Bloodrock, Blackrock, Stone, Platnium, Carbon, Kevlar, Delta, Liquid, Ragnarok;
+
+        public static readonly CraftAttributeInfo Spined, Horned, Barbed;
 		public static readonly CraftAttributeInfo RedScales, YellowScales, BlackScales, GreenScales, WhiteScales, BlueScales;
 		public static readonly CraftAttributeInfo OakWood, AshWood, YewWood, Heartwood, Bloodwood, Frostwood;
+        public static readonly CraftAttributeInfo CedarWood, WalnutWood, WillowWood, CyprussWood;
+        private int m_ArmorOldAR;
 
-		static CraftAttributeInfo()
+        static CraftAttributeInfo()
 		{
 			Blank = new CraftAttributeInfo();
 
-			CraftAttributeInfo dullCopper = DullCopper = new CraftAttributeInfo();
+            CraftAttributeInfo rose = Rose = new CraftAttributeInfo();
+            CraftAttributeInfo bloodrock = Bloodrock = new CraftAttributeInfo();
+            CraftAttributeInfo blackrock = Blackrock = new CraftAttributeInfo();
+            CraftAttributeInfo stone = Stone = new CraftAttributeInfo();
+            CraftAttributeInfo platnium = Platnium = new CraftAttributeInfo();
+            CraftAttributeInfo carbon = Carbon = new CraftAttributeInfo();
+            CraftAttributeInfo kevlar = Kevlar = new CraftAttributeInfo();
+            CraftAttributeInfo delta = Delta = new CraftAttributeInfo();
+            CraftAttributeInfo liquid = Liquid = new CraftAttributeInfo();
+            CraftAttributeInfo ragnarok = Ragnarok = new CraftAttributeInfo();
+
+
+            CraftAttributeInfo dullCopper = DullCopper = new CraftAttributeInfo();
 
 			dullCopper.ArmorPhysicalResist = 6;
 			dullCopper.ArmorDurability = 50;
@@ -202,9 +238,9 @@ namespace Server.Items
 			golden.ArmorFireResist = 1;
 			golden.ArmorColdResist = 2;
 			golden.ArmorEnergyResist = 2;
-			golden.ArmorLuck = 40;
+			//golden.ArmorLuck = 40;
 			golden.ArmorLowerRequirements = 30;
-			golden.WeaponLuck = 40;
+			//golden.WeaponLuck = 40;
 			golden.WeaponLowerRequirements = 50;
 			golden.RunicMinAttributes = 3;
 			golden.RunicMaxAttributes = 4;
