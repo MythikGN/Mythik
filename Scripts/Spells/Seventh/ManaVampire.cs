@@ -75,8 +75,9 @@ namespace Server.Spells.Seventh
 				if ( toDrain > (Caster.ManaMax - Caster.Mana) )
 					toDrain = Caster.ManaMax - Caster.Mana;
 
-				m.Mana -= toDrain;
-				Caster.Mana += toDrain;
+                //Did nothing on Santiago.
+				//m.Mana -= toDrain;
+				//Caster.Mana += toDrain;
 
 				if ( Core.AOS )
 				{

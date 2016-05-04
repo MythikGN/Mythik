@@ -3,6 +3,7 @@ using System.Collections;
 using Server;
 using Server.Targeting;
 using Server.Network;
+using Server.Mobiles;
 
 namespace Server.Spells.Fifth
 {
@@ -51,7 +52,7 @@ namespace Server.Spells.Fifth
 
 		public override void OnCast()
 		{
-			if ( Core.AOS )
+			if ( Core.AOS && !( Caster is PlayerMobile ) )
 			{
 				/* The magic reflection spell decreases the caster's physical resistance, while increasing the caster's elemental resistances.
 				 * Physical decrease = 25 - (Inscription/20).

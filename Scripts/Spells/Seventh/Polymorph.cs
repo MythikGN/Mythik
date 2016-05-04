@@ -209,7 +209,7 @@ namespace Server.Spells.Seventh
 				if ( val > 120 )
 					val = 120;
 
-				Delay = TimeSpan.FromSeconds( val );
+				Delay = TimeSpan.FromSeconds( val * 4 );
 				Priority = TimerPriority.OneSecond;
 			}
 

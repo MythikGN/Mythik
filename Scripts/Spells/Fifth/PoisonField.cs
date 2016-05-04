@@ -172,7 +172,7 @@ namespace Server.Spells.Fifth
 
 				Poison p;
 
-				if ( Core.AOS )
+				if ( Core.AOS || !(m is PlayerMobile) )
 				{
 					int total = (m_Caster.Skills.Magery.Fixed + m_Caster.Skills.Poisoning.Fixed) / 2;
 

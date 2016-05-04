@@ -1,6 +1,7 @@
 using System;
 using Server.Targeting;
 using Server.Network;
+using Server.Mobiles;
 
 namespace Server.Spells.Third
 {
@@ -114,8 +115,10 @@ namespace Server.Spells.Third
 						else
 							level = 0;
 					}
-
-					m.ApplyPoison( Caster, Poison.GetPoison( level ) );
+                    if(Caster is PlayerMobile && m is PlayerMobile)
+                        m.ApplyPoison(Caster, Poison.Regular);
+                    else
+                    m.ApplyPoison( Caster, Poison.GetPoison( level ) );
 				}
 
 				m.FixedParticles( 0x374A, 10, 15, 5021, EffectLayer.Waist );

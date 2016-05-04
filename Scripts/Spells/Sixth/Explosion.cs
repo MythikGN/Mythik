@@ -1,6 +1,7 @@
 using System;
 using Server.Targeting;
 using Server.Network;
+using Server.Mobiles;
 
 namespace Server.Spells.Sixth
 {
@@ -15,13 +16,23 @@ namespace Server.Spells.Sixth
 			);
 
 		public override SpellCircle Circle { get { return SpellCircle.Sixth; } }
-
-		public ExplosionSpell( Mobile caster, Item scroll )
+        public override Tuple<int, int> SphereDamage
+        {
+            get
+            {
+                return new Tuple<int, int>(15, 35);
+            }
+        }
+        public override int GetMana()
+        {
+            return 20;
+        }
+        public ExplosionSpell( Mobile caster, Item scroll )
 			: base( caster, scroll, m_Info )
 		{
 		}
 
-		public override bool DelayedDamageStacking { get { return !Core.AOS; } }
+		public override bool DelayedDamageStacking { get { return false; } }
 
 		public override void OnCast()
 		{
@@ -104,13 +115,17 @@ namespace Server.Spells.Sixth
 					m_Target.FixedParticles( 0x36BD, 20, 10, 5044, EffectLayer.Head );
 					m_Target.PlaySound( 0x307 );
 
-					SpellHelper.Damage( m_Spell, m_Target, damage, 0, 100, 0, 0, 0 );
+                    if (m_Defender is PlayerMobile && m_Attacker is PlayerMobile)
+                        damage = m_Spell.GetSphereDamage(m_Attacker, m_Defender, m_Spell.SphereDamage);
+
+                        SpellHelper.Damage( m_Spell, m_Target, damage, 0, 100, 0, 0, 0 );
 
 					if ( m_Spell != null )
 						m_Spell.RemoveDelayedDamageContext( m_Attacker );
 				}
 			}
 		}
+      
 
 		private class InternalTarget : Target
 		{

@@ -939,7 +939,8 @@ namespace Server.Spells
 				if( target is BaseCreature )
 					((BaseCreature)target).CheckReflect( caster, ref reflect );
 
-				if( target.MagicDamageAbsorb <= 0 )
+                //Only one spell reflected if your in PvP
+				if( target.MagicDamageAbsorb <= 0 || (target is PlayerMobile && caster is PlayerMobile) )
 				{
 					target.MagicDamageAbsorb = 0;
 					DefensiveSpell.Nullify( target );
@@ -953,6 +954,7 @@ namespace Server.Spells
 					caster = target;
 					target = temp;
 				}
+
 			}
 			else if( target is BaseCreature )
 			{
@@ -969,6 +971,7 @@ namespace Server.Spells
 					target = temp;
 				}
 			}
+            
 		}
 
 		public static void Damage( Spell spell, Mobile target, double damage )

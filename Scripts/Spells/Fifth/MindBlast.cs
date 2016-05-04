@@ -1,6 +1,7 @@
 using System;
 using Server.Targeting;
 using Server.Network;
+using Server.Mobiles;
 
 namespace Server.Spells.Fifth
 {
@@ -15,8 +16,14 @@ namespace Server.Spells.Fifth
 				Reagent.Nightshade,
 				Reagent.SulfurousAsh
 			);
-
-		public override SpellCircle Circle { get { return SpellCircle.Fifth; } }
+        public override Tuple<int, int> SphereDamage
+        {
+            get
+            {
+                return new Tuple<int, int>(5, 20);
+            }
+        }
+        public override SpellCircle Circle { get { return SpellCircle.Fifth; } }
 
 		public MindBlastSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{
@@ -74,6 +81,8 @@ namespace Server.Spells.Fifth
 
 					if ( damage > 60 )
 						damage = 60;
+                    if (from is PlayerMobile && target is PlayerMobile)
+                        damage = GetSphereDamage(from, target, SphereDamage);
 
 					Timer.DelayCall( TimeSpan.FromSeconds( 1.0 ),
 						new TimerStateCallback( AosDelay_Callback ),
