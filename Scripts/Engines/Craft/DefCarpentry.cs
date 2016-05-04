@@ -223,7 +223,7 @@ namespace Server.Engines.Craft
 				AddRes( index, typeof( Cloth ), 1044286, 5, 1044287 );
 			}
 
-			if( Core.SE )
+			/*if( Core.SE )
 			{
 				index = AddCraft( typeof( Bokuto ), 1044295, 1030227, 70.0, 95.0, typeof( Log ), 1044041, 6, 1044351 );
 				SetNeededExpansion( index, Expansion.SE );
@@ -233,7 +233,7 @@ namespace Server.Engines.Craft
 
 				index = AddCraft( typeof( Tetsubo ), 1044295, 1030225, 80.0, 140.3, typeof( Log ), 1044041, 10, 1044351 );
 				SetNeededExpansion( index, Expansion.SE );
-			}
+			}*/
 
 			// Instruments
 			index = AddCraft( typeof( LapHarp ), 1044293, 1023762, 63.1, 88.1, typeof( Log ), 1044041, 20, 1044351 );

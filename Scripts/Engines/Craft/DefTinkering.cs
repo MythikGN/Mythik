@@ -341,6 +341,31 @@ namespace Server.Engines.Craft
 
 
             #region GemArmor
+
+            #region Amber
+            index = AddCraft(typeof(AmberPlateHelm), "Gem Armor", "Amber Plate Helm", 110.0, 140.0, typeof(Amber), "Ambers", 240);
+            AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(AmberPlateGorgot), "Gem Armor", "Amber Plate Gorgot", 110.0, 140.0, typeof(Amber), "Ambers", 160);
+            AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
+            AddRes(index, typeof(IronIngot), 1044036, 25);
+            index = AddCraft(typeof(AmberPlateChest), "Gem Armor", "Amber Plate Chest", 110.0, 140.0, typeof(Amber), "Ambers", 400);
+            AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
+            AddRes(index, typeof(IronIngot), 1044036, 50);
+            index = AddCraft(typeof(AmberPlateArms), "Gem Armor", "Amber Plate Arms", 110.0, 140.0, typeof(Amber), "Ambers", 288);
+            AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
+            AddRes(index, typeof(IronIngot), 1044036, 40);
+            index = AddCraft(typeof(AmberPlateGloves), "Gem Armor", "Amber Plate Gloves", 110.0, 140.0, typeof(Amber), "Ambers", 192);
+            AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(AmberPlateLegs), "Gem Armor", "Amber Plate Legs", 110.0, 140.0, typeof(Amber), "Ambers", 320);
+            AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(AmberHeaterShield), "Gem Armor", "Amber Heater Shield", 110.0, 140.0, typeof(Amber), "Ambers", 288);
+            AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
+            AddRes(index, typeof(IronIngot), 1044036, 40);
+            #endregion
+
             #region Ruby
             index = AddCraft(typeof(RubyPlateHelm), "Gem Armor", "Ruby Plate Helm", 122.0, 180.0, typeof(IronIngot), 1044036, 30);
             AddSkill(index, SkillName.Blacksmith, 122.0, 160.0);
