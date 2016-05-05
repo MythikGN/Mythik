@@ -11045,7 +11045,7 @@ namespace Server
 			if( m_NameHue != -1 )
 				hue = m_NameHue;
 			else if( AccessLevel > AccessLevel.Player )
-				hue = 11;
+				hue = 0x4E;
 			else
 				hue = Notoriety.GetHue( Notoriety.Compute( from, this ) );
 

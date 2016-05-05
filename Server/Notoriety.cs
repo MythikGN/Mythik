@@ -60,7 +60,7 @@ namespace Server
         private static int[] m_Hues = new int[]
         {
                 0x00,
-                0x0480,
+                0x61,
                 0x0044,
                 0x03b2,
                 0x079C,
