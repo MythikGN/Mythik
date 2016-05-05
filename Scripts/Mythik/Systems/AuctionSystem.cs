@@ -3,6 +3,7 @@ using Server;
 using Server.Commands;
 using Server.Items;
 using Server.Mobiles;
+using Server.Targeting;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -99,7 +100,7 @@ namespace Scripts.Mythik.Systems
         private void Broadcast(string msg)
         {
             foreach (var pm in m_ListeningToAuction)
-                pm.SendMessage(1800,msg);
+                pm.SendMessage(0xBAD,msg);
         }
 
         private void OnAuction(CommandEventArgs e)
@@ -114,6 +115,7 @@ namespace Scripts.Mythik.Systems
 
             pm.SendMessage("Select an Item to Auction");
             pm.BeginTarget(1, false, Server.Targeting.TargetFlags.None, OnAuctionItemTargeted);
+            pm.Target = new AuctionTarget(OnAuctionItemTargeted);
             m_auctionStatus = AuctionStatus.Starting;
             if(e.Arguments.Length > 0)
             {
@@ -123,18 +125,42 @@ namespace Scripts.Mythik.Systems
                     m_StartPrice = price;
             }
         }
+        private class AuctionTarget : Target
+        {
+            private TargetCallback m_Callback;
 
+            public AuctionTarget(TargetCallback callback)
+                : base(1, false, TargetFlags.None)
+            {
+                m_Callback = callback;
+            }
+
+            protected override void OnTarget(Mobile from, object targeted)
+            {
+                if (m_Callback != null)
+                    m_Callback(from, targeted);
+            }
+            protected override void OnTargetCancel(Mobile from, TargetCancelType cancelType)
+            {
+                base.OnTargetCancel(from, cancelType);
+                if (m_Callback != null)
+                    m_Callback(from, null);
+            }
+        }
         private void OnAuctionItemTargeted(Mobile from, object targeted)
+
         {
             var item = targeted as Item;
             if(item == null || item is BaseContainer)
             {
                 from.SendMessage("Only items can be auctioned.");
+                m_auctionStatus = AuctionStatus.Ready;
                 return;
             }
             if (!from.Backpack.Items.Contains(item))
             {
                 from.SendMessage("The item must be in your backpack to auction.");
+                m_auctionStatus = AuctionStatus.Ready;
                 return;
             }
             this.AddItem(item);
@@ -165,13 +191,13 @@ namespace Scripts.Mythik.Systems
         {
             private AuctionSystem m_System;
             private Stopwatch _timeLeft =  Stopwatch.StartNew();
-            public AuctionTimer(AuctionSystem system) : base(TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(10),3)
+            public AuctionTimer(AuctionSystem system) : base(TimeSpan.FromSeconds(0), TimeSpan.FromSeconds(9),4)
             {
                 m_System = system;     
             }
             protected override void OnTick()
             {
-                if(this.Next == null)
+                if(this.Next == null || new TimeSpan(0, 0, 30) - _timeLeft.Elapsed < TimeSpan.FromSeconds(1))
                 {
                     m_System.EndAuction();
                 }
