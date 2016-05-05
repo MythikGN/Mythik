@@ -600,7 +600,7 @@ namespace Server.Network {
                 if(p is MessageLocalized)
                 {
                     var packet = p as MessageLocalized;
-                    if(packet.labelNumber > 1053000)
+                    if (packet.labelNumber > 0)// 1053000)
                     {
                         string nameString = "";
                         if (packet.labelNumber > 0 || packet.m_ItemID > 0)
