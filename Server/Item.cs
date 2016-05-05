@@ -4466,8 +4466,14 @@ namespace Server
 
 			if ( ns != null )
 			{
-                
-				if ( this.Name == null )
+                if (this is IUniqueItem)
+                {
+                    var uni = this as IUniqueItem;
+                    ns.Send(new AsciiMessage(m_Serial, m_ItemID, MessageType.Label, 2061, 3, "","[ Unique Lvl:" + uni.UniqueLevel + " ]"));
+                    ns.Send(new UnicodeMessage(m_Serial, m_ItemID, MessageType.Label, 0x803, 3, "ENU", "", this.Name ?? "" + (m_Amount > 1 ? " : " + m_Amount : "")));
+                    return;
+                }
+                if ( this.Name == null )
 				{
 					if ( m_Amount <= 1)
                         ns.Send( new MessageLocalized( m_Serial, m_ItemID, MessageType.Label, 0x3B2, 3, LabelNumber, "", "" ) );
@@ -4476,6 +4482,7 @@ namespace Server
 				}
 				else
 				{
+                    
 					ns.Send( new UnicodeMessage( m_Serial, m_ItemID, MessageType.Label, 0x3B2, 3, "ENU", "", this.Name + ( m_Amount > 1 ? " : " + m_Amount : "" ) ) );
 				}
 			}
@@ -4786,6 +4793,13 @@ namespace Server
             }
         }
     }
+
+    public interface IUniqueItem
+    {
+        int UniqueLevel { get; }
+        void OnSingleClick(Mobile from);
+    }
+
     public interface IItemSet
     {
         BaseGearSet GetItemSet { get; }

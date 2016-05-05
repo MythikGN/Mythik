@@ -1561,14 +1561,14 @@ namespace Server.Items
             if (from.NetState.Version.Major <= 3)
             {
                 base.OnSingleClick(from);
-                from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x37b, 3, "[ AR: " + this.ArmorRating + " Dura: " + this.HitPoints + "/" + this.MaxHitPoints + " ]", ""));
+                from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3b2, 3, "", "[ AR: " + this.ArmorRating + " Dura: " + this.HitPoints + "/" + this.MaxHitPoints + " ]"));
 
                 if (!SkillBonuses.IsEmpty)
                 {
                     if (SkillBonuses.Skill_1_Value > 0)
-                        from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 1800, 1, "[ +" + SkillBonuses.Skill_1_Value + " " + SkillBonuses.Skill_1_Name.ToString() + " ]", ""));
+                        from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x803, 3, "", "[ +" + SkillBonuses.Skill_1_Value + " " + SkillBonuses.Skill_1_Name.ToString() + " ]"));
                     if (SkillBonuses.Skill_2_Value > 0)
-                        from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 1800, 1, "[ +" + SkillBonuses.Skill_2_Value + " " + SkillBonuses.Skill_2_Name.ToString() + " ]", ""));
+                        from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x803, 3, "", "[ +" + SkillBonuses.Skill_2_Value + " " + SkillBonuses.Skill_2_Name.ToString() + " ]"));
 
                 }
                 return;
