@@ -1,5 +1,7 @@
 using System;
 using Server.Items;
+using Scripts.Mythik.Items.Craftables.Alch;
+using Scripts.Mythik.Items.Misc;
 
 namespace Server.Engines.Craft
 {
@@ -154,7 +156,7 @@ namespace Server.Engines.Craft
 			index = AddCraft( typeof( GreaterExplosionPotion ), 1044537, 1044557, 65.0, 115.0, typeof( SulfurousAsh ), 1044359, 10, 1044367 );
 			AddRes( index, typeof ( Bottle ), 1044529, 1, 500315 );
 
-			if( Core.SE )
+            /*if( Core.SE )
 			{
 				index = AddCraft( typeof( SmokeBomb ), 1044537, 1030248, 90.0, 120.0, typeof( Eggs ), 1044477, 1, 1044253 );
 				AddRes( index, typeof ( Ginseng ), 1044356, 3, 1044364 );
@@ -174,7 +176,14 @@ namespace Server.Engines.Craft
 				index = AddCraft( typeof(GreaterConfusionBlastPotion), 1044109, 1072109, 65.0, 115.0, typeof(PigIron), 1023978, 10, 1044253 );
 				AddRes( index, typeof(Bottle), 1044529, 1, 500315 );
 				SetNeededExpansion(index, Expansion.SE);
-			}
-		}
+			}*/
+
+            index = AddCraft(typeof(ShrinkPotion), "Mythik Potions", "Shrink Potion", 110.0, 140.0, typeof(BatWing), 1023960, 50, 1044253);
+            AddRes(index, typeof(Bottle), 1044529, 1, 500315);
+            index = AddCraft(typeof(ShrinkPotion), "Mythik Potions", "Mana Potion", 65.1, 90.0, typeof(EyeOfNewt), 1023975, 5, 1044253);
+            AddRes(index, typeof(Bottle), 1044529, 1, 500315);
+            index = AddCraft(typeof(ShrinkPotion), "Mythik Potions", "Shrink Potion", 95.1, 125.0, typeof(BatWing), 1023975, 10, 1044253);
+            AddRes(index, typeof(Bottle), 1044529, 1, 500315);
+        }
 	}
 }
