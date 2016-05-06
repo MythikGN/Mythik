@@ -144,9 +144,9 @@ namespace Server.Multis
 						m.SendLocalizedMessage( 501293 ); // Welcome back to the house, friend!
 				}
 
-				if ( m_Owner.IsAosRules )
-					m.SendGump( new HouseGumpAOS( HouseGumpPageAOS.Information, m, m_Owner ) );
-				else
+				//if ( m_Owner.IsAosRules )
+				//	m.SendGump( new HouseGumpAOS( HouseGumpPageAOS.Information, m, m_Owner ) );
+				//else
 					m.SendGump( new HouseGump( m, m_Owner ) );
 			}
 		}
