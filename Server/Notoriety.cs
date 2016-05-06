@@ -46,7 +46,7 @@ namespace Server
 			set{ m_Handler = value; }
 		}
 
-        /*private static int[] m_Hues = new int[]
+        private static int[] m_Hues = new int[]
 			{
 				0x000,
 				0x059,
@@ -56,18 +56,8 @@ namespace Server
 				0x090,
 				0x022,
 				0x035
-			};*/
-        private static int[] m_Hues = new int[]
-        {
-                0x00,
-                0x61,
-                0x0044,
-                0x03b2,
-                0x079C,
-                0x079C,
-                0x079C,
-                0x035
-        };
+			};
+
         public static int[] Hues
 		{
 			get{ return m_Hues; }
