@@ -160,12 +160,12 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( Axle ), 1044042, 1024187, -25.0, 25.0, typeof( Log ), 1044041, 2, 1044351 );
 			AddCraft( typeof( RollingPin ), 1044042, 1024163, 0.0, 50.0, typeof( Log ), 1044041, 5, 1044351 );
 
-			if( Core.SE )
+			/*if( Core.SE )
 			{
 				index = AddCraft( typeof( Nunchaku ), 1044042, 1030158, 70.0, 120.0, typeof( IronIngot ), 1044036, 3, 1044037 );
 				AddRes( index, typeof( Log ), 1044041, 8, 1044351 );
 				SetNeededExpansion( index, Expansion.SE );
-			}
+			}*/
 			#endregion
 
 			#region Tools
@@ -204,13 +204,13 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( Hinge ), 1044047, 1024181, 5.0, 55.0, typeof( IronIngot ), 1044036, 2, 1044037 );
 			AddCraft( typeof( BolaBall ), 1044047, 1023699, 45.0, 95.0, typeof( IronIngot ), 1044036, 10, 1044037 );
 
-			if ( Core.ML )
+			/*if ( Core.ML )
 			{
 				index = AddCraft( typeof( JeweledFiligree ), 1044047, 1072894, 70.0, 110.0, typeof( IronIngot ), 1044036, 2, 1044037 );
 				AddRes( index, typeof( StarSapphire ), 1044231, 1, 1044253 );
 				AddRes( index, typeof( Ruby ), 1044234, 1, 1044253 );
 				SetNeededExpansion( index, Expansion.ML );
-			}
+			}*/
 			#endregion
 
 			#region Utensils
@@ -238,26 +238,26 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( Lantern ), 1044050, 1022597, 30.0, 80.0, typeof( IronIngot ), 1044036, 2, 1044037 );
 			AddCraft( typeof( HeatingStand ), 1044050, 1026217, 60.0, 110.0, typeof( IronIngot ), 1044036, 4, 1044037 );
 
-			if ( Core.SE )
-			{
+			//if ( Core.SE )
+			//{
 				index = AddCraft( typeof( ShojiLantern ), 1044050, 1029404, 65.0, 115.0, typeof( IronIngot ), 1044036, 10, 1044037 );
 				AddRes( index, typeof( Log ), 1044041, 5, 1044351 );
-				SetNeededExpansion( index, Expansion.SE );
+				//SetNeededExpansion( index, Expansion.SE );
 
 				index = AddCraft( typeof( PaperLantern ), 1044050, 1029406, 65.0, 115.0, typeof( IronIngot ), 1044036, 10, 1044037 );
 				AddRes( index, typeof( Log ), 1044041, 5, 1044351 );
-				SetNeededExpansion( index, Expansion.SE );
+				//SetNeededExpansion( index, Expansion.SE );
 
 				index = AddCraft( typeof( RoundPaperLantern ), 1044050, 1029418, 65.0, 115.0, typeof( IronIngot ), 1044036, 10, 1044037 );
 				AddRes( index, typeof( Log ), 1044041, 5, 1044351 );
-				SetNeededExpansion( index, Expansion.SE );
+				//SetNeededExpansion( index, Expansion.SE );
 
 				index = AddCraft( typeof( WindChimes ), 1044050, 1030290, 80.0, 130.0, typeof( IronIngot ), 1044036, 15, 1044037 );
-				SetNeededExpansion( index, Expansion.SE );
+				//SetNeededExpansion( index, Expansion.SE );
 
 				index = AddCraft( typeof( FancyWindChimes ), 1044050, 1030291, 80.0, 130.0, typeof( IronIngot ), 1044036, 15, 1044037 );
-				SetNeededExpansion( index, Expansion.SE );
-			}
+				//SetNeededExpansion( index, Expansion.SE );
+			//}
 			#endregion
 
 			#region Jewelry
@@ -366,6 +366,30 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(IronIngot), 1044036, 40);
             #endregion
 
+            #region Citrine
+            index = AddCraft(typeof(CitrinePlateHelm), "Gem Armor", "Citrine Plate Helm", 112.0, 180.0, typeof(IronIngot), 1044036, 30);
+            AddSkill(index, SkillName.Blacksmith, 122.0, 160.0);
+            AddRes(index, typeof(Citrine), 1044235, 240);
+            index = AddCraft(typeof(CitrinePlateGorgot), "Gem Armor", "Citrine Plate Gorgot", 112.0, 180.0, typeof(IronIngot), 1044036, 25);
+            AddSkill(index, SkillName.Blacksmith, 122.0, 150.0);
+            AddRes(index, typeof(Citrine), 1044235, 160);
+            index = AddCraft(typeof(CitrinePlateChest), "Gem Armor", "Citrine Plate Chest", 112.0, 180.0, typeof(IronIngot), 1044036, 50);
+            AddSkill(index, SkillName.Blacksmith, 122.0, 180.0);
+            AddRes(index, typeof(Citrine), 1044235, 400);
+            index = AddCraft(typeof(CitrinePlateArms), "Gem Armor", "Citrine Plate Arms", 112.0, 180.0, typeof(IronIngot), 1044036, 40);
+            AddSkill(index, SkillName.Blacksmith, 122.0, 160.0);
+            AddRes(index, typeof(Citrine), 1044235, 288);
+            index = AddCraft(typeof(CitrinePlateGloves), "Gem Armor", "Citrine Plate Gloves", 112.0, 180.0, typeof(IronIngot), 1044036, 30);
+            AddSkill(index, SkillName.Blacksmith, 122.0, 160.0);
+            AddRes(index, typeof(Citrine), 1044235, 192);
+            index = AddCraft(typeof(CitrinePlateLegs), "Gem Armor", "Citrine Plate Legs", 112.0, 180.0, typeof(IronIngot), 1044036, 40);
+            AddSkill(index, SkillName.Blacksmith, 122.0, 170.0);
+            AddRes(index, typeof(Citrine), 1044235, 320);
+            index = AddCraft(typeof(CitrineHeaterShield), "Gem Armor", "Citrine Heater Shield", 112.0, 180.0, typeof(IronIngot), 1044036, 50);
+            AddSkill(index, SkillName.Blacksmith, 122.0, 180.0);
+            AddRes(index, typeof(Citrine), 1044235, 288);
+            #endregion
+
             #region Ruby
             index = AddCraft(typeof(RubyPlateHelm), "Gem Armor", "Ruby Plate Helm", 122.0, 180.0, typeof(IronIngot), 1044036, 30);
             AddSkill(index, SkillName.Blacksmith, 122.0, 160.0);
@@ -414,7 +438,7 @@ namespace Server.Engines.Craft
 
 			MarkOption = true;
 			Repair = true;
-			CanEnhance = Core.AOS;
+            CanEnhance = false;// Core.AOS;
 		}
 	}
 
