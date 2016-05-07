@@ -11,9 +11,9 @@ namespace Scripts.Mythik.Items.Craftables.Alch
 {
     public class ManaPotion : BaseManaPotion
     {
-        public override int MinHeal { get { return 25; } }
-        public override int MaxHeal { get { return 50; } }
-        public override double Delay { get { return 10.0; } }
+        public override int MinHeal { get { return 20; } }
+        public override int MaxHeal { get { return 40; } }
+        public override double Delay { get { return 14.0; } }
 
         [Constructable]
         public ManaPotion() : base(PotionEffect.Mana)
@@ -40,9 +40,9 @@ namespace Scripts.Mythik.Items.Craftables.Alch
     }
     public class TotalManaPotion : BaseManaPotion
     {
-        public override int MinHeal { get { return 50; } }
-        public override int MaxHeal { get { return 75; } }
-        public override double Delay { get { return 10.0; } }
+        public override int MinHeal { get { return 40; } }
+        public override int MaxHeal { get { return 60; } }
+        public override double Delay { get { return 14.0; } }
 
         [Constructable]
         public TotalManaPotion() : base(PotionEffect.ManaTotal)
