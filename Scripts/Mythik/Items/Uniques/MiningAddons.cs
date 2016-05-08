@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Scripts.Mythik.Items.Uniques
 {
-    public class TinkeringCap : SkullCap, IUniqueItem
+    public class DamagedMiningHat : WizardsHat, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -18,13 +18,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public TinkeringCap()
+        public DamagedMiningHat()
         {
-            Hue = 0x07AA;
-            Name = "Cap of Greater Tinkering";
-            SkillBonuses.SetValues(0, Server.SkillName.Tinkering, 2.0);
+            Hue = 0x082E;
+            Name = "Damaged Mining Hat";
+            SkillBonuses.SetValues(0, Server.SkillName.Mining, 2.0);
         }
-        public TinkeringCap(Serial serial) : base(serial)
+        public DamagedMiningHat(Serial serial) : base(serial)
         {
 
         }
@@ -42,7 +42,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class TinkeringShirt : Shirt, IUniqueItem
+    public class MinersBoots : ThighBoots, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -52,13 +52,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public TinkeringShirt()
+        public MinersBoots()
         {
-            Hue = 0x07AA;
-            Name = "Shirt of Better Tinkering";
-            SkillBonuses.SetValues(0, Server.SkillName.Tinkering, 4.0);
+            Hue = 0x082E;
+            Name = "Greater Boots of Mining";
+            SkillBonuses.SetValues(0, Server.SkillName.Mining, 4.0);
         }
-        public TinkeringShirt(Serial serial) : base(serial)
+        public MinersBoots(Serial serial) : base(serial)
         {
 
         }
@@ -76,7 +76,8 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class TinkeringPants : LongPants, IUniqueItem
+
+    public class MiningShirt : Shirt, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -86,13 +87,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public TinkeringPants()
+        public MiningShirt()
         {
-            Hue = 0x07AA;
-            Name = "Long Pants of Tinkering";
-            SkillBonuses.SetValues(0, Server.SkillName.Tinkering, 6.0);
+            Hue = 0x082E;
+            Name = "Greater Mining Shirt";
+            SkillBonuses.SetValues(0, Server.SkillName.Mining, 6.0);
         }
-        public TinkeringPants(Serial serial) : base(serial)
+        public MiningShirt(Serial serial) : base(serial)
         {
 
         }
@@ -110,7 +111,8 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class TinkeringGloves : LeatherGloves, IUniqueItem
+
+    public class MiningPants : LongPants, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -120,13 +122,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public TinkeringGloves()
+        public MiningPants()
         {
-            Hue = 0x07AA;
-            Name = "Tinker's Safety Gloves";
-            SkillBonuses.SetValues(0, Server.SkillName.Tinkering, 8.0);
+            Hue = 0x082E;
+            Name = "Long Pants of Mining";
+            SkillBonuses.SetValues(0, Server.SkillName.Mining, 8.0);
         }
-        public TinkeringGloves(Serial serial) : base(serial)
+        public MiningPants(Serial serial) : base(serial)
         {
 
         }
@@ -145,7 +147,7 @@ namespace Scripts.Mythik.Items.Uniques
 
     }
 
-    public class TinkeringApron : FullApron, IUniqueItem
+    public class MiningRobe : FullApron, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -155,13 +157,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public TinkeringApron()
+        public MiningRobe()
         {
-            Hue = 0x07AA;
-            Name = "Tinker's Full Apron";
-            SkillBonuses.SetValues(0, Server.SkillName.Tinkering, 10.0);
+            Hue = 0x082E;
+            Name = "Robe of Geology";
+            SkillBonuses.SetValues(0, Server.SkillName.Mining, 10.0);
         }
-        public TinkeringApron(Serial serial) : base(serial)
+        public MiningRobe(Serial serial) : base(serial)
         {
 
         }

@@ -10,11 +10,11 @@ namespace Scripts.Mythik.Items.Uniques
 {
     public class TamingSkirt : Skirt, IUniqueItem
     {
-        public int UniqueLevel
+        public RareLevel UniqueLevel
         {
             get
             {
-                return 1;
+                return RareLevel.UniqueLvl1;
             }
         }
         [Constructable]
@@ -42,7 +42,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class TamingShirt : FancyShirt, IUniqueItem
+   /* public class TamingShirt : FancyShirt, IUniqueItem
     {
         public int UniqueLevel
         {
@@ -75,14 +75,14 @@ namespace Scripts.Mythik.Items.Uniques
         }
 
 
-    }
+    }*/
     public class TamingCloak : Cloak, IUniqueItem
     {
-        public int UniqueLevel
+        public RareLevel UniqueLevel
         {
             get
             {
-                return 2;
+                return RareLevel.UniqueLvl2;
             }
         }
         [Constructable]
@@ -112,11 +112,11 @@ namespace Scripts.Mythik.Items.Uniques
     }
     public class TamingBoots : Boots, IUniqueItem
     {
-        public int UniqueLevel
+        public RareLevel UniqueLevel
         {
             get
             {
-                return 3;
+                return RareLevel.UniqueLvl3;
             }
         }
         [Constructable]
@@ -146,11 +146,11 @@ namespace Scripts.Mythik.Items.Uniques
     }
     public class TamingRobe : Robe, IUniqueItem
     {
-        public int UniqueLevel
+        public RareLevel UniqueLevel
         {
             get
             {
-                return 4;
+                return RareLevel.UniqueLvl4;
             }
         }
         [Constructable]
@@ -178,7 +178,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class TamingDoublet : Robe, IUniqueItem
+   /* public class TamingDoublet : Robe, IUniqueItem
     {
         public int UniqueLevel
         {
@@ -211,15 +211,15 @@ namespace Scripts.Mythik.Items.Uniques
         }
 
 
-    }
+    }*/
 
     public class TamingCrook : ShepherdsCrook, IUniqueItem
     {
-        public int UniqueLevel
+        public RareLevel UniqueLevel
         {
             get
             {
-                return 4;
+                return RareLevel.UniqueLvl4;
             }
         }
         [Constructable]

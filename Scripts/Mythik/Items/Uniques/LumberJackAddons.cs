@@ -10,11 +10,11 @@ namespace Scripts.Mythik.Items.Uniques
 {
     public class LumberjackCap : Cap, IUniqueItem
     {
-        public int UniqueLevel
+        public RareLevel UniqueLevel
         {
             get
             {
-                return 1;
+                return RareLevel.UniqueLvl1;
             }
         }
         [Constructable]
@@ -44,11 +44,11 @@ namespace Scripts.Mythik.Items.Uniques
     }
     public class LumberjackGloves : LeatherGloves, IUniqueItem
     {
-        public int UniqueLevel
+        public RareLevel UniqueLevel
         {
             get
             {
-                return 2;
+                return RareLevel.UniqueLvl2;
             }
         }
         [Constructable]
@@ -79,11 +79,11 @@ namespace Scripts.Mythik.Items.Uniques
 
     public class LumberjackShirt : LeatherGloves, IUniqueItem
     {
-        public int UniqueLevel
+        public RareLevel UniqueLevel
         {
             get
             {
-                return 3;
+                return RareLevel.UniqueLvl3;
             }
         }
         [Constructable]
@@ -114,11 +114,11 @@ namespace Scripts.Mythik.Items.Uniques
 
     public class LumberjackPants : LongPants, IUniqueItem
     {
-        public int UniqueLevel
+        public RareLevel UniqueLevel
         {
             get
             {
-                return 4;
+                return RareLevel.UniqueLvl4;
             }
         }
         [Constructable]
@@ -149,11 +149,11 @@ namespace Scripts.Mythik.Items.Uniques
 
     public class LumberjackApron : FullApron, IUniqueItem
     {
-        public int UniqueLevel
+        public RareLevel UniqueLevel
         {
             get
             {
-                return 5;
+                return RareLevel.UniqueLvl5;
             }
         }
         [Constructable]

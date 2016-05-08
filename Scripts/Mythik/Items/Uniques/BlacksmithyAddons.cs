@@ -10,11 +10,11 @@ namespace Scripts.Mythik.Items.Uniques
 {
     public class BlacksmithyArms : LeatherArms, IUniqueItem
     {
-        public int UniqueLevel
+        public RareLevel UniqueLevel
         {
             get
             {
-                return 1;
+                return RareLevel.UniqueLvl1;
             }
         }
         [Constructable]
@@ -44,11 +44,11 @@ namespace Scripts.Mythik.Items.Uniques
     }
     public class BlacksmithShoes : Shoes, IUniqueItem
     {
-        public int UniqueLevel
+        public RareLevel UniqueLevel
         {
             get
             {
-                return 2;
+                return RareLevel.UniqueLvl2;
             }
         }
         [Constructable]
@@ -78,11 +78,11 @@ namespace Scripts.Mythik.Items.Uniques
     }
     public class BlacksmithBandana : Bandana, IUniqueItem
     {
-        public int UniqueLevel
+        public RareLevel UniqueLevel
         {
             get
             {
-                return 3;
+                return RareLevel.UniqueLvl3;
             }
         }
         [Constructable]
@@ -112,11 +112,11 @@ namespace Scripts.Mythik.Items.Uniques
     }
     public class BlacksmithApron : HalfApron, IUniqueItem
     {
-        public int UniqueLevel
+        public RareLevel UniqueLevel
         {
             get
             {
-                return 4;
+                return RareLevel.UniqueLvl4;
             }
         }
         [Constructable]
@@ -147,11 +147,11 @@ namespace Scripts.Mythik.Items.Uniques
 
     public class BlacksmithHammer : AncientSmithyHammer, IUniqueItem
     {
-        public int UniqueLevel
+        public RareLevel UniqueLevel
         {
             get
             {
-                return 5;
+                return RareLevel.UniqueLvl5;
             }
         }
         [Constructable]
