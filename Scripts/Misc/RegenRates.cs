@@ -147,8 +147,8 @@ namespace Server.Misc
 
 				if( Core.ML && from is PlayerMobile )
 					cappedPoints = Math.Min( cappedPoints, 18 );
-
-				totalPoints += cappedPoints;
+                //Disable bonus mana regen from items/spells
+				//totalPoints += cappedPoints;
 
 				if ( totalPoints < -1 )
 					totalPoints = -1;
@@ -188,6 +188,8 @@ namespace Server.Misc
 		public static double GetArmorOffset( Mobile from )
 		{
 			double rating = 0.0;
+            //Metal armor effect on meditation disabled.
+            return 0.0;
 
 			if ( !Core.AOS )
 				rating += GetArmorMeditationValue( from.ShieldArmor as BaseArmor );
