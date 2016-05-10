@@ -175,7 +175,7 @@ namespace Server.Spells.Necromancy
 
 			protected override void OnTarget( Mobile from, object o )
 			{
-				if ( o is Mobile )
+				if ( o is Mobile && !(o is PlayerMobile) )
 					m_Owner.Target( (Mobile) o );
 				else
 					from.SendLocalizedMessage( 1060508 ); // You can't curse that.

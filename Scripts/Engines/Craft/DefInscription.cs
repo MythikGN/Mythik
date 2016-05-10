@@ -1,6 +1,7 @@
 using System;
 using Server.Items;
 using Server.Spells;
+using Scripts.Mythik;
 
 namespace Server.Engines.Craft
 {
@@ -157,16 +158,16 @@ namespace Server.Engines.Craft
 			SetManaReq(index, m_Mana);
 		}
 
-		private void AddNecroSpell(int spell, int mana, double minSkill, Type type, params Type[] regs)
+		private void AddNecroSpell(int spell, int mana, double minSkill, Type type,RecipeName rec, params Type[] regs)
 		{
 			int id = CraftItem.ItemIDOf(regs[0]);
 
-			int index = AddCraft(type, 1061677, 1060509 + spell, minSkill, minSkill + 1.0, regs[0], id < 0x4000 ? 1020000 + id : 1078872 + id, 1, 501627);	//Yes, on OSI it's only 1.0 skill diff'.  Don't blame me, blame OSI.
-
+			int index = AddCraft(type, 1061677, 1060509 + spell, minSkill, minSkill + 30.0, regs[0], id < 0x4000 ? 1020000 + id : 1078872 + id, 1, 501627);	//Yes, on OSI it's only 1.0 skill diff'.  Don't blame me, blame OSI.
+            AddRecipe(index, (int)rec);
 			for (int i = 1; i < regs.Length; ++i)
 			{
 				id = CraftItem.ItemIDOf(regs[i]);
-				AddRes(index, regs[i], id < 0x4000 ? 1020000 + id : 1078872 + id, 1, 501627);
+				AddRes(index, regs[i], id < 0x4000 ? 1020000 + id : 1078872 + id, 10, 501627);
 			}
 
 			AddRes(index, typeof(BlankScroll), 1044377, 1, 1044378);
@@ -272,7 +273,9 @@ namespace Server.Engines.Craft
 			AddSpell(typeof(SummonFireElementalScroll), Reg.Bloodmoss, Reg.MandrakeRoot, Reg.SpidersSilk, Reg.SulfurousAsh);
 			AddSpell(typeof(SummonWaterElementalScroll), Reg.Bloodmoss, Reg.MandrakeRoot, Reg.SpidersSilk);
 
-			/*if (Core.SE)
+
+            AddNecroSpell(1, 13, 109.6, typeof(BloodOathScroll),RecipeName.BloodOathScroll, Reagent.DaemonBlood);
+            /*if (Core.SE)
 			{
 				AddNecroSpell(0, 23, 39.6, typeof(AnimateDeadScroll), Reagent.GraveDust, Reagent.DaemonBlood);
 				AddNecroSpell(1, 13, 19.6, typeof(BloodOathScroll), Reagent.DaemonBlood);
@@ -294,7 +297,7 @@ namespace Server.Engines.Craft
 			}*/
 
 
-			int index;
+            int index;
 			
 			if ( Core.ML )
 			{
