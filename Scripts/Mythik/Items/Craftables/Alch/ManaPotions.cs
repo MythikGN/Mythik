@@ -40,8 +40,8 @@ namespace Scripts.Mythik.Items.Craftables.Alch
     }
     public class TotalManaPotion : BaseManaPotion
     {
-        public override int MinHeal { get { return 40; } }
-        public override int MaxHeal { get { return 60; } }
+        public override int MinHeal { get { return 60; } }
+        public override int MaxHeal { get { return 80; } }
         public override double Delay { get { return 14.0; } }
 
         [Constructable]
