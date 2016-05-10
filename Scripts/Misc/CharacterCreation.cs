@@ -636,9 +636,9 @@ namespace Server.Misc
 			newChar.Female = args.Female;
 			//newChar.Body = newChar.Female ? 0x191 : 0x190;
 
-			if( Core.Expansion >= args.Race.RequiredExpansion )
-				newChar.Race = args.Race;	//Sets body
-			else
+			//if( Core.Expansion >= args.Race.RequiredExpansion )
+			//	newChar.Race = args.Race;	//Sets body
+			//else
 				newChar.Race = Race.DefaultRace;
 
 			//newChar.Hue = Utility.ClipSkinHue( args.Hue & 0x3FFF ) | 0x8000;
