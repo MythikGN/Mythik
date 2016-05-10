@@ -424,19 +424,31 @@ namespace Server.Engines.Craft
             // Set the overridable material
             SetSubRes( typeof( IronIngot ), 1044022 );
 
-			// Add every material you want the player to be able to choose from
-			// This will override the overridable material
-			AddSubRes( typeof( IronIngot ),			1044022, 00.0, 1044036, 1044267 );
-			AddSubRes( typeof( DullCopperIngot ),	1044023, 65.0, 1044036, 1044268 );
-			AddSubRes( typeof( ShadowIronIngot ),	1044024, 70.0, 1044036, 1044268 );
-			AddSubRes( typeof( CopperIngot ),		1044025, 75.0, 1044036, 1044268 );
-			AddSubRes( typeof( BronzeIngot ),		1044026, 80.0, 1044036, 1044268 );
-			AddSubRes( typeof( GoldIngot ),			1044027, 85.0, 1044036, 1044268 );
-			AddSubRes( typeof( AgapiteIngot ),		1044028, 90.0, 1044036, 1044268 );
-			AddSubRes( typeof( VeriteIngot ),		1044029, 95.0, 1044036, 1044268 );
-			AddSubRes( typeof( ValoriteIngot ),		1044030, 99.0, 1044036, 1044268 );
+            // Add every material you want the player to be able to choose from
+            // This will override the overridable material
+            AddSubRes(typeof(IronIngot), 1044022, 00.0, 1044036, 1044267);
+            AddSubRes(typeof(DullCopperIngot), 1044023, 55.0, 1044036, 1044268);
+            AddSubRes(typeof(ShadowIronIngot), 1044024, 60.0, 1044036, 1044268);
+            AddSubRes(typeof(CopperIngot), 1044025, 65.0, 1044036, 1044268);
+            AddSubRes(typeof(BronzeIngot), 1044026, 70.0, 1044036, 1044268);
+            AddSubRes(typeof(GoldIngot), 1044027, 75.0, 1044036, 1044268);
+            AddSubRes(typeof(AgapiteIngot), 1044028, 80.0, 1044036, 1044268);
+            AddSubRes(typeof(VeriteIngot), 1044029, 85.0, 1044036, 1044268);
+            AddSubRes(typeof(ValoriteIngot), 1044030, 90.0, 1044036, 1044268);
 
-			MarkOption = true;
+
+            AddSubRes(typeof(RoseIngot), 1044022, 80.0, 1044036, 1044267); // equiv to agapite?
+
+            AddSubRes(typeof(BloodRockIngot), 1044023, 95.0, 1044036, 1044268);
+            AddSubRes(typeof(BlackRockIngot), 1044024, 99.9, 1044036, 1044268);
+            AddSubRes(typeof(PlatniumIngot), 1044025, 104.9, 1044036, 1044268);
+            AddSubRes(typeof(CarbonIngot), 1044026, 109.9, 1044036, 1044268);
+            AddSubRes(typeof(KevlarIngot), 1044027, 114.9, 1044036, 1044268);
+            AddSubRes(typeof(LiquidIngot), 1044028, 119.9, 1044036, 1044268);
+            AddSubRes(typeof(DeltaIngot), 1044029, 124.9, 1044036, 1044268);
+            AddSubRes(typeof(RagnarokIngot), 1044030, 129.9, 1044036, 1044268);
+
+            MarkOption = true;
 			Repair = true;
             CanEnhance = false;// Core.AOS;
 		}
