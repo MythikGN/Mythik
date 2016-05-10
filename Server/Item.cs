@@ -25,6 +25,7 @@ using System.Collections.Generic;
 using Server.Network;
 using Server.Items;
 using Server.ContextMenus;
+using System.Globalization;
 
 namespace Server
 {
@@ -4454,7 +4455,9 @@ namespace Server
 				from.Send( new MessageLocalized( m_Serial, m_ItemID, MessageType.Label, 0x3B2, 3, opl.Header, this.Name, opl.HeaderArgs ) );
 		}
 
-		public virtual void OnSingleClick( Mobile from )
+        static TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
+
+        public virtual void OnSingleClick( Mobile from )
 		{
 			if ( Deleted || !from.CanSee( this ) )
 				return;
@@ -4470,7 +4473,7 @@ namespace Server
                 {
                     var uni = this as IUniqueItem;
                     ns.Send(new AsciiMessage(m_Serial, m_ItemID, MessageType.Label, 2061, 3, "","[ Unique Lvl:" + uni.UniqueLevel + " ]"));
-                    ns.Send(new UnicodeMessage(m_Serial, m_ItemID, MessageType.Label, 0x803, 3, "ENU", "", this.Name ?? "" + (m_Amount > 1 ? " : " + m_Amount : "")));
+                    ns.Send(new UnicodeMessage(m_Serial, m_ItemID, MessageType.Label, 0x803, 3, "ENU", "", myTI.ToTitleCase(this.Name ?? "") + (m_Amount > 1 ? " : " + m_Amount : "")));
                     return;
                 }
                 if ( this.Name == null )
@@ -4794,9 +4797,18 @@ namespace Server
         }
     }
 
+    public enum RareLevel
+    {
+        Rare,
+        UniqueLvl1,
+        UniqueLvl2,
+        UniqueLvl3,
+        UniqueLvl4,
+        UniqueLvl5
+    }
     public interface IUniqueItem
     {
-        int UniqueLevel { get; }
+        RareLevel UniqueLevel { get; }
         void OnSingleClick(Mobile from);
     }
 
