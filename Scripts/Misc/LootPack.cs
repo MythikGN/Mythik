@@ -465,16 +465,21 @@ namespace Server
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 60, 100 ),
 				new LootPackEntry( false, OldMagicItems,	100.00, 1, 1, 70, 100 )
 			} );
-		#endregion
+        #endregion
 
-		#region Generic accessors
-		public static LootPack Poor{ get{ return Core.SE ? SePoor : Core.AOS ? AosPoor : OldPoor; } }
-		public static LootPack Meager{ get{ return Core.SE ? SeMeager : Core.AOS ? AosMeager : OldMeager; } }
-		public static LootPack Average{ get{ return Core.SE ? SeAverage : Core.AOS ? AosAverage : OldAverage; } }
-		public static LootPack Rich{ get{ return Core.SE ? SeRich : Core.AOS ? AosRich : OldRich; } }
-		public static LootPack FilthyRich{ get{ return Core.SE ? SeFilthyRich : Core.AOS ? AosFilthyRich : OldFilthyRich; } }
-		public static LootPack UltraRich{ get{ return Core.SE ? SeUltraRich : Core.AOS ? AosUltraRich : OldUltraRich; } }
-		public static LootPack SuperBoss{ get{ return Core.SE ? SeSuperBoss : Core.AOS ? AosSuperBoss : OldSuperBoss; } }
+        public static readonly LootPack Empty = new LootPack(new LootPackEntry[]
+            {
+               
+            });
+
+        #region Generic accessors
+        public static LootPack Poor{ get{ return Empty; } }
+		public static LootPack Meager{ get{ return Empty; } }
+		public static LootPack Average{ get{ return Empty; } }
+		public static LootPack Rich{ get{ return Empty; } }
+		public static LootPack FilthyRich{ get{ return Empty; } }
+		public static LootPack UltraRich{ get{ return Empty; } }
+		public static LootPack SuperBoss{ get{ return Empty; } }
 		#endregion
 
 		public static readonly LootPack LowScrolls = new LootPack( new LootPackEntry[]

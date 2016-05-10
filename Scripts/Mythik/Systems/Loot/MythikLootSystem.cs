@@ -6,12 +6,59 @@ using System.Threading.Tasks;
 using Server.Mobiles;
 using Server;
 using Server.Items;
+using Scripts.Mythik.Items.Uniques;
 
 namespace Scripts.Mythik.Systems.Loot
 {
     public class MythikLootSystem
     {
-        //Just add LootPacks here, standard loot/luck system takes care of the rest.
+        private static readonly LootPackItem[] Gold = new LootPackItem[]
+        {
+                new LootPackItem( typeof( Gold ), 1 )
+        };
+        private static readonly LootPackItem[] LowScrollItems = new LootPackItem[]
+             {
+                new LootPackItem( typeof( ClumsyScroll ), 1 )
+             };
+
+        private static readonly LootPackItem[] MedScrollItems = new LootPackItem[]
+            {
+                new LootPackItem( typeof( ArchCureScroll ), 1 )
+            };
+
+        private static readonly LootPackItem[] HighScrollItems = new LootPackItem[]
+            {
+                new LootPackItem( typeof( SummonAirElementalScroll ), 1 )
+            };
+
+        private static readonly LootPackItem[] PotionItems = new LootPackItem[]
+            {
+                new LootPackItem( typeof( AgilityPotion ), 1 ),
+                new LootPackItem( typeof( StrengthPotion ), 1 ),
+                new LootPackItem( typeof( RefreshPotion ), 1 ),
+                new LootPackItem( typeof( LesserCurePotion ), 1 ),
+                new LootPackItem( typeof( LesserHealPotion ), 1 ),
+                new LootPackItem( typeof( LesserPoisonPotion ), 1 )
+            };
+        public static readonly LootPackItem[] LevelOneUniques = new LootPackItem[]
+            {
+                new LootPackItem( typeof( AlchemySandals ),1 ),
+                new LootPackItem( typeof( BlacksmithyArms ), 1 ),
+                new LootPackItem( typeof( CarpentryBoots ), 1 ),
+                new LootPackItem( typeof( TamingSkirt ), 1 ),
+                new LootPackItem( typeof( TailorSandals ), 1 ),
+                new LootPackItem( typeof( TinkeringCap ), 1 ),
+                new LootPackItem( typeof( LumberjackCap ), 1 ),
+                new LootPackItem( typeof( DamagedMiningHat ), 1 )
+            };
+
+        public static readonly LootPack Level1 = new LootPack(new LootPackEntry[]
+            {
+                new LootPackEntry(  true, Gold,                     100.00, "2d20+50" ),
+                new LootPackEntry( false, PotionItems,              5,      2 ),
+                new LootPackEntry( false, LowScrollItems,           5,      1 ),
+                new LootPackEntry( false, LevelOneUniques,          0.13,   1 ) // 0.13 is equiv to 1 in 769
+            });
 
         public static void GenerateLoot(BaseCreature mob)
         {
@@ -28,14 +75,14 @@ namespace Scripts.Mythik.Systems.Loot
                 lvl = 4;
             if (diff >= 105)
                 lvl = 5;
-            
-            //mob.AddLoot(LootPack.)
+
+            mob.AddLoot(Level1);
 
 
 
             if (mob.IsParagon)
             {
-
+                mob.AddLoot(Level1);
             }
             if(mob.Region.IsPartOf("Doom"))
             {
