@@ -16,6 +16,7 @@ using Server.Spells.Bushido;
 using Server.Spells.Spellweaving;
 using Server.Spells.Necromancy;
 using Scripts.Mythik.Systems.Loot;
+using System.Linq;
 
 namespace Server.Mobiles
 {
@@ -4389,7 +4390,7 @@ namespace Server.Mobiles
 			base.OnSingleClick( from );
 		}
 
-        private string GetMonsterDifficultyLevelText()
+        public string GetMonsterDifficultyLevelText()
         {
             var diff = BaseInstrument.GetBaseDifficulty(this);
             if (diff < 35)
@@ -4831,7 +4832,14 @@ namespace Server.Mobiles
 
 				base.OnDeath( c );
 
-				if ( DeleteCorpseOnDeath )
+
+                if (c.Items.Where(i => (i is IUniqueItem)).FirstOrDefault() != null)
+                {
+                    Effects.SendLocationEffect(c.Location, c.Map, 0x3763, 10);
+                    Effects.PlaySound(c.Location, c.Map, 0x594);
+                    c.Hue = 0x484;
+                }
+                if ( DeleteCorpseOnDeath )
 					c.Delete();
 			}
 		}
