@@ -4,6 +4,7 @@ using Server.Items;
 using Server.Mobiles;
 using Server.Network;
 using Server.Accounting;
+using Scripts.Mythik.Mobiles;
 
 namespace Server.Misc
 {
@@ -604,7 +605,7 @@ namespace Server.Misc
 			for ( int i = 0; i < a.Length; ++i )
 			{
 				if ( a[i] == null )
-					return (a[i] = new PlayerMobile());
+					return (a[i] = new MythikPlayerMobile());
 			}
 
 			return null;

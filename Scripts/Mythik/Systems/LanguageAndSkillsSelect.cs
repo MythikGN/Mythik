@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Server.Network;
+using Scripts.Mythik.Mobiles;
 
 namespace Scripts.Mythik.Systems
 {
@@ -22,7 +23,7 @@ namespace Scripts.Mythik.Systems
 
         private static void EventSink_Login(LoginEventArgs e)
         {
-            if(!(e.Mobile as PlayerMobile).HasSetLanguageSkills)
+            if(!(e.Mobile as MythikPlayerMobile).HasSetLanguageSkills)
             {
                 e.Mobile.SendGump(new LanguageSelectGump());
             }
@@ -73,7 +74,7 @@ namespace Scripts.Mythik.Systems
                 var skillB = (SkillName)info.Switches[1];
                 sender.Mobile.Skills[skillA].BaseFixedPoint = 600;
                 sender.Mobile.Skills[skillB].BaseFixedPoint = 600;
-                (sender.Mobile as PlayerMobile).HasSetLanguageSkills = true;
+                (sender.Mobile as MythikPlayerMobile).HasSetLanguageSkills = true;
                 //base.OnResponse(sender, info);
             }
         }

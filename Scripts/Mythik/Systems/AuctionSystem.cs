@@ -1,4 +1,5 @@
 ﻿using Scripts.Mythik.Gumps;
+using Scripts.Mythik.Mobiles;
 using Server;
 using Server.Commands;
 using Server.Items;
@@ -37,7 +38,7 @@ namespace Scripts.Mythik.Systems
         private readonly double TAX = 0.90; // 10% tax
 
         //item is stored inside
-        private List<PlayerMobile> m_ListeningToAuction = new List<PlayerMobile>();
+        private List<MythikPlayerMobile> m_ListeningToAuction = new List<MythikPlayerMobile>();
 
         [Constructable]
         public AuctionSystem() : base(0x00)
@@ -53,21 +54,21 @@ namespace Scripts.Mythik.Systems
 
         private void EventSink_Logout(LogoutEventArgs e)
         {
-            var pm = e.Mobile as PlayerMobile;
+            var pm = e.Mobile as MythikPlayerMobile;
             if (m_ListeningToAuction.Contains(pm))
                 m_ListeningToAuction.Remove(pm);
         }
 
         private void EventSink_Login(LoginEventArgs e)
         {
-            var pm = e.Mobile as PlayerMobile;
+            var pm = e.Mobile as MythikPlayerMobile;
             if (pm.AuctionEnabled && !m_ListeningToAuction.Contains(pm))
                 m_ListeningToAuction.Add(pm);
         }
 
         private void OnBid(CommandEventArgs e)
         {
-            var pm = e.Mobile as PlayerMobile;
+            var pm = e.Mobile as MythikPlayerMobile;
             if (m_auctionStatus != AuctionStatus.Ongoing)
             {
                 e.Mobile.SendMessage("No auctions currently active.");
@@ -105,7 +106,7 @@ namespace Scripts.Mythik.Systems
 
         private void OnAuction(CommandEventArgs e)
         {
-            var pm = e.Mobile as PlayerMobile;
+            var pm = e.Mobile as MythikPlayerMobile;
             if(m_auctionStatus != AuctionStatus.Ready)
             {
                 pm.SendMessage("An Auction is already in progress, please wait for it to finish");
@@ -242,7 +243,7 @@ namespace Scripts.Mythik.Systems
 
         private void OnAuctionOff(CommandEventArgs e)
         {
-            var pm = e.Mobile as PlayerMobile;
+            var pm = e.Mobile as MythikPlayerMobile;
             if(m_ItemOwner == pm)
             {
                 pm.SendMessage("Please wait for your auction to finish");
@@ -255,7 +256,7 @@ namespace Scripts.Mythik.Systems
 
         private void OnAuctionOn(CommandEventArgs e)
         {
-            var pm = e.Mobile as PlayerMobile;
+            var pm = e.Mobile as MythikPlayerMobile;
             if (!pm.AuctionEnabled)
                 pm.SendMessage("Welcome to the Mythik auction system.");
             pm.AuctionEnabled = true;
