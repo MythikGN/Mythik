@@ -2862,7 +2862,7 @@ namespace Server.Multis
 		{
 			get
 			{
-				return m_Public;
+                return true;// return m_Public;
 			}
 			set
 			{
