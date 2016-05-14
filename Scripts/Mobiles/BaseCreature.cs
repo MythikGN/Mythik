@@ -4389,19 +4389,30 @@ namespace Server.Mobiles
 
 			base.OnSingleClick( from );
 		}
-
-        public string GetMonsterDifficultyLevelText()
+        public int GetMonsterLevel()
         {
             var diff = BaseInstrument.GetBaseDifficulty(this);
             if (diff < 35)
-                return "Easy";
-            if (diff < 60)
-                return "Moderate";
+                return 1;
+            if (diff < 60) 
+                return 2;
             if (diff < 85)
-                return "Intermediate";
+                return 3;
             if (diff < 105)
-                return "Difficult";
-            return "Challenging";
+                return 4;
+            return 5;
+        }
+        public string GetMonsterDifficultyLevelText()
+        {
+            switch(GetMonsterLevel())
+            {
+                case 1: return "Easy";
+                case 2: return "Moderate";
+                case 3: return "Intermediate";
+                case 4: return "Difficult";
+                case 5: return "Challenging";
+                default: return "";
+            }
         }
 
         public virtual double TreasureMapChance{ get{ return TreasureMap.LootChance; } }
