@@ -4,6 +4,7 @@ using System.Text;
 
 using Server;
 using Server.Mobiles;
+using Scripts.Mythik.Mobiles;
 
 namespace Server.Poker
 {
@@ -745,7 +746,7 @@ namespace Server.Poker
 				player.TeleportToSeat();
 				m_Players.Players.Add( player );
 
-				( (PlayerMobile)from ).PokerGame = this;
+				( (MythikPlayerMobile)from ).PokerGame = this;
 				from.SendMessage( 0x22, "You have been seated at the table" );
 
 				if ( m_Players.Count == 1 && !GameBackup.PokerGames.Contains( this ) )
@@ -820,7 +821,7 @@ namespace Server.Poker
 				}
 
 				player.CloseAllGumps();
-				( (PlayerMobile)from ).PokerGame = null;
+				( (MythikPlayerMobile)from ).PokerGame = null;
 				from.Location = m_Dealer.ExitLocation;
 				from.Map = m_Dealer.ExitMap;
 				from.SendMessage( 0x22, "You have left the table" );
