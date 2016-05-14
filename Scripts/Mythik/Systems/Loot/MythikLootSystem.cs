@@ -7,6 +7,7 @@ using Server.Mobiles;
 using Server;
 using Server.Items;
 using Scripts.Mythik.Items.Uniques;
+using Scripts.Mythik.Items.Rares;
 
 namespace Scripts.Mythik.Systems.Loot
 {
@@ -48,6 +49,7 @@ namespace Scripts.Mythik.Systems.Loot
                 new LootPackItem( typeof( TamingSkirt ), 1 ),
                 new LootPackItem( typeof( TailorSandals ), 1 ),
                 new LootPackItem( typeof( TinkeringCap ), 1 ),
+                new LootPackItem( typeof( InscribeBoots ), 1 ),
                 new LootPackItem( typeof( LumberjackCap ), 1 ),
                 new LootPackItem( typeof( DamagedMiningHat ), 1 )
             };
@@ -57,32 +59,68 @@ namespace Scripts.Mythik.Systems.Loot
                 new LootPackEntry(  true, Gold,                     100.00, "2d20+50" ),
                 new LootPackEntry( false, PotionItems,              5,      2 ),
                 new LootPackEntry( false, LowScrollItems,           5,      1 ),
+                new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(Amber),1) },60.0,"2d1+3"),
                 new LootPackEntry( false, LevelOneUniques,          0.13,   1 ) // 0.13 is equiv to 1 in 769
             });
 
+        public static readonly LootPack Level2 = new LootPack(new LootPackEntry[]
+    {
+                new LootPackEntry(  true, Gold,                     100.00, "2d80+50" ),
+                new LootPackEntry( false, PotionItems,              5,      2 ),
+                new LootPackEntry( false, LowScrollItems,           5,      2 ),
+                new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(Citrine),1),new LootPackItem( typeof(Amethyst),1) },60.0,"2d1+3"),
+                new LootPackEntry( false, LevelOneUniques,          0.13,   1 ) // 0.13 is equiv to 1 in 769
+    });
+
+        public static readonly LootPack Level3 = new LootPack(new LootPackEntry[]
+{
+                new LootPackEntry(  true, Gold,                     100.00, "2d180+90" ),
+                new LootPackEntry( false, PotionItems,              5,      2 ),
+                new LootPackEntry( false, MedScrollItems,           5,      1 ),
+                new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(Tourmaline),1),new LootPackItem( typeof(Sapphire),1) },60.0,"2d1+3"),
+                new LootPackEntry( false, LevelOneUniques,          0.13,   1 ) // 0.13 is equiv to 1 in 769
+});
+
+        public static readonly LootPack Level4 = new LootPack(new LootPackEntry[]
+{
+                new LootPackEntry(  true, Gold,                     100.00, "2d300+150" ),
+                new LootPackEntry( false, PotionItems,              5,      2 ),
+                new LootPackEntry( false, MedScrollItems,           5,      2 ),
+                new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(Ruby),1),new LootPackItem( typeof(Emerald),1) },60.0,"2d1+3"),
+                new LootPackEntry( false, LevelOneUniques,          0.13,   1 ) // 0.13 is equiv to 1 in 769
+});
+
+        public static readonly LootPack Level5 = new LootPack(new LootPackEntry[]
+{
+                new LootPackEntry(  true, Gold,                     100.00, "2d500+250" ),
+                new LootPackEntry( false, PotionItems,              5,      2 ),
+                new LootPackEntry( false, HighScrollItems,           10,      2 ),
+                new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(StarSapphire),1),new LootPackItem( typeof(Diamond),1) },60.0,"2d1+3"),
+                new LootPackEntry( false, LevelOneUniques,          0.13,   1 ) // 0.13 is equiv to 1 in 769
+});
+
         public static void GenerateLoot(BaseCreature mob)
         {
-            //No chance of loot
-            var diff = BaseInstrument.GetBaseDifficulty(mob);
-            int lvl = 0;
-            if (diff < 35)
-                lvl = 1;
-            if (diff < 60)
-                lvl = 2;
-            if (diff < 85)
-                lvl = 3;
-            if (diff < 105)
-                lvl = 4;
-            if (diff >= 105)
-                lvl = 5;
 
-            mob.AddLoot(Level1);
-
-
-
-            if (mob.IsParagon)
+           switch(mob.GetMonsterLevel() + (mob.IsParagon == true ? 1 : 0)) // bump the loot level + 1 if paragon
             {
-                mob.AddLoot(Level1);
+                case 1:
+                    mob.AddLoot(Level1);
+                    break;
+                case 2:
+                    mob.AddLoot(Level2);
+                    break;
+                case 3:
+                    mob.AddLoot(Level3);
+                    break;
+                case 4:
+                    mob.AddLoot(Level4);
+                    break;
+                case 5:
+                    mob.AddLoot(Level5);
+                    break;
+                default:
+                    break;
             }
             if(mob.Region.IsPartOf("Doom"))
             {
@@ -94,7 +132,7 @@ namespace Scripts.Mythik.Systems.Loot
         /// List of items rewarded using ToT style system
         /// </summary>
         private static Type[] m_LesserArtifacts = new Type[] {
-            typeof(LesserPigmentsOfTokuno),typeof( MetalPigmentsOfTokuno )
+            typeof(RareClothDyeTub),typeof( RareLeatherDyeTub ), typeof(RuneBookChargeDeed)
 
         };
         /// <summary>
