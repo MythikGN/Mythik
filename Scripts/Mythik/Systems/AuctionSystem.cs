@@ -65,7 +65,8 @@ namespace Scripts.Mythik.Systems
             if (pm.AuctionEnabled && !m_ListeningToAuction.Contains(pm))
                 m_ListeningToAuction.Add(pm);
         }
-
+        [Usage("bid")]
+        [Description("Bid on a currently running auction.")]
         private void OnBid(CommandEventArgs e)
         {
             var pm = e.Mobile as MythikPlayerMobile;
@@ -103,7 +104,8 @@ namespace Scripts.Mythik.Systems
             foreach (var pm in m_ListeningToAuction)
                 pm.SendMessage(0xBAD,msg);
         }
-
+        [Usage("auction")]
+        [Description("Auction an Item using the Mythik Auction system")]
         private void OnAuction(CommandEventArgs e)
         {
             var pm = e.Mobile as MythikPlayerMobile;
@@ -240,7 +242,8 @@ namespace Scripts.Mythik.Systems
             //Send AuctionStatusGump
             e.Mobile.SendGump(new AuctionStatusGump(this, e.Mobile));
         }
-
+        [Usage("auctionoff")]
+        [Description("Disable participation in the auction channel.")]
         private void OnAuctionOff(CommandEventArgs e)
         {
             var pm = e.Mobile as MythikPlayerMobile;
@@ -253,7 +256,8 @@ namespace Scripts.Mythik.Systems
             if(m_ListeningToAuction.Contains(pm))
             m_ListeningToAuction.Remove(pm);
         }
-
+        [Usage("auctionon")]
+        [Description("Enable participation in the auction channel")]
         private void OnAuctionOn(CommandEventArgs e)
         {
             var pm = e.Mobile as MythikPlayerMobile;
