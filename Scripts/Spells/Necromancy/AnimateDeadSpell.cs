@@ -21,7 +21,7 @@ namespace Server.Spells.Necromancy
 
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 1.5 ); } }
 
-		public override double RequiredSkill{ get{ return 40.0; } }
+		public override double RequiredSkill{ get{ return 0; } }
 		public override int RequiredMana{ get{ return 23; } }
 
 		public AnimateDeadSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )

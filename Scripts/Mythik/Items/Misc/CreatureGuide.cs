@@ -13,7 +13,6 @@ namespace Scripts.Mythik.Items.Misc
 {
     public class CreatureGuide
     {
-        static CreateListGump m_Gump;
         public static List<CreatureInfo> Animals = new List<CreatureInfo>();
         public static List<CreatureInfo> Monsters = new List<CreatureInfo>();
         public static List<CreatureInfo> Mounts = new List<CreatureInfo>();

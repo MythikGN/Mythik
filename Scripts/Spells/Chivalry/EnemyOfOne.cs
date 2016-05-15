@@ -18,9 +18,9 @@ namespace Server.Spells.Chivalry
 
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 0.5 ); } }
 
-		public override double RequiredSkill{ get{ return 45.0; } }
+		public override double RequiredSkill{ get{ return 0; } }
 		public override int RequiredMana{ get{ return 20; } }
-		public override int RequiredTithing{ get{ return 10; } }
+		public override int RequiredTithing{ get{ return 0; } }
 		public override int MantraNumber{ get{ return 1060723; } } // Forul Solum
 		public override bool BlocksMovement{ get{ return false; } }
 

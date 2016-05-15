@@ -17,7 +17,7 @@ namespace Server.Spells.Necromancy
 
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 1.5 ); } }
 
-		public override double RequiredSkill{ get{ return 20.0; } }
+		public override double RequiredSkill{ get{ return 0; } }
 		public override int RequiredMana{ get{ return 13; } }
 
 		public BloodOathSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
@@ -31,7 +31,13 @@ namespace Server.Spells.Necromancy
 
 		public void Target( Mobile m )
 		{
-			if ( Caster == m || !(m is PlayerMobile || m is BaseCreature) ) // only PlayerMobile and BaseCreature implement blood oath checking
+            if(m is PlayerMobile)
+            {
+                Caster.SendLocalizedMessage(1060508); // You can't curse that.
+                return;
+            }
+                
+            if ( Caster == m || !(m is PlayerMobile || m is BaseCreature) ) // only PlayerMobile and BaseCreature implement blood oath checking
 			{
 				Caster.SendLocalizedMessage( 1060508 ); // You can't curse that.
 			}

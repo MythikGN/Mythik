@@ -21,7 +21,7 @@ namespace Server.Spells.Necromancy
 
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 2.0 ); } }
 
-		public override double RequiredSkill{ get{ return 30.0; } }
+		public override double RequiredSkill{ get{ return 0; } }
 		public override int RequiredMana{ get{ return 17; } }
 
 		public SummonFamiliarSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
@@ -58,11 +58,11 @@ namespace Server.Spells.Necromancy
 
 		private static SummonFamiliarEntry[] m_Entries = new SummonFamiliarEntry[]
 			{
-				new SummonFamiliarEntry( typeof( HordeMinionFamiliar ), 1060146,  30.0,  30.0 ), // Horde Minion
-				new SummonFamiliarEntry( typeof( ShadowWispFamiliar ), 1060142,  50.0,  50.0 ), // Shadow Wisp
-				new SummonFamiliarEntry( typeof( DarkWolfFamiliar ), 1060143,  60.0,  60.0 ), // Dark Wolf
-				new SummonFamiliarEntry( typeof( DeathAdder ), 1060145,  80.0,  80.0 ), // Death Adder
-				new SummonFamiliarEntry( typeof( VampireBatFamiliar ), 1060144, 100.0, 100.0 )  // Vampire Bat
+				new SummonFamiliarEntry( typeof( HordeMinionFamiliar ), 1060146,  0.0,  0.0 ), // Horde Minion
+				new SummonFamiliarEntry( typeof( ShadowWispFamiliar ), 1060142,  0.0,  25.0 ), // Shadow Wisp
+				new SummonFamiliarEntry( typeof( DarkWolfFamiliar ), 1060143,  0.0,  50.0 ), // Dark Wolf
+				new SummonFamiliarEntry( typeof( DeathAdder ), 1060145,  0.0,  75.0 ), // Death Adder
+				new SummonFamiliarEntry( typeof( VampireBatFamiliar ), 1060144, 0.0, 100.0 )  // Vampire Bat
 			};
 
 		public static SummonFamiliarEntry[] Entries{ get{ return m_Entries; } }
