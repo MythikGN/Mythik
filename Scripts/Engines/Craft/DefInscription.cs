@@ -4,6 +4,7 @@ using Server.Spells;
 using Scripts.Mythik;
 using Scripts.Mythik.Items.Craftables.Inscription;
 using Scripts.Mythik.Items.Rares;
+using Scripts.Mythik.Items.Craftables;
 
 namespace Server.Engines.Craft
 {
@@ -293,17 +294,17 @@ namespace Server.Engines.Craft
             #endregion
 
             #region Storage Books
-            var index = AddCraft(typeof(LumberBook), "Books", "Lumber Storage Book", 94.9, 124.9, typeof(BlankScroll), 1044377, 100);
+            var index = AddCraft(typeof(LumberBook), 1044294, "Lumber Storage Book", 94.9, 124.9, typeof(BlankScroll), 1044377, 100);
             AddSkill(index, SkillName.Lumberjacking, 94.9, 94.9);
             AddRes(index, typeof(UncommonCraftingMaterial1), "Uncommon Craft Mat A", 2);
             AddRes(index, typeof(Log), "Logs", 100);
 
-            index = AddCraft(typeof(ReagentBook), "Books", "Reagent Storage Book", 84.9, 114.9, typeof(BlankScroll), 1044377, 100);
+            index = AddCraft(typeof(ReagentBook), 1044294, "Reagent Storage Book", 84.9, 114.9, typeof(BlankScroll), 1044377, 100);
             AddSkill(index, SkillName.Magery, 84.9, 84.9);
             AddRes(index, typeof(UncommonCraftingMaterial1), "Uncommon Craft Mat A", 2);
             AddRes(index, typeof(Bloodmoss), "BloodMoss", 150);
 
-            index = AddCraft(typeof(IngotBook), "Books", "Ingot Storage Book", 74.9, 104.9, typeof(BlankScroll), 1044377, 100);
+            index = AddCraft(typeof(IngotBook), 1044294, "Ingot Storage Book", 74.9, 104.9, typeof(BlankScroll), 1044377, 100);
             AddSkill(index, SkillName.Mining, 74.9, 74.9);
             AddRes(index, typeof(UncommonCraftingMaterial1), "Uncommon Craft Mat A", 2);
             AddRes(index, typeof(IronIngot), "Iron Ingots", 100);
@@ -316,11 +317,14 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(GateTravelScroll), 1044446, 25, 1044253);
             AddRes(index, typeof(MarkScroll), "Mark Scroll", 25, 1044253);
             AddRes(index, typeof(RecallRune), 1044447, 25, 1044253);
-            if (Core.AOS)
-            {
+
+            index = AddCraft(typeof(CreatureGuideBook), 1044294, "Creature Guide Books", 104.9, 125.0, typeof(BlankScroll), 1044377, 100, 1044378);
+            AddRes(index, typeof(UncommonCraftingMaterial1), "Uncommon Craft Mat A", 2);
+            
+
+
                index  = AddCraft(typeof(Engines.BulkOrders.BulkOrderBook), 1044294, 1028793, 104.9, 125.0, typeof(BlankScroll), 1044377, 100, 1044378);
                AddRes(index, typeof(UncommonCraftingMaterial1), "Uncommon Craft Mat A", 2);
-            }
 
             if (Core.SE)
             {
@@ -331,7 +335,7 @@ namespace Server.Engines.Craft
             #region PVMScrolls
             AddNecroSpell(0, 23, 101.9, typeof(AnimateDeadScroll), RecipeName.AnimateDeadScroll, Reagent.GraveDust, Reagent.DaemonBlood);
             AddNecroSpell(1, 13, 109.6, typeof(BloodOathScroll), RecipeName.BloodOathScroll, Reagent.DaemonBlood);
-            AddNecroSpell(12, 23, 114.9, typeof(VampiricEmbraceScroll), RecipeName.VampiricEmbraceScroll, Reagent.BatWing, Reagent.NoxCrystal, Reagent.PigIron);
+            //AddNecroSpell(12, 23, 114.9, typeof(VampiricEmbraceScroll), RecipeName.VampiricEmbraceScroll, Reagent.BatWing, Reagent.NoxCrystal, Reagent.PigIron);
             AddNecroSpell(11, 17, 124.9, typeof(SummonFamiliarScroll), RecipeName.SummonFamiliarScroll, Reagent.BatWing, Reagent.GraveDust, Reagent.DaemonBlood);
 
             AddChivSpell(11,"Enemy Of One", 17, 124.9, typeof(EnemyOfOneScroll), RecipeName.EnemyOfOneScroll, Reagent.Bloodmoss, Reagent.BlackPearl, Reagent.DaemonBlood);
