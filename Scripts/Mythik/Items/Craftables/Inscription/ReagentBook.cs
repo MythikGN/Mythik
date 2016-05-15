@@ -37,7 +37,7 @@ namespace Scripts.Mythik.Items.Craftables.Inscription
 
 
         [Constructable]
-        public ReagentBook(int amount) : base(0x2253)
+        public ReagentBook(int amount) : base(0x2252)
         {
             this.Name = "reagent book";
             m_Reagents = new int[15];

@@ -20,7 +20,7 @@ namespace Scripts.Mythik.Items.Craftables.Inscription
         private readonly uint MAX_STORAGE_AMOUNT = 50000;
 
         [Constructable]
-        public LumberBook() : base(0x2253)
+        public LumberBook() : base(0x2252)
         {
             this.Name = "lumber storage book"; 
         }
