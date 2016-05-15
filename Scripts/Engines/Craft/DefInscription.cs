@@ -2,6 +2,8 @@ using System;
 using Server.Items;
 using Server.Spells;
 using Scripts.Mythik;
+using Scripts.Mythik.Items.Craftables.Inscription;
+using Scripts.Mythik.Items.Rares;
 
 namespace Server.Engines.Craft
 {
@@ -167,17 +169,33 @@ namespace Server.Engines.Craft
 			for (int i = 1; i < regs.Length; ++i)
 			{
 				id = CraftItem.ItemIDOf(regs[i]);
-				AddRes(index, regs[i], id < 0x4000 ? 1020000 + id : 1078872 + id, 10, 501627);
+				AddRes(index, regs[i], id < 0x4000 ? 1020000 + id : 1078872 + id, 5, 501627);
 			}
 
 			AddRes(index, typeof(BlankScroll), 1044377, 1, 1044378);
 
 			SetManaReq(index, mana);
 		}
+        private void AddChivSpell(int spell,string spellName, int mana, double minSkill, Type type, RecipeName rec, params Type[] regs)
+        {
+            int id = CraftItem.ItemIDOf(regs[0]);
+            int index = AddCraft(type, 1061677, spellName, minSkill, minSkill + 30, regs[0], id < 0x4000 ? 1020000 + id : 1078872 + id, 1);
 
-		public override void InitCraftList()
+            AddRecipe(index, (int)rec);
+            for (int i = 1; i < regs.Length; ++i)
+            {
+                id = CraftItem.ItemIDOf(regs[i]);
+                AddRes(index, regs[i], id < 0x4000 ? 1020000 + id : 1078872 + id, 5, 501627);
+            }
+
+            AddRes(index, typeof(BlankScroll), 1044377, 1, 1044378);
+
+            SetManaReq(index, mana);
+        }
+        public override void InitCraftList()
 		{
-			m_Circle = 0;
+            #region MageSpells
+            m_Circle = 0;
 			m_Mana = 4;
 
 			AddSpell(typeof(ReactiveArmorScroll), Reg.Garlic, Reg.SpidersSilk, Reg.SulfurousAsh);
@@ -272,9 +290,53 @@ namespace Server.Engines.Craft
 			AddSpell(typeof(SummonEarthElementalScroll), Reg.Bloodmoss, Reg.MandrakeRoot, Reg.SpidersSilk);
 			AddSpell(typeof(SummonFireElementalScroll), Reg.Bloodmoss, Reg.MandrakeRoot, Reg.SpidersSilk, Reg.SulfurousAsh);
 			AddSpell(typeof(SummonWaterElementalScroll), Reg.Bloodmoss, Reg.MandrakeRoot, Reg.SpidersSilk);
+            #endregion
 
+            #region Storage Books
+            var index = AddCraft(typeof(LumberBook), "Books", "Lumber Storage Book", 94.9, 124.9, typeof(BlankScroll), 1044377, 100);
+            AddSkill(index, SkillName.Lumberjacking, 94.9, 94.9);
+            AddRes(index, typeof(UncommonCraftingMaterial1), "Uncommon Craft Mat A", 2);
+            AddRes(index, typeof(Log), "Logs", 100);
 
-            AddNecroSpell(1, 13, 109.6, typeof(BloodOathScroll),RecipeName.BloodOathScroll, Reagent.DaemonBlood);
+            index = AddCraft(typeof(ReagentBook), "Books", "Reagent Storage Book", 84.9, 114.9, typeof(BlankScroll), 1044377, 100);
+            AddSkill(index, SkillName.Magery, 84.9, 84.9);
+            AddRes(index, typeof(UncommonCraftingMaterial1), "Uncommon Craft Mat A", 2);
+            AddRes(index, typeof(Bloodmoss), "BloodMoss", 150);
+
+            index = AddCraft(typeof(IngotBook), "Books", "Ingot Storage Book", 74.9, 104.9, typeof(BlankScroll), 1044377, 100);
+            AddSkill(index, SkillName.Mining, 74.9, 74.9);
+            AddRes(index, typeof(UncommonCraftingMaterial1), "Uncommon Craft Mat A", 2);
+            AddRes(index, typeof(IronIngot), "Iron Ingots", 100);
+            #endregion
+
+            #region OtherBooks
+            // Runebook
+            index = AddCraft(typeof(Runebook), 1044294, 1041267, 85.0, 95.0, typeof(BlankScroll), 1044377, 25, 1044378);
+            AddRes(index, typeof(RecallScroll), 1044445, 25, 1044253);
+            AddRes(index, typeof(GateTravelScroll), 1044446, 25, 1044253);
+            AddRes(index, typeof(MarkScroll), "Mark Scroll", 25, 1044253);
+            AddRes(index, typeof(RecallRune), 1044447, 25, 1044253);
+            if (Core.AOS)
+            {
+               index  = AddCraft(typeof(Engines.BulkOrders.BulkOrderBook), 1044294, 1028793, 104.9, 125.0, typeof(BlankScroll), 1044377, 100, 1044378);
+               AddRes(index, typeof(UncommonCraftingMaterial1), "Uncommon Craft Mat A", 2);
+            }
+
+            if (Core.SE)
+            {
+                AddCraft(typeof(Spellbook), 1044294, 1023834, 50.0, 126, typeof(BlankScroll), 1044377, 10, 1044378);
+            }
+            #endregion
+
+            #region PVMScrolls
+            AddNecroSpell(0, 23, 101.9, typeof(AnimateDeadScroll), RecipeName.AnimateDeadScroll, Reagent.GraveDust, Reagent.DaemonBlood);
+            AddNecroSpell(1, 13, 109.6, typeof(BloodOathScroll), RecipeName.BloodOathScroll, Reagent.DaemonBlood);
+            AddNecroSpell(12, 23, 114.9, typeof(VampiricEmbraceScroll), RecipeName.VampiricEmbraceScroll, Reagent.BatWing, Reagent.NoxCrystal, Reagent.PigIron);
+            AddNecroSpell(11, 17, 124.9, typeof(SummonFamiliarScroll), RecipeName.SummonFamiliarScroll, Reagent.BatWing, Reagent.GraveDust, Reagent.DaemonBlood);
+
+            AddChivSpell(11,"Enemy Of One", 17, 124.9, typeof(EnemyOfOneScroll), RecipeName.EnemyOfOneScroll, Reagent.Bloodmoss, Reagent.BlackPearl, Reagent.DaemonBlood);
+            
+            #endregion
             /*if (Core.SE)
 			{
 				AddNecroSpell(0, 23, 39.6, typeof(AnimateDeadScroll), Reagent.GraveDust, Reagent.DaemonBlood);
@@ -297,9 +359,8 @@ namespace Server.Engines.Craft
 			}*/
 
 
-            int index;
-			
-			if ( Core.ML )
+
+            if ( Core.ML )
 			{
 				index = AddCraft( typeof( EnchantedSwitch ), 1044294, 1072893, 45.0, 95.0, typeof( BlankScroll ), 1044377, 1, 1044378 );
 				AddRes( index, typeof( SpidersSilk ), 1044360, 1, 1044253 );
@@ -316,20 +377,7 @@ namespace Server.Engines.Craft
 				SetNeededExpansion( index, Expansion.ML );
 			}
 			
-			// Runebook
-			index = AddCraft( typeof( Runebook ), 1044294, 1041267, 45.0, 95.0, typeof( BlankScroll ), 1044377, 8, 1044378 );
-			AddRes( index, typeof( RecallScroll ), 1044445, 1, 1044253 );
-			AddRes( index, typeof( GateTravelScroll ), 1044446, 1, 1044253 );
-
-			if (Core.AOS)
-			{
-				AddCraft(typeof(Engines.BulkOrders.BulkOrderBook), 1044294, 1028793, 65.0, 115.0, typeof(BlankScroll), 1044377, 10, 1044378);
-			}
-
-			if (Core.SE)
-			{
-				AddCraft(typeof(Spellbook), 1044294, 1023834, 50.0, 126, typeof(BlankScroll), 1044377, 10, 1044378);
-			}
+			
 
 			MarkOption = true;
 		}

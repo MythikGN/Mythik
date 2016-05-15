@@ -87,7 +87,7 @@ namespace Server.Spells
 			Register( 62, typeof( Eighth.FireElementalSpell ) );
 			Register( 63, typeof( Eighth.WaterElementalSpell ) );
 
-            /*if ( Core.AOS )
+            if ( Core.AOS )
 			{
 				// Necromancy spells
 				Register( 100, typeof( Necromancy.AnimateDeadSpell ) );
@@ -122,7 +122,7 @@ namespace Server.Spells
 				Register( 208, typeof( Chivalry.RemoveCurseSpell ) );
 				Register( 209, typeof( Chivalry.SacredJourneySpell ) );
 
-				if ( Core.SE )
+				/*if ( Core.SE )
 				{
 					// Samurai abilities
 					Register( 400, typeof( Bushido.HonorableExecution ) );
@@ -142,8 +142,8 @@ namespace Server.Spells
 					Register( 506, typeof( Ninjitsu.Shadowjump ) );
 					Register( 507, typeof( Ninjitsu.MirrorImage ) );
 				}
-
-				if( Core.ML )
+                */
+				/*if( Core.ML )
 				{
 					Register( 600, typeof( Spellweaving.ArcaneCircleSpell ) );
 					Register( 601, typeof( Spellweaving.GiftOfRenewalSpell ) );
@@ -161,8 +161,8 @@ namespace Server.Spells
 					Register( 613, typeof( Spellweaving.WordOfDeathSpell ) );
 					Register( 614, typeof( Spellweaving.GiftOfLifeSpell ) );
 					//Register( 615, typeof( Spellweaving.ArcaneEmpowermentSpell ) );
-				}
-			}*/
+				}*/
+			}
         }
 
         public static void Register( int spellID, Type type )
