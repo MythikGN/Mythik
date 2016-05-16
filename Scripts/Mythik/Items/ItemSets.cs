@@ -15,8 +15,18 @@ namespace Scripts.Mythik.Items
         public static BaseGearSet RubySet = new RubyArmorSet();
         public static BaseGearSet SapphireSet = new AmberArmorSet();
         public static BaseGearSet CitrineSet = new AmberArmorSet();
+        public static BaseGearSet BlueChromeSet = new BlueChromeSet();
     }
 
+    public class BlueChromeSet : BaseGearSet
+    {
+        //TODO corect hue
+        public BlueChromeSet() : base(new DefaultSkillMod(SkillName.Parry, true, 10.0), 6,
+             0x804, new DefaultSkillMod(Server.SkillName.Parry, true, 2.0))
+        {
+
+        }
+    }
     public class RubyArmorSet : BaseGearSet
     {
         //set bonus, number items for set bonus, hue, bonus for single item
