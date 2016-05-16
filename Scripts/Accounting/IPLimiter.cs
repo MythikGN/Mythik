@@ -17,7 +17,7 @@ namespace Server.Misc
 		
 		public static IPAddress[] Exemptions = new IPAddress[]	//For hosting services where there are cases where IPs can be proxied
 		{
-			//IPAddress.Parse( "127.0.0.1" ),
+			IPAddress.Parse( "127.0.0.1" ),
 		};
 
 		public static bool IsExempt( IPAddress ip )

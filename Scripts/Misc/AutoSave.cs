@@ -7,8 +7,8 @@ namespace Server.Misc
 {
 	public class AutoSave : Timer
 	{
-		private static TimeSpan m_Delay = TimeSpan.FromMinutes( 5.0 );
-		private static TimeSpan m_Warning = TimeSpan.Zero;
+		private static TimeSpan m_Delay = TimeSpan.FromMinutes( 60.0 );
+		private static TimeSpan m_Warning = TimeSpan.FromSeconds(30);
 		//private static TimeSpan m_Warning = TimeSpan.FromSeconds( 15.0 );
 
 		public static void Initialize()
