@@ -1590,7 +1590,7 @@ namespace Server.Items
 
 			double propertyBonus = ( move == null ) ? 1.0 : move.GetPropertyBonus( attacker );
 
-			if ( Core.AOS )
+			if ( Core.AOS && (!(attacker is PlayerMobile) || !(defender is PlayerMobile) ))
 			{
 				int lifeLeech = 0;
 				int stamLeech = 0;
@@ -1680,7 +1680,7 @@ namespace Server.Items
 					bc.Hits += damage;
 			}
 
-			if ( Core.AOS )
+			if ( Core.AOS && (!(attacker is PlayerMobile) || !(defender is PlayerMobile)))
 			{
 				int physChance = (int)(AosWeaponAttributes.GetValue( attacker, AosWeaponAttribute.HitPhysicalArea ) * propertyBonus);
 				int fireChance = (int)(AosWeaponAttributes.GetValue( attacker, AosWeaponAttribute.HitFireArea ) * propertyBonus);
