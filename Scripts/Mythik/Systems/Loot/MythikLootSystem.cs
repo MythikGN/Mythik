@@ -8,6 +8,7 @@ using Server;
 using Server.Items;
 using Scripts.Mythik.Items.Uniques;
 using Scripts.Mythik.Items.Rares;
+using Scripts.Mythik.Items.Rares.Recipes;
 
 namespace Scripts.Mythik.Systems.Loot
 {
@@ -54,6 +55,10 @@ namespace Scripts.Mythik.Systems.Loot
                 new LootPackItem( typeof( DamagedMiningHat ), 1 )
             };
 
+        /// <summary>
+        /// Standard loot packs for level 1-5 monsters, handles dropping gold, pots, scrolls, gems and addons. 
+        /// These loot packs drop direct on monster corpse, Killers luck effects drop rates.
+        /// </summary>
         public static readonly LootPack Level1 = new LootPack(new LootPackEntry[]
             {
                 new LootPackEntry(  true, Gold,                     100.00, "2d20+50" ),
@@ -129,10 +134,14 @@ namespace Scripts.Mythik.Systems.Loot
         }
 
         /// <summary>
-        /// List of items rewarded using ToT style system
+        /// List of items rewarded using ToT style system dropped direct to backpack, 
+        /// and an increasing chance to get one every mob you kill, till you get one.
+        /// Killers luck also effects drop rate.
         /// </summary>
         private static Type[] m_LesserArtifacts = new Type[] {
-            typeof(RareClothDyeTub),typeof( RareLeatherDyeTub ), typeof(RuneBookChargeDeed)
+            typeof(RareClothDyeTub),typeof( RareLeatherDyeTub ), typeof(RuneBookChargeDeed),
+            typeof(AnimateDeadScrollRecipe),typeof(BloodOathScrollRecipe),typeof(SummonFamiliarScrollRecipe),
+            typeof(EnemyOfOneScrollRecipe)
 
         };
         /// <summary>
