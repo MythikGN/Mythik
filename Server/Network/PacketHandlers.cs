@@ -1205,8 +1205,8 @@ namespace Server.Network
 					if ( prof != null ) {
 						prof.Start();
 					}
-
-					gump.OnResponse( state, new RelayInfo( buttonID, switches, textEntries ) );
+                    EventSink.InvokeGumpResponseHandler(new GumpResponseArgs(state, gump,buttonID));
+                    gump.OnResponse( state, new RelayInfo( buttonID, switches, textEntries ) );
 
 					if ( prof != null ) {
 						prof.Finish();
