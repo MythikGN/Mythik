@@ -2959,6 +2959,44 @@
     <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\Gumps Plus\InfoGump.cs" />
     <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Jail.cs" />
     <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\RUOVersion.cs" />
+    <Compile Include="Mythik\3rdParty\Poker\Card.cs" />
+    <Compile Include="Mythik\3rdParty\Poker\Deck.cs" />
+    <Compile Include="Mythik\3rdParty\Poker\Enums.cs" />
+    <Compile Include="Mythik\3rdParty\Poker\Gumps\PokerBetGump.cs" />
+    <Compile Include="Mythik\3rdParty\Poker\Gumps\PokerJoinGump.cs" />
+    <Compile Include="Mythik\3rdParty\Poker\Gumps\PokerLeaveGump.cs" />
+    <Compile Include="Mythik\3rdParty\Poker\Gumps\PokerTableGump.cs" />
+    <Compile Include="Mythik\3rdParty\Poker\HandRanker.cs" />
+    <Compile Include="Mythik\3rdParty\Poker\JackpotBoard.cs" />
+    <Compile Include="Mythik\3rdParty\Poker\PlayerStructure.cs" />
+    <Compile Include="Mythik\3rdParty\Poker\PokerDealer.cs" />
+    <Compile Include="Mythik\3rdParty\Poker\PokerGame.cs" />
+    <Compile Include="Mythik\3rdParty\Poker\PokerPlayer.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Gumps\Error Reporting\Errors.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Gumps\Error Reporting\ErrorsGump.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Gumps\Error Reporting\ErrorsNotifyGump.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Gumps\Gumps Plus Light\BackgroundPlus.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Gumps\Gumps Plus Light\ButtonPlus.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Gumps\Gumps Plus Light\GumpPlusLight.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Gumps\Gumps Plus Light\HTML.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Gumps\Gumps Plus Light\HtmlPlus.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Gumps\Gumps Plus Light\InfoGump.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Gumps\TownHouse Gumps\ContractConfirmGump.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Gumps\TownHouse Gumps\ContractSetupGump.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Gumps\TownHouse Gumps\TownHouseConfirmGump.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Gumps\TownHouse Gumps\TownHouseSetupGump.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Gumps\TownHouse Gumps\TownHousesGump.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Items\RentalContract.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Items\RentalContractCopy.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Items\RentalLicense.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Items\SignHammer.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Items\TownHouse.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Items\TownHouseSign.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Misc\CommandInfo.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Misc\DecoreItemInfo.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Misc\General.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\Misc\GumpResponse.cs" />
+    <Compile Include="Mythik\3rdParty\Town Houses v2.01\RUOVersion.cs" />
     <Compile Include="Mythik\Commands\HomeHomeHome.cs" />
     <Compile Include="Mythik\Encryption\Configuration.cs" />
     <Compile Include="Mythik\Encryption\Encryption.cs" />
@@ -2975,6 +3013,7 @@
     <Compile Include="Mythik\Gumps\FAQGump.cs" />
     <Compile Include="Mythik\Gumps\ItemStoneGump.cs" />
     <Compile Include="Mythik\Gumps\NewsGump.cs" />
+    <Compile Include="Mythik\Gumps\ResourceStorageBookGump.cs" />
     <Compile Include="Mythik\Gumps\ReagentBookGump.cs" />
     <Compile Include="Mythik\Gumps\RessurrectionStoneGump.cs" />
     <Compile Include="Mythik\Gumps\TravelStoneGump.cs" />
@@ -2982,6 +3021,10 @@
     <Compile Include="Mythik\Items\Craftables\Alch\ShrinkPotion.cs" />
     <Compile Include="Mythik\Items\Craftables\DeedPart.cs" />
     <Compile Include="Mythik\Items\Craftables\HouseDeedPart.cs" />
+    <Compile Include="Mythik\Items\Craftables\Inscription\CreatureGuideBook.cs" />
+    <Compile Include="Mythik\Items\Craftables\Inscription\EnemyOfOneScroll.cs" />
+    <Compile Include="Mythik\Items\Craftables\Inscription\LumberBook.cs" />
+    <Compile Include="Mythik\Items\Craftables\Inscription\IngotBook.cs" />
     <Compile Include="Mythik\Items\Craftables\Inscription\ReagentBook.cs" />
     <Compile Include="Mythik\Items\Craftables\Tinkering\FusionCube.cs" />
     <Compile Include="Mythik\Items\Craftables\Tinkering\GemArmor\CitrineArmor.cs" />
@@ -2992,7 +3035,13 @@
     <Compile Include="Mythik\Items\Misc\CreatureGuide.cs" />
     <Compile Include="Mythik\Items\Misc\EyeOfNewt.cs" />
     <Compile Include="Mythik\Items\Misc\RaresGuide.cs" />
+    <Compile Include="Mythik\Items\Rares\Equipment\BlueChromeArmor.cs" />
+    <Compile Include="Mythik\Items\Rares\Equipment\HolyWeapons.cs" />
+    <Compile Include="Mythik\Items\Rares\RareCraftingMaterials.cs" />
+    <Compile Include="Mythik\Items\Rares\RareDyeTubs.cs" />
+    <Compile Include="Mythik\Items\Rares\Recipes\InscriptionRecipes.cs" />
     <Compile Include="Mythik\Items\Rares\RunebookChargeDeeds.cs" />
+    <Compile Include="Mythik\Items\Rares\RunebookDyeDeed.cs" />
     <Compile Include="Mythik\Items\Stones\BankStone.cs" />
     <Compile Include="Mythik\Items\Stones\ItemStone.cs" />
     <Compile Include="Mythik\Items\Stones\RessurrectionStone.cs" />
@@ -3013,8 +3062,10 @@
     <Compile Include="Mythik\Mobiles\Monsters\Reptile\CrystalDragon.cs" />
     <Compile Include="Mythik\Mobiles\Monsters\Reptile\CrystalDrake.cs" />
     <Compile Include="Mythik\Mobiles\Mounts\Mustang.cs" />
+    <Compile Include="Mythik\Mobiles\MythikPlayerMobile.cs" />
     <Compile Include="Mythik\MythikStaticValues.cs" />
     <Compile Include="Mythik\RecipeNames.cs" />
+    <Compile Include="Mythik\Systems\Achievements\AcheivmentSystem.cs" />
     <Compile Include="Mythik\Systems\AuctionSystem.cs" />
     <Compile Include="Mythik\Systems\LanguageAndSkillsSelect.cs" />
     <Compile Include="Mythik\Systems\Loot\MythikLootSystem.cs" />
@@ -3227,6 +3278,9 @@
     <Content Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Text Data Files\ChatFilters.txt" />
     <Content Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Text Data Files\ChatLocal.txt" />
     <Content Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Text Data Files\HelpContents.txt" />
+    <Content Include="Mythik\3rdParty\Town Houses v2.01\Optional Patches\BaseHousePatch.txt" />
+    <Content Include="Mythik\3rdParty\Town Houses v2.01\Optional Patches\InteriorDecoratorPatch.txt" />
+    <Content Include="Mythik\3rdParty\Town Houses v2.01\Optional Patches\READ.txt" />
     <Content Include="SpecialSystems\README.TXT" />
   </ItemGroup>
   <ItemGroup>
@@ -3238,6 +3292,7 @@
   <ItemGroup>
     <None Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Beta 9.doc" />
     <None Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Read.doc" />
+    <None Include="Mythik\3rdParty\Town Houses v2.01\Read.doc" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
