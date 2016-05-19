@@ -22,6 +22,7 @@ using System;
 using System.Text;
 using Server;
 using Server.Network;
+using System.Collections.Generic;
 
 namespace Server
 {
@@ -42,6 +43,8 @@ namespace Server
 		private static bool m_Enabled = false;
 
 		public static bool Enabled{ get{ return m_Enabled; } set{ m_Enabled = value; } }
+
+        public List<Tuple<int, string>> Props = new List<Tuple<int, string>>();
 
 		public ObjectPropertyList( IEntity e ) : base( 0xD6 )
 		{
@@ -71,7 +74,9 @@ namespace Server
 
 			m_Stream.Write( number );
 			m_Stream.Write( (short) 0 );
-		}
+            Props.Add(new Tuple<int, string>(number, null));
+
+        }
 
 		public void Terminate()
 		{
@@ -118,7 +123,8 @@ namespace Server
 
 			m_Stream.Write( (short) byteCount );
 			m_Stream.Write( m_Buffer, 0, byteCount );
-		}
+            Props.Add(new Tuple<int, string>(number, arguments));
+        }
 
 		public void Add( int number, string format, object arg0 )
 		{

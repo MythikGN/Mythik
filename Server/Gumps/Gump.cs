@@ -412,7 +412,7 @@ namespace Server.Gumps
                             text = "Failed";
                         if (!string.IsNullOrWhiteSpace(localized.Args) && !localized.Args.Equals("0"))
                         {
-
+                            text = text.Replace("~1_val~", localized.Args);
                         }
                         e = new GumpHtml(localized.X, localized.Y, localized.Width, localized.Height, text , localized.Background, localized.Scrollbar);
                         e.Parent = localized.Parent;

@@ -48,10 +48,10 @@ namespace Server
 
             for ( int i = 0; i < m_Poisons.Count; i++ )
             {
-                if ( reg.Level == m_Poisons[i].Level )
-                    throw new Exception( "A poison with that level already exists." );
-                else if ( regName == m_Poisons[i].Name.ToLower() )
-                    throw new Exception( "A poison with that name already exists." );
+                //if ( reg.Level == m_Poisons[i].Level )
+                //    throw new Exception( "A poison with that level already exists." );
+                //else if ( regName == m_Poisons[i].Name.ToLower() )
+                //    throw new Exception( "A poison with that name already exists." );
             }
 
             m_Poisons.Add( reg );
@@ -62,7 +62,10 @@ namespace Server
         public static Poison Greater { get { return GetPoison( "Greater" ); } }
         public static Poison Deadly { get { return GetPoison( "Deadly" ); } }
         public static Poison Lethal { get { return GetPoison( "Lethal" ); } }
-        public static Poison Sphere { get { return GetPoison("Sphere"); } }
+        public static Poison Sphere0 { get { return GetPoison("Sphere0"); } }
+        public static Poison Sphere1 { get { return GetPoison("Sphere1"); } }
+        public static Poison Sphere2 { get { return GetPoison("Sphere2"); } }
+        public static Poison Sphere3 { get { return GetPoison("Sphere3"); } }
 
         public static List<Poison> Poisons
         {
@@ -93,13 +96,36 @@ namespace Server
             {
                 Poison p = m_Poisons[i];
 
-                if ( p.Level == level )
+                if ( p.Level == level && !p.Name.Contains("Sphere"))
                     return p;
             }
 
             return null;
         }
+        public static Poison GetSpherePoison(Mobile Caster)
+        {
+            var level = 0;
+            var iLevel = Caster.Skills[SkillName.Magery].Fixed;
+            iLevel = iLevel / 2 + Utility.Random(iLevel/2);
+            if (iLevel < 200)
+                level = 0;
+            else if (iLevel < 400)
+                level = 1;
+            else if (iLevel < 800)
+                level = 2;
+            else
+                level = 3;
 
+            for (int i = 0; i < m_Poisons.Count; ++i)
+            {
+                Poison p = m_Poisons[i];
+
+                if (p.Level == level && p.Name.Contains("Sphere"))
+                    return p;
+            }
+
+            return null;
+        }
         public static Poison GetPoison( string name )
         {
             for ( int i = 0; i < m_Poisons.Count; ++i )

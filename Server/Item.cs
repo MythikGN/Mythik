@@ -4472,7 +4472,10 @@ namespace Server
                 if (this is IUniqueItem)
                 {
                     var uni = this as IUniqueItem;
-                    ns.Send(new AsciiMessage(m_Serial, m_ItemID, MessageType.Label, 2061, 3, "","[ Unique Lvl:" + uni.UniqueLevel + " ]"));
+                    if(uni.UniqueLevel == RareLevel.Rare)
+                        ns.Send(new AsciiMessage(m_Serial, m_ItemID, MessageType.Label, 2061, 3, "", "[ Rare ]"));
+                    else
+                        ns.Send(new AsciiMessage(m_Serial, m_ItemID, MessageType.Label, 2061, 3, "","[ Unique Lvl: " + (int)uni.UniqueLevel + " ]"));
                     ns.Send(new UnicodeMessage(m_Serial, m_ItemID, MessageType.Label, 0x803, 3, "ENU", "", myTI.ToTitleCase(this.Name ?? "") + (m_Amount > 1 ? " : " + m_Amount : "")));
                     return;
                 }

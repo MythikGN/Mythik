@@ -8543,7 +8543,7 @@ namespace Server
 		/// </summary>
 		public virtual void OnPoisoned( Mobile from, Poison poison, Poison oldPoison )
 		{
-			if( poison != null )
+			if( poison != null && !poison.Name.Contains("Sphere") )
 			{
 				this.LocalOverheadMessage( MessageType.Regular, 0x21, 1042857 + (poison.Level * 2) );
 				this.NonlocalOverheadMessage( MessageType.Regular, 0x21, 1042858 + (poison.Level * 2), Name );
