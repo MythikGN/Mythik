@@ -97,8 +97,12 @@ namespace Server.Engines.BulkOrders
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( IsChildOf( from.Backpack ) || InSecureTrade || RootParent is PlayerVendor )
-				from.SendGump( new SmallBODGump( from, this ) );
+			if ( IsChildOf( from.Backpack ) || InSecureTrade || RootParent is PlayerVendor)
+            {
+                from.SendGump(new SmallBODGump(from, this));
+                EventSink.InvokeBODUsed(new BODUsedEventArgs(from, this));
+            }
+				
 			else
 				from.SendLocalizedMessage( 1045156 ); // You must have the deed in your backpack to use it.
 		}

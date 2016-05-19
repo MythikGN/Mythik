@@ -77,9 +77,10 @@ namespace Server.Engines.BulkOrders
 		{
 			if ( info.ButtonID == 1 ) // Ok
 			{
-				if ( m_From.PlaceInBackpack( m_Deed ) )
+                EventSink.InvokeBODOffered(new BODOfferEventArgs(m_From, m_Deed));
+                if ( m_From.PlaceInBackpack( m_Deed ) )
 				{
-					m_From.SendLocalizedMessage( 1045152 ); // The bulk order deed has been placed in your backpack.
+                    m_From.SendLocalizedMessage( 1045152 ); // The bulk order deed has been placed in your backpack.
 				}
 				else
 				{

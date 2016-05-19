@@ -9779,7 +9779,8 @@ namespace Server
 		/// </summary>
 		public virtual void OnItemUsed( Mobile from, Item item )
 		{
-		}
+            EventSink.InvokeOnItemUse(new OnItemUseEventArgs(from, item));
+        }
 
 		public virtual bool CheckNonlocalDrop( Mobile from, Item item, Item target )
 		{

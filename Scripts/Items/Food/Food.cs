@@ -82,8 +82,8 @@ namespace Server.Items
 					from.ApplyPoison( m_Poisoner, m_Poison );
 
 				Consume();
-
-				return true;
+                EventSink.InvokeOnConsume(new OnConsumeEventArgs(from, this));
+                return true;
 			}
 
 			return false;

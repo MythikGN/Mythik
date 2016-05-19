@@ -90,7 +90,8 @@ namespace Server.Engines.Harvest
 				return false;
 
 			from.Target = new HarvestTarget( tool, this );
-			return true;
+            EventSink.InvokeResourceHarvestAttempt(new ResourceHarvestAttemptEventArgs(from, tool, this));
+            return true;
 		}
 
 		public virtual void FinishHarvesting( Mobile from, Item tool, HarvestDefinition def, object toHarvest, object locked )
@@ -229,7 +230,8 @@ namespace Server.Engines.Harvest
 								def.SendMessageTo( from, def.ToolBrokeMessage );
 							}
 						}
-					}
+                        EventSink.InvokeResourceHarvestSuccess(new ResourceHarvestSuccessEventArgs(from, tool, item, this));
+                    }
 				}
 			}
 

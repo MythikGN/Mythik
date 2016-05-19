@@ -30,6 +30,7 @@ using Server.Network;
 using Server.Guilds;
 using Server.Commands;
 using Server.Gumps;
+using System.Reflection;
 
 namespace Server
 {
@@ -74,9 +75,166 @@ namespace Server
 	public delegate void GuildGumpRequestHandler( GuildGumpRequestArgs e );
 	public delegate void QuestGumpRequestHandler( QuestGumpRequestArgs e );
 	public delegate void ClientVersionReceivedHandler( ClientVersionReceivedArgs e );
+
     public delegate void GumpResponseHandler(GumpResponseArgs e);
+    public delegate void OnKilledByEventHandler(OnKilledByEventArgs e);
 
+    public delegate void OnItemUseEventHandler(OnItemUseEventArgs e);
 
+    public delegate void OnEnterRegionEventHandler(OnEnterRegionEventArgs e);
+
+    public delegate void OnConsumeEventHandler(OnConsumeEventArgs e);
+
+    public delegate void OnPropertyChangedEventHandler(OnPropertyChangedEventArgs e);
+
+    public delegate void BODUsedEventHandler(BODUsedEventArgs e);
+
+    public delegate void BODOfferAccepted(BODOfferEventArgs e);
+
+    public delegate void ResourceHarvestAttemptEventHandler(ResourceHarvestAttemptEventArgs e);
+
+    public delegate void ResourceHarvestSuccessEventHandler(ResourceHarvestSuccessEventArgs e);
+
+    public class OnKilledByEventArgs : EventArgs
+    {
+        private readonly Mobile m_Killed;
+        private readonly Mobile m_KilledBy;
+
+        public OnKilledByEventArgs(Mobile killed, Mobile killedBy)
+        {
+            m_Killed = killed;
+            m_KilledBy = killedBy;
+        }
+
+        public Mobile Killed { get { return m_Killed; } }
+        public Mobile KilledBy { get { return m_KilledBy; } }
+    }
+
+    public class OnItemUseEventArgs : EventArgs
+    {
+        private readonly Mobile m_From;
+        private readonly Item m_Item;
+
+        public OnItemUseEventArgs(Mobile from, Item item)
+        {
+            m_From = from;
+            m_Item = item;
+        }
+
+        public Mobile From { get { return m_From; } }
+        public Item Item { get { return m_Item; } }
+    }
+
+    public class OnEnterRegionEventArgs : EventArgs
+    {
+        private readonly Mobile m_From;
+        private readonly Region m_Region;
+
+        public OnEnterRegionEventArgs(Mobile from, Region region)
+        {
+            m_From = from;
+            m_Region = region;
+        }
+
+        public Mobile From { get { return m_From; } }
+        public Region Region { get { return m_Region; } }
+    }
+
+    public class OnConsumeEventArgs : EventArgs
+    {
+        private readonly Mobile m_Consumer;
+        private readonly Item m_Consumed;
+        private readonly int m_Quantity;
+
+        public OnConsumeEventArgs(Mobile consumer, Item consumed)
+            : this(consumer, consumed, 1)
+        { }
+
+        public OnConsumeEventArgs(Mobile consumer, Item consumed, int quantity)
+        {
+            m_Consumer = consumer;
+            m_Consumed = consumed;
+            m_Quantity = quantity;
+        }
+
+        public Mobile Consumer { get { return m_Consumer; } }
+
+        public Item Consumed { get { return m_Consumed; } }
+
+        public int Quantity { get { return m_Quantity; } }
+    }
+
+    public class OnPropertyChangedEventArgs : EventArgs
+    {
+        public Mobile Mobile { get; private set; }
+        public PropertyInfo Property { get; private set; }
+        public object Instance { get; private set; }
+        public object OldValue { get; private set; }
+        public object NewValue { get; private set; }
+
+        public OnPropertyChangedEventArgs(Mobile m, object instance, PropertyInfo prop, object oldValue, object newValue)
+        {
+            Mobile = m;
+            Property = prop;
+            Instance = instance;
+            OldValue = oldValue;
+            NewValue = newValue;
+        }
+    }
+
+    public class BODUsedEventArgs : EventArgs
+    {
+        public Mobile User { get; private set; }
+        public Item BODItem { get; private set; }
+
+        public BODUsedEventArgs(Mobile m, Item i)
+        {
+            User = m;
+            BODItem = i;
+        }
+    }
+
+    public class BODOfferEventArgs : EventArgs
+    {
+        public Mobile Player { get; private set; }
+        public Item BOD { get; private set; }
+
+        public BODOfferEventArgs(Mobile p, Item v)
+        {
+            Player = p;
+            BOD = v;
+        }
+    }
+
+    public class ResourceHarvestAttemptEventArgs : EventArgs
+    {
+        public Mobile Harvester { get; private set; }
+        public Item Tool { get; private set; }
+        public object HarvestSystem { get; private set; }
+
+        public ResourceHarvestAttemptEventArgs(Mobile m, Item i, object o)
+        {
+            Harvester = m;
+            Tool = i;
+            HarvestSystem = o;
+        }
+    }
+
+    public class ResourceHarvestSuccessEventArgs : EventArgs
+    {
+        public Mobile Harvester { get; private set; }
+        public Item Tool { get; private set; }
+        public Item Resource { get; private set; }
+        public object HarvestSystem { get; private set; }
+
+        public ResourceHarvestSuccessEventArgs(Mobile m, Item i, Item r, object o)
+        {
+            Harvester = m;
+            Tool = i;
+            Resource = r;
+            HarvestSystem = o;
+        }
+    }
     public class GumpResponseArgs : EventArgs
     {
         private NetState m_State;
@@ -855,8 +1013,89 @@ namespace Server
 		public static event ClientVersionReceivedHandler ClientVersionReceived;
 
         public static event GumpResponseHandler GumpResponseHandler;
+        public static event OnKilledByEventHandler OnKilledBy;
+        public static event OnItemUseEventHandler OnItemUse;
+        public static event OnEnterRegionEventHandler OnEnterRegion;
+        /// <summary>
+        /// Consume as in eat a food.
+        /// </summary>
+        public static event OnConsumeEventHandler OnConsume;
+       // public static event OnPropertyChangedEventHandler OnPropertyChanged;
+        public static event BODUsedEventHandler BODUsed;
+        public static event BODOfferAccepted BODOffered;
+        public static event ResourceHarvestAttemptEventHandler ResourceHarvestAttempt;
+        public static event ResourceHarvestSuccessEventHandler ResourceHarvestSuccess;
+        public static void InvokeOnKilledBy(OnKilledByEventArgs e)
+        {
+            if (OnKilledBy != null)
+            {
+                OnKilledBy(e);
+            }
+        }
 
+        public static void InvokeOnItemUse(OnItemUseEventArgs e)
+        {
+            if (OnItemUse != null)
+            {
+                OnItemUse(e);
+            }
+        }
 
+        public static void InvokeOnEnterRegion(OnEnterRegionEventArgs e)
+        {
+            if (OnEnterRegion != null)
+            {
+                OnEnterRegion(e);
+            }
+        }
+
+        public static void InvokeOnConsume(OnConsumeEventArgs e)
+        {
+            if (OnConsume != null)
+            {
+                OnConsume(e);
+            }
+        }
+
+      /*  public static void InvokeOnPropertyChanged(OnPropertyChangedEventArgs e)
+        {
+            if (OnPropertyChanged != null)
+            {
+                OnPropertyChanged(e);
+            }
+        }*/
+
+        public static void InvokeBODUsed(BODUsedEventArgs e)
+        {
+            if (BODUsed != null)
+            {
+                BODUsed(e);
+            }
+        }
+
+        public static void InvokeBODOffered(BODOfferEventArgs e)
+        {
+            if (BODOffered != null)
+            {
+                BODOffered(e);
+            }
+        }
+
+        public static void InvokeResourceHarvestAttempt(ResourceHarvestAttemptEventArgs e)
+        {
+            if (ResourceHarvestAttempt != null)
+            {
+                ResourceHarvestAttempt(e);
+            }
+        }
+
+        public static void InvokeResourceHarvestSuccess(ResourceHarvestSuccessEventArgs e)
+        {
+            if (ResourceHarvestSuccess != null)
+            {
+                ResourceHarvestSuccess(e);
+            }
+        }
         public static void InvokeGumpResponseHandler(GumpResponseArgs e)
         {
             if (GumpResponseHandler != null)
