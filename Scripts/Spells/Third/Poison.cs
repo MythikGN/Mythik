@@ -116,7 +116,7 @@ namespace Server.Spells.Third
 							level = 0;
 					}
                     if(Caster is PlayerMobile && m is PlayerMobile)
-                        m.ApplyPoison(Caster, Poison.Regular);
+                        m.ApplyPoison(Caster, Poison.GetSpherePoison(Caster));
                     else
                     m.ApplyPoison( Caster, Poison.GetPoison( level ) );
 				}

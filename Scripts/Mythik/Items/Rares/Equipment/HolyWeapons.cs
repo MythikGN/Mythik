@@ -1,4 +1,5 @@
 ﻿using Server;
+using Server.Gumps;
 using Server.Items;
 using Server.Network;
 using System;
@@ -9,6 +10,38 @@ using System.Threading.Tasks;
 
 namespace Scripts.Mythik.Items.Rares.Equipment
 {
+    public class EquipInfoGump : Gump
+    {
+
+        public EquipInfoGump(Item item) : base(605,10)
+        {
+            this.Closable = true;
+            this.Disposable = true;
+            this.Dragable = true;
+            this.Resizable = false;
+            this.AddPage(0);
+            this.AddBackground(82, 78, 136, 246, 9200);
+            this.AddBackground(89, 87, 122, 229, 9200);
+            this.AddAlphaRegion(80, 77, 141, 250);
+            var text = @"<CENTER>";
+            int y = 80;
+            if (string.IsNullOrWhiteSpace(item.Name))
+                AddHtmlLocalized(98, y += 17, 100, 15, item.LabelNumber, false, false);
+            else
+                AddHtml(98, y += 17, 100, 15, item.Name, false, false);
+            foreach (var prop in item.PropertyList.Props)
+            {
+                if (prop.Item2 == null)
+                    AddHtmlLocalized(98, y += 17, 100, 15, prop.Item1, false, false);
+                else
+                    AddHtmlLocalized(98, y+=17, 100, 15, prop.Item1,prop.Item2,0,false,false);
+
+            }
+            //this.AddHtml(90, 87, 119, 231, text, (bool)false, (bool)false);
+
+        }
+    }
+
     public class HolyWarFork : WarFork , IUniqueItem
     {
         public RareLevel UniqueLevel
@@ -34,6 +67,14 @@ namespace Scripts.Mythik.Items.Rares.Equipment
                 defender.Hits -= Utility.Random(10, 15);
             }
             base.OnHit(attacker, defender, damageBonus);
+        }
+        public override void OnSingleClick(Mobile from)
+        {
+            base.OnSingleClick(from);
+            if(from.NetState.Version.Major <=3)
+            {
+                from.SendGump(new EquipInfoGump(this));
+            }
         }
 
         public override bool OnEquip(Mobile from)
@@ -72,7 +113,7 @@ namespace Scripts.Mythik.Items.Rares.Equipment
         public UnHolyWarFork() : base()
         {
             Name = "Unholy Warfork";
-            Hue = 0x481;
+            Hue = 0x79c;
         }
 
         public override void OnHit(Mobile attacker, Mobile defender, double damageBonus)
@@ -84,6 +125,7 @@ namespace Scripts.Mythik.Items.Rares.Equipment
             }
             base.OnHit(attacker, defender, damageBonus);
         }
+
 
         public override bool OnEquip(Mobile from)
         {

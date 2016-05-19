@@ -36,6 +36,17 @@ namespace Scripts.Mythik.Mobiles
             return base.OnMove(d);
         }
 
+        [Constructable]
+        public MythikPlayerMobile(Serial serial): base(serial)
+        {
+
+        }
+        [Constructable]
+        public MythikPlayerMobile() : base ()
+        {
+
+        }
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);

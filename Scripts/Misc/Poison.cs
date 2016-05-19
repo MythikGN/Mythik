@@ -22,7 +22,10 @@ namespace Server
 				Register( new PoisonImpl( "Deadly",		3, 16, 30, 30.0, 3.0, 5.25, 15, 2 ) );
 				Register( new PoisonImpl( "Lethal",		4, 20, 50, 35.0, 3.0, 5.25, 20, 2 ) );
 
-                Register(new PoisonImpl( "Sphere",      5,  1,  8, 10.0, 3.0, 3.25, 10, 2));
+                Register(new SpherePoisonImpl( "Sphere0",       0, 2, 2, 10.0, 1.0, 5.0, 10, 2));
+                Register(new SpherePoisonImpl( "Sphere1",       1, 4, 4, 10.0, 1.0, 5.0, 12, 2));
+                Register(new SpherePoisonImpl( "Sphere2",       2, 6, 6, 10.0, 1.0, 5.0, 15, 2));
+                Register(new SpherePoisonImpl( "Sphere3",       3, 8, 8, 10.0, 1.0, 5.0, 18, 2));
             }
 			else
 			{
@@ -155,4 +158,140 @@ namespace Server
 			return new PoisonTimer( m, this );
 		}
 	}
+
+
+
+    public class SpherePoisonImpl : Poison
+    {
+       
+
+ 
+
+        // Info
+        private string m_Name;
+        private int m_Level;
+
+        // Damage
+        private int m_Minimum, m_Maximum;
+        private double m_Scalar;
+
+        // Timers
+        private TimeSpan m_Delay;
+        private TimeSpan m_Interval;
+        private int m_Count, m_MessageInterval;
+
+        public SpherePoisonImpl(string name, int level, int min, int max, double percent, double delay, double interval, int count, int messageInterval)
+        {
+            m_Name = name;
+            m_Level = level;
+            m_Minimum = min;
+            m_Maximum = max;
+            m_Scalar = percent * 0.01;
+            m_Delay = TimeSpan.FromSeconds(delay + Utility.Random(2)); // random time for first tick 1-3 sec like sphere
+
+            m_Interval = TimeSpan.FromSeconds(interval);
+            m_Count = count;
+            m_MessageInterval = messageInterval;
+        }
+
+        public override string Name { get { return m_Name; } }
+        public override int Level { get { return m_Level; } }
+
+        public class SpherePoisonTimer : Timer
+        {
+            private SpherePoisonImpl m_Poison;
+            private Mobile m_Mobile;
+            private Mobile m_From;
+            private int m_LastDamage;
+            private int m_Index;
+            private TimeSpan m_baseInterval;
+            private int m_skillLevel;
+
+            private int m_dmg;
+            private int m_PLevel;
+
+            public Mobile From { get { return m_From; } set { m_From = value; } }
+
+            public SpherePoisonTimer(Mobile m, SpherePoisonImpl p) : base(p.m_Delay, p.m_Interval + TimeSpan.FromSeconds(Utility.Random(4)))
+            {
+                m_baseInterval = p.m_Interval;
+                m_From = m;
+                m_Mobile = m;
+                m_Poison = p;
+                if (p.Level == 0)
+                    m_skillLevel = 200;
+                else if (p.Level == 1)
+                    m_skillLevel = 400;
+                else if (p.Level == 2)
+                    m_skillLevel = 600 + Utility.Random(200);
+                else
+                    m_skillLevel = 800 + Utility.Random(200);
+                m_dmg = p.m_Maximum;
+                m_PLevel = p.Level;
+            }
+            string[] m_messages = new string[] {    "sickly",
+        "very ill",
+        "extremely sick",
+        "deathly sick", };
+
+            protected override void OnTick()
+            {
+                Interval = m_baseInterval + TimeSpan.FromSeconds(Utility.Random(4));
+                m_skillLevel -= 50;
+                if (m_Index++ == m_Poison.m_Count || m_skillLevel < 50)
+                {
+                    m_Mobile.SendLocalizedMessage(502136); // The poison seems to have worn off.
+                    m_Mobile.Poison = null;
+
+                    Stop();
+                    return;
+                }
+
+
+                if (m_skillLevel < 800 && m_PLevel == 3)
+                {
+                    m_PLevel = 2;
+                    m_dmg -= 2;
+                }
+                if (m_skillLevel < 400 && m_PLevel == 2)
+                {
+                    m_PLevel = 1;
+                    m_dmg -= 2;
+                }
+                if (m_skillLevel < 200 && m_PLevel == 1)
+                {
+                    m_PLevel = 0;
+                    m_dmg -= 2;
+                }
+
+              
+
+                m_LastDamage = m_dmg;
+               
+
+                if (m_From != null)
+                    m_From.DoHarmful(m_Mobile, true);
+
+               
+                AOS.Damage(m_Mobile, m_From, m_dmg, 0, 0, 0, 100, 0);
+
+                if (0.60 <= Utility.RandomDouble()) // OSI: randomly revealed between first and third damage tick, guessing 60% chance
+                    m_Mobile.RevealingAction();
+
+                if ((m_Index % m_Poison.m_MessageInterval) == 0)
+                {
+                   
+                    m_Mobile.LocalOverheadMessage(MessageType.Regular, 0x21,true,"You feel " + m_messages[m_PLevel]);
+                    m_Mobile.NonlocalOverheadMessage(MessageType.Regular, 0x21, true, "looks " + m_messages[m_PLevel]);
+                   
+                }
+                    m_Mobile.OnPoisoned(m_From, m_Poison, m_Poison);
+            }
+        }
+
+        public override Timer ConstructTimer(Mobile m)
+        {
+            return new SpherePoisonTimer(m, this);
+        }
+    }
 }

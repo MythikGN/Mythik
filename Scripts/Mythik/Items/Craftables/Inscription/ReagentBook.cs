@@ -173,9 +173,9 @@ namespace Scripts.Mythik.Items.Craftables.Inscription
         {
             base.GetProperties(list);
 
-            for (int i = 0; i < 15; ++i)
+         /*   for (int i = 0; i < 15; ++i)
                 if (m_Reagents[i] > 0)
-                    list.Add(1080521 + i, "{0}", m_Reagents[i]);
+                    list.Add(1080521 + i, "{0}", m_Reagents[i]);*/
         }
 
 

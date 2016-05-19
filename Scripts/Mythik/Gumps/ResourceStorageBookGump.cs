@@ -81,7 +81,10 @@ namespace Scripts.Mythik.Gumps
                 var item = (Item)Activator.CreateInstance(kv.Key);
 
                 AddItem(45, y + 5, item.ItemID);
-                AddLabel(100, y, 1153, item.Name);
+                if (string.IsNullOrWhiteSpace(item.Name))
+                    AddHtmlLocalized(100, y, 150, 15, item.LabelNumber, 1153, false, false);
+                else
+                    AddLabel(100, y, 1153, item.Name);
                 AddLabel(235, y, 1153, kv.Value.m_Count.ToString());
 
                 if (kv.Value.m_Count > 0)
