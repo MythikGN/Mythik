@@ -29,6 +29,7 @@ using Server.Accounting;
 using Server.Network;
 using Server.Guilds;
 using Server.Commands;
+using Server.Gumps;
 
 namespace Server
 {
@@ -73,8 +74,27 @@ namespace Server
 	public delegate void GuildGumpRequestHandler( GuildGumpRequestArgs e );
 	public delegate void QuestGumpRequestHandler( QuestGumpRequestArgs e );
 	public delegate void ClientVersionReceivedHandler( ClientVersionReceivedArgs e );
+    public delegate void GumpResponseHandler(GumpResponseArgs e);
 
-	public class ClientVersionReceivedArgs : EventArgs
+
+    public class GumpResponseArgs : EventArgs
+    {
+        private NetState m_State;
+        private Gump m_Version;
+        private int m_buttonID;
+
+        public NetState State { get { return m_State; } }
+        public Gump Version { get { return m_Version; } }
+        public int ButtonID { get { return m_buttonID; } }
+        public GumpResponseArgs(NetState state, Gump cv,int buttonID)
+        {
+            m_State = state;
+            m_Version = cv;
+            m_buttonID = buttonID;
+        }
+    }
+
+    public class ClientVersionReceivedArgs : EventArgs
 	{
 		private NetState m_State;
 		private ClientVersion m_Version;
@@ -834,7 +854,15 @@ namespace Server
 		public static event QuestGumpRequestHandler QuestGumpRequest;
 		public static event ClientVersionReceivedHandler ClientVersionReceived;
 
-		public static void InvokeClientVersionReceived( ClientVersionReceivedArgs e )
+        public static event GumpResponseHandler GumpResponseHandler;
+
+
+        public static void InvokeGumpResponseHandler(GumpResponseArgs e)
+        {
+            if (GumpResponseHandler != null)
+                GumpResponseHandler(e);
+        }
+        public static void InvokeClientVersionReceived( ClientVersionReceivedArgs e )
 		{
 			if( ClientVersionReceived != null )
 				ClientVersionReceived( e );
