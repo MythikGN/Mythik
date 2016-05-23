@@ -410,10 +410,11 @@ namespace Server.Gumps
 
                         if (text == null)
                             text = "Failed";
-                        if (!string.IsNullOrWhiteSpace(localized.Args) && !localized.Args.Equals("0"))
+                        if (!string.IsNullOrWhiteSpace(localized.Args))
                         {
                             text = text.Replace("~1_val~", localized.Args);
                         }
+                        //e = new GumpLabel(localized.X, localized.Y, 0, text);
                         e = new GumpHtml(localized.X, localized.Y, localized.Width, localized.Height, text , localized.Background, localized.Scrollbar);
                         e.Parent = localized.Parent;
                     }

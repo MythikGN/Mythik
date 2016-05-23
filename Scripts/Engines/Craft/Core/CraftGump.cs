@@ -15,7 +15,7 @@ namespace Server.Engines.Craft
 
 		private CraftPage m_Page;
 
-		private const int LabelHue = 0x480;
+        private const int LabelHue = 0x480;
 		private const int LabelColor = 0x7FFF;
 		private const int FontColor = 0xFFFFFF;
 
@@ -233,10 +233,11 @@ namespace Server.Engines.Craft
 
 				AddButton( 220, 60 + (index * 20), 4005, 4007, GetButtonID( 5, i ), GumpButtonType.Reply, 0 );
 
-				if ( subResource.NameNumber > 0 )
-					AddHtmlLocalized( 255, 63 + (index * 20), 250, 18, subResource.NameNumber, resourceCount.ToString(), LabelColor, false, false );
-				else
-					AddLabel( 255, 60 + ( index * 20 ), LabelHue, String.Format( "{0} ({1})", subResource.NameString, resourceCount ) );
+                if (subResource.NameNumber > 0)
+                    AddHtmlLocalized(255, 63 + (index * 20), 250, 18, subResource.NameNumber, resourceCount.ToString(), LabelColor, false, false);
+                else
+                    AddHtml(255, 63 + (index * 20), 250, 18, String.Format("{0} ({1})", subResource.NameString, resourceCount), false, false);
+					//AddLabel( 255, 60 + ( index * 20 ), LabelHue, String.Format( "{0} ({1})", subResource.NameString, resourceCount ) );
 			}
 		}
 
@@ -329,10 +330,12 @@ namespace Server.Engines.Craft
 
 				AddButton( 220, 60 + (index * 20), 4005, 4007, GetButtonID( 1, i ), GumpButtonType.Reply, 0 );
 
-				if ( craftItem.NameNumber > 0 )
-					AddHtmlLocalized( 255, 63 + (index * 20), 220, 18, craftItem.NameNumber, LabelColor, false, false );
-				else
-					AddLabel( 255, 60 + (index * 20), LabelHue, craftItem.NameString );
+                if (craftItem.NameNumber > 0)
+                    AddHtmlLocalized(255, 63 + (index * 20), 220, 18, craftItem.NameNumber, LabelColor, false, false);
+                else
+                    AddHtml(255, 60 + (index * 20), 220, 18, craftItem.NameString, false, false);
+
+                    //AddLabel( 255, 60 + (index * 20), LabelHue, craftItem.NameString );
 
 				AddButton( 480, 60 + (index * 20), 4011, 4012, GetButtonID( 2, i ), GumpButtonType.Reply, 0 );
 			}
