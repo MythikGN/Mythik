@@ -295,7 +295,7 @@ namespace Server.Engines.Craft
 			m_CraftSubRes.Add( craftSubRes );
 		}
 
-		public void AddSubRes( Type type, int name, double reqSkill, int genericName, object message )
+		public void AddSubRes( Type type, TextDefinition name, double reqSkill, int genericName, object message )
 		{
 			CraftSubRes craftSubRes = new CraftSubRes( type, name, reqSkill, genericName, message );
 			m_CraftSubRes.Add( craftSubRes );

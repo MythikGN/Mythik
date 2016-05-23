@@ -361,13 +361,41 @@ namespace Server.Engines.Craft
 			AddCraft( typeof( WaterTroughSouthDeed ), 1044299, 1044350, 94.7, 119.7, typeof( Log ), 1044041, 150, 1044351 );
 
 
-            index = AddCraft((typeof(HouseDeedPart)), 1060390, 1072600, 65.0, 110.0, typeof(Log), 1044041, 300);
+            index = AddCraft((typeof(HouseDeedPart)), 1060390, "House Parts", 65.0, 110.0, typeof(Log), 1044041, 300);
             AddRes(index, typeof(IronIngot), "Iron Ingots", 300);
             AddRes(index, typeof(StoneIngot), "Stone Ingots", 300);
             AddCraft(typeof(StonePlasterHouseDeed), 1060390, 1011303, 70.0, 100.0, typeof(HouseDeedPart), "House Parts", 8);
             AddCraft(typeof(SmallBrickHouseDeed), 1060390, 1011305, 70.0, 100.0, typeof(HouseDeedPart), "House Parts", 8);
             AddCraft(typeof(WoodPlasterHouseDeed), 1060390, 1011307, 70.0, 100.0, typeof(HouseDeedPart), "House Parts", 8);
-           
+            AddCraft(typeof(WoodHouseDeed), 1060390, 1011306, 70.0, 100.0, typeof(HouseDeedPart), "House Parts", 8);
+            AddCraft(typeof(ThatchedRoofCottageDeed), 1060390, 1011308, 70.0, 100.0, typeof(HouseDeedPart), "House Parts", 8);
+            AddCraft(typeof(FieldStoneHouseDeed), 1060390, 1011304, 70.0, 100.0, typeof(HouseDeedPart), "House Parts", 8);
+
+            AddCraft(typeof(Multis.Deeds.SandstonePatioDeed), 1060390, 1011320, 75.0, 105.0, typeof(HouseDeedPart), "House Parts", 22);
+            AddCraft(typeof(Multis.Deeds.StoneWorkshopDeed), 1060390, 1011321, 80.0, 110.0, typeof(HouseDeedPart), "House Parts", 24);
+            AddCraft(typeof(Multis.Deeds.MarbleWorkshopDeed), 1060390, 1011322, 80.0, 110.0, typeof(HouseDeedPart), "House Parts", 24);
+
+
+            AddCraft(typeof(Multis.Deeds.LogCabinDeed), 1060390, 1011318, 85.0, 115.0, typeof(HouseDeedPart), "House Parts", 30);
+            AddCraft(typeof(SmallTowerDeed), 1060390, 1011317, 82.0, 112.0, typeof(HouseDeedPart), "House Parts", 32);
+            AddCraft(typeof(BrickHouseDeed), 1060390, 1011309, 80.0, 115.0, typeof(HouseDeedPart), "House Parts", 35); //sant 32
+
+
+
+            AddCraft(typeof(Multis.Deeds.TwoStoryWoodPlasterHouseDeed), 1060390, 1011310, 85.0, 115.0, typeof(HouseDeedPart), "House Parts", 45);
+            AddCraft(typeof(Multis.Deeds.TwoStoryStonePlasterHouseDeed), 1060390, 1011311, 85.0, 115.0, typeof(HouseDeedPart), "House Parts", 45);
+            AddCraft(typeof(Multis.Deeds.VillaDeed), 1060390, 1011319, 87.0, 115.0, typeof(HouseDeedPart), "House Parts", 50);
+            AddCraft(typeof(LargePatioDeed), 1060390, 1011315, 85.0, 115.0, typeof(HouseDeedPart), "House Parts", 45);
+
+
+            AddCraft(typeof(LargeMarbleDeed), 1060390, 1011316, 92.0, 120.0, typeof(HouseDeedPart), "House Parts", 55);
+
+            AddCraft(typeof(TowerDeed), 1060390, 1011312, 95.0, 125.0, typeof(HouseDeedPart), "House Parts", 75);
+            AddCraft(typeof(KeepDeed), 1060390, 1011313, 98.0, 130.0, typeof(HouseDeedPart), "House Parts", 100);
+            AddCraft(typeof(CastleDeed), 1060390, 1011314, 100.0, 135.0, typeof(HouseDeedPart), "House Parts", 125);
+
+
+
             MarkOption = true;
 			Repair = Core.AOS;
 
@@ -382,6 +410,7 @@ namespace Server.Engines.Craft
 			AddSubRes( typeof( HeartwoodLog ), 1072647, 100.0, 1044041, 1072652 );
 			AddSubRes( typeof( BloodwoodLog ), 1072648, 100.0, 1044041, 1072652 );
 			AddSubRes( typeof( FrostwoodLog ), 1072649, 100.0, 1044041, 1072652 );
+            
 		}
 	}
 }
