@@ -8,7 +8,101 @@ using System.Threading.Tasks;
 
 namespace Scripts.Mythik.Items.Rares
 {
-    public class RuneBookChargeDeed : Item, IUniqueItem
+    public class RuneBookChargeDeed5: RuneBookChargeDeed
+    {
+        [Constructable]
+        public RuneBookChargeDeed5() : base(5)
+        {
+
+        }
+        [Constructable]
+        public RuneBookChargeDeed5(Serial serial) : base(serial)
+        {
+
+        }
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+
+        }
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+        }
+
+    }
+    public class RuneBookChargeDeed10 : RuneBookChargeDeed
+    {
+        [Constructable]
+        public RuneBookChargeDeed10() : base(10)
+        {
+
+        }
+        [Constructable]
+        public RuneBookChargeDeed10(Serial serial) : base(serial)
+        {
+
+        }
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+
+        }
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+        }
+
+    }
+    public class RuneBookChargeDeed15 : RuneBookChargeDeed
+    {
+        [Constructable]
+        public RuneBookChargeDeed15() : base(15)
+        {
+
+        }
+        [Constructable]
+        public RuneBookChargeDeed15(Serial serial) : base(serial)
+        {
+
+        }
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+
+        }
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+        }
+
+    }
+    public class RuneBookChargeDeed20 : RuneBookChargeDeed
+    {
+        [Constructable]
+        public RuneBookChargeDeed20() : base(20)
+        {
+
+        }
+        [Constructable]
+        public RuneBookChargeDeed20(Serial serial) : base(serial)
+        {
+
+        }
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+
+        }
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+        }
+
+    }
+
+
+    public abstract class RuneBookChargeDeed : Item, IUniqueItem
     {
         private int m_ChargeAmount = 0;
 
