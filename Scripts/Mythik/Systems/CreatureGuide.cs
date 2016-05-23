@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Server.Network;
 
-namespace Scripts.Mythik.Items.Misc
+namespace Scripts.Mythik.Systems
 {
     public class CreatureGuide
     {
@@ -71,18 +71,18 @@ namespace Scripts.Mythik.Items.Misc
         public static void ShowGuide(CommandEventArgs e)
         {
             var from = e.Mobile;
-            from.SendGump(new CreateListGump(CreateListGump.Buttons.None));
+            from.SendGump(new CreatureListGump(CreatureListGump.Buttons.None));
         }
 
     }
 
-    public class CreateListGump : Gump
+    public class CreatureListGump : Gump
     {
         public enum Buttons
         {
             None,Animals,Mobs,Mounts
         }
-        public CreateListGump(Buttons page) : base(25,25)
+        public CreatureListGump(Buttons page) : base(25,25)
         {
             this.Closable = true;
             this.Disposable = true;
@@ -126,13 +126,13 @@ namespace Scripts.Mythik.Items.Misc
             switch(bt)
             {
                 case 1:
-                    sender.Mobile.SendGump(new CreateListGump(CreateListGump.Buttons.Animals));
+                    sender.Mobile.SendGump(new CreatureListGump(CreatureListGump.Buttons.Animals));
                     return;
                 case 2:
-                    sender.Mobile.SendGump(new CreateListGump(CreateListGump.Buttons.Mobs));
+                    sender.Mobile.SendGump(new CreatureListGump(CreatureListGump.Buttons.Mobs));
                     return;
                 case 3:
-                    sender.Mobile.SendGump(new CreateListGump(CreateListGump.Buttons.Mounts));
+                    sender.Mobile.SendGump(new CreatureListGump(CreatureListGump.Buttons.Mounts));
                     return;
             }
             if (bt >= 300)
@@ -181,9 +181,9 @@ namespace Scripts.Mythik.Items.Misc
 
     internal class CreatureGuideDetails : Gump
     {
-        private CreateListGump.Buttons m_category;
+        private CreatureListGump.Buttons m_category;
 
-        public CreatureGuideDetails(CreatureInfo creatureInfo, CreateListGump.Buttons cat) : base(25,25)
+        public CreatureGuideDetails(CreatureInfo creatureInfo, CreatureListGump.Buttons cat) : base(25,25)
         {
             m_category = cat;
             this.Closable = true;
@@ -224,13 +224,13 @@ namespace Scripts.Mythik.Items.Misc
                 case 4:
                     return;
                 case 1:
-                    from.SendGump(new CreateListGump(CreateListGump.Buttons.Animals));
+                    from.SendGump(new CreatureListGump(CreatureListGump.Buttons.Animals));
                     break;
                 case 2:
-                    from.SendGump(new CreateListGump(CreateListGump.Buttons.Mobs));
+                    from.SendGump(new CreatureListGump(CreatureListGump.Buttons.Mobs));
                     break;
                 case 3:
-                    from.SendGump(new CreateListGump(CreateListGump.Buttons.Mounts));
+                    from.SendGump(new CreatureListGump(CreatureListGump.Buttons.Mounts));
                     break;
             }
         }
