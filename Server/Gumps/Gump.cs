@@ -398,13 +398,13 @@ namespace Server.Gumps
 			for ( int i = 0; i < count; ++i )
 			{
 				e = m_Entries[i];
-                if (ns.Version.Major <= 3 && e is GumpHtmlLocalized)
+                if (ns?.Version?.Major <= 3 && e is GumpHtmlLocalized)
                 {
                     
                     var localized = e as GumpHtmlLocalized;
                     if (localized.Type == GumpHtmlLocalizedType.Color)
                         localized.Type = GumpHtmlLocalizedType.Plain;
-                    if(localized.Number > 1053000)
+                    if(localized.Number > 1043000)
                     {
                         var text = GetClioc(ns).Entries.Where(cl => cl.Number == localized.Number).FirstOrDefault()?.Text;
 
