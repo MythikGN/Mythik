@@ -42,6 +42,14 @@ namespace Scripts.Mythik.Systems.Loot
                 new LootPackItem( typeof( LesserHealPotion ), 1 ),
                 new LootPackItem( typeof( LesserPoisonPotion ), 1 )
             };
+        public static readonly LootPackItem[] OldMagicItems = new LootPackItem[]
+            {
+                new LootPackItem( typeof( BaseJewel ), 1 ),
+                new LootPackItem( typeof( BaseArmor ), 4 ),
+                new LootPackItem( typeof( BaseWeapon ), 3 ),
+                new LootPackItem( typeof( BaseRanged ), 1 ),
+                new LootPackItem( typeof( BaseShield ), 1 )
+            };
         public static readonly LootPackItem[] LevelOneUniques = new LootPackItem[]
             {
                 new LootPackItem( typeof( AlchemySandals ),1 ),
@@ -97,10 +105,11 @@ namespace Scripts.Mythik.Systems.Loot
 
         public static readonly LootPack Level5 = new LootPack(new LootPackEntry[]
 {
-                new LootPackEntry(  true, Gold,                     100.00, "2d500+250" ),
-                new LootPackEntry( false, PotionItems,              5,      2 ),
-                new LootPackEntry( false, HighScrollItems,           10,      2 ),
-                new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(StarSapphire),1),new LootPackItem( typeof(Diamond),1) },60.0,"2d1+3"),
+                new LootPackEntry(  false, Gold,                     100.00, "2d500+250" ),
+                new LootPackEntry( false, OldMagicItems,  50.50, 1, 1, 40, 100 ),
+                new LootPackEntry( false, PotionItems,              5.00,      2 ),
+                new LootPackEntry( false, HighScrollItems,           10.00,      2 ),
+                //new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(StarSapphire),1),new LootPackItem( typeof(Diamond),1) },60.0,"2d1+3"),
                 new LootPackEntry( false, LevelOneUniques,          0.13,   1 ) // 0.13 is equiv to 1 in 769
 });
 
