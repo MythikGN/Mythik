@@ -651,7 +651,7 @@ namespace Server
 
 				if ( item is BaseWeapon || item is BaseArmor || item is BaseJewel || item is BaseHat )
 				{
-					if ( Core.AOS )
+					if ( Core.AOS && true == false )
 					{
 						int bonusProps = GetBonusProperties();
 						int min = m_MinIntensity;
