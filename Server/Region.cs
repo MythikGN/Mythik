@@ -850,8 +850,9 @@ namespace Server
 				if ( newRChild >= oldRChild )
 				{
 					newR.OnEnter( m );
-					newR = newR.Parent;
                     EventSink.InvokeOnEnterRegion(new OnEnterRegionEventArgs(m, newR));
+                    newR = newR.Parent;
+                    
                 }
             }
 		}
