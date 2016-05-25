@@ -22,6 +22,7 @@ namespace Scripts.Mythik.Systems.Achievements
             CompletionTotal = total;
             RewardItems = rewards;
             HiddenTillComplete = hiddenTillComplete;
+            ItemIcon = itemIcon;
         }
 
         /// <summary>
@@ -49,8 +50,8 @@ namespace Scripts.Mythik.Systems.Achievements
     public class DiscoveryAchievement : Achievement
     {
         private string m_Region;
-        public DiscoveryAchievement(int id, int catid, int itemIcon, bool hiddenTillComplete, int total, string title, string desc, short RewardPoints, string region, params Type[] rewards)
-            :base(id,catid, itemIcon, hiddenTillComplete,title,desc,RewardPoints,total,rewards)
+        public DiscoveryAchievement(int id, int catid, int itemIcon, bool hiddenTillComplete, string title, string desc, short RewardPoints, string region, params Type[] rewards)
+            :base(id,catid, itemIcon, hiddenTillComplete,title,desc,RewardPoints,1,rewards)
         {
             m_Region = region;
             CompletionTotal = 1;
@@ -59,12 +60,12 @@ namespace Scripts.Mythik.Systems.Achievements
 
         private void EventSink_OnEnterRegion(OnEnterRegionEventArgs e)
         {
-            if (e.Region == null)
+            if (e.Region == null || e.From == null)
                 return;
             var player = e.From as PlayerMobile;
             if(e.Region.Name.Contains(m_Region) && player != null)
             {
-                AcheivmentSystem.SetAchievementStatus(player, this, 1);
+                AchievmentSystem.SetAchievementStatus(player, this, 1);
 
             }
         }
@@ -84,7 +85,7 @@ namespace Scripts.Mythik.Systems.Achievements
         {
             var player = e.KilledBy as PlayerMobile;
             if(player != null && e.Killed.GetType() == m_Mobile) {
-                AcheivmentSystem.SetAchievementStatus(player, this,1);
+                AchievmentSystem.SetAchievementStatus(player, this,1);
             }
         }
 
@@ -106,7 +107,29 @@ namespace Scripts.Mythik.Systems.Achievements
             var player = e.Harvester as PlayerMobile;
             if(e.Resource.GetType() == m_Item)
             {
-                AcheivmentSystem.SetAchievementStatus(player, this, e.Resource.Amount);
+                AchievmentSystem.SetAchievementStatus(player, this, e.Resource.Amount);
+            }
+        }
+    }
+
+
+
+    class SkillProgressAchievement : Achievement
+    {
+        private Type m_Item;
+        public SkillProgressAchievement(int id, int catid, int itemIcon, bool hiddenTillComplete, int total, string title, string desc, short RewardPoints, Type targets, params Type[] rewards)
+            : base(id, catid, itemIcon, hiddenTillComplete, title, desc, RewardPoints, total, rewards)
+        {
+            m_Item = targets;
+            
+        }
+
+        private void EventSink_ResourceHarvestSuccess(ResourceHarvestSuccessEventArgs e)
+        {
+            var player = e.Harvester as PlayerMobile;
+            if (e.Resource.GetType() == m_Item)
+            {
+                AchievmentSystem.SetAchievementStatus(player, this, e.Resource.Amount);
             }
         }
     }
