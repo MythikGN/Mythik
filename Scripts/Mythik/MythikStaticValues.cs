@@ -127,6 +127,8 @@ namespace Scripts.Mythik
                 return ComputeName((i as RepairDeed));
             if (i is BaseIngot)
                 return ComputeName(i as BaseIngot);
+            if (i is BaseIngot)
+                return ComputeName(i as BaseOre);
             return GenericComputeName(i);
         }
         public static string ComputeName(BaseIngot ba)
@@ -134,17 +136,33 @@ namespace Scripts.Mythik
             if (!string.IsNullOrEmpty(ba.Name))
                 return ba.Name;
             string name = "ingot";
-                name = ba.Name;
             if (ba.Amount > 1)
                 name = name + "s";
             var resource = string.Empty;
             if (ba.Resource != CraftResource.None)
+            {
                 resource = CraftResources.GetName(ba.Resource);
+                name = string.Format("{0} {1} {2}",ba.Amount, resource, name.ToLower());
+            }
 
-                name = string.Format("{0} {1}", resource, name.ToLower());
             return name;
         }
-
+        public static string ComputeName(BaseOre ba)
+        {
+            if (!string.IsNullOrEmpty(ba.Name))
+                return ba.Name;
+            string name = "ore";
+            if (ba.Amount > 1)
+                name = name + "s";
+            var resource = string.Empty;
+            if (ba.Resource != CraftResource.None)
+            {
+                resource = CraftResources.GetName(ba.Resource);
+                name = string.Format("{0} {1} {2}", ba.Amount, resource, name.ToLower());
+            }
+               
+            return name;
+        }
         public static string ComputeName(BaseArmor ba)
         {
             if (!string.IsNullOrEmpty(ba.Name))
