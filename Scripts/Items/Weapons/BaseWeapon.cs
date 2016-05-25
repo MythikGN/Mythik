@@ -12,6 +12,7 @@ using Server.Factions;
 using Server.Engines.Craft;
 using System.Collections.Generic;
 using Server.Spells.Spellweaving;
+using Scripts.Mythik;
 
 namespace Server.Items
 {
@@ -2181,6 +2182,27 @@ namespace Server.Items
 				case WeaponDamageLevel.Power:	bonus += 30; break;
 				case WeaponDamageLevel.Vanq:	bonus += 35; break;
 			}
+            switch(m_Resource)
+            {
+                case CraftResource.DullCopper: bonus += 2; break;
+                case CraftResource.ShadowIron: bonus += 4; break;
+                case CraftResource.Copper: bonus += 6; break;
+                case CraftResource.Bronze: bonus += 8; break;
+                case CraftResource.Gold: bonus += 10; break;
+                case CraftResource.Agapite: bonus += 12; break;
+                case CraftResource.Rose: bonus += 12; break;
+
+                case CraftResource.Verite: bonus += 14; break;
+                case CraftResource.Valorite: bonus += 16; break;
+                case CraftResource.Bloodrock: bonus += 18; break;
+                case CraftResource.Blackrock: bonus += 20; break;
+                case CraftResource.Platnium: bonus += 22; break;
+                case CraftResource.Carbon: bonus += 24; break;
+                case CraftResource.Kevlar: bonus += 26; break;
+                case CraftResource.Delta: bonus += 28; break;
+                case CraftResource.Liquid: bonus += 30; break;
+                case CraftResource.Ragnarok: bonus += 32; break;
+            }
 
 			return bonus;
 		}
@@ -2326,6 +2348,8 @@ namespace Server.Items
 			// Virtual damage bonus:
 			if ( VirtualDamageBonus != 0 )
 				modifiers += ( VirtualDamageBonus / 100.0 );
+            // BonusDamage, add dmg from ruin/might/excep/ore type
+            modifiers += GetDamageBonus();
 
 			// Apply bonuses
 			damage += ( damage * modifiers );
@@ -3378,7 +3402,10 @@ namespace Server.Items
 		{
             if (from.NetState.Version.Major <= 3)
             {
-                base.OnSingleClick(from);
+                DisplayRarity(from);
+                //base.OnSingleClick(from);
+                from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3B2, 3, "", SphereUtils.ComputeName(this)));
+
                 from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3B2, 3, "", "[ Dmg: " + GetBaseDamage(from) + " Dura: " + this.HitPoints + "/" + this.MaxHitPoints + " ]"));
 
                 if (!SkillBonuses.IsEmpty)

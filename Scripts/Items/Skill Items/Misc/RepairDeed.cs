@@ -154,7 +154,7 @@ namespace Server.Items
 		{
 		}
 
-		private static TextDefinition GetSkillTitle( double skillLevel )
+		public static TextDefinition GetSkillTitle( double skillLevel )
 		{
 			int skill = (int)(skillLevel/10);
 

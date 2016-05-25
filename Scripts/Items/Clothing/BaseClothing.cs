@@ -4,6 +4,7 @@ using Server;
 using Server.Engines.Craft;
 using Server.Factions;
 using Server.Network;
+using Scripts.Mythik;
 
 namespace Server.Items
 {
@@ -676,7 +677,9 @@ namespace Server.Items
 		{
             if (from.NetState.Version.Major <= 3)
             {
-                 base.OnSingleClick(from);
+                DisplayRarity(from);
+                from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3B2, 3, "", SphereUtils.ComputeName(this)));
+                //base.OnSingleClick(from);
                 if(!SkillBonuses.IsEmpty)
                 {
                     if(SkillBonuses.Skill_1_Value > 0)

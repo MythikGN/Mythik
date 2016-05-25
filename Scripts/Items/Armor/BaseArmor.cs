@@ -8,6 +8,7 @@ using AMA = Server.Items.ArmorMeditationAllowance;
 using AMT = Server.Items.ArmorMaterialType;
 using ABT = Server.Items.ArmorBodyType;
 using Scripts.Mythik.Items.Craftables.Tinkering.GemArmor;
+using Scripts.Mythik;
 
 namespace Server.Items
 {
@@ -149,6 +150,12 @@ namespace Server.Items
 			{
 				int ar = BaseArmorRating;
 
+                //base armor AR is a little high for plate, save changing in each plate file.
+
+                //if (CraftResources.GetType(m_Resource) == CraftResourceType.Metal)
+                if(this.MaterialType == AMT.Plate)
+                ar -= 10;
+
 				if ( m_Protection != ArmorProtectionLevel.Regular )
 					ar += 10 + (5 * (int)m_Protection);
 
@@ -160,9 +167,19 @@ namespace Server.Items
 					case CraftResource.Bronze:			ar += 8; break;
 					case CraftResource.Gold:			ar += 10; break;
 					case CraftResource.Agapite:			ar += 12; break;
-					case CraftResource.Verite:			ar += 14; break;
+                    case CraftResource.Rose:            ar += 12; break;
+
+                    case CraftResource.Verite:			ar += 14; break;
 					case CraftResource.Valorite:		ar += 16; break;
-					case CraftResource.SpinedLeather:	ar += 10; break;
+                    case CraftResource.Bloodrock: ar += 18; break;
+                    case CraftResource.Blackrock: ar += 20; break;
+                    case CraftResource.Platnium: ar += 22; break;
+                    case CraftResource.Carbon: ar += 24; break;
+                    case CraftResource.Kevlar: ar += 26; break;
+                    case CraftResource.Delta: ar += 28; break;
+                    case CraftResource.Liquid: ar += 30; break;
+                    case CraftResource.Ragnarok: ar += 32; break;
+                    case CraftResource.SpinedLeather:	ar += 10; break;
 					case CraftResource.HornedLeather:	ar += 13; break;
 					case CraftResource.BarbedLeather:	ar += 16; break;
 				}
@@ -1376,8 +1393,8 @@ namespace Server.Items
 
 		public override void AddNameProperty( ObjectPropertyList list )
 		{
-			int oreType;
-
+			int oreType = 0;
+            string oreName = null;
 			switch ( m_Resource )
 			{
 				case CraftResource.DullCopper:		oreType = 1053108; break; // dull copper
@@ -1397,21 +1414,35 @@ namespace Server.Items
 				case CraftResource.GreenScales:		oreType = 1060819; break; // green
 				case CraftResource.WhiteScales:		oreType = 1060821; break; // white
 				case CraftResource.BlueScales:		oreType = 1060815; break; // blue
-				default: oreType = 0; break;
+
+                case CraftResource.Rose: oreName = "rose";break;
+                case CraftResource.Bloodrock: oreName = "bloodrock"; break;
+                case CraftResource.Blackrock: oreName = "blackrock"; break;
+                case CraftResource.Platnium: oreName = "platnium"; break;
+                case CraftResource.Carbon: oreName = "carbon"; break;
+                case CraftResource.Kevlar: oreName = "kevlar"; break;
+                case CraftResource.Delta: oreName = "delta"; break;
+                case CraftResource.Liquid: oreName = "liquid"; break;
+                case CraftResource.Ragnarok: oreName = "ragnarok"; break;
+                default: oreType = 0; break;
 			}
 
 			if ( m_Quality == ArmorQuality.Exceptional )
 			{
 				if ( oreType != 0 )
 					list.Add( 1053100, "#{0}\t{1}", oreType, GetNameString() ); // exceptional ~1_oretype~ ~2_armortype~
-				else
-					list.Add( 1050040, GetNameString() ); // exceptional ~1_ITEMNAME~
+				else if(oreName != null)
+                    list.Add("exceptional " + oreName + " " + GetNameString()); 
+                else
+                    list.Add( 1050040, GetNameString() ); // exceptional ~1_ITEMNAME~
 			}
 			else
 			{
 				if ( oreType != 0 )
 					list.Add( 1053099, "#{0}\t{1}", oreType, GetNameString() ); // ~1_oretype~ ~2_armortype~
-				else if ( Name == null )
+                else if (oreName != null)
+                    list.Add(oreName + " " + GetNameString());
+                else if ( Name == null )
 					list.Add( LabelNumber );
 				else
 					list.Add( Name );
@@ -1560,7 +1591,9 @@ namespace Server.Items
 		{
             if (from.NetState.Version.Major <= 3)
             {
-                base.OnSingleClick(from);
+                DisplayRarity(from);
+                from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3B2, 3, "", SphereUtils.ComputeName(this)));
+                //base.OnSingleClick(from);
                 from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3b2, 3, "", "[ AR: " + this.ArmorRating + " Dura: " + this.HitPoints + "/" + this.MaxHitPoints + " ]"));
 
                 if (!SkillBonuses.IsEmpty)

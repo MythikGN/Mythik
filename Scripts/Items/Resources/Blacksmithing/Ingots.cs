@@ -1,6 +1,7 @@
 using System;
 using Server.Items;
 using Server.Network;
+using Scripts.Mythik;
 
 namespace Server.Items
 {
@@ -93,8 +94,17 @@ namespace Server.Items
 			else
 				list.Add( 1027154 ); // ingots
 		}
+        public override void OnSingleClick(Mobile from)
+        {
+            if (from.NetState.Version.Major <= 3)
+            {
+                //base.OnSingleClick(from);
+                from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3B2, 3, "", SphereUtils.ComputeName(this)));
+               
+            }
+        }
 
-		public override void GetProperties( ObjectPropertyList list )
+        public override void GetProperties( ObjectPropertyList list )
 		{
 			base.GetProperties( list );
 
