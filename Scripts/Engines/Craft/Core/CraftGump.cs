@@ -452,7 +452,7 @@ namespace Server.Engines.Craft
 						CraftGroup group = groups.GetAt( groupIndex );
 
 						if ( index >= 0 && index < group.CraftItems.Count )
-							m_From.SendGump( new CraftGumpItem( m_From, system, group.CraftItems.GetAt( index ), m_Tool ) );
+							m_From.SendGump( new CraftGumpItem( m_From, system, group.CraftItems.GetAt( index ), m_Tool,context ) );
 					}
 
 					break;

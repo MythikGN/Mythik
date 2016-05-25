@@ -23,12 +23,14 @@ namespace Server.Engines.Craft
 
 		private int m_OtherCount;
 
-		public CraftGumpItem( Mobile from, CraftSystem craftSystem, CraftItem craftItem, BaseTool tool ) : base( 40, 40 )
+		public CraftGumpItem( Mobile from, CraftSystem craftSystem, CraftItem craftItem, BaseTool tool ,CraftContext context = null) : base( 40, 40 )
 		{
 			m_From = from;
 			m_CraftSystem = craftSystem;
 			m_CraftItem = craftItem;
 			m_Tool = tool;
+            if(context != null)
+                m_Context = context;
 
 			from.CloseGump( typeof( CraftGump ) );
 			from.CloseGump( typeof( CraftGumpItem ) );
@@ -121,8 +123,13 @@ namespace Server.Engines.Craft
 		public void DrawItem()
 		{
 			Type type = m_CraftItem.ItemType;
-
-			AddItem( 20, 50, CraftItem.ItemIDOf( type ), m_CraftItem.ItemHue );
+            int hue = m_CraftItem.ItemHue;
+            if(m_Context.LastResourceIndex > 0)
+            {
+                var info = CraftResources.GetFromType(m_CraftItem.Resources.GetAt(0).ItemType);
+                hue = CraftResources.GetHue(info);
+            }
+			AddItem( 20, 50, CraftItem.ItemIDOf( type ), hue);
 
 			if ( m_CraftItem.IsMarkable( type ) )
 			{
@@ -179,8 +186,9 @@ namespace Server.Engines.Craft
 
 		private static Type typeofBlankScroll = typeof( BlankScroll );
 		private static Type typeofSpellScroll = typeof( SpellScroll );
+        private CraftContext m_Context;
 
-		public void DrawResource()
+        public void DrawResource()
 		{
 			bool retainedColor = false;
 
