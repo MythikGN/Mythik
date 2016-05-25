@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Server;
+using Scripts.Mythik.Systems.Achievements;
 
 namespace Scripts.Mythik.Mobiles
 {
@@ -22,7 +23,11 @@ namespace Scripts.Mythik.Mobiles
         public bool HasSetLanguageSkills { get; set; }
         public bool AuctionEnabled { get; internal set; }
 
-
+        /// <summary>
+        /// AcheivID , Progress
+        /// </summary>
+        internal Dictionary<int, AcheiveData> Achievements = new Dictionary<int, AcheiveData>();
+        public int AchievementPointsTotal { get; set; }
         protected override bool OnMove(Direction d)
         {
             if (m_PokerGame != null)
@@ -54,6 +59,13 @@ namespace Scripts.Mythik.Mobiles
             writer.Write(HasSetLanguageSkills);
             writer.Write(AuctionEnabled);
 
+            writer.Write(AchievementPointsTotal);
+            writer.Write(Achievements.Count);
+            foreach (var kv in Achievements)
+            {
+                writer.Write(kv.Key);
+                kv.Value.Serialize(writer);
+            }
         }
 
         public override void Deserialize(GenericReader reader)
@@ -62,6 +74,16 @@ namespace Scripts.Mythik.Mobiles
             int ver = reader.ReadInt();
             HasSetLanguageSkills = reader.ReadBool();
             AuctionEnabled = reader.ReadBool();
+            AchievementPointsTotal = reader.ReadInt();
+            int count = reader.ReadInt();
+            if(count > 0)
+            {
+                for(int i = 0; i < count;i++)
+                {
+                    Achievements.Add(reader.ReadInt(), new AcheiveData(reader));
+                }
+            }
+
         }
 
     }
