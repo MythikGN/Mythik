@@ -4456,6 +4456,17 @@ namespace Server
 		}
 
         static TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
+        public void DisplayRarity(Mobile from)
+        {
+            if (this is IUniqueItem)
+            {
+                var uni = this as IUniqueItem;
+                if (uni.UniqueLevel == RareLevel.Rare)
+                    from.NetState.Send(new AsciiMessage(m_Serial, m_ItemID, MessageType.Label, 2061, 3, "", "[ Rare ]"));
+                else
+                    from.NetState.Send(new AsciiMessage(m_Serial, m_ItemID, MessageType.Label, 2061, 3, "", "[ Unique Lvl: " + (int)uni.UniqueLevel + " ]"));
+            }
+        }
 
         public virtual void OnSingleClick( Mobile from )
 		{
@@ -4472,10 +4483,7 @@ namespace Server
                 if (this is IUniqueItem)
                 {
                     var uni = this as IUniqueItem;
-                    if(uni.UniqueLevel == RareLevel.Rare)
-                        ns.Send(new AsciiMessage(m_Serial, m_ItemID, MessageType.Label, 2061, 3, "", "[ Rare ]"));
-                    else
-                        ns.Send(new AsciiMessage(m_Serial, m_ItemID, MessageType.Label, 2061, 3, "","[ Unique Lvl: " + (int)uni.UniqueLevel + " ]"));
+                    DisplayRarity(from);
                     ns.Send(new UnicodeMessage(m_Serial, m_ItemID, MessageType.Label, 0x803, 3, "ENU", "", myTI.ToTitleCase(this.Name ?? "") + (m_Amount > 1 ? " : " + m_Amount : "")));
                     return;
                 }
