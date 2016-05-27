@@ -1,43 +1,85 @@
-﻿//#define STOREONITEM
+﻿#define STOREONITEM
 
 using Server;
 using System;
 using System.Collections.Generic;
-
-using Scripts.Mythik.Mobiles;
-using Scripts.Mythik.Systems.Achievements.Gumps;
 using Server.Mobiles;
 using Server.Items;
 using Server.Commands;
 using Server.Misc;
-using Scripts.Mythik.Systems.Achievements.Items;
+
+#if STOREONITEM
+#else
+using Scripts.Mythik.Mobiles;
+#endif
+
+using Scripts.Mythik.Systems.Achievements.Gumps;
 
 namespace Scripts.Mythik.Systems.Achievements
 {
     //TODO
-    // Achievement prereq achieve before showing
+    //subcategories X
+    //page limit?
+    // Achievement prereq achieve before showing X
     //TODO Skill gain achieves needs event
     //TODO ITEM crafted event sink
-    // 
+    //TODO SKILL USE
+    //TODO HousePlaced event sink
+    /*thought of eating a lemon (and other foods), consume pots,
+     *  craft a home, 
+     *  own home (more for larger homes), 
+     *  loot x amount of gold, 
+     *  find a uni, 
+     *  kill each mob in the game,
+     *   enter an event,
+     *    tame all tamables,
+     *     use a max powerscroll (or skill stone), 
+     *     ride each type of mount
+     */
     public class AchievmentSystem
     {
+        public class AchievementCategory
+        {
+            public int ID { get; set; }
+            public int Parent { get; set; }
+            public string Name;
+
+
+            public AchievementCategory(int id, int parent, string v3)
+            {
+                ID = id;
+                Parent = parent;
+                Name = v3;
+            }
+        }
         public static List<Achievement> Achievements = new List<Achievement>();
-        public static string[] Categories = new string[] { "Exploration", "Resource Gathering", "Character Development", "Hunting", "Other" };
+        public static List<AchievementCategory> Categories = new List<AchievementCategory>();
 
         public static void Initialize()
         {
-            Achievements.Add(new DiscoveryAchievement(0, 0, 0x96E, false, "Minoc!", "Discover Minoc Township", 5, "Minoc"));
-            Achievements.Add(new DiscoveryAchievement(1, 0, 0x96E, false, "Yew!", "Discover the Yew Township", 5, "Yew"));
-            Achievements.Add(new DiscoveryAchievement(2, 0, 0x96E, false, "Trinsic!", "Discover the Trinsic Township", 5, "Trinsic"));
-            Achievements.Add(new DiscoveryAchievement(3, 0, 0x96E, false, "Cove!", "Discover the Cove Township", 5, "Cove"));
-            Achievements.Add(new DiscoveryAchievement(4, 0, 0x96E, false, "Wrong!", "Discover the dungeon of Wrong", 5, "Wrong"));
-            Achievements.Add(new DiscoveryAchievement(5, 0, 0x96E, false, "Shame!", "Discover the dungeon of Shame", 5, "Shame"));
+            Categories.Add(new AchievementCategory(1, 0, "Exploration"));
+                Categories.Add(new AchievementCategory(2, 1, "Towns"));
+                Categories.Add(new AchievementCategory(3, 1, "Dungeons"));
 
-            Achievements.Add(new HarvestAchievement(100, 1, 0, false, 500, "500 Iron Ore", "Mine 500 Iron Ore", 5, typeof(IronOre), typeof(AncientSmithyHammer)));
-            Achievements.Add(new HarvestAchievement(100, 1, 0, false, 500, "50000 Iron Ore", "Mine 500 Iron Ore", 5, typeof(IronOre), typeof(AncientSmithyHammer)));
+            Categories.Add(new AchievementCategory(4, 0, "Crafting"));
+            Categories.Add(new AchievementCategory(5, 0, "Resource Gathering"));
+            Categories.Add(new AchievementCategory(6, 0, "Hunting"));
+            Categories.Add(new AchievementCategory(7, 0, "Character Development"));
+            Categories.Add(new AchievementCategory(8, 0, "Other"));
 
-            Achievements.Add(new HunterAchievement(300, 3, 0x25D1, false, 5, "Dog Slayer", "Slay 5 Dogs", 5, typeof(Dog)));
-            Achievements.Add(new HunterAchievement(301, 3, 0x25D1, false, 50, "Dragon Slayer", "Slay 50 Dragon", 5, typeof(Dragon), typeof(Mythik.Items.Rares.RareClothDyeTub)));
+            Achievements.Add(new DiscoveryAchievement(0, 2, 0x96E, false, null, "Minoc!", "Discover Minoc Township", 5, "Minoc"));
+            Achievements.Add(new DiscoveryAchievement(1, 2, 0x96E, false, null, "Yew!", "Discover the Yew Township", 5, "Yew"));
+            Achievements.Add(new DiscoveryAchievement(2, 2, 0x96E, false, null, "Trinsic!", "Discover the Trinsic Township", 5, "Trinsic"));
+            Achievements.Add(new DiscoveryAchievement(3, 2, 0x96E, false, null, "Cove!", "Discover the Cove Township", 5, "Cove"));
+            Achievements.Add(new DiscoveryAchievement(4, 3, 0x96E, false, null, "Wrong!", "Discover the dungeon of Wrong", 5, "Wrong"));
+            Achievements.Add(new DiscoveryAchievement(5, 3, 0x96E, false, null, "Shame!", "Discover the dungeon of Shame", 5, "Shame"));
+
+            var achieve = new HarvestAchievement(100, 5, 0, false, null, 500, "500 Iron Ore", "Mine 500 Iron Ore", 5, typeof(IronOre), typeof(AncientSmithyHammer));
+            Achievements.Add(achieve);
+            Achievements.Add(new HarvestAchievement(100, 5, 0, false, achieve, 500, "50000 Iron Ore", "Mine 500 Iron Ore", 5, typeof(IronOre), typeof(AncientSmithyHammer)));
+
+            Achievements.Add(new HunterAchievement(300, 6, 0x25D1, false, null, 5, "Dog Slayer", "Slay 5 Dogs", 5, typeof(Dog)));
+            Achievements.Add(new HunterAchievement(301, 6, 0x25D1, false, null, 50, "Dragon Slayer", "Slay 50 Dragon", 5, typeof(Dragon)));
 
 
 
@@ -52,10 +94,10 @@ namespace Scripts.Mythik.Systems.Achievements
             if(player != null)
             {
 #if STOREONITEM
-           if (!AcheivmentSystemMemoryStone.GetInstance().Achievements.ContainsKey(player.Serial))
-                AcheivmentSystemMemoryStone.GetInstance().Achievements.Add(player.Serial, new Dictionary<int, AcheiveData>());
-            var achieves = AcheivmentSystemMemoryStone.GetInstance().Achievements[player.Serial];
-                var total = AcheivmentSystemMemoryStone.GetInstance().PointsTotals[player.Serial];
+           if (!AchievementSystemMemoryStone.GetInstance().Achievements.ContainsKey(player.Serial))
+                AchievementSystemMemoryStone.GetInstance().Achievements.Add(player.Serial, new Dictionary<int, AchieveData>());
+            var achieves = AchievementSystemMemoryStone.GetInstance().Achievements[player.Serial];
+                var total = AchievementSystemMemoryStone.GetInstance().PointsTotals[player.Serial];
 #else
                 var achieves = (player as MythikPlayerMobile).Achievements;
                 var total = (player as MythikPlayerMobile).AchievementPointsTotal;
@@ -67,18 +109,13 @@ namespace Scripts.Mythik.Systems.Achievements
 
         internal static void SetAchievementStatus(PlayerMobile player, Achievement ach, int progress)
         {
-
 #if STOREONITEM
-           if (!AcheivmentSystemMemoryStone.GetInstance().Achievements.ContainsKey(player.Serial))
-                AcheivmentSystemMemoryStone.GetInstance().Achievements.Add(player.Serial, new Dictionary<int, AcheiveData>());
-            var achieves = AcheivmentSystemMemoryStone.GetInstance().Achievements[player.Serial];
-            
+           if (!AchievementSystemMemoryStone.GetInstance().Achievements.ContainsKey(player.Serial))
+                AchievementSystemMemoryStone.GetInstance().Achievements.Add(player.Serial, new Dictionary<int, AchieveData>());
+            var achieves = AchievementSystemMemoryStone.GetInstance().Achievements[player.Serial]; 
 #else
             var achieves = (player as MythikPlayerMobile).Achievements;
-
 #endif
-
-
             if (achieves.ContainsKey(ach.ID))
             {
                 if (achieves[ach.ID].Progress >= ach.CompletionTotal)
@@ -87,25 +124,25 @@ namespace Scripts.Mythik.Systems.Achievements
             }
             else
             {
-                achieves.Add(ach.ID, new AcheiveData() { Progress = progress });
+                achieves.Add(ach.ID, new AchieveData() { Progress = progress });
             }
 
-            if (achieves[ach.ID].Progress >= ach.CompletionTotal) {
+            if (achieves[ach.ID].Progress >= ach.CompletionTotal)
+            {
                 player.SendGump(new AchievementObtainedGump(ach),false);
                 achieves[ach.ID].CompletedOn = DateTime.Now;
-
-
 #if STOREONITEM
-                if (!AcheivmentSystemMemoryStone.GetInstance().PointsTotals.ContainsKey(player.Serial))
-                    AcheivmentSystemMemoryStone.GetInstance().PointsTotals.Add(player.Serial, 0);
-                AcheivmentSystemMemoryStone.GetInstance().PointsTotals[player.Serial] += ach.RewardPoints;
+                if (!AchievementSystemMemoryStone.GetInstance().PointsTotals.ContainsKey(player.Serial))
+                    AchievementSystemMemoryStone.GetInstance().PointsTotals.Add(player.Serial, 0);
+                AchievementSystemMemoryStone.GetInstance().PointsTotals[player.Serial] += ach.RewardPoints;
 #else
                 (player as MythikPlayerMobile).AchievementPointsTotal += ach.RewardPoints;
 #endif
-                if (ach.RewardItems?.Length > 0)
+                if (ach.RewardItems != null && ach.RewardItems.Length > 0)
                 {
                     try
                     {
+                        player.SendAsciiMessage("You have recieved an award for completing this achievment!");
                         var item = (Item)Activator.CreateInstance(ach.RewardItems[0]);
                         if (!WeightOverloading.IsOverloaded(player))
                             player.Backpack.DropItem(item);
@@ -116,5 +153,7 @@ namespace Scripts.Mythik.Systems.Achievements
                 }
             }
         }
+
+
     }
 }
