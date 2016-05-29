@@ -4792,7 +4792,8 @@ namespace Server
 
             if (cnt < setItem.GetItemSet.SetPiecesForBonus)
             {
-                parent.RemoveSkillMod(setItem.GetItemSet.SetBonusSkillMod);
+                foreach (var skill in setItem.GetItemSet.SetBonusSkillMod)
+                    parent.RemoveSkillMod(skill);
             }
         }
 
@@ -4803,7 +4804,8 @@ namespace Server
 
             if (cnt >= setItem.GetItemSet.SetPiecesForBonus)
             {
-                parent.AddSkillMod(setItem.GetItemSet.SetBonusSkillMod);
+                foreach(var skill in setItem.GetItemSet.SetBonusSkillMod)
+                parent.AddSkillMod(skill);
             }
         }
     }
@@ -4829,18 +4831,25 @@ namespace Server
     }
     public abstract class BaseGearSet
     {
-        public SkillMod SetBonusSkillMod;
+        public List<SkillMod> SetBonusSkillMod = new List<SkillMod>();
         public int Hue;
-        public SkillMod ItemBonus;
+        public List<SkillMod> ItemBonus = new List<SkillMod>();
         public int SetPiecesForBonus;
         //TODO extend to effects sounds etc
 
-        public BaseGearSet(SkillMod SetBonus, int setPieces, int hue, SkillMod ItemBonus)
+        public BaseGearSet(SkillMod SetBonus, int setPieces, int hue, SkillMod itemBonus)
         {
-            SetBonusSkillMod = SetBonus;
+            SetBonusSkillMod.Add(SetBonus);
             SetPiecesForBonus = setPieces;
             Hue = hue;
-            this.ItemBonus = ItemBonus;
+            ItemBonus.Add(itemBonus);
+        }
+        public BaseGearSet(SkillMod[] SetBonus, int setPieces, int hue, SkillMod[] itemBonus)
+        {
+            SetBonusSkillMod.AddRange(SetBonus);
+            SetPiecesForBonus = setPieces;
+            Hue = hue;
+            ItemBonus.AddRange(itemBonus);
         }
     }
 }

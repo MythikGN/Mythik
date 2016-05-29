@@ -94,6 +94,8 @@ namespace Server
     public delegate void ResourceHarvestAttemptEventHandler(ResourceHarvestAttemptEventArgs e);
 
     public delegate void ResourceHarvestSuccessEventHandler(ResourceHarvestSuccessEventArgs e);
+    public delegate void CraftSuccessEventHandler(CraftSuccessEventArgs e);
+    public delegate void SkillGainEventHandler(SkillGainEventArgs e);
 
     public class OnKilledByEventArgs : EventArgs
     {
@@ -966,8 +968,36 @@ namespace Server
 		public NetState NetState{ get{ return m_State; } }
 		public bool Blocked{ get{ return m_Blocked; } set{ m_Blocked = value; } }
 	}
+    public class CraftSuccessEventArgs : EventArgs
+ 	{
 
-	public static class EventSink
+        public Mobile Crafter { get; private set; }
+ 		public Item Tool { get; private set; }
+ 		public Item CraftedItem { get; private set; }
+ 
+ 		public CraftSuccessEventArgs(Mobile m, Item i, Item t)
+ 		{
+ 			Crafter = m;
+ 			Tool = t;
+ 			CraftedItem = i;
+ 		}
+    }
+    public class SkillGainEventArgs : EventArgs
+    {
+        public int Gained { get; private set; }
+
+        public Mobile From { get; private set; }
+        public Skill Skill { get; private set; }
+
+
+        public SkillGainEventArgs(Mobile from, Skill skill, int toGain)
+        {
+            From = from;
+            Skill = skill;
+            Gained = toGain;
+        }
+    }
+    public static class EventSink
 	{
 		public static event CharacterCreatedEventHandler CharacterCreated;
 		public static event OpenDoorMacroEventHandler OpenDoorMacroUsed;
@@ -1025,7 +1055,24 @@ namespace Server
         public static event BODOfferAccepted BODOffered;
         public static event ResourceHarvestAttemptEventHandler ResourceHarvestAttempt;
         public static event ResourceHarvestSuccessEventHandler ResourceHarvestSuccess;
-        public static void InvokeOnKilledBy(OnKilledByEventArgs e)
+        public static event CraftSuccessEventHandler CraftSuccess;
+        public static event SkillGainEventHandler SkillGain;
+        public static void InvokeSkillGain(SkillGainEventArgs e)
+        {
+            if (SkillGain != null)
+            {
+                SkillGain(e);
+            }
+        }
+        public static void InvokeCraftSuccess(CraftSuccessEventArgs e)
+ 		{
+ 			if (CraftSuccess != null)
+ 			{
+ 				CraftSuccess(e);
+ 			}
+ 		}
+
+public static void InvokeOnKilledBy(OnKilledByEventArgs e)
         {
             if (OnKilledBy != null)
             {
