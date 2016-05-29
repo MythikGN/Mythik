@@ -26,7 +26,7 @@ namespace Scripts.Mythik.Mobiles
         /// <summary>
         /// AcheivID , Progress
         /// </summary>
-        internal Dictionary<int, AcheiveData> Achievements = new Dictionary<int, AcheiveData>();
+        internal Dictionary<int, AchieveData> Achievements = new Dictionary<int, AchieveData>();
         public int AchievementPointsTotal { get; set; }
         protected override bool OnMove(Direction d)
         {
@@ -80,7 +80,7 @@ namespace Scripts.Mythik.Mobiles
             {
                 for(int i = 0; i < count;i++)
                 {
-                    Achievements.Add(reader.ReadInt(), new AcheiveData(reader));
+                    Achievements.Add(reader.ReadInt(), new AchieveData(reader));
                 }
             }
 

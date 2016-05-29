@@ -1,4 +1,4 @@
-﻿#define STOREONITEM
+﻿//#define STOREONITEM
 
 using Server;
 using System;
@@ -21,9 +21,9 @@ namespace Scripts.Mythik.Systems.Achievements
     //subcategories X
     //page limit?
     // Achievement prereq achieve before showing X
-    //TODO Skill gain achieves needs event
-    //TODO ITEM crafted event sink
-    //TODO SKILL USE
+    //TODO Skill gain achieves needs event X
+    //TODO ITEM crafted event sink X
+    //TODO SKILL USE 
     //TODO HousePlaced event sink
     /*thought of eating a lemon (and other foods), consume pots,
      *  craft a home, 
@@ -52,7 +52,7 @@ namespace Scripts.Mythik.Systems.Achievements
                 Name = v3;
             }
         }
-        public static List<Achievement> Achievements = new List<Achievement>();
+        public static List<BaseAchievement> Achievements = new List<BaseAchievement>();
         public static List<AchievementCategory> Categories = new List<AchievementCategory>();
 
         public static void Initialize()
@@ -97,7 +97,7 @@ namespace Scripts.Mythik.Systems.Achievements
            if (!AchievementSystemMemoryStone.GetInstance().Achievements.ContainsKey(player.Serial))
                 AchievementSystemMemoryStone.GetInstance().Achievements.Add(player.Serial, new Dictionary<int, AchieveData>());
             var achieves = AchievementSystemMemoryStone.GetInstance().Achievements[player.Serial];
-                var total = AchievementSystemMemoryStone.GetInstance().PointsTotals[player.Serial];
+                var total = AchievementSystemMemoryStone.GetInstance().GetPlayerPointsTotal(player);
 #else
                 var achieves = (player as MythikPlayerMobile).Achievements;
                 var total = (player as MythikPlayerMobile).AchievementPointsTotal;
@@ -107,7 +107,7 @@ namespace Scripts.Mythik.Systems.Achievements
             
         }
 
-        internal static void SetAchievementStatus(PlayerMobile player, Achievement ach, int progress)
+        internal static void SetAchievementStatus(PlayerMobile player, BaseAchievement ach, int progress)
         {
 #if STOREONITEM
            if (!AchievementSystemMemoryStone.GetInstance().Achievements.ContainsKey(player.Serial))
@@ -132,9 +132,7 @@ namespace Scripts.Mythik.Systems.Achievements
                 player.SendGump(new AchievementObtainedGump(ach),false);
                 achieves[ach.ID].CompletedOn = DateTime.Now;
 #if STOREONITEM
-                if (!AchievementSystemMemoryStone.GetInstance().PointsTotals.ContainsKey(player.Serial))
-                    AchievementSystemMemoryStone.GetInstance().PointsTotals.Add(player.Serial, 0);
-                AchievementSystemMemoryStone.GetInstance().PointsTotals[player.Serial] += ach.RewardPoints;
+                AchievementSystemMemoryStone.GetInstance().AddPoints(player,ach.RewardPoints);
 #else
                 (player as MythikPlayerMobile).AchievementPointsTotal += ach.RewardPoints;
 #endif
