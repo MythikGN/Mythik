@@ -41,6 +41,10 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="Ultima, Version=4.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Ultima.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accounting\AccessRestrictions.cs" />
@@ -2896,6 +2900,12 @@
     <Compile Include="Multis\HouseTeleporter.cs" />
     <Compile Include="Multis\MovingCrate.cs" />
     <Compile Include="Multis\PreviewHouse.cs" />
+    <Compile Include="Mythik\3rdParty\Custom Regions\CustomRegion.cs" />
+    <Compile Include="Mythik\3rdParty\Custom Regions\RegionBounds.cs" />
+    <Compile Include="Mythik\3rdParty\Custom Regions\RegionControl.cs" />
+    <Compile Include="Mythik\3rdParty\Custom Regions\RegionControlGump.cs" />
+    <Compile Include="Mythik\3rdParty\Custom Regions\RemoveAreaGump.cs" />
+    <Compile Include="Mythik\3rdParty\Custom Regions\RestrictGump.cs" />
     <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Channels\Alliance.cs" />
     <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Channels\Channel.cs" />
     <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Channels\Faction.cs" />
@@ -3010,6 +3020,7 @@
     <Compile Include="Mythik\Gumps\AuctionPriceGump.cs" />
     <Compile Include="Mythik\Gumps\AuctionStatusGump.cs" />
     <Compile Include="Mythik\Gumps\BankStoneGump.cs" />
+    <Compile Include="Mythik\Gumps\CommandsListGump.cs" />
     <Compile Include="Mythik\Gumps\FAQGump.cs" />
     <Compile Include="Mythik\Gumps\ItemStoneGump.cs" />
     <Compile Include="Mythik\Gumps\NewsGump.cs" />
@@ -3028,13 +3039,25 @@
     <Compile Include="Mythik\Items\Craftables\Inscription\ReagentBook.cs" />
     <Compile Include="Mythik\Items\Craftables\Tinkering\FusionCube.cs" />
     <Compile Include="Mythik\Items\Craftables\Tinkering\GemArmor\CitrineArmor.cs" />
+    <Compile Include="Mythik\Items\Craftables\Tinkering\GemArmor\StarSapphireArmor.cs" />
+    <Compile Include="Mythik\Items\Craftables\Tinkering\GemArmor\TourmalineArmor.cs" />
+    <Compile Include="Mythik\Items\Craftables\Tinkering\GemArmor\EmeraldArmor.cs" />
     <Compile Include="Mythik\Items\Craftables\Tinkering\GemArmor\SapphireArmor.cs" />
     <Compile Include="Mythik\Items\Craftables\Tinkering\GemArmor\AmberArmor.cs" />
     <Compile Include="Mythik\Items\ItemSets.cs" />
     <Compile Include="Mythik\Items\Craftables\Tinkering\GemArmor\RubyArmor.cs" />
-    <Compile Include="Mythik\Items\Misc\CreatureGuide.cs" />
+    <Compile Include="Mythik\Items\MythikBaseItem.cs" />
+    <Compile Include="Mythik\Systems\Achievements\AchieveTypes\BaseAchievement.cs" />
+    <Compile Include="Mythik\Systems\Achievements\AchieveTypes\DiscoveryAchievement.cs" />
+    <Compile Include="Mythik\Systems\Achievements\AchieveTypes\HarvestAchievement.cs" />
+    <Compile Include="Mythik\Systems\Achievements\AchieveTypes\HunterAchievement.cs" />
+    <Compile Include="Mythik\Systems\Achievements\AchieveTypes\ItemCraftedAchievement.cs" />
+    <Compile Include="Mythik\Systems\Achievements\AchieveTypes\SkillGainAchieve.cs" />
+    <Compile Include="Mythik\Systems\Achievements\Items\AcheivmentSystemMemoryStone.cs" />
+    <None Include="Mythik\Systems\Achievements\LICENSE" />
+    <Compile Include="Mythik\Systems\CreatureGuide.cs" />
     <Compile Include="Mythik\Items\Misc\EyeOfNewt.cs" />
-    <Compile Include="Mythik\Items\Misc\RaresGuide.cs" />
+    <Compile Include="Mythik\Systems\RaresGuide.cs" />
     <Compile Include="Mythik\Items\Rares\Equipment\BlueChromeArmor.cs" />
     <Compile Include="Mythik\Items\Rares\Equipment\HolyWeapons.cs" />
     <Compile Include="Mythik\Items\Rares\RareCraftingMaterials.cs" />
@@ -3050,7 +3073,6 @@
     <Compile Include="Mythik\Items\Uniques\CarpentryAddons.cs" />
     <Compile Include="Mythik\Items\Uniques\AlchemyAddons.cs" />
     <Compile Include="Mythik\Items\Uniques\InscriptionAddons.cs" />
-    <Compile Include="Mythik\Items\Uniques\IUniqueItem.cs" />
     <Compile Include="Mythik\Items\Uniques\LumberJackAddons.cs" />
     <Compile Include="Mythik\Items\Uniques\MiningAddons.cs" />
     <Compile Include="Mythik\Items\Uniques\TailoringAddons.cs" />
@@ -3066,9 +3088,14 @@
     <Compile Include="Mythik\MythikStaticValues.cs" />
     <Compile Include="Mythik\RecipeNames.cs" />
     <Compile Include="Mythik\Systems\Achievements\AcheivmentSystem.cs" />
+    <Compile Include="Mythik\Systems\Achievements\Achievement.cs" />
+    <Compile Include="Mythik\Systems\Achievements\Gumps\AchievementGump.cs" />
+    <Compile Include="Mythik\Systems\Achievements\Gumps\AchievementObtainedGump.cs" />
     <Compile Include="Mythik\Systems\AuctionSystem.cs" />
     <Compile Include="Mythik\Systems\LanguageAndSkillsSelect.cs" />
     <Compile Include="Mythik\Systems\Loot\MythikLootSystem.cs" />
+    <Compile Include="Mythik\Systems\VendorSearch\Gumps\VendorSearchGump.cs" />
+    <Compile Include="Mythik\Systems\VendorSearch\VendorIndexSystem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Regions\BaseRegion.cs" />
     <Compile Include="Regions\DungeonRegion.cs" />

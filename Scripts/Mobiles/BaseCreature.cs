@@ -4461,7 +4461,7 @@ namespace Server.Mobiles
 			{
                 MythikLootSystem.GenerateLoot(this);
                 m_HasGeneratedLoot = true;
-				GenerateLoot( false );
+				//GenerateLoot( false );
 
 			}
 
@@ -4847,9 +4847,9 @@ namespace Server.Mobiles
 
                 if (c.Items.Where(i => (i is IUniqueItem)).FirstOrDefault() != null)
                 {
-                    Effects.SendLocationEffect(c.Location, c.Map, 0x3763, 10);
+                    Effects.SendLocationEffect(c.Location, c.Map, 0x3763, 200);
                     Effects.PlaySound(c.Location, c.Map, 0x594);
-                    c.Hue = 0x484;
+                    c.Hue = 1462;
                 }
                 if ( DeleteCorpseOnDeath )
 					c.Delete();

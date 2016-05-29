@@ -43,13 +43,17 @@ namespace Scripts.Mythik.Systems
         [Constructable]
         public AuctionSystem() : base(0x00)
         {
-            CommandSystem.Register("auction", AccessLevel.Player, new CommandEventHandler(OnAuction));
-            CommandSystem.Register("auctionon", AccessLevel.Player, new CommandEventHandler(OnAuctionOn));
-            CommandSystem.Register("auctionoff", AccessLevel.Player, new CommandEventHandler(OnAuctionOff));
-            CommandSystem.Register("auctionstatus", AccessLevel.Player, new CommandEventHandler(OnAuctionStatus));
-            CommandSystem.Register("bid", AccessLevel.Player, new CommandEventHandler(OnBid));
-            EventSink.Login += EventSink_Login;
-            EventSink.Logout += EventSink_Logout;
+            if(Enabled)
+            {
+                CommandSystem.Register("auction", AccessLevel.Player, new CommandEventHandler(OnAuction));
+                CommandSystem.Register("auctionon", AccessLevel.Player, new CommandEventHandler(OnAuctionOn));
+                CommandSystem.Register("auctionoff", AccessLevel.Player, new CommandEventHandler(OnAuctionOff));
+                CommandSystem.Register("auctionstatus", AccessLevel.Player, new CommandEventHandler(OnAuctionStatus));
+                CommandSystem.Register("bid", AccessLevel.Player, new CommandEventHandler(OnBid));
+                EventSink.Login += EventSink_Login;
+                EventSink.Logout += EventSink_Logout;
+            }
+
         }
 
         private void EventSink_Logout(LogoutEventArgs e)

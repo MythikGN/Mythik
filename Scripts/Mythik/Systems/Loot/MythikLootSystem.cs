@@ -70,8 +70,8 @@ namespace Scripts.Mythik.Systems.Loot
         public static readonly LootPack Level1 = new LootPack(new LootPackEntry[]
             {
                 new LootPackEntry(  true, Gold,                     100.00, "2d20+50" ),
-                new LootPackEntry( false, PotionItems,              5,      2 ),
-                new LootPackEntry( false, LowScrollItems,           5,      1 ),
+                new LootPackEntry( false, PotionItems,              5.0,      2 ),
+                new LootPackEntry( false, LowScrollItems,           5.0,      1 ),
                 new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(Amber),1) },60.0,"2d1+3"),
                 new LootPackEntry( false, LevelOneUniques,          0.13,   1 ) // 0.13 is equiv to 1 in 769
             });
@@ -79,8 +79,8 @@ namespace Scripts.Mythik.Systems.Loot
         public static readonly LootPack Level2 = new LootPack(new LootPackEntry[]
     {
                 new LootPackEntry(  true, Gold,                     100.00, "2d80+50" ),
-                new LootPackEntry( false, PotionItems,              5,      2 ),
-                new LootPackEntry( false, LowScrollItems,           5,      2 ),
+                new LootPackEntry( false, PotionItems,              10.0,      2 ),
+                new LootPackEntry( false, LowScrollItems,           5.0,      2 ),
                 new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(Citrine),1),new LootPackItem( typeof(Amethyst),1) },60.0,"2d1+3"),
                 new LootPackEntry( false, LevelOneUniques,          0.13,   1 ) // 0.13 is equiv to 1 in 769
     });
@@ -88,8 +88,8 @@ namespace Scripts.Mythik.Systems.Loot
         public static readonly LootPack Level3 = new LootPack(new LootPackEntry[]
 {
                 new LootPackEntry(  true, Gold,                     100.00, "2d180+90" ),
-                new LootPackEntry( false, PotionItems,              5,      2 ),
-                new LootPackEntry( false, MedScrollItems,           5,      1 ),
+                new LootPackEntry( false, PotionItems,              25.0,      2 ),
+                new LootPackEntry( false, MedScrollItems,           5.0,      1 ),
                 new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(Tourmaline),1),new LootPackItem( typeof(Sapphire),1) },60.0,"2d1+3"),
                 new LootPackEntry( false, LevelOneUniques,          0.13,   1 ) // 0.13 is equiv to 1 in 769
 });
@@ -97,8 +97,8 @@ namespace Scripts.Mythik.Systems.Loot
         public static readonly LootPack Level4 = new LootPack(new LootPackEntry[]
 {
                 new LootPackEntry(  true, Gold,                     100.00, "2d300+150" ),
-                new LootPackEntry( false, PotionItems,              5,      2 ),
-                new LootPackEntry( false, MedScrollItems,           5,      2 ),
+                new LootPackEntry( false, PotionItems,              25,      2 ),
+                new LootPackEntry( false, MedScrollItems,           20,      2 ),
                 new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(Ruby),1),new LootPackItem( typeof(Emerald),1) },60.0,"2d1+3"),
                 new LootPackEntry( false, LevelOneUniques,          0.13,   1 ) // 0.13 is equiv to 1 in 769
 });
@@ -106,10 +106,10 @@ namespace Scripts.Mythik.Systems.Loot
         public static readonly LootPack Level5 = new LootPack(new LootPackEntry[]
 {
                 new LootPackEntry(  false, Gold,                     100.00, "2d500+250" ),
-                new LootPackEntry( false, OldMagicItems,  50.50, 1, 1, 40, 100 ),
-                new LootPackEntry( false, PotionItems,              5.00,      2 ),
-                new LootPackEntry( false, HighScrollItems,           10.00,      2 ),
-                //new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(StarSapphire),1),new LootPackItem( typeof(Diamond),1) },60.0,"2d1+3"),
+                new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(StarSapphire),1),new LootPackItem( typeof(Diamond),1) },60.0,"1d4"),
+                new LootPackEntry( false, PotionItems,              30.00,      2 ),
+                new LootPackEntry( false, OldMagicItems,  5.0, 1, 1, 20, 100 ),
+                new LootPackEntry( false, HighScrollItems,           5.00,      2 ),
                 new LootPackEntry( false, LevelOneUniques,          0.13,   1 ) // 0.13 is equiv to 1 in 769
 });
 

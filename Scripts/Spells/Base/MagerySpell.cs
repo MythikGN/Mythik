@@ -7,7 +7,7 @@ namespace Server.Spells
 	public abstract class MagerySpell : Spell
 	{
         public virtual Tuple<int, int> SphereDamage {
-            get; 
+            get { return new Tuple<int, int>(0,0); }
         }
 		public MagerySpell( Mobile caster, Item scroll, SpellInfo info )
 			: base( caster, scroll, info )

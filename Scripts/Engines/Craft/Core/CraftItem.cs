@@ -1183,8 +1183,9 @@ namespace Server.Engines.Craft
 						else
 							item.Amount = maxAmount;
 					}
+                    EventSink.InvokeCraftSuccess(new CraftSuccessEventArgs(from, item, tool));
 
-					from.AddToBackpack( item );
+                    from.AddToBackpack( item );
 
 					if( from.AccessLevel > AccessLevel.Player )
 						CommandLogging.WriteLine( from, "Crafting {0} with craft system {1}", CommandLogging.Format( item ), craftSystem.GetType().Name );
