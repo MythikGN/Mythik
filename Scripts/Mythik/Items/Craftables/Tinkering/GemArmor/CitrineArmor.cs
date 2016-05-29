@@ -24,7 +24,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "citrine platemail chest";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public CitrinePlateChest(Serial serial) : base(serial)
         {
@@ -55,7 +55,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "citrine platemail legs";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public CitrinePlateLegs(Serial serial) : base(serial)
         {
@@ -86,7 +86,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "citrine platemail helm";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public CitrinePlateHelm(Serial serial) : base(serial)
         {
@@ -117,7 +117,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "citrine platemail gorgot";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public CitrinePlateGorgot(Serial serial) : base(serial)
         {
@@ -147,7 +147,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "citrine platemail arms";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public CitrinePlateArms(Serial serial) : base(serial)
         {
@@ -177,7 +177,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "citrine platemail gloves";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public CitrinePlateGloves(Serial serial) : base(serial)
         {
@@ -208,7 +208,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "citrine heater shield";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public CitrineHeaterShield(Serial serial) : base(serial)
         {

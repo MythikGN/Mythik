@@ -24,7 +24,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "amber platemail chest";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public AmberPlateChest(Serial serial) : base(serial)
         {
@@ -55,7 +55,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "amber platemail legs";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public AmberPlateLegs(Serial serial) : base(serial)
         {
@@ -86,7 +86,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "amber platemail helm";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public AmberPlateHelm(Serial serial) : base(serial)
         {
@@ -117,7 +117,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "amber platemail gorgot";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public AmberPlateGorgot(Serial serial) : base(serial)
         {
@@ -147,7 +147,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "amber platemail arms";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public AmberPlateArms(Serial serial) : base(serial)
         {
@@ -177,7 +177,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "amber platemail gloves";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public AmberPlateGloves(Serial serial) : base(serial)
         {
@@ -208,7 +208,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "amber heater shield";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public AmberHeaterShield(Serial serial) : base(serial)
         {

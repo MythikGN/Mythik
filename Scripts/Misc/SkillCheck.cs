@@ -235,9 +235,11 @@ namespace Server.Misc
 
 				if ( !from.Player || (skills.Total + toGain) <= skills.Cap )
 				{
-					skill.BaseFixedPoint += toGain;
-				}
-			}
+                    EventSink.InvokeSkillGain(new SkillGainEventArgs(from, skill, toGain));
+                    skill.BaseFixedPoint += toGain;
+
+                }
+            }
 
 			if ( skill.Lock == SkillLock.Up )
 			{

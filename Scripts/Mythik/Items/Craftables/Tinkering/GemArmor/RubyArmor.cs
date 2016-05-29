@@ -25,7 +25,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "ruby platemail chest";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public RubyPlateChest(Serial serial) : base(serial)
         {
@@ -56,7 +56,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "ruby platemail legs";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public RubyPlateLegs(Serial serial) : base(serial)
         {
@@ -87,7 +87,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "ruby platemail helm";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public RubyPlateHelm(Serial serial) : base(serial)
         {
@@ -118,7 +118,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "ruby platemail gorgot";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public RubyPlateGorgot(Serial serial) : base(serial)
         {
@@ -148,7 +148,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "ruby platemail arms";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public RubyPlateArms(Serial serial) : base(serial)
         {
@@ -178,7 +178,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "ruby platemail gloves";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public RubyPlateGloves(Serial serial) : base(serial)
         {
@@ -209,7 +209,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "ruby heater shield";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public RubyHeaterShield(Serial serial) : base(serial)
         {

@@ -28,7 +28,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "Blue Chrome Platemail Chest";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(1, SkillName.Tactics, 2.0); SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
             ArmorAttributes.SelfRepair = 1;
         }
         public BlueChromePlateChest(Serial serial) : base(serial)
@@ -60,8 +60,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "BlueChrome Platemail Legs";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(1, SkillName.Tactics, 2.0);
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach((e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
             ArmorAttributes.SelfRepair = 1;
         }
         public BlueChromePlateLegs(Serial serial) : base(serial)
@@ -93,7 +92,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "BlueChrome Platemail Helm";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(1, SkillName.Tactics, 2.0); SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
             ArmorAttributes.SelfRepair = 1;
         }
         public BlueChromePlateHelm(Serial serial) : base(serial)
@@ -125,7 +124,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "BlueChrome Platemail Gorgot";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(1, SkillName.Tactics, 2.0); SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
             ArmorAttributes.SelfRepair = 1;
         }
         public BlueChromePlateGorgot(Serial serial) : base(serial)
@@ -156,7 +155,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "BlueChrome Platemail Arms";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(1, SkillName.Tactics, 2.0); SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public BlueChromePlateArms(Serial serial) : base(serial)
         {
@@ -186,7 +185,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "BlueChrome Platemail Gloves";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(1, SkillName.Tactics, 2.0); SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public BlueChromePlateGloves(Serial serial) : base(serial)
         {
@@ -217,7 +216,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "BlueChrome heater Shield";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(1, SkillName.Tactics, 2.0); SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public BlueChromeHeaterShield(Serial serial) : base(serial)
         {

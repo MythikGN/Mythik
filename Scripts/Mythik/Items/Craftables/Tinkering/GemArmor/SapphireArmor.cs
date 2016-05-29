@@ -24,7 +24,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "sapphire platemail chest";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public SapphirePlateChest(Serial serial) : base(serial)
         {
@@ -55,7 +55,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "sapphire platemail legs";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public SapphirePlateLegs(Serial serial) : base(serial)
         {
@@ -86,7 +86,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "sapphire platemail helm";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public SapphirePlateHelm(Serial serial) : base(serial)
         {
@@ -117,7 +117,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "sapphire platemail gorgot";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public SapphirePlateGorgot(Serial serial) : base(serial)
         {
@@ -147,7 +147,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "sapphire platemail arms";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public SapphirePlateArms(Serial serial) : base(serial)
         {
@@ -177,7 +177,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "sapphire platemail gloves";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public SapphirePlateGloves(Serial serial) : base(serial)
         {
@@ -208,7 +208,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "sapphire heater shield";
             Hue = GetItemSet.Hue;
-            SkillBonuses.SetValues(0, GetItemSet.ItemBonus.Skill, GetItemSet.ItemBonus.Value);
+            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public SapphireHeaterShield(Serial serial) : base(serial)
         {
