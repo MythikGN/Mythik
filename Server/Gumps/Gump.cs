@@ -406,15 +406,15 @@ namespace Server.Gumps
                         localized.Type = GumpHtmlLocalizedType.Plain;
                     if(localized.Number > 1043000)
                     {
-                        var text = GetClioc(ns).Entries.Where(cl => cl.Number == localized.Number).FirstOrDefault()?.Text;
+                        var text = CliLoc.LocToString(localized.Number, localized.Args);//  GetClioc(ns).Entries.Where(cl => cl.Number == localized.Number).FirstOrDefault()?.Text;
 
-                        if (text == null)
+                        /*if (text == null)
                             text = "Failed";
                         if (!string.IsNullOrWhiteSpace(localized.Args))
                         {
                             text = text.Replace("~1_val~", localized.Args);
                         }
-                        //e = new GumpLabel(localized.X, localized.Y, 0, text);
+                        //e = new GumpLabel(localized.X, localized.Y, 0, text);*/
                         e = new GumpHtml(localized.X, localized.Y, localized.Width, localized.Height, text , localized.Background, localized.Scrollbar);
                         e.Parent = localized.Parent;
                     }
