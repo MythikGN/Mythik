@@ -68,6 +68,7 @@
     <Compile Include="BaseVendor.cs" />
     <Compile Include="Body.cs" />
     <Compile Include="ClientVersion.cs" />
+    <Compile Include="Cliloc.cs" />
     <Compile Include="Commands.cs" />
     <Compile Include="ContextMenus\ContextMenu.cs" />
     <Compile Include="ContextMenus\ContextMenuEntry.cs" />
