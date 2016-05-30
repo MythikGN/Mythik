@@ -17,19 +17,13 @@ namespace Scripts.Mythik
 
     internal static class SphereUtils
     {
-        private static Ultima.StringList _eng = new Ultima.StringList("ENU");
-
+        
         public static string LocToString(int index)
         {
-           
+
             //scan through the cliloc's for the correct entry
-
-            if (_eng.Entries.Where(cl => cl.Number == index).Count() > 0)
-            {
-                return _eng.Entries.Where(cl => cl.Number == index).First().Text;
-            }
-
-            return null;
+            return CliLoc.LocToString(index);
+           
         }
 
         //the special case, where there are arguments to insert in the string
