@@ -193,7 +193,7 @@ namespace Server
 											break;
 										}
 									}
-
+                                    valid = true;
 									if( valid )
 									{
 										assembly = Assembly.LoadFrom( "Scripts/Output/Scripts.CS.dll" );
