@@ -7,6 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 using Server.Network;
 using Scripts.Mythik.Systems;
+using Scripts.Mythik.Systems.Achievements.Gumps;
+using Scripts.Mythik.Mobiles;
+using static Server.Commands.HelpInfo;
 
 namespace Scripts.Mythik.Gumps
 {
@@ -48,24 +51,26 @@ namespace Scripts.Mythik.Gumps
             this.Dragable = true;
             this.Resizable = false;
             this.AddPage(0);
-            this.AddBackground(25, 25, 528, 455, 9300);
-            this.AddButton(524, 36, 11410, 11412, 0, GumpButtonType.Reply, 0);
-            this.AddLabel(156, 33, 1151, @"Mythik News");
+            this.AddBackground(25, 25, 528, 455, 9270);
+            this.AddButton(506, 40, 4017, 4018, 0, GumpButtonType.Reply, 0);
+            this.AddBackground(41, 95, 352, 368, 3600);
+            this.AddLabel(224, 38, 457, @"Mythik News");
+
             var html = "";
             foreach (var news in NewsSystem.News)
             {
-                html += "<STRONG>" + news.Title + "</STRONG> <BR> <P>" + news.Content +"</P>";
+                html += "<CENTER> <STRONG>" + news.Title + "</STRONG> <BR> <P>" + news.Content + "</P>";
             }
 
-            this.AddHtml(43, 69, 340, 389, html, (bool)false, (bool)true);
-
-
-            this.AddButton(508, 70, 4005, 4006, 1, GumpButtonType.Reply, 0);
-            this.AddLabel(400, 70, 0, @"Commands");
-            this.AddButton(508, 96, 4005, 4006, 2, GumpButtonType.Reply, 0);
-            this.AddLabel(400, 96, 0, @"FAQ");
-            this.AddButton(508, 122, 4005, 4006, 3, GumpButtonType.Reply, 0);
-            this.AddLabel(400, 122, 0, @"Creature Guide");
+            this.AddHtml(52, 110, 324, 338, html, (bool)false, (bool)true);
+            this.AddButton(508, 103, 4005, 4006, 1, GumpButtonType.Reply, 0);
+            this.AddLabel(400, 103, 457, @"Commands");
+            this.AddButton(508, 129, 4005, 4006, 2, GumpButtonType.Reply, 0);
+            this.AddLabel(400, 129, 457, @"Features");
+            this.AddButton(508, 155, 4005, 4006, 3, GumpButtonType.Reply, 0);
+            this.AddLabel(400, 155, 457, @"Creature Guide");
+            this.AddButton(508, 184, 4005, 4006, 4, GumpButtonType.Reply, 0);
+            this.AddLabel(400, 184, 457, @"Achievements");
 
 
         }
@@ -74,13 +79,17 @@ namespace Scripts.Mythik.Gumps
             switch(info.ButtonID)
             {
                 case 1:
-                    sender.Mobile.SendGump(new CommandsListGump());
+                    sender.Mobile.SendGump(new CommandListGump(0, sender.Mobile, null));
                     break;
                 case 2:
                     sender.Mobile.SendGump(new FAQGump());
                     break;
                 case 3:
                     sender.Mobile.SendGump(new CreatureListGump(CreatureListGump.Buttons.None));
+                    break;
+                case 4:
+                    var pm = sender.Mobile as MythikPlayerMobile;
+                    sender.Mobile.SendGump(new AchievementGump(pm.Achievements,pm.AchievementPointsTotal));
                     break;
                 default:
                     break;
