@@ -36,7 +36,7 @@ namespace Server.Engines.VeteranRewards
 		}
 
 		public static bool Enabled = true; // change to true to enable vet rewards
-		public static bool SkillCapRewards = true; // assuming vet rewards are enabled, should total skill cap bonuses be awarded? (720 skills total at 4th level)
+		public static bool SkillCapRewards = false; // assuming vet rewards are enabled, should total skill cap bonuses be awarded? (720 skills total at 4th level)
 		public static TimeSpan RewardInterval = TimeSpan.FromDays( 30.0 );
 
 		public static bool HasAccess( Mobile mob, RewardCategory category )
@@ -328,9 +328,9 @@ namespace Server.Engines.VeteranRewards
 			{
 					new RewardList( RewardInterval, 1, new RewardEntry[]
 					{
-						new RewardEntry( specialDyeTubs, 1006008, typeof( RewardBlackDyeTub ) ),
-						new RewardEntry( specialDyeTubs, 1006013, typeof( FurnitureDyeTub ) ),
-						new RewardEntry( specialDyeTubs, 1006047, typeof( SpecialDyeTub ) ),
+						//new RewardEntry( specialDyeTubs, 1006008, typeof( RewardBlackDyeTub ) ),
+						//new RewardEntry( specialDyeTubs, 1006013, typeof( FurnitureDyeTub ) ),
+						//new RewardEntry( specialDyeTubs, 1006047, typeof( SpecialDyeTub ) ),
 						new RewardEntry( cloaksAndRobes, 1006009, typeof( RewardCloak ), Bronze, 1041286 ),
 						new RewardEntry( cloaksAndRobes, 1006010, typeof( RewardRobe ), Bronze, 1041287 ),
 						new RewardEntry( cloaksAndRobes, 1080366, typeof( RewardDress ), Expansion.ML, Bronze, 1080366 ),
@@ -353,12 +353,12 @@ namespace Server.Engines.VeteranRewards
 						new RewardEntry( monsterStatues, 1006037, typeof( MonsterStatuette ), MonsterStatuetteType.Troll ),
 						new RewardEntry( houseAddOns,    1062692, typeof( ContestMiniHouseDeed ), Expansion.AOS, MiniHouseType.MalasMountainPass ),
 						new RewardEntry( houseAddOns,    1072216, typeof( ContestMiniHouseDeed ), Expansion.SE, MiniHouseType.ChurchAtNight ),
-						new RewardEntry( miscellaneous,  1076155, typeof( RedSoulstone ), Expansion.ML ),
+						//new RewardEntry( miscellaneous,  1076155, typeof( RedSoulstone ), Expansion.ML ),
 						new RewardEntry( miscellaneous,  1080523, typeof( CommodityDeedBox ), Expansion.ML ),
 					} ),
 					new RewardList( RewardInterval, 2, new RewardEntry[]
 					{
-						new RewardEntry( specialDyeTubs, 1006052, typeof( LeatherDyeTub ) ),
+					//	new RewardEntry( specialDyeTubs, 1006052, typeof( LeatherDyeTub ) ),
 						new RewardEntry( cloaksAndRobes, 1006014, typeof( RewardCloak ), Agapite, 1041290 ),
 						new RewardEntry( cloaksAndRobes, 1006015, typeof( RewardRobe ), Agapite, 1041291 ),
 						new RewardEntry( cloaksAndRobes, 1080369, typeof( RewardDress ), Expansion.ML, Agapite, 1080369 ),
@@ -410,7 +410,7 @@ namespace Server.Engines.VeteranRewards
 					} ),
 					new RewardList( RewardInterval, 5, new RewardEntry[]
 					{
-						new RewardEntry( specialDyeTubs, 1049741, typeof( StatuetteDyeTub ) ),
+						//new RewardEntry( specialDyeTubs, 1049741, typeof( StatuetteDyeTub ) ),
 						new RewardEntry( cloaksAndRobes, 1049731, typeof( RewardCloak ), JetBlack, 1049763 ),
 						new RewardEntry( cloaksAndRobes, 1049732, typeof( RewardRobe ), JetBlack, 1049762 ),
 						new RewardEntry( cloaksAndRobes, 1080377, typeof( RewardDress ), Expansion.ML, JetBlack, 1080377 ),
@@ -430,9 +430,9 @@ namespace Server.Engines.VeteranRewards
 					} ),					
 					new RewardList( RewardInterval, 6, new RewardEntry[]
 					{
-						new RewardEntry( houseAddOns,	1076188, typeof( CharacterStatueMaker ), Expansion.ML, StatueType.Jade ),
-						new RewardEntry( houseAddOns,	1076189, typeof( CharacterStatueMaker ), Expansion.ML, StatueType.Marble ),
-						new RewardEntry( houseAddOns,	1076190, typeof( CharacterStatueMaker ), Expansion.ML, StatueType.Bronze ),						
+				//		new RewardEntry( houseAddOns,	1076188, typeof( CharacterStatueMaker ), Expansion.ML, StatueType.Jade ),
+				//		new RewardEntry( houseAddOns,	1076189, typeof( CharacterStatueMaker ), Expansion.ML, StatueType.Marble ),
+				//		new RewardEntry( houseAddOns,	1076190, typeof( CharacterStatueMaker ), Expansion.ML, StatueType.Bronze ),						
 						new RewardEntry( houseAddOns,	1080527, typeof( RewardBrazierDeed ), Expansion.ML )
 					} ),		
 					new RewardList( RewardInterval, 7, new RewardEntry[]
@@ -442,11 +442,11 @@ namespace Server.Engines.VeteranRewards
 					} ),
 					new RewardList( RewardInterval, 8, new RewardEntry[]
 					{
-						new RewardEntry( miscellaneous,	1076158, typeof( WeaponEngravingTool ), Expansion.ML )
+					//	new RewardEntry( miscellaneous,	1076158, typeof( WeaponEngravingTool ), Expansion.ML )
 					} ),
 					new RewardList( RewardInterval, 9, new RewardEntry[]
 					{
-						new RewardEntry( etherealSteeds,	1076159, typeof( RideablePolarBear ), Expansion.ML ),
+					//	new RewardEntry( etherealSteeds,	1076159, typeof( RideablePolarBear ), Expansion.ML ),
 						new RewardEntry( houseAddOns,		1080549, typeof( WallBannerDeed ), Expansion.ML )
 					} ),
 					new RewardList( RewardInterval, 10, new RewardEntry[]
@@ -461,7 +461,7 @@ namespace Server.Engines.VeteranRewards
 						new RewardEntry( cloaksAndRobes,	1080381, typeof( RewardRobe ), Expansion.ML, Crimson, 1080381 ),						
 						new RewardEntry( cloaksAndRobes,	1080379, typeof( RewardDress ), Expansion.ML, Crimson, 1080379 ),
 						
-						new RewardEntry( etherealSteeds,	1080386, typeof( EtherealCuSidhe ), Expansion.ML ),
+						//new RewardEntry( etherealSteeds,	1080386, typeof( EtherealCuSidhe ), Expansion.ML ),
 
 						new RewardEntry( houseAddOns,		1080548, typeof( MiningCartDeed ), Expansion.ML ),
 						new RewardEntry( houseAddOns,		1080397, typeof( AnkhOfSacrificeDeed ), Expansion.ML )
@@ -469,7 +469,7 @@ namespace Server.Engines.VeteranRewards
 
 					new RewardList( RewardInterval, 11, new RewardEntry[]
 					{
-						new RewardEntry( etherealSteeds,	1113908, typeof( EtherealReptalon ), Expansion.ML ),
+					//	new RewardEntry( etherealSteeds,	1113908, typeof( EtherealReptalon ), Expansion.ML ),
 					} ),
 
 					new RewardList( RewardInterval, 12, new RewardEntry[]
@@ -493,7 +493,7 @@ namespace Server.Engines.VeteranRewards
 
 			ComputeRewardInfo( e.Mobile, out cur, out max, out level );
 
-			if ( e.Mobile.SkillsCap == 7000 || e.Mobile.SkillsCap == 7050 || e.Mobile.SkillsCap == 7100 || e.Mobile.SkillsCap == 7150 || e.Mobile.SkillsCap == 7200 )
+	/*		if ( e.Mobile.SkillsCap == 7000 || e.Mobile.SkillsCap == 7050 || e.Mobile.SkillsCap == 7100 || e.Mobile.SkillsCap == 7150 || e.Mobile.SkillsCap == 7200 )
 			{
 				if ( level > 4 )
 					level = 4;
@@ -510,7 +510,7 @@ namespace Server.Engines.VeteranRewards
 			{
 				((PlayerMobile)e.Mobile).HasStatReward = true;
 				e.Mobile.StatCap += 5;
-			}
+			}*/
 
 			if ( cur < max )
 				e.Mobile.SendGump( new RewardNoticeGump( e.Mobile ) );
