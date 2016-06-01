@@ -42,7 +42,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class MinersBoots : ThighBoots, IUniqueItem
+    public class Miningboots : ThighBoots, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -52,13 +52,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public MinersBoots()
+        public Miningboots()
         {
             Hue = 0x082E;
             Name = "Greater Boots of Mining";
             SkillBonuses.SetValues(0, Server.SkillName.Mining, 4.0);
         }
-        public MinersBoots(Serial serial) : base(serial)
+        public Miningboots(Serial serial) : base(serial)
         {
 
         }

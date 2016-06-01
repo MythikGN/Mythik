@@ -145,7 +145,7 @@ namespace Scripts.Mythik.Items.Uniques
 
     }
 
-    public class BlacksmithHammer : AncientSmithyHammer, IUniqueItem
+    public class BlacksmithRobe : Robe, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -155,12 +155,12 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public BlacksmithHammer() : base(10)
+        public BlacksmithRobe() : base(10)
         {
             Hue = 0x0787;
-            Name = "Master Blacksmiths Hammer";
+            Name = "Master Blacksmiths Robe";
         }
-        public BlacksmithHammer(Serial serial) : base(serial)
+        public BlacksmithRobe(Serial serial) : base(serial)
         {
 
         }

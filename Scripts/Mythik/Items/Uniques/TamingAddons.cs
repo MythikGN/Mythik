@@ -219,7 +219,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             get
             {
-                return RareLevel.UniqueLvl4;
+                return RareLevel.UniqueLvl5;
             }
         }
         [Constructable]
