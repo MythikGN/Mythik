@@ -1107,7 +1107,81 @@ namespace Server.Network
 			if ( flags != 0 )
 				m_Stream.Write( (byte) flags );
 		}
-	}
+
+        public WorldItem(int Serial, int ItemID, int Amount, int X,int Y, int Z,int Hue,int Flags, int dir,bool isMulti) : base(0x1A)
+        {
+            this.EnsureCapacity(20);
+
+            // 14 base length
+            // +2 - Amount
+            // +2 - Hue
+            // +1 - Flags
+            uint serial = (uint)Serial;
+            int itemID = ItemID & 0x3FFF;
+            int amount = 1;
+            
+            int x = X;
+            int y = Y;
+            int hue = Hue;
+            int flags = 0;
+            int direction = (int)dir;
+
+            if (amount != 0)
+            {
+                serial |= 0x80000000;
+            }
+            else
+            {
+                serial &= 0x7FFFFFFF;
+            }
+
+            m_Stream.Write((uint)serial);
+
+            if (isMulti)
+                m_Stream.Write((short)(itemID | 0x4000));
+            else
+                m_Stream.Write((short)itemID);
+
+            if (amount != 0)
+            {
+                m_Stream.Write((short)amount);
+            }
+
+            x &= 0x7FFF;
+
+            if (direction != 0)
+            {
+                x |= 0x8000;
+            }
+
+            m_Stream.Write((short)x);
+
+            y &= 0x3FFF;
+
+            if (hue != 0)
+            {
+                y |= 0x8000;
+            }
+
+            if (flags != 0)
+            {
+                y |= 0x4000;
+            }
+
+            m_Stream.Write((short)y);
+
+            if (direction != 0)
+                m_Stream.Write((byte)direction);
+
+            m_Stream.Write((sbyte)Z);
+
+            if (hue != 0)
+                m_Stream.Write((ushort)hue);
+
+            if (flags != 0)
+                m_Stream.Write((byte)flags);
+        }
+    }
 
 	public sealed class WorldItemSA : Packet
 	{
@@ -3137,7 +3211,10 @@ namespace Server.Network
 				WriteAttr( beheld.Mana, beheld.ManaMax );
 
 				m_Stream.Write( (int) beheld.TotalGold );
-				m_Stream.Write( (short) (Core.AOS ? beheld.PhysicalResistance : (int)(beheld.ArmorRating + 0.5)) );
+                if (ns.Version.Major<= 3)
+                    m_Stream.Write((short)((int)(beheld.ArmorRating + 0.5)));
+                else
+                    m_Stream.Write( (short) (Core.AOS ? beheld.PhysicalResistance : (int)(beheld.ArmorRating + 0.5)) );
 				m_Stream.Write( (short) (Mobile.BodyWeight + beheld.TotalWeight) );
 
 				if( sendMLExtended )
@@ -3303,7 +3380,14 @@ namespace Server.Network
 				hue = beheld.SolidHueOverride;
 
 			m_Stream.Write( (int) beheld.Serial );
-			m_Stream.Write( (short) beheld.Body );
+            if(beholder.NetState.Version.Major <= 3)
+            {
+                m_Stream.Write((short)ConvertBody203(beheld.Body));
+            }
+            else
+                m_Stream.Write((short)beheld.Body);
+            
+
 			m_Stream.Write( (short) beheld.X );
 			m_Stream.Write( (short) beheld.Y );
 			m_Stream.Write( (sbyte) beheld.Z );
@@ -3396,7 +3480,55 @@ namespace Server.Network
 
 			m_Stream.Write( (int) 0 ); // terminate
 		}
-	}
+
+        private short ConvertBody203(Body body)
+        {
+            switch(body.BodyID)
+            {
+                case 132: // kirin
+                    return 11;
+                case 0x7A:// unicorn
+                    return 222;
+                case 0x317: // beetle
+                    return 224;
+                case 0x31A://swampdrag
+                    return 227;
+                case 318://darkfather aka demonknight
+                    return 20;
+                case 243://hiryu
+                    return 229;
+                case 246: // bake
+                    return 230;
+                case 244: //runebeetle
+                    return 20;
+                case 46: //aw
+                    return 23;
+                case 173://spider champ meph
+                    return 25;
+                case 149://succubus
+                    return 27;
+                case 40://balron
+                    return 32;
+                case 308://bone daemon
+                    return 34;
+                case 303://devourer
+                    return 37;
+                case 311: //shadowknight
+                    return 38;
+                case 312://abyss horror
+                    return 40;
+                case 316: //wanderer of void
+                    return 43;
+                case 104://skele drag
+                    return 46;
+                case 315://flesh renderer
+                    return 49;
+                default:
+                    return (short)body.BodyID;
+
+            }
+        }
+    }
 
 	// Pre-7.0.0.0 Mobile Incoming
 	public sealed class MobileIncomingOld : Packet
