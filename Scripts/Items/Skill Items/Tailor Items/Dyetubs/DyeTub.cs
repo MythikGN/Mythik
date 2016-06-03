@@ -5,6 +5,7 @@ using Server.Multis;
 using Server.Targeting;
 using Server.ContextMenus;
 using Server.Gumps;
+using Scripts.Mythik.Items.Rares;
 
 namespace Server.Items
 {
@@ -179,13 +180,25 @@ namespace Server.Items
 
 					if ( item is IDyable && m_Tub.AllowDyables )
 					{
+                        var limited = m_Tub as LimitedUseDyeTub;
+                        if(limited != null)
+                        {
+                            if(limited.Uses <= 0)
+                            {
+                                from.SendAsciiMessage("The dye tub has no more charges.");
+                                return;
+                            }
+                            limited.Uses--;
+                        }
 						if ( !from.InRange( m_Tub.GetWorldLocation(), 1 ) || !from.InRange( item.GetWorldLocation(), 1 ) )
 							from.SendLocalizedMessage( 500446 ); // That is too far away.
 						else if ( item.Parent is Mobile )
 							from.SendLocalizedMessage( 500861 ); // Can't Dye clothing that is being worn.
 						else if ( ((IDyable)item).Dye( from, m_Tub ) )
 							from.PlaySound( 0x23E );
-					}
+                         
+
+                    }
 					else if ( (FurnitureAttribute.Check( item ) || (item is PotionKeg)) && m_Tub.AllowFurniture )
 					{
 						if ( !from.InRange( m_Tub.GetWorldLocation(), 1 ) || !from.InRange( item.GetWorldLocation(), 1 ) )
@@ -217,7 +230,17 @@ namespace Server.Items
 
 							if ( okay )
 							{
-								item.Hue = m_Tub.DyedHue;
+                                var limited = m_Tub as LimitedUseDyeTub;
+                                if (limited != null)
+                                {
+                                    if (limited.Uses <= 0)
+                                    {
+                                        from.SendAsciiMessage("The dye tub has no more charges.");
+                                        return;
+                                    }
+                                    limited.Uses--;
+                                }
+                                item.Hue = m_Tub.DyedHue;
 								from.PlaySound( 0x23E );
 							}
 						}
@@ -234,7 +257,17 @@ namespace Server.Items
 						}
 						else
 						{
-							item.Hue = m_Tub.DyedHue;
+                            var limited = m_Tub as LimitedUseDyeTub;
+                            if (limited != null)
+                            {
+                                if (limited.Uses <= 0)
+                                {
+                                    from.SendAsciiMessage("The dye tub has no more charges.");
+                                    return;
+                                }
+                                limited.Uses--;
+                            }
+                            item.Hue = m_Tub.DyedHue;
 							from.PlaySound( 0x23E );
 						}
 					}
@@ -250,7 +283,17 @@ namespace Server.Items
 						}
 						else
 						{
-							item.Hue = m_Tub.DyedHue;
+                            var limited = m_Tub as LimitedUseDyeTub;
+                            if (limited != null)
+                            {
+                                if (limited.Uses <= 0)
+                                {
+                                    from.SendAsciiMessage("The dye tub has no more charges.");
+                                    return;
+                                }
+                                limited.Uses--;
+                            }
+                            item.Hue = m_Tub.DyedHue;
 							from.PlaySound( 0x23E );
 						}
 					}
@@ -270,7 +313,17 @@ namespace Server.Items
 						}
 						else
 						{
-							item.Hue = m_Tub.DyedHue;
+                            var limited = m_Tub as LimitedUseDyeTub;
+                            if (limited != null)
+                            {
+                                if (limited.Uses <= 0)
+                                {
+                                    from.SendAsciiMessage("The dye tub has no more charges.");
+                                    return;
+                                }
+                                limited.Uses--;
+                            }
+                            item.Hue = m_Tub.DyedHue;
 							from.PlaySound( 0x23E );
 						}
 					}
