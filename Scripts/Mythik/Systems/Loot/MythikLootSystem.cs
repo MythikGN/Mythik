@@ -9,6 +9,8 @@ using Server.Items;
 using Scripts.Mythik.Items.Uniques;
 using Scripts.Mythik.Items.Rares;
 using Scripts.Mythik.Items.Rares.Recipes;
+using Scripts.Mythik.Items.Rares.Equipment;
+using Scripts.Mythik.Items.Craftables.Tinkering.GemArmor;
 
 namespace Scripts.Mythik.Systems.Loot
 {
@@ -50,6 +52,18 @@ namespace Scripts.Mythik.Systems.Loot
                 new LootPackItem( typeof( BaseRanged ), 1 ),
                 new LootPackItem( typeof( BaseShield ), 1 )
             };
+        public static readonly LootPackItem[] BlueChromeSet = new LootPackItem[]
+            {
+                new LootPackItem( typeof( BlueChromePlateChest ), 1 ),
+                new LootPackItem( typeof( BlueChromeHeaterShield ), 1 ),
+                new LootPackItem( typeof( BlueChromePlateArms ), 1 ),
+                new LootPackItem( typeof( BlueChromePlateGloves ), 1 ),
+                new LootPackItem( typeof( BlueChromePlateHelm ), 1 ),
+                new LootPackItem( typeof( BlueChromePlateLegs ), 1 ),
+                new LootPackItem( typeof( BlueChromePlateGorgot ), 1 )
+            };
+
+
         public static readonly LootPackItem[] LevelOneUniques = new LootPackItem[]
             {
                 new LootPackItem( typeof( AlchemySandals ),1 ),
@@ -62,55 +76,110 @@ namespace Scripts.Mythik.Systems.Loot
                 new LootPackItem( typeof( LumberjackCap ), 1 ),
                 new LootPackItem( typeof( DamagedMiningHat ), 1 )
             };
+        public static readonly LootPackItem[] LevelTwoUniques = new LootPackItem[]
+    {
+                new LootPackItem( typeof( AlchemyBandena ),1 ),
+                new LootPackItem( typeof( BlacksmithShoes ), 1 ),
+                new LootPackItem( typeof( CarpentryCap ), 1 ),
+                new LootPackItem( typeof( TamingCloak ), 1 ),
+                new LootPackItem( typeof( TailorGloves ), 1 ),
+                new LootPackItem( typeof( TinkeringShirt ), 1 ),
+                new LootPackItem( typeof( InscribeHat ), 1 ),
+                new LootPackItem( typeof( LumberjackGloves ), 1 ),
+                new LootPackItem( typeof( Miningboots ), 1 )
+    };
 
+        public static readonly LootPackItem[] LevelThreeUniques = new LootPackItem[]
+{
+                new LootPackItem( typeof( AlchemyApron ),1 ),
+                new LootPackItem( typeof( BlacksmithBandana ), 1 ),
+                new LootPackItem( typeof( CarpentryApron ), 1 ),
+                new LootPackItem( typeof( TamingBoots ), 1 ),
+                new LootPackItem( typeof( TailorHat ), 1 ),
+                new LootPackItem( typeof( TinkeringPants ), 1 ),
+                new LootPackItem( typeof( InscribeApron ), 1 ),
+                new LootPackItem( typeof( LumberjackShirt ), 1 )
+};
+
+        public static readonly LootPackItem[] LevelFourniques = new LootPackItem[]
+{
+                new LootPackItem( typeof( AlchemyGloves ),1 ),
+                new LootPackItem( typeof( BlacksmithApron ), 1 ),
+                new LootPackItem( typeof( CarpentryGloves ), 1 ),
+                new LootPackItem( typeof( TamingRobe ), 1 ),
+                new LootPackItem( typeof( TailoringDoublet ), 1 ),
+                new LootPackItem( typeof( TinkeringGloves ), 1 ),
+                new LootPackItem( typeof( InscribeShirt ), 1 ),
+                new LootPackItem( typeof( LumberjackPants ), 1 ),
+                new LootPackItem( typeof( Miningboots ), 1 )
+};
+
+        public static readonly LootPackItem[] LevelFiveUniques = new LootPackItem[]
+{
+                new LootPackItem( typeof( AlchemyRobe ),1 ),
+                new LootPackItem( typeof( BlacksmithRobe ), 1 ),
+                new LootPackItem( typeof( CarpentryShirt ), 1 ),
+                new LootPackItem( typeof( TamingCrook ), 1 ),
+                new LootPackItem( typeof( TailorSkirt ), 1 ),
+                new LootPackItem( typeof( TinkeringApron ), 1 ),
+                new LootPackItem( typeof( InscribeShirt ), 1 ),
+                new LootPackItem( typeof( LumberjackApron ), 1 ),
+                new LootPackItem( typeof( MiningRobe ), 1 )
+};
         /// <summary>
         /// Standard loot packs for level 1-5 monsters, handles dropping gold, pots, scrolls, gems and addons. 
         /// These loot packs drop direct on monster corpse, Killers luck effects drop rates.
         /// </summary>
         public static readonly LootPack Level1 = new LootPack(new LootPackEntry[]
             {
-                new LootPackEntry(  true, Gold,                     100.00, "2d120+25" ),
+                new LootPackEntry(  false, Gold,                     100.00, "2d120+25" ),
                 new LootPackEntry( false, PotionItems,              45.0,      2 ),
                 new LootPackEntry( false, LowScrollItems,           35.0,      1 ),
                 new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(Amber),1) },60.0,"1d3"),
+                new LootPackEntry( false, BlueChromeSet,          0.25,   1 ),
                 new LootPackEntry( false, LevelOneUniques,          0.13,   1 ) // 0.13 is equiv to 1 in 769
+
             });
 
         public static readonly LootPack Level2 = new LootPack(new LootPackEntry[]
     {
-                new LootPackEntry(  true, Gold,                     100.00, "2d180+50" ),
+                new LootPackEntry(  false, Gold,                     100.00, "2d180+50" ),
                 new LootPackEntry( false, PotionItems,              55.0,      2 ),
                 new LootPackEntry( false, LowScrollItems,           45.0,      2 ),
                 new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(Citrine),1),new LootPackItem( typeof(Amethyst),1) },60.0,"1d3"),
-                new LootPackEntry( false, LevelOneUniques,          0.13,   1 ) // 0.13 is equiv to 1 in 769
+                new LootPackEntry( false, LevelTwoUniques,          0.14,   1 ) // 0.13 is equiv to 1 in 769
     });
 
         public static readonly LootPack Level3 = new LootPack(new LootPackEntry[]
 {
-                new LootPackEntry(  true, Gold,                     100.00, "2d280+90" ),
+                new LootPackEntry(  false, Gold,                     100.00, "2d280+90" ),
                 new LootPackEntry( false, PotionItems,              55.0,      2 ),
                 new LootPackEntry( false, MedScrollItems,           45.0,      1 ),
                 new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(Tourmaline),1),new LootPackItem( typeof(Sapphire),1) },60.0,"1d3"),
-                new LootPackEntry( false, LevelOneUniques,          0.13,   1 ) // 0.13 is equiv to 1 in 769
+                new LootPackEntry( false, OldMagicItems,  6.0, 1, 1, 20, 100 ),
+                new LootPackEntry( false, LevelThreeUniques,          0.15,   1 ) // 0.13 is equiv to 1 in 769
 });
 
         public static readonly LootPack Level4 = new LootPack(new LootPackEntry[]
 {
-                new LootPackEntry(  true, Gold,                     100.00, "2d400+150" ),
+                new LootPackEntry(  false, Gold,                     100.00, "2d400+150" ),
                 new LootPackEntry( false, PotionItems,              60.0,      2 ),
+                new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(Ruby),1),new LootPackItem( typeof(Emerald),1) },50.0,"1d4"),
+
                 new LootPackEntry( false, MedScrollItems,           40.0,      2 ),
-                new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(Ruby),1),new LootPackItem( typeof(Emerald),1) },30.0,"1d4"),
-                new LootPackEntry( false, LevelOneUniques,          0.13,   1 ) // 0.13 is equiv to 1 in 769
+                new LootPackEntry( false, OldMagicItems,  6.0, 1, 1, 20, 100 ),
+
+                new LootPackEntry( false, LevelFourniques,          0.16,   1 ) // 0.13 is equiv to 1 in 769
 });
 
         public static readonly LootPack Level5 = new LootPack(new LootPackEntry[]
 {
                 new LootPackEntry(  false, Gold,                     100.00, "2d500+250" ),
+                new LootPackEntry( false, PotionItems,              70.00,      "2d1+1" ),
                 new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(StarSapphire),1),new LootPackItem( typeof(Diamond),1) },60.0,"1d5"),
-                new LootPackEntry( false, PotionItems,              70.00,      3 ),
-                new LootPackEntry( false, OldMagicItems,  6.0, 1, 1, 20, 100 ),
-                new LootPackEntry( false, HighScrollItems,           5.00,      2 ),
-                new LootPackEntry( false, LevelOneUniques,          0.13,   1 ) // 0.13 is equiv to 1 in 769
+                new LootPackEntry( false, HighScrollItems,           50.00,      "2d2" ),
+                new LootPackEntry( false, OldMagicItems,  6.0, 2, 1, 20, 100 ),
+                new LootPackEntry( false, LevelFiveUniques,          0.17,   1 ) // 0.13 is equiv to 1 in 769
 });
 
         public static void GenerateLoot(BaseCreature mob)
@@ -150,7 +219,7 @@ namespace Scripts.Mythik.Systems.Loot
         private static Type[] m_LesserArtifacts = new Type[] {
             typeof(RareClothDyeTub),typeof( RareLeatherDyeTub ), typeof(RuneBookChargeDeed),
             typeof(AnimateDeadScrollRecipe),typeof(BloodOathScrollRecipe),typeof(SummonFamiliarScrollRecipe),
-            typeof(EnemyOfOneScrollRecipe)
+            typeof(EnemyOfOneScrollRecipe), typeof(HolyWarFork)
 
         };
         /// <summary>
