@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Scripts.Mythik.Items.Rares
 {
 
-    abstract class LimitedUseDyeTub : DyeTub
+    abstract class LimitedUseDyeTub : DyeTub , IUniqueItem
     {
 
 
@@ -20,10 +20,20 @@ namespace Scripts.Mythik.Items.Rares
 
         public LimitedUseDyeTub()
         {
+           
         }
 
         public short Uses { get; set; }
         public short UsesMax { get; set; }
+
+        public RareLevel UniqueLevel
+        {
+            get
+            {
+                return RareLevel.Rare;
+            }
+        }
+
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
@@ -37,6 +47,11 @@ namespace Scripts.Mythik.Items.Rares
             var ver = reader.ReadInt();
             Uses = reader.ReadShort();
             UsesMax = reader.ReadShort();
+        }
+        public override void AddLootTypeProperty(ObjectPropertyList list)
+        {
+            base.AddLootTypeProperty(list);
+            this.PropertyList.Add("Charges " + Uses + "/" + UsesMax);
         }
     }
     class RareClothDyeTub : LimitedUseDyeTub, IUniqueItem

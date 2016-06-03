@@ -53,6 +53,29 @@ namespace Scripts.Mythik.Items
         internal static BaseGearSet AmethystSet = new AmethystArmorSet();
         internal static BaseGearSet StarSapphireSet = new StarSapphireArmorSet();
         internal static BaseGearSet TourmalineSet = new TourmalineArmorSet();
+
+        internal static BaseGearSet PearlSet = new PearlArmorSet();
+        internal static BaseGearSet TurquoiseSet = new TurquoiseArmorSet();
+    }
+    public class TurquoiseArmorSet : BaseGearSet
+    {
+        //set bonus, number items for set bonus, hue, bonus for single item
+        public TurquoiseArmorSet() : base(new DefaultSkillMod(SkillName.AnimalTaming, true, 10.0),
+            6, 0x804,
+            new DefaultSkillMod(Server.SkillName.AnimalTaming, true, 2.0))
+        {
+
+        }
+    }
+    public class PearlArmorSet : BaseGearSet
+    {
+        //set bonus, number items for set bonus, hue, bonus for single item
+        public PearlArmorSet() : base(new DefaultSkillMod(SkillName.AnimalTaming, true, 10.0),
+            6, 0x804,
+            new DefaultSkillMod(Server.SkillName.AnimalTaming, true, 2.0))
+        {
+
+        }
     }
     public class EmeraldArmorSet : BaseGearSet
     {

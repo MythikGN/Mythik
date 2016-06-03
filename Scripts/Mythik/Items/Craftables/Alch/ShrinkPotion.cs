@@ -1,6 +1,7 @@
 ﻿using Server;
 using Server.Items;
 using Server.Mobiles;
+using Server.Network;
 using Server.Targeting;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace Scripts.Mythik.Items.Craftables.Alch
         [Constructable]
         public ShrinkPotion() : this(1)
         {
+            
         }
 
         [Constructable]
@@ -23,7 +25,7 @@ namespace Scripts.Mythik.Items.Craftables.Alch
         {
             Stackable = true;
             Amount = amount;
-
+            Name = "shrink potion";
             Hue = 0x065;
         }
 
@@ -192,8 +194,14 @@ namespace Scripts.Mythik.Items.Craftables.Alch
         {
             m_Owner = owner;
             m_Creature = creature;
-
+            Name = SphereUtils.GenericComputeName(this);
             Hue = creature.Hue;
+        }
+        public override void OnSingleClick(Mobile from)
+        {
+            base.OnSingleClick(from);
+            from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x803, 3, "", "[ " + m_Creature.HitsMax + " Hits ]"));
+
         }
 
         public ShrunkenCreature(Serial serial) : base(serial)

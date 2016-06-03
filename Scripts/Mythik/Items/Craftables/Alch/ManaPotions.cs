@@ -77,6 +77,15 @@ namespace Scripts.Mythik.Items.Craftables.Alch
 
         public BaseManaPotion(PotionEffect effect) : base(0xF0C, effect)
         {
+            switch(effect)
+            {
+                case PotionEffect.Mana:
+                    Name = "mana potion";
+                    break;
+                case PotionEffect.ManaTotal:
+                    Name = "total mana potion";
+                    break;
+            }
         }
 
         public BaseManaPotion(Serial serial) : base(serial)
