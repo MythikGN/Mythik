@@ -123,8 +123,11 @@ namespace Server.Misc
 				return false;
 
 			bool success = ( chance >= Utility.RandomDouble() );
-			double gc = (double)(from.Skills.Cap - from.Skills.Total) / from.Skills.Cap;
-			gc += ( skill.Cap - skill.Base ) / skill.Cap;
+
+            //Removing this since all it does is encourage macroing expensive skills before cheap ones
+            //double gc = (double)(from.Skills.Cap - from.Skills.Total) / from.Skills.Cap;
+            double gc = 0.28; // Equiv to 5/7 skills GM'ed with above formula.
+            gc += ( skill.Cap - skill.Base ) / skill.Cap;
 			gc /= 2;
 
 			gc += ( 1.0 - chance ) * ( success ? 0.5 : (Core.AOS ? 0.0 : 0.2) );
