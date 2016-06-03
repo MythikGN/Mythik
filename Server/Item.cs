@@ -974,6 +974,16 @@ namespace Server
 				list.Add( 1049643 ); // cursed
 			else if ( Insured )
 				list.Add( 1061682 ); // <b>insured</b>
+
+            var uni = this as IUniqueItem;
+            if(uni != null)
+            {
+                if (uni.UniqueLevel == RareLevel.Rare)
+                    this.PropertyList.Add("[ Rare ]");
+                else
+                    this.PropertyList.Add("[ Unique Lvl " + (int)uni.UniqueLevel + " ]");
+            }
+                
 		}
 
 		/// <summary>

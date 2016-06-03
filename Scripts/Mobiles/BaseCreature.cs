@@ -4352,6 +4352,23 @@ namespace Server.Mobiles
 				else
 					list.Add( 502006 ); // (tame)
 			}
+
+            if(!Controlled)
+            {
+                switch (AI)
+                {
+                    case AIType.AI_Animal:
+                        list.Add("[ Critter ]");
+                        break;
+                    case AIType.AI_Vendor:
+                        list.Add("[ Vendor ]");
+                        break;
+                    default:
+                        list.Add("[ " + GetMonsterDifficultyLevelText() + " ]");
+                        list.Add("[ HP: " + Hits + "/" + HitsMax + " ]");
+                        break;
+                }
+            }
 		}
 
 		public override void OnSingleClick( Mobile from )
