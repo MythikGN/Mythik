@@ -10,28 +10,33 @@ namespace Server.SkillHandlers
     public class EquipInfoGump : Gump
     {
 
-        public EquipInfoGump(Item item) : base(605, 10)
+        public EquipInfoGump(Item item) : base(805, 10)
         {
             this.Closable = true;
             this.Disposable = true;
             this.Dragable = true;
             this.Resizable = false;
             this.AddPage(0);
-            this.AddBackground(82, 78, 136, 246, 9270);
-            this.AddBackground(89, 87, 122, 229, 9270);
-            this.AddAlphaRegion(80, 77, 141, 250);
-            var text = @"<CENTER>";
+            this.AddBackground(82, 78, 196, 246, 9270);
+            this.AddBackground(89, 87, 182, 229, 9270);
+            this.AddAlphaRegion(80, 77, 191, 250);
+            var text = @"<CENTER><BASEFONT COLOR=WHITE>";
             int y = 80;
-            if (string.IsNullOrWhiteSpace(item.Name))
-                AddHtmlLocalized(98, y += 17, 100, 15, item.LabelNumber, false, false);
-            else
-                AddHtml(98, y += 17, 100, 15, item.Name, false, false);
-            foreach (var prop in item.PropertyList.Props)
+            //if (string.IsNullOrWhiteSpace(item.Name))
+            //    AddHtmlLocalized(98, y += 17, 100, 15, item.LabelNumber, false, false);
+            // else
+            //    AddHtml(98, y += 17, 100, 15, item.Name, false, false);
+            int cnt = 0;
+            foreach (var prop in CliLoc.GetPropertiesList(item))
             {
-                if (prop.Item2 == null)
+                if (cnt == 0 && prop?.Length > 1)
+                    AddHtml(98, y += 25, 150, 17, text + char.ToUpper(prop[0]) + prop.Substring(1), false, false);
+                else
+                    AddHtml(98, y += 25, 150, 17, text + prop, false, false);
+                /*if (prop.Item2 == null)
                     AddHtmlLocalized(98, y += 17, 100, 15, prop.Item1, false, false);
                 else
-                    AddHtmlLocalized(98, y += 17, 100, 15, prop.Item1, prop.Item2, 0, false, false);
+                    AddHtmlLocalized(98, y += 17, 100, 15, prop.Item1, prop.Item2, 0, false, false);*/
 
             }
             //this.AddHtml(90, 87, 119, 231, text, (bool)false, (bool)false);
