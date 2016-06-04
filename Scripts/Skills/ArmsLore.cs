@@ -4,24 +4,34 @@ using Server.Mobiles;
 using Server.Network;
 using Server.Targeting;
 using Server.Gumps;
+using Scripts.Mythik.Mobiles;
 
 namespace Server.SkillHandlers
 {
     public class EquipInfoGump : Gump
     {
 
-        public EquipInfoGump(Item item) : base(805, 10)
+        public EquipInfoGump(Scripts.Mythik.Mobiles.MythikPlayerMobile from, Item item) : base(from.GetGumpLoc(typeof(EquipInfoGump)).Item1, from.GetGumpLoc(typeof(EquipInfoGump)).Item2)
         {
+            from.CloseGump(typeof(EquipInfoGump));
             this.Closable = true;
             this.Disposable = true;
             this.Dragable = true;
             this.Resizable = false;
             this.AddPage(0);
-            this.AddBackground(82, 78, 196, 246, 9270);
-            this.AddBackground(89, 87, 182, 229, 9270);
-            this.AddAlphaRegion(80, 77, 191, 250);
-            var text = @"<CENTER><BASEFONT COLOR=WHITE>";
-            int y = 80;
+            var height = 200;
+            if(item != null)
+                height = CliLoc.GetPropertiesList(item).Count * 23;
+            height += 5;
+            this.AddBackground(82, 78, 196, 46 + height, 9270);
+            this.AddBackground(89, 87, 182, 29 + height, 9270);
+            this.AddAlphaRegion(80, 77, 191, 50+height);
+            this.AddButton(236, 90, 4011, 4012, 1, GumpButtonType.Reply, 0);
+            if (item == null)
+                return;
+            var text = @"<CENTER><BASEFONT COLOR=GREEN>";
+            var textHeader = @"<CENTER><BASEFONT COLOR=WHITE>";
+            int y = 90;
             //if (string.IsNullOrWhiteSpace(item.Name))
             //    AddHtmlLocalized(98, y += 17, 100, 15, item.LabelNumber, false, false);
             // else
@@ -30,9 +40,10 @@ namespace Server.SkillHandlers
             foreach (var prop in CliLoc.GetPropertiesList(item))
             {
                 if (cnt == 0 && prop?.Length > 1)
-                    AddHtml(98, y += 25, 150, 17, text + char.ToUpper(prop[0]) + prop.Substring(1), false, false);
+                    AddHtml(98, y += 23, 160, 17, textHeader + char.ToUpper(prop[0]) + prop.Substring(1), false, false);
                 else
-                    AddHtml(98, y += 25, 150, 17, text + prop, false, false);
+                    AddHtml(98, y += 23, 160, 17, text + prop, false, false);
+                cnt++;
                 /*if (prop.Item2 == null)
                     AddHtmlLocalized(98, y += 17, 100, 15, prop.Item1, false, false);
                 else
@@ -41,6 +52,115 @@ namespace Server.SkillHandlers
             }
             //this.AddHtml(90, 87, 119, 231, text, (bool)false, (bool)false);
 
+        }
+
+        public override void OnResponse(NetState sender, RelayInfo info)
+        {
+            base.OnResponse(sender, info);
+            if (info.ButtonID == 1)
+                sender.Mobile.SendGump(new SetLocationGump(sender, typeof(EquipInfoGump)));
+        }
+    }
+
+    internal class SetLocationGump : Gump
+    {
+        private Type type;
+
+        public SetLocationGump(NetState sender, Type type) : base(200,200)
+        {
+            
+            this.type = type;
+            sender.Mobile.CloseGump(typeof(SetLocationGump));
+            this.Closable = true;
+            this.Disposable = true;
+            this.Dragable = true;
+            this.Resizable = false;
+            this.AddPage(0);
+            this.AddBackground(82, 78, 347, 327, 9270);
+            this.AddLabel(170, 93, 43, @"Gump Positioning System");
+            var from = sender.Mobile as Scripts.Mythik.Mobiles.MythikPlayerMobile;
+            
+            this.AddLabel(170, 113, 43, @"Current Position: " + from.GetGumpLoc(type).Item1 + " / " + from.GetGumpLoc(type).Item2);
+            this.AddButton(354, 370, 247, 248, (int)1, GumpButtonType.Reply, 0); //okay
+            this.AddImage(237, 222, 113);
+            this.AddButton(245, 200, 5208, 248, (int)10, GumpButtonType.Reply, 0);
+            this.AddButton(245, 175, 5208, 248, (int)11, GumpButtonType.Reply, 0);
+            this.AddButton(245, 150, 5208, 248, (int)12, GumpButtonType.Reply, 0);
+            this.AddLabel(270, 200, 0, @"-1");
+            this.AddLabel(270, 175, 0, @"-10");
+            this.AddLabel(270, 150, 0, @"-20");
+            this.AddButton(245, 265, 5209, 248, (int)20, GumpButtonType.Reply, 0);
+            this.AddLabel(270, 265, 0, @"+1");
+            this.AddButton(245, 290, 5209, 248, (int)21, GumpButtonType.Reply, 0);
+            this.AddLabel(270, 290, 0, @"+10");
+            this.AddButton(245, 315, 5209, 248, (int)22, GumpButtonType.Reply, 0);
+            this.AddLabel(270, 315, 0, @"+20");
+
+            this.AddButton(285, 225, 5224, 248, (int)40, GumpButtonType.Reply, 0);
+            this.AddLabel(285, 245, 0, @"+1");
+            this.AddButton(315, 225, 5224, 248, (int)41, GumpButtonType.Reply, 0);
+            this.AddLabel(315, 245, 0, @"+10");
+            this.AddButton(345, 225, 5224, 248, (int)42, GumpButtonType.Reply, 0);
+            this.AddLabel(345, 245, 0, @"+20");
+
+            this.AddButton(205, 225, 5223, 248, (int)30, GumpButtonType.Reply, 0);
+            this.AddLabel(205, 245, 0, @"-1");
+            this.AddButton(175, 225, 5223, 248, (int)31, GumpButtonType.Reply, 0);
+            this.AddLabel(175, 245, 0, @"-10");
+            this.AddButton(145, 225, 5223, 248, (int)32, GumpButtonType.Reply, 0);
+            this.AddLabel(145, 245, 0, @"-20");
+
+
+        }
+        public override void OnResponse(NetState sender, RelayInfo info)
+        {
+            var from = sender.Mobile as Scripts.Mythik.Mobiles.MythikPlayerMobile;
+            
+            //base.OnResponse(sender, info);
+            switch(info.ButtonID)
+            {
+                case 0:
+                case 1:
+                    return;
+                case 10:
+                    from.SetGumpLoc(type, 0, -1);
+                    break;
+                case 11:
+                    from.SetGumpLoc(type, 0, -10);
+                    break;
+                case 12:
+                    from.SetGumpLoc(type, 0, -20);
+                    break;
+                case 20:
+                    from.SetGumpLoc(type, 0, 1);
+                    break;
+                case 21:
+                    from.SetGumpLoc(type, 0, 10);
+                    break;
+                case 22:
+                    from.SetGumpLoc(type, 0, 20);
+                    break;
+                case 30:
+                    from.SetGumpLoc(type, -1, 0);
+                    break;
+                case 31:
+                    from.SetGumpLoc(type, -10, 0);
+                    break;
+                case 32:
+                    from.SetGumpLoc(type, -20, 0);
+                    break;
+                case 40:
+                    from.SetGumpLoc(type, 1, 0);
+                    break;
+                case 41:
+                    from.SetGumpLoc(type, 10, 0);
+                    break;
+                case 42:
+                    from.SetGumpLoc(type, 20, 0);
+                    break;
+            }
+            from.SendGump(new SetLocationGump(sender, type));
+            from.SendGump(new EquipInfoGump(from, null));
         }
     }
 
@@ -70,11 +190,11 @@ namespace Server.SkillHandlers
 
 			protected override void OnTarget( Mobile from, object targeted )
 			{
-                if(targeted is Item)
+                if(targeted is Item && from is MythikPlayerMobile)
                 {
                     var item = (Item)targeted;
                     from.CloseGump(typeof(EquipInfoGump));
-                    from.SendGump(new EquipInfoGump(item));
+                    from.SendGump(new EquipInfoGump(from as MythikPlayerMobile, item));
                 }
 				if ( targeted is BaseWeapon )
 				{
