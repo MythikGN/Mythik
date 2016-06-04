@@ -271,7 +271,10 @@ namespace Server.Misc
 
 		public static bool CanRaise( Mobile from, Stat stat )
 		{
-			if ( !(from is BaseCreature && ((BaseCreature)from).Controlled) )
+            //Disable stat gains for players.
+            if (from is PlayerMobile)
+                return false;
+            if ( !(from is BaseCreature && ((BaseCreature)from).Controlled) )
 			{
 				if ( from.RawStatTotal >= from.StatCap )
 					return false;
