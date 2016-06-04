@@ -34,6 +34,7 @@ namespace Server.Engines.Craft
 		{
 		}
 
+        static int EXTRA_CATS = 40;//extra space to add
 		private CraftGump( Mobile from, CraftSystem craftSystem, BaseTool tool, object notice, CraftPage page ) : base( 40, 40 )
 		{
 			m_From = from;
@@ -48,14 +49,14 @@ namespace Server.Engines.Craft
 
 			AddPage( 0 );
 
-			AddBackground( 0, 0, 530, 437, 5054 );
+			AddBackground( 0, 0, 530, 437 + EXTRA_CATS, 5054 );
 			AddImageTiled( 10, 10, 510, 22, 2624 );
-			AddImageTiled( 10, 292, 150, 45, 2624 );
-			AddImageTiled( 165, 292, 355, 45, 2624 );
-			AddImageTiled( 10, 342, 510, 85, 2624 );
-			AddImageTiled( 10, 37, 200, 250, 2624 );
+			AddImageTiled( 10, 292 + EXTRA_CATS, 150, 45, 2624 ); //NOTICES BG
+			AddImageTiled( 165, 292 + EXTRA_CATS, 355, 45, 2624 ); //MSG AREA
+			AddImageTiled( 10, 342 + EXTRA_CATS, 510, 85, 2624 );//large main sec bot
+			AddImageTiled( 10, 37, 200, 250 + EXTRA_CATS, 2624 ); // bg under the cats
 			AddImageTiled( 215, 37, 305, 250, 2624 );
-			AddAlphaRegion( 10, 10, 510, 417 );
+			AddAlphaRegion( 10, 10, 510, 417 + EXTRA_CATS);
 
 			if ( craftSystem.GumpTitleNumber > 0 )
 				AddHtmlLocalized( 10, 12, 510, 20, craftSystem.GumpTitleNumber, LabelColor, false, false );
@@ -64,50 +65,50 @@ namespace Server.Engines.Craft
 
 			AddHtmlLocalized( 10, 37, 200, 22, 1044010, LabelColor, false, false ); // <CENTER>CATEGORIES</CENTER>
 			AddHtmlLocalized( 215, 37, 305, 22, 1044011, LabelColor, false, false ); // <CENTER>SELECTIONS</CENTER>
-			AddHtmlLocalized( 10, 302, 150, 25, 1044012, LabelColor, false, false ); // <CENTER>NOTICES</CENTER>
+			AddHtmlLocalized( 10, 302 + EXTRA_CATS, 150, 25, 1044012, LabelColor, false, false ); // <CENTER>NOTICES</CENTER>
 
-			AddButton( 15, 402, 4017, 4019, 0, GumpButtonType.Reply, 0 );
-			AddHtmlLocalized( 50, 405, 150, 18, 1011441, LabelColor, false, false ); // EXIT
+			AddButton( 15, 402 + EXTRA_CATS, 4017, 4019, 0, GumpButtonType.Reply, 0 );
+			AddHtmlLocalized( 50, 405 + EXTRA_CATS, 150, 18, 1011441, LabelColor, false, false ); // EXIT
 
-			AddButton( 270, 402, 4005, 4007, GetButtonID( 6, 2 ), GumpButtonType.Reply, 0 );
-			AddHtmlLocalized( 305, 405, 150, 18, 1044013, LabelColor, false, false ); // MAKE LAST
+			AddButton( 270, 402 + EXTRA_CATS, 4005, 4007, GetButtonID( 6, 2 ), GumpButtonType.Reply, 0 );
+			AddHtmlLocalized( 305, 405 + EXTRA_CATS, 150, 18, 1044013, LabelColor, false, false ); // MAKE LAST
 
 			// Mark option
 			if ( craftSystem.MarkOption )
 			{
-				AddButton( 270, 362, 4005, 4007, GetButtonID( 6, 6 ), GumpButtonType.Reply, 0 );
-				AddHtmlLocalized( 305, 365, 150, 18, 1044017 + (context == null ? 0 : (int)context.MarkOption), LabelColor, false, false ); // MARK ITEM
+				AddButton( 270, 362 + EXTRA_CATS, 4005, 4007, GetButtonID( 6, 6 ), GumpButtonType.Reply, 0 );
+				AddHtmlLocalized( 305, 365 + EXTRA_CATS, 150, 18, 1044017 + (context == null ? 0 : (int)context.MarkOption), LabelColor, false, false ); // MARK ITEM
 			}
 			// ****************************************
 
 			// Resmelt option
 			if ( craftSystem.Resmelt )
 			{
-				AddButton( 15, 342, 4005, 4007, GetButtonID( 6, 1 ), GumpButtonType.Reply, 0 );
-				AddHtmlLocalized( 50, 345, 150, 18, 1044259, LabelColor, false, false ); // SMELT ITEM
+				AddButton( 15, 342 + EXTRA_CATS, 4005, 4007, GetButtonID( 6, 1 ), GumpButtonType.Reply, 0 );
+				AddHtmlLocalized( 50, 345 + EXTRA_CATS, 150, 18, 1044259, LabelColor, false, false ); // SMELT ITEM
 			}
 			// ****************************************
 
 			// Repair option
 			if ( craftSystem.Repair )
 			{
-				AddButton( 270, 342, 4005, 4007, GetButtonID( 6, 5 ), GumpButtonType.Reply, 0 );
-				AddHtmlLocalized( 305, 345, 150, 18, 1044260, LabelColor, false, false ); // REPAIR ITEM
+				AddButton( 270, 342 + EXTRA_CATS, 4005, 4007, GetButtonID( 6, 5 ), GumpButtonType.Reply, 0 );
+				AddHtmlLocalized( 305, 345 + EXTRA_CATS, 150, 18, 1044260, LabelColor, false, false ); // REPAIR ITEM
 			}
 			// ****************************************
 
 			// Enhance option
 			if ( craftSystem.CanEnhance )
 			{
-				AddButton( 270, 382, 4005, 4007, GetButtonID( 6, 8 ), GumpButtonType.Reply, 0 );
-				AddHtmlLocalized( 305, 385, 150, 18, 1061001, LabelColor, false, false ); // ENHANCE ITEM
+				AddButton( 270, 382 + EXTRA_CATS, 4005, 4007, GetButtonID( 6, 8 ), GumpButtonType.Reply, 0 );
+				AddHtmlLocalized( 305, 385 + EXTRA_CATS, 150, 18, 1061001, LabelColor, false, false ); // ENHANCE ITEM
 			}
 			// ****************************************
 
 			if ( notice is int && (int)notice > 0 )
-				AddHtmlLocalized( 170, 295, 350, 40, (int)notice, LabelColor, false, false );
+				AddHtmlLocalized( 170, 295 + EXTRA_CATS, 350, 40, (int)notice, LabelColor, false, false );
 			else if ( notice is string )
-				AddHtml( 170, 295, 350, 40, String.Format( "<BASEFONT COLOR=#{0:X6}>{1}</BASEFONT>", FontColor, notice ), false, false );
+				AddHtml( 170, 295 + EXTRA_CATS, 350, 40, String.Format( "<BASEFONT COLOR=#{0:X6}>{1}</BASEFONT>", FontColor, notice ), false, false );
 
 			// If the system has more than one resource
 			if ( craftSystem.CraftSubRes.Init )
@@ -138,12 +139,12 @@ namespace Server.Engines.Craft
                         resourceCount += items[i].Amount;
                 }
 
-				AddButton( 15, 362, 4005, 4007, GetButtonID( 6, 0 ), GumpButtonType.Reply, 0 );
+				AddButton( 15, 362 + EXTRA_CATS, 4005, 4007, GetButtonID( 6, 0 ), GumpButtonType.Reply, 0 );
 
 				if ( nameNumber > 0 )
-					AddHtmlLocalized( 50, 365, 250, 18, nameNumber, resourceCount.ToString(), LabelColor, false, false );
+					AddHtmlLocalized( 50, 365 + EXTRA_CATS, 250, 18, nameNumber, resourceCount.ToString(), LabelColor, false, false );
 				else
-                    AddLabel( 50, 362, LabelHue, String.Format( "{0} ({1} Available)", nameString, resourceCount ) );
+                    AddLabel( 50, 362 + EXTRA_CATS, LabelHue, String.Format( "{0} ({1} Available)", nameString, resourceCount ) );
 			}
 			// ****************************************
 
