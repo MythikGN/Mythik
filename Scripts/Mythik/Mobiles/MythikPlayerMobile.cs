@@ -7,17 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Server;
 using Scripts.Mythik.Systems.Achievements;
+using Server.SkillHandlers;
 
 namespace Scripts.Mythik.Mobiles
 {
     public class MythikPlayerMobile : PlayerMobile
     {
-        private PokerGame m_PokerGame; //Edit for Poker System
-        public PokerGame PokerGame
-        {
-            get { return m_PokerGame; }
-            set { m_PokerGame = value; }
-        }
+
+        public PokerGame PokerGame { get; set; }
 
 
         public bool HasSetLanguageSkills { get; set; }
@@ -28,13 +25,35 @@ namespace Scripts.Mythik.Mobiles
         /// </summary>
         internal Dictionary<int, AchieveData> Achievements = new Dictionary<int, AchieveData>();
         public int AchievementPointsTotal { get; set; }
+
+        private Dictionary<int, Tuple<int, int>> m_GumpLocations = new Dictionary<int, Tuple<int, int>>();
+
+        public Tuple<int, int> GetGumpLoc(Type gump)
+        {
+            if (!m_GumpLocations.ContainsKey(gump.Name.GetHashCode()))
+                m_GumpLocations.Add(gump.Name.GetHashCode(), new Tuple<int, int>(800, 10));
+            return m_GumpLocations[gump.Name.GetHashCode()];
+           
+        }
+        public void SetGumpLoc(Type gump, int x, int y)
+        {
+            if (m_GumpLocations.ContainsKey(gump.Name.GetHashCode()))
+            {
+                var cur = m_GumpLocations[gump.Name.GetHashCode()];
+                if (cur.Item1 + x < 0 || cur.Item2 + y < 0)
+                    return;
+                m_GumpLocations[gump.Name.GetHashCode()] = new Tuple<int, int>(cur.Item1+x, cur.Item2 + y);
+            }
+            else
+                m_GumpLocations.Add(gump.Name.GetHashCode(), new Tuple<int, int>(x, y));
+        }
         protected override bool OnMove(Direction d)
         {
-            if (m_PokerGame != null)
+            if (PokerGame != null)
             {
                 if (!HasGump(typeof(PokerLeaveGump)))
                 {
-                    SendGump(new PokerLeaveGump(this, m_PokerGame));
+                    SendGump(new PokerLeaveGump(this, PokerGame));
                     return false;
                 }
             }
@@ -55,7 +74,7 @@ namespace Scripts.Mythik.Mobiles
         public override void Serialize(GenericWriter writer)
         {
             base.Serialize(writer);
-            writer.Write((int)1);//version
+            writer.Write((int)2);//version
             writer.Write(HasSetLanguageSkills);
             writer.Write(AuctionEnabled);
 
@@ -65,6 +84,14 @@ namespace Scripts.Mythik.Mobiles
             {
                 writer.Write(kv.Key);
                 kv.Value.Serialize(writer);
+            }
+
+            writer.Write(m_GumpLocations.Count);
+            foreach(var g in m_GumpLocations)
+            {
+                writer.Write(g.Key);
+                writer.Write((short)g.Value.Item1);
+                writer.Write((short)g.Value.Item2);
             }
         }
 
@@ -81,6 +108,17 @@ namespace Scripts.Mythik.Mobiles
                 for(int i = 0; i < count;i++)
                 {
                     Achievements.Add(reader.ReadInt(), new AchieveData(reader));
+                }
+            }
+            if (ver == 1)
+                return;
+
+            count = reader.ReadInt();
+            if(count > 0)
+            {
+                for (int i = 0; i < count; i++)
+                {
+                    m_GumpLocations.Add(reader.ReadInt(), new Tuple<int, int>(reader.ReadShort(), reader.ReadShort()));
                 }
             }
 
