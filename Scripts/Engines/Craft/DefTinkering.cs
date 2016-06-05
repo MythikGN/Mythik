@@ -437,16 +437,15 @@ namespace Server.Engines.Craft
             AddSubRes(typeof(ValoriteIngot), 1044030, 90.0, 1044036, 1044268);
 
 
-            AddSubRes(typeof(RoseIngot), 1044022, 80.0, 1044036, 1044267); // equiv to agapite?
-
-            AddSubRes(typeof(BloodRockIngot), 1044023, 95.0, 1044036, 1044268);
-            AddSubRes(typeof(BlackRockIngot), 1044024, 99.9, 1044036, 1044268);
-            AddSubRes(typeof(PlatniumIngot), 1044025, 104.9, 1044036, 1044268);
-            AddSubRes(typeof(CarbonIngot), 1044026, 109.9, 1044036, 1044268);
-            AddSubRes(typeof(KevlarIngot), 1044027, 114.9, 1044036, 1044268);
-            AddSubRes(typeof(LiquidIngot), 1044028, 119.9, 1044036, 1044268);
-            AddSubRes(typeof(DeltaIngot), 1044029, 124.9, 1044036, 1044268);
-            AddSubRes(typeof(RagnarokIngot), 1044030, 129.9, 1044036, 1044268);
+            AddSubRes(typeof(RoseIngot), "ROSE", 80.0, 1044036, 1044267); // equiv to agapite?
+            AddSubRes(typeof(BloodRockIngot), "BLOODROCK", 95.0, 1044036, 1044268);
+            AddSubRes(typeof(BlackRockIngot), "BLACKROCK", 99.9, 1044036, 1044268);
+            AddSubRes(typeof(PlatniumIngot), "PLATNIUM", 104.9, 1044036, 1044268);
+            AddSubRes(typeof(CarbonIngot), "CARBON", 109.9, 1044036, 1044268);
+            AddSubRes(typeof(KevlarIngot), "KEVLAR", 114.9, 1044036, 1044268);
+            AddSubRes(typeof(LiquidIngot), "LIQUID", 119.9, 1044036, 1044268);
+            AddSubRes(typeof(DeltaIngot), "DELTA", 124.9, 1044036, 1044268);
+            AddSubRes(typeof(RagnarokIngot), "RAGNAROK", 129.9, 1044036, 1044268);
 
             MarkOption = true;
 			Repair = true;
