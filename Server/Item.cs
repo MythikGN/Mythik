@@ -979,9 +979,9 @@ namespace Server
             if(uni != null)
             {
                 if (uni.UniqueLevel == RareLevel.Rare)
-                    this.PropertyList.Add("[ Rare ]");
+                    list.Add("[ Rare ]");
                 else
-                    this.PropertyList.Add("[ Unique Lvl " + (int)uni.UniqueLevel + " ]");
+                    list.Add("[ Unique Lvl " + ((int)uni.UniqueLevel) + " ]");
             }
                 
 		}
