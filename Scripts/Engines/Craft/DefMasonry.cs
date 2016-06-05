@@ -109,42 +109,53 @@ namespace Server.Engines.Craft
 		public override void InitCraftList() 
 		{ 
 			// Decorations
-			AddCraft( typeof( Vase ), 1044501, 1022888, 52.5, 102.5, typeof( Granite ), 1044514, 1, 1044513 );
-			AddCraft( typeof( LargeVase ), 1044501, 1022887, 52.5, 102.5, typeof( Granite ), 1044514, 3, 1044513 );
+			AddCraft( typeof( Vase ), 1044501, 1022888, 52.5, 102.5, typeof(StoneIngot), 1044514, 1, 1044513 );
+			AddCraft( typeof( LargeVase ), 1044501, 1022887, 52.5, 102.5, typeof(StoneIngot), 1044514, 3, 1044513 );
 
-			if( Core.SE )
-			{
-				int index = AddCraft( typeof( SmallUrn ), 1044501, 1029244, 82.0, 132.0, typeof( Granite ), 1044514, 3, 1044513 );
+			//if( Core.SE )
+			//{
+				int index = AddCraft( typeof( SmallUrn ), 1044501, 1029244, 82.0, 132.0, typeof(StoneIngot), 1044514, 3, 1044513 );
 				SetNeededExpansion( index, Expansion.SE );
 
-				index = AddCraft( typeof( SmallTowerSculpture ), 1044501, 1029242, 82.0, 132.0, typeof( Granite ), 1044514, 3, 1044513 );
+				index = AddCraft( typeof( SmallTowerSculpture ), 1044501, 1029242, 82.0, 132.0, typeof(StoneIngot), 1044514, 3, 1044513 );
 				SetNeededExpansion( index, Expansion.SE );
-			}
+			//}
 
 			// Furniture
-			AddCraft( typeof( StoneChair ), 1044502, 1024635, 55.0, 105.0, typeof( Granite ), 1044514, 4, 1044513 );
-			AddCraft( typeof( MediumStoneTableEastDeed ), 1044502, 1044508, 65.0, 115.0, typeof( Granite ), 1044514, 6, 1044513 );
-			AddCraft( typeof( MediumStoneTableSouthDeed ), 1044502, 1044509, 65.0, 115.0, typeof( Granite ), 1044514, 6, 1044513 );
-			AddCraft( typeof( LargeStoneTableEastDeed ), 1044502, 1044511, 75.0, 125.0, typeof( Granite ), 1044514, 9, 1044513 );
-			AddCraft( typeof( LargeStoneTableSouthDeed ), 1044502, 1044512, 75.0, 125.0, typeof( Granite ), 1044514, 9, 1044513 );
+			AddCraft( typeof( StoneChair ), 1044502, 1024635, 55.0, 105.0, typeof(StoneIngot), 1044514, 4, 1044513 );
+			AddCraft( typeof( MediumStoneTableEastDeed ), 1044502, 1044508, 65.0, 115.0, typeof(StoneIngot), 1044514, 6, 1044513 );
+			AddCraft( typeof( MediumStoneTableSouthDeed ), 1044502, 1044509, 65.0, 115.0, typeof(StoneIngot), 1044514, 6, 1044513 );
+			AddCraft( typeof( LargeStoneTableEastDeed ), 1044502, 1044511, 75.0, 125.0, typeof(StoneIngot), 1044514, 9, 1044513 );
+			AddCraft( typeof( LargeStoneTableSouthDeed ), 1044502, 1044512, 75.0, 125.0, typeof(StoneIngot), 1044514, 9, 1044513 );
 
 			// Statues
-			AddCraft( typeof( StatueSouth ), 1044503, 1044505, 60.0, 120.0, typeof( Granite ), 1044514, 3, 1044513 );
-			AddCraft( typeof( StatueNorth ), 1044503, 1044506, 60.0, 120.0, typeof( Granite ), 1044514, 3, 1044513 );
-			AddCraft( typeof( StatueEast ), 1044503, 1044507, 60.0, 120.0, typeof( Granite ), 1044514, 3, 1044513 );
-			AddCraft( typeof( StatuePegasus ), 1044503, 1044510, 70.0, 130.0, typeof( Granite ), 1044514, 4, 1044513 );
+			AddCraft( typeof( StatueSouth ), 1044503, 1044505, 60.0, 120.0, typeof(StoneIngot), 1044514, 3, 1044513 );
+			AddCraft( typeof( StatueNorth ), 1044503, 1044506, 60.0, 120.0, typeof(StoneIngot), 1044514, 3, 1044513 );
+			AddCraft( typeof( StatueEast ), 1044503, 1044507, 60.0, 120.0, typeof(StoneIngot), 1044514, 3, 1044513 );
+			AddCraft( typeof( StatuePegasus ), 1044503, 1044510, 70.0, 130.0, typeof(StoneIngot), 1044514, 4, 1044513 );
 
-			SetSubRes( typeof( Granite ), 1044525 );
+            SetSubRes(typeof(StoneIngot), 1044022);
 
-			AddSubRes( typeof( Granite ),			1044525, 00.0, 1044514, 1044526 );
-			AddSubRes( typeof( DullCopperGranite ),	1044023, 65.0, 1044514, 1044527 );
-			AddSubRes( typeof( ShadowIronGranite ),	1044024, 70.0, 1044514, 1044527 );
-			AddSubRes( typeof( CopperGranite ),		1044025, 75.0, 1044514, 1044527 );
-			AddSubRes( typeof( BronzeGranite ),		1044026, 80.0, 1044514, 1044527 );
-			AddSubRes( typeof( GoldGranite ),		1044027, 85.0, 1044514, 1044527 );
-			AddSubRes( typeof( AgapiteGranite ),	1044028, 90.0, 1044514, 1044527 );
-			AddSubRes( typeof( VeriteGranite ),		1044029, 95.0, 1044514, 1044527 );
-			AddSubRes( typeof( ValoriteGranite ),	1044030, 99.0, 1044514, 1044527 );
-		}
+            // Add every material you want the player to be able to choose from
+            // This will override the overridable material
+            AddSubRes(typeof(StoneIngot), 1044022, 00.0, 1044036, 1044267);
+            AddSubRes(typeof(DullCopperIngot), 1044023, 55.0, 1044036, 1044268);
+            AddSubRes(typeof(ShadowIronIngot), 1044024, 60.0, 1044036, 1044268);
+            AddSubRes(typeof(CopperIngot), 1044025, 65.0, 1044036, 1044268);
+            AddSubRes(typeof(BronzeIngot), 1044026, 70.0, 1044036, 1044268);
+            AddSubRes(typeof(GoldIngot), 1044027, 75.0, 1044036, 1044268);
+            AddSubRes(typeof(AgapiteIngot), 1044028, 80.0, 1044036, 1044268);
+            AddSubRes(typeof(VeriteIngot), 1044029, 85.0, 1044036, 1044268);
+            AddSubRes(typeof(ValoriteIngot), 1044030, 90.0, 1044036, 1044268);
+            AddSubRes(typeof(RoseIngot), "ROSE", 80.0, 1044036, 1044267); // equiv to agapite?
+            AddSubRes(typeof(BloodRockIngot), "BLOODROCK", 95.0, 1044036, 1044268);
+            AddSubRes(typeof(BlackRockIngot), "BLACKROCK", 99.9, 1044036, 1044268);
+            AddSubRes(typeof(PlatniumIngot), "PLATNIUM", 104.9, 1044036, 1044268);
+            AddSubRes(typeof(CarbonIngot), "CARBON", 109.9, 1044036, 1044268);
+            AddSubRes(typeof(KevlarIngot), "KEVLAR", 114.9, 1044036, 1044268);
+            AddSubRes(typeof(LiquidIngot), "LIQUID", 119.9, 1044036, 1044268);
+            AddSubRes(typeof(DeltaIngot), "DELTA", 124.9, 1044036, 1044268);
+            AddSubRes(typeof(RagnarokIngot), "RAGNAROK", 129.9, 1044036, 1044268);
+        }
 	}
 }
