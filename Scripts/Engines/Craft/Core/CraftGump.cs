@@ -361,10 +361,11 @@ namespace Server.Engines.Craft
 
 				AddButton( 15, 80 + (i * 20), 4005, 4007, GetButtonID( 0, i ), GumpButtonType.Reply, 0 );
 
-				if ( craftGroup.NameNumber > 0 )
-					AddHtmlLocalized( 50, 83 + (i * 20), 150, 18, craftGroup.NameNumber, LabelColor, false, false );
-				else
-					AddLabel( 50, 80 + (i * 20), LabelHue, craftGroup.NameString );
+                if (craftGroup.NameNumber > 0)
+                    AddHtmlLocalized(50, 83 + (i * 20), 150, 18, craftGroup.NameNumber, LabelColor, false, false);
+                else
+                    AddHtml(50, 83 + (i * 20), 150, 18, "<BASEFONT COLOR=WHITE>" + craftGroup.NameString, false, false);
+					//AddLabel( 50, 80 + (i * 20), LabelHue, craftGroup.NameString );
 			}
 
 			return craftGroupCol.Count;
