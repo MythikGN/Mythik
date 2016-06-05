@@ -412,5 +412,14 @@ namespace Server.Engines.Craft
 			AddSubRes( typeof( FrostwoodLog ), 1072649, 100.0, 1044041, 1072652 );
             
 		}
-	}
+
+        public override bool RetainsColorFrom(CraftItem item, Type type)
+        {
+            if (!type.IsSubclassOf(typeof(Log)))
+                return false;
+            if (item.ItemType.IsSubclassOf(typeof(BaseAddonDeed)) || item.ItemType.IsSubclassOf(typeof(HouseDeed)))
+                return false;
+            return true;
+        }
+    }
 }
