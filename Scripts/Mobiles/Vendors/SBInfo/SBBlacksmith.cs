@@ -20,7 +20,7 @@ namespace Server.Mobiles
 		{ 
 			public InternalBuyInfo() 
 			{ 	
-				Add( new GenericBuyInfo( typeof( IronIngot ), 5, 16, 0x1BF2, 0 ) );
+
 				Add( new GenericBuyInfo( typeof( Tongs ), 13, 14, 0xFBB, 0 ) ); 
  
 				Add( new GenericBuyInfo( typeof( BronzeShield ), 66, 20, 0x1B72, 0 ) );
@@ -85,17 +85,7 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( typeof( LargeBattleAxe ), 33, 20, 0x13FB, 0 ) );
 				Add( new GenericBuyInfo( typeof( WarAxe ), 29, 20, 0x13B0, 0 ) );
 
-				if ( Core.AOS )
-				{
-					Add( new GenericBuyInfo( typeof( BoneHarvester ), 35, 20, 0x26BB, 0 ) );
-					Add( new GenericBuyInfo( typeof( CrescentBlade ), 37, 20, 0x26C1, 0 ) );
-					Add( new GenericBuyInfo( typeof( DoubleBladedStaff ), 35, 20, 0x26BF, 0 ) );
-					Add( new GenericBuyInfo( typeof( Lance ), 34, 20, 0x26C0, 0 ) );
-					Add( new GenericBuyInfo( typeof( Pike ), 39, 20, 0x26BE, 0 ) );
-					Add( new GenericBuyInfo( typeof( Scythe ), 39, 20, 0x26BA, 0 ) );
-					Add( new GenericBuyInfo( typeof( CompositeBow ), 50, 20, 0x26C2, 0 ) );
-					Add( new GenericBuyInfo( typeof( RepeatingCrossbow ), 57, 20, 0x26C3, 0 ) );
-				}
+
 
 				Add( new GenericBuyInfo( typeof( BlackStaff ), 22, 20, 0xDF1, 0 ) );
 				Add( new GenericBuyInfo( typeof( Club ), 16, 20, 0x13B4, 0 ) );
@@ -110,11 +100,7 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( typeof( WarHammer ), 25, 20, 0x1439, 0 ) );
 				Add( new GenericBuyInfo( typeof( WarMace ), 31, 20, 0x1407, 0 ) );
 
-				if( Core.AOS )
-				{
-					Add( new GenericBuyInfo( typeof( Scepter ), 39, 20, 0x26BC, 0 ) );
-					Add( new GenericBuyInfo( typeof( BladedStaff ), 40, 20, 0x26BD, 0 ) );
-				}
+				
 			} 
 		} 
 
