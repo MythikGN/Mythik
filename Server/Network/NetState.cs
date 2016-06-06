@@ -595,9 +595,36 @@ namespace Server.Network {
                 {
                     return;
                 }
+                
+                if (p is MobileMovingOld)
+                {
+                    var packet = p as MobileMovingOld;
+
+                    var newBody = MobileMovingOld.ConvertBody203(packet.Body);
+                    if(packet.Body != newBody)
+                    {
+                        var oldpos = p.UnderlyingStream.Position;
+                        p.UnderlyingStream.UnderlyingStream.Seek(5, SeekOrigin.Begin);
+                        p.UnderlyingStream.Write((short)newBody);
+                        p.UnderlyingStream.UnderlyingStream.Position = oldpos;
+                    }
+                }
+                if (p is MobileUpdateOld)
+                {
+                    var packet = p as MobileUpdateOld;
+
+                    var newBody = MobileUpdateOld.ConvertBody203(packet.Body);
+                    if (packet.Body != newBody)
+                    {
+                        var oldpos = p.UnderlyingStream.Position;
+                        p.UnderlyingStream.UnderlyingStream.Seek(5, SeekOrigin.Begin);
+                        p.UnderlyingStream.Write((short)newBody);
+                        p.UnderlyingStream.UnderlyingStream.Position = oldpos;
+                    }
+                }
                 //skils gump, journal gump, char creation
                 //Lets check for unsupported packets.
-                if(p is MessageLocalized)
+                if (p is MessageLocalized)
                 {
                     var packet = p as MessageLocalized;
                     if (packet.labelNumber > 0)// 1053000)
@@ -605,14 +632,7 @@ namespace Server.Network {
                         string nameString = "";
                         if (packet.labelNumber > 0 || packet.m_ItemID > 0)
                         {
-                            var entry = _stringList.Entries.Where(x => x.Number == packet.labelNumber).FirstOrDefault();
-                            if (entry != null)
-                                nameString = entry.Text.Replace("%", "");
-                            else
-                            {
-                                var name = TileData.ItemTable[packet.m_ItemID & TileData.MaxItemValue];
-                                nameString = name.Name.Replace("%", "");
-                            }
+                            nameString = CliLoc.LocToString(packet.labelNumber,packet.args);
                         }
                         Send(new AsciiMessage(packet.m_Serial, packet.m_ItemID, packet.type, packet.hue, packet.font, "", nameString));
                     }
@@ -623,15 +643,7 @@ namespace Server.Network {
                 {
                     var packet = p as MessageLocalizedAffix;
                     var nameString = "";
-                    if (packet.m_ItemID > TileData.MaxItemValue)
-                    {
-                        nameString = _stringList.Entries.Where(x => x.Number == packet.number).First().Text.Replace("%", "");
-                    }
-                    else
-                    {
-                        var name = TileData.ItemTable[packet.m_ItemID & TileData.MaxItemValue];
-                        nameString = name.Name.Replace("%", "");
-                    }
+                    nameString = CliLoc.LocToString(packet.number, packet.args);
                     Send(new AsciiMessage(packet.m_Serial, packet.m_ItemID, packet.label, packet.hue, packet.font, "",  packet.affix.Replace(":","") + " " + nameString));
                     return;
                 }
