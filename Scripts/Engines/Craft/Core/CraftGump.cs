@@ -238,8 +238,10 @@ namespace Server.Engines.Craft
                     AddHtmlLocalized(255, 63 + (index * 20), 250, 18, subResource.NameNumber, resourceCount.ToString(), LabelColor, false, false);
                 else
                 {
-                    //if(from.NetState?.Version?.Major <= 3)
-                       AddHtml(255, 63 + (index * 20), 250, 18, String.Format("<BASEFONT COLOR=WHITE>{0}", subResource.NameString), false, false);
+                    if (m_From.NetState.Version.Major <= 3)
+                        AddHtml(255, 63 + (index * 20), 250, 18, String.Format("<BASEFONT COLOR=BLACK>{0}", subResource.NameString), false, false);
+                    else
+                        AddHtml(255, 63 + (index * 20), 250, 18, String.Format("<BASEFONT COLOR=WHITE>{0}", subResource.NameString), false, false);
                     //else
                     //    AddHtml(255, 63 + (index * 20), 250, 18, String.Format("{0} ({1})", subResource.NameString, resourceCount), false, false);
 
@@ -340,11 +342,17 @@ namespace Server.Engines.Craft
                 if (craftItem.NameNumber > 0)
                     AddHtmlLocalized(255, 63 + (index * 20), 220, 18, craftItem.NameNumber, LabelColor, false, false);
                 else
-                    AddHtml(255, 60 + (index * 20), 220, 18,"<BASEFONT COLOR=WHITE>" + craftItem.NameString, false, false);
+                {
+                    if(m_From.NetState.Version.Major <= 3)
+                        AddHtml(255, 60 + (index * 20), 220, 18, "<BASEFONT COLOR=BLACK>" + craftItem.NameString, false, false);
+                    else
+                        AddHtml(255, 60 + (index * 20), 220, 18, "<BASEFONT COLOR=WHITE>" + craftItem.NameString, false, false);
 
-                    //AddLabel( 255, 60 + (index * 20), LabelHue, craftItem.NameString );
+                }
 
-				AddButton( 480, 60 + (index * 20), 4011, 4012, GetButtonID( 2, i ), GumpButtonType.Reply, 0 );
+                //AddLabel( 255, 60 + (index * 20), LabelHue, craftItem.NameString );
+
+                AddButton( 480, 60 + (index * 20), 4011, 4012, GetButtonID( 2, i ), GumpButtonType.Reply, 0 );
 			}
 		}
 
