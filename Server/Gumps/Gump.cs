@@ -434,11 +434,7 @@ namespace Server.Gumps
 
 			return disp as Packet;
 		}
-        private static Ultima.StringList _eng = new Ultima.StringList("ENU");
-        private static Ultima.StringList GetClioc(NetState ns)
-        {
-            return _eng;
-        } 
+  
 
 		public virtual void OnResponse( NetState sender, RelayInfo info )
 		{
