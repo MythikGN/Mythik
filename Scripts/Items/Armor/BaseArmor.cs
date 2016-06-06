@@ -153,7 +153,7 @@ namespace Server.Items
                 //base armor AR is a little high for plate, save changing in each plate file.
 
                 //if (CraftResources.GetType(m_Resource) == CraftResourceType.Metal)
-                if(this.MaterialType == AMT.Plate)
+               // if(this.MaterialType == AMT.Plate)
                 ar -= 10;
 
 				if ( m_Protection != ArmorProtectionLevel.Regular )
@@ -1431,8 +1431,10 @@ namespace Server.Items
 			{
 				if ( oreType != 0 )
 					list.Add( 1053100, "#{0}\t{1}", oreType, GetNameString() ); // exceptional ~1_oretype~ ~2_armortype~
-				else if(oreName != null)
-                    list.Add("exceptional " + oreName + " " + GetNameString()); 
+                else if (oreName != null)
+                {
+                    list.Add(SphereUtils.ComputeName(this));
+                }
                 else
                     list.Add( 1050040, GetNameString() ); // exceptional ~1_ITEMNAME~
 			}
@@ -1441,7 +1443,9 @@ namespace Server.Items
 				if ( oreType != 0 )
 					list.Add( 1053099, "#{0}\t{1}", oreType, GetNameString() ); // ~1_oretype~ ~2_armortype~
                 else if (oreName != null)
-                    list.Add(oreName + " " + GetNameString());
+                {
+                    list.Add(SphereUtils.ComputeName(this));
+                }
                 else if ( Name == null )
 					list.Add( LabelNumber );
 				else
@@ -1594,7 +1598,7 @@ namespace Server.Items
                 DisplayRarity(from);
                 from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3B2, 3, "", SphereUtils.ComputeName(this)));
                 //base.OnSingleClick(from);
-                from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3b2, 3, "", "[ AR: " + this.ArmorRating + " Dura: " + this.HitPoints + "/" + this.MaxHitPoints + " ]"));
+                from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3b2, 3, "", "[AR: " + this.ArmorRating + " Dura: " + this.HitPoints + "/" + this.MaxHitPoints + "]"));
 
                 if (!SkillBonuses.IsEmpty)
                 {
