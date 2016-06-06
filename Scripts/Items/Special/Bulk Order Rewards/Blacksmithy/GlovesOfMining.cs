@@ -142,11 +142,11 @@ namespace Server.Items
 
 	public abstract class BaseGlovesOfMining : BaseArmor
 	{
-		private int m_Bonus;
+		private double m_Bonus;
 		private SkillMod m_SkillMod;
 
 		[CommandProperty( AccessLevel.GameMaster )]
-		public int Bonus
+		public double Bonus
 		{
 			get
 			{
@@ -202,7 +202,7 @@ namespace Server.Items
 
 		public BaseGlovesOfMining( int bonus, int itemID ) : base( itemID )
 		{
-			m_Bonus = bonus;
+			m_Bonus = Math.Round((Utility.RandomDouble() * bonus),1);
 
 			this.Hue = CraftResources.GetHue( (CraftResource)Utility.RandomMinMax( (int)CraftResource.DullCopper, (int)CraftResource.Valorite ) );
 		}
@@ -225,7 +225,7 @@ namespace Server.Items
 
 			writer.Write( (int) 0 ); // version
 
-			writer.Write( (int) m_Bonus );
+			writer.Write( (double) m_Bonus );
 		}
 
 		public override void Deserialize( GenericReader reader )
@@ -238,7 +238,7 @@ namespace Server.Items
 			{
 				case 0:
 				{
-					m_Bonus = reader.ReadInt();
+					m_Bonus = reader.ReadDouble();
 					break;
 				}
 			}
