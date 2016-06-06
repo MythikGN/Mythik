@@ -17,8 +17,10 @@ namespace Scripts.Mythik.Items.Craftables.Inscription
         }
 
         [Constructable]
-        public EnemyOfOneScroll(int amount) : base(205, 0x226B, amount)
+        public EnemyOfOneScroll(int amount) : base(205, 0x0E3A, amount)
         {
+            this.Name = "enemy of one scroll";
+            this.Hue = 0x04;
         }
 
         public EnemyOfOneScroll(Serial serial) : base(serial)

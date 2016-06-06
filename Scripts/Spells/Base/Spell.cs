@@ -11,6 +11,7 @@ using Server.Spells.Spellweaving;
 using Server.Spells.Bushido;
 using Server.Spells.Fourth;
 using Server.Spells.Sixth;
+using Server.Spells.Chivalry;
 
 namespace Server.Spells
 {
@@ -760,7 +761,7 @@ namespace Server.Spells
         }
         public virtual bool Cast()
 		{
-            if (m_PlayerCaster != null) //Player cast
+            if (m_PlayerCaster != null && !(this is PaladinSpell) && !(this is NecromancerSpell)) //Player cast
                 return RequestTargetBeforCasting();
             return DirectCast();
 		}
@@ -1211,7 +1212,7 @@ namespace Server.Spells
 						m_Spell.m_Caster.Region.OnSpellCast( m_Spell.m_Caster, m_Spell );
 					m_Spell.m_Caster.NextSpellTime = DateTime.Now + m_Spell.GetCastRecovery();// Spell.NextSpellDelay;
 
-                    if (m_Spell.PlayerCaster != null)
+                    if (m_Spell.PlayerCaster != null && !(m_Spell is PaladinSpell) && !(m_Spell is NecromancerSpell))
                         m_Spell.OnPlayerCast();
                     else
                     {
