@@ -19,14 +19,14 @@ namespace Scripts.Mythik.Items.Rares
             }
         }
         [Constructable]
-        public RunebookDyeDeed() : base(0x1F1D)
+        public RunebookDyeDeed() : base(0xFF4)
         {
             Name = "Runebook Dye Deed";
             this.Hue = MythikStaticValues.RareClothHues[Utility.Random(0,MythikStaticValues.RareClothHues.Length-1)];
         }
 
         [Constructable]
-        public RunebookDyeDeed(int hue) : base(0x1F1D)
+        public RunebookDyeDeed(int hue) : base(0xFF4)
         {
             Name = "Runebook Dye Deed";
             this.Hue = hue;

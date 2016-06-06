@@ -22,7 +22,8 @@ namespace Scripts.Mythik.Items.Craftables.Inscription
         [Constructable]
         public LumberBook() : base(0x2252)
         {
-            this.Name = "lumber storage book"; 
+            this.Name = "lumber storage book";
+            this.Hue = 0x43;
         }
 
         public LumberBook(Serial serial) : base(serial)

@@ -31,7 +31,8 @@ namespace Scripts.Mythik.Items.Craftables.Inscription
         [Constructable]
         public IngotBook() : base(0x2254)
         {
-            this.Name = "ingot storage book"; 
+            this.Name = "ingot storage book";
+            this.Hue = 0x93;
         }
 
         public IngotBook(Serial serial) : base(serial)

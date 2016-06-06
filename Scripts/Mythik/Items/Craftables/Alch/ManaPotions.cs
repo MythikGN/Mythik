@@ -18,6 +18,7 @@ namespace Scripts.Mythik.Items.Craftables.Alch
         [Constructable]
         public ManaPotion() : base(PotionEffect.Mana)
         {
+            this.Name = "mana potion";
         }
 
         public ManaPotion(Serial serial) : base(serial)
@@ -47,6 +48,7 @@ namespace Scripts.Mythik.Items.Craftables.Alch
         [Constructable]
         public TotalManaPotion() : base(PotionEffect.ManaTotal)
         {
+            this.Name = "total mana potion";
         }
 
         public TotalManaPotion(Serial serial) : base(serial)
@@ -77,7 +79,8 @@ namespace Scripts.Mythik.Items.Craftables.Alch
 
         public BaseManaPotion(PotionEffect effect) : base(0xF0C, effect)
         {
-            switch(effect)
+            this.Hue = 0x081B;
+            switch (effect)
             {
                 case PotionEffect.Mana:
                     Name = "mana potion";

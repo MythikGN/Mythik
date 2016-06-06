@@ -40,6 +40,7 @@ namespace Scripts.Mythik.Items.Craftables.Inscription
         public ReagentBook(int amount) : base(0x2252)
         {
             this.Name = "reagent book";
+            this.Hue = 0x40;
             m_Reagents = new int[15];
 
             for (int i = 0; i < 15; ++i)

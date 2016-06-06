@@ -26,7 +26,7 @@ namespace Scripts.Mythik.Items.Craftables.Alch
             Stackable = true;
             Amount = amount;
             Name = "shrink potion";
-            Hue = 0x065;
+            Hue = 0x07EE;
         }
 
         public ShrinkPotion(Serial serial) : base(serial)
