@@ -2107,7 +2107,7 @@ namespace Server.Network
 		public SkillUpdate( Skills skills, Mobile from ) : base( 0x3A )
 		{
 			this.EnsureCapacity( 6 + (skills.Length * 9) );
-            if (from.NetState.Version.Major <= 3)
+            if (from.NetState?.Version?.Major <= 3)
                 m_Stream.Write((byte)0x00);
             else
             m_Stream.Write( (byte) 0x02 ); // type: absolute, capped
@@ -2128,7 +2128,7 @@ namespace Server.Network
                 m_Stream.Write( (ushort) uv );
 				m_Stream.Write( (ushort) s.BaseFixedPoint );
                 m_Stream.Write((byte)s.Lock);
-                if (from.NetState.Version.Major > 3)
+                if (from.NetState?.Version?.Major > 3)
                 {
                     
                     m_Stream.Write((ushort)s.CapFixedPoint);
@@ -2302,17 +2302,19 @@ namespace Server.Network
 	// Pre-7.0.0.0 Mobile Moving
 	public sealed class MobileMovingOld : Packet
 	{
-		public MobileMovingOld( Mobile m, int noto ) : base( 0x77, 17 )
+        public short Body { get; set; }
+		public MobileMovingOld( Mobile m, int noto) : base( 0x77, 17 )
 		{
 			Point3D loc = m.Location;
+            Body = (short)m.Body;
 
-			int hue = m.Hue;
+            int hue = m.Hue;
 
 			if ( m.SolidHueOverride >= 0 )
 				hue = m.SolidHueOverride;
 
 			m_Stream.Write( (int) m.Serial );
-			m_Stream.Write( (short) m.Body );
+            m_Stream.Write( (short) m.Body );
 			m_Stream.Write( (short) loc.m_X );
 			m_Stream.Write( (short) loc.m_Y );
 			m_Stream.Write( (sbyte) loc.m_Z );
@@ -3113,7 +3115,7 @@ namespace Server.Network
 			m_Stream.Write( (short) m.HitsMax );
 
 			m_Stream.Write( m.CanBeRenamedBy( m ) );
-            if(ns.Version.Major >= 3)
+            if(ns?.Version?.Major >= 3)
 			    m_Stream.Write( (byte)(sendMLExtended ? 0x05 : Core.AOS ? 0x04 : 0x03) ); // type
             else
                 m_Stream.Write((byte)(0x03)); // type
@@ -3196,7 +3198,7 @@ namespace Server.Network
 
 			if ( beholder == beheld )
 			{
-                if (ns.Version.Major >= 3)
+                if (ns.Version?.Major >= 3)
                     m_Stream.Write((byte)(sendMLExtended ? 0x05 : Core.AOS ? 0x04 : 0x03)); // type
                 else
                     m_Stream.Write((byte)(0x03)); // type
@@ -3211,7 +3213,7 @@ namespace Server.Network
 				WriteAttr( beheld.Mana, beheld.ManaMax );
 
 				m_Stream.Write( (int) beheld.TotalGold );
-                if (ns.Version.Major<= 3)
+                if (ns.Version?.Major<= 3)
                     m_Stream.Write((short)((int)(beheld.ArmorRating + 0.5)));
                 else
                     m_Stream.Write( (short) (Core.AOS ? beheld.PhysicalResistance : (int)(beheld.ArmorRating + 0.5)) );
@@ -3332,16 +3334,18 @@ namespace Server.Network
 	// Pre-7.0.0.0 Mobile Update
 	public sealed class MobileUpdateOld : Packet
 	{
-		public MobileUpdateOld( Mobile m ) : base( 0x20, 19 )
+        public short Body { get; set; }
+		public MobileUpdateOld( Mobile m) : base( 0x20, 19 )
 		{
 			int hue = m.Hue;
-
+            Body = (short)m.Body;
 			if ( m.SolidHueOverride >= 0 )
 				hue = m.SolidHueOverride;
 
 			m_Stream.Write( (int) m.Serial );
-			m_Stream.Write( (short) m.Body );
-			m_Stream.Write( (byte) 0 );
+
+            m_Stream.Write((short)m.Body);
+            m_Stream.Write( (byte) 0 );
 			m_Stream.Write( (short) hue );
 			m_Stream.Write( (byte) m.GetOldPacketFlags() );
 			m_Stream.Write( (short) m.X );
@@ -3380,7 +3384,7 @@ namespace Server.Network
 				hue = beheld.SolidHueOverride;
 
 			m_Stream.Write( (int) beheld.Serial );
-            if(beholder.NetState.Version.Major <= 3)
+            if(beholder?.NetState?.Version?.Major <= 3)
             {
                 m_Stream.Write((short)ConvertBody203(beheld.Body));
             }
@@ -3481,53 +3485,7 @@ namespace Server.Network
 			m_Stream.Write( (int) 0 ); // terminate
 		}
 
-        private short ConvertBody203(Body body)
-        {
-            switch(body.BodyID)
-            {
-                case 132: // kirin
-                    return 11;
-                case 0x7A:// unicorn
-                    return 222;
-                case 0x317: // beetle
-                    return 224;
-                case 0x31A://swampdrag
-                    return 227;
-                case 318://darkfather aka demonknight
-                    return 20;
-                case 243://hiryu
-                    return 229;
-                case 246: // bake
-                    return 230;
-                case 244: //runebeetle
-                    return 20;
-                case 46: //aw
-                    return 23;
-                case 173://spider champ meph
-                    return 25;
-                case 149://succubus
-                    return 27;
-                case 40://balron
-                    return 32;
-                case 308://bone daemon
-                    return 34;
-                case 303://devourer
-                    return 37;
-                case 311: //shadowknight
-                    return 38;
-                case 312://abyss horror
-                    return 40;
-                case 316: //wanderer of void
-                    return 43;
-                case 104://skele drag
-                    return 46;
-                case 315://flesh renderer
-                    return 49;
-                default:
-                    return (short)body.BodyID;
-
-            }
-        }
+       
     }
 
 	// Pre-7.0.0.0 Mobile Incoming
@@ -3559,8 +3517,13 @@ namespace Server.Network
 				hue = beheld.SolidHueOverride;
 
 			m_Stream.Write( (int) beheld.Serial );
-			m_Stream.Write( (short) beheld.Body );
-			m_Stream.Write( (short) beheld.X );
+            if (beholder.NetState?.Version?.Major <= 3)
+            {
+                m_Stream.Write((short)ConvertBody203(beheld.Body));
+            }
+            else
+                m_Stream.Write((short)beheld.Body);
+            m_Stream.Write( (short) beheld.X );
 			m_Stream.Write( (short) beheld.Y );
 			m_Stream.Write( (sbyte) beheld.Z );
 			m_Stream.Write( (byte) beheld.Direction );
@@ -4597,5 +4560,53 @@ namespace Server.Network
 			PacketWriter.ReleaseInstance( m_Stream );
 			m_Stream = null;
 		}
-	}
+
+        internal static short ConvertBody203(Body body)
+        {
+            switch (body.BodyID)
+            {
+                case 132: // kirin
+                    return 11;
+                case 0x7A:// unicorn
+                    return 222;
+                case 0x317: // beetle
+                    return 224;
+                case 0x31A://swampdrag
+                    return 227;
+                //case 318://darkfather aka demonknight
+                //    return 20;
+                case 243://hiryu
+                    return 229;
+                case 246: // bake
+                    return 230;
+                case 244: //runebeetle
+                    return 20;
+                case 46: //aw
+                    return 23;
+                case 173://spider champ meph
+                    return 25;
+                case 149://succubus
+                    return 27;
+                case 40://balron
+                    return 32;
+                case 308://bone daemon
+                    return 34;
+                case 303://devourer
+                    return 37;
+                case 311: //shadowknight
+                    return 38;
+                case 312://abyss horror
+                    return 40;
+                case 316: //wanderer of void
+                    return 43;
+                case 104://skele drag
+                    return 46;
+                case 315://flesh renderer
+                    return 49;
+                default:
+                    return (short)body.BodyID;
+
+            }
+        }
+    }
 }
