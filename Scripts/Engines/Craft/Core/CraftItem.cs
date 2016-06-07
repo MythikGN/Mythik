@@ -380,7 +380,7 @@ namespace Server.Engines.Craft
 
 		private static Type[] m_NeverColorTable = new Type[]
 				{
-					typeof( OrcHelm )
+					typeof( OrcHelm ), typeof(IItemSet)
 				};
 		#endregion
 
