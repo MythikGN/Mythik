@@ -342,26 +342,73 @@ namespace Server.Engines.Craft
 
             #region GemArmor
 
+            #region Tourmaline
+            index = AddCraft(typeof(TourmalinePlateHelm), "Gem Armor", "Tourmaline Plate Helm", 101.0, 150.0, typeof(Tourmaline), 1044237, 240);
+            AddSkill(index, SkillName.Blacksmith, 101.0, 150.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(TourmalinePlateGorgot), "Gem Armor", "Tourmaline Plate Gorgot", 101.0, 150.0, typeof(Tourmaline), 1044237, 160);
+            AddSkill(index, SkillName.Blacksmith, 101.0, 150.0);
+            AddRes(index, typeof(IronIngot), 1044036, 25);
+            index = AddCraft(typeof(TourmalinePlateChest), "Gem Armor", "Tourmaline Plate Chest", 105.0, 150.0, typeof(Tourmaline), 1044237, 400);
+            AddSkill(index, SkillName.Blacksmith, 105.0, 150.0);
+            AddRes(index, typeof(IronIngot), 1044036, 50);
+            index = AddCraft(typeof(TourmalinePlateArms), "Gem Armor", "Tourmaline Plate Arms", 101.0, 150.0, typeof(Tourmaline), 1044237, 288);
+            AddSkill(index, SkillName.Blacksmith, 101.0, 150.0);
+            AddRes(index, typeof(IronIngot), 1044036, 40);
+            index = AddCraft(typeof(TourmalinePlateGloves), "Gem Armor", "Tourmaline Plate Gloves", 101.0, 150.0, typeof(Tourmaline), 1044237, 192);
+            AddSkill(index, SkillName.Blacksmith, 101.0, 150.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(TourmalinePlateLegs), "Gem Armor", "Tourmaline Plate Legs", 103.0, 150.0, typeof(Tourmaline), 1044237, 320);
+            AddSkill(index, SkillName.Blacksmith, 103.0, 150.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(TourmalineHeaterShield), "Gem Armor", "Tourmaline Heater Shield", 104.0, 150.0, typeof(Tourmaline), 1044237, 288);
+            AddSkill(index, SkillName.Blacksmith, 104.0, 150.0);
+            AddRes(index, typeof(IronIngot), 1044036, 40);
+            #endregion
+
             #region Amber
-            index = AddCraft(typeof(AmberPlateHelm), "Gem Armor", "Amber Plate Helm", 110.0, 140.0, typeof(Amber), "Ambers", 240);
+            index = AddCraft(typeof(AmberPlateHelm), "Gem Armor", "Amber Plate Helm", 106.0, 150.0, typeof(Amber), 1044238, 240);
+            AddSkill(index, SkillName.Blacksmith, 106.0, 150.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(AmberPlateGorgot), "Gem Armor", "Amber Plate Gorgot", 106.0, 150.0, typeof(Amber), 1044238, 160);
+            AddSkill(index, SkillName.Blacksmith, 106.0, 150.0);
+            AddRes(index, typeof(IronIngot), 1044036, 25);
+            index = AddCraft(typeof(AmberPlateChest), "Gem Armor", "Amber Plate Chest", 110.0, 150.0, typeof(Amber), 1044238, 400);
+            AddSkill(index, SkillName.Blacksmith, 110.0, 150.0);
+            AddRes(index, typeof(IronIngot), 1044036, 50);
+            index = AddCraft(typeof(AmberPlateArms), "Gem Armor", "Amber Plate Arms", 108.0, 150.0, typeof(Amber), 1044238, 288);
+            AddSkill(index, SkillName.Blacksmith, 108.0, 150.0);
+            AddRes(index, typeof(IronIngot), 1044036, 40);
+            index = AddCraft(typeof(AmberPlateGloves), "Gem Armor", "Amber Plate Gloves", 106.0, 150.0, typeof(Amber), 1044238, 192);
+            AddSkill(index, SkillName.Blacksmith, 106.0, 150.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(AmberPlateLegs), "Gem Armor", "Amber Plate Legs", 108.0, 150.0, typeof(Amber), 1044238, 320);
+            AddSkill(index, SkillName.Blacksmith, 108.0, 150.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(AmberHeaterShield), "Gem Armor", "Amber Heater Shield", 110.0, 150.0, typeof(Amber), 1044238, 288);
+            AddSkill(index, SkillName.Blacksmith, 110.0, 150.0);
+            AddRes(index, typeof(IronIngot), 1044036, 40);
+            #endregion
+            #region Amethyst
+            index = AddCraft(typeof(AmethystPlateHelm), "Gem Armor", "Amethyst Plate Helm", 110.0, 140.0, typeof(Amethyst), 1044236, 240);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
-            index = AddCraft(typeof(AmberPlateGorgot), "Gem Armor", "Amber Plate Gorgot", 110.0, 140.0, typeof(Amber), "Ambers", 160);
+            index = AddCraft(typeof(AmethystPlateGorgot), "Gem Armor", "Amethyst Plate Gorgot", 110.0, 140.0, typeof(Amethyst), 1044236, 160);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 25);
-            index = AddCraft(typeof(AmberPlateChest), "Gem Armor", "Amber Plate Chest", 110.0, 140.0, typeof(Amber), "Ambers", 400);
+            index = AddCraft(typeof(AmethystPlateChest), "Gem Armor", "Amethyst Plate Chest", 110.0, 140.0, typeof(Amethyst), 1044236, 400);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 50);
-            index = AddCraft(typeof(AmberPlateArms), "Gem Armor", "Amber Plate Arms", 110.0, 140.0, typeof(Amber), "Ambers", 288);
+            index = AddCraft(typeof(AmethystPlateArms), "Gem Armor", "Amethyst Plate Arms", 110.0, 140.0, typeof(Amethyst), 1044236, 288);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 40);
-            index = AddCraft(typeof(AmberPlateGloves), "Gem Armor", "Amber Plate Gloves", 110.0, 140.0, typeof(Amber), "Ambers", 192);
+            index = AddCraft(typeof(AmethystPlateGloves), "Gem Armor", "Amethyst Plate Gloves", 110.0, 140.0, typeof(Amethyst), 1044236, 192);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
-            index = AddCraft(typeof(AmberPlateLegs), "Gem Armor", "Amber Plate Legs", 110.0, 140.0, typeof(Amber), "Ambers", 320);
+            index = AddCraft(typeof(AmethystPlateLegs), "Gem Armor", "Amethyst Plate Legs", 110.0, 140.0, typeof(Amethyst), 1044236, 320);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
-            index = AddCraft(typeof(AmberHeaterShield), "Gem Armor", "Amber Heater Shield", 110.0, 140.0, typeof(Amber), "Ambers", 288);
+            index = AddCraft(typeof(AmethystHeaterShield), "Gem Armor", "Amethyst Heater Shield", 110.0, 140.0, typeof(Amethyst), 1044236, 288);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 40);
             #endregion
@@ -373,7 +420,7 @@ namespace Server.Engines.Craft
             index = AddCraft(typeof(CitrinePlateGorgot), "Gem Armor", "Citrine Plate Gorgot", 112.0, 180.0, typeof(IronIngot), 1044036, 25);
             AddSkill(index, SkillName.Blacksmith, 122.0, 150.0);
             AddRes(index, typeof(Citrine), 1044235, 160);
-            index = AddCraft(typeof(CitrinePlateChest), "Gem Armor", "Citrine Plate Chest", 112.0, 180.0, typeof(IronIngot), 1044036, 50);
+            index = AddCraft(typeof(CitrinePlateChest), "Gem Armor", "Citrine Plate Chest", 115.0, 180.0, typeof(IronIngot), 1044036, 50);
             AddSkill(index, SkillName.Blacksmith, 122.0, 180.0);
             AddRes(index, typeof(Citrine), 1044235, 400);
             index = AddCraft(typeof(CitrinePlateArms), "Gem Armor", "Citrine Plate Arms", 112.0, 180.0, typeof(IronIngot), 1044036, 40);
@@ -385,9 +432,33 @@ namespace Server.Engines.Craft
             index = AddCraft(typeof(CitrinePlateLegs), "Gem Armor", "Citrine Plate Legs", 112.0, 180.0, typeof(IronIngot), 1044036, 40);
             AddSkill(index, SkillName.Blacksmith, 122.0, 170.0);
             AddRes(index, typeof(Citrine), 1044235, 320);
-            index = AddCraft(typeof(CitrineHeaterShield), "Gem Armor", "Citrine Heater Shield", 112.0, 180.0, typeof(IronIngot), 1044036, 50);
+            index = AddCraft(typeof(CitrineHeaterShield), "Gem Armor", "Citrine Heater Shield", 115.0, 180.0, typeof(IronIngot), 1044036, 50);
             AddSkill(index, SkillName.Blacksmith, 122.0, 180.0);
             AddRes(index, typeof(Citrine), 1044235, 288);
+            #endregion
+
+            #region Emerald
+            index = AddCraft(typeof(EmeraldPlateHelm), "Gem Armor", "Emerald Plate Helm", 114.0, 180.0, typeof(Emerald), 1044232, 240);
+            AddSkill(index, SkillName.Blacksmith, 118.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(EmeraldPlateGorgot), "Gem Armor", "Emerald Plate Gorgot", 114.0, 180.0, typeof(Emerald), 1044232, 160);
+            AddSkill(index, SkillName.Blacksmith, 118.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 25);
+            index = AddCraft(typeof(EmeraldPlateChest), "Gem Armor", "Emerald Plate Chest", 118.0, 180.0, typeof(Emerald), 1044232, 400);
+            AddSkill(index, SkillName.Blacksmith, 118.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 50);
+            index = AddCraft(typeof(EmeraldPlateArms), "Gem Armor", "Emerald Plate Arms", 116.0, 180.0, typeof(Emerald), 1044232, 288);
+            AddSkill(index, SkillName.Blacksmith, 118.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 40);
+            index = AddCraft(typeof(EmeraldPlateGloves), "Gem Armor", "Emerald Plate Gloves", 116.0, 180.0, typeof(Emerald), 1044232, 192);
+            AddSkill(index, SkillName.Blacksmith, 118.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(EmeraldPlateLegs), "Gem Armor", "Emerald Plate Legs", 118.0, 180.0, typeof(Emerald), 1044232, 320);
+            AddSkill(index, SkillName.Blacksmith, 118.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(EmeraldHeaterShield), "Gem Armor", "Emerald Heater Shield", 118.0, 180.0, typeof(Emerald), 1044232, 288);
+            AddSkill(index, SkillName.Blacksmith, 118.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 40);
             #endregion
 
             #region Ruby
@@ -414,7 +485,77 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(Ruby), 1044234, 288);
             #endregion
 
+            #region Sapphire
+            index = AddCraft(typeof(SapphirePlateHelm), "Gem Armor", "Sapphire Plate Helm", 116.0, 140.0, typeof(Sapphire), 1044233, 240);
+            AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(SapphirePlateGorgot), "Gem Armor", "Sapphire Plate Gorgot", 116.0, 140.0, typeof(Sapphire), 1044233, 160);
+            AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
+            AddRes(index, typeof(IronIngot), 1044036, 25);
+            index = AddCraft(typeof(SapphirePlateChest), "Gem Armor", "Sapphire Plate Chest", 118.0, 140.0, typeof(Sapphire), 1044233, 400);
+            AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
+            AddRes(index, typeof(IronIngot), 1044036, 50);
+            index = AddCraft(typeof(SapphirePlateArms), "Gem Armor", "Sapphire Plate Arms", 118.0, 140.0, typeof(Sapphire), 1044233, 288);
+            AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
+            AddRes(index, typeof(IronIngot), 1044036, 40);
+            index = AddCraft(typeof(SapphirePlateGloves), "Gem Armor", "Sapphire Plate Gloves", 116.0, 140.0, typeof(Sapphire), 1044233, 192);
+            AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(SapphirePlateLegs), "Gem Armor", "Sapphire Plate Legs", 116.0, 140.0, typeof(Sapphire), 1044233, 320);
+            AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(SapphireHeaterShield), "Gem Armor", "Sapphire Heater Shield", 118.0, 140.0, typeof(Sapphire), 1044233, 288);
+            AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
+            AddRes(index, typeof(IronIngot), 1044036, 40);
+            #endregion
 
+
+            #region StarSapphire
+            index = AddCraft(typeof(StarSapphirePlateHelm), "Gem Armor", "StarSapphire Plate Helm", 125.0, 180.0, typeof(StarSapphire), 1044231, 240);
+            AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(StarSapphirePlateGorgot), "Gem Armor", "StarSapphire Plate Gorgot", 125.0, 180.0, typeof(StarSapphire), 1044231, 160);
+            AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 25);
+            index = AddCraft(typeof(StarSapphirePlateChest), "Gem Armor", "StarSapphire Plate Chest", 125.0, 180.0, typeof(StarSapphire), 1044231, 400);
+            AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 50);
+            index = AddCraft(typeof(StarSapphirePlateArms), "Gem Armor", "StarSapphire Plate Arms", 125.0, 180.0, typeof(StarSapphire), 1044231, 288);
+            AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 40);
+            index = AddCraft(typeof(StarSapphirePlateGloves), "Gem Armor", "StarSapphire Plate Gloves", 125.0, 180.0, typeof(StarSapphire), 1044231, 192);
+            AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(StarSapphirePlateLegs), "Gem Armor", "StarSapphire Plate Legs", 125.0, 180.0, typeof(StarSapphire), 1044231, 320);
+            AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(StarSapphireHeaterShield), "Gem Armor", "StarSapphire Heater Shield", 125.0, 180.0, typeof(StarSapphire), 1044231, 288);
+            AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 40);
+            #endregion
+            #region Diamond
+            index = AddCraft(typeof(DiamondPlateHelm), "Gem Armor", "Diamond Plate Helm", 125.0, 180.0, typeof(Diamond), 1044239, 240);
+            AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(DiamondPlateGorgot), "Gem Armor", "Diamond Plate Gorgot", 125.0, 180.0, typeof(Diamond), 1044239, 160);
+            AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 25);
+            index = AddCraft(typeof(DiamondPlateChest), "Gem Armor", "Diamond Plate Chest", 125.0, 180.0, typeof(Diamond), 1044239, 400);
+            AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 50);
+            index = AddCraft(typeof(DiamondPlateArms), "Gem Armor", "Diamond Plate Arms", 125.0, 180.0, typeof(Diamond), 1044239, 288);
+            AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 40);
+            index = AddCraft(typeof(DiamondPlateGloves), "Gem Armor", "Diamond Plate Gloves", 125.0, 180.0, typeof(Diamond), 1044239, 192);
+            AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(DiamondPlateLegs), "Gem Armor", "Diamond Plate Legs", 125.0, 180.0, typeof(Diamond), 1044239, 320);
+            AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 30);
+            index = AddCraft(typeof(DiamondHeaterShield), "Gem Armor", "Diamond Heater Shield", 125.0, 180.0, typeof(Diamond), 1044239, 288);
+            AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
+            AddRes(index, typeof(IronIngot), 1044036, 40);
+            #endregion
 
             #endregion
 

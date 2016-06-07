@@ -1,5 +1,6 @@
 using System;
 using Server.Items;
+using Scripts.Mythik.Items.Craftables.Tinkering.GemArmor;
 
 namespace Server.Engines.Craft
 {
@@ -32,6 +33,8 @@ namespace Server.Engines.Craft
 
 		public override double GetChanceAtMin( CraftItem item )
 		{
+            if (item.ItemType.IsSubclassOf(typeof(IItemSet)))
+                return 0.0;
 			return 0.5; // 50%
 		}
 
@@ -356,10 +359,58 @@ namespace Server.Engines.Craft
 
 			index = AddCraft(typeof(OrcHelm), 1049149, 1027947, 90.0, 115.0, typeof(Leather), 1044462, 6, 1044463);
 			AddRes(index, typeof(Bone), 1049064, 4, 1049063);
-			#endregion
+            #endregion
 
-			// Set the overridable material
-			SetSubRes( typeof( Leather ), 1049150 );
+
+            #region Pearl
+            index = AddCraft(typeof(PearlPlateHelm), "Gem Armor", "Pearl Leather Helm", 101.0, 150.0, typeof(WhitePearl), 1026253, 240);
+            AddSkill(index, SkillName.Tinkering, 101.0, 150.0);
+            AddRes(index, typeof(Leather), 1044462, 30);
+            index = AddCraft(typeof(PearlPlateGorgot), "Gem Armor", "Pearl Leather Gorgot", 101.0, 150.0, typeof(WhitePearl), 1026253, 160);
+            AddSkill(index, SkillName.Tinkering, 101.0, 150.0);
+            AddRes(index, typeof(Leather), 1044462, 25);
+            index = AddCraft(typeof(PearlPlateChest), "Gem Armor", "Pearl Leather Chest", 105.0, 150.0, typeof(WhitePearl), 1026253, 400);
+            AddSkill(index, SkillName.Tinkering, 105.0, 150.0);
+            AddRes(index, typeof(Leather), 1044462, 50);
+            index = AddCraft(typeof(PearlPlateArms), "Gem Armor", "Pearl Leather Arms", 101.0, 150.0, typeof(WhitePearl), 1026253, 288);
+            AddSkill(index, SkillName.Tinkering, 101.0, 150.0);
+            AddRes(index, typeof(Leather), 1044462, 40);
+            index = AddCraft(typeof(PearlPlateGloves), "Gem Armor", "Pearl Leather Gloves", 101.0, 150.0, typeof(WhitePearl), 1026253, 192);
+            AddSkill(index, SkillName.Tinkering, 101.0, 150.0);
+            AddRes(index, typeof(Leather), 1044462, 30);
+            index = AddCraft(typeof(PearlPlateLegs), "Gem Armor", "Pearl Leather Legs", 103.0, 150.0, typeof(WhitePearl), 1026253, 320);
+            AddSkill(index, SkillName.Tinkering, 103.0, 150.0);
+            AddRes(index, typeof(Leather), 1044462, 30);
+            index = AddCraft(typeof(PearlHeaterShield), "Gem Armor", "Pearl Heater Shield", 104.0, 150.0, typeof(WhitePearl), 1026253, 288);
+            AddSkill(index, SkillName.Tinkering, 104.0, 150.0);
+            AddRes(index, typeof(IronIngot), 1044036, 40);
+            #endregion
+
+            #region Turquoise
+            index = AddCraft(typeof(TurquoisePlateHelm), "Gem Armor", "Turquoise Leather Helm", 101.0, 150.0, typeof(Turquoise), 1026253, 240);
+            AddSkill(index, SkillName.Tinkering, 101.0, 150.0);
+            AddRes(index, typeof(Leather), 1044462, 30);
+            index = AddCraft(typeof(TurquoisePlateGorgot), "Gem Armor", "Turquoise Leather Gorgot", 101.0, 150.0, typeof(Turquoise), 1026253, 160);
+            AddSkill(index, SkillName.Tinkering, 101.0, 150.0);
+            AddRes(index, typeof(Leather), 1044462, 25);
+            index = AddCraft(typeof(TurquoisePlateChest), "Gem Armor", "Turquoise Leather Chest", 105.0, 150.0, typeof(Turquoise), 1026253, 400);
+            AddSkill(index, SkillName.Tinkering, 105.0, 150.0);
+            AddRes(index, typeof(Leather), 1044462, 50);
+            index = AddCraft(typeof(TurquoisePlateArms), "Gem Armor", "Turquoise Leather Arms", 101.0, 150.0, typeof(Turquoise), 1026253, 288);
+            AddSkill(index, SkillName.Tinkering, 101.0, 150.0);
+            AddRes(index, typeof(Leather), 1044462, 40);
+            index = AddCraft(typeof(TurquoisePlateGloves), "Gem Armor", "Turquoise Leather Gloves", 101.0, 150.0, typeof(Turquoise), 1026253, 192);
+            AddSkill(index, SkillName.Tinkering, 101.0, 150.0);
+            AddRes(index, typeof(Leather), 1044462, 30);
+            index = AddCraft(typeof(TurquoisePlateLegs), "Gem Armor", "Turquoise Leather Legs", 103.0, 150.0, typeof(Turquoise), 1026253, 320);
+            AddSkill(index, SkillName.Tinkering, 103.0, 150.0);
+            AddRes(index, typeof(Leather), 1044462, 30);
+            index = AddCraft(typeof(TurquoiseHeaterShield), "Gem Armor", "Turquoise Heater Shield", 104.0, 150.0, typeof(Turquoise), 1026253, 288);
+            AddSkill(index, SkillName.Tinkering, 104.0, 150.0);
+            AddRes(index, typeof(IronIngot), 1044036, 40);
+            #endregion
+            // Set the overridable material
+            SetSubRes( typeof( Leather ), 1049150 );
 
 			// Add every material you want the player to be able to choose from
 			// This will override the overridable material
