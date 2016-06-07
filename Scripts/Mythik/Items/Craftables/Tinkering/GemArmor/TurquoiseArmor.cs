@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
 {
-   
-    public class TurquoisePlateChest : PlateChest, IItemSet
+
+    public class TurquoisePlateChest : LeatherChest, IItemSet
     {
         public BaseGearSet GetItemSet
         {
@@ -22,9 +22,9 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         [Constructable]
         public TurquoisePlateChest() : base()
         {
-            Name = "turquoise platemail chest";
+            Name = "turquoise leather chest";
             Hue = GetItemSet.Hue;
-            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
+            int i = 0; GetItemSet.ItemBonus.ForEach((e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public TurquoisePlateChest(Serial serial) : base(serial)
         {
@@ -40,7 +40,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         }
     }
 
-    public class TurquoisePlateLegs : PlateLegs, IItemSet
+    public class TurquoisePlateLegs : LeatherLegs, IItemSet
     {
         public BaseGearSet GetItemSet
         {
@@ -53,9 +53,9 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         [Constructable]
         public TurquoisePlateLegs() : base()
         {
-            Name = "turquoise platemail legs";
+            Name = "turquoise leather legs";
             Hue = GetItemSet.Hue;
-            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
+            int i = 0; GetItemSet.ItemBonus.ForEach((e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public TurquoisePlateLegs(Serial serial) : base(serial)
         {
@@ -71,7 +71,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         }
     }
 
-    public class TurquoisePlateHelm : PlateHelm, IItemSet
+    public class TurquoisePlateHelm : LeatherCap, IItemSet
     {
         public BaseGearSet GetItemSet
         {
@@ -84,9 +84,9 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         [Constructable]
         public TurquoisePlateHelm() : base()
         {
-            Name = "turquoise platemail helm";
+            Name = "turquoise leather helm";
             Hue = GetItemSet.Hue;
-            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
+            int i = 0; GetItemSet.ItemBonus.ForEach((e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public TurquoisePlateHelm(Serial serial) : base(serial)
         {
@@ -102,7 +102,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         }
     }
 
-    public class TurquoisePlateGorgot : PlateGorget, IItemSet
+    public class TurquoisePlateGorgot : LeatherGorget, IItemSet
     {
         public BaseGearSet GetItemSet
         {
@@ -115,9 +115,9 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         [Constructable]
         public TurquoisePlateGorgot() : base()
         {
-            Name = "turquoise platemail gorgot";
+            Name = "turquoise leather gorgot";
             Hue = GetItemSet.Hue;
-            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
+            int i = 0; GetItemSet.ItemBonus.ForEach((e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public TurquoisePlateGorgot(Serial serial) : base(serial)
         {
@@ -132,7 +132,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
             base.Deserialize(reader);
         }
     }
-    public class TurquoisePlateArms : PlateArms, IItemSet
+    public class TurquoisePlateArms : LeatherArms, IItemSet
     {
         public BaseGearSet GetItemSet
         {
@@ -145,9 +145,9 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         [Constructable]
         public TurquoisePlateArms() : base()
         {
-            Name = "turquoise platemail arms";
+            Name = "turquoise leather arms";
             Hue = GetItemSet.Hue;
-            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
+            int i = 0; GetItemSet.ItemBonus.ForEach((e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public TurquoisePlateArms(Serial serial) : base(serial)
         {
@@ -162,7 +162,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
             base.Deserialize(reader);
         }
     }
-    public class TurquoisePlateGloves : PlateGloves, IItemSet
+    public class TurquoisePlateGloves : LeatherGloves, IItemSet
     {
         public BaseGearSet GetItemSet
         {
@@ -175,9 +175,9 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         [Constructable]
         public TurquoisePlateGloves() : base()
         {
-            Name = "turquoise platemail gloves";
+            Name = "turquoise leather gloves";
             Hue = GetItemSet.Hue;
-            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
+            int i = 0; GetItemSet.ItemBonus.ForEach((e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public TurquoisePlateGloves(Serial serial) : base(serial)
         {
@@ -208,7 +208,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         {
             Name = "turquoise heater shield";
             Hue = GetItemSet.Hue;
-            int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
+            int i = 0; GetItemSet.ItemBonus.ForEach((e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
         public TurquoiseHeaterShield(Serial serial) : base(serial)
         {

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
 {
    
-    public class PearlPlateChest : PlateChest, IItemSet
+    public class PearlPlateChest : LeatherChest, IItemSet
     {
         public BaseGearSet GetItemSet
         {
@@ -22,7 +22,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         [Constructable]
         public PearlPlateChest() : base()
         {
-            Name = "pearl platemail chest";
+            Name = "pearl leather chest";
             Hue = GetItemSet.Hue;
             int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
@@ -40,7 +40,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         }
     }
 
-    public class PearlPlateLegs : PlateLegs, IItemSet
+    public class PearlPlateLegs : LeatherLegs, IItemSet
     {
         public BaseGearSet GetItemSet
         {
@@ -53,7 +53,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         [Constructable]
         public PearlPlateLegs() : base()
         {
-            Name = "pearl platemail legs";
+            Name = "pearl leather legs";
             Hue = GetItemSet.Hue;
             int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
@@ -71,7 +71,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         }
     }
 
-    public class PearlPlateHelm : PlateHelm, IItemSet
+    public class PearlPlateHelm : LeatherCap, IItemSet
     {
         public BaseGearSet GetItemSet
         {
@@ -84,7 +84,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         [Constructable]
         public PearlPlateHelm() : base()
         {
-            Name = "pearl platemail helm";
+            Name = "pearl leather helm";
             Hue = GetItemSet.Hue;
             int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
@@ -102,7 +102,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         }
     }
 
-    public class PearlPlateGorgot : PlateGorget, IItemSet
+    public class PearlPlateGorgot : LeatherGorget, IItemSet
     {
         public BaseGearSet GetItemSet
         {
@@ -115,7 +115,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         [Constructable]
         public PearlPlateGorgot() : base()
         {
-            Name = "pearl platemail gorgot";
+            Name = "pearl leather gorgot";
             Hue = GetItemSet.Hue;
             int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
@@ -132,7 +132,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
             base.Deserialize(reader);
         }
     }
-    public class PearlPlateArms : PlateArms, IItemSet
+    public class PearlPlateArms : LeatherArms, IItemSet
     {
         public BaseGearSet GetItemSet
         {
@@ -145,7 +145,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         [Constructable]
         public PearlPlateArms() : base()
         {
-            Name = "pearl platemail arms";
+            Name = "pearl leather arms";
             Hue = GetItemSet.Hue;
             int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
@@ -162,7 +162,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
             base.Deserialize(reader);
         }
     }
-    public class PearlPlateGloves : PlateGloves, IItemSet
+    public class PearlPlateGloves : LeatherGloves, IItemSet
     {
         public BaseGearSet GetItemSet
         {
@@ -175,7 +175,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
         [Constructable]
         public PearlPlateGloves() : base()
         {
-            Name = "pearl platemail gloves";
+            Name = "pearl leather gloves";
             Hue = GetItemSet.Hue;
             int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
         }
