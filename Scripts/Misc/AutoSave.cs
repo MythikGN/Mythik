@@ -73,7 +73,7 @@ namespace Server.Misc
 
 		public static void Save()
 		{
-			AutoSave.Save( false );
+			AutoSave.Save( true );
 		}
 
 		public static void Save( bool permitBackgroundWrite )
