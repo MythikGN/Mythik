@@ -15,10 +15,11 @@ namespace Server.Items
 		Agapite,
 		Verite,
 		Valorite,
+        Stone,
         Rose,
         Bloodrock,
         Blackrock,
-        Stone,
+
         Platnium,
         Carbon,
         Kevlar,
@@ -47,11 +48,6 @@ namespace Server.Items
 		Bloodwood,
 		Frostwood,
 
-        CedarWood,
-        WalnutWood,
-        WillowWood,
-        CyprussWood
-
 	}
 
 	public enum CraftResourceType
@@ -76,7 +72,9 @@ namespace Server.Items
 		private int m_WeaponGoldIncrease;
 		private int m_WeaponLowerRequirements;
 
-		private int m_ArmorPhysicalResist;
+        private int m_ArmorOldAR;
+
+        private int m_ArmorPhysicalResist;
 		private int m_ArmorFireResist;
 		private int m_ArmorColdResist;
 		private int m_ArmorPoisonResist;
@@ -132,283 +130,102 @@ namespace Server.Items
 		public static readonly CraftAttributeInfo RedScales, YellowScales, BlackScales, GreenScales, WhiteScales, BlueScales;
 		public static readonly CraftAttributeInfo OakWood, AshWood, YewWood, Heartwood, Bloodwood, Frostwood;
         public static readonly CraftAttributeInfo CedarWood, WalnutWood, WillowWood, CyprussWood;
-        private int m_ArmorOldAR;
+
 
         static CraftAttributeInfo()
 		{
 			Blank = new CraftAttributeInfo();
-
-            CraftAttributeInfo rose = Rose = new CraftAttributeInfo();
-            CraftAttributeInfo bloodrock = Bloodrock = new CraftAttributeInfo();
-            CraftAttributeInfo blackrock = Blackrock = new CraftAttributeInfo();
+            
             CraftAttributeInfo stone = Stone = new CraftAttributeInfo();
-            CraftAttributeInfo platnium = Platnium = new CraftAttributeInfo();
-            CraftAttributeInfo carbon = Carbon = new CraftAttributeInfo();
-            CraftAttributeInfo kevlar = Kevlar = new CraftAttributeInfo();
-            CraftAttributeInfo delta = Delta = new CraftAttributeInfo();
-            CraftAttributeInfo liquid = Liquid = new CraftAttributeInfo();
-            CraftAttributeInfo ragnarok = Ragnarok = new CraftAttributeInfo();
-
+            SetAR(stone, -1,0,0,0,0);
 
             CraftAttributeInfo dullCopper = DullCopper = new CraftAttributeInfo();
+            SetAR(dullCopper, 1,0,0,0,0);
 
-			dullCopper.ArmorPhysicalResist = 6;
-			dullCopper.ArmorDurability = 50;
-			dullCopper.ArmorLowerRequirements = 20;
-			dullCopper.WeaponDurability = 100;
-			dullCopper.WeaponLowerRequirements = 50;
-			dullCopper.RunicMinAttributes = 1;
-			dullCopper.RunicMaxAttributes = 2;
-			if ( Core.ML )
-			{
-				dullCopper.RunicMinIntensity = 40;
-				dullCopper.RunicMaxIntensity = 100;
-			}
-			else
-			{
-				dullCopper.RunicMinIntensity = 10;
-				dullCopper.RunicMaxIntensity = 35;
-			}
+            CraftAttributeInfo shadowIron = ShadowIron = new CraftAttributeInfo();
+            SetAR(shadowIron, 1,0,0,1,0);
 
-			CraftAttributeInfo shadowIron = ShadowIron = new CraftAttributeInfo();
+            CraftAttributeInfo copper = Copper = new CraftAttributeInfo();
+            SetAR(copper, 1,1,1,1,0);
 
-			shadowIron.ArmorPhysicalResist = 2;
-			shadowIron.ArmorFireResist = 1;
-			shadowIron.ArmorEnergyResist = 5;
-			shadowIron.ArmorDurability = 100;
-			shadowIron.WeaponColdDamage = 20;
-			shadowIron.WeaponDurability = 50;
-			shadowIron.RunicMinAttributes = 2;
-			shadowIron.RunicMaxAttributes = 2;
-			if ( Core.ML )
-			{
-				shadowIron.RunicMinIntensity = 45;
-				shadowIron.RunicMaxIntensity = 100;
-			}
-			else
-			{
-				shadowIron.RunicMinIntensity = 20;
-				shadowIron.RunicMaxIntensity = 45;
-			}
 
-			CraftAttributeInfo copper = Copper = new CraftAttributeInfo();
+            CraftAttributeInfo bronze = Bronze = new CraftAttributeInfo();
+            SetAR(bronze, 1, 2, 1, 1, 1);
 
-			copper.ArmorPhysicalResist = 1;
-			copper.ArmorFireResist = 1;
-			copper.ArmorPoisonResist = 5;
-			copper.ArmorEnergyResist = 2;
-			copper.WeaponPoisonDamage = 10;
-			copper.WeaponEnergyDamage = 20;
-			copper.RunicMinAttributes = 2;
-			copper.RunicMaxAttributes = 3;
-			if ( Core.ML )
-			{
-				copper.RunicMinIntensity = 50;
-				copper.RunicMaxIntensity = 100;
-			}
-			else
-			{
-				copper.RunicMinIntensity = 25;
-				copper.RunicMaxIntensity = 50;
-			}
 
-			CraftAttributeInfo bronze = Bronze = new CraftAttributeInfo();
+            CraftAttributeInfo golden = Golden = new CraftAttributeInfo();
+            SetAR(golden, 2, 2, 2, 1, 1);
 
-			bronze.ArmorPhysicalResist = 3;
-			bronze.ArmorColdResist = 5;
-			bronze.ArmorPoisonResist = 1;
-			bronze.ArmorEnergyResist = 1;
-			bronze.WeaponFireDamage = 40;
-			bronze.RunicMinAttributes = 3;
-			bronze.RunicMaxAttributes = 3;
-			if ( Core.ML )
-			{
-				bronze.RunicMinIntensity = 55;
-				bronze.RunicMaxIntensity = 100;
-			}
-			else
-			{
-				bronze.RunicMinIntensity = 30;
-				bronze.RunicMaxIntensity = 65;
-			}
 
-			CraftAttributeInfo golden = Golden = new CraftAttributeInfo();
+            CraftAttributeInfo agapite = Agapite = new CraftAttributeInfo();
+            SetAR(agapite,2, 2, 2, 2, 2);
+            CraftAttributeInfo rose = Rose = new CraftAttributeInfo();
+            SetAR(rose, 3, 3, 2, 2, 2);
 
-			golden.ArmorPhysicalResist = 1;
-			golden.ArmorFireResist = 1;
-			golden.ArmorColdResist = 2;
-			golden.ArmorEnergyResist = 2;
-			//golden.ArmorLuck = 40;
-			golden.ArmorLowerRequirements = 30;
-			//golden.WeaponLuck = 40;
-			golden.WeaponLowerRequirements = 50;
-			golden.RunicMinAttributes = 3;
-			golden.RunicMaxAttributes = 4;
-			if ( Core.ML )
-			{
-				golden.RunicMinIntensity = 60;
-				golden.RunicMaxIntensity = 100;
-			}
-			else
-			{
-				golden.RunicMinIntensity = 35;
-				golden.RunicMaxIntensity = 75;
-			}
 
-			CraftAttributeInfo agapite = Agapite = new CraftAttributeInfo();
+            CraftAttributeInfo verite = Verite = new CraftAttributeInfo();
+            SetAR(verite, 3, 3, 3, 4, 1);
 
-			agapite.ArmorPhysicalResist = 2;
-			agapite.ArmorFireResist = 3;
-			agapite.ArmorColdResist = 2;
-			agapite.ArmorPoisonResist = 2;
-			agapite.ArmorEnergyResist = 2;
-			agapite.WeaponColdDamage = 30;
-			agapite.WeaponEnergyDamage = 20;
-			agapite.RunicMinAttributes = 4;
-			agapite.RunicMaxAttributes = 4;
-			if ( Core.ML )
-			{
-				agapite.RunicMinIntensity = 65;
-				agapite.RunicMaxIntensity = 100;
-			}
-			else
-			{
-				agapite.RunicMinIntensity = 40;
-				agapite.RunicMaxIntensity = 80;
-			}
 
-			CraftAttributeInfo verite = Verite = new CraftAttributeInfo();
+            CraftAttributeInfo valorite = Valorite = new CraftAttributeInfo();
+            SetAR(valorite, 4, 3, 3, 3, 3);
 
-			verite.ArmorPhysicalResist = 3;
-			verite.ArmorFireResist = 3;
-			verite.ArmorColdResist = 2;
-			verite.ArmorPoisonResist = 3;
-			verite.ArmorEnergyResist = 1;
-			verite.WeaponPoisonDamage = 40;
-			verite.WeaponEnergyDamage = 20;
-			verite.RunicMinAttributes = 4;
-			verite.RunicMaxAttributes = 5;
-			if ( Core.ML )
-			{
-				verite.RunicMinIntensity = 70;
-				verite.RunicMaxIntensity = 100;
-			}
-			else
-			{
-				verite.RunicMinIntensity = 45;
-				verite.RunicMaxIntensity = 90;
-			}
 
-			CraftAttributeInfo valorite = Valorite = new CraftAttributeInfo();
+            CraftAttributeInfo bloodrock = Bloodrock = new CraftAttributeInfo();
+            SetAR(bloodrock, 4, 4, 3, 3, 4);
+            CraftAttributeInfo blackrock = Blackrock = new CraftAttributeInfo();
+            SetAR(blackrock, 4, 4, 4, 4, 4);
+            CraftAttributeInfo platnium = Platnium = new CraftAttributeInfo();
+            SetAR(platnium, 5, 5, 4, 4, 4);
+            CraftAttributeInfo carbon = Carbon = new CraftAttributeInfo();
+            SetAR(carbon, 5, 5, 5, 5, 4);
 
-			valorite.ArmorPhysicalResist = 4;
-			valorite.ArmorColdResist = 3;
-			valorite.ArmorPoisonResist = 3;
-			valorite.ArmorEnergyResist = 3;
-			valorite.ArmorDurability = 50;
-			valorite.WeaponFireDamage = 10;
-			valorite.WeaponColdDamage = 20;
-			valorite.WeaponPoisonDamage = 10;
-			valorite.WeaponEnergyDamage = 20;
-			valorite.RunicMinAttributes = 5;
-			valorite.RunicMaxAttributes = 5;
-			if ( Core.ML )
-			{
-				valorite.RunicMinIntensity = 85;
-				valorite.RunicMaxIntensity = 100;
-			}
-			else
-			{
-				valorite.RunicMinIntensity = 50;
-				valorite.RunicMaxIntensity = 100;
-			}
+            CraftAttributeInfo kevlar = Kevlar = new CraftAttributeInfo();
+            SetAR(kevlar, 6, 5, 5, 5, 5);
+            CraftAttributeInfo delta = Delta = new CraftAttributeInfo();
+            SetAR(delta, 6, 5, 5, 6, 6);
+            CraftAttributeInfo liquid = Liquid = new CraftAttributeInfo();
+            SetAR(liquid, 6,5,7,6,6);
+            CraftAttributeInfo ragnarok = Ragnarok = new CraftAttributeInfo();
+            SetAR(ragnarok, 7,7,6,6,6);
 
-			CraftAttributeInfo spined = Spined = new CraftAttributeInfo();
 
-			spined.ArmorPhysicalResist = 5;
-			spined.ArmorLuck = 40;
-			spined.RunicMinAttributes = 1;
-			spined.RunicMaxAttributes = 3;
-			if ( Core.ML )
-			{
-				spined.RunicMinIntensity = 40;
-				spined.RunicMaxIntensity = 100;
-			}
-			else
-			{
-				spined.RunicMinIntensity = 20;
-				spined.RunicMaxIntensity = 40;
-			}
 
-			CraftAttributeInfo horned = Horned = new CraftAttributeInfo();
+            CraftAttributeInfo spined = Spined = new CraftAttributeInfo();
+            SetAR(spined, 0, 2, 2, 2, 2);
+            CraftAttributeInfo horned = Horned = new CraftAttributeInfo();
+            SetAR(horned, 1, 4, 2, 2, 3);
+            CraftAttributeInfo barbed = Barbed = new CraftAttributeInfo();
+            SetAR(barbed, 2, 3, 3, 5, 3);
+            CraftAttributeInfo red = RedScales = new CraftAttributeInfo();
 
-			horned.ArmorPhysicalResist = 2;
-			horned.ArmorFireResist = 3;
-			horned.ArmorColdResist = 2;
-			horned.ArmorPoisonResist = 2;
-			horned.ArmorEnergyResist = 2;
-			horned.RunicMinAttributes = 3;
-			horned.RunicMaxAttributes = 4;
-			if ( Core.ML )
-			{
-				horned.RunicMinIntensity = 45;
-				horned.RunicMaxIntensity = 100;
-			}
-			else
-			{
-				horned.RunicMinIntensity = 30;
-				horned.RunicMaxIntensity = 70;
-			}
-
-			CraftAttributeInfo barbed = Barbed = new CraftAttributeInfo();
-
-			barbed.ArmorPhysicalResist = 2;
-			barbed.ArmorFireResist = 1;
-			barbed.ArmorColdResist = 2;
-			barbed.ArmorPoisonResist = 3;
-			barbed.ArmorEnergyResist = 4;
-			barbed.RunicMinAttributes = 4;
-			barbed.RunicMaxAttributes = 5;
-			if ( Core.ML )
-			{
-				barbed.RunicMinIntensity = 50;
-				barbed.RunicMaxIntensity = 100;
-			}
-			else
-			{
-				barbed.RunicMinIntensity = 40;
-				barbed.RunicMaxIntensity = 100;
-			}
-
-			CraftAttributeInfo red = RedScales = new CraftAttributeInfo();
-
-			red.ArmorFireResist = 10;
-			red.ArmorColdResist = -3;
+			//red.ArmorFireResist = 10;
+			//red.ArmorColdResist = -3;
 
 			CraftAttributeInfo yellow = YellowScales = new CraftAttributeInfo();
 
-			yellow.ArmorPhysicalResist = -3;
-			yellow.ArmorLuck = 20;
+			//yellow.ArmorPhysicalResist = -3;
+			//yellow.ArmorLuck = 20;
 
 			CraftAttributeInfo black = BlackScales = new CraftAttributeInfo();
 
-			black.ArmorPhysicalResist = 10;
-			black.ArmorEnergyResist = -3;
+			//black.ArmorPhysicalResist = 10;
+			//black.ArmorEnergyResist = -3;
 
 			CraftAttributeInfo green = GreenScales = new CraftAttributeInfo();
 
-			green.ArmorFireResist = -3;
-			green.ArmorPoisonResist = 10;
+			//green.ArmorFireResist = -3;
+			//green.ArmorPoisonResist = 10;
 
 			CraftAttributeInfo white = WhiteScales = new CraftAttributeInfo();
 
-			white.ArmorPhysicalResist = -3;
-			white.ArmorColdResist = 10;
+			//white.ArmorPhysicalResist = -3;
+			//white.ArmorColdResist = 10;
 
 			CraftAttributeInfo blue = BlueScales = new CraftAttributeInfo();
 
-			blue.ArmorPoisonResist = -3;
-			blue.ArmorEnergyResist = 10;
+			//blue.ArmorPoisonResist = -3;
+			//blue.ArmorEnergyResist = 10;
 
 			//public static readonly CraftAttributeInfo OakWood, AshWood, YewWood, Heartwood, Bloodwood, Frostwood;
 
@@ -424,7 +241,17 @@ namespace Server.Items
 
 			CraftAttributeInfo frost = Frostwood = new CraftAttributeInfo();
 		}
-	}
+
+        private static void SetAR(CraftAttributeInfo ore, int phys, int fire, int cold, int poi,int en)
+        {
+            //ore.ArmorOldAR = OldAR;
+            ore.ArmorPhysicalResist = phys;
+            ore.ArmorFireResist = fire;
+            ore.ArmorColdResist = cold;
+            ore.ArmorPoisonResist = poi;
+            ore.ArmorEnergyResist = en;
+        }
+    }
 
 	public class CraftResourceInfo
 	{
@@ -462,14 +289,27 @@ namespace Server.Items
 			{
 				new CraftResourceInfo( 0x000, 1053109, "Iron",			CraftAttributeInfo.Blank,		CraftResource.Iron,				typeof( IronIngot ),		typeof( IronOre ),			typeof( Granite ) ),
 				new CraftResourceInfo( 0x973, 1053108, "Dull Copper",	CraftAttributeInfo.DullCopper,	CraftResource.DullCopper,		typeof( DullCopperIngot ),	typeof( DullCopperOre ),	typeof( DullCopperGranite ) ),
-				new CraftResourceInfo( 0x966, 1053107, "Shadow Iron",	CraftAttributeInfo.ShadowIron,	CraftResource.ShadowIron,		typeof( ShadowIronIngot ),	typeof( ShadowIronOre ),	typeof( ShadowIronGranite ) ),
-				new CraftResourceInfo( 0x96D, 1053106, "Copper",		CraftAttributeInfo.Copper,		CraftResource.Copper,			typeof( CopperIngot ),		typeof( CopperOre ),		typeof( CopperGranite ) ),
+				new CraftResourceInfo( 0x770, 1053107, "Shadow Iron",	CraftAttributeInfo.ShadowIron,	CraftResource.ShadowIron,		typeof( ShadowIronIngot ),	typeof( ShadowIronOre ),	typeof( ShadowIronGranite ) ),
+				new CraftResourceInfo( 0x641, 1053106, "Copper",		CraftAttributeInfo.Copper,		CraftResource.Copper,			typeof( CopperIngot ),		typeof( CopperOre ),		typeof( CopperGranite ) ),
 				new CraftResourceInfo( 0x972, 1053105, "Bronze",		CraftAttributeInfo.Bronze,		CraftResource.Bronze,			typeof( BronzeIngot ),		typeof( BronzeOre ),		typeof( BronzeGranite ) ),
-				new CraftResourceInfo( 0x8A5, 1053104, "Gold",			CraftAttributeInfo.Golden,		CraftResource.Gold,				typeof( GoldIngot ),		typeof( GoldOre ),			typeof( GoldGranite ) ),
-				new CraftResourceInfo( 0x979, 1053103, "Agapite",		CraftAttributeInfo.Agapite,		CraftResource.Agapite,			typeof( AgapiteIngot ),		typeof( AgapiteOre ),		typeof( AgapiteGranite ) ),
-				new CraftResourceInfo( 0x89F, 1053102, "Verite",		CraftAttributeInfo.Verite,		CraftResource.Verite,			typeof( VeriteIngot ),		typeof( VeriteOre ),		typeof( VeriteGranite ) ),
-				new CraftResourceInfo( 0x8AB, 1053101, "Valorite",		CraftAttributeInfo.Valorite,	CraftResource.Valorite,			typeof( ValoriteIngot ),	typeof( ValoriteOre ),		typeof( ValoriteGranite ) ),
-			};
+				new CraftResourceInfo( 0x45e, 1053104, "Gold",			CraftAttributeInfo.Golden,		CraftResource.Gold,				typeof( GoldIngot ),		typeof( GoldOre ),			typeof( GoldGranite ) ),
+				new CraftResourceInfo( 0x400, 1053103, "Agapite",		CraftAttributeInfo.Agapite,		CraftResource.Agapite,			typeof( AgapiteIngot ),		typeof( AgapiteOre ),		typeof( AgapiteGranite ) ),
+				new CraftResourceInfo( 0x7d1, 1053102, "Verite",		CraftAttributeInfo.Verite,		CraftResource.Verite,			typeof( VeriteIngot ),		typeof( VeriteOre ),		typeof( VeriteGranite ) ),
+				new CraftResourceInfo( 0x515, 1053101, "Valorite",		CraftAttributeInfo.Valorite,	CraftResource.Valorite,			typeof( ValoriteIngot ),	typeof( ValoriteOre ),		typeof( ValoriteGranite ) ),
+
+                new CraftResourceInfo( 0x837, 0, "Stone",      CraftAttributeInfo.Stone,    CraftResource.Stone,         typeof( StoneIngot ),    typeof( StoneOre ),      typeof( ValoriteGranite ) ),
+                new CraftResourceInfo( 0x801, 0, "Rose",      CraftAttributeInfo.Rose,    CraftResource.Rose,         typeof( RoseIngot ),    typeof( RoseOre ),      typeof( ValoriteGranite ) ),
+                new CraftResourceInfo( 0x4c2, 0, "BloodRock",      CraftAttributeInfo.Bloodrock,    CraftResource.Bloodrock,         typeof( BloodRockIngot ),    typeof( BloodRockOre ),      typeof( ValoriteGranite ) ),
+                new CraftResourceInfo( 0x3c3, 0, "Blackrock",      CraftAttributeInfo.Blackrock,    CraftResource.Blackrock,         typeof( BlackRockIngot ),    typeof( BlackRockOre ),      typeof( ValoriteGranite ) ),
+                new CraftResourceInfo( 0x481, 0, "Platnium",      CraftAttributeInfo.Platnium,    CraftResource.Platnium,         typeof( PlatniumIngot ),    typeof( PlatniumOre ),      typeof( ValoriteGranite ) ),
+                new CraftResourceInfo( 0x7b5, 0, "Carbon",      CraftAttributeInfo.Carbon,    CraftResource.Carbon,         typeof( CarbonIngot ),    typeof( CarbonOre ),      typeof( ValoriteGranite ) ),
+                new CraftResourceInfo( 0x44e, 0, "Kevlar",      CraftAttributeInfo.Kevlar,    CraftResource.Kevlar,         typeof( KevlarIngot ),    typeof( KevlarOre ),      typeof( ValoriteGranite ) ),
+                new CraftResourceInfo( 0x7a2, 0, "Delta",      CraftAttributeInfo.Delta,    CraftResource.Delta,         typeof( DeltaIngot ),    typeof( DeltaOre ),      typeof( ValoriteGranite ) ),
+                new CraftResourceInfo( 0xbad, 0, "Liquid",      CraftAttributeInfo.Liquid,    CraftResource.Liquid,         typeof( LiquidIngot ),    typeof( LiquidOre ),      typeof( ValoriteGranite ) ),
+                new CraftResourceInfo( 0x77a, 0, "Ragnarok",      CraftAttributeInfo.Ragnarok,    CraftResource.Ragnarok,         typeof( RagnarokIngot ),    typeof( RagnarokOre ),      typeof( ValoriteGranite ) ),
+
+
+            };
 
 		private static CraftResourceInfo[] m_ScaleInfo = new CraftResourceInfo[]
 			{
@@ -576,7 +416,7 @@ namespace Server.Items
 		/// </summary>
 		public static CraftResourceType GetType( CraftResource resource )
 		{
-			if ( resource >= CraftResource.Iron && resource <= CraftResource.Valorite )
+			if ( resource >= CraftResource.Iron && resource <= CraftResource.Ragnarok )
 				return CraftResourceType.Metal;
 
 			if ( resource >= CraftResource.RegularLeather && resource <= CraftResource.BarbedLeather )
