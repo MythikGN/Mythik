@@ -76,7 +76,7 @@ namespace Scripts.Mythik.Items.Rares.Equipment
                 return RareLevel.Rare;
             }
         }
-
+        [Constructable]
         public SkillBracelet()
         {
             var mod = SkillRing.GenerateBonus();
@@ -105,7 +105,7 @@ namespace Scripts.Mythik.Items.Rares.Equipment
                 return RareLevel.Rare;
             }
         }
-
+        [Constructable]
         public SkillNecklace()
         {
             var mod = SkillRing.GenerateBonus();
@@ -135,7 +135,7 @@ namespace Scripts.Mythik.Items.Rares.Equipment
                 return RareLevel.Rare;
             }
         }
-
+        [Constructable]
         public SkillEarrings()
         {
             var mod = SkillRing.GenerateBonus();
