@@ -126,6 +126,14 @@ namespace Scripts.Mythik.Systems.Loot
                 new LootPackItem( typeof( LumberjackApron ), 1 ),
                 new LootPackItem( typeof( MiningRobe ), 1 )
 };
+
+        public static readonly LootPackItem[] SkillJewels = new LootPackItem[]
+{
+                new LootPackItem( typeof( SkillRing ),1 ),
+                new LootPackItem( typeof( SkillNecklace ), 1 ),
+                new LootPackItem( typeof( SkillEarrings ), 1 ),
+                new LootPackItem( typeof( SkillBracelet ), 1 ),
+};
         /// <summary>
         /// Standard loot packs for level 1-5 monsters, handles dropping gold, pots, scrolls, gems and addons. 
         /// These loot packs drop direct on monster corpse, Killers luck effects drop rates.
@@ -136,7 +144,9 @@ namespace Scripts.Mythik.Systems.Loot
                 new LootPackEntry( false, PotionItems,              45.0,      2 ),
                 new LootPackEntry( false, LowScrollItems,           35.0,      1 ),
                 new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(Amber),1) },60.0,"1d3"),
+                new LootPackEntry( false, OldMagicItems,  2.0, 1, 1, 00, 60 ),
                 new LootPackEntry( false, BlueChromeSet,          0.25,   1 ),
+                new LootPackEntry( false, SkillJewels,          0.20,   1 ),
                 new LootPackEntry( false, LevelOneUniques,          0.13,   1 ) // 0.13 is equiv to 1 in 769
 
             });
@@ -147,6 +157,8 @@ namespace Scripts.Mythik.Systems.Loot
                 new LootPackEntry( false, PotionItems,              55.0,      2 ),
                 new LootPackEntry( false, LowScrollItems,           45.0,      2 ),
                 new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(Citrine),1),new LootPackItem( typeof(Amethyst),1) },60.0,"1d3"),
+                new LootPackEntry( false, OldMagicItems,  6.0, 1, 1, 30, 70 ),
+                new LootPackEntry( false, SkillJewels,          0.22,   1 ),
                 new LootPackEntry( false, LevelTwoUniques,          0.14,   1 ) // 0.13 is equiv to 1 in 769
     });
 
@@ -156,7 +168,8 @@ namespace Scripts.Mythik.Systems.Loot
                 new LootPackEntry( false, PotionItems,              55.0,      2 ),
                 new LootPackEntry( false, MedScrollItems,           45.0,      1 ),
                 new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(Tourmaline),1),new LootPackItem( typeof(Sapphire),1) },60.0,"1d3"),
-                new LootPackEntry( false, OldMagicItems,  6.0, 1, 1, 20, 100 ),
+                new LootPackEntry( false, OldMagicItems,  5.0, 1, 1, 30, 80 ),
+                new LootPackEntry( false, SkillJewels,          0.26,   1 ),
                 new LootPackEntry( false, LevelThreeUniques,          0.15,   1 ) // 0.13 is equiv to 1 in 769
 });
 
@@ -167,8 +180,8 @@ namespace Scripts.Mythik.Systems.Loot
                 new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(Ruby),1),new LootPackItem( typeof(Emerald),1) },50.0,"1d4"),
 
                 new LootPackEntry( false, MedScrollItems,           40.0,      2 ),
-                new LootPackEntry( false, OldMagicItems,  6.0, 1, 1, 20, 100 ),
-
+                new LootPackEntry( false, OldMagicItems,  4.0, 1, 1, 20, 100 ),
+                new LootPackEntry( false, SkillJewels,          0.30,   1 ),
                 new LootPackEntry( false, LevelFourniques,          0.16,   1 ) // 0.13 is equiv to 1 in 769
 });
 
@@ -178,7 +191,8 @@ namespace Scripts.Mythik.Systems.Loot
                 new LootPackEntry( false, PotionItems,              70.00,      "2d1+1" ),
                 new LootPackEntry(false, new LootPackItem[] { new LootPackItem( typeof(StarSapphire),1),new LootPackItem( typeof(Diamond),1) },60.0,"1d5"),
                 new LootPackEntry( false, HighScrollItems,           50.00,      "2d2" ),
-                new LootPackEntry( false, OldMagicItems,  6.0, 2, 1, 20, 100 ),
+                new LootPackEntry( false, OldMagicItems,  6.0, 1, 1, 50, 100 ),
+                new LootPackEntry( false, SkillJewels,          0.34,   1 ), 
                 new LootPackEntry( false, LevelFiveUniques,          0.17,   1 ) // 0.13 is equiv to 1 in 769
 });
 
@@ -219,7 +233,7 @@ namespace Scripts.Mythik.Systems.Loot
         private static Type[] m_LesserArtifacts = new Type[] {
             typeof(RareClothDyeTub),typeof( RareLeatherDyeTub ), typeof(RuneBookChargeDeed),
             typeof(AnimateDeadScrollRecipe),typeof(BloodOathScrollRecipe),typeof(SummonFamiliarScrollRecipe),
-            typeof(EnemyOfOneScrollRecipe), typeof(HolyWarFork)
+            typeof(EnemyOfOneScrollRecipe), typeof(HolyWarFork), typeof(SkillBracelet), typeof(SkillRing), typeof(SkillNecklace), typeof(SkillEarrings)
 
         };
         /// <summary>
