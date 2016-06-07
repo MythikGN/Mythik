@@ -54,7 +54,8 @@ namespace Server
 		public abstract float ReadFloat();
 		public abstract char ReadChar();
 		public abstract byte ReadByte();
-		public abstract sbyte ReadSByte();
+        public abstract Dictionary<int,int> ReadDictionary();
+        public abstract sbyte ReadSByte();
 		public abstract bool ReadBool();
 		public abstract int ReadEncodedInt();
 		public abstract IPAddress ReadIPAddress();
@@ -165,6 +166,8 @@ namespace Server
 #if Framework_4_0
 		public abstract void Write( HashSet<Item> list );
 		public abstract void Write( HashSet<Item> list, bool tidy );
+
+        public abstract void Write(Dictionary<int,int> dict);
 
 		public abstract void WriteItemSet<T>( HashSet<T> set ) where T : Item;
 		public abstract void WriteItemSet<T>( HashSet<T> set, bool tidy ) where T : Item;
@@ -942,8 +945,18 @@ namespace Server
 				Write( guild );
 			}
 		}
+
+        public override void Write(Dictionary<int, int> dict)
+        {
+            Write(dict.Count);
+            foreach(var kv in dict)
+            {
+                Write(kv.Key);
+                Write(kv.Value);
+            }
+        }
 #endif
-	}
+    }
 
 	public sealed class BinaryFileReader : GenericReader
 	{
@@ -1392,7 +1405,20 @@ namespace Server
 		{
 			return m_File.PeekChar() == -1;
 		}
-	}
+
+        public override Dictionary<int,int> ReadDictionary()
+        {
+            int count = ReadInt();
+            if (count == 0)
+                return new Dictionary<int,int>();
+            var results = new Dictionary<int, int>();
+            for (int i = 0; i < count; ++i)
+            {
+                results.Add(ReadInt(), ReadInt());
+            }
+            return results;
+        }
+    }
 
 	public sealed class AsyncWriter : GenericWriter
 	{
@@ -2070,8 +2096,18 @@ namespace Server
 				Write( guild );
 			}
 		}
+
+        public override void Write(Dictionary<int, int> dict)
+        {
+            Write(dict.Count);
+            foreach (var kv in dict)
+            {
+                Write(kv.Key);
+                Write(kv.Value);
+            }
+        }
 #endif
-	}
+    }
 
 	public interface ISerializable
 	{
