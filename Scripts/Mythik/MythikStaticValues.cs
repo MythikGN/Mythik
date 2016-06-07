@@ -157,7 +157,7 @@ namespace Scripts.Mythik
                
             return name;
         }
-        public static string ComputeName(BaseArmor ba)
+        public static string ComputeName(BaseArmor ba, bool forPropList = false)
         {
             if (!string.IsNullOrEmpty(ba.Name))
                 return ba.Name;
@@ -188,7 +188,7 @@ namespace Scripts.Mythik
             else if (ba.Resource != CraftResource.None)
             {
                 //If it's crafted by a player
-                if (ba.Crafter != null)
+                if (ba.Crafter != null && !forPropList)
                 {
                     if (ba.Quality == ArmorQuality.Exceptional)
                     {
@@ -241,7 +241,7 @@ namespace Scripts.Mythik
             return name;
         }
 
-        public static string ComputeName(BaseWeapon bw)
+        public static string ComputeName(BaseWeapon bw, bool forPropsList = false)
         {
             if (!string.IsNullOrEmpty(bw.Name))
                 return bw.Name;
@@ -287,7 +287,7 @@ namespace Scripts.Mythik
             else if (bw.Resource != CraftResource.None)
             {
                 //If it's crafted by a player
-                if (bw.Crafter != null)
+                if (bw.Crafter != null && !forPropsList)
                     if (bw.Quality == WeaponQuality.Exceptional)
                         if (bw.Resource != CraftResource.Iron)
                             name = string.Format("{0} {1} {2} crafted by {3}", "Exceptional", resource.ToLower(), name.ToLower(), bw.Crafter.Name);
@@ -301,7 +301,7 @@ namespace Scripts.Mythik
                     else
                         name = string.Format("{0} crafted by {1}", name, bw.Crafter.Name);
                 else if (bw.Resource != CraftResource.Iron)
-                    if (bw.Quality == WeaponQuality.Exceptional)
+                    if (bw.Quality == WeaponQuality.Exceptional && !forPropsList)
                         if (!string.IsNullOrEmpty(resource))
                             name = string.Format("{0} {1} {2}", "Exceptional", resource.ToLower(), name.ToLower());
                         else

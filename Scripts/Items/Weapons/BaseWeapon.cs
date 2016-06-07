@@ -3112,7 +3112,7 @@ namespace Server.Items
 				list.Add( 1053099, "#{0}\t{1}", oreType, GetNameString() ); // ~1_oretype~ ~2_armortype~
             else if(oreName != null)
             {
-                list.Add(SphereUtils.ComputeName(this));
+                list.Add(SphereUtils.ComputeName(this,true));
             }
 			else if ( Name == null )
 				list.Add( LabelNumber );
