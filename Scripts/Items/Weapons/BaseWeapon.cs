@@ -2349,7 +2349,7 @@ namespace Server.Items
 			if ( VirtualDamageBonus != 0 )
 				modifiers += ( VirtualDamageBonus / 100.0 );
             // BonusDamage, add dmg from ruin/might/excep/ore type
-            modifiers += GetDamageBonus();
+            modifiers += (GetDamageBonus() / 100.0);
 
 			// Apply bonuses
 			damage += ( damage * modifiers );
@@ -3073,9 +3073,10 @@ namespace Server.Items
 
 		public override void AddNameProperty( ObjectPropertyList list )
 		{
-			int oreType;
+			int oreType = 0;
+            string oreName = null;
 
-			switch ( m_Resource )
+            switch ( m_Resource )
 			{
 				case CraftResource.DullCopper:		oreType = 1053108; break; // dull copper
 				case CraftResource.ShadowIron:		oreType = 1053107; break; // shadow iron
@@ -3094,11 +3095,25 @@ namespace Server.Items
 				case CraftResource.GreenScales:		oreType = 1060819; break; // green
 				case CraftResource.WhiteScales:		oreType = 1060821; break; // white
 				case CraftResource.BlueScales:		oreType = 1060815; break; // blue
-				default: oreType = 0; break;
+                case CraftResource.Rose: oreName = "rose"; break;
+                case CraftResource.Bloodrock: oreName = "bloodrock"; break;
+                case CraftResource.Blackrock: oreName = "blackrock"; break;
+                case CraftResource.Platnium: oreName = "platnium"; break;
+                case CraftResource.Carbon: oreName = "carbon"; break;
+                case CraftResource.Kevlar: oreName = "kevlar"; break;
+                case CraftResource.Delta: oreName = "delta"; break;
+                case CraftResource.Liquid: oreName = "liquid"; break;
+                case CraftResource.Ragnarok: oreName = "ragnarok"; break;
+
+                default: oreType = 0; break;
 			}
 
 			if ( oreType != 0 )
 				list.Add( 1053099, "#{0}\t{1}", oreType, GetNameString() ); // ~1_oretype~ ~2_armortype~
+            else if(oreName != null)
+            {
+                list.Add(SphereUtils.ComputeName(this));
+            }
 			else if ( Name == null )
 				list.Add( LabelNumber );
 			else
@@ -3405,8 +3420,15 @@ namespace Server.Items
                 DisplayRarity(from);
                 //base.OnSingleClick(from);
                 from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3B2, 3, "", SphereUtils.ComputeName(this)));
+                var damage = (double)OldMaxDamage;
+                var modifiers = (GetDamageBonus() / 100.0);
 
-                from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3B2, 3, "", "[ Dmg: " + GetBaseDamage(from) + " Dura: " + this.HitPoints + "/" + this.MaxHitPoints + " ]"));
+                // Apply bonuses
+                damage += (damage * modifiers);
+
+                damage = ScaleDamageByDurability((int)damage);
+
+                from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3B2, 3, "", "[Dmg: " + damage + " Dura: " + this.HitPoints + "/" + this.MaxHitPoints + "]"));
 
                 if (!SkillBonuses.IsEmpty)
                 {
