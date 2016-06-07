@@ -22,8 +22,8 @@ namespace Scripts.Mythik.Items.Rares
         {
            
         }
-
-        public short Uses { get; set; }
+        private short m_Uses;
+        public short Uses { get { return m_Uses; } set { m_Uses = value; this.InvalidateProperties(); } }
         public short UsesMax { get; set; }
 
         public RareLevel UniqueLevel
@@ -53,6 +53,8 @@ namespace Scripts.Mythik.Items.Rares
             base.AddLootTypeProperty(list);
             this.PropertyList.Add("Charges " + Uses + "/" + UsesMax);
         }
+
+        
     }
     class RareClothDyeTub : LimitedUseDyeTub, IUniqueItem
     {
