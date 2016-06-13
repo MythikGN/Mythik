@@ -1725,8 +1725,22 @@ namespace Server
 				ClearProperties();
 			}
 		}
+        private Packet m_WorldPacketPreAOS;
+        public Packet WorldPacketPREAOS
+        {
+            get
+            {
+                if (m_WorldPacketPreAOS == null)
+                {
+                    m_WorldPacketPreAOS = new WorldItem(this,true);
+                    m_WorldPacketPreAOS.SetStatic();
+                }
 
-		public Packet WorldPacket
+                return m_WorldPacketPreAOS;
+            }
+        }
+
+        public Packet WorldPacket
 		{
 			get
 			{
@@ -2721,6 +2735,8 @@ namespace Server
 		}
 
 		protected virtual Packet GetWorldPacketFor( NetState state ) {
+            if (state?.Version?.Major <= 3)
+                return this.WorldPacketPREAOS;
 			if ( state.HighSeas )
 				return this.WorldPacketHS;
 			else if ( state.StygianAbyss )
