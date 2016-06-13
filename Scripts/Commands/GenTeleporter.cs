@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using Server;
 using Server.Items;
+using Scripts.Mythik;
 
 namespace Server.Commands
 {
@@ -64,7 +65,12 @@ namespace Server.Commands
 
 			public void CreateTeleporter( Point3D pointLocation, Point3D pointDestination, Map mapLocation, Map mapDestination, bool back )
 			{
-				if ( !FindTeleporter( mapLocation, pointLocation ) )
+                if (!MythikStaticValues.UpdateLoc(ref pointLocation, ref mapLocation))
+                    return;
+                if (!MythikStaticValues.UpdateLoc(ref pointDestination, ref mapDestination))
+                    return;
+
+                if ( !FindTeleporter( mapLocation, pointLocation ) )
 				{
 					m_Count++;
 				

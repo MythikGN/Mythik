@@ -6,6 +6,7 @@ using Server.Gumps;
 using Server.Mobiles;
 using Server.Network;
 using Server.Spells;
+using Scripts.Mythik;
 
 namespace Server.Items
 {
@@ -111,11 +112,11 @@ namespace Server.Items
 
 			int count = 0;
 
-			count += MoonGen( PMList.Trammel );
+			//count += MoonGen( PMList.Trammel );
 			count += MoonGen( PMList.Felucca );
 			count += MoonGen( PMList.Ilshenar );
-			count += MoonGen( PMList.Malas );
-			count += MoonGen( PMList.Tokuno );
+			//count += MoonGen( PMList.Malas );
+			//count += MoonGen( PMList.Tokuno );
 
 			World.Broadcast( 0x35, true, "{0} moongates generated.", count );
 		}
@@ -142,8 +143,11 @@ namespace Server.Items
 			foreach ( PMEntry entry in list.Entries )
 			{
 				Item item = new PublicMoongate();
-
-				item.MoveToWorld( entry.Location, list.Map );
+                var loc = entry.Location;
+                var map = list.Map;
+                if (!MythikStaticValues.UpdateLoc(ref loc, ref map))
+                    continue;
+                item.MoveToWorld(loc, map);
 
 				if ( entry.Number == 1060642 ) // Umbra
 					item.Hue = 0x497;
@@ -156,7 +160,7 @@ namespace Server.Items
 	public class PMEntry
 	{
 		private Point3D m_Location;
-		private int m_Number;
+		private TextDefinition m_Number;
 
 		public Point3D Location
 		{
@@ -166,7 +170,7 @@ namespace Server.Items
 			}
 		}
 
-		public int Number
+		public TextDefinition Number
 		{
 			get
 			{
@@ -174,7 +178,7 @@ namespace Server.Items
 			}
 		}
 
-		public PMEntry( Point3D loc, int number )
+		public PMEntry( Point3D loc, TextDefinition number )
 		{
 			m_Location = loc;
 			m_Number = number;
@@ -183,11 +187,12 @@ namespace Server.Items
 
 	public class PMList
 	{
-		private int m_Number, m_SelNumber;
+        private TextDefinition m_Number;
+        private TextDefinition m_SelNumber;
 		private Map m_Map;
 		private PMEntry[] m_Entries;
 
-		public int Number
+		public TextDefinition Number
 		{
 			get
 			{
@@ -195,7 +200,7 @@ namespace Server.Items
 			}
 		}
 
-		public int SelNumber
+		public TextDefinition SelNumber
 		{
 			get
 			{
@@ -219,7 +224,7 @@ namespace Server.Items
 			}
 		}
 
-		public PMList( int number, int selNumber, Map map, PMEntry[] entries )
+		public PMList(TextDefinition number, TextDefinition selNumber, Map map, PMEntry[] entries )
 		{
 			m_Number = number;
 			m_SelNumber = selNumber;
@@ -253,7 +258,7 @@ namespace Server.Items
 					new PMEntry( new Point3D( 1828, 2948,-20), 1012008 ), // Trinsic
 					new PMEntry( new Point3D(  643, 2067, 5 ), 1012009 ), // Skara Brae
 					/* Dynamic Z for Magincia to support both old and new maps. */
-					new PMEntry( new Point3D( 3563, 2139, Map.Felucca.GetAverageZ( 3563, 2139 ) ), 1012010 ), // (New) Magincia
+					new PMEntry( new Point3D( 3563, 2139, 34 ), 1012010 ), // (New) Magincia
 					new PMEntry( new Point3D( 2711, 2234, 0 ), 1019001 )  // Buccaneer's Den
 				} );
 
@@ -286,7 +291,16 @@ namespace Server.Items
 					new PMEntry( new Point3D(  270,  628, 15 ), 1063414 )  // Homare-Jima
 				} );
 
-		public static readonly PMList[] UORLists		= new PMList[] { Trammel, Felucca };
+        public static readonly PMList Mythik =
+    new PMList("Mythik", "<BASEFONT COLOR=#2DDC1B>Mythik</BASEFONT>", Map.Felucca, new PMEntry[]
+        {
+                    new PMEntry( MythikStaticValues.NeutralZone, "Neutral Zone"), // nz
+					new PMEntry( new Point3D( 1336, 1997, 5 ), "Donator Mall" ), // Britain
+
+        });
+
+
+        public static readonly PMList[] UORLists		= new PMList[] { Trammel, Felucca };
 		public static readonly PMList[] UORListsYoung	= new PMList[] { Trammel };
 		public static readonly PMList[] LBRLists		= new PMList[] { Trammel, Felucca, Ilshenar };
 		public static readonly PMList[] LBRListsYoung	= new PMList[] { Trammel, Ilshenar };
@@ -296,7 +310,9 @@ namespace Server.Items
 		public static readonly PMList[] SEListsYoung	= new PMList[] { Trammel, Ilshenar, Malas, Tokuno };
 		public static readonly PMList[] RedLists		= new PMList[] { Felucca };
 		public static readonly PMList[] SigilLists		= new PMList[] { Felucca };
-	}
+
+        public static readonly PMList[] MythikLists = new PMList[] { Felucca, Ilshenar,Mythik };
+    }
 
 	public class MoongateGump : Gump
 	{
@@ -340,8 +356,11 @@ namespace Server.Items
 			{
 				checkLists = PMList.SELists;
 			}
+            //Override for all allow all to travel to all of fel/ilsh
+            checkLists = PMList.MythikLists;
 
-			m_Lists = new PMList[checkLists.Length];
+
+            m_Lists = new PMList[checkLists.Length];
 
 			for ( int i = 0; i < m_Lists.Length; ++i )
 				m_Lists[i] = checkLists[i];
@@ -374,7 +393,10 @@ namespace Server.Items
 			for ( int i = 0; i < checkLists.Length; ++i )
 			{
 				AddButton( 10, 35 + (i * 25), 2117, 2118, 0, GumpButtonType.Page, Array.IndexOf( m_Lists, checkLists[i] ) + 1 );
-				AddHtmlLocalized( 30, 35 + (i * 25), 150, 20, checkLists[i].Number, false, false );
+                if(checkLists[i].Number.Number == 0)
+                    AddHtml(30, 35 + (i * 25), 150, 20, checkLists[i].Number, false, false);
+                else
+                    AddHtmlLocalized( 30, 35 + (i * 25), 150, 20, checkLists[i].Number, false, false );
 			}
 
 			for ( int i = 0; i < m_Lists.Length; ++i )
@@ -388,14 +410,20 @@ namespace Server.Items
 			AddPage( index + 1 );
 
 			AddButton( 10, 35 + (offset * 25), 2117, 2118, 0, GumpButtonType.Page, index + 1 );
-			AddHtmlLocalized( 30, 35 + (offset * 25), 150, 20, list.SelNumber, false, false );
+            if(list.SelNumber.Number == 0)
+                AddHtml(30, 35 + (offset * 25), 150, 20, list.SelNumber, false, false);
+            else
+                AddHtmlLocalized( 30, 35 + (offset * 25), 150, 20, list.SelNumber, false, false );
 
 			PMEntry[] entries = list.Entries;
 
 			for ( int i = 0; i < entries.Length; ++i )
 			{
 				AddRadio( 200, 35 + (i * 25), 210, 211, false, (index * 100) + i );
-				AddHtmlLocalized( 225, 35 + (i * 25), 150, 20, entries[i].Number, false, false );
+                if(entries[i].Number.Number == 0)
+                    AddHtml(225, 35 + (i * 25), 150, 20, entries[i].Number, false, false);
+                else
+                    AddHtmlLocalized( 225, 35 + (i * 25), 150, 20, entries[i].Number, false, false );
 			}
 		}
 
@@ -455,15 +483,18 @@ namespace Server.Items
 			}
 			else
 			{
-				BaseCreature.TeleportPets( m_Mobile, entry.Location, list.Map );
+                var loc = entry.Location;
+                var map = list.Map;
+                MythikStaticValues.UpdateLoc(ref loc, ref map);
+
+                BaseCreature.TeleportPets( m_Mobile, loc, map);
 
 				m_Mobile.Combatant = null;
 				m_Mobile.Warmode = false;
 				m_Mobile.Hidden = true;
+				m_Mobile.MoveToWorld(loc, map);
 
-				m_Mobile.MoveToWorld( entry.Location, list.Map );
-
-				Effects.PlaySound( entry.Location, list.Map, 0x1FE );
+				Effects.PlaySound(loc, map, 0x1FE );
 			}
 		}
 	}

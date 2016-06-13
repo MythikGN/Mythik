@@ -24,8 +24,21 @@ namespace Server
 				new Rectangle2D( new Point2D( 1495, 1400 ), new Point2D( 1550, 1475 ) ),
 				new Rectangle2D( new Point2D( 1085, 1520 ), new Point2D( 1415, 1910 ) ),
 				new Rectangle2D( new Point2D( 1410, 1500 ), new Point2D( 1745, 1795 ) ),
-				new Rectangle2D( new Point2D( 5120, 2300 ), new Point2D( 6143, 4095 ) )
-			};
+				new Rectangle2D( new Point2D( 5120, 2300 ), new Point2D( 6143, 4095 ) ),
+
+                //mythik custom ones
+
+                //ilsh
+               new Rectangle2D( new Point2D( 3520, 2600 ), new Point2D( 4900, 4025 ) ),
+                //serps
+                new Rectangle2D(1599,3700,260,300),
+
+                //bucs
+                 new Rectangle2D( new Point2D( 155,2455 ), new Point2D(500,2888 ) ),
+
+                 //occ maginc
+                  new Rectangle2D( new Point2D( 2992,1211 ), new Point2D( 3325,1925 ) ),
+    };
 
 		private static Rectangle2D[] m_IlshRegions = new Rectangle2D[]
 			{

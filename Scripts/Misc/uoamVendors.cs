@@ -4,6 +4,7 @@ using System.IO;
 using Server.Mobiles;
 using Server.Items;
 using Server.Commands;
+using Scripts.Mythik;
 
 // Version 0.8
 
@@ -318,9 +319,14 @@ namespace Server
 			if ( types.Length == 0 )
 				return;
 
-			int z = GetSpawnerZ( x, y, map );
-
-			ClearSpawners( x, y, z, map );
+            int z = 0; 
+            var loc = new Point3D(x, y, z);
+            if (!MythikStaticValues.UpdateLoc(ref loc, ref map))
+                return;
+            x = loc.X;
+            y = loc.Y;
+            z = GetSpawnerZ(x, y, map);
+            ClearSpawners( x, y, z, map );
 
 			for ( int i = 0; i < types.Length; ++i )
 			{

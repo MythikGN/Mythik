@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using Server;
 using Server.Items;
+using Scripts.Mythik;
 
 namespace Server.Commands
 {
@@ -132,6 +133,8 @@ namespace Server.Commands
 				else if ( location.X >= 1960 && location.Y >= 1278 && location.X < 2106 && location.Y < 1413 )
 					sign.Hue = 0x44E;
 			}
+            if (!MythikStaticValues.UpdateLoc(ref location, ref map))
+                return;
 
 			sign.MoveToWorld( location, map );
 		}

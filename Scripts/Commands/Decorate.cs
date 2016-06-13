@@ -6,6 +6,7 @@ using Server;
 using Server.Items;
 using Server.Engines.Quests.Haven;
 using Server.Engines.Quests.Necro;
+using Scripts.Mythik;
 
 namespace Server.Commands
 {
@@ -26,11 +27,11 @@ namespace Server.Commands
 			m_Mobile.SendMessage( "Generating world decoration, please wait." );
 
 			Generate( "Data/Decoration/Britannia", Map.Trammel, Map.Felucca );
-			Generate( "Data/Decoration/Trammel", Map.Trammel );
+			//Generate( "Data/Decoration/Trammel", Map.Trammel );
 			Generate( "Data/Decoration/Felucca", Map.Felucca );
 			Generate( "Data/Decoration/Ilshenar", Map.Ilshenar );
-			Generate( "Data/Decoration/Malas", Map.Malas );
-			Generate( "Data/Decoration/Tokuno", Map.Tokuno );
+			//Generate( "Data/Decoration/Malas", Map.Malas );
+			//Generate( "Data/Decoration/Tokuno", Map.Tokuno );
 
 			m_Mobile.SendMessage( "World generating complete. {0} items were generated.", m_Count );
 		}
@@ -993,7 +994,13 @@ namespace Server.Commands
 					}
 					else
 					{
-						item.MoveToWorld( loc, maps[j] );
+                        var map = Map.Felucca;
+                        if (!MythikStaticValues.UpdateLoc(ref loc, ref map))
+                            continue;
+                        if (map == Map.Ilshenar)
+                            item.MoveToWorld(loc, Map.Felucca);
+                        else
+                            item.MoveToWorld( loc, maps[j] );
 						++count;
 
 						if ( item is BaseDoor )
