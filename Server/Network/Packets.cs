@@ -1033,7 +1033,7 @@ namespace Server.Network
 
 	public sealed class WorldItem : Packet
 	{
-		public WorldItem( Item item ) : base( 0x1A )
+		public WorldItem( Item item,bool preAOS = false ) : base( 0x1A )
 		{
 			this.EnsureCapacity( 20 );
 
@@ -1044,7 +1044,11 @@ namespace Server.Network
 
 			uint serial = (uint)item.Serial.Value;
 			int itemID = item.ItemID & 0x3FFF;
-			int amount = item.Amount;
+            int amount = 0;
+            if (item.ItemID == 0x2006 && preAOS)// if its a corpse and pre aos then convert body if needed
+                amount = Packet.ConvertBody203(item.Amount);
+            else
+                amount = item.Amount;
 			Point3D loc = item.Location;
 			int x = loc.m_X;
 			int y = loc.m_Y;
