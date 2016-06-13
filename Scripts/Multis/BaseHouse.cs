@@ -1460,15 +1460,15 @@ namespace Server.Multis
 			return value;
 		}
 
-		public BaseDoor[] AddSouthDoors( int x, int y, int z )
+		public BaseDoor[] AddSouthDoors( int x, int y, int z,bool gates = false )
 		{
-			return AddSouthDoors( true, x, y, z, false );
+			return AddSouthDoors( true, x, y, z, false,gates );
 		}
 
-		public BaseDoor[] AddSouthDoors( bool wood, int x, int y, int z, bool inv )
+		public BaseDoor[] AddSouthDoors( bool wood, int x, int y, int z, bool inv, bool gates = false)
 		{
-			BaseDoor westDoor = MakeDoor( wood, inv ? DoorFacing.WestCCW : DoorFacing.WestCW );
-			BaseDoor eastDoor = MakeDoor( wood, inv ? DoorFacing.EastCW : DoorFacing.EastCCW );
+			BaseDoor westDoor = MakeDoor( wood, inv ? DoorFacing.WestCCW : DoorFacing.WestCW, gates);
+			BaseDoor eastDoor = MakeDoor( wood, inv ? DoorFacing.EastCW : DoorFacing.EastCCW, gates);
 
 			westDoor.Link = eastDoor;
 			eastDoor.Link = westDoor;
@@ -1479,12 +1479,14 @@ namespace Server.Multis
 			return new BaseDoor[2]{ westDoor, eastDoor };
 		}
 
-		public BaseDoor MakeDoor( bool wood, DoorFacing facing )
+		public BaseDoor MakeDoor( bool wood, DoorFacing facing , bool gates = false)
 		{
-			if ( wood )
-				return new DarkWoodHouseDoor( facing );
-			else
-				return new MetalHouseDoor( facing );
+            if (gates)
+                return new DarkWoodGate(facing);
+            else if (wood)
+                return new DarkWoodHouseDoor(facing);
+            else
+                return new MetalHouseDoor(facing);
 		}
 
 		public void AddDoor( BaseDoor door, int xoff, int yoff, int zoff )
