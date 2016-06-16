@@ -90,12 +90,18 @@ namespace Server.Misc
 
 			double value = skill.Value;
 
+            // always a chance to gain.
+            if(value >= maxSkill)
+                maxSkill = value + 0.1;
+
+
 			if ( value < minSkill )
 				return false; // Too difficult
 			else if ( value >= maxSkill )
 				return true; // No challenge
 
 			double chance = (value - minSkill) / (maxSkill - minSkill);
+
 
 			Point2D loc = new Point2D( from.Location.X / LocationSize, from.Location.Y / LocationSize );
 			return CheckSkill( from, skill, loc, chance );
@@ -108,7 +114,11 @@ namespace Server.Misc
 			if ( skill == null )
 				return false;
 
-			if ( chance < 0.0 )
+            // always a chance to gain.
+            if (chance >= 1.0)
+                chance = 0.99;
+
+            if ( chance < 0.0 )
 				return false; // Too difficult
 			else if ( chance >= 1.0 )
 				return true; // No challenge
@@ -156,7 +166,11 @@ namespace Server.Misc
 
 			double value = skill.Value;
 
-			if ( value < minSkill )
+            // always a chance to gain.
+            if (value >= maxSkill)
+                maxSkill = value + 0.1;
+
+            if ( value < minSkill )
 				return false; // Too difficult
 			else if ( value >= maxSkill )
 				return true; // No challenge
@@ -173,7 +187,11 @@ namespace Server.Misc
 			if ( skill == null )
 				return false;
 
-			if ( chance < 0.0 )
+            // always a chance to gain.
+            if (chance >= 1.0)
+                chance = 0.99;
+
+            if ( chance < 0.0 )
 				return false; // Too difficult
 			else if ( chance >= 1.0 )
 				return true; // No challenge
