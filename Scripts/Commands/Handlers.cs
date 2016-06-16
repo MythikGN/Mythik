@@ -115,9 +115,11 @@ namespace Server.Commands
 		{
 			Mobile from = e.Mobile;
 			Map map = from.Map;
-
-			from.SendMessage( "You are at {0} {1} {2} in {3}.", from.X, from.Y, from.Z, map );
-
+            var regText = "";
+            if (from.Region?.Name != null)
+                regText = "(" + from.Region.Name + ")";
+			//from.SendMessage( "You are at {0} {1} {2} in {3}.", from.X, from.Y, from.Z, regText + map );
+            from.LocalOverheadMessage(MessageType.Regular, 0x3B2, true,string.Format( "I am in {0} {1} ({2},{3},{4})", map, regText, from.X, from.Y, from.Z));
 			if ( map != null )
 			{
 				Region reg = from.Region;
@@ -135,7 +137,7 @@ namespace Server.Commands
 						reg = reg.Parent;
 					}
 
-					from.SendMessage( "Your region is {0}.", builder.ToString() );
+					//from.SendMessage( "Your region is {0}.", builder.ToString() );
 				}
 			}
 		}
