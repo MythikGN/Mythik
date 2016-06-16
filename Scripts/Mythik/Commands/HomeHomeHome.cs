@@ -16,7 +16,7 @@ namespace Scripts.Mythik.Commands
         {
             public static bool Enabled = true;                                       // Is this command enabled?
             public static bool AllowUsageIfIsOverloaded = false;                      // Should we allow players to use this command if they are overloaded?
-            public static bool AllowUsageIfIsInCombat = false;                        // Should we allow players to use this command if they are in combat?
+            public static bool AllowUsageIfIsInCombat = true;                        // Should we allow players to use this command if they are in combat?
             public static bool SpecialEffects = true;                                // Should we use special effects after teleporting the player?
             public static bool BringFollowers = true;                                // Should we also teleport the player's followers?
             public static bool AffectOnlyControlledFollowers = true;                 // Should we only teleport the player's followers that are controlled?
@@ -55,7 +55,7 @@ namespace Scripts.Mythik.Commands
                     m.SendMessage("You can't teleport during the heat of battle!");
                     return;
                 }
-                if (!m.Alive)
+                if (m.Alive)
                 {
                     m.SendMessage("You must be dead");
                     return;
