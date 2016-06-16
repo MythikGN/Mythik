@@ -27,25 +27,47 @@ namespace Scripts.Mythik.Mobiles.Monsters.Reptile
             SetDex(100, 125);
             SetInt(101, 140);
 
-            SetHits(241, 258);
+            SetHits(275,325);
 
             SetDamage(16, 22);
 
-            SetDamageType(ResistanceType.Physical, 80);
-            SetDamageType(ResistanceType.Fire, 20);
-
             SetResistance(ResistanceType.Physical, 45, 50);
-            SetResistance(ResistanceType.Fire, 50, 60);
-            SetResistance(ResistanceType.Cold, 40, 50);
-            SetResistance(ResistanceType.Poison, 20, 30);
-            SetResistance(ResistanceType.Energy, 30, 40);
+            SetResistance(ResistanceType.Fire, 25, 30);
+            SetResistance(ResistanceType.Cold, 25, 30);
+            SetResistance(ResistanceType.Poison, 25, 30);
+            SetResistance(ResistanceType.Energy, 25, 30);
+
+            switch (index)
+            {
+                case 0:
+                    SetDamageType(ResistanceType.Physical, 60);
+                    SetDamageType(ResistanceType.Cold, 40);
+                    SetResistance(ResistanceType.Cold, 40, 50);
+                    break;
+                case 1:
+                    SetDamageType(ResistanceType.Physical, 60);
+                    SetDamageType(ResistanceType.Energy, 40);
+                    SetResistance(ResistanceType.Energy, 40, 50);
+                    break;
+                case 2:
+                    SetDamageType(ResistanceType.Physical, 60);
+                    SetDamageType(ResistanceType.Poison, 40);
+                    SetResistance(ResistanceType.Poison, 40, 50);
+                    break;
+                default:
+                    SetDamageType(ResistanceType.Physical, 60);
+                    SetDamageType((ResistanceType)Utility.Random(0,4), 40);
+                    SetResistance((ResistanceType)Utility.Random(0, 4), 40, 50);
+                    break;
+            }
+
 
             SetSkill(SkillName.MagicResist, 65.1, 80.0);
             SetSkill(SkillName.Tactics, 65.1, 90.0);
             SetSkill(SkillName.Wrestling, 75.1, 90.0);
 
-            Fame = 7500;
-            Karma = -7500;
+            Fame = 9500;
+            Karma = -9500;
 
             VirtualArmor = 46;
 

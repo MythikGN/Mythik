@@ -22,7 +22,7 @@ namespace Scripts.Mythik.Mobiles.Monsters.Reptile
             SetDex(86, 105);
             SetInt(436, 475);
 
-            SetHits(578, 595);
+            SetHits(744,855);
 
             SetDamage(18, 30);
 

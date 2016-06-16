@@ -25,7 +25,7 @@ namespace Scripts.Mythik.Mobiles.Monsters.Reptile
 
             SetHits(441, 458);
 
-            SetDamage(16, 22);
+            SetDamage(17, 25);
 
             SetDamageType(ResistanceType.Physical, 80);
             SetDamageType(ResistanceType.Fire, 20);
@@ -40,8 +40,8 @@ namespace Scripts.Mythik.Mobiles.Monsters.Reptile
             SetSkill(SkillName.Tactics, 75.1, 90.0);
             SetSkill(SkillName.Wrestling, 75.1, 90.0);
 
-            Fame = 9500;
-            Karma = -9500;
+            Fame = 11500;
+            Karma = -11500;
 
             VirtualArmor = 46;
 
