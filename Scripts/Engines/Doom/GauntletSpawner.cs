@@ -7,6 +7,7 @@ using Server.Network;
 using Server.Regions;
 using Server.Commands;
 using System.Collections.Generic;
+using Scripts.Mythik;
 
 namespace Server.Engines.Doom
 {
@@ -479,13 +480,22 @@ namespace Server.Engines.Doom
 
 		public static void CreateTeleporter( int xFrom, int yFrom, int xTo, int yTo )
 		{
-			Static telePad = new Static( 0x1822 );
-			Teleporter teleItem = new Teleporter( new Point3D( xTo, yTo, -1 ), Map.Malas, false );
+            var locFrom = new Point3D(xFrom, yFrom, -1);
+            var locTo = new Point3D(xTo, yTo, -1);
+            var map = Map.Malas;
+            if (!MythikStaticValues.UpdateLoc(ref locFrom, ref map))
+                return;
+            map = Map.Malas;
+            if (!MythikStaticValues.UpdateLoc(ref locTo, ref map))
+                return;
+
+            Static telePad = new Static( 0x1822 );
+			Teleporter teleItem = new Teleporter( locTo,map, false );
 
 			telePad.Hue = 0x482;
-			telePad.MoveToWorld( new Point3D( xFrom, yFrom, -1 ), Map.Malas );
+			telePad.MoveToWorld( locFrom,map );
 
-			teleItem.MoveToWorld( new Point3D( xFrom, yFrom, -1 ), Map.Malas );
+			teleItem.MoveToWorld(locFrom, map);
 
 			teleItem.SourceEffect = true;
 			teleItem.DestEffect = true;
@@ -494,11 +504,16 @@ namespace Server.Engines.Doom
 
 		public static BaseDoor CreateDoorSet( int xDoor, int yDoor, bool doorEastToWest, int hue )
 		{
-			BaseDoor hiDoor = new MetalDoor( doorEastToWest ? DoorFacing.NorthCCW : DoorFacing.WestCW );
+            var spawnLoc = new Point3D(xDoor, yDoor, -1);
+            var map = Map.Malas;
+            if (!MythikStaticValues.UpdateLoc(ref spawnLoc, ref map))
+                return null;
+
+            BaseDoor hiDoor = new MetalDoor( doorEastToWest ? DoorFacing.NorthCCW : DoorFacing.WestCW );
 			BaseDoor loDoor = new MetalDoor( doorEastToWest ? DoorFacing.SouthCW : DoorFacing.EastCCW );
 
-			hiDoor.MoveToWorld( new Point3D( xDoor, yDoor, -1 ), Map.Malas );
-			loDoor.MoveToWorld( new Point3D( xDoor + (doorEastToWest ? 0 : 1), yDoor + (doorEastToWest ? 1 : 0), -1 ), Map.Malas );
+			hiDoor.MoveToWorld(spawnLoc, map);
+			loDoor.MoveToWorld( new Point3D(spawnLoc.X + (doorEastToWest ? 0 : 1), spawnLoc.Y + (doorEastToWest ? 1 : 0), -1 ), map);
 
 			hiDoor.Link = loDoor;
 			loDoor.Link = hiDoor;
@@ -511,20 +526,29 @@ namespace Server.Engines.Doom
 
 		public static GauntletSpawner CreateSpawner( string typeName, int xSpawner, int ySpawner, int xDoor, int yDoor, int xPentagram, int yPentagram, bool doorEastToWest, int xStart, int yStart, int xWidth, int yHeight )
 		{
-			GauntletSpawner spawner = new GauntletSpawner( typeName );
+            var spawnLoc = new Point3D(xSpawner, ySpawner, -1);
+            var map = Map.Malas;
+            if (!MythikStaticValues.UpdateLoc(ref spawnLoc, ref map))
+                return null;
 
-			spawner.MoveToWorld( new Point3D( xSpawner, ySpawner, -1 ), Map.Malas );
+            GauntletSpawner spawner = new GauntletSpawner( typeName );
+
+			spawner.MoveToWorld(spawnLoc, map );
 
 			if ( xDoor > 0 && yDoor > 0 )
 				spawner.Door = CreateDoorSet( xDoor, yDoor, doorEastToWest, 0 );
 
-			spawner.RegionBounds = new Rectangle2D( xStart, yStart, xWidth, yHeight );
+			spawner.RegionBounds = MythikStaticValues.UpdateDoomBounds(new Rectangle2D( xStart, yStart, xWidth, yHeight ));
 
 			if ( xPentagram > 0 && yPentagram > 0 )
 			{
-				PentagramAddon pentagram = new PentagramAddon();
+                var PentagramLoc = new Point3D(xPentagram, yPentagram, -1);
+                var mapPenta = Map.Malas;
+                if (!MythikStaticValues.UpdateLoc(ref PentagramLoc, ref mapPenta))
+                    return null;
+                PentagramAddon pentagram = new PentagramAddon();
 
-				pentagram.MoveToWorld( new Point3D( xPentagram, yPentagram, -1 ), Map.Malas );
+				pentagram.MoveToWorld(PentagramLoc, mapPenta);
 
 				spawner.Addon = pentagram;
 			}
@@ -534,9 +558,13 @@ namespace Server.Engines.Doom
 
 		public static void CreatePricedHealer( int price, int x, int y )
 		{
-			PricedHealer healer = new PricedHealer( price );
+            var loc = new Point3D(x, y, -1);
+            var map = Map.Malas;
+            if (!MythikStaticValues.UpdateLoc(ref loc, ref map))
+                return;
+            PricedHealer healer = new PricedHealer( price );
 
-			healer.MoveToWorld( new Point3D( x, y, -1 ), Map.Malas );
+			healer.MoveToWorld(loc, map);
 
 			healer.Home = healer.Location;
 			healer.RangeHome = 5;
@@ -544,15 +572,23 @@ namespace Server.Engines.Doom
 
 		public static void CreateMorphItem( int x, int y, int inactiveItemID, int activeItemID, int range, int hue )
 		{
-			MorphItem item = new MorphItem( inactiveItemID, activeItemID, range );
+            var loc = new Point3D(x, y, -1);
+            var map = Map.Malas;
+            if (!MythikStaticValues.UpdateLoc(ref loc, ref map))
+                return;
+            MorphItem item = new MorphItem( inactiveItemID, activeItemID, range );
 
 			item.Hue = hue;
-			item.MoveToWorld( new Point3D( x, y, -1 ), Map.Malas );
+			item.MoveToWorld(loc, map);
 		}
 
 		public static void CreateVarietyDealer( int x, int y )
 		{
-			VarietyDealer dealer = new VarietyDealer();
+            var loc = new Point3D(x, y, -1);
+            var map = Map.Malas;
+            if (!MythikStaticValues.UpdateLoc(ref loc, ref map))
+                return;
+            VarietyDealer dealer = new VarietyDealer();
 
 			/* Begin outfit */
 			dealer.Name = "Nix";
@@ -586,7 +622,7 @@ namespace Server.Engines.Doom
 			dealer.AddItem( new Sandals( 0x482 ) );
 			/* End outfit */
 
-			dealer.MoveToWorld( new Point3D( x, y, -1 ), Map.Malas );
+			dealer.MoveToWorld( loc,map );
 
 			dealer.Home = dealer.Location;
 			dealer.RangeHome = 2;
@@ -620,10 +656,14 @@ namespace Server.Engines.Doom
 			{
 				for ( int y = 371; y <= 372; ++y )
 				{
-					Static item = new Static( 0x524 );
+                    var loc = new Point3D(x, y, -1);
+                    var map = Map.Malas;
+                    if (!MythikStaticValues.UpdateLoc(ref loc, ref map))
+                        continue;
+                    Static item = new Static( 0x524 );
 
 					item.Hue = 1;
-					item.MoveToWorld( new Point3D( x, y, -1 ), Map.Malas );
+					item.MoveToWorld( loc,map );
 				}
 			}
 			/* End supply room */
@@ -657,8 +697,8 @@ namespace Server.Engines.Doom
 
 			gate.Dispellable = false;
 
-			gate.Target = new Point3D( 2350, 1270, -85 );
-			gate.TargetMap = Map.Malas;
+            gate.Target = MythikStaticValues.NeutralZone;// new Point3D( 2350, 1270, -85 );
+			gate.TargetMap = Map.Felucca;
 
 			gate.GumpWidth = 420;
 			gate.GumpHeight = 280;
@@ -670,8 +710,11 @@ namespace Server.Engines.Doom
 			gate.TitleNumber = 1062108; // Please verify...
 
 			gate.Hue = 0x44E;
-
-			gate.MoveToWorld( new Point3D( 433, 326, 4 ), Map.Malas );
+            var gateloc = new Point3D(433, 326, -1);
+            var gatemap = Map.Malas;
+            if (!MythikStaticValues.UpdateLoc(ref gateloc, ref gatemap))
+                return;
+            gate.MoveToWorld(gateloc, gatemap);
 			/* End exit gate */
 		}
 	}
