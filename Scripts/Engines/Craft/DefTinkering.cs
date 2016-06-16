@@ -5,6 +5,7 @@ using Server.Factions;
 using Server.Targeting;
 using Scripts.Mythik.Items.Craftables.Tinkering.GemArmor;
 using Scripts.Mythik.Items.Craftables.Tinkering;
+using Scripts.Mythik.Items;
 
 namespace Server.Engines.Craft
 {
@@ -346,167 +347,216 @@ namespace Server.Engines.Craft
             index = AddCraft(typeof(TourmalinePlateHelm), "Gem Armor", "Tourmaline Plate Helm", 101.0, 150.0, typeof(Tourmaline), 1044237, 240);
             AddSkill(index, SkillName.Blacksmith, 101.0, 150.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.TourmalineSet.Hue);
             index = AddCraft(typeof(TourmalinePlateGorgot), "Gem Armor", "Tourmaline Plate Gorgot", 101.0, 150.0, typeof(Tourmaline), 1044237, 160);
             AddSkill(index, SkillName.Blacksmith, 101.0, 150.0);
             AddRes(index, typeof(IronIngot), 1044036, 25);
+            SetItemHue(index, ItemSets.TourmalineSet.Hue);
             index = AddCraft(typeof(TourmalinePlateChest), "Gem Armor", "Tourmaline Plate Chest", 105.0, 150.0, typeof(Tourmaline), 1044237, 400);
             AddSkill(index, SkillName.Blacksmith, 105.0, 150.0);
             AddRes(index, typeof(IronIngot), 1044036, 50);
+            SetItemHue(index, ItemSets.TourmalineSet.Hue);
             index = AddCraft(typeof(TourmalinePlateArms), "Gem Armor", "Tourmaline Plate Arms", 101.0, 150.0, typeof(Tourmaline), 1044237, 288);
             AddSkill(index, SkillName.Blacksmith, 101.0, 150.0);
             AddRes(index, typeof(IronIngot), 1044036, 40);
+            SetItemHue(index, ItemSets.TourmalineSet.Hue);
             index = AddCraft(typeof(TourmalinePlateGloves), "Gem Armor", "Tourmaline Plate Gloves", 101.0, 150.0, typeof(Tourmaline), 1044237, 192);
             AddSkill(index, SkillName.Blacksmith, 101.0, 150.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.TourmalineSet.Hue);
             index = AddCraft(typeof(TourmalinePlateLegs), "Gem Armor", "Tourmaline Plate Legs", 103.0, 150.0, typeof(Tourmaline), 1044237, 320);
             AddSkill(index, SkillName.Blacksmith, 103.0, 150.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.TourmalineSet.Hue);
             index = AddCraft(typeof(TourmalineHeaterShield), "Gem Armor", "Tourmaline Heater Shield", 104.0, 150.0, typeof(Tourmaline), 1044237, 288);
             AddSkill(index, SkillName.Blacksmith, 104.0, 150.0);
             AddRes(index, typeof(IronIngot), 1044036, 40);
+            SetItemHue(index, ItemSets.TourmalineSet.Hue);
             #endregion
 
             #region Amber
             index = AddCraft(typeof(AmberPlateHelm), "Gem Armor", "Amber Plate Helm", 106.0, 150.0, typeof(Amber), 1044238, 240);
             AddSkill(index, SkillName.Blacksmith, 106.0, 150.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.AmberSet.Hue);
             index = AddCraft(typeof(AmberPlateGorgot), "Gem Armor", "Amber Plate Gorgot", 106.0, 150.0, typeof(Amber), 1044238, 160);
             AddSkill(index, SkillName.Blacksmith, 106.0, 150.0);
             AddRes(index, typeof(IronIngot), 1044036, 25);
+            SetItemHue(index, ItemSets.AmberSet.Hue);
             index = AddCraft(typeof(AmberPlateChest), "Gem Armor", "Amber Plate Chest", 110.0, 150.0, typeof(Amber), 1044238, 400);
             AddSkill(index, SkillName.Blacksmith, 110.0, 150.0);
             AddRes(index, typeof(IronIngot), 1044036, 50);
+            SetItemHue(index, ItemSets.AmberSet.Hue);
             index = AddCraft(typeof(AmberPlateArms), "Gem Armor", "Amber Plate Arms", 108.0, 150.0, typeof(Amber), 1044238, 288);
             AddSkill(index, SkillName.Blacksmith, 108.0, 150.0);
             AddRes(index, typeof(IronIngot), 1044036, 40);
+            SetItemHue(index, ItemSets.AmberSet.Hue);
             index = AddCraft(typeof(AmberPlateGloves), "Gem Armor", "Amber Plate Gloves", 106.0, 150.0, typeof(Amber), 1044238, 192);
             AddSkill(index, SkillName.Blacksmith, 106.0, 150.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.AmberSet.Hue);
             index = AddCraft(typeof(AmberPlateLegs), "Gem Armor", "Amber Plate Legs", 108.0, 150.0, typeof(Amber), 1044238, 320);
             AddSkill(index, SkillName.Blacksmith, 108.0, 150.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.AmberSet.Hue);
             index = AddCraft(typeof(AmberHeaterShield), "Gem Armor", "Amber Heater Shield", 110.0, 150.0, typeof(Amber), 1044238, 288);
             AddSkill(index, SkillName.Blacksmith, 110.0, 150.0);
             AddRes(index, typeof(IronIngot), 1044036, 40);
+            SetItemHue(index, ItemSets.AmberSet.Hue);
             #endregion
             #region Amethyst
             index = AddCraft(typeof(AmethystPlateHelm), "Gem Armor", "Amethyst Plate Helm", 110.0, 140.0, typeof(Amethyst), 1044236, 240);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.AmethystSet.Hue);
             index = AddCraft(typeof(AmethystPlateGorgot), "Gem Armor", "Amethyst Plate Gorgot", 110.0, 140.0, typeof(Amethyst), 1044236, 160);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 25);
+            SetItemHue(index, ItemSets.AmethystSet.Hue);
             index = AddCraft(typeof(AmethystPlateChest), "Gem Armor", "Amethyst Plate Chest", 110.0, 140.0, typeof(Amethyst), 1044236, 400);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 50);
+            SetItemHue(index, ItemSets.AmethystSet.Hue);
             index = AddCraft(typeof(AmethystPlateArms), "Gem Armor", "Amethyst Plate Arms", 110.0, 140.0, typeof(Amethyst), 1044236, 288);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 40);
+            SetItemHue(index, ItemSets.AmethystSet.Hue);
             index = AddCraft(typeof(AmethystPlateGloves), "Gem Armor", "Amethyst Plate Gloves", 110.0, 140.0, typeof(Amethyst), 1044236, 192);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.AmethystSet.Hue);
             index = AddCraft(typeof(AmethystPlateLegs), "Gem Armor", "Amethyst Plate Legs", 110.0, 140.0, typeof(Amethyst), 1044236, 320);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.AmethystSet.Hue);
             index = AddCraft(typeof(AmethystHeaterShield), "Gem Armor", "Amethyst Heater Shield", 110.0, 140.0, typeof(Amethyst), 1044236, 288);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 40);
+            SetItemHue(index, ItemSets.AmethystSet.Hue);
             #endregion
 
             #region Citrine
             index = AddCraft(typeof(CitrinePlateHelm), "Gem Armor", "Citrine Plate Helm", 112.0, 180.0, typeof(IronIngot), 1044036, 30);
             AddSkill(index, SkillName.Blacksmith, 122.0, 160.0);
             AddRes(index, typeof(Citrine), 1044235, 240);
+            SetItemHue(index, ItemSets.CitrineSet.Hue);
             index = AddCraft(typeof(CitrinePlateGorgot), "Gem Armor", "Citrine Plate Gorgot", 112.0, 180.0, typeof(IronIngot), 1044036, 25);
             AddSkill(index, SkillName.Blacksmith, 122.0, 150.0);
             AddRes(index, typeof(Citrine), 1044235, 160);
+            SetItemHue(index, ItemSets.CitrineSet.Hue);
             index = AddCraft(typeof(CitrinePlateChest), "Gem Armor", "Citrine Plate Chest", 115.0, 180.0, typeof(IronIngot), 1044036, 50);
             AddSkill(index, SkillName.Blacksmith, 122.0, 180.0);
             AddRes(index, typeof(Citrine), 1044235, 400);
+            SetItemHue(index, ItemSets.CitrineSet.Hue);
             index = AddCraft(typeof(CitrinePlateArms), "Gem Armor", "Citrine Plate Arms", 112.0, 180.0, typeof(IronIngot), 1044036, 40);
             AddSkill(index, SkillName.Blacksmith, 122.0, 160.0);
             AddRes(index, typeof(Citrine), 1044235, 288);
+            SetItemHue(index, ItemSets.CitrineSet.Hue);
             index = AddCraft(typeof(CitrinePlateGloves), "Gem Armor", "Citrine Plate Gloves", 112.0, 180.0, typeof(IronIngot), 1044036, 30);
             AddSkill(index, SkillName.Blacksmith, 122.0, 160.0);
             AddRes(index, typeof(Citrine), 1044235, 192);
+            SetItemHue(index, ItemSets.CitrineSet.Hue);
             index = AddCraft(typeof(CitrinePlateLegs), "Gem Armor", "Citrine Plate Legs", 112.0, 180.0, typeof(IronIngot), 1044036, 40);
             AddSkill(index, SkillName.Blacksmith, 122.0, 170.0);
             AddRes(index, typeof(Citrine), 1044235, 320);
+            SetItemHue(index, ItemSets.CitrineSet.Hue);
             index = AddCraft(typeof(CitrineHeaterShield), "Gem Armor", "Citrine Heater Shield", 115.0, 180.0, typeof(IronIngot), 1044036, 50);
             AddSkill(index, SkillName.Blacksmith, 122.0, 180.0);
             AddRes(index, typeof(Citrine), 1044235, 288);
+            SetItemHue(index, ItemSets.CitrineSet.Hue);
             #endregion
 
             #region Emerald
             index = AddCraft(typeof(EmeraldPlateHelm), "Gem Armor", "Emerald Plate Helm", 114.0, 180.0, typeof(Emerald), 1044232, 240);
             AddSkill(index, SkillName.Blacksmith, 118.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.EmeraldSet.Hue);
             index = AddCraft(typeof(EmeraldPlateGorgot), "Gem Armor", "Emerald Plate Gorgot", 114.0, 180.0, typeof(Emerald), 1044232, 160);
             AddSkill(index, SkillName.Blacksmith, 118.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 25);
+            SetItemHue(index, ItemSets.EmeraldSet.Hue);
             index = AddCraft(typeof(EmeraldPlateChest), "Gem Armor", "Emerald Plate Chest", 118.0, 180.0, typeof(Emerald), 1044232, 400);
             AddSkill(index, SkillName.Blacksmith, 118.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 50);
+            SetItemHue(index, ItemSets.EmeraldSet.Hue);
             index = AddCraft(typeof(EmeraldPlateArms), "Gem Armor", "Emerald Plate Arms", 116.0, 180.0, typeof(Emerald), 1044232, 288);
             AddSkill(index, SkillName.Blacksmith, 118.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 40);
+            SetItemHue(index, ItemSets.EmeraldSet.Hue);
             index = AddCraft(typeof(EmeraldPlateGloves), "Gem Armor", "Emerald Plate Gloves", 116.0, 180.0, typeof(Emerald), 1044232, 192);
             AddSkill(index, SkillName.Blacksmith, 118.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.EmeraldSet.Hue);
             index = AddCraft(typeof(EmeraldPlateLegs), "Gem Armor", "Emerald Plate Legs", 118.0, 180.0, typeof(Emerald), 1044232, 320);
             AddSkill(index, SkillName.Blacksmith, 118.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.EmeraldSet.Hue);
             index = AddCraft(typeof(EmeraldHeaterShield), "Gem Armor", "Emerald Heater Shield", 118.0, 180.0, typeof(Emerald), 1044232, 288);
             AddSkill(index, SkillName.Blacksmith, 118.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 40);
+            SetItemHue(index, ItemSets.EmeraldSet.Hue);
             #endregion
 
             #region Ruby
             index = AddCraft(typeof(RubyPlateHelm), "Gem Armor", "Ruby Plate Helm", 122.0, 180.0, typeof(IronIngot), 1044036, 30);
             AddSkill(index, SkillName.Blacksmith, 122.0, 160.0);
             AddRes(index, typeof(Ruby), 1044234, 240);
+            SetItemHue(index, ItemSets.RubySet.Hue);
             index = AddCraft(typeof(RubyPlateGorgot), "Gem Armor", "Ruby Plate Gorgot", 122.0, 180.0, typeof(IronIngot), 1044036, 25);
             AddSkill(index, SkillName.Blacksmith, 122.0, 150.0);
             AddRes(index, typeof(Ruby), 1044234, 160);
+            SetItemHue(index, ItemSets.RubySet.Hue);
             index = AddCraft(typeof(RubyPlateChest), "Gem Armor", "Ruby Plate Chest", 122.0, 180.0, typeof(IronIngot), 1044036, 50);
             AddSkill(index, SkillName.Blacksmith, 122.0, 180.0);
             AddRes(index, typeof(Ruby), 1044234, 400);
+            SetItemHue(index, ItemSets.RubySet.Hue);
             index = AddCraft(typeof(RubyPlateArms), "Gem Armor", "Ruby Plate Arms", 122.0, 180.0, typeof(IronIngot), 1044036, 40);
             AddSkill(index, SkillName.Blacksmith, 122.0, 160.0);
             AddRes(index, typeof(Ruby), 1044234, 288);
+            SetItemHue(index, ItemSets.RubySet.Hue);
             index = AddCraft(typeof(RubyPlateGloves), "Gem Armor", "Ruby Plate Gloves", 122.0, 180.0, typeof(IronIngot), 1044036, 30);
             AddSkill(index, SkillName.Blacksmith, 122.0, 160.0);
             AddRes(index, typeof(Ruby), 1044234, 192);
+            SetItemHue(index, ItemSets.RubySet.Hue);
             index = AddCraft(typeof(RubyPlateLegs), "Gem Armor", "Ruby Plate Legs", 122.0, 180.0, typeof(IronIngot), 1044036, 40);
             AddSkill(index, SkillName.Blacksmith, 122.0, 170.0);
             AddRes(index, typeof(Ruby), 1044234, 320);
+            SetItemHue(index, ItemSets.RubySet.Hue);
             index = AddCraft(typeof(RubyHeaterShield), "Gem Armor", "Ruby Heater Shield", 122.0, 180.0, typeof(IronIngot), 1044036, 50);
             AddSkill(index, SkillName.Blacksmith, 122.0, 180.0);
             AddRes(index, typeof(Ruby), 1044234, 288);
+            SetItemHue(index, ItemSets.RubySet.Hue);
             #endregion
 
             #region Sapphire
             index = AddCraft(typeof(SapphirePlateHelm), "Gem Armor", "Sapphire Plate Helm", 116.0, 140.0, typeof(Sapphire), 1044233, 240);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.SapphireSet.Hue);
             index = AddCraft(typeof(SapphirePlateGorgot), "Gem Armor", "Sapphire Plate Gorgot", 116.0, 140.0, typeof(Sapphire), 1044233, 160);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 25);
+            SetItemHue(index, ItemSets.SapphireSet.Hue);
             index = AddCraft(typeof(SapphirePlateChest), "Gem Armor", "Sapphire Plate Chest", 118.0, 140.0, typeof(Sapphire), 1044233, 400);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 50);
+            SetItemHue(index, ItemSets.SapphireSet.Hue);
             index = AddCraft(typeof(SapphirePlateArms), "Gem Armor", "Sapphire Plate Arms", 118.0, 140.0, typeof(Sapphire), 1044233, 288);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 40);
+            SetItemHue(index, ItemSets.SapphireSet.Hue);
             index = AddCraft(typeof(SapphirePlateGloves), "Gem Armor", "Sapphire Plate Gloves", 116.0, 140.0, typeof(Sapphire), 1044233, 192);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.SapphireSet.Hue);
             index = AddCraft(typeof(SapphirePlateLegs), "Gem Armor", "Sapphire Plate Legs", 116.0, 140.0, typeof(Sapphire), 1044233, 320);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.SapphireSet.Hue);
             index = AddCraft(typeof(SapphireHeaterShield), "Gem Armor", "Sapphire Heater Shield", 118.0, 140.0, typeof(Sapphire), 1044233, 288);
             AddSkill(index, SkillName.Blacksmith, 110.0, 140.0);
             AddRes(index, typeof(IronIngot), 1044036, 40);
+            SetItemHue(index, ItemSets.SapphireSet.Hue);
             #endregion
 
 
@@ -514,47 +564,61 @@ namespace Server.Engines.Craft
             index = AddCraft(typeof(StarSapphirePlateHelm), "Gem Armor", "StarSapphire Plate Helm", 125.0, 180.0, typeof(StarSapphire), 1044231, 240);
             AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.StarSapphireSet.Hue);
             index = AddCraft(typeof(StarSapphirePlateGorgot), "Gem Armor", "StarSapphire Plate Gorgot", 125.0, 180.0, typeof(StarSapphire), 1044231, 160);
             AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 25);
+            SetItemHue(index, ItemSets.StarSapphireSet.Hue);
             index = AddCraft(typeof(StarSapphirePlateChest), "Gem Armor", "StarSapphire Plate Chest", 125.0, 180.0, typeof(StarSapphire), 1044231, 400);
             AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 50);
+            SetItemHue(index, ItemSets.StarSapphireSet.Hue);
             index = AddCraft(typeof(StarSapphirePlateArms), "Gem Armor", "StarSapphire Plate Arms", 125.0, 180.0, typeof(StarSapphire), 1044231, 288);
             AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 40);
+            SetItemHue(index, ItemSets.StarSapphireSet.Hue);
             index = AddCraft(typeof(StarSapphirePlateGloves), "Gem Armor", "StarSapphire Plate Gloves", 125.0, 180.0, typeof(StarSapphire), 1044231, 192);
             AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.StarSapphireSet.Hue);
             index = AddCraft(typeof(StarSapphirePlateLegs), "Gem Armor", "StarSapphire Plate Legs", 125.0, 180.0, typeof(StarSapphire), 1044231, 320);
             AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.StarSapphireSet.Hue);
             index = AddCraft(typeof(StarSapphireHeaterShield), "Gem Armor", "StarSapphire Heater Shield", 125.0, 180.0, typeof(StarSapphire), 1044231, 288);
             AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 40);
+            SetItemHue(index, ItemSets.StarSapphireSet.Hue);
             #endregion
             #region Diamond
             index = AddCraft(typeof(DiamondPlateHelm), "Gem Armor", "Diamond Plate Helm", 125.0, 180.0, typeof(Diamond), 1044239, 240);
             AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.DiamondSet.Hue);
             index = AddCraft(typeof(DiamondPlateGorgot), "Gem Armor", "Diamond Plate Gorgot", 125.0, 180.0, typeof(Diamond), 1044239, 160);
             AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 25);
+            SetItemHue(index, ItemSets.DiamondSet.Hue);
             index = AddCraft(typeof(DiamondPlateChest), "Gem Armor", "Diamond Plate Chest", 125.0, 180.0, typeof(Diamond), 1044239, 400);
             AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 50);
+            SetItemHue(index, ItemSets.DiamondSet.Hue);
             index = AddCraft(typeof(DiamondPlateArms), "Gem Armor", "Diamond Plate Arms", 125.0, 180.0, typeof(Diamond), 1044239, 288);
             AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 40);
+            SetItemHue(index, ItemSets.DiamondSet.Hue);
             index = AddCraft(typeof(DiamondPlateGloves), "Gem Armor", "Diamond Plate Gloves", 125.0, 180.0, typeof(Diamond), 1044239, 192);
             AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.DiamondSet.Hue);
             index = AddCraft(typeof(DiamondPlateLegs), "Gem Armor", "Diamond Plate Legs", 125.0, 180.0, typeof(Diamond), 1044239, 320);
             AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 30);
+            SetItemHue(index, ItemSets.DiamondSet.Hue);
             index = AddCraft(typeof(DiamondHeaterShield), "Gem Armor", "Diamond Heater Shield", 125.0, 180.0, typeof(Diamond), 1044239, 288);
             AddSkill(index, SkillName.Blacksmith, 125.0, 180.0);
             AddRes(index, typeof(IronIngot), 1044036, 40);
+            SetItemHue(index, ItemSets.DiamondSet.Hue);
             #endregion
 
             #endregion
