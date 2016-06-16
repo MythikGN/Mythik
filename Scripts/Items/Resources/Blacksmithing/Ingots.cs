@@ -125,7 +125,8 @@ namespace Server.Items
 			{
 				if ( m_Resource >= CraftResource.DullCopper && m_Resource <= CraftResource.Valorite )
 					return 1042684 + (int)(m_Resource - CraftResource.DullCopper);
-
+                if (m_Resource > CraftResource.Valorite)
+                    return 0;
 				return 1042692;
 			}
 		}
