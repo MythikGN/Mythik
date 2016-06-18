@@ -8,7 +8,7 @@ namespace Server.Misc
 	public class AutoSave : Timer
 	{
 		private static TimeSpan m_Delay = TimeSpan.FromMinutes( 60.0 );
-		private static TimeSpan m_Warning = TimeSpan.FromSeconds(30);
+		private static TimeSpan m_Warning = TimeSpan.FromSeconds(10);
 		//private static TimeSpan m_Warning = TimeSpan.FromSeconds( 15.0 );
 
 		public static void Initialize()
@@ -65,7 +65,7 @@ namespace Server.Misc
 				else if ( m > 0 )
 					World.Broadcast( 0x35, true, "The world will save in {0} minute{1}.", m, m != 1 ? "s" : "" );
 				else
-					World.Broadcast( 0x35, true, "The world will save in {0} second{1}.", s, s != 1 ? "s" : "" );
+					World.Broadcast( 0x35, true, "World save in {0} second{1}.", s, s != 1 ? "s" : "" );
 
 				Timer.DelayCall( m_Warning, new TimerCallback( Save ) );
 			}
@@ -73,7 +73,8 @@ namespace Server.Misc
 
 		public static void Save()
 		{
-			AutoSave.Save( true );
+
+            AutoSave.Save( true );
 		}
 
 		public static void Save( bool permitBackgroundWrite )
