@@ -23,23 +23,27 @@ namespace Scripts.Mythik.Gumps
                 new TownEntry( "Trinsic",   new Point3D( 1956, 2780, 10 ) ),
                 new TownEntry( "Vesper",    new Point3D( 2895, 688, 0 ) ),
                 new TownEntry( "Yew",       new Point3D( 546, 991, 0 ) ),
+                new TownEntry( "Serp's Hold",       new Point3D( 3021, 3397, 15 ) ),
             };
 
         private static TownEntry[] m_UnguardedTowns =
             {
                 new TownEntry( "Buc's Den",         new Point3D[] { new Point3D( 2705, 2162, 0 ), new Point3D( 2713, 2232, 0 ), new Point3D( 2667, 2107, 0 ) } ),
                 new TownEntry( "Minoc",             new Point3D[] { new Point3D( 2466, 443, 15 ), new Point3D( 2465, 544, 0 ), new Point3D( 2490, 486, 15 ) } ),
-                new TownEntry( "Serp's Hold",       new Point3D( 3021, 3397, 15 ) ),
+                //new TownEntry( "Serp's Hold",       new Point3D( 3021, 3397, 15 ) ),
                 new TownEntry( "Skara Brae",        new Point3D( 592, 2155, 0 ) ),
-                new TownEntry( "Wind",              new Point3D( 1361, 895, 0 ) ),
-                null,
+                //new TownEntry( "Wind",              new Point3D( 1361, 895, 0 ) ),
                 new TownEntry( "Britain Bridge",    new Point3D[] { new Point3D( 1365, 1755, 13 ), new Point3D( 1321, 1752, 10 ), new Point3D( 1374, 1808, 0 ) } ),
                 new TownEntry( "Cove Outskirts",    new Point3D[] { new Point3D( 2298, 1238, 0 ), new Point3D( 2291, 1188, 0 ), new Point3D( 2310, 1204, 0 ) } )
             };
 
         private static TownEntry[] m_NeutralTowns =
             {
-                new TownEntry( "Neutral Zone", new Point3D( 5192, 1216, 0 ) )
+                new TownEntry( "Neutral Zone",MythikStaticValues.NeutralZone ),
+                new TownEntry( "Donater Mall",MythikStaticValues.Mall ),
+                new TownEntry( "Boxing Arena",MythikStaticValues.ArenaBoxing ),
+                new TownEntry( "1v1 Arena",MythikStaticValues.ArenaOneVOne ),
+                new TownEntry( "FFA Arena",MythikStaticValues.ArenaFFA ),
             };
 
         private PlayerMobile m_Mobile;
