@@ -25,6 +25,7 @@ namespace Scripts.Mythik.Items.Rares.Equipment
         {
             var mod = GenerateBonus();
             Name = GenerateName(mod,"ring");
+            Hue = GenerateHue(mod);
             SkillBonuses.SetValues(0, mod.Skill, mod.Value);
         }
 		public SkillRing(Serial serial) : base(serial)
@@ -57,6 +58,21 @@ namespace Scripts.Mythik.Items.Rares.Equipment
             return name;
 
         }
+        public static int GenerateHue(SkillMod mod)
+        {
+            var name = 0;
+            if (mod.Value <= 1.0)
+                name = 0x1b5;
+            else if (mod.Value <= 2.0)
+                name = 0x2a1;
+            else if (mod.Value <= 3.0)
+                name = 0x539;
+            else if (mod.Value <= 4.0)
+                name = 0x814;
+            else if (mod.Value <= 5.0)
+                name = 0x819;
+            return name;
+        }
 
         public static SkillMod GenerateBonus()
         {
@@ -81,6 +97,7 @@ namespace Scripts.Mythik.Items.Rares.Equipment
         {
             var mod = SkillRing.GenerateBonus();
             Name = SkillRing.GenerateName(mod, "bracelet");
+            Hue = SkillRing.GenerateHue(mod);
             SkillBonuses.SetValues(0, mod.Skill, mod.Value);
         }
         public SkillBracelet(Serial serial) : base(serial)
@@ -110,6 +127,7 @@ namespace Scripts.Mythik.Items.Rares.Equipment
         {
             var mod = SkillRing.GenerateBonus();
             Name = SkillRing.GenerateName(mod, "necklace");
+            Hue = SkillRing.GenerateHue(mod);
             SkillBonuses.SetValues(0, mod.Skill, mod.Value);
         }
         public SkillNecklace(Serial serial) : base(serial)
@@ -140,6 +158,7 @@ namespace Scripts.Mythik.Items.Rares.Equipment
         {
             var mod = SkillRing.GenerateBonus();
             Name = SkillRing.GenerateName(mod, "earrings");
+            Hue = SkillRing.GenerateHue(mod);
             SkillBonuses.SetValues(0, mod.Skill, mod.Value);
         }
         public SkillEarrings(Serial serial) : base(serial)
