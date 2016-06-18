@@ -1147,7 +1147,8 @@ namespace Server {
 			m_DiskWriteHandle.Reset();
 
 			if ( message )
-				Broadcast( 0x35, true, "The world is saving, please wait." );
+                Broadcast(0x35, true, "World save has been initiated.");
+                //Broadcast( 0x35, true, "The world is saving, please wait." );
 
 			SaveStrategy strategy = SaveStrategy.Acquire();
 			Console.WriteLine( "Core: Using {0} save strategy", strategy.Name.ToLowerInvariant() );
@@ -1188,7 +1189,7 @@ namespace Server {
 			Console.WriteLine( "Save done in {0:F2} seconds.", watch.Elapsed.TotalSeconds );
 
 			if ( message )
-				Broadcast( 0x35, true, "World save complete. The entire process took {0:F1} seconds.", watch.Elapsed.TotalSeconds );
+				Broadcast( 0x35, true, "The process took {0:F1} seconds. {1} items and {2} mobiles were saved.", watch.Elapsed.TotalSeconds,World.Items.Count,World.Mobiles.Count );
 
 			NetState.Resume();
 		}
