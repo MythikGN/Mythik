@@ -5,6 +5,7 @@ using Server.Mobiles;
 using Server.Network;
 using Server.Accounting;
 using Scripts.Mythik.Mobiles;
+using Scripts.Mythik;
 
 namespace Server.Misc
 {
@@ -697,13 +698,13 @@ namespace Server.Misc
 				newChar.BankBox.DropItem( ticket );
 			}
 
-			CityInfo city = GetStartLocation( args, false );
+			//CityInfo city = GetStartLocation( args, false );
 
-			newChar.MoveToWorld( city.Location, Map.Felucca );
+			newChar.MoveToWorld( MythikStaticValues.NeutralZone, Map.Felucca );
 
 			Console.WriteLine( "Login: {0}: New character being created (account={1})", state, args.Account.Username );
 			Console.WriteLine( " - Character: {0} (serial={1})", newChar.Name, newChar.Serial );
-			Console.WriteLine( " - Started: {0} {1} in {2}", city.City, city.Location, city.Map.ToString() );
+			//Console.WriteLine( " - Started: {0} {1} in {2}", city.City, city.Location, city.Map.ToString() );
 
 			new WelcomeTimer( newChar ).Start();
 		}
