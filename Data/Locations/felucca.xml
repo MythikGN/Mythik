@@ -4,7 +4,7 @@
 		<parent name="Factions">
 			<parent name="Towns">
 				<child name="Britain" x="1592" y="1680" z="10" />
-				<child name="Magincia" x="3714" y="2235" z="20" />
+				<child name="Magincia" x="3202" y="1443" z="20" />
 				<child name="Minoc" x="2471" y="439" z="15" />
 				<child name="Moonglow" x="4436" y="1083" z="0" />
 				<child name="Skara Brae" x="576" y="2200" z="0" />
@@ -47,7 +47,7 @@
 				<child name="Level 3" x="5137" y="986" z="5" />
 			</parent>
 			<parent name="Hythloth">
-				<child name="Entrance" x="4721" y="3822" z="0" />
+				<child name="Entrance" x="809" y="3822" z="0" />
 				<child name="Level 1" x="5905" y="20" z="46" />
 				<child name="Level 2" x="5976" y="169" z="0" />
 				<child name="Level 3" x="6083" y="145" z="-20" />
@@ -167,9 +167,9 @@
 				<child name="Suburbs" x="1662" y="1572" z="5" />
 			</parent>
 			<parent name="Buccaneers Den">
-				<child name="Bathhouse" x="2667" y="2084" z="5" />
-				<child name="Docks" x="2736" y="2166" z="0" />
-				<child name="Tunnels" x="2667" y="2069" z="-20" />
+				<child name="Bathhouse" x="323" y="2620" z="5" />
+				<child name="Docks" x="392" y="2702" z="0" />
+				<child name="Tunnels" x="323" y="2605" z="-20" />
 			</parent>
 			<parent name="Cove">
 				<child name="Cemetery" x="2443" y="1123" z="5" />
@@ -220,9 +220,9 @@
 				<child name="North" x="3650" y="2516" z="0" />
 			</parent>
 			<parent name="Serpents Hold">
-				<child name="North" x="3023" y="3417" z="15" />
-				<child name="South" x="2906" y="3505" z="10" />
-				<child name="Guard Post" x="3011" y="3526" z="15" />
+				<child name="North" x="1879" y="3833" z="15" />
+				<child name="South" x="1762" y="3921" z="10" />
+				<child name="Guard Post" x="1867" y="3942" z="15" />
 			</parent>
 			<parent name="Skara Brae">
 				<child name="East" x="811" y="2243" z="0" />
@@ -264,16 +264,113 @@
 				<child name="Hidden Cave" x="313" y="787" z="-24" />
 				<child name="Orc Fort" x="633" y="1499" z="0" />
 			</parent>
-			<parent name="Delucia">
-				<child name="Watch Tower" x="5276" y="3945" z="37" />
-				<child name="Center" x="5228" y="3978" z="37" />
-				<child name="Orc Fort" x="5210" y="3636" z="3" />
+		</parent>
+	<parent name="Ilshenar Cities">
+			<parent name="Ancient Citadel">
+				<child name="Entrance" x="4518" y="3120" z="-14" />
 			</parent>
-			<parent name="Papua">
-				<child name="The Just Inn" x="5769" y="3176" z="0" />
-				<child name="Center" x="5730" y="3208" z="-4" />
-				<child name="Docks" x="5825" y="3256" z="2" />
+			<parent name="Gargoyle City">
+				<child name="Bank" x="3852" y="3154" z="-40" />
+				<child name="Central Area" x="3836" y="3193" z="-20" />
+			</parent>
+			<parent name="Lakeshire">
+				<child name="Central Area" x="4203" y="3676" z="-25" />
+			</parent>
+			<parent name="Mistas">
+				<child name="Central Area" x="3820" y="3625" z="-30" />
+			</parent>
+			<parent name="Montor">
+				<child name="Central Area" x="4648" y="2872" z="0" />
+			</parent>
+			<parent name="Req Volon">
+				<child name="Central Area" x="4362" y="3625" z="-13" />
+			</parent>
+			<parent name="Savage Camp">
+				<child name="Central Area" x="4248" y="724" z="0" />
+			</parent>
+			<parent name="Terort Skitas">
+				<child name="Entrance" x="3568" y="2982" z="41" />
 			</parent>
 		</parent>
+		<parent name="Ilshenar Dungeons">
+			<parent name="Ankh">
+				<child name="Entrance" x="3576" y="3702" z="-100" />
+				<child name="Level 1" x="5484" y="3420" z="-28" />
+				<child name="Kirin passage" x="5131" y="3193" z="-29" />
+				<child name="Serpentine Passage" x="5773" y="3758" z="-25" />
+			</parent>
+			<parent name="Blood">
+			    <child name="Entrance" x="4747" y="3779" z="-1" />
+				<child name="Level 1" x="5795" y="3876" z="-28" />
+			</parent>
+			<parent name="Exodus">
+				<child name="Entrance" x="3850" y="3330" z="-80" />
+				<child name="Level 1" x="5422" y="4005" z="-28" />
+			</parent>
+			<parent name="Rock">
+				<child name="Entrance" x="4788" y="3125" z="70" />
+				<child name="Level 1" x="5555" y="3948" z="-7" />
+				<child name="Level 2" x="5652" y="3935" z="-27" />
+			</parent>
+			<parent name="Sorcerers">
+				<child name="Entrance" x="3548" y="3014" z="-53" />
+				<child name="Level 1" x="5500" y="3813" z="-28" />
+				<child name="Level 2" x="5313" y="3730" z="-18" />
+				<child name="Level 3" x="5204" y="3827" z="-28" />
+				<child name="Level 4" x="5309" y="3829" z="-28" />
+				<child name="Level 5" x="5308" y="3825" z="-28" />
+			</parent>
+			<parent name="Spectre">
+				<child name="Entrance" x="4363" y="3585" z="-8" />
+				<child name="Level 1" x="5247" y="4091" z="-18" />
+			</parent>
+			<parent name="Wisp">
+				<child name="Entrance" x="3651" y="3854" z="-58" />
+				<child name="Level 1" x="5140" y="3636" z="-28" />
+				<child name="Level 2" x="5230" y="3604" z="-28" />
+				<child name="Level 3" x="5344" y="3663" z="-28" />
+				<child name="Level 4" x="5472" y="3540" z="-28" />
+				<child name="Level 5" x="5454" y="3577" z="-33" />
+				<child name="Level 6" x="5378" y="3546" z="-28" />
+				<child name="Level 7" x="5319" y="3660" z="-28" />
+				<child name="Level 8" x="5266" y="3591" z="-28" />
+			</parent>
+		</parent>
+		<parent name="Ilshenar Caves">
+			<parent name="Ancient Lair">
+				<child name="Entrance" x="3940" y="3055" z="-30" />
+				<child name="Level 1" x="5637" y="3688" z="-27" />
+			</parent>
+			<parent name="Lizard Passage">
+				<child name="Entrance" x="3314" y="3883" z="-37" />
+				<child name="Level 1" x="5201" y="3973" z="-18" />
+				<child name="Level 2" x="3227" y="3889" z="-18" />
+			</parent>
+			<parent name="Mushroom Cave">
+				<child name="Entrance" x="4459" y="3881" z="-24" />
+			</parent>
+			<parent name="Rat Cave">
+				<child name="Entrance" x="4034" y="3705" z="-23" />
+				<child name="Level 1" x="5708" y="3495" z="-3" />
+				<child name="Level 2" x="5606" y="3494" z="-28" />
+			</parent>
+			<parent name="Spider Cave">
+				<child name="Entrance" x="4421" y="3465" z="-19" />
+				<child name="Level 1" x="5161" y="3919" z="-28" />
+				<child name="Level 2" x="4517" y="3429" z="10" />
+				<child name="Ethereal Keep" x="4365" y="3654" z="-26" />
+			</parent>
+		</parent>
+		<parent name="Ilshenar Shrines">
+			<child name="Compassion" x="4217" y="3021" z="-13" />
+			<child name="Honesty" x="3720" y="3908" z="-60" />
+			<child name="Honor" x="3748" y="3280" z="-29" />
+			<child name="Humility" x="3287" y="3568" z="0" />
+			<child name="Justice" x="3987" y="3559" z="-35" />
+			<child name="Sacrifice" x="4175" y="3839" z="-30" />
+			<child name="Spirituality" x="4532" y="3893" z="-3" />
+			<child name="Valor" x="3527" y="2770" z="-44" />
+		</parent>
 	</parent>
+
 </places>
