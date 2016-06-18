@@ -3390,7 +3390,7 @@ namespace Server.Network
 			m_Stream.Write( (int) beheld.Serial );
             if(beholder?.NetState?.Version?.Major <= 3)
             {
-                m_Stream.Write((short)ConvertBody203(beheld.Body));
+                m_Stream.Write((short)ConvertBody203(beheld.Body,beholder));
             }
             else
                 m_Stream.Write((short)beheld.Body);
@@ -3523,7 +3523,7 @@ namespace Server.Network
 			m_Stream.Write( (int) beheld.Serial );
             if (beholder.NetState?.Version?.Major <= 3)
             {
-                m_Stream.Write((short)ConvertBody203(beheld.Body));
+                m_Stream.Write((short)ConvertBody203(beheld.Body,beholder));
             }
             else
                 m_Stream.Write((short)beheld.Body);
@@ -4565,8 +4565,12 @@ namespace Server.Network
 			m_Stream = null;
 		}
 
-        internal static short ConvertBody203(Body body)
+        internal static short ConvertBody203(Body body, Mobile mobile = null)
         {
+            if(mobile != null)
+            {
+                
+            }
             switch (body.BodyID)
             {
                 case 132: // kirin
@@ -4577,8 +4581,8 @@ namespace Server.Network
                     return 224;
                 case 0x31A://swampdrag
                     return 227;
-                //case 318://darkfather aka demonknight
-                //    return 20;
+                case 318://darkfather aka demonknight
+                    return 19;
                 case 243://hiryu
                     return 229;
                 case 246: // bake
@@ -4607,6 +4611,89 @@ namespace Server.Network
                     return 46;
                 case 315://flesh renderer
                     return 49;
+
+                case 304: //flesh golem
+                    return 62;
+                case 305: //gorefiend
+                    return 63;
+                case 306: //  impaler
+                    return 64;
+                case 307: //gibberling
+                    return 65;
+                case 309: //patch skele
+                    return 66;
+                case 310: // wailing banshee
+                    return 67;
+                case 313: // darknight creeper
+                    return 68;
+                case 314://ravager
+                    return 69;
+                case 317: //vampbat
+                    return 73;
+                case 319://maggots
+                    return 74;
+                case 157://spider
+                    return 77;
+                case 11: //Spider
+                    return 78;
+                case 20://spider
+                    return 79;
+                case 28://spider
+                    return 82;
+                case 101://centaur
+                    return 83;
+                case 102://new demon?
+                    return 9;//old demon
+                case 43: //icedemon
+                    return 84;
+                case 62://wyrven
+                    return 88;
+                case 74://imp
+                    return 46;
+                case 26://shade
+                    return 89;
+                case 76://titan?
+                    return 90;
+                case 764://juka
+                    return 91;
+                case 765:
+                    return 92;
+                case 766:
+                    return 93;
+                case 767://???
+                    return 94;
+                case 769://??
+                    return 96;
+                case 770://meer lady
+                    return 97;
+                case 771:
+                    return 98;
+                case 772:
+                    return 99;
+                case 773:
+                    return 100;
+                case 776://sml hrde dnm
+                    return 101;
+                case 752://golem
+                    return 102;
+                case 781://solen
+                    return 105;
+                case 782:
+                    return 106;
+                case 783:
+                    return 107;
+                case 784:
+                    return 108;
+                case 67: // garg
+                    return 109;
+                case 753:
+                    return 110;
+                case 754:
+                    return 111;
+                case 755:
+                    return 112;
+                case 776:
+                    return 113;
                 default:
                     return (short)body.BodyID;
 
