@@ -4670,14 +4670,15 @@ namespace Server.Mobiles
 
 		public virtual void OnKilledBy( Mobile mob )
 		{
-			#region Mondain's Legacy
+            /*#region Mondain's Legacy
 			if ( GivesMLMinorArtifact )
 			{
 				if ( MondainsLegacy.CheckArtifactChance( mob, this ) )
 					MondainsLegacy.GiveArtifactTo( mob );
 			}
 			#endregion
-			else if ( m_Paragon )
+			else*/
+            if ( m_Paragon )
 			{
 				if ( Paragon.CheckArtifactChance( mob, this ) )
 					Paragon.GiveArtifactTo( mob );
