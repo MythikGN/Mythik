@@ -4666,21 +4666,21 @@ namespace Server.Network
                     return 96;
                 case 770://meer lady
                     return 97;
-                case 771:
+                case 771://meer guy
                     return 98;
-                case 772:
+                case 772://meer boss
                     return 99;
-                case 773:
+                case 773: //meer archer
                     return 100;
                 case 776://sml hrde dnm
                     return 101;
                 case 752://golem
                     return 102;
-                case 781://solen
+                case 781://solen worker
                     return 105;
-                case 782:
+                case 782://warrior
                     return 106;
-                case 783:
+                case 783://queen
                     return 107;
                 case 784:
                     return 108;
@@ -4692,7 +4692,7 @@ namespace Server.Network
                     return 111;
                 case 755:
                     return 112;
-                case 776:
+                case 758:
                     return 113;
                 default:
                     return (short)body.BodyID;
