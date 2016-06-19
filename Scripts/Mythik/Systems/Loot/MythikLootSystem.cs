@@ -225,12 +225,14 @@ namespace Scripts.Mythik.Systems.Loot
             }
         }
 
+        // these are dropped via paragon system as well
+        // probably via tmaps? TODO
         /// <summary>
         /// List of items rewarded using ToT style system dropped direct to backpack, 
         /// and an increasing chance to get one every mob you kill, till you get one.
         /// Killers luck also effects drop rate.
         /// </summary>
-        private static Type[] m_LesserArtifacts = new Type[] {
+        public static Type[] LesserArtifacts = new Type[] {
             typeof(RareClothDyeTub),typeof( RareLeatherDyeTub ), typeof(RuneBookChargeDeed),
             typeof(AnimateDeadScrollRecipe),typeof(BloodOathScrollRecipe),typeof(SummonFamiliarScrollRecipe),
             typeof(EnemyOfOneScrollRecipe), typeof(HolyWarFork), typeof(SkillBracelet), typeof(SkillRing), typeof(SkillNecklace), typeof(SkillEarrings)
@@ -269,7 +271,7 @@ namespace Scripts.Mythik.Systems.Loot
 
                 try
                 {
-                    i = Activator.CreateInstance(m_LesserArtifacts[Utility.Random(m_LesserArtifacts.Length)]) as Item;
+                    i = Activator.CreateInstance(LesserArtifacts[Utility.Random(LesserArtifacts.Length)]) as Item;
                 }
                 catch
                 { }

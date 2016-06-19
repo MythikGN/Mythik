@@ -2,6 +2,7 @@ using System;
 using Server;
 using Server.Items;
 using Server.Mobiles;
+using Scripts.Mythik.Systems.Loot;
 
 namespace Server.Engines.XmlSpawner2
 {
@@ -11,21 +12,7 @@ namespace Server.Engines.XmlSpawner2
         private double m_ChestChance;         // Chance that a paragon will carry a paragon chest
 
         // default artifact types
-        private static Type[] m_Artifacts = new Type[]
-		{
-			typeof( GoldBricks ), typeof( PhillipsWoodenSteed ), 
-			typeof( AlchemistsBauble ), typeof( ArcticDeathDealer ),
-			typeof( BlazeOfDeath ), typeof( BowOfTheJukaKing ),
-			typeof( BurglarsBandana ), typeof( CavortingClub ),
-			typeof( EnchantedTitanLegBone ), typeof( GwennosHarp ),
-			typeof( IolosLute ), typeof( LunaLance ),
-			typeof( NightsKiss ), typeof( NoxRangersHeavyCrossbow ),
-			typeof( OrcishVisage ), typeof( PolarBearMask ),
-			typeof( ShieldOfInvulnerability ), typeof( StaffOfPower ),
-			typeof( VioletCourage ), typeof( HeartOfTheLion ), 
-			typeof( WrathOfTheDryad ), typeof( PixieSwatter ), 
-			typeof( GlovesOfThePugilist )
-		};
+      
 
         private int m_Hue;
 
@@ -47,7 +34,7 @@ namespace Server.Engines.XmlSpawner2
 
         #region public properties
 
-        public virtual Type[] Artifacts { get { return m_Artifacts; } set { m_Artifacts = value; } }
+        public virtual Type[] Artifacts { get { return MythikLootSystem.LesserArtifacts; } }
 
         [CommandProperty(AccessLevel.GameMaster)]
         public virtual double ConvertFactor { get { return m_ConvertFactor; } set { m_ConvertFactor = value; } }

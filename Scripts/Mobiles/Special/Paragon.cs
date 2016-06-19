@@ -1,6 +1,7 @@
 using System;
 using Server;
 using Server.Items;
+using Scripts.Mythik.Systems.Loot;
 
 namespace Server.Mobiles
 {
@@ -10,24 +11,10 @@ namespace Server.Mobiles
 		public static double ChocolateIngredientChance = .20;  // Chance that a paragon will drop a chocolatiering ingredient
 		public static Map[] Maps = new Map[]                   // Maps that paragons will spawn on
 		{
-			Map.Ilshenar
+			Map.Felucca
 		};
 
-		public static Type[] Artifacts = new Type[]
-		{
-			typeof( GoldBricks ), typeof( PhillipsWoodenSteed ),
-			typeof( AlchemistsBauble ), typeof( ArcticDeathDealer ),
-			typeof( BlazeOfDeath ), typeof( BowOfTheJukaKing ),
-			typeof( BurglarsBandana ), typeof( CavortingClub ),
-			typeof( EnchantedTitanLegBone ), typeof( GwennosHarp ),
-			typeof( IolosLute ), typeof( LunaLance ),
-			typeof( NightsKiss ), typeof( NoxRangersHeavyCrossbow ),
-			typeof( OrcishVisage ), typeof( PolarBearMask ),
-			typeof( ShieldOfInvulnerability ), typeof( StaffOfPower ),
-			typeof( VioletCourage ), typeof( HeartOfTheLion ),
-			typeof( WrathOfTheDryad ), typeof( PixieSwatter ),
-			typeof( GlovesOfThePugilist )
-		};
+		
 
 		public static int    Hue   = 0x501;        // Paragon hue
 
@@ -174,7 +161,7 @@ namespace Server.Mobiles
 
 		public static void GiveArtifactTo( Mobile m )
 		{
-			Item item = (Item)Activator.CreateInstance( Artifacts[Utility.Random(Artifacts.Length)] );
+			Item item = (Item)Activator.CreateInstance( MythikLootSystem.LesserArtifacts[Utility.Random(MythikLootSystem.LesserArtifacts.Length)] );
 
 			if ( m.AddToBackpack( item ) )
 				m.SendMessage( "As a reward for slaying the mighty paragon, an artifact has been placed in your backpack." );
