@@ -6,7 +6,7 @@ namespace Server.Items
 {
 	public interface ICommodity /* added IsDeedable prop so expansion-based deedables can determine true/false */
 	{
-		int DescriptionNumber{ get; }
+		TextDefinition Description{ get; }
 		bool IsDeedable { get; }
 	}
 
@@ -107,10 +107,14 @@ namespace Server.Items
 			if ( m_Commodity != null )
 			{
 				string args;
-
-				if ( m_Commodity.Name == null )
-					args = String.Format( "#{0}\t{1}", ( m_Commodity is ICommodity ) ? ((ICommodity)m_Commodity).DescriptionNumber : m_Commodity.LabelNumber, m_Commodity.Amount );
-				else
+   				if ( m_Commodity.Name == null)
+                {
+                    if((m_Commodity as ICommodity).Description.Number != 0)
+                        args = String.Format("#{0}\t{1}", (m_Commodity is ICommodity) ? ((ICommodity)m_Commodity).Description.Number : m_Commodity.LabelNumber, m_Commodity.Amount);
+                    else
+                        args = String.Format("{0}\t{1}", (m_Commodity as ICommodity).Description.String, m_Commodity.Amount);
+                }
+                else
 					args = String.Format( "{0}\t{1}", m_Commodity.Name, m_Commodity.Amount );
 
 				list.Add( 1060658, args ); // ~1_val~: ~2_val~
@@ -129,8 +133,14 @@ namespace Server.Items
 			{
 				string args;
 
-				if ( m_Commodity.Name == null )
-					args = String.Format( "#{0}\t{1}", ( m_Commodity is ICommodity ) ? ((ICommodity)m_Commodity).DescriptionNumber : m_Commodity.LabelNumber, m_Commodity.Amount );
+				if ( m_Commodity.Name == null)
+                {
+                    if ((m_Commodity as ICommodity).Description.Number != 0)
+                        args = String.Format("#{0}\t{1}", (m_Commodity is ICommodity) ? ((ICommodity)m_Commodity).Description.Number : m_Commodity.LabelNumber, m_Commodity.Amount);
+                    else
+                        args = String.Format("{0}\t{1}", (m_Commodity as ICommodity).Description.String, m_Commodity.Amount);
+
+                }
 				else
 					args = String.Format( "{0}\t{1}", m_Commodity.Name, m_Commodity.Amount );
 
