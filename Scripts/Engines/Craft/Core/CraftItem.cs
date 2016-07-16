@@ -85,9 +85,16 @@ namespace Server.Engines.Craft
 		
 		public static int ItemIDOf( Type type ) {
 			int itemId;
+           
 
-			if ( !_itemIds.TryGetValue( type, out itemId ) ) {
-				if ( type == typeof( FactionExplosionTrap ) ) {
+
+            if ( !_itemIds.TryGetValue( type, out itemId ) ) {
+                if ( type == typeof(RunicHammer))
+                    itemId = 0x13E3;
+                if ( type == typeof(AncientSmithyHammer))
+                    itemId = 0x13E4;
+
+                if ( type == typeof( FactionExplosionTrap ) ) {
 					itemId = 14034;
 				} else if ( type == typeof( FactionGasTrap ) ) {
 					itemId = 4523;
@@ -109,7 +116,7 @@ namespace Server.Engines.Craft
 				if ( itemId == 0 ) {
 					Item item = null;
 
-					try { item = Activator.CreateInstance( type ) as Item; } catch { }
+					try { item = Activator.CreateInstance( type ) as Item; } catch { try { item = Activator.CreateInstance(type,10) as Item; } catch { } }
 
 					if ( item != null ) {
 						itemId = item.ItemID;
