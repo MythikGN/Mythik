@@ -6,8 +6,8 @@ namespace Server.Items
 	[FlipableAttribute( 0x11EA, 0x11EB )]
 	public class Sand : Item, ICommodity
 	{
-		int ICommodity.DescriptionNumber { get { return LabelNumber; } }
-		bool ICommodity.IsDeedable { get { return true; } }
+        TextDefinition ICommodity.Description { get { if (LabelNumber != 0) return LabelNumber; else return Name; } }
+        bool ICommodity.IsDeedable { get { return true; } }
 
 		public override int LabelNumber{ get{ return 1044626; } } // sand
 

@@ -20,8 +20,8 @@ namespace Server.Items
 		{
 			get { return 0.1; }
 		}
-		
-		int ICommodity.DescriptionNumber { get { return LabelNumber; } }
+
+        TextDefinition ICommodity.Description { get { if (LabelNumber != 0) return LabelNumber; else return Name; } }
 		bool ICommodity.IsDeedable { get { return true; } }
 
 		public override void Serialize( GenericWriter writer )

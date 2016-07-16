@@ -14,9 +14,9 @@ namespace Server.Items
 			get{ return m_Resource; }
 			set{ m_Resource = value; InvalidateProperties(); }
 		}
-		
-		int ICommodity.DescriptionNumber { get { return LabelNumber; } }
-		bool ICommodity.IsDeedable { get { return true; } }
+
+        TextDefinition ICommodity.Description { get { if (LabelNumber != 0) return LabelNumber; else return Name; } }
+        bool ICommodity.IsDeedable { get { return true; } }
 
 		public override void Serialize( GenericWriter writer )
 		{

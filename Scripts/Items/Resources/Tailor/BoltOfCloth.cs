@@ -7,8 +7,8 @@ namespace Server.Items
 	[FlipableAttribute( 0xF95, 0xF96, 0xF97, 0xF98, 0xF99, 0xF9A, 0xF9B, 0xF9C )]
 	public class BoltOfCloth : Item, IScissorable, IDyable, ICommodity
 	{
-		int ICommodity.DescriptionNumber { get { return LabelNumber; } }
-		bool ICommodity.IsDeedable { get { return true; } }
+        TextDefinition ICommodity.Description { get { if (LabelNumber != 0) return LabelNumber; else return Name; } }
+        bool ICommodity.IsDeedable { get { return true; } }
 
 		[Constructable]
 		public BoltOfCloth() : this( 1 )

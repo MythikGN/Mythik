@@ -10,14 +10,16 @@ namespace Scripts.Mythik.Items.Misc
 {
     public class EyeOfNewt : BaseReagent, ICommodity
     {
-      
-        public int DescriptionNumber
+        TextDefinition ICommodity.Description { get { if (LabelNumber != 0) return LabelNumber; else return Name; } }
+
+        public override int LabelNumber
         {
             get
             {
                 return 1023975;
             }
         }
+       
 
         public bool IsDeedable
         {

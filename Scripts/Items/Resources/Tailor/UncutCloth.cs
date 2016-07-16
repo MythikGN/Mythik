@@ -7,8 +7,8 @@ namespace Server.Items
 	[FlipableAttribute( 0x1765, 0x1767 )]
 	public class UncutCloth : Item, IScissorable, IDyable, ICommodity
 	{
-		int ICommodity.DescriptionNumber { get { return LabelNumber; } }
-		bool ICommodity.IsDeedable { get { return true; } }
+        TextDefinition ICommodity.Description { get { if (LabelNumber != 0) return LabelNumber; else return Name; } }
+        bool ICommodity.IsDeedable { get { return true; } }
 
 		public override double DefaultWeight
 		{

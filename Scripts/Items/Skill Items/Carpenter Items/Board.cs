@@ -14,7 +14,7 @@ namespace Server.Items
 			set { m_Resource = value; InvalidateProperties(); }
 		}
 
-		int ICommodity.DescriptionNumber 
+		TextDefinition ICommodity.Description
 		{ 
 			get
 			{
@@ -27,7 +27,6 @@ namespace Server.Items
 					case CraftResource.Frostwood: return 1075056;
 					case CraftResource.Heartwood: return 1075062;	//WHY Osi.  Why?
 				}
-
 				return LabelNumber;
 			} 
 		}

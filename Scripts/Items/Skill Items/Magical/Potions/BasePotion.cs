@@ -61,8 +61,8 @@ namespace Server.Items
 			}
 		}
 
-		int ICommodity.DescriptionNumber { get { return LabelNumber; } }
-		bool ICommodity.IsDeedable { get { return (Core.ML); } }
+        TextDefinition ICommodity.Description { get { if (LabelNumber != 0) return LabelNumber; else return Name; } }
+        bool ICommodity.IsDeedable { get { return (Core.ML); } }
 
 		public override int LabelNumber{ get{ return 1041314 + (int)m_PotionEffect; } }
 

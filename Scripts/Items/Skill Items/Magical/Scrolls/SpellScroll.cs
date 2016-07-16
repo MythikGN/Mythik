@@ -18,8 +18,8 @@ namespace Server.Items
 			}
 		}
 
-		int ICommodity.DescriptionNumber { get { return LabelNumber; } }
-		bool ICommodity.IsDeedable { get { return (Core.ML); } }
+        TextDefinition ICommodity.Description { get { if (LabelNumber != 0) return LabelNumber; else return Name; } }
+        bool ICommodity.IsDeedable { get { return (Core.ML); } }
 
 		public SpellScroll( Serial serial ) : base( serial )
 		{

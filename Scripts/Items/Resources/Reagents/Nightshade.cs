@@ -6,8 +6,8 @@ namespace Server.Items
 {
 	public class Nightshade : BaseReagent, ICommodity
 	{
-		int ICommodity.DescriptionNumber { get { return LabelNumber; } }
-		bool ICommodity.IsDeedable { get { return true; } }
+        TextDefinition ICommodity.Description { get { if (LabelNumber != 0) return LabelNumber; else return Name; } }
+        bool ICommodity.IsDeedable { get { return true; } }
 
 		[Constructable]
 		public Nightshade() : this( 1 )

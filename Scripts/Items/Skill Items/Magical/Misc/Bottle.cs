@@ -4,8 +4,8 @@ namespace Server.Items
 {
 	public class Bottle : Item, ICommodity
 	{
-		int ICommodity.DescriptionNumber { get { return LabelNumber; } }
-		bool ICommodity.IsDeedable { get { return (Core.ML); } }
+        TextDefinition ICommodity.Description { get { if (LabelNumber != 0) return LabelNumber; else return Name; } }
+        bool ICommodity.IsDeedable { get { return (Core.ML); } }
 
 		[Constructable]
 		public Bottle() : this( 1 )
