@@ -50,7 +50,7 @@ namespace Scripts.Mythik.Web
                 writer.Formatting = Formatting.Indented;
                 //writer.WritePropertyName("items");
                 writer.WriteStartArray();
-                foreach (CraftItem item in system.CraftItems.GetList())
+                foreach (CraftItem item in system.CraftItems)
                 {
                     writer.WriteStartObject();
                     writer.WritePropertyName("Name");
