@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25123.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server.csproj", "{84C52B21-E70D-499B-ACAE-D94ADDCECC2B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scripts", "..\Scripts\Scripts.csproj", "{FE1C86AA-C126-4E79-AB5A-1695EAEF01F8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClilocGen", "..\ClilocGen\ClilocGen.csproj", "{CDD228A5-A447-4E8E-B26F-26C721D5F200}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,7 @@ Global
 		{84C52B21-E70D-499B-ACAE-D94ADDCECC2B}.Release|Any CPU.ActiveCfg = Release|x86
 		{84C52B21-E70D-499B-ACAE-D94ADDCECC2B}.Release|x86.ActiveCfg = Release|x86
 		{84C52B21-E70D-499B-ACAE-D94ADDCECC2B}.Release|x86.Build.0 = Release|x86
+		{84C52B21-E70D-499B-ACAE-D94ADDCECC2B}.Release|x86.Deploy.0 = Release|x86
 		{FE1C86AA-C126-4E79-AB5A-1695EAEF01F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FE1C86AA-C126-4E79-AB5A-1695EAEF01F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE1C86AA-C126-4E79-AB5A-1695EAEF01F8}.Debug|x86.ActiveCfg = Debug|Any CPU
@@ -29,6 +32,13 @@ Global
 		{FE1C86AA-C126-4E79-AB5A-1695EAEF01F8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FE1C86AA-C126-4E79-AB5A-1695EAEF01F8}.Release|x86.ActiveCfg = Release|Any CPU
 		{FE1C86AA-C126-4E79-AB5A-1695EAEF01F8}.Release|x86.Build.0 = Release|Any CPU
+		{CDD228A5-A447-4E8E-B26F-26C721D5F200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDD228A5-A447-4E8E-B26F-26C721D5F200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDD228A5-A447-4E8E-B26F-26C721D5F200}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CDD228A5-A447-4E8E-B26F-26C721D5F200}.Debug|x86.Build.0 = Debug|Any CPU
+		{CDD228A5-A447-4E8E-B26F-26C721D5F200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDD228A5-A447-4E8E-B26F-26C721D5F200}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDD228A5-A447-4E8E-B26F-26C721D5F200}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

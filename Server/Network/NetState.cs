@@ -600,7 +600,7 @@ namespace Server.Network {
                 {
                     var packet = p as MobileMovingOld;
 
-                    var newBody = MobileMovingOld.ConvertBody203(packet.Body);
+                    var newBody = MobileMovingOld.ConvertBody203(packet.Body,this.Mobile);
                     if(packet.Body != newBody)
                     {
                         var oldpos = p.UnderlyingStream.Position;
@@ -613,7 +613,7 @@ namespace Server.Network {
                 {
                     var packet = p as MobileUpdateOld;
 
-                    var newBody = MobileUpdateOld.ConvertBody203(packet.Body);
+                    var newBody = MobileUpdateOld.ConvertBody203(packet.Body, this.Mobile);
                     if (packet.Body != newBody)
                     {
                         var oldpos = p.UnderlyingStream.Position;

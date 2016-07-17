@@ -31,12 +31,13 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
     <Prefer32Bit>false</Prefer32Bit>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <PropertyGroup>
     <RootNamespace>Server</RootNamespace>
@@ -70,6 +71,7 @@
     <Compile Include="ClientVersion.cs" />
     <Compile Include="Cliloc.cs" />
     <Compile Include="Commands.cs" />
+    <Compile Include="Config.cs" />
     <Compile Include="ContextMenus\ContextMenu.cs" />
     <Compile Include="ContextMenus\ContextMenuEntry.cs" />
     <Compile Include="ContextMenus\OpenBackpackEntry.cs" />
@@ -127,6 +129,7 @@
     <Compile Include="Mobile.cs" />
     <Compile Include="Movement.cs" />
     <Compile Include="MultiData.cs" />
+    <Compile Include="MythikStaticValues.cs" />
     <Compile Include="NativeReader.cs" />
     <Compile Include="Network\BufferPool.cs" />
     <Compile Include="Network\ByteQueue.cs" />
@@ -191,7 +194,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Mythik\" />
+    <Folder Include="Mythik\Web\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSHARP.Targets" />
   <ProjectExtensions>
