@@ -1,4 +1,5 @@
-﻿using Server;
+﻿using Scripts.Mythik.Systems;
+using Server;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,6 +21,11 @@ namespace Scripts.Mythik.Items.Craftables
         public override bool CheckNewbied()
         {
             return true;
+        }
+        public override void OnDoubleClick(Mobile from)
+        {
+            base.OnDoubleClick(from);
+            from.SendGump(new CreatureListGump(CreatureListGump.Buttons.None));
         }
 
         public CreatureGuideBook(Serial serial): base ( serial )
