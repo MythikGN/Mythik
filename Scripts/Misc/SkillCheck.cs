@@ -127,7 +127,7 @@ namespace Server.Misc
 			return CheckSkill( from, skill, loc, chance );
 		}
 
-		public static bool CheckSkill( Mobile from, Skill skill, object amObj, double chance )
+		private static bool CheckSkill( Mobile from, Skill skill, object amObj, double chance )
 		{
 			if ( from.Skills.Cap == 0 )
 				return false;

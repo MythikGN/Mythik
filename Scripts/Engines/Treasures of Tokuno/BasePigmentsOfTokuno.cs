@@ -2,6 +2,7 @@ using Server;
 using System;
 using Server.Misc;
 using Server.Mobiles;
+using Scripts.Mythik.Systems.Loot;
 
 namespace Server.Items
 {
@@ -183,7 +184,7 @@ namespace Server.Items
 				|| IsInTypeList( t, DemonKnight.ArtifactRarity11 )
 				|| IsInTypeList( t, MondainsLegacy.Artifacts )
 				|| IsInTypeList( t, StealableArtifactsSpawner.TypesOfEntires )
-				|| IsInTypeList( t, Paragon.Artifacts )
+				|| IsInTypeList( t, MythikLootSystem.LesserArtifacts )
 				|| IsInTypeList( t, Leviathan.Artifacts )
 				|| IsInTypeList( t, TreasureMapChest.Artifacts )
 				|| IsInTypeList( t, m_Replicas )
