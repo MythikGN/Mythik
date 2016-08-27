@@ -2141,7 +2141,10 @@ namespace Server.Mobiles
 
 		public override void OnWarmodeChanged()
 		{
-			if ( !Warmode )
+            DisruptiveAction();
+            if (Spell != null)
+                Spell.OnCasterHurt();
+            if ( !Warmode )
 				Timer.DelayCall( TimeSpan.FromSeconds( 10 ), new TimerCallback( RecoverAmmo ) );
 		}
 
