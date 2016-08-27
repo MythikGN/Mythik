@@ -473,7 +473,7 @@ namespace Server.Spells
 				if ( Core.AOS && m_Caster.Player && type == DisturbType.Hurt )
 					DoHurtFizzle();
 
-				m_Caster.NextSpellTime = DateTime.Now + GetDisturbRecovery();
+				m_Caster.NextSpellTime = DateTime.UtcNow + GetDisturbRecovery();
 			}
 			else if ( m_State == SpellState.Sequencing )
 			{
@@ -698,7 +698,7 @@ namespace Server.Spells
         }
         public bool SphereCast(Mobile from, object obj)
         {
-            m_StartCastTime = DateTime.Now;
+            m_StartCastTime = DateTime.UtcNow;
 
             if (m_PlayerCaster.Paralyzed && !m_PlayerCaster.HasFreeHand())
             {
@@ -767,7 +767,7 @@ namespace Server.Spells
 		}
         public bool DirectCast()
         {
-            m_StartCastTime = DateTime.Now;
+            m_StartCastTime = DateTime.UtcNow;
 
             if (Core.AOS && m_Caster.Spell is Spell && ((Spell)m_Caster.Spell).State == SpellState.Sequencing)
                 ((Spell)m_Caster.Spell).Disturb(DisturbType.NewCast);
@@ -792,11 +792,11 @@ namespace Server.Spells
             {
                 m_Caster.SendLocalizedMessage(502643); // You can not cast a spell while frozen.
             }
-            else if (CheckNextSpellTime && DateTime.Now < m_Caster.NextSpellTime)
+            else if (CheckNextSpellTime && DateTime.UtcNow < m_Caster.NextSpellTime)
             {
                 m_Caster.SendLocalizedMessage(502644); // You have not yet recovered from casting a spell.
             }
-            else if (m_Caster is PlayerMobile && ((PlayerMobile)m_Caster).PeacedUntil > DateTime.Now)
+            else if (m_Caster is PlayerMobile && ((PlayerMobile)m_Caster).PeacedUntil > DateTime.UtcNow)
             {
                 m_Caster.SendLocalizedMessage(1072060); // You cannot cast a spell while calmed.
             }
@@ -930,7 +930,7 @@ namespace Server.Spells
 			if ( Core.AOS )
 				return TimeSpan.Zero;
 
-			double delay = 1.0 - Math.Sqrt( (DateTime.Now - m_StartCastTime).TotalSeconds / GetCastDelay().TotalSeconds );
+			double delay = 1.0 - Math.Sqrt( (DateTime.UtcNow - m_StartCastTime).TotalSeconds / GetCastDelay().TotalSeconds );
 
 			if ( delay < 0.2 )
 				delay = 0.2;
@@ -1050,7 +1050,7 @@ namespace Server.Spells
 				m_Caster.SendLocalizedMessage( 502646 ); // You cannot cast a spell while frozen.
 				DoFizzle();
 			}
-			else if ( m_Caster is PlayerMobile && ((PlayerMobile) m_Caster).PeacedUntil > DateTime.Now )
+			else if ( m_Caster is PlayerMobile && ((PlayerMobile) m_Caster).PeacedUntil > DateTime.UtcNow )
 			{
 				m_Caster.SendLocalizedMessage( 1072060 ); // You cannot cast a spell while calmed.
 				DoFizzle();
@@ -1210,10 +1210,19 @@ namespace Server.Spells
 					m_Spell.m_Caster.OnSpellCast( m_Spell );
 					if ( m_Spell.m_Caster.Region != null )
 						m_Spell.m_Caster.Region.OnSpellCast( m_Spell.m_Caster, m_Spell );
-					m_Spell.m_Caster.NextSpellTime = DateTime.Now + m_Spell.GetCastRecovery();// Spell.NextSpellDelay;
+					m_Spell.m_Caster.NextSpellTime = DateTime.UtcNow + m_Spell.GetCastRecovery();// Spell.NextSpellDelay;
 
                     if (m_Spell.PlayerCaster != null && !(m_Spell is PaladinSpell) && !(m_Spell is NecromancerSpell))
+                    {
+                        int mana = m_Spell.ScaleMana(m_Spell.GetMana());
+                        if (m_Spell.m_Caster.Mana < mana)
+                        {
+                            m_Spell.m_Caster.LocalOverheadMessage(MessageType.Regular, 0x22, 502625); // Insufficient mana for this spell.
+                            m_Spell.DoFizzle();
+                            return;
+                        }
                         m_Spell.OnPlayerCast();
+                    } 
                     else
                     {
                         Target originalTarget = m_Spell.m_Caster.Target;
