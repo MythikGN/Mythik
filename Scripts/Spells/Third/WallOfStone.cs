@@ -77,7 +77,7 @@ namespace Server.Spells.Third
 
 				Effects.PlaySound( p, Caster.Map, 0x1F6 );
 
-				for ( int i = -1; i <= 1; ++i )
+				for ( int i = -2; i <= 2; ++i )
 				{
 					Point3D loc = new Point3D( eastToWest ? p.X + i : p.X, eastToWest ? p.Y : p.Y + i, p.Z );
 					bool canFit = SpellHelper.AdjustField( ref loc, Caster.Map, 22, true );
@@ -127,7 +127,7 @@ namespace Server.Spells.Third
 				m_Timer = new InternalTimer( this, TimeSpan.FromSeconds( 10.0 ) );
 				m_Timer.Start();
 
-				m_End = DateTime.Now + TimeSpan.FromSeconds( 10.0 );
+				m_End = DateTime.UtcNow + TimeSpan.FromSeconds( 10.0 );
 			}
 
 			public InternalItem( Serial serial ) : base( serial )
@@ -155,7 +155,7 @@ namespace Server.Spells.Third
 					{
 						m_End = reader.ReadDeltaTime();
 
-						m_Timer = new InternalTimer( this, m_End - DateTime.Now );
+						m_Timer = new InternalTimer( this, m_End - DateTime.UtcNow );
 						m_Timer.Start();
 
 						break;
@@ -167,7 +167,7 @@ namespace Server.Spells.Third
 						m_Timer = new InternalTimer( this, duration );
 						m_Timer.Start();
 
-						m_End = DateTime.Now + duration;
+						m_End = DateTime.UtcNow + duration;
 
 						break;
 					}
