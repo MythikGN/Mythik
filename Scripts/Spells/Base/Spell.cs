@@ -216,7 +216,8 @@ namespace Server.Spells
 
 			if ( IsCasting )
 			{
-				object o = ProtectionSpell.Registry[m_Caster];
+                Disturb(DisturbType.Hurt, false, true);
+                /*object o = ProtectionSpell.Registry[m_Caster];
 				bool disturb = true;
 
 				if ( o != null && o is double )
@@ -226,8 +227,8 @@ namespace Server.Spells
 				}
 
 				if ( disturb )
-					Disturb( DisturbType.Hurt, false, true );
-			}
+					Disturb( DisturbType.Hurt, false, true );*/
+            }
 		}
 
 		public virtual void OnCasterKilled()
