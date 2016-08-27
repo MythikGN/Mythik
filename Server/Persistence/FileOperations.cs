@@ -91,11 +91,12 @@ namespace Server {
 			if ( concurrency > 0 ) {
 				options |= FileOptions.Asynchronous;
 			}
+            return new FileStream(path, mode, access, share, bufferSize, options);
 
-#if MONO
+/*#if MONO
 			return new FileStream( path, mode, access, share, bufferSize, options );
 #else
-			if ( unbuffered ) {
+            if ( unbuffered ) {
 				options |= NoBuffering;
 			} else {
 				return new FileStream( path, mode, access, share, bufferSize, options );
@@ -108,7 +109,8 @@ namespace Server {
 			}
 
 			return new UnbufferedFileStream( fileHandle, access, bufferSize, ( concurrency > 0 ) );
-#endif
+
+#endif*/
 		}
 
 #if !MONO
