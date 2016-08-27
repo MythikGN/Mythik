@@ -91,7 +91,7 @@ namespace Knives.Chat3
                         && info.Mobile.Player
                         && !info.Mobile.Deleted
                         && info.Mobile.Account != null
-                        && ((Account)info.Mobile.Account).LastLogin > DateTime.Now - TimeSpan.FromDays(30))
+                        && ((Account)info.Mobile.Account).LastLogin > DateTime.UtcNow - TimeSpan.FromDays(30))
                             list.Add(ob);
                     }
                 }

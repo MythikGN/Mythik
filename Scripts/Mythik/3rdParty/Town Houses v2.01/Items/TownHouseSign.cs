@@ -344,8 +344,8 @@ namespace Knives.TownHouses
 			c_Blocks = new ArrayList();
 			c_DecoreItemInfos = new ArrayList();
 			c_PreviewItems = new ArrayList();
-			c_DemolishTime = DateTime.Now;
-			c_RentTime = DateTime.Now;
+			c_DemolishTime = DateTime.UtcNow;
+			c_RentTime = DateTime.UtcNow;
 			c_RentByTime = TimeSpan.Zero;
 			c_RecurRent = true;
 
@@ -799,8 +799,8 @@ namespace Knives.TownHouses
 
         private void StartTimers()
         {
-            if (c_DemolishTime > DateTime.Now)
-                BeginDemolishTimer(c_DemolishTime - DateTime.Now);
+            if (c_DemolishTime > DateTime.UtcNow)
+                BeginDemolishTimer(c_DemolishTime - DateTime.UtcNow);
             else if (c_RentByTime != TimeSpan.Zero)
                 BeginRentTimer(c_RentByTime);
         }
@@ -814,7 +814,7 @@ namespace Knives.TownHouses
 
 			c_DemolishTimer.Stop();
 			c_DemolishTimer = null;
-			c_DemolishTime = DateTime.Now;
+			c_DemolishTime = DateTime.UtcNow;
 
 			if ( !c_House.Deleted && Owned )
 				c_House.Owner.SendMessage( "Demolition canceled." );
@@ -838,7 +838,7 @@ namespace Knives.TownHouses
 			if ( !Owned )
 				return;
 
-			c_DemolishTime = DateTime.Now + time;
+			c_DemolishTime = DateTime.UtcNow + time;
 			c_DemolishTimer = Timer.DelayCall( time, new TimerCallback( PackUpHouse ) );
 
 			DemolishAlert();
@@ -846,7 +846,7 @@ namespace Knives.TownHouses
 
 		protected virtual void DemolishAlert()
 		{
-			c_House.Owner.SendMessage( "You no longer meet the requirements for your town house, which will be demolished automatically in {0}:{1}:{2}.", (c_DemolishTime-DateTime.Now).Hours, (c_DemolishTime-DateTime.Now).Minutes, (c_DemolishTime-DateTime.Now).Seconds );
+			c_House.Owner.SendMessage( "You no longer meet the requirements for your town house, which will be demolished automatically in {0}:{1}:{2}.", (c_DemolishTime-DateTime.UtcNow).Hours, (c_DemolishTime-DateTime.UtcNow).Minutes, (c_DemolishTime-DateTime.UtcNow).Seconds );
 		}
 
 		protected void PackUpHouse()
@@ -927,7 +927,7 @@ namespace Knives.TownHouses
 				c_RentTimer = null;
 			}
 
-			c_RentTime = DateTime.Now;
+			c_RentTime = DateTime.UtcNow;
 		}
 
 		private void BeginRentTimer()
@@ -941,7 +941,7 @@ namespace Knives.TownHouses
 				return;
 
 			c_RentTimer = Timer.DelayCall( time, new TimerCallback( RentDue ) );
-			c_RentTime = DateTime.Now + time;
+			c_RentTime = DateTime.UtcNow + time;
 		}
 
 		public void CheckRentTimer()
@@ -949,7 +949,7 @@ namespace Knives.TownHouses
 			if ( c_RentTimer == null || !Owned )
 				return;
 
-			c_House.Owner.SendMessage( "This rent cycle ends in {0} days, {1}:{2}:{3}.", (c_RentTime-DateTime.Now).Days, (c_RentTime-DateTime.Now).Hours, (c_RentTime-DateTime.Now).Minutes, (c_RentTime-DateTime.Now).Seconds );
+			c_House.Owner.SendMessage( "This rent cycle ends in {0} days, {1}:{2}:{3}.", (c_RentTime-DateTime.UtcNow).Days, (c_RentTime-DateTime.UtcNow).Hours, (c_RentTime-DateTime.UtcNow).Minutes, (c_RentTime-DateTime.UtcNow).Seconds );
 		}
 
 		private void RentDue()
@@ -1292,8 +1292,8 @@ namespace Knives.TownHouses
 			for ( int i = 0; i < count; ++i )
 				c_Blocks.Add( reader.ReadRect2D() );
 
-			if ( c_RentTime > DateTime.Now )
-				BeginRentTimer( c_RentTime-DateTime.Now );
+			if ( c_RentTime > DateTime.UtcNow )
+				BeginRentTimer( c_RentTime-DateTime.UtcNow );
 
             Timer.DelayCall(TimeSpan.Zero, new TimerCallback(StartTimers));
 

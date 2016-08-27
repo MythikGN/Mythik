@@ -16,16 +16,16 @@ namespace Knives.Chat3
 
 				if ( table.Contains( type ) )
 				{
-					if ( (DateTime)table[type] > DateTime.Now-limit )
+					if ( (DateTime)table[type] > DateTime.UtcNow-limit )
 						return false;
 
-					table[type] = DateTime.Now;
+					table[type] = DateTime.UtcNow;
 				}
 			}
 			else
 			{
 				Hashtable table = new Hashtable();
-				table[type] = DateTime.Now;
+				table[type] = DateTime.UtcNow;
 				s_Log[m] = table;
 			}
 
@@ -39,10 +39,10 @@ namespace Knives.Chat3
 
 			Hashtable table = (Hashtable)s_Log[m];
 
-			if ( table[type] == null || (DateTime)table[type]+limit < DateTime.Now )
+			if ( table[type] == null || (DateTime)table[type]+limit < DateTime.UtcNow )
 				return TimeSpan.FromSeconds( 1 );
 
-			return (DateTime)table[type]+limit-DateTime.Now;
+			return (DateTime)table[type]+limit-DateTime.UtcNow;
 		}
 	}
 }

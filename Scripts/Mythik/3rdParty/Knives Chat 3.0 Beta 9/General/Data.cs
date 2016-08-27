@@ -453,7 +453,7 @@ namespace Knives.Chat3
 
                 if (m.Deleted || data.Mobile == null || data.Mobile.Deleted)
                     s_Datas.Remove(data.Mobile);
-                else if (data.Mobile.Player && data.Mobile.Account != null && ((Account)data.Mobile.Account).LastLogin < DateTime.Now - TimeSpan.FromDays(30))
+                else if (data.Mobile.Player && data.Mobile.Account != null && ((Account)data.Mobile.Account).LastLogin < DateTime.UtcNow - TimeSpan.FromDays(30))
                     s_Datas.Remove(data.Mobile);
             }
         }
@@ -649,11 +649,11 @@ namespace Knives.Chat3
             get { return c_Karma; }
             set
             {
-                if (c_LastKarma + TimeSpan.FromHours(24) > DateTime.Now)
+                if (c_LastKarma + TimeSpan.FromHours(24) > DateTime.UtcNow)
                     return;
 
                 c_Karma = value;
-                c_LastKarma = DateTime.Now;
+                c_LastKarma = DateTime.UtcNow;
             }
         }
 
@@ -757,7 +757,7 @@ namespace Knives.Chat3
             c_MsgC = 0x480;
             c_AwayMsg = "";
             c_Signature = "";
-            c_BannedUntil = DateTime.Now;
+            c_BannedUntil = DateTime.UtcNow;
 
             if (m.AccessLevel >= AccessLevel.Administrator)
                 c_GlobalAccess = true;
@@ -789,7 +789,7 @@ namespace Knives.Chat3
             c_MsgC = 0x480;
             c_AwayMsg = "";
             c_Signature = "";
-            c_BannedUntil = DateTime.Now;
+            c_BannedUntil = DateTime.UtcNow;
         }
 
         #endregion
@@ -980,7 +980,7 @@ namespace Knives.Chat3
 
         public void Ban(TimeSpan ts)
         {
-            c_BannedUntil = DateTime.Now + ts;
+            c_BannedUntil = DateTime.UtcNow + ts;
             c_Banned = true;
             Mobile.SendMessage(c_SystemC, General.Local(90));
 
@@ -989,7 +989,7 @@ namespace Knives.Chat3
 
         public void RemoveBan()
         {
-            c_BannedUntil = DateTime.Now;
+            c_BannedUntil = DateTime.UtcNow;
             c_Banned = false;
             if(Mobile != null)
                 Mobile.SendMessage(c_SystemC, General.Local(91));
@@ -1190,8 +1190,8 @@ namespace Knives.Chat3
             c_Signature = reader.ReadString();
             c_BannedUntil = reader.ReadDateTime();
 
-            if (c_BannedUntil > DateTime.Now)
-                Ban(c_BannedUntil - DateTime.Now);
+            if (c_BannedUntil > DateTime.UtcNow)
+                Ban(c_BannedUntil - DateTime.UtcNow);
             else
                 RemoveBan();
         }

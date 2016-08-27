@@ -104,8 +104,8 @@ namespace Knives.TownHouses
 			if ( ParentHouse == null || c_RentalMaster == null || c_RentalClient == null )
 				return;
 
-			c_RentalMaster.SendMessage( "You have begun to use lockdowns reserved for {0}, and their rental unit will collapse in {1}.", c_RentalClient.Name, Math.Round( (DemolishTime-DateTime.Now).TotalHours, 2 ) );
-			c_RentalClient.SendMessage( "Alert your land lord, {0}, they are using storage reserved for you.  They have violated the rental agreement, which will end in {1} if nothing is done.", c_RentalMaster.Name, Math.Round( (DemolishTime-DateTime.Now).TotalHours, 2 ) );
+			c_RentalMaster.SendMessage( "You have begun to use lockdowns reserved for {0}, and their rental unit will collapse in {1}.", c_RentalClient.Name, Math.Round( (DemolishTime-DateTime.UtcNow).TotalHours, 2 ) );
+			c_RentalClient.SendMessage( "Alert your land lord, {0}, they are using storage reserved for you.  They have violated the rental agreement, which will end in {1} if nothing is done.", c_RentalMaster.Name, Math.Round( (DemolishTime-DateTime.UtcNow).TotalHours, 2 ) );
 		}
 
 		public void FixLocSec()

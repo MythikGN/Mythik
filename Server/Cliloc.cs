@@ -426,7 +426,7 @@ namespace Server
         }
 
         //default filename
-        public CliLocDAO() : this("cliloc.enu")
+        public CliLocDAO() : this("Cliloc.enu")
         {
         }
 

@@ -42,7 +42,7 @@ namespace Knives.Chat3
 		private bool c_Connecting, c_Connected;
 		private int c_Attempts;
 		private DateTime c_LastPong;
-        private DateTime c_NextStatus = DateTime.Now;
+        private DateTime c_NextStatus = DateTime.UtcNow;
         private Server.Timer c_ConnectTimer;
 
 		public bool Connecting{ get{ return c_Connecting; } }
@@ -127,7 +127,7 @@ namespace Knives.Chat3
             {
                 c_Connecting = true;
                 c_ConnectTimer = Server.Timer.DelayCall(TimeSpan.FromSeconds(30), new Server.TimerCallback(TimerFail));
-                c_LastPong = DateTime.Now;
+                c_LastPong = DateTime.UtcNow;
 
                 c_Reader = new StreamReader(c_Tcp.GetStream(), System.Text.Encoding.Default);
                 c_Writer = new StreamWriter(c_Tcp.GetStream(), System.Text.Encoding.Default);
@@ -223,9 +223,9 @@ namespace Knives.Chat3
             msg = OutParse(m, m.RawName + ": " + msg);
 			s_Connection.SendMessage( String.Format( "PRIVMSG {0} : {1}", Data.IrcRoom, msg  ));
 
-            if (msg.ToLower().IndexOf("!status") != -1 && c_NextStatus < DateTime.Now)
+            if (msg.ToLower().IndexOf("!status") != -1 && c_NextStatus < DateTime.UtcNow)
             {
-                c_NextStatus = DateTime.Now + TimeSpan.FromSeconds(15);
+                c_NextStatus = DateTime.UtcNow + TimeSpan.FromSeconds(15);
                 s_Connection.SendMessage(String.Format("PRIVMSG {0} : {1}", Data.IrcRoom, Status));
                 BroadcastSystem(Status);
             }
@@ -372,9 +372,9 @@ namespace Knives.Chat3
 
                     Broadcast(parOne, str);
 
-                    if (str.ToLower().IndexOf("!status") != -1 && c_NextStatus < DateTime.Now)
+                    if (str.ToLower().IndexOf("!status") != -1 && c_NextStatus < DateTime.UtcNow)
                     {
-                        c_NextStatus = DateTime.Now + TimeSpan.FromSeconds(15);
+                        c_NextStatus = DateTime.UtcNow + TimeSpan.FromSeconds(15);
                         s_Connection.SendMessage(String.Format("PRIVMSG {0} : {1}", Data.IrcRoom, Status));
                         BroadcastSystem(Status);
                     }

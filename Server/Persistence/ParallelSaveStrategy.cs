@@ -198,7 +198,7 @@ namespace Server {
 				metrics.OnItemSaved( length );
 			}
 
-			if ( item.Decays && item.Parent == null && item.Map != Map.Internal && DateTime.Now > ( item.LastMoved + item.DecayTime ) ) {
+			if ( item.Decays && item.Parent == null && item.Map != Map.Internal && DateTime.UtcNow > ( item.LastMoved + item.DecayTime ) ) {
 				_decayQueue.Enqueue( item );
 			}
 		}

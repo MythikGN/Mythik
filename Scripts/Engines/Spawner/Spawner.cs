@@ -144,7 +144,7 @@ namespace Server.Mobiles
 			get
 			{
 				if ( m_Running )
-					return m_End - DateTime.Now;
+					return m_End - DateTime.UtcNow;
 				else
 					return TimeSpan.FromSeconds( 0 );
 			}
@@ -681,7 +681,7 @@ namespace Server.Mobiles
 			if ( !m_Running )
 				return;
 
-			m_End = DateTime.Now + delay;
+			m_End = DateTime.UtcNow + delay;
 
 			if ( m_Timer != null )
 				m_Timer.Stop();
@@ -894,7 +894,7 @@ namespace Server.Mobiles
 					TimeSpan ts = TimeSpan.Zero;
 
 					if ( m_Running )
-						ts = reader.ReadDeltaTime() - DateTime.Now;
+						ts = reader.ReadDeltaTime() - DateTime.UtcNow;
 
 					int size = reader.ReadInt();
 
@@ -979,7 +979,7 @@ namespace Server.Mobiles
 
 					using ( StreamWriter op = new StreamWriter( "badspawn.log", true ) )
 					{
-						op.WriteLine( "# Bad spawns : {0}", DateTime.Now );
+						op.WriteLine( "# Bad spawns : {0}", DateTime.UtcNow );
 						op.WriteLine( "# Format: X Y Z F Name" );
 						op.WriteLine();
 

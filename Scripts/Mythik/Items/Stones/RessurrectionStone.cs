@@ -42,7 +42,7 @@ namespace Scripts.Mythik.Items.Stones
                     else
                     {
                         var timer = pm.GetAction<DeathTimer>();
-                        pm.SendMessage(Locale.GetLocale(pm).RESSURRECTION_STONE_WAIT, (timer.Next - DateTime.Now).Seconds, (timer.Next - DateTime.Now).Seconds == 1 ? null : "s");
+                        pm.SendMessage(Locale.GetLocale(pm).RESSURRECTION_STONE_WAIT, (timer.Next - DateTime.UtcNow).Seconds, (timer.Next - DateTime.UtcNow).Seconds == 1 ? null : "s");
                     }
                 }
                 else

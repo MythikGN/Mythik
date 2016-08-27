@@ -531,7 +531,7 @@ namespace Server.Guilds
 				if( w == null )
 					return WarStatus.Win;
 
-				if( m_WarLength != TimeSpan.Zero && (m_WarBeginning + m_WarLength) < DateTime.Now )
+				if( m_WarLength != TimeSpan.Zero && (m_WarBeginning + m_WarLength) < DateTime.UtcNow )
 				{
 					if( m_Kills > w.m_Kills )
 						return WarStatus.Win;
@@ -999,7 +999,7 @@ namespace Server.Guilds
 			m_Candidates = new List<Mobile>();
 			m_Accepted = new List<Mobile>();
 
-			m_LastFealty = DateTime.Now;
+			m_LastFealty = DateTime.UtcNow;
 
 			m_Name = name;
 			m_Abbreviation = abbreviation;
@@ -1199,7 +1199,7 @@ namespace Server.Guilds
 		#region Serialization
 		public override void Serialize( GenericWriter writer )
 		{
-			if ( this.LastFealty+TimeSpan.FromDays( 1.0 ) < DateTime.Now )
+			if ( this.LastFealty+TimeSpan.FromDays( 1.0 ) < DateTime.UtcNow )
 				this.CalculateGuildmaster();
 
 			CheckExpiredWars();
@@ -1601,7 +1601,7 @@ namespace Server.Guilds
 			if( NewGuildSystem )
 			{
 				PlayerMobile pm = m as PlayerMobile;
-				if( pm == null || pm.LastOnline + InactiveTime < DateTime.Now )
+				if( pm == null || pm.LastOnline + InactiveTime < DateTime.UtcNow )
 					return false;
 			}
 
@@ -1666,7 +1666,7 @@ namespace Server.Guilds
 				GuildMessage( 1018015, true, winner.Name ); // Guild Message: Guildmaster changed to:
 
 			Leader = winner;
-			m_LastFealty = DateTime.Now;
+			m_LastFealty = DateTime.UtcNow;
 		}
 
 		#endregion
@@ -1772,7 +1772,7 @@ namespace Server.Guilds
 				if ( m_Type != value )
 				{
 					m_Type = value;
-					m_TypeLastChange = DateTime.Now;
+					m_TypeLastChange = DateTime.UtcNow;
 
 					InvalidateMemberProperties();
 				}

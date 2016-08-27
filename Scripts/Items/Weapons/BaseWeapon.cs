@@ -637,7 +637,7 @@ namespace Server.Items
 					m.AddStatMod( new StatMod( StatType.Int, modName + "Int", intBonus, TimeSpan.Zero ) );
 			}
 
-			from.NextCombatTime = DateTime.Now + GetDelay( from );
+			from.NextCombatTime = DateTime.UtcNow + GetDelay( from );
 
 			if ( UseSkillMod && m_AccuracyLevel != WeaponAccuracyLevel.Regular )
 			{
@@ -690,7 +690,7 @@ namespace Server.Items
 				m.RemoveStatMod( modName + "Int" );
 
 				if ( weapon != null )
-					m.NextCombatTime = DateTime.Now + weapon.GetDelay( m );
+					m.NextCombatTime = DateTime.UtcNow + weapon.GetDelay( m );
 
 				if ( UseSkillMod && m_SkillMod != null )
 				{
@@ -1022,7 +1022,7 @@ namespace Server.Items
 				{
 					PlayerMobile p = attacker as PlayerMobile;
 
-					canSwing = ( p == null || p.PeacedUntil <= DateTime.Now );
+					canSwing = ( p == null || p.PeacedUntil <= DateTime.UtcNow );
 				}
 			}
 

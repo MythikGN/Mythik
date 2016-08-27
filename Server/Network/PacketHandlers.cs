@@ -1356,7 +1356,7 @@ namespace Server.Network
 		{
 			Mobile from = state.Mobile;
 
-			if ( from.AccessLevel >= AccessLevel.Counselor || DateTime.Now >= from.NextActionTime )
+			if ( from.AccessLevel >= AccessLevel.Counselor || DateTime.UtcNow >= from.NextActionTime )
 			{
 				int value = pvSrc.ReadInt32();
 
@@ -1384,7 +1384,7 @@ namespace Server.Network
 					}
 				}
 
-				from.NextActionTime = DateTime.Now + TimeSpan.FromSeconds( 0.5 );
+				from.NextActionTime = DateTime.UtcNow + TimeSpan.FromSeconds( 0.5 );
 			}
 			else
 			{
@@ -2301,7 +2301,7 @@ namespace Server.Network
 			public ClientVersion Version;
 
 			public AuthIDPersistence( ClientVersion v ) {
-				Age = DateTime.Now;
+				Age = DateTime.UtcNow;
 				Version = v;
 			}
 		}

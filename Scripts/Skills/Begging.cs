@@ -37,7 +37,7 @@ namespace Server.SkillHandlers
 			protected override void OnTargetFinish( Mobile from )
 			{
 				if ( m_SetSkillTime )
-					from.NextSkillTime = DateTime.Now;
+					from.NextSkillTime = DateTime.UtcNow;
 			}
 
 			protected override void OnTarget( Mobile from, object targeted )
@@ -167,7 +167,7 @@ namespace Server.SkillHandlers
 						m_Target.SendLocalizedMessage( 500404 ); // They seem unwilling to give you any money.
 					}
 
-					m_From.NextSkillTime = DateTime.Now + TimeSpan.FromSeconds( 10.0 );
+					m_From.NextSkillTime = DateTime.UtcNow + TimeSpan.FromSeconds( 10.0 );
 				}
 			}
 		}

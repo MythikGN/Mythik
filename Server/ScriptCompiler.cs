@@ -35,7 +35,10 @@ namespace Server
 {
 	public static class ScriptCompiler
 	{
-		private static Assembly[] m_Assemblies;
+        private static string runtimePath = @"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\{0}.dll";
+      
+
+        private static Assembly[] m_Assemblies;
 
 		public static Assembly[] Assemblies
 		{
@@ -223,7 +226,7 @@ namespace Server
 			{
 				string path = GetUnusedPath( "Scripts.CS" );
 
-				CompilerParameters parms = new CompilerParameters( GetReferenceAssemblies(), path, debug );
+                CompilerParameters parms = new CompilerParameters( GetReferenceAssemblies(), path, debug );
 
 				string options = GetCompilerOptions( debug );
 

@@ -130,7 +130,7 @@ namespace Scripts.Mythik.Systems.Achievements
             if (achieves[ach.ID].Progress >= ach.CompletionTotal)
             {
                 player.SendGump(new AchievementObtainedGump(ach),false);
-                achieves[ach.ID].CompletedOn = DateTime.Now;
+                achieves[ach.ID].CompletedOn = DateTime.UtcNow;
 #if STOREONITEM
                 AchievementSystemMemoryStone.GetInstance().AddPoints(player,ach.RewardPoints);
 #else

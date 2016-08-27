@@ -53,7 +53,7 @@ namespace Knives.Chat3
 
         private static void OnSave(WorldSaveEventArgs args)
         {
-            DateTime time = DateTime.Now;
+            DateTime time = DateTime.UtcNow;
             if (Data.Debug)
             {
                 Console.WriteLine("");
@@ -67,12 +67,12 @@ namespace Knives.Chat3
             foreach (Data data in Data.Datas.Values)
                 if (data.SevenDays)
                     foreach (Message msg in new ArrayList(data.Messages))
-                        if (msg.Received < DateTime.Now - TimeSpan.FromDays(7))
+                        if (msg.Received < DateTime.UtcNow - TimeSpan.FromDays(7))
                             data.Messages.Remove(msg);
 
             if (Data.Debug)
             {
-                TimeSpan elapsed = DateTime.Now - time;
+                TimeSpan elapsed = DateTime.UtcNow - time;
                 Console.WriteLine(General.Local(240) + " {0}", (elapsed.Minutes != 0 ? elapsed.Minutes + " minutes" : "") + (elapsed.Seconds != 0 ? elapsed.Seconds + " seconds" : "") + elapsed.Milliseconds + " milliseconds");
             }
         }

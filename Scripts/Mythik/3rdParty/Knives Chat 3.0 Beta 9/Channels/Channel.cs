@@ -384,7 +384,7 @@ namespace Knives.Chat3
             Events.InvokeChat(new ChatEventArgs(m, this, msg));
 
             if (Data.LogChat)
-                Logging.LogChat(String.Format(DateTime.Now + " <{0}{1}> {2}: {3}", c_Name, (c_Style == ChatStyle.Regional && m.Region != null ? "-" + m.Region.Name : ""), m.RawName, msg));
+                Logging.LogChat(String.Format(DateTime.UtcNow + " <{0}{1}> {2}: {3}", c_Name, (c_Style == ChatStyle.Regional && m.Region != null ? "-" + m.Region.Name : ""), m.RawName, msg));
 
             Data.TotalChats++;
             Data.GetData(m).Karma++;

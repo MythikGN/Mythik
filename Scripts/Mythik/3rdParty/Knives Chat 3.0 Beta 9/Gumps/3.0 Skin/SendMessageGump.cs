@@ -184,7 +184,7 @@ namespace Knives.Chat3
             }
 
             if (Data.LogPms)
-                Logging.LogPm(String.Format(DateTime.Now + " <Mail> {0} to {1}: {2}", Owner.RawName, (c_To == null ? "All" : c_To.RawName), c_Text));
+                Logging.LogPm(String.Format(DateTime.UtcNow + " <Mail> {0} to {1}: {2}", Owner.RawName, (c_To == null ? "All" : c_To.RawName), c_Text));
  
             foreach( Data data in Data.Datas.Values)
                 if (data.Mobile.AccessLevel >= c_From.AccessLevel && ((data.GlobalM && !data.GIgnores.Contains(c_From)) || data.GListens.Contains(c_From)))

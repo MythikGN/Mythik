@@ -644,7 +644,7 @@ namespace Server.Items
 							m.SendLocalizedMessage( m_ProgressNumber );
 
 						if ( m_ShowTimeRemaining )
-							m.SendMessage( "Time remaining: {0}", FormatTime( m_Table[m].Timer.Next - DateTime.Now ) );
+							m.SendMessage( "Time remaining: {0}", FormatTime( m_Table[m].Timer.Next - DateTime.UtcNow ) );
 
 						Timer.DelayCall<Mobile>( TimeSpan.FromSeconds( 5 ), EndLock, m );
 					}
@@ -835,7 +835,7 @@ namespace Server.Items
 				Mobile m = reader.ReadMobile();
 				DateTime end = reader.ReadDateTime();
 
-				StartTimer( m, end - DateTime.Now );
+				StartTimer( m, end - DateTime.UtcNow );
 			}
 		}
 	}

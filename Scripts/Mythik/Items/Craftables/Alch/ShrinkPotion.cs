@@ -261,7 +261,7 @@ namespace Scripts.Mythik.Items.Craftables.Alch
                 }
 
                 if (!m_Creature.IsBonded)
-                    m_Creature.BondingBegin = DateTime.Now;
+                    m_Creature.BondingBegin = DateTime.UtcNow;
 
                 Delete();
             }

@@ -124,7 +124,7 @@ namespace Server.Misc
 			PlaceItemIn( cont, 60, 118, new FletcherTools( 1000 ) );
 			PlaceItemIn( cont, 90, 118, new SewingKit( 1000 ) );
 
-			PlaceItemIn( cont, 36, 51, new RunicHammer( CraftResource.DullCopper, 1000 ) );
+			/*PlaceItemIn( cont, 36, 51, new RunicHammer( CraftResource.DullCopper, 1000 ) );
 			PlaceItemIn( cont, 42, 51, new RunicHammer( CraftResource.ShadowIron, 1000 ) );
 			PlaceItemIn( cont, 48, 51, new RunicHammer( CraftResource.Copper, 1000 ) );
 			PlaceItemIn( cont, 54, 51, new RunicHammer( CraftResource.Bronze, 1000 ) );
@@ -136,7 +136,7 @@ namespace Server.Misc
 			PlaceItemIn( cont, 36, 55, new RunicSewingKit( CraftResource.SpinedLeather, 1000 ) );
 			PlaceItemIn( cont, 42, 55, new RunicSewingKit( CraftResource.HornedLeather, 1000 ) );
 			PlaceItemIn( cont, 48, 55, new RunicSewingKit( CraftResource.BarbedLeather, 1000 ) );
-
+            */
 			PlaceItemIn( bank, 118, 169, cont );
 			// End bag of tools
 
@@ -208,7 +208,7 @@ namespace Server.Misc
 			PlaceItemIn( cont, 54,  59, new WhiteScales( 5000 ) );
 			PlaceItemIn( cont, 60,  59, new BlueScales( 5000 ) );
 
-			PlaceItemIn( bank, 98, 169, cont );
+			//PlaceItemIn( bank, 98, 169, cont );
 			// End bag of raw materials
 
 
@@ -218,10 +218,10 @@ namespace Server.Misc
 			cont.Name = "Spell Casting Stuff";
 
 			PlaceItemIn( cont, 45, 105, new Spellbook( UInt64.MaxValue ) );
-			PlaceItemIn( cont, 65, 105, new NecromancerSpellbook( (UInt64)0xFFFF ) );
-			PlaceItemIn( cont, 85, 105, new BookOfChivalry( (UInt64)0x3FF ) );
-			PlaceItemIn( cont, 105, 105, new BookOfBushido() );	//Default ctor = full
-			PlaceItemIn( cont, 125, 105, new BookOfNinjitsu() ); //Default ctor = full
+			//PlaceItemIn( cont, 65, 105, new NecromancerSpellbook( (UInt64)0xFFFF ) );
+			//PlaceItemIn( cont, 85, 105, new BookOfChivalry( (UInt64)0x3FF ) );
+			//PlaceItemIn( cont, 105, 105, new BookOfBushido() );	//Default ctor = full
+			//PlaceItemIn( cont, 125, 105, new BookOfNinjitsu() ); //Default ctor = full
 
 			Runebook runebook = new Runebook( 10 );
 			runebook.CurCharges = runebook.MaxCharges;
@@ -274,7 +274,7 @@ namespace Server.Misc
 			PlaceItemIn( cont, 93, 99, new BladeOfTheRighteous() );
 			PlaceItemIn( cont, 117, 115, new ZyronicClaw() );
 
-			PlaceItemIn( bank, 58, 124, cont );
+			//PlaceItemIn( bank, 58, 124, cont );
 			// End first bag of artifacts
 
 
@@ -317,7 +317,7 @@ namespace Server.Misc
 			PlaceItemIn( cont, 117, 82, new TheTaskmaster() );
 			PlaceItemIn( cont, 45, 99, new TheDryadBow() );
 
-			PlaceItemIn( bank, 78, 124, cont );
+			//PlaceItemIn( bank, 78, 124, cont );
 			// End second bag of artifacts
 
 			// Begin bag of minor artifacts
@@ -361,7 +361,7 @@ namespace Server.Misc
 			for( int i = 0; i < 10; i++ )
 				PlaceItemIn( cont, 117, 128, new MessageInABottle( Utility.RandomBool() ? Map.Trammel : Map.Felucca, 4 ) );
 
-			PlaceItemIn( bank, 18, 124, cont );
+			//PlaceItemIn( bank, 18, 124, cont );
 
 			if( Core.SE )
 			{
@@ -390,7 +390,7 @@ namespace Server.Misc
 				PlaceItemIn( cont, 52, 79, new DemonForks() );
 				PlaceItemIn( cont, 33, 49, new PilferedDancerFans() );
 
-				PlaceItemIn( bank, 58, 124, cont );
+				//PlaceItemIn( bank, 58, 124, cont );
 			}
 
 			if( Core.SE )	//This bag came only after SE.
@@ -416,7 +416,7 @@ namespace Server.Misc
 					}
 				}
 
-				PlaceItemIn( bank, 108, 135, cont );
+				//PlaceItemIn( bank, 108, 135, cont );
 			}
 		}
 
@@ -539,7 +539,7 @@ namespace Server.Misc
 
 			bag.DropItem( new StatCapScroll( 250 ) );
 
-			bank.DropItem( bag );
+			//bank.DropItem( bag );
 		}
 
 		private static void AddShirt( Mobile m, int shirtHue )
