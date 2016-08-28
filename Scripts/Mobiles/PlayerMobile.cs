@@ -2132,8 +2132,8 @@ namespace Server.Mobiles
 		{
 			get
 			{
-				if( Core.ML && this.Race == Race.Human )
-					return 20.0;
+				//if( Core.ML && this.Race == Race.Human )
+				//	return 20.0;
 
 				return 0;
 			}
