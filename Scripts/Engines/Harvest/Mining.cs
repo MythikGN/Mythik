@@ -95,11 +95,9 @@ namespace Server.Engines.Harvest
 
                     new HarvestResource( 00.0, 00.0, 100.0, "You dig some stone ore and put it in your backpack.", typeof( StoneOre ) ),
                     new HarvestResource( 65.0, 45.0, 125.0, "You dig some rose ore and put it in your backpack.", typeof( RoseOre ) ),
-
                     new HarvestResource( 95.0, 65.0, 139.0, "You dig some bloodrock ore and put it in your backpack.", typeof( BloodRockOre ) ),
                     new HarvestResource( 99.0, 70.0, 139.0, "You dig some blackrock ore and put it in your backpack.", typeof( BlackRockOre ) ),
                     new HarvestResource( 101.9, 75.0, 139.0, "You dig some platnium ore and put it in your backpack.", typeof( PlatniumOre ) ),
-
                     new HarvestResource( 105.0, 80.0, 139.0, "You dig some carbon ore and put it in your backpack.", typeof( CarbonOre ) ),
                     new HarvestResource( 110.0, 85.0, 139.0, "You dig some kevlar ore and put it in your backpack.", typeof( KevlarOre ) ),
                     new HarvestResource( 116.0, 90.0, 139.0, "You dig some delta ore and put it in your backpack.", typeof( DeltaOre ) ),
@@ -132,7 +130,7 @@ namespace Server.Engines.Harvest
                     new HarvestVein( 02.5, 0.5, res[15], res[0] ),  // KevlarOre
                     new HarvestVein( 02.5, 0.5, res[16], res[0] ),  // DeltaOre
                     new HarvestVein( 02.5, 0.5, res[17], res[0] ),  // LiquidOre
-                    new HarvestVein( 02.5, 0.5, res[19], res[0] ),  // RagnarokOre
+                    new HarvestVein( 02.5, 0.5, res[18], res[0] ),  // RagnarokOre
 				};
 
 			oreAndStone.Resources = res;
