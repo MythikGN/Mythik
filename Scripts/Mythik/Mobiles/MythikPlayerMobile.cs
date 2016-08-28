@@ -19,6 +19,7 @@ namespace Scripts.Mythik.Mobiles
 
         public bool HasSetLanguageSkills { get; set; }
         public bool AuctionEnabled { get; internal set; }
+        public bool ChatEnabled { get; internal set; } = true;
 
         /// <summary>
         /// AcheivID , Progress
@@ -93,6 +94,7 @@ namespace Scripts.Mythik.Mobiles
                 writer.Write((short)g.Value.Item1);
                 writer.Write((short)g.Value.Item2);
             }
+            writer.Write(ChatEnabled);
         }
 
         public override void Deserialize(GenericReader reader)
@@ -121,6 +123,8 @@ namespace Scripts.Mythik.Mobiles
                     m_GumpLocations.Add(reader.ReadInt(), new Tuple<int, int>(reader.ReadShort(), reader.ReadShort()));
                 }
             }
+
+            ChatEnabled = reader.ReadBool();
 
         }
 
