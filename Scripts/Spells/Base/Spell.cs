@@ -876,6 +876,8 @@ namespace Server.Spells
 
         public virtual void OnPlayerCast()
         {
+            if (HasNoTarget)
+                OnCast();
            /*if (SphereSpellTarget is Mobile)
                 Target((Mobile)SphereSpellTarget);
             else
