@@ -44,8 +44,33 @@ namespace Server.Spells.Sixth
             if (!from.CanSee(m))
             {
                 from.SendLocalizedMessage(500237); // Target can not be seen.
+                return;
             }
-            else if (bc == null || !bc.IsDispellable)
+
+            if(bc == null)
+            {
+                var res = SpellHelper.RemoveStatMod(Caster, m, StatType.All, m == Caster);
+                if(!res)
+                    res = SpellHelper.RemoveStatMod(Caster, m, StatType.Str, m == Caster);
+                if (!res)
+                    res = SpellHelper.RemoveStatMod(Caster, m, StatType.Int, m == Caster);
+                if (!res)
+                    res = SpellHelper.RemoveStatMod(Caster, m, StatType.Dex, m == Caster);
+                if(res)
+                {
+                    Effects.SendLocationParticles(EffectItem.Create(m.Location, m.Map, EffectItem.DefaultDuration), 0x3728, 8, 20, 5042);
+                    Effects.PlaySound(m, m.Map, 0x201);
+                    from.SendAsciiMessage("You dispel an effect.");
+                }
+                else
+                {
+                    m.FixedEffect(0x3779, 10, 20);
+                    from.SendAsciiMessage("There is nothing to dispel.");
+                }
+                return;
+            }
+
+            if (bc == null || !bc.IsDispellable)
             {
                 from.SendLocalizedMessage(1005049); // That cannot be dispelled.
             }

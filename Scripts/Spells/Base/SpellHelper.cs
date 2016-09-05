@@ -224,8 +224,28 @@ namespace Server.Spells
 
 			return true;
 		}
+        public static bool RemoveStatMod(Mobile caster, Mobile target, StatType type, bool removeBuff)
+        {
+            string name = String.Format("[Magic] {0} Offset", type);
 
-		public static bool AddStatBonus( Mobile caster, Mobile target, StatType type )
+            StatMod mod = target.GetStatMod(name);
+            if(mod != null)
+            {
+                if((removeBuff && mod.Offset > 0) || (!removeBuff && mod.Offset < 0))
+                {
+                    target.RemoveStatMod(name);
+                    if (caster != target)
+                        caster.OnHarmfulAction(target, true);
+                    return true;
+                }
+               
+            }
+            return false;
+        }
+       
+
+
+        public static bool AddStatBonus( Mobile caster, Mobile target, StatType type )
 		{
 			return AddStatBonus( caster, target, type, GetOffset( caster, target, type, false ), GetDuration( caster, target ) );
 		}
