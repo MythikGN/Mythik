@@ -56,6 +56,8 @@ namespace Server.Spells.Sixth
                     res = SpellHelper.RemoveStatMod(Caster, m, StatType.Int, m == Caster);
                 if (!res)
                     res = SpellHelper.RemoveStatMod(Caster, m, StatType.Dex, m == Caster);
+                if (!res)
+                    res = DisguiseTimers.RemoveTimer(m);
                 if(res)
                 {
                     Effects.SendLocationParticles(EffectItem.Create(m.Location, m.Map, EffectItem.DefaultDuration), 0x3728, 8, 20, 5042);
