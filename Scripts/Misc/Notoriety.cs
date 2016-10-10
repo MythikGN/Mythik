@@ -18,7 +18,7 @@ namespace Server.Misc
 	{
 		public static void Initialize()
 		{
-            Notoriety.Hues[Notoriety.Innocent]      = 0x61;// 0x59;
+            Notoriety.Hues[Notoriety.Innocent]      = 0x63;// 0x59;
 			Notoriety.Hues[Notoriety.Ally]			= 0x3F;
             Notoriety.Hues[Notoriety.CanBeAttacked] = 0x3b2;
 			Notoriety.Hues[Notoriety.Criminal]		= 0x3B2;
