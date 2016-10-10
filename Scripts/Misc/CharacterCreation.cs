@@ -896,7 +896,7 @@ namespace Server.Misc
 				dex = 10;
 				intel = 10;
 			}
-            m.InitStats(75, 75, 75);
+            m.InitStats(100,100,100);
 			//m.InitStats( str, dex, intel );
 		}
 
