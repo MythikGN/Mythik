@@ -4,6 +4,8 @@ using Server.Items;
 using Server.Targeting;
 using Server.Network;
 using Server.Mobiles;
+using Server.Spells.Seventh;
+using Server.Spells.Fifth;
 
 namespace Server.Spells.Sixth
 {
@@ -49,16 +51,30 @@ namespace Server.Spells.Sixth
 
             if(bc == null)
             {
-                var res = SpellHelper.RemoveStatMod(Caster, m, StatType.All, m == Caster);
+                var res = SpellHelper.RemoveStatMod(Caster, m, StatType.All, m != Caster);
                 if(!res)
-                    res = SpellHelper.RemoveStatMod(Caster, m, StatType.Str, m == Caster);
+                    res = SpellHelper.RemoveStatMod(Caster, m, StatType.Str, m != Caster);
                 if (!res)
-                    res = SpellHelper.RemoveStatMod(Caster, m, StatType.Int, m == Caster);
+                    res = SpellHelper.RemoveStatMod(Caster, m, StatType.Int, m != Caster);
                 if (!res)
-                    res = SpellHelper.RemoveStatMod(Caster, m, StatType.Dex, m == Caster);
+                    res = SpellHelper.RemoveStatMod(Caster, m, StatType.Dex, m != Caster);
                 if (!res)
+                {
                     res = DisguiseTimers.RemoveTimer(m);
-                if(res)
+                    m.EndAction(typeof(IncognitoSpell));
+                }
+                    
+                if (!res)
+                {
+                    if (!m.CanBeginAction(typeof(PolymorphSpell)))
+                    {
+                        m.BodyMod = 0;
+                        m.HueMod = -1;
+                        m.EndAction(typeof(PolymorphSpell));
+                        res = true;
+                    }
+                }
+                if (res)
                 {
                     Effects.SendLocationParticles(EffectItem.Create(m.Location, m.Map, EffectItem.DefaultDuration), 0x3728, 8, 20, 5042);
                     Effects.PlaySound(m, m.Map, 0x201);

@@ -803,7 +803,7 @@ namespace Server.Spells
 		{
 			return (Region.Find( loc, map ).IsPartOf( typeof( Engines.CannedEvil.ChampionSpawnRegion ) ));
 		}
-
+        //TODO UPDATE THESE LOCS
 		public static bool IsDoomFerry( Map map, Point3D loc )
 		{
 			if( map != Map.Malas )

@@ -1690,7 +1690,7 @@ namespace Server.Engines.ConPVP
 			{
 				mob.MagicDamageAbsorb = 0;
 				mob.MeleeDamageAbsorb = 0;
-				Spells.Second.ProtectionSpell.Registry.Remove( mob );
+				//Spells.Second.ProtectionSpell.Registry.Remove( mob );
 
 				Spells.Fourth.ArchProtectionSpell.RemoveEntry( mob );
 
