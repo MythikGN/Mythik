@@ -518,7 +518,7 @@ namespace Server.Spells
 				return;
 
 			if ( m_Info.Mantra != null && m_Info.Mantra.Length > 0 && m_Caster.Player )
-				m_Caster.PublicOverheadMessage( MessageType.Spell, m_Caster.SpeechHue, true, m_Info.Mantra, false );
+				m_Caster.PublicOverheadMessage( MessageType.Spell, 0x7a1, true, m_Info.Mantra, false );
 		}
 
 		public virtual bool BlockedByHorrificBeast{ get{ return true; } }
@@ -995,8 +995,8 @@ namespace Server.Spells
 			if ( fc > fcMax )
 				fc = fcMax;
 
-			if ( ProtectionSpell.Registry.Contains( m_Caster ) )
-				fc -= 2;
+			//if ( ProtectionSpell.Registry.Contains( m_Caster ) )
+			//	fc -= 2;
 
 			if( EssenceOfWindSpell.IsDebuffed( m_Caster ) )
 				fc -= EssenceOfWindSpell.GetFCMalus( m_Caster );
