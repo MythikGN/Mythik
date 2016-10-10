@@ -749,8 +749,12 @@ namespace Server.Mobiles
 				}
 			}
 		}
+        public override void OnDoubleClick(Mobile from)
+        {
+            this.VendorBuy(from);
+        }
 
-		public override bool OnDragDrop( Mobile from, Item dropped )
+        public override bool OnDragDrop( Mobile from, Item dropped )
 		{
 			/* TODO: Thou art giving me? and fame/karma for gold gifts */
 
