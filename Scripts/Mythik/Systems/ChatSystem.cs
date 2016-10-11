@@ -24,7 +24,7 @@ namespace Scripts.Mythik.Systems
         private static void SendChatMessage(CommandEventArgs e)
         {
             var msg = "[" + e.Mobile.Name + "]: " + e.ArgString;
-            var hue = 0xb2;
+            var hue = 0x7a1;
             if (e.Mobile.AccessLevel > AccessLevel.Player)
                 hue = 0x44;
             Packet p = new AsciiMessage(Serial.MinusOne, -1, MessageType.Regular, hue, 3, "System", msg);
