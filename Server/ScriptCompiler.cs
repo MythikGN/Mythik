@@ -30,6 +30,9 @@ using System.Security.Cryptography;
 using Microsoft.CSharp;
 using Microsoft.VisualBasic;
 using System.Diagnostics;
+using Microsoft.CodeAnalysis.MSBuild;
+using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.Emit;
 
 namespace Server
 {
@@ -158,9 +161,56 @@ namespace Server
 			return CompileCSScripts( debug, true, out assembly );
 		}
 
+        private static bool RosylnBuild(bool debug, bool cache, out Assembly assembly)
+        {
+
+            bool success = true;
+
+            MSBuildWorkspace workspace = MSBuildWorkspace.Create();
+           
+
+            Solution solution = workspace.OpenSolutionAsync("Server\\Server.sln").Result;
+            ProjectDependencyGraph projectGraph = solution.GetProjectDependencyGraph();
+            Dictionary<string, Stream> assemblies = new Dictionary<string, Stream>();
+
+            foreach (ProjectId projectId in projectGraph.GetTopologicallySortedProjects())
+            {
+                Compilation projectCompilation = solution.GetProject(projectId).GetCompilationAsync().Result;
+                if (null != projectCompilation && !string.IsNullOrEmpty(projectCompilation.AssemblyName))
+                {
+                    using (var stream = new MemoryStream())
+                    {
+                        EmitResult result = projectCompilation.Emit(stream);
+                        if (result.Success)
+                        {
+                            string fileName = string.Format("{0}.dll", projectCompilation.AssemblyName);
+
+                            using (FileStream file = File.Create("Scripts\\Output" + '\\' + fileName))
+                            {
+                                stream.Seek(0, SeekOrigin.Begin);
+                                stream.CopyTo(file);
+                            }
+                        }
+                        else
+                        {
+                            success = false;
+                        }
+                        
+                    }
+                }
+                else
+                {
+                    success = false;
+                }
+            }
+            assembly = Assembly.LoadFrom("Scripts/Output/Scripts.CS.dll");
+            return success;
+        }
+
 		public static bool CompileCSScripts( bool debug, bool cache, out Assembly assembly )
 		{
 			Console.Write( "Scripts: Compiling C# scripts..." );
+           
 			string[] files = GetScripts( "*.cs" );
 
 			if( files.Length == 0 )
@@ -196,7 +246,7 @@ namespace Server
 											break;
 										}
 									}
-                                    valid = true;
+                                    
 									if( valid )
 									{
 										assembly = Assembly.LoadFrom( "Scripts/Output/Scripts.CS.dll" );
@@ -222,7 +272,9 @@ namespace Server
 
 			DeleteFiles( "Scripts.CS*.dll" );
 
-			using ( CSharpCodeProvider provider = new CSharpCodeProvider() )
+            return RosylnBuild(debug, cache, out assembly);
+
+            using ( CSharpCodeProvider provider = new CSharpCodeProvider() )
 			{
 				string path = GetUnusedPath( "Scripts.CS" );
 

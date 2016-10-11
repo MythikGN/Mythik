@@ -2914,69 +2914,6 @@
     <Compile Include="Mythik\3rdParty\Doom System\LeverPuzzle.cs" />
     <Compile Include="Mythik\3rdParty\Doom System\PoisonRoomRegion.cs" />
     <Compile Include="Mythik\3rdParty\Doom System\SecretRoomRegion.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Channels\Alliance.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Channels\Channel.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Channels\Faction.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Channels\Guild.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Channels\Irc.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Channels\Multi.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Channels\Public.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Channels\Staff.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Commands\All.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Commands\Friends.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Commands\HelpContents.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Commands\Mail.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Commands\Pm.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Commands\ViewAll.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\General\Avatar.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\General\Chat3Guild.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\General\Chat3Party.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\General\CommandInfo.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\General\Data.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\General\DefaultLocal.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\General\Events.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\General\Filter.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\General\General.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\General\IrcConnection.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\General\Logging.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\General\Message.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\General\MultiConnection.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\General\Notification.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\General\TrackSpam.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\1.0 Skin\ListGump10.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\1.0 Skin\PmNotifyGump10.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\2.0 Skin\ListGump20.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\2.0 Skin\PmNotifyGump20.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\3.0 Skin\ChannelGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\3.0 Skin\ColorsGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\3.0 Skin\EditNotGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\3.0 Skin\FilterGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\3.0 Skin\GeneralGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\3.0 Skin\GlobalGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\3.0 Skin\HelpContentsGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\3.0 Skin\HistoryGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\3.0 Skin\IrcGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\3.0 Skin\ListGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\3.0 Skin\LoggingGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\3.0 Skin\MailGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\3.0 Skin\MessageGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\3.0 Skin\MultiGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\3.0 Skin\PmNotifyGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\3.0 Skin\ProfileGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\3.0 Skin\SendMessageGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\3.0 Skin\SpamGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\Error Reporting\Errors.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\Error Reporting\ErrorsGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\Error Reporting\ErrorsNotifyGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\Gumps Plus\BackgroundPlus.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\Gumps Plus\ButtonPlus.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\Gumps Plus\GumpInfo.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\Gumps Plus\GumpPlus.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\Gumps Plus\HTML.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\Gumps Plus\HtmlPlus.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Gumps\Gumps Plus\InfoGump.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Jail.cs" />
-    <Compile Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\RUOVersion.cs" />
     <Compile Include="Mythik\3rdParty\Poker\Card.cs" />
     <Compile Include="Mythik\3rdParty\Poker\Deck.cs" />
     <Compile Include="Mythik\3rdParty\Poker\Enums.cs" />
@@ -3135,6 +3072,7 @@
     <Compile Include="Mythik\3rdParty\XmlSpawner\XMLSpawner Support\SpawnerExporter.cs" />
     <Compile Include="Mythik\3rdParty\XmlSpawner\XMLSpawner Support\StaffCloak.cs" />
     <Compile Include="Mythik\Commands\HomeHomeHome.cs" />
+    <Compile Include="Mythik\Commands\PlayerCommands.cs" />
     <Compile Include="Mythik\Encryption\Configuration.cs" />
     <Compile Include="Mythik\Encryption\Encryption.cs" />
     <Compile Include="Mythik\Encryption\GameEncryption.cs" />
@@ -3186,6 +3124,7 @@
     <Compile Include="Mythik\Systems\Achievements\AchieveTypes\ItemCraftedAchievement.cs" />
     <Compile Include="Mythik\Systems\Achievements\AchieveTypes\SkillGainAchieve.cs" />
     <Compile Include="Mythik\Systems\Achievements\Items\AcheivmentSystemMemoryStone.cs" />
+    <None Include="app.config" />
     <None Include="Mythik\3rdParty\XmlSpawner\XMLSpawner Extras\XmlQuestNPC\Abbott.npc" />
     <None Include="Mythik\3rdParty\XmlSpawner\XMLSpawner Extras\XmlQuestNPC\Costello.npc" />
     <None Include="Mythik\3rdParty\XmlSpawner\XMLSpawner Extras\XmlQuestNPC\Dracondar.npc" />
@@ -3208,6 +3147,7 @@
     <None Include="Mythik\3rdParty\XmlSpawner\XMLSpawner Support\Container.cs.2.4" />
     <None Include="Mythik\3rdParty\XmlSpawner\XMLSpawner Support\Stealing.cs.2.4" />
     <None Include="Mythik\Systems\Achievements\LICENSE" />
+    <Compile Include="Mythik\Systems\ChatSystem.cs" />
     <Compile Include="Mythik\Systems\CreatureGuide.cs" />
     <Compile Include="Mythik\Items\Misc\EyeOfNewt.cs" />
     <Compile Include="Mythik\Systems\Farming\Items\CommonPlants.cs" />
@@ -3462,12 +3402,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Text Data Files\ChatAvatars.txt" />
-    <Content Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Text Data Files\ChatBacks.txt" />
-    <Content Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Text Data Files\ChatColors.txt" />
-    <Content Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Text Data Files\ChatFilters.txt" />
-    <Content Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Text Data Files\ChatLocal.txt" />
-    <Content Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Text Data Files\HelpContents.txt" />
     <Content Include="Mythik\3rdParty\Town Houses v2.01\Optional Patches\BaseHousePatch.txt" />
     <Content Include="Mythik\3rdParty\Town Houses v2.01\Optional Patches\InteriorDecoratorPatch.txt" />
     <Content Include="Mythik\3rdParty\Town Houses v2.01\Optional Patches\READ.txt" />
@@ -3578,8 +3512,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Beta 9.doc" />
-    <None Include="Mythik\3rdParty\Knives Chat 3.0 Beta 9\Read.doc" />
     <None Include="Mythik\3rdParty\Town Houses v2.01\Read.doc" />
   </ItemGroup>
   <ItemGroup />
