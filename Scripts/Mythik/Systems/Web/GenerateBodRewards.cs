@@ -16,8 +16,10 @@ namespace Scripts.Mythik.Systems.Web
     {
         public static void Initialize()
         {
-            GenerateBods(SmithRewardCalculator.Instance,"smithbods.json");
+           // GenerateBods(SmithRewardCalculator.Instance,"smithbods.json");
+           // GenerateBods(TailorRewardCalculator.Instance, "tailorbods.json");
         }
+
 
         private static void GenerateBods(RewardCalculator calc,string file)
         {
@@ -27,18 +29,43 @@ namespace Scripts.Mythik.Systems.Web
                 writer.Formatting = Formatting.Indented;
                 //writer.WritePropertyName("items");
                 writer.WriteStartArray();
-                SmallBOD sbod = new SmallSmithBOD();
+                if(calc is SmithRewardCalculator)
+                {
+                    SmallBOD sbod = new SmallSmithBOD();
 
-                sbod.Type = typeof(PlateArms);
+                    sbod.Type = typeof(PlateArms);
 
-                GenerateItemRange(sbod, calc, writer);
+                    GenerateItemRange(sbod, calc, writer);
+                    sbod.Type = typeof(Dagger);
+                    GenerateItemRange(sbod, calc, writer);
 
+                    GenerateLBod(writer, calc, LargeBulkEntry.LargeRing);
+                    GenerateLBod(writer, calc, LargeBulkEntry.LargeChain);
+                    GenerateLBod(writer, calc, LargeBulkEntry.LargePlate);
+                }
+                else
+                {
+                    var sbod = new SmallTailorBOD();
+                    sbod.Type = typeof(TricorneHat);
+                    GenerateItemRange(sbod, calc, writer);
+                    sbod.Type = typeof(LeatherArms);
+                    GenerateItemRange(sbod, calc, writer);
 
+                    GenerateLBod(writer, calc, LargeBulkEntry.LargeRing);
+                    GenerateLBod(writer, calc, LargeBulkEntry.LargeChain);
+                    GenerateLBod(writer, calc, LargeBulkEntry.LargePlate);
+                }
 
             }
 
 
         }
+
+        private static void GenerateLBod(JsonWriter writer, RewardCalculator calc, SmallBulkEntry[] bods)
+        {
+            throw new NotImplementedException();
+        }
+
         private static void GenerateItemRange(SmallBOD bod, RewardCalculator calc, JsonWriter writer)
         {
             for (int qty = 10; qty <= 20; qty += 5)
