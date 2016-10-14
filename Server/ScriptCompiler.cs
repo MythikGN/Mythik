@@ -169,7 +169,7 @@ namespace Server
             MSBuildWorkspace workspace = MSBuildWorkspace.Create();
            
 
-            Solution solution = workspace.OpenSolutionAsync("Server\\Server.sln").Result;
+            Solution solution = workspace.OpenSolutionAsync("Server/Server.sln").Result;
             ProjectDependencyGraph projectGraph = solution.GetProjectDependencyGraph();
             Dictionary<string, Stream> assemblies = new Dictionary<string, Stream>();
 
@@ -185,7 +185,7 @@ namespace Server
                         {
                             string fileName = string.Format("{0}.dll", projectCompilation.AssemblyName);
 
-                            using (FileStream file = File.Create("Scripts\\Output" + '\\' + fileName))
+                            using (FileStream file = File.Create("Scripts/Output" + '/' + fileName))
                             {
                                 stream.Seek(0, SeekOrigin.Begin);
                                 stream.CopyTo(file);
@@ -246,8 +246,8 @@ namespace Server
 											break;
 										}
 									}
-                                    
-									if( valid )
+                                    valid = true;
+                                    if ( valid )
 									{
 										assembly = Assembly.LoadFrom( "Scripts/Output/Scripts.CS.dll" );
 
