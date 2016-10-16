@@ -626,6 +626,9 @@ namespace Server.Engines.Craft
             index = AddCraft(typeof(FusionCube), 1044050, "Fusion Cube", 80.0, 110.0, typeof(IronIngot), 1044036, 500);
             AddSkill(index, SkillName.Magery, 75.0, 100.0);
             AddRes(index, typeof(GoldIngot), 1027146, 500);
+
+            index = AddCraft(typeof(EmptySkinDyeBottle), 1044050, "Skin Dye Bottle", 80.0, 110.0, typeof(IronIngot), 1044036, 100);
+
             // Set the overridable material
             SetSubRes( typeof( IronIngot ), 1044022 );
 

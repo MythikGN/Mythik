@@ -225,7 +225,6 @@ namespace Scripts.Mythik.Systems.Loot
             }
         }
 
-        // these are dropped via paragon system as well
         // probably via tmaps? TODO
         /// <summary>
         /// List of items rewarded using ToT style system dropped direct to backpack, 
@@ -235,7 +234,8 @@ namespace Scripts.Mythik.Systems.Loot
         public static Type[] LesserArtifacts = new Type[] {
             typeof(RareClothDyeTub),typeof( RareLeatherDyeTub ), typeof(RuneBookChargeDeed),
             typeof(AnimateDeadScrollRecipe),typeof(BloodOathScrollRecipe),typeof(SummonFamiliarScrollRecipe),
-            typeof(EnemyOfOneScrollRecipe), typeof(HolyWarFork), typeof(SkillBracelet), typeof(SkillRing), typeof(SkillNecklace), typeof(SkillEarrings)
+            typeof(EnemyOfOneScrollRecipe), typeof(HolyWarFork), typeof(SkillBracelet), typeof(SkillRing), typeof(SkillNecklace), typeof(SkillEarrings),
+            typeof(SkinDye),typeof(RareHairDye),
 
         };
         /// <summary>
