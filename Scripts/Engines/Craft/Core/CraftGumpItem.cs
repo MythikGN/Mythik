@@ -103,7 +103,31 @@ namespace Server.Engines.Craft
 			if( needsRecipe )
 				AddHtmlLocalized( 170, 302 + (m_OtherCount++ * 20), 310, 18, 1073620, RedLabelColor, false, false ); // You have not learned this recipe.
 
-		}
+            if(craftItem.ItemType.IsSubclassOf(typeof(BaseArmor)) || craftItem.ItemType.IsSubclassOf(typeof(BaseWeapon)) )
+            {
+                Item item = null;
+                string text = "";
+                try { item = Activator.CreateInstance(craftItem.ItemType) as Item; } catch { }
+
+                var weap = item as BaseWeapon;
+                var arm = item as BaseArmor;
+                if(weap != null)
+                {
+                    if(!weap.SkillBonuses.IsEmpty)
+                    {
+                        text += weap.SkillBonuses.GetBonus(0) + " " + weap.SkillBonuses.GetSkill(0) + "<br>";
+                    }
+                }
+                if (arm != null)
+                {
+                    if (!arm.SkillBonuses.IsEmpty)
+                    {
+                        text += arm.SkillBonuses.GetBonus(0) + " " + arm.SkillBonuses.GetSkill(0) + "<br>";
+                    }
+                }
+                AddHtml(170, 302 + (m_OtherCount * 20), 310, 18, text, false, false);
+            }
+        }
 
 		private TextDefinition RequiredExpansionMessage( Expansion expansion )
 		{
