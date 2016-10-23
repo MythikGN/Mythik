@@ -528,6 +528,7 @@ namespace Server.Spells
 		public virtual bool CheckNextSpellTime{ get{ return !(m_Scroll is BaseWand); } }
         public bool RequestTargetBeforCasting()
         {
+
             if (IsCastPossible())
             {
                 if (m_Caster.Paralyzed && !m_Caster.HasFreeHand())
@@ -554,8 +555,8 @@ namespace Server.Spells
         public bool IsCastPossible()
         {
             //Nasir - GM's can cast anything
-            if (m_Caster.AccessLevel >= AccessLevel.GameMaster)
-                return true;
+           // if (m_Caster.AccessLevel >= AccessLevel.GameMaster)
+           //     return true;
 
             //if (m_PlayerCaster != null && m_PlayerCaster.Stoned)
             //    return false;
@@ -769,6 +770,10 @@ namespace Server.Spells
         public bool DirectCast()
         {
             m_StartCastTime = DateTime.UtcNow;
+           if(!IsCastPossible())
+            {
+                return false;
+            }
 
             if (Core.AOS && m_Caster.Spell is Spell && ((Spell)m_Caster.Spell).State == SpellState.Sequencing)
                 ((Spell)m_Caster.Spell).Disturb(DisturbType.NewCast);

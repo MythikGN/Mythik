@@ -732,14 +732,14 @@ namespace Server.Spells
 		public static bool IsFeluccaT2A( Map map, Point3D loc )
 		{
 			int x = loc.X, y = loc.Y;
-
+            return false;
 			return (map == Map.Felucca && x >= 5120 && y >= 2304 && x < 6144 && y < 4096);
 		}
 
 		public static bool IsAnyT2A( Map map, Point3D loc )
 		{
 			int x = loc.X, y = loc.Y;
-
+            return false;
 			return ((map == Map.Trammel || map == Map.Felucca) && x >= 5120 && y >= 2304 && x < 6144 && y < 4096);
 		}
 
@@ -820,6 +820,7 @@ namespace Server.Spells
 			return false;
 		}
 
+        //these be wrong always
 		public static bool IsTokunoDungeon( Map map, Point3D loc )
 		{
 			//The tokuno dungeons are really inside malas
