@@ -18,7 +18,7 @@ namespace Scripts.Mythik.Systems
         public static List<CreatureInfo> Mounts = new List<CreatureInfo>();
         public static void Initialize()
         {
-            CommandSystem.Register("guide", AccessLevel.Player, new CommandEventHandler(ShowGuide));
+            CommandSystem.Register("cguide", AccessLevel.Player, new CommandEventHandler(ShowGuide));
             PopulateCreatures();
         }
 
@@ -67,7 +67,8 @@ namespace Scripts.Mythik.Systems
                 return;
             list.Add(new CreatureInfo() {Name = mob.Name, Difficulty = mob.GetMonsterDifficultyLevelText(), Hits = mob.Hits, GraphicID = ShrinkTable.Lookup(mob) });
         }
-
+        [Usage("cguide")]
+        [Description("Shows the Create Guide")]
         public static void ShowGuide(CommandEventArgs e)
         {
             var from = e.Mobile;

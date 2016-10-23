@@ -20,13 +20,19 @@ namespace Scripts.Mythik.Systems
             CommandSystem.Register("chat", AccessLevel.Player, new CommandEventHandler(SendChatMessage));
             CommandSystem.Register("shout", AccessLevel.Player, new CommandEventHandler(SendChatMessage));
         }
-
+        [Usage("c")]
+        [Description("Send a chat message")]
         private static void SendChatMessage(CommandEventArgs e)
         {
             var msg = "[" + e.Mobile.Name + "]: " + e.ArgString;
             var hue = 0x7a1;
             if (e.Mobile.AccessLevel > AccessLevel.Player)
                 hue = 0x44;
+            if(!(e.Mobile as MythikPlayerMobile).ChatEnabled)
+            {
+                e.Mobile.SendAsciiMessage("Enable Chat with .chaton");
+                return;
+            }
             Packet p = new AsciiMessage(Serial.MinusOne, -1, MessageType.Regular, hue, 3, "System", msg);
             
 
@@ -44,14 +50,16 @@ namespace Scripts.Mythik.Systems
 
             NetState.FlushAll();
         }
-      
 
 
+        [Usage("chatoff")]
+        [Description("Disable Chat")]
         private static void DisableChat(CommandEventArgs e)
         {
             ((MythikPlayerMobile)e.Mobile).ChatEnabled = false;
         }
-
+        [Usage("chaton")]
+        [Description("Enable Chat")]
         private static void EnableChat(CommandEventArgs e)
         {
             ((MythikPlayerMobile)e.Mobile).ChatEnabled = true;

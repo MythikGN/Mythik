@@ -41,7 +41,7 @@ namespace Scripts.Mythik.Systems
                 this.AddBackground(20, 11, 761, 571, 9200);
                 this.AddLabel(312, 29, 0, @"Welcome to Mythik");
                 this.AddLabel(266, 63, 0, @"Please select two skills to start at 60%");
-
+                this.AddLabel(266, 63, 0, @"Magery starts at 80");
                 int startx = 45;
                 int starty = 100;
                 int cnt = 0;
@@ -52,10 +52,10 @@ namespace Scripts.Mythik.Systems
                         this.AddCheck(x, y, 209, 208, false, cnt);
                         this.AddLabel(x+25, y, 0, ((SkillName)cnt).ToString());
                         cnt++;
-                        if (cnt == 49)
+                        if (cnt == (int)SkillName.Necromancy || cnt == (int)SkillName.Magery)
                             break;
                     }
-                    if (cnt == 49)
+                    if (cnt == (int)SkillName.Necromancy || cnt == (int)SkillName.Magery)
                         break;
                 }
                 this.AddButton(738, 549, 1153, 248, 1, GumpButtonType.Reply, 0);
@@ -74,6 +74,7 @@ namespace Scripts.Mythik.Systems
                 var skillB = (SkillName)info.Switches[1];
                 sender.Mobile.Skills[skillA].BaseFixedPoint = 600;
                 sender.Mobile.Skills[skillB].BaseFixedPoint = 600;
+                sender.Mobile.Skills[SkillName.Magery].BaseFixedPoint = 800;
                 (sender.Mobile as MythikPlayerMobile).HasSetLanguageSkills = true;
                 //base.OnResponse(sender, info);
             }

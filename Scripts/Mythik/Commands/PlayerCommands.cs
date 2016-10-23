@@ -26,7 +26,8 @@ namespace Scripts.Mythik.Commands
 
 
         }
-
+        [Usage("heal")]
+        [Description("Uses a bandage")]
         private static void UseBandage(CommandEventArgs e)
         {
             var player = e.Mobile as PlayerMobile;
@@ -37,7 +38,8 @@ namespace Scripts.Mythik.Commands
                     pot.OnDoubleClick(player);
             }
         }
-
+        [Usage("fs")]
+        [Description("Uses a FS Scroll")]
         private static void UseFSScroll(CommandEventArgs e)
         {
             var player = e.Mobile as PlayerMobile;
@@ -59,7 +61,8 @@ namespace Scripts.Mythik.Commands
                     pot.OnDoubleClick(player);
             }*/
         }
-
+        [Usage("cp")]
+        [Description("Drinks a Cure potion")]
         private static void DrinkCurePotion(CommandEventArgs e)
         {
             var player = e.Mobile as PlayerMobile;
@@ -70,7 +73,8 @@ namespace Scripts.Mythik.Commands
                     pot.OnDoubleClick(player);
             }
         }
-
+        [Usage("ip")]
+        [Description("Drinks an Invis potion")]
         private static void DrinkInvisPotion(CommandEventArgs e)
         {
             var player = e.Mobile as PlayerMobile;
@@ -81,7 +85,8 @@ namespace Scripts.Mythik.Commands
                     pot.OnDoubleClick(player);
             }
         }
-
+        [Usage("rp")]
+        [Description("Drinks a Refresh potion")]
         private static void DrinkRefreshPotion(CommandEventArgs e)
         {
             var player = e.Mobile as PlayerMobile;
@@ -92,7 +97,8 @@ namespace Scripts.Mythik.Commands
                     pot.OnDoubleClick(player);
             }
         }
-
+        [Usage("hp")]
+        [Description("Drinks a Heal potion")]
         private static void DrinkHealPotion(CommandEventArgs e)
         {
             var player = e.Mobile as PlayerMobile;
@@ -103,7 +109,8 @@ namespace Scripts.Mythik.Commands
                     pot.OnDoubleClick(player);
             }
         }
-
+        [Usage("mp")]
+        [Description("Drinks a Mana potion")]
         private static void DrinkManaPotion(CommandEventArgs e)
         {
             var player = e.Mobile as PlayerMobile;

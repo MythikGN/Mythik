@@ -17,8 +17,8 @@ namespace Scripts.Mythik.Gumps
     {
         private static bool Enabled = true;
 
-        public static List<NewsItem> News = new List<NewsItem>() { new NewsItem("Mythik 2016","Going live in 2016") };
-        
+        public static List<NewsItem> News = new List<NewsItem>() { new NewsItem("23/10/16","Going live in 2016") };
+        //git 
         public static void Initialize()
         {
             if (Enabled)

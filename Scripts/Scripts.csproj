@@ -3102,6 +3102,7 @@
     <Compile Include="Mythik\Items\Craftables\Inscription\LumberBook.cs" />
     <Compile Include="Mythik\Items\Craftables\Inscription\IngotBook.cs" />
     <Compile Include="Mythik\Items\Craftables\Inscription\ReagentBook.cs" />
+    <Compile Include="Mythik\Items\Craftables\Tinkering\EmptySkinDyeBottle.cs" />
     <Compile Include="Mythik\Items\Craftables\Tinkering\FusionCube.cs" />
     <Compile Include="Mythik\Items\Craftables\Tinkering\GemArmor\PearlArmor.cs" />
     <Compile Include="Mythik\Items\Craftables\Tinkering\GemArmor\TurquoiseArmor.cs" />
@@ -3116,6 +3117,8 @@
     <Compile Include="Mythik\Items\ItemSets.cs" />
     <Compile Include="Mythik\Items\Craftables\Tinkering\GemArmor\RubyArmor.cs" />
     <Compile Include="Mythik\Items\Misc\RareArmorDyes.cs" />
+    <Compile Include="Mythik\Items\Rares\HairDye.cs" />
+    <Compile Include="Mythik\Items\Rares\SkinDye.cs" />
     <Compile Include="Mythik\Mobiles\Monsters\Reptile\ShadowWyrm.cs" />
     <Compile Include="Mythik\Systems\Achievements\AchieveTypes\BaseAchievement.cs" />
     <Compile Include="Mythik\Systems\Achievements\AchieveTypes\DiscoveryAchievement.cs" />
@@ -3515,7 +3518,10 @@
   <ItemGroup>
     <None Include="Mythik\3rdParty\Town Houses v2.01\Read.doc" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Mythik\Items\Craftables\Blacksmithy\" />
+    <Folder Include="Mythik\Items\Craftables\Tailoring\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
