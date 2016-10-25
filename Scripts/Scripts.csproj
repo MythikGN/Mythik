@@ -3085,7 +3085,6 @@
     <Compile Include="Mythik\Gumps\AuctionPriceGump.cs" />
     <Compile Include="Mythik\Gumps\AuctionStatusGump.cs" />
     <Compile Include="Mythik\Gumps\BankStoneGump.cs" />
-    <Compile Include="Mythik\Gumps\CommandsListGump.cs" />
     <Compile Include="Mythik\Gumps\FAQGump.cs" />
     <Compile Include="Mythik\Gumps\ItemStoneGump.cs" />
     <Compile Include="Mythik\Gumps\NewsGump.cs" />
@@ -3120,6 +3119,8 @@
     <Compile Include="Mythik\Items\Rares\HairDye.cs" />
     <Compile Include="Mythik\Items\Rares\SkinDye.cs" />
     <Compile Include="Mythik\Mobiles\Monsters\Reptile\ShadowWyrm.cs" />
+    <Compile Include="Mythik\Regions\NeutralZone.cs" />
+    <Compile Include="Mythik\Regions\VendorMall.cs" />
     <Compile Include="Mythik\Systems\Achievements\AchieveTypes\BaseAchievement.cs" />
     <Compile Include="Mythik\Systems\Achievements\AchieveTypes\DiscoveryAchievement.cs" />
     <Compile Include="Mythik\Systems\Achievements\AchieveTypes\HarvestAchievement.cs" />
