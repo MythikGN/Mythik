@@ -3120,6 +3120,7 @@
     <Compile Include="Mythik\Items\Rares\SkinDye.cs" />
     <Compile Include="Mythik\Mobiles\Monsters\Reptile\ShadowWyrm.cs" />
     <Compile Include="Mythik\Regions\NeutralZone.cs" />
+    <Compile Include="Mythik\Regions\PvpArenas.cs" />
     <Compile Include="Mythik\Regions\VendorMall.cs" />
     <Compile Include="Mythik\Systems\Achievements\AchieveTypes\BaseAchievement.cs" />
     <Compile Include="Mythik\Systems\Achievements\AchieveTypes\DiscoveryAchievement.cs" />
@@ -3152,6 +3153,9 @@
     <None Include="Mythik\3rdParty\XmlSpawner\XMLSpawner Support\Stealing.cs.2.4" />
     <None Include="Mythik\Systems\Achievements\LICENSE" />
     <Compile Include="Mythik\Systems\ChatSystem.cs" />
+    <Compile Include="Mythik\Systems\CityLoyalty\CityLoyaltySystem.cs" />
+    <Compile Include="Mythik\Systems\CommunityCollection\CollectionItem.cs" />
+    <Compile Include="Mythik\Systems\CommunityCollection\ICollection.cs" />
     <Compile Include="Mythik\Systems\CreatureGuide.cs" />
     <Compile Include="Mythik\Items\Misc\EyeOfNewt.cs" />
     <Compile Include="Mythik\Systems\Farming\Items\CommonPlants.cs" />
@@ -3197,8 +3201,14 @@
     <Compile Include="Mythik\Systems\HerbGathering\Items\HerbalismSickle.cs" />
     <Compile Include="Mythik\Systems\LanguageAndSkillsSelect.cs" />
     <Compile Include="Mythik\Systems\Loot\MythikLootSystem.cs" />
-    <Compile Include="Mythik\Systems\VendorSearch\Gumps\VendorSearchGump.cs" />
-    <Compile Include="Mythik\Systems\VendorSearch\VendorIndexSystem.cs" />
+    <Compile Include="Mythik\Systems\MondainsQuests\Helpers\QuestHelper.cs" />
+    <Compile Include="Mythik\Systems\MondainsQuests\Helpers\QuestReader.cs" />
+    <Compile Include="Mythik\Systems\Titles\SelectTitleGump.cs" />
+    <Compile Include="Mythik\Systems\Titles\TitlesMenu.cs" />
+    <Compile Include="Mythik\Systems\VendorSearch\RunicReforging.cs" />
+    <Compile Include="Mythik\Systems\VendorSearch\VendorSearch.cs" />
+    <Compile Include="Mythik\Systems\VendorSearch\VendorSearchGump.cs" />
+    <Compile Include="Mythik\Systems\VendorSearch\VendorSearchMap.cs" />
     <Compile Include="Mythik\Systems\Web\GenerateBodRewards.cs" />
     <Compile Include="Mythik\Systems\Web\GenerateCraftTables.cs" />
     <Compile Include="Mythik\Systems\Web\GenerateMobiles.cs" />
@@ -3522,6 +3532,7 @@
   <ItemGroup>
     <Folder Include="Mythik\Items\Craftables\Blacksmithy\" />
     <Folder Include="Mythik\Items\Craftables\Tailoring\" />
+    <Folder Include="Mythik\Systems\VendorSearch\Gumps\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

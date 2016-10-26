@@ -1,6 +1,7 @@
 ﻿using Scripts.Mythik.Items.Craftables.Alch;
 using Server;
 using Server.Commands;
+using Server.Gumps;
 using Server.Items;
 using Server.Mobiles;
 using System;
@@ -23,8 +24,20 @@ namespace Scripts.Mythik.Commands
             CommandSystem.Register("rt", AccessLevel.Player, new CommandEventHandler(DrinkRestoPotion));
             CommandSystem.Register("fs", AccessLevel.Player, new CommandEventHandler(UseFSScroll));
             CommandSystem.Register("heal", AccessLevel.Player, new CommandEventHandler(UseBandage));
+            CommandSystem.Register("title", AccessLevel.Player, new CommandEventHandler(OpenTitleMenu));
 
+        }
 
+        [Usage("title")]
+        [Description("Open the titles gump.")]
+        private static void OpenTitleMenu(CommandEventArgs e)
+        {
+            var player = e.Mobile as PlayerMobile;
+            if (player != null)
+            {
+                player.CloseGump(typeof(TitlesGump));
+                player.SendGump(new TitlesGump(player));
+            }
         }
         [Usage("heal")]
         [Description("Uses a bandage")]

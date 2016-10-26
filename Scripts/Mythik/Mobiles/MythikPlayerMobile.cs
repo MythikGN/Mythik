@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using Server;
 using Scripts.Mythik.Systems.Achievements;
 using Server.SkillHandlers;
+using Server.ContextMenus;
+using Server.Gumps;
 
 namespace Scripts.Mythik.Mobiles
 {
@@ -70,6 +72,12 @@ namespace Scripts.Mythik.Mobiles
         public MythikPlayerMobile() : base ()
         {
 
+        }
+        public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)
+        {
+            list.Add(new Server.Engines.VendorSearhing.SearchVendors(this));
+            list.Add(new TitlesMenuEntry(this));
+            base.GetContextMenuEntries(from, list);
         }
 
         public override void Serialize(GenericWriter writer)

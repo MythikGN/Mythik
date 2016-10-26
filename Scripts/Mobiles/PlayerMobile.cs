@@ -24,6 +24,7 @@ using Server.Engines.CannedEvil;
 using Server.Engines.Craft;
 using Server.Spells.Spellweaving;
 using Server.Engines.PartySystem;
+using Server.Guilds;
 
 namespace Server.Mobiles
 {
@@ -2794,7 +2795,52 @@ namespace Server.Mobiles
 
 			switch ( version )
 			{
-				case 28:
+                case 32:
+                case 31:
+                    {
+                        m_ShowGuildAbbreviation = version > 31 ? reader.ReadBool() : false;
+                        m_FameKarmaTitle = reader.ReadString();
+                        m_PaperdollSkillTitle = reader.ReadString();
+                        m_OverheadTitle = reader.ReadString();
+                        m_SubtitleSkillTitle = reader.ReadString();
+
+                        m_CurrentChampTitle = reader.ReadString();
+                        m_CurrentVeteranTitle = reader.ReadInt();
+                        goto case 30;
+                    }
+                case 30: goto case 29;
+                case 29:
+                    {
+                        m_GauntletPoints = reader.ReadDouble();
+
+                       // m_SSNextSeed = reader.ReadDateTime();
+                      //  m_SSSeedExpire = reader.ReadDateTime();
+                      //  m_SSSeedLocation = reader.ReadPoint3D();
+                      //  m_SSSeedMap = reader.ReadMap();
+
+                        m_VASTotalMonsterFame = reader.ReadInt();
+
+                        //m_Quests = QuestReader.Quests(reader, this);
+                        //m_Chains = QuestReader.Chains(reader);
+
+                        m_Collections = new Dictionary<Collection, int>();
+                        m_CollectionTitles = new List<object>();
+
+                        for (int i = reader.ReadInt(); i > 0; i--)
+                        {
+                            m_Collections.Add((Collection)reader.ReadInt(), reader.ReadInt());
+                        }
+
+                        for (int i = reader.ReadInt(); i > 0; i--)
+                        {
+                            m_CollectionTitles.Add(QuestReader.Object(reader));
+                        }
+
+                        m_SelectedTitle = reader.ReadInt();
+
+                        goto case 28;
+                    }
+                case 28:
 				{
 					m_PeacedUntil = reader.ReadDateTime();
 
@@ -3065,7 +3111,15 @@ namespace Server.Mobiles
            
 		}
 
-		public override void Serialize( GenericWriter writer )
+        private double m_GauntletPoints;
+
+        [CommandProperty(AccessLevel.Administrator)]
+        public double GauntletPoints { get { return m_GauntletPoints; } set { m_GauntletPoints = value; } }
+        private int m_VASTotalMonsterFame;
+
+        [CommandProperty(AccessLevel.GameMaster)]
+        public int VASTotalMonsterFame { get { return m_VASTotalMonsterFame; } set { m_VASTotalMonsterFame = value; } }
+        public override void Serialize( GenericWriter writer )
 		{
 			//cleanup our anti-macro table
 			foreach ( Hashtable t in m_AntiMacroTable.Values )
@@ -3087,9 +3141,71 @@ namespace Server.Mobiles
 
 			base.Serialize( writer );
 
-			writer.Write( (int) 28 ); // version
+            writer.Write(32); // version
 
-			writer.Write( (DateTime) m_PeacedUntil );
+            // Version 31/32 Titles
+            writer.Write(m_ShowGuildAbbreviation);
+            writer.Write(m_FameKarmaTitle);
+            writer.Write(m_PaperdollSkillTitle);
+            writer.Write(m_OverheadTitle);
+            writer.Write(m_SubtitleSkillTitle);
+            writer.Write(m_CurrentChampTitle);
+            writer.Write(m_CurrentVeteranTitle);
+
+            // Version 30 open to take out old Queens Loyalty Info
+
+            // Version 29
+            writer.Write(m_GauntletPoints);
+
+            #region Plant System
+           // writer.Write(m_SSNextSeed);
+          ////  writer.Write(m_SSSeedExpire);
+          //  writer.Write(m_SSSeedLocation);
+          //  writer.Write(m_SSSeedMap);
+            #endregion
+
+            writer.Write(m_VASTotalMonsterFame);
+
+            #region Mondain's Legacy
+          //  QuestWriter.Quests(writer, m_Quests);
+           // QuestWriter.Chains(writer, m_Chains);
+
+            if (m_Collections == null)
+            {
+                writer.Write(0);
+            }
+            else
+            {
+                writer.Write(m_Collections.Count);
+
+                foreach (var pair in m_Collections)
+                {
+                    writer.Write((int)pair.Key);
+                    writer.Write(pair.Value);
+                }
+            }
+
+            if (m_CollectionTitles == null)
+            {
+                writer.Write(0);
+            }
+            else
+            {
+                writer.Write(m_CollectionTitles.Count);
+
+                for (int i = 0; i < m_CollectionTitles.Count; i++)
+                {
+                    QuestWriter.Object(writer, m_CollectionTitles[i]);
+                }
+            }
+
+            writer.Write(m_SelectedTitle);
+            #endregion
+
+
+
+
+            writer.Write( (DateTime) m_PeacedUntil );
 			writer.Write( (DateTime) m_AnkhNextUse );
 			writer.Write( m_AutoStabled, true );
 
@@ -4066,272 +4182,339 @@ namespace Server.Mobiles
 		}
 
 		[PropertyObject]
-		public class ChampionTitleInfo
-		{
-			public static TimeSpan LossDelay = TimeSpan.FromDays( 1.0 );
-			public const int LossAmount = 90;
-
-			private class TitleInfo
-			{
-				private int m_Value;
-				private DateTime m_LastDecay;
-
-				public int Value { get { return m_Value; } set { m_Value = value; } }
-				public DateTime LastDecay { get { return m_LastDecay; } set { m_LastDecay = value; } }
-
-				public TitleInfo()
-				{
-				}
-
-				public TitleInfo( GenericReader reader )
-				{
-					int version = reader.ReadEncodedInt();
-
-					switch( version )
-					{
-						case 0:
-						{
-							m_Value = reader.ReadEncodedInt();
-							m_LastDecay = reader.ReadDateTime();
-							break;
-						}
-					}
-				}
-
-				public static void Serialize( GenericWriter writer, TitleInfo info )
-				{
-					writer.WriteEncodedInt( (int)0 ); // version
-
-					writer.WriteEncodedInt( info.m_Value );
-					writer.Write( info.m_LastDecay );
-				}
-			}
-
-			private TitleInfo[] m_Values;
-
-			private int m_Harrower;	//Harrower titles do NOT decay
-
-			public int GetValue( ChampionSpawnType type )
-			{
-				return GetValue( (int)type );
-			}
-
-			public void SetValue( ChampionSpawnType type, int value )
-			{
-				SetValue( (int)type, value );
-			}
-
-			public void Award( ChampionSpawnType type, int value )
-			{
-				Award( (int)type, value );
-			}
-
-			public int GetValue( int index )
-			{
-				if( m_Values == null || index < 0 || index >= m_Values.Length )
-					return 0;
-
-				if( m_Values[index] == null )
-					m_Values[index] = new TitleInfo();
-
-				return m_Values[index].Value;
-			}
-
-			public DateTime GetLastDecay( int index )
-			{
-				if( m_Values == null || index < 0 || index >= m_Values.Length )
-					return DateTime.MinValue;
-
-				if( m_Values[index] == null )
-					m_Values[index] = new TitleInfo();
-
-				return m_Values[index].LastDecay;
-			}
-
-			public void SetValue( int index, int value )
-			{
-				if( m_Values == null )
-					m_Values = new TitleInfo[ChampionSpawnInfo.Table.Length];
-
-				if( value < 0 )
-					value = 0;
-
-				if( index < 0 || index >= m_Values.Length )
-					return;
-
-				if( m_Values[index] == null )
-					m_Values[index] = new TitleInfo();
-
-				m_Values[index].Value = value;
-			}
-
-			public void Award( int index, int value )
-			{
-				if( m_Values == null )
-					m_Values = new TitleInfo[ChampionSpawnInfo.Table.Length];
-
-				if( index < 0 || index >= m_Values.Length || value <= 0 )
-					return;
-
-				if( m_Values[index] == null )
-					m_Values[index] = new TitleInfo();
-
-				m_Values[index].Value += value;
-			}
-
-			public void Atrophy( int index, int value )
-			{
-				if( m_Values == null )
-					m_Values = new TitleInfo[ChampionSpawnInfo.Table.Length];
-
-				if( index < 0 || index >= m_Values.Length || value <= 0 )
-					return;
-
-				if( m_Values[index] == null )
-					m_Values[index] = new TitleInfo();
-
-				int before = m_Values[index].Value;
-
-				if( (m_Values[index].Value - value) < 0 )
-					m_Values[index].Value = 0;
-				else
-					m_Values[index].Value -= value;
-
-				if( before != m_Values[index].Value )
-					m_Values[index].LastDecay = DateTime.UtcNow;
-			}
-
-			public override string ToString()
-			{
-				return "...";
-			}
-
-			[CommandProperty(AccessLevel.GameMaster)]
-			public int Pestilence { get { return GetValue(ChampionSpawnType.Pestilence); } set { SetValue(ChampionSpawnType.Pestilence, value); } }
-
-			[CommandProperty( AccessLevel.GameMaster )]
-			public int Abyss { get { return GetValue( ChampionSpawnType.Abyss ); } set { SetValue( ChampionSpawnType.Abyss, value ); } }
-
-			[CommandProperty( AccessLevel.GameMaster )]
-			public int Arachnid { get { return GetValue( ChampionSpawnType.Arachnid ); } set { SetValue( ChampionSpawnType.Arachnid, value ); } }
-
-			[CommandProperty( AccessLevel.GameMaster )]
-			public int ColdBlood { get { return GetValue( ChampionSpawnType.ColdBlood ); } set { SetValue( ChampionSpawnType.ColdBlood, value ); } }
-
-			[CommandProperty( AccessLevel.GameMaster )]
-			public int ForestLord { get { return GetValue( ChampionSpawnType.ForestLord ); } set { SetValue( ChampionSpawnType.ForestLord, value ); } }
-
-			[CommandProperty( AccessLevel.GameMaster )]
-			public int SleepingDragon { get { return GetValue( ChampionSpawnType.SleepingDragon ); } set { SetValue( ChampionSpawnType.SleepingDragon, value ); } }
-
-			[CommandProperty( AccessLevel.GameMaster )]
-			public int UnholyTerror { get { return GetValue( ChampionSpawnType.UnholyTerror ); } set { SetValue( ChampionSpawnType.UnholyTerror, value ); } }
-
-			[CommandProperty( AccessLevel.GameMaster )]
-			public int VerminHorde { get { return GetValue( ChampionSpawnType.VerminHorde ); } set { SetValue( ChampionSpawnType.VerminHorde, value ); } }
-
-			[CommandProperty( AccessLevel.GameMaster )]
-			public int Harrower { get { return m_Harrower; } set { m_Harrower = value; } }
-
-			public ChampionTitleInfo()
-			{
-			}
-
-			public ChampionTitleInfo( GenericReader reader )
-			{
-				int version = reader.ReadEncodedInt();
-
-				switch( version )
-				{
-					case 0:
-					{
-						m_Harrower = reader.ReadEncodedInt();
-
-						int length = reader.ReadEncodedInt();
-						m_Values = new TitleInfo[length];
-
-						for( int i = 0; i < length; i++ )
-						{
-							m_Values[i] = new TitleInfo( reader );
-						}
-
-						if( m_Values.Length != ChampionSpawnInfo.Table.Length )
-						{
-							TitleInfo[] oldValues = m_Values;
-							m_Values = new TitleInfo[ChampionSpawnInfo.Table.Length];
-
-							for( int i = 0; i < m_Values.Length && i < oldValues.Length; i++ )
-							{
-								m_Values[i] = oldValues[i];
-							}
-						}
-						break;
-					}
-				}
-			}
-
-			public static void Serialize( GenericWriter writer, ChampionTitleInfo titles )
-			{
-				writer.WriteEncodedInt( (int)0 ); // version
-
-				writer.WriteEncodedInt( titles.m_Harrower );
-
-				int length = titles.m_Values.Length;
-				writer.WriteEncodedInt( length );
-
-				for( int i = 0; i < length; i++ )
-				{
-					if( titles.m_Values[i] == null )
-						titles.m_Values[i] = new TitleInfo();
-
-					TitleInfo.Serialize( writer, titles.m_Values[i] );
-				}
-			}
-
-			public static void CheckAtrophy( PlayerMobile pm )
-			{
-				ChampionTitleInfo t = pm.m_ChampionTitles;
-				if( t == null )
-					return;
-
-				if( t.m_Values == null )
-					t.m_Values = new TitleInfo[ChampionSpawnInfo.Table.Length];
-
-				for( int i = 0; i < t.m_Values.Length; i++ )
-				{
-					if( (t.GetLastDecay( i ) + LossDelay) < DateTime.UtcNow )
-					{
-						t.Atrophy( i, LossAmount );
-					}
-				}
-			}
-
-			public static void AwardHarrowerTitle( PlayerMobile pm )	//Called when killing a harrower.  Will give a minimum of 1 point.
-			{
-				ChampionTitleInfo t = pm.m_ChampionTitles;
-				if( t == null )
-					return;
-
-				if( t.m_Values == null )
-					t.m_Values = new TitleInfo[ChampionSpawnInfo.Table.Length];
-
-				int count = 1;
-
-				for( int i = 0; i < t.m_Values.Length; i++ )
-				{
-					if( t.m_Values[i].Value > 900 )
-						count++;
-				}
-
-				t.m_Harrower = Math.Max( count, t.m_Harrower );	//Harrower titles never decay.
-			}
-		}
-
-		#endregion
-
-		#region Recipes
-
-		private Dictionary<int, bool> m_AcquiredRecipes;
+        public class ChampionTitleInfo
+        {
+            public static TimeSpan LossDelay = TimeSpan.FromDays(1.0);
+            public const int LossAmount = 90;
+
+            private class TitleInfo
+            {
+                private int m_Value;
+                private DateTime m_LastDecay;
+
+                public int Value { get { return m_Value; } set { m_Value = value; } }
+                public DateTime LastDecay { get { return m_LastDecay; } set { m_LastDecay = value; } }
+
+                public TitleInfo()
+                { }
+
+                public TitleInfo(GenericReader reader)
+                {
+                    int version = reader.ReadEncodedInt();
+
+                    switch (version)
+                    {
+                        case 0:
+                            {
+                                m_Value = reader.ReadEncodedInt();
+                                m_LastDecay = reader.ReadDateTime();
+                                break;
+                            }
+                    }
+                }
+
+                public static void Serialize(GenericWriter writer, TitleInfo info)
+                {
+                    writer.WriteEncodedInt(0); // version
+
+                    writer.WriteEncodedInt(info.m_Value);
+                    writer.Write(info.m_LastDecay);
+                }
+            }
+
+            private TitleInfo[] m_Values;
+
+            private int m_Harrower; //Harrower titles do NOT decay
+
+            public int GetValue(ChampionSpawnType type)
+            {
+                return GetValue((int)type);
+            }
+
+            public void SetValue(ChampionSpawnType type, int value)
+            {
+                SetValue((int)type, value);
+            }
+
+            public void Award(ChampionSpawnType type, int value)
+            {
+                Award((int)type, value);
+            }
+
+            public int GetValue(int index)
+            {
+                if (m_Values == null || index < 0 || index >= m_Values.Length)
+                {
+                    return 0;
+                }
+
+                if (m_Values[index] == null)
+                {
+                    m_Values[index] = new TitleInfo();
+                }
+
+                return m_Values[index].Value;
+            }
+
+            public DateTime GetLastDecay(int index)
+            {
+                if (m_Values == null || index < 0 || index >= m_Values.Length)
+                {
+                    return DateTime.MinValue;
+                }
+
+                if (m_Values[index] == null)
+                {
+                    m_Values[index] = new TitleInfo();
+                }
+
+                return m_Values[index].LastDecay;
+            }
+
+            public void SetValue(int index, int value)
+            {
+                if (m_Values == null)
+                {
+                    m_Values = new TitleInfo[ChampionSpawnInfo.Table.Length];
+                }
+
+                if (value < 0)
+                {
+                    value = 0;
+                }
+
+                if (index < 0 || index >= m_Values.Length)
+                {
+                    return;
+                }
+
+                if (m_Values[index] == null)
+                {
+                    m_Values[index] = new TitleInfo();
+                }
+
+                m_Values[index].Value = value;
+            }
+
+            public void Award(int index, int value)
+            {
+                if (m_Values == null)
+                {
+                    m_Values = new TitleInfo[ChampionSpawnInfo.Table.Length];
+                }
+
+                if (index < 0 || index >= m_Values.Length || value <= 0)
+                {
+                    return;
+                }
+
+                if (m_Values[index] == null)
+                {
+                    m_Values[index] = new TitleInfo();
+                }
+
+                m_Values[index].Value += value;
+            }
+
+            public void Atrophy(int index, int value)
+            {
+                if (m_Values == null)
+                {
+                    m_Values = new TitleInfo[ChampionSpawnInfo.Table.Length];
+                }
+
+                if (index < 0 || index >= m_Values.Length || value <= 0)
+                {
+                    return;
+                }
+
+                if (m_Values[index] == null)
+                {
+                    m_Values[index] = new TitleInfo();
+                }
+
+                int before = m_Values[index].Value;
+
+                if ((m_Values[index].Value - value) < 0)
+                {
+                    m_Values[index].Value = 0;
+                }
+                else
+                {
+                    m_Values[index].Value -= value;
+                }
+
+                if (before != m_Values[index].Value)
+                {
+                    m_Values[index].LastDecay = DateTime.UtcNow;
+                }
+            }
+
+            public override string ToString()
+            {
+                return "...";
+            }
+
+            [CommandProperty(AccessLevel.GameMaster)]
+            public int Abyss { get { return GetValue(ChampionSpawnType.Abyss); } set { SetValue(ChampionSpawnType.Abyss, value); } }
+
+            [CommandProperty(AccessLevel.GameMaster)]
+            public int Arachnid { get { return GetValue(ChampionSpawnType.Arachnid); } set { SetValue(ChampionSpawnType.Arachnid, value); } }
+
+            [CommandProperty(AccessLevel.GameMaster)]
+            public int ColdBlood { get { return GetValue(ChampionSpawnType.ColdBlood); } set { SetValue(ChampionSpawnType.ColdBlood, value); } }
+
+            [CommandProperty(AccessLevel.GameMaster)]
+            public int ForestLord { get { return GetValue(ChampionSpawnType.ForestLord); } set { SetValue(ChampionSpawnType.ForestLord, value); } }
+
+            [CommandProperty(AccessLevel.GameMaster)]
+            public int SleepingDragon { get { return GetValue(ChampionSpawnType.SleepingDragon); } set { SetValue(ChampionSpawnType.SleepingDragon, value); } }
+
+            [CommandProperty(AccessLevel.GameMaster)]
+            public int UnholyTerror { get { return GetValue(ChampionSpawnType.UnholyTerror); } set { SetValue(ChampionSpawnType.UnholyTerror, value); } }
+
+            [CommandProperty(AccessLevel.GameMaster)]
+            public int VerminHorde { get { return GetValue(ChampionSpawnType.VerminHorde); } set { SetValue(ChampionSpawnType.VerminHorde, value); } }
+
+            [CommandProperty(AccessLevel.GameMaster)]
+            public int Harrower { get { return m_Harrower; } set { m_Harrower = value; } }
+
+            #region Mondain's Legacy Peerless Champion
+            [CommandProperty(AccessLevel.GameMaster)]
+            public int Glade { get { return GetValue(ChampionSpawnType.Glade); } set { SetValue(ChampionSpawnType.Glade, value); } }
+
+           // [CommandProperty(AccessLevel.GameMaster)]
+           // public int Corrupt { get { return GetValue(ChampionSpawnType.Corrupt); } set { SetValue(ChampionSpawnType.Corrupt, value); } }
+            #endregion
+
+            public ChampionTitleInfo()
+            { }
+
+            public ChampionTitleInfo(GenericReader reader)
+            {
+                int version = reader.ReadEncodedInt();
+
+                switch (version)
+                {
+                    case 0:
+                        {
+                            m_Harrower = reader.ReadEncodedInt();
+
+                            int length = reader.ReadEncodedInt();
+                            m_Values = new TitleInfo[length];
+
+                            for (int i = 0; i < length; i++)
+                            {
+                                m_Values[i] = new TitleInfo(reader);
+                            }
+
+                            if (m_Values.Length != ChampionSpawnInfo.Table.Length)
+                            {
+                                var oldValues = m_Values;
+                                m_Values = new TitleInfo[ChampionSpawnInfo.Table.Length];
+
+                                for (int i = 0; i < m_Values.Length && i < oldValues.Length; i++)
+                                {
+                                    m_Values[i] = oldValues[i];
+                                }
+                            }
+                            break;
+                        }
+                }
+            }
+
+            public static void Serialize(GenericWriter writer, ChampionTitleInfo titles)
+            {
+                writer.WriteEncodedInt(0); // version
+
+                writer.WriteEncodedInt(titles.m_Harrower);
+
+                int length = titles.m_Values.Length;
+                writer.WriteEncodedInt(length);
+
+                for (int i = 0; i < length; i++)
+                {
+                    if (titles.m_Values[i] == null)
+                    {
+                        titles.m_Values[i] = new TitleInfo();
+                    }
+
+                    TitleInfo.Serialize(writer, titles.m_Values[i]);
+                }
+            }
+
+            public static void CheckAtrophy(PlayerMobile pm)
+            {
+                ChampionTitleInfo t = pm.m_ChampionTitles;
+                if (t == null)
+                {
+                    return;
+                }
+
+                if (t.m_Values == null)
+                {
+                    t.m_Values = new TitleInfo[ChampionSpawnInfo.Table.Length];
+                }
+
+                for (int i = 0; i < t.m_Values.Length; i++)
+                {
+                    if ((t.GetLastDecay(i) + LossDelay) < DateTime.UtcNow)
+                    {
+                        t.Atrophy(i, LossAmount);
+                    }
+                }
+            }
+
+            public static void AwardHarrowerTitle(PlayerMobile pm)
+            //Called when killing a harrower.  Will give a minimum of 1 point.
+            {
+                ChampionTitleInfo t = pm.m_ChampionTitles;
+                if (t == null)
+                {
+                    return;
+                }
+
+                if (t.m_Values == null)
+                {
+                    t.m_Values = new TitleInfo[ChampionSpawnInfo.Table.Length];
+                }
+
+                int count = 1;
+
+                for (int i = 0; i < t.m_Values.Length; i++)
+                {
+                    if (t.m_Values[i].Value > 900)
+                    {
+                        count++;
+                    }
+                }
+
+                t.m_Harrower = Math.Max(count, t.m_Harrower); //Harrower titles never decay.
+            }
+
+            public bool HasChampionTitle(PlayerMobile pm)
+            {
+                if (m_Harrower > 0)
+                    return true;
+
+                if (m_Values == null)
+                    return false;
+
+                foreach (TitleInfo info in m_Values)
+                {
+                    if (info.Value > 300)
+                        return true;
+                }
+
+                return false;
+            }
+        }
+
+        #endregion
+
+        #region Recipes
+
+        private Dictionary<int, bool> m_AcquiredRecipes;
 
 		public virtual bool HasRecipe( Recipe r )
 		{
@@ -4559,5 +4742,250 @@ namespace Server.Mobiles
 
 			m_AutoStabled.Clear();
 		}
-	}
+
+
+
+        //Title stuff
+        #region Titles
+        private string m_FameKarmaTitle;
+        private string m_PaperdollSkillTitle;
+        private string m_SubtitleSkillTitle;
+        private string m_CurrentChampTitle;
+        private string m_OverheadTitle;
+        private int m_CurrentVeteranTitle;
+        private bool m_ShowGuildAbbreviation;
+
+        public string FameKarmaTitle
+        {
+            get { return m_FameKarmaTitle; }
+            set { m_FameKarmaTitle = value; InvalidateProperties(); }
+        }
+
+        public string PaperdollSkillTitle
+        {
+            get { return m_PaperdollSkillTitle; }
+            set { m_PaperdollSkillTitle = value; InvalidateProperties(); }
+        }
+
+        public string SubtitleSkillTitle
+        {
+            get { return m_SubtitleSkillTitle; }
+            set { m_SubtitleSkillTitle = value; InvalidateProperties(); }
+        }
+
+        public string CurrentChampTitle
+        {
+            get { return m_CurrentChampTitle; }
+            set { m_CurrentChampTitle = value; InvalidateProperties(); }
+        }
+
+        public string OverheadTitle
+        {
+            get { return m_OverheadTitle; }
+            set { m_OverheadTitle = value; InvalidateProperties(); }
+        }
+
+        public int CurrentVeteranTitle
+        {
+            get { return m_CurrentVeteranTitle; }
+            set { m_CurrentVeteranTitle = value; InvalidateProperties(); }
+        }
+
+        public bool ShowGuildAbbreviation
+        {
+            get { return m_ShowGuildAbbreviation; }
+            set { m_ShowGuildAbbreviation = value; InvalidateProperties(); }
+        }
+
+        public override void AddNameProperties(ObjectPropertyList list)
+        {
+
+            string name = Name;
+
+            if (name == null)
+            {
+                name = String.Empty;
+            }
+
+            string prefix = "";
+
+            if (ShowFameTitle && Fame >= 10000)
+            {
+                prefix = Female ? "Lady" : "Lord";
+            }
+
+            string suffix = "";
+
+            if (PropertyTitle && Title != null && Title.Length > 0)
+            {
+                suffix = Title;
+            }
+
+            BaseGuild guild = Guild;
+
+            if (m_OverheadTitle != null)
+            {
+                int loc = Utility.ToInt32(m_OverheadTitle);
+
+                if (loc > 0)
+                {
+                    if (Scripts.Mythik.Systems.CityLoyalty.CityLoyaltySystem.ApplyCityTitle(this, list, prefix, loc))
+                        return;
+                }
+                else if (suffix.Length > 0)
+                    suffix = String.Format("{0} {1}", suffix, m_OverheadTitle);
+                else
+                    suffix = String.Format("{0}", m_OverheadTitle);
+            }
+            else if (guild != null && m_ShowGuildAbbreviation)
+            {
+                if (suffix.Length > 0)
+                    suffix = String.Format("{0} [{1}]", suffix, Utility.FixHtml(guild.Abbreviation));
+                else
+                    suffix = String.Format("[{0}]", Utility.FixHtml(guild.Abbreviation));
+            }
+
+            suffix = ApplyNameSuffix(suffix);
+
+            list.Add(1050045, "{0} \t{1}\t {2}", prefix, name, suffix); // ~1_PREFIX~~2_NAME~~3_SUFFIX~
+
+            if (guild != null && DisplayGuildTitle)
+            {
+                string title = GuildTitle;
+
+                if (title == null)
+                {
+                    title = "";
+                }
+                else
+                {
+                    title = title.Trim();
+                }
+
+                if (title.Length > 0)
+                {
+                    list.Add("{0}, {1}", Utility.FixHtml(title), Utility.FixHtml(guild.Name));
+                }
+            }
+        }
+
+        private Dictionary<Collection, int> m_Collections;
+        private List<object> m_CollectionTitles;
+        private int m_SelectedTitle;
+
+        public Dictionary<Collection, int> Collections { get { return m_Collections; } }
+
+        public List<object> CollectionTitles { get { return m_CollectionTitles; } }
+
+        public int SelectedTitle { get { return m_SelectedTitle; } }
+
+        public bool RemoveCollectionTitle(object o, bool silent)
+        {
+            if (m_CollectionTitles.Contains(o))
+            {
+                int i = m_CollectionTitles.IndexOf(o);
+
+                if (i == m_SelectedTitle)
+                    SelectCollectionTitle(-1, silent);
+                else if (i > m_SelectedTitle)
+                    SelectCollectionTitle(m_SelectedTitle - 1, silent);
+
+                m_CollectionTitles.Remove(o);
+
+                return true;
+            }
+            return false;
+        }
+
+        public int GetCollectionPoints(Collection collection)
+        {
+            if (m_Collections == null)
+            {
+                m_Collections = new Dictionary<Collection, int>();
+            }
+
+            int points = 0;
+
+            if (m_Collections.ContainsKey(collection))
+            {
+                m_Collections.TryGetValue(collection, out points);
+            }
+
+            return points;
+        }
+
+        public void AddCollectionPoints(Collection collection, int points)
+        {
+            if (m_Collections == null)
+            {
+                m_Collections = new Dictionary<Collection, int>();
+            }
+
+            if (m_Collections.ContainsKey(collection))
+            {
+                m_Collections[collection] += points;
+            }
+            else
+            {
+                m_Collections.Add(collection, points);
+            }
+        }
+
+        public void SelectCollectionTitle(int num, bool silent = false)
+        {
+            if (num == -1)
+            {
+                m_SelectedTitle = num;
+                if (!silent) SendLocalizedMessage(1074010); // You elect to hide your Reward Title.
+            }
+            else if (num < m_CollectionTitles.Count && num >= -1)
+            {
+                if (m_SelectedTitle != num)
+                {
+                    m_SelectedTitle = num;
+
+                    if (m_CollectionTitles[num] is int && !silent)
+                    {
+                        SendLocalizedMessage(1074008, "#" + (int)m_CollectionTitles[num]);
+                        // You change your Reward Title to "~1_TITLE~".	
+                    }
+                    else if (m_CollectionTitles[num] is string && !silent)
+                    {
+                        SendLocalizedMessage(1074008, (string)m_CollectionTitles[num]); // You change your Reward Title to "~1_TITLE~".	
+                    }
+                }
+                else if (!silent)
+                {
+                    SendLocalizedMessage(1074009); // You decide to leave your title as it is.
+                }
+            }
+
+            InvalidateProperties();
+        }
+
+        public bool AddCollectionTitle(object title)
+        {
+            if (m_CollectionTitles == null)
+            {
+                m_CollectionTitles = new List<object>();
+            }
+
+            if (title != null && !m_CollectionTitles.Contains(title))
+            {
+                m_CollectionTitles.Add(title);
+                //m_SelectedTitle = m_CollectionTitles.Count - 1;
+                InvalidateProperties();
+                return true;
+            }
+
+            return false;
+        }
+        public void ShowChangeTitle()
+        {
+            SendGump(new SelectTitleGump(this, m_SelectedTitle));
+        }
+        #endregion
+
+
+    }
 }
