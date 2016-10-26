@@ -12,8 +12,8 @@ namespace Server.Items
 	public class MapItem : Item, ICraftable
 	{
 		private Rectangle2D m_Bounds;
-
-		private int m_Width, m_Height;
+        private Map m_Facet;
+        private int m_Width, m_Height;
 
 		private bool m_Protected;
 		private bool m_Editable;
@@ -35,8 +35,13 @@ namespace Server.Items
 			get { return m_Bounds; }
 			set { m_Bounds = value; }
 		}
-
-		[CommandProperty( AccessLevel.GameMaster )]
+        [CommandProperty(AccessLevel.GameMaster)]
+        public Map Facet
+        {
+            get { return m_Facet; }
+            set { m_Facet = value; }
+        }
+            [CommandProperty( AccessLevel.GameMaster )]
 		public int Width
 		{
 			get { return m_Width; }
@@ -64,7 +69,18 @@ namespace Server.Items
 			m_Height = 200;
 		}
 
-		public virtual void CraftInit( Mobile from )
+        [Constructable]
+        public MapItem(Map map) : base(0x14EC)
+        {
+            Weight = 1.0;
+
+            m_Width = 200;
+            m_Height = 200;
+
+            m_Facet = map;
+        }
+
+        public virtual void CraftInit( Mobile from )
 		{
 		}
 
@@ -258,8 +274,8 @@ namespace Server.Items
 			writer.Write( (int) 0 );
 
 			writer.Write( m_Bounds );
-
-			writer.Write( m_Width );
+            writer.Write(m_Facet);
+            writer.Write( m_Width );
 			writer.Write( m_Height );
 
 			writer.Write( m_Protected );
@@ -280,8 +296,8 @@ namespace Server.Items
 				case 0:
 				{
 					m_Bounds = reader.ReadRect2D();
-
-					m_Width = reader.ReadInt();
+                    m_Facet = reader.ReadMap();
+                    m_Width = reader.ReadInt();
 					m_Height = reader.ReadInt();
 
 					m_Protected = reader.ReadBool();

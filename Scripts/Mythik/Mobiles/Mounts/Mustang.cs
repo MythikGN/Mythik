@@ -39,7 +39,7 @@ namespace Scripts.Mythik.Mobiles.Mounts
             SetDex(62, 81);
             SetInt(8, 13);
 
-            SetHits(50, 90);
+            SetHits(50, 120);
             SetMana(0);
 
             SetDamage(4, 5);

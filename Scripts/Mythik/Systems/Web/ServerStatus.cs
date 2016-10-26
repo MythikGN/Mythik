@@ -21,7 +21,7 @@ namespace Scripts.Mythik.Systems.Web
         }
         public static void Initialize()
         {
-            var clientsListner = new HttpListener();
+           /* var clientsListner = new HttpListener();
             clientsListner.Prefixes.Add("http://play.mythikuo.com:3000/");
             clientsListner.Start();
             Task.Run(() => { while (clientsListner.IsListening) { SendResponse(clientsListner.GetContext().Response); } });
@@ -30,7 +30,7 @@ namespace Scripts.Mythik.Systems.Web
             statsListner.Prefixes.Add("http://play.mythikuo.com:3001/");
             statsListner.Start();
             Task.Run(() => { while (statsListner.IsListening) { SendStatsResponse(statsListner.GetContext().Response); } });
-
+            */
         }
 
         private static void SendStatsResponse(HttpListenerResponse response)

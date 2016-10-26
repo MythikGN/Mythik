@@ -291,7 +291,9 @@ namespace Server.Mobiles
 
 		private PlayerVendorPlaceholder m_Placeholder;
 
-		public PlayerVendor( Mobile owner, BaseHouse house )
+        public static List<PlayerVendor> PlayerVendors { get; set; }
+
+        public PlayerVendor( Mobile owner, BaseHouse house )
 		{
 			Owner = owner;
 			House = house;
@@ -326,7 +328,12 @@ namespace Server.Mobiles
 			m_PayTimer.Start();
 
 			m_NextPayTime = DateTime.UtcNow + delay;
-		}
+
+            if (PlayerVendors == null)
+                PlayerVendors = new List<PlayerVendor>();
+
+            PlayerVendors.Add(this);
+        }
 
 		public PlayerVendor( Serial serial ) : base( serial )
 		{
@@ -444,7 +451,12 @@ namespace Server.Mobiles
 
 			if ( Core.AOS && NameHue == 0x35 )
 				NameHue = -1;
-		}
+
+            if (PlayerVendors == null)
+                PlayerVendors = new List<PlayerVendor>();
+
+            PlayerVendors.Add(this);
+        }
 
 		private void UpgradeFromVersion0( object newVendorSystem )
 		{
