@@ -276,8 +276,11 @@ namespace Server.Gumps
 		{
 			Add( new GumpImageTileButton( x, y, normalID, pressedID, buttonID, type, param, itemID, hue, width, height, localizedTooltip ) );
 		}
-
-		public void AddItem( int x, int y, int itemID )
+        public void AddItemProperty(int serial)
+        {
+            Add(new GumpItemProperty(serial));
+        }
+        public void AddItem( int x, int y, int itemID )
 		{
 			Add( new GumpItem( x, y, itemID ) );
 		}

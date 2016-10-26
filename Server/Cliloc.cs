@@ -7,6 +7,7 @@ using System.Reflection; 				//needed for ConstructorInfo
 using Server;
 using Server.Items;
 using System.Text;
+using Ultima;
 
 namespace Server
 {
@@ -280,7 +281,6 @@ namespace Server
 
             return properties;
         }
-
         //the main method used for producing useful strings
         public static string LocToString(int index)
         {
@@ -303,6 +303,41 @@ namespace Server
             }
 
             return null;
+        }
+        public static string LocToString(int index, string[] args)
+        {
+            if (args.Length == 0)
+                return LocToString(index);
+
+            string basestring = LocToString(index);
+            int i = 0;
+            //parse the string for any argument identifiers
+            while (basestring != null && basestring.IndexOf("~") > -1)
+            {
+                //this determines the string that needs replacing
+                string replacestring = FindReplace("~", basestring);
+
+
+                //here's the string that will replace it
+                string argstring = args[i];
+
+                //rethreaded
+                if (argstring.IndexOf("#") == 0)
+                {
+                    int recurseloc = Convert.ToInt32(argstring.Substring(1, argstring.Length - 1));
+
+                    argstring = LocToString(recurseloc);
+                }
+
+                basestring = basestring.Replace(replacestring, argstring);
+
+                i++;
+                if (i < args.Length)
+                    argstring = args[i];
+           }
+
+            return basestring;
+
         }
 
         //the special case, where there are arguments to insert in the string
