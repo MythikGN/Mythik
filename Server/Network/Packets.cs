@@ -348,7 +348,7 @@ namespace Server.Network
 
 	public sealed class VendorBuyList : Packet
 	{
-		public VendorBuyList( Mobile vendor, List<BuyItemState> list )
+		public VendorBuyList( Mobile vendor, List<BuyItemState> list, Mobile sender )
 			: base( 0x74 )
 		{
 			this.EnsureCapacity( 256 );
@@ -368,7 +368,13 @@ namespace Server.Network
 
 				if ( desc == null )
 					desc = "";
-
+                if(sender?.NetState?.Version.Major <= 3)
+                {
+                    int cliloc = 0;
+                    int.TryParse(desc, out cliloc);
+                    if (cliloc > 0)
+                        desc = CliLoc.LocToString(cliloc);
+                }
 				m_Stream.Write( (byte)(desc.Length + 1) );
 				m_Stream.WriteAsciiNull( desc );
 			}
@@ -377,7 +383,7 @@ namespace Server.Network
 
 	public sealed class VendorSellList : Packet
 	{
-		public VendorSellList( Mobile shopkeeper, Hashtable table ) : base( 0x9E )
+		public VendorSellList( Mobile shopkeeper, Hashtable table, Mobile from ) : base( 0x9E )
 		{
 			this.EnsureCapacity( 256 );
 
@@ -400,8 +406,14 @@ namespace Server.Network
 
 				if ( name == null )
 					name = "";
-
-				m_Stream.Write( (ushort) (name.Length) );
+                if (from?.NetState?.Version.Major <= 3)
+                {
+                    int cliloc = 0;
+                    int.TryParse(name, out cliloc);
+                    if (cliloc > 0)
+                        name = CliLoc.LocToString(cliloc);
+                }
+                m_Stream.Write( (ushort) (name.Length) );
 				m_Stream.WriteAsciiFixed( name, (ushort) (name.Length) );
 			}
 		}

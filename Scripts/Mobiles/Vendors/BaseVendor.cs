@@ -648,7 +648,7 @@ namespace Server.Mobiles
 				else
 					from.Send( new VendorBuyContent( list ) );
 
-				from.Send( new VendorBuyList( this, list ) );
+				from.Send( new VendorBuyList( this, list, from ) );
 
 				if ( ns.HighSeas )
 					from.Send( new DisplayBuyListHS( this ) );
@@ -741,7 +741,7 @@ namespace Server.Mobiles
 				{
 					SendPacksTo( from );
 
-					from.Send( new VendorSellList( this, table ) );
+					from.Send( new VendorSellList( this, table, from) );
 				}
 				else
 				{
