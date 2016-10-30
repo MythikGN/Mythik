@@ -86,8 +86,8 @@ namespace Server.Misc
 				}
 			}
 
-			if ( ((from.Stam * 100) / Math.Max( from.StamMax, 1 )) < 10 )
-				--from.Stam;
+			//if ( ((from.Stam * 100) / Math.Max( from.StamMax, 1 )) < 10 )
+			//	--from.Stam;
 
 			if ( from.Stam == 0 )
 			{
@@ -96,14 +96,14 @@ namespace Server.Misc
 				return;
 			}
 
-			if ( from is PlayerMobile )
+			/*if ( from is PlayerMobile )
 			{
 				int amt = ( from.Mounted ? 48 : 16 );
 				PlayerMobile pm = (PlayerMobile)from;
 
 				if ( (++pm.StepsTaken % amt) == 0 )
 					--from.Stam;
-			}
+			}*/
 
 			Spells.Ninjitsu.DeathStrike.AddStep( from );
 		}
