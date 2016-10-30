@@ -61,7 +61,7 @@ namespace Scripts.Mythik.Items
     {
         //set bonus, number items for set bonus, hue, bonus for single item
         public TurquoiseArmorSet() : base(new DefaultSkillMod(SkillName.Blacksmith, true, 8.0),
-            6, 0x804,
+            6, 0x80b,
             new DefaultSkillMod(Server.SkillName.Blacksmith, true, 1.0))
         {
 
@@ -69,9 +69,8 @@ namespace Scripts.Mythik.Items
     }
     public class PearlArmorSet : BaseGearSet
     {
-        //set bonus, number items for set bonus, hue, bonus for single item
         public PearlArmorSet() : base(new DefaultSkillMod(SkillName.Alchemy, true, 8.0),
-            6, 0x804,
+            6, 0x810,
             new DefaultSkillMod(Server.SkillName.Alchemy, true, 1.0))
         {
 
@@ -79,9 +78,8 @@ namespace Scripts.Mythik.Items
     }
     public class EmeraldArmorSet : BaseGearSet
     {
-        //set bonus, number items for set bonus, hue, bonus for single item
         public EmeraldArmorSet() : base(new DefaultSkillMod(SkillName.Carpentry, true, 8.0),
-            6, 0x804, 
+            6, 0x7ac, 
             new DefaultSkillMod(Server.SkillName.Carpentry, true, 1.0))
         {
 
@@ -101,7 +99,7 @@ namespace Scripts.Mythik.Items
     {
         //set bonus, number items for set bonus, hue, bonus for single item
         public AmethystArmorSet() : base(new DefaultSkillMod(SkillName.Fletching, true, 8.0),
-            6, 0x804,
+            6, 0x807,
             new DefaultSkillMod(Server.SkillName.Fletching, true, 1.0))
         {
 
@@ -121,7 +119,7 @@ namespace Scripts.Mythik.Items
     {
         //set bonus, number items for set bonus, hue, bonus for single item
         public TourmalineArmorSet() : base(new DefaultSkillMod(SkillName.Fishing, true, 8.0),
-            6, 0x804,
+            6, 0x48a,
             new DefaultSkillMod(Server.SkillName.Fishing, true, 1.0))
         {
 
@@ -150,7 +148,7 @@ namespace Scripts.Mythik.Items
     {
         //set bonus, number items for set bonus, hue, bonus for single item
         public CitrineArmorSet() : base(new DefaultSkillMod(SkillName.Tinkering, true, 8.0), 6,
-             0x804, new DefaultSkillMod(Server.SkillName.Tinkering, true, 1.0))
+             0x80d, new DefaultSkillMod(Server.SkillName.Tinkering, true, 1.0))
         {
 
         }
@@ -173,7 +171,7 @@ namespace Scripts.Mythik.Items
             new DefaultSkillMod(SkillName.Inscribe, true, 8.0)
             },
             6,
-             0x804, 
+             0x30, 
              new SkillMod[] {
                  new DefaultSkillMod(SkillName.Cartography, true, 1.0),
                  new DefaultSkillMod(SkillName.Inscribe, true, 1.0)
