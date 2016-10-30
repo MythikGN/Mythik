@@ -15,9 +15,10 @@ namespace Server.Regions
 			Region.Regions.Add( new VendorMall( Map.Felucca ) );
 		}
 
-		public VendorMall( Map map ) : base("Vendor Mall", map,10,new Rectangle2D(5304,2212,50,75) )
+		public VendorMall( Map map ) : base("Vendor Mall", map,80,new Rectangle2D(5304,2212,50,75) )
 		{
-		}
+            this.Register();
+        }
 
 		public override bool AllowBeneficial( Mobile from, Mobile target )
 		{

@@ -12,11 +12,12 @@ namespace Server.Regions
 	{
 		public static void Initialize()
 		{
-			Region.Regions.Add( new NeutralZone( Map.Felucca ) );
+            Region.Regions.Add( new NeutralZone( Map.Felucca ) );
 		}
 
-		public NeutralZone( Map map ) : base( "Neutral Zone", map,10,new Rectangle2D(5125,1200,100,100) )
+		public NeutralZone( Map map ) : base( "Neutral Zone", map,80,new Rectangle2D(5125,1200,100,100) )
 		{
+            this.Register();
 		}
 
         public override bool AllowBeneficial(Mobile from, Mobile target)
