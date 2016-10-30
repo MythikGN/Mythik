@@ -1333,10 +1333,118 @@ namespace Server.Network
 			}
 			else
 			{
-				text = pvSrc.ReadUnicodeStringSafe();
-
+				text = pvSrc.ReadUnicodeStringSafe();    
 				keywords = m_EmptyInts;
-			}
+                if(from.NetState.Version.Major <= 3)
+                {
+                    var keylist = new List<int>();
+                    if (text.ToLowerInvariant().Contains("vendor sell"))
+                        keylist.Add(0x14D);
+                    else if (text.ToLowerInvariant().Contains("vendor buy"))
+                        keylist.Add(0x3c);
+                    else if (text.ToLowerInvariant().Contains("buy"))
+                        keylist.Add(0x171);
+                    else if (text.ToLowerInvariant().Contains("sell"))
+                        keylist.Add(0x177);
+                    else if (text.ToLowerInvariant().Contains("stable"))
+                        keylist.Add(0x0008);
+                    else if (text.ToLowerInvariant().Contains("claim"))
+                        keylist.Add(0x0009);
+                    else if (text.ToLowerInvariant().Contains("destination"))
+                        keylist.Add(0x1D);
+                    else if (text.ToLowerInvariant().Contains("i will take thee"))
+                        keylist.Add(0x1E);
+                    else if (text.ToLowerInvariant().Contains("join"))
+                        keylist.Add(0x0004);
+                    else if (text.ToLowerInvariant().Contains("resign"))
+                        keylist.Add(0x0005);
+                    else if (text.ToLowerInvariant().Contains("browse"))
+                        keylist.Add(0x172);
+                    else if (text.ToLowerInvariant().Contains("collect"))
+                        keylist.Add(0x173);
+                    else if (text.ToLowerInvariant().Contains("status"))
+                        keylist.Add(0x174);
+                    else if (text.ToLowerInvariant().Contains("dismiss"))
+                        keylist.Add(0x175);
+                    else if (text.ToLowerInvariant().Contains("cycle"))
+                        keylist.Add(0x176);
+                    else if (text.ToLowerInvariant().Contains("guards"))
+                        keylist.Add(0x0007);
+                    else if (text.ToLowerInvariant().Contains("train"))
+                        keylist.Add(0x6c);
+                    else if (text.ToLowerInvariant().Contains("move"))
+                        keylist.Add(0x9D);
+                    else if (text.ToLowerInvariant().Contains("time"))
+                        keylist.Add(0x9E);
+
+                    else if (text.ToLowerInvariant().Contains("come"))
+                        keylist.Add(0x155);
+                    else if (text.ToLowerInvariant().Contains("drop"))
+                        keylist.Add(0x156);
+                    else if (text.ToLowerInvariant().Contains("follow"))
+                        keylist.Add(0x15A);
+                    else if (text.ToLowerInvariant().Contains("friend"))
+                        keylist.Add(0x15B);
+                    else if (text.ToLowerInvariant().Contains("guard"))
+                        keylist.Add(0x15C);
+                    else if (text.ToLowerInvariant().Contains("stop"))
+                        keylist.Add(0x161);
+                    else if (text.ToLowerInvariant().Contains("kill"))
+                        keylist.Add(0x15D);
+                    else if (text.ToLowerInvariant().Contains("patrol"))
+                        keylist.Add(0x15F);
+                    else if (text.ToLowerInvariant().Contains("attack"))
+                        keylist.Add(0x15E);
+                    else if (text.ToLowerInvariant().Contains("follow me"))
+                        keylist.Add(0x163);
+                    else if (text.ToLowerInvariant().Contains("release"))
+                        keylist.Add(0x16D);
+                    else if (text.ToLowerInvariant().Contains("transfer"))
+                        keylist.Add(0x16E);
+                    else if (text.ToLowerInvariant().Contains("stay"))
+                        keylist.Add(0x16F);
+                    else if (text.ToLowerInvariant().Contains("kill"))
+                        keylist.Add(0x168);
+
+
+                    else if (text.ToLowerInvariant().Contains("all come"))
+                        keylist.Add(0x164);
+                    else if (text.ToLowerInvariant().Contains("all follow"))
+                        keylist.Add(0x165);
+                    else if (text.ToLowerInvariant().Contains("all guard"))
+                        keylist.Add(0x166);
+                    else if (text.ToLowerInvariant().Contains("all stop"))
+                        keylist.Add(0x167);
+                    else if (text.ToLowerInvariant().Contains("all kill"))
+                        keylist.Add(0x168);
+                    else if (text.ToLowerInvariant().Contains("all attack"))
+                        keylist.Add(0x169);
+                    else if (text.ToLowerInvariant().Contains("all follow me"))
+                        keylist.Add(0x170);
+                    else if (text.ToLowerInvariant().Contains("all stay"))
+                        keylist.Add(0x168);
+
+
+                    else if (text.ToLowerInvariant().Contains("remove thyself"))
+                        keylist.Add(0x33);
+                    else if (text.ToLowerInvariant().Contains("i ban thee"))
+                        keylist.Add(0x34);
+                    else if (text.ToLowerInvariant().Contains("i wish to lock this down") || text.ToLowerInvariant().Contains("lock down"))
+                        keylist.Add(0x23);
+                    else if (text.ToLowerInvariant().Contains("i wish to release this") || text.ToLowerInvariant().Contains("unlock"))
+                        keylist.Add(0x24);
+                    else if (text.ToLowerInvariant().Contains("i wish to secure this"))
+                        keylist.Add(0x25);
+                    else if (text.ToLowerInvariant().Contains("i wish to unsecure this"))
+                        keylist.Add(0x26);
+                    else if (text.ToLowerInvariant().Contains("i wish to place a strongbox"))
+                        keylist.Add(0x27);
+                    else if (text.ToLowerInvariant().Contains("trash barrel"))
+                        keylist.Add(0x28);
+
+                    keywords = keylist.ToArray();
+                }
+            }
 
 			text = text.Trim();
 
