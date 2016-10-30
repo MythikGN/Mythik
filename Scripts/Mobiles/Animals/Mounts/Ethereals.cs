@@ -321,7 +321,10 @@ namespace Server.Mobiles
 
 		public void MountMe()
 		{
-			ItemID = m_MountedID;
+            if (Rider.NetState.Version.Major <= 3)
+                ItemID = 0x3EA0;
+            else
+			    ItemID = m_MountedID;
 			Layer = Layer.Mount;
 			Movable = false;
 
@@ -366,8 +369,15 @@ namespace Server.Mobiles
 				m_Rider = rider;
 				m_Mount = mount;
 			}
+            public override bool HasNoTarget
+            {
+                get
+                {
+                    return true;
+                }
+            }
 
-			public override bool ClearHandsOnCast { get { return false; } }
+            public override bool ClearHandsOnCast { get { return false; } }
 			public override bool RevealOnCast { get { return false; } }
 
 			public override TimeSpan GetCastRecovery()
