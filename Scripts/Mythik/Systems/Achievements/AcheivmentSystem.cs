@@ -69,36 +69,36 @@ namespace Scripts.Mythik.Systems.Achievements
             Categories.Add(new AchievementCategory(5000, 0, "Other"));
 
 
-            Achievements.Add(new DiscoveryAchievement(0, 2, 0x96E, false, null, "Cove!", "Discover the Cove Township", 5, "Cove"));
-            Achievements.Add(new DiscoveryAchievement(1, 2, 0x96E, false, null, "Britain!", "Discover the City Britain", 5, "Britain"));
-            Achievements.Add(new DiscoveryAchievement(2, 2, 0x96E, false, null, "Minoc!", "Discover the Minoc Township", 5, "Minoc"));
-            Achievements.Add(new DiscoveryAchievement(3, 2, 0x96E, false, null, "Ocllo!", "Discover the Ocllo Township", 5, "Ocllo"));
-            Achievements.Add(new DiscoveryAchievement(4, 2, 0x96E, false, null, "Trinsic!", "Discover the City of Trinsic", 5, "Trinsic"));
-            Achievements.Add(new DiscoveryAchievement(5, 2, 0x96E, false, null, "Vesper!", "Discover the City of Vesper", 5, "Vesper"));
-            Achievements.Add(new DiscoveryAchievement(6, 2, 0x96E, false, null, "Yew!", "Discover the Yew Township", 5, "Yew"));
-            Achievements.Add(new DiscoveryAchievement(7, 2, 0x96E, false, null, "Wind!", "Discover the City of Wind", 5, "Wind"));
-            Achievements.Add(new DiscoveryAchievement(8, 2, 0x96E, false, null, "Serpent's Hold!", "Discover the City of Serpent's Hold", 5, "Serpent's Hold"));
-            Achievements.Add(new DiscoveryAchievement(9, 2, 0x96E, false, null, "Skara Brae!", "Discover the Island of Skara Brae", 5, "Skara Brae"));
-            Achievements.Add(new DiscoveryAchievement(10, 2, 0x96E, false, null, "Nujel'm!", "Discover the Island of Nujel'm", 5, "Nujel'm"));
-            Achievements.Add(new DiscoveryAchievement(11, 2, 0x96E, false, null, "Moonglow!", "Discover the City of Moonglow", 5, "Moonglow"));
-            Achievements.Add(new DiscoveryAchievement(12, 2, 0x96E, false, null, "Magincia!", "Discover the City of Magincia", 5, "Magincia"));
-            Achievements.Add(new DiscoveryAchievement(13, 2, 0x96E, false, null, "Buccaneer's Den!", "Discover the Secrets of Buccaneer's Den", 5, "Buccaneer's Den"));
+            Achievements.Add(new DiscoveryAchievement(0, 2, 0x14EB, false, null, "Cove!", "Discover the Cove Township", 5, "Cove"));
+            Achievements.Add(new DiscoveryAchievement(1, 2, 0x14EB, false, null, "Britain!", "Discover the City Britain", 5, "Britain"));
+            Achievements.Add(new DiscoveryAchievement(2, 2, 0x14EB, false, null, "Minoc!", "Discover the Minoc Township", 5, "Minoc"));
+            Achievements.Add(new DiscoveryAchievement(3, 2, 0x14EB, false, null, "Ocllo!", "Discover the Ocllo Township", 5, "Ocllo"));
+            Achievements.Add(new DiscoveryAchievement(4, 2, 0x14EB, false, null, "Trinsic!", "Discover the City of Trinsic", 5, "Trinsic"));
+            Achievements.Add(new DiscoveryAchievement(5, 2, 0x14EB, false, null, "Vesper!", "Discover the City of Vesper", 5, "Vesper"));
+            Achievements.Add(new DiscoveryAchievement(6, 2, 0x14EB, false, null, "Yew!", "Discover the Yew Township", 5, "Yew"));
+            Achievements.Add(new DiscoveryAchievement(7, 2, 0x14EB, false, null, "Wind!", "Discover the City of Wind", 5, "Wind"));
+            Achievements.Add(new DiscoveryAchievement(8, 2, 0x14EB, false, null, "Serpent's Hold!", "Discover the City of Serpent's Hold", 5, "Serpent's Hold"));
+            Achievements.Add(new DiscoveryAchievement(9, 2, 0x14EB, false, null, "Skara Brae!", "Discover the Island of Skara Brae", 5, "Skara Brae"));
+            Achievements.Add(new DiscoveryAchievement(10, 2, 0x14EB, false, null, "Nujel'm!", "Discover the Island of Nujel'm", 5, "Nujel'm"));
+            Achievements.Add(new DiscoveryAchievement(11, 2, 0x14EB, false, null, "Moonglow!", "Discover the City of Moonglow", 5, "Moonglow"));
+            Achievements.Add(new DiscoveryAchievement(12, 2, 0x14EB, false, null, "Magincia!", "Discover the City of Magincia", 5, "Magincia"));
+            Achievements.Add(new DiscoveryAchievement(13, 2, 0x14EB, false, null, "Buccaneer's Den!", "Discover the Secrets of Buccaneer's Den", 5, "Buccaneer's Den"));
 
-            Achievements.Add(new DiscoveryAchievement(25, 3, 0x96E, false, null, "Covetous!", "Discover the dungeon of Covetous", 5, "Covetous"));
-            Achievements.Add(new DiscoveryAchievement(26, 3, 0x96E, false, null, "Deceit!", "Discover the dungeon of Deceit", 5, "Deceit"));
-            Achievements.Add(new DiscoveryAchievement(27, 3, 0x96E, false, null, "Despise!", "Discover the dungeon of Despise", 5, "Despise"));
-            Achievements.Add(new DiscoveryAchievement(28, 3, 0x96E, false, null, "Destard!", "Discover the dungeon of Destard", 5, "Destard"));
-            Achievements.Add(new DiscoveryAchievement(29, 3, 0x96E, false, null, "Hythloth!", "Discover the dungeon of Hythloth", 5, "Hythloth"));
-            Achievements.Add(new DiscoveryAchievement(30, 3, 0x96E, false, null, "Wrong!", "Discover the dungeon of Wrong", 5, "Wrong"));
-            Achievements.Add(new DiscoveryAchievement(31, 3, 0x96E, false, null, "Shame!", "Discover the dungeon of Shame", 5, "Shame"));
+            Achievements.Add(new DiscoveryAchievement(25, 3, 0x14EB, false, null, "Covetous!", "Discover the dungeon of Covetous", 5, "Covetous"));
+            Achievements.Add(new DiscoveryAchievement(26, 3, 0x14EB, false, null, "Deceit!", "Discover the dungeon of Deceit", 5, "Deceit"));
+            Achievements.Add(new DiscoveryAchievement(27, 3, 0x14EB, false, null, "Despise!", "Discover the dungeon of Despise", 5, "Despise"));
+            Achievements.Add(new DiscoveryAchievement(28, 3, 0x14EB, false, null, "Destard!", "Discover the dungeon of Destard", 5, "Destard"));
+            Achievements.Add(new DiscoveryAchievement(29, 3, 0x14EB, false, null, "Hythloth!", "Discover the dungeon of Hythloth", 5, "Hythloth"));
+            Achievements.Add(new DiscoveryAchievement(30, 3, 0x14EB, false, null, "Wrong!", "Discover the dungeon of Wrong", 5, "Wrong"));
+            Achievements.Add(new DiscoveryAchievement(31, 3, 0x14EB, false, null, "Shame!", "Discover the dungeon of Shame", 5, "Shame"));
 
-            Achievements.Add(new DiscoveryAchievement(100, 4, 0x96E, false, null, "Cotton!", "Discover A Cotton Field in Moonglow", 5, "A Cotton Field in Moonglow"));
-            Achievements.Add(new DiscoveryAchievement(101, 4, 0x96E, false, null, "Carrots!", "Discover A Carrot Field in Skara Brae", 5, "A Carrot Field in Skara Brae"));
+            Achievements.Add(new DiscoveryAchievement(100, 4, 0x14EB, false, null, "Cotton!", "Discover A Cotton Field in Moonglow", 5, "A Cotton Field in Moonglow"));
+            Achievements.Add(new DiscoveryAchievement(101, 4, 0x14EB, false, null, "Carrots!", "Discover A Carrot Field in Skara Brae", 5, "A Carrot Field in Skara Brae"));
 
 
-            var achieve = new HarvestAchievement(500, 2000, 0, false, null, 500, "500 Iron Ore", "Mine 500 Iron Ore", 5, typeof(IronOre), typeof(AncientSmithyHammer));
+            var achieve = new HarvestAchievement(500, 2000, 0x0E85, false, null, 500, "500 Iron Ore", "Mine 500 Iron Ore", 5, typeof(IronOre), typeof(AncientSmithyHammer));
             Achievements.Add(achieve);
-            Achievements.Add(new HarvestAchievement(501, 2000, 0, false, achieve, 5000, "5000 Iron Ore", "Mine 5000 Iron Ore", 5, typeof(IronOre), typeof(AncientSmithyHammer)));
+            Achievements.Add(new HarvestAchievement(501, 2000, 0x0E85, false, achieve, 5000, "5000 Iron Ore", "Mine 5000 Iron Ore", 5, typeof(IronOre), typeof(AncientSmithyHammer)));
 
             Achievements.Add(new HunterAchievement(1000, 3000, 0x25D1, false, null, 5, "Dog Slayer", "Slay 5 Dogs", 5, typeof(Dog)));
             Achievements.Add(new HunterAchievement(1001, 3000, 0x25D1, false, null, 50, "Dragon Slayer", "Slay 50 Dragon", 5, typeof(Dragon)));
