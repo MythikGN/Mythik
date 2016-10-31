@@ -81,8 +81,8 @@ namespace Server.Spells.Fifth
 
 					Caster.HueMod = Caster.Race.RandomSkinHue();
                     //Caster.NameMod = Caster.Female ? NameList.RandomName( "female" ) : NameList.RandomName( "male" );
-                    Caster.NameMod = Caster.Female ? "a woman" : "a man";
-
+                    Caster.NameMod = GetNameMod(Caster.BodyValue);
+                    
                     PlayerMobile pm = Caster as PlayerMobile;
 
 					if ( pm != null && pm.Race != null )
@@ -126,8 +126,87 @@ namespace Server.Spells.Fifth
 
 			FinishSequence();
 		}
+        public static string GetNameMod(int body)
+        {
+            string name;
 
-		private static Hashtable m_Timers = new Hashtable();
+            switch (body)
+            {
+                case 400:
+                    name = "Man";
+                    break;
+                case 401:
+                    name = "Woman";
+                    break;
+                case 0xD0:
+                    name = "Chicken";
+                    break;
+                case 0xD9:
+                    name = NameList.RandomName("dog");
+                    break;
+                case 0xC9:
+                    name = NameList.RandomName("cat");
+                    break;
+                case 0xE1:
+                    name = "Wolf";
+                    break;
+                case 0xD6:
+                    name = "Panther";
+                    break;
+                case 0x1D:
+                    name = "Gorilla";
+                    break;
+                case 0xD3:
+                    name = "Black Bear";
+                    break;
+                case 0xD4:
+                    name = "Grizzly Bear";
+                    break;
+                case 0xD5:
+                    name = "Polar Bear";
+                    break;
+                case 0xCC:
+                    name = NameList.RandomName("horse");
+                    break;
+                case 0x33:
+                    name = "Slime";
+                    break;
+                case 0x11:
+                    name = NameList.RandomName("orc");
+                    break;
+                case 0x24:
+                    name = NameList.RandomName("lizardman");
+                    break;
+                case 0x04:
+                    name = "Gargoyle";
+                    break;
+                case 0x01:
+                    name = "Ogre";
+                    break;
+                case 0x36:
+                    name = "Troll";
+                    break;
+                case 0x02:
+                    name = "Ettin";
+                    break;
+                case 0x15:
+                    name = "Giant Serpent";
+                    break;
+                case 0x09:
+                    name = NameList.RandomName("daemon");
+                    break;
+                case 0x3B:
+                case 0xC:
+                    name = "Dragon";
+                    break;
+                default:
+                    name = null;
+                    break;
+            }
+
+            return name;
+        }
+        private static Hashtable m_Timers = new Hashtable();
 
 		public static bool StopTimer( Mobile m )
 		{

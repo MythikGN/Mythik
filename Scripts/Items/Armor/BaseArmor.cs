@@ -621,7 +621,8 @@ namespace Server.Items
 
 		public static void ValidateMobile( Mobile m )
 		{
-			for ( int i = m.Items.Count - 1; i >= 0; --i )
+            bool hasgotmessage = false;
+            for ( int i = m.Items.Count - 1; i >= 0; --i )
 			{
 				if ( i >= m.Items.Count )
 					continue;
@@ -631,8 +632,17 @@ namespace Server.Items
 				if ( item is BaseArmor )
 				{
 					BaseArmor armor = (BaseArmor)item;
+                    if (!m.Body.IsHuman)
+                    {
+                        if (!hasgotmessage)
+                        {
+                            m.SendAsciiMessage("You may not wear armor while polymorphed");
+                            hasgotmessage = true;
+                        }
 
-					if( armor.RequiredRace != null && m.Race != armor.RequiredRace )
+                        m.AddToBackpack(armor);
+                    }
+                    if ( armor.RequiredRace != null && m.Race != armor.RequiredRace )
 					{
 						if( armor.RequiredRace == Race.Elf )
 							m.SendLocalizedMessage( 1072203 ); // Only Elves may use this.

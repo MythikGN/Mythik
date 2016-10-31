@@ -449,8 +449,37 @@ namespace Server.Items
 			weap.m_AosSkillBonuses = new AosSkillBonuses( newItem, m_AosSkillBonuses );
 			weap.m_AosWeaponAttributes = new AosWeaponAttributes( newItem, m_AosWeaponAttributes );
 		}
+        public static void ValidateMobile(Mobile m)
+        {
+            if (m.AccessLevel >= AccessLevel.GameMaster)
+                return;
 
-		public virtual void UnscaleDurability()
+            bool hasgotmessage = false;
+            for (int i = m.Items.Count - 1; i >= 0; --i)
+            {
+                if (i >= m.Items.Count)
+                    continue;
+
+                Item item = m.Items[i];
+
+                if (item is BaseWeapon)
+                {
+                    BaseWeapon weapon = (BaseWeapon)item;
+
+                    if (!m.Body.IsHuman && m.BodyValue != 9)
+                    {
+                        if (!hasgotmessage)
+                        {
+                            m.SendAsciiMessage("You may not use weapons while polymorphed to something other than a daemon");
+                            hasgotmessage = true;
+                        }
+
+                        m.AddToBackpack(weapon);
+                    }
+                }
+            }
+        }
+        public virtual void UnscaleDurability()
 		{
 			int scale = 100 + GetDurabilityBonus();
 
