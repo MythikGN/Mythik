@@ -17,7 +17,7 @@ namespace Server
 			ObjectPropertyList.Enabled = true;
 			Mobile.VisibleDamageType = Enabled ? VisibleDamageType.Related : VisibleDamageType.None;
 			Mobile.GuildClickMessage = !Enabled;
-			Mobile.AsciiClickMessage = !Enabled;
+			Mobile.AsciiClickMessage = true;
 
 			if (true)
 			{
