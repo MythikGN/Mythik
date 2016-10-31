@@ -80,9 +80,10 @@ namespace Server.Spells.Fifth
 					DisguiseTimers.StopTimer( Caster );
 
 					Caster.HueMod = Caster.Race.RandomSkinHue();
-					Caster.NameMod = Caster.Female ? NameList.RandomName( "female" ) : NameList.RandomName( "male" );
+                    //Caster.NameMod = Caster.Female ? NameList.RandomName( "female" ) : NameList.RandomName( "male" );
+                    Caster.NameMod = Caster.Female ? "a woman" : "a man";
 
-					PlayerMobile pm = Caster as PlayerMobile;
+                    PlayerMobile pm = Caster as PlayerMobile;
 
 					if ( pm != null && pm.Race != null )
 					{
