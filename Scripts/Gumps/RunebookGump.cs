@@ -398,7 +398,8 @@ namespace Server.Gumps
 								}
 
 								m_Book.OnTravel();
-								new GateTravelSpell( from, null, e ).Cast();
+                                    new GateTravelSpell(from, null, e, Book).Cast();
+								//new GateTravelSpell( from, null, e ).Cast();
 							}
 							else
 							{
