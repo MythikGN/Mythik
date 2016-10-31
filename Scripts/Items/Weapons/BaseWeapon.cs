@@ -3388,10 +3388,10 @@ namespace Server.Items
 			if ( MaxRange > 1 )
 				list.Add( 1061169, MaxRange.ToString() ); // range ~1_val~
 
-			int strReq = AOS.Scale( StrRequirement, 100 - GetLowerStatReq() );
+			//int strReq = AOS.Scale( StrRequirement, 100 - GetLowerStatReq() );
 
-			if ( strReq > 0 )
-				list.Add( 1061170, strReq.ToString() ); // strength requirement ~1_val~
+			//if ( strReq > 0 )
+			//	list.Add( 1061170, strReq.ToString() ); // strength requirement ~1_val~
 
 			if ( Layer == Layer.TwoHanded )
 				list.Add( 1061171 ); // two-handed weapon

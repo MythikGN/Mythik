@@ -400,6 +400,7 @@ namespace Server.Items
 
 		public int ComputeStatReq( StatType type )
 		{
+            return 0;
 			int v;
 
 			if ( type == StatType.Str )
@@ -1598,7 +1599,7 @@ namespace Server.Items
                 DisplayRarity(from);
                 from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3B2, 3, "", SphereUtils.ComputeName(this)));
                 //base.OnSingleClick(from);
-                from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3b2, 3, "", "[AR: " + this.ArmorRating + " Dura: " + this.HitPoints + "/" + this.MaxHitPoints + "]"));
+                from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3b2, 3, "", "[AR: " + this.ArmorRatingScaled + " Dura: " + this.HitPoints + "/" + this.MaxHitPoints + "]"));
 
                 if (!SkillBonuses.IsEmpty)
                 {
