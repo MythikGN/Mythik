@@ -930,6 +930,8 @@ namespace Server.Spells
 
 		public static bool CheckTown( Point3D loc, Mobile caster )
 		{
+            //Can cast anything in town.
+            return true;
 			if( IsTown( loc, caster ) )
 			{
 				caster.SendLocalizedMessage( 500946 ); // You cannot cast this in town!
