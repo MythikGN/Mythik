@@ -1,29 +1,32 @@
 using System;
-using Server.Items;
 using Server.Mobiles;
-using Server.Regions;
+using Server.Network;
 using Server.Targeting;
 
 namespace Server.Spells.Eighth
 {
     public class EnergyVortexSpell : MagerySpell
     {
-        public override SpellCircle Circle { get { return SpellCircle.Eighth; } }
-        public override int Sound { get { return 0x212; } }
-
-        public override bool CanTargetGround { get { return true; } }
-
-        private static readonly SpellInfo m_Info = new SpellInfo(
+        private static SpellInfo m_Info = new SpellInfo(
                 "Energy Vortex", "Vas Corp Por",
-                263,
+                260,
                 9032,
-                true,
+                false,
                 Reagent.Bloodmoss,
                 Reagent.BlackPearl,
                 Reagent.MandrakeRoot,
                 Reagent.Nightshade
             );
 
+        public override SpellCircle Circle { get { return SpellCircle.Eighth; } }
+
+        public override bool CanTargetGround
+        {
+            get
+            {
+                return true;
+            }
+        }
         public EnergyVortexSpell(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
         {
         }
@@ -33,48 +36,46 @@ namespace Server.Spells.Eighth
             if (!base.CheckCast())
                 return false;
 
+            if ((Caster.Followers + (Core.SE ? 2 : 1)) > Caster.FollowersMax)
+            {
+                Caster.SendLocalizedMessage(1049645); // You have too many followers to summon that creature.
+                return false;
+            }
+
             return true;
         }
 
         public override void OnCast()
         {
-            if (Caster is PlayerMobile)
-            {
-                Target((IPoint3D)SphereSpellTarget);
-            }
-            else
-                Caster.Target = new InternalTarget(this);
+            Caster.Target = new InternalTarget(this);
         }
-
+        public override void OnPlayerCast()
+        {
+            if (SphereSpellTarget is IPoint3D)
+                Target((IPoint3D)SphereSpellTarget);
+            else
+                DoFizzle();
+        }
         public void Target(IPoint3D p)
         {
             Map map = Caster.Map;
 
             SpellHelper.GetSurfaceTop(ref p);
 
-            
-            if ((map == null || !map.CanSpawnMobile(p.X, p.Y, p.Z)) && !(SphereSpellTarget is Mobile))
+            if (map == null || !map.CanSpawnMobile(p.X, p.Y, p.Z))
             {
                 Caster.SendLocalizedMessage(501942); // That location is blocked.
             }
-            else if (/*SpellHelper.CheckTown(p, Caster) && */CheckSequence())
+            else if (SpellHelper.CheckTown(p, Caster) && CheckSequence())
             {
                 TimeSpan duration;
 
                 if (Core.AOS)
                     duration = TimeSpan.FromSeconds(90.0);
                 else
-                    duration = TimeSpan.FromSeconds(Utility.Random(300, 240));
+                    duration = TimeSpan.FromSeconds(Utility.Random(80, 40));
 
-                if (Caster.InLOS(p))
-                {
-                    GuardedRegion reg = (GuardedRegion)Region.Find(new Point3D(p), Caster.Map).GetRegion(typeof(GuardedRegion));
-                    if (reg != null && !reg.Disabled)
-                        Caster.CriminalAction(true);
-                    BaseCreature.Summon(new EnergyVortex(), false, Caster, new Point3D(p), Sound, duration);
-                }
-                else
-                    Caster.SendAsciiMessage("You can't see that.");
+                BaseCreature.Summon(new EnergyVortex(), false, Caster, new Point3D(p), 0x212, duration);
             }
 
             FinishSequence();
@@ -84,7 +85,7 @@ namespace Server.Spells.Eighth
         {
             private EnergyVortexSpell m_Owner;
 
-            public InternalTarget(EnergyVortexSpell owner) : base(12, true, TargetFlags.None)
+            public InternalTarget(EnergyVortexSpell owner) : base(Core.ML ? 10 : 12, true, TargetFlags.None)
             {
                 m_Owner = owner;
             }
@@ -99,7 +100,7 @@ namespace Server.Spells.Eighth
             {
                 from.SendLocalizedMessage(501943); // Target cannot be seen. Try again.
                 from.Target = new InternalTarget(m_Owner);
-                from.Target.BeginTimeout(from, TimeoutTime - DateTime.Now);
+                from.Target.BeginTimeout(from, TimeoutTime - DateTime.UtcNow);
                 m_Owner = null;
             }
 

@@ -33,7 +33,8 @@ namespace Server.Mobiles
 			}
 			else
 			{
-				Body = 164;
+                Hue = 0x76;
+                Body = 16;// 164;
 			}
 
 			SetStr( 200 );
