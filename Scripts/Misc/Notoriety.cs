@@ -11,19 +11,28 @@ using Server.Factions;
 using Server.Spells.Necromancy;
 using Server.Spells.Ninjitsu;
 using Server.Spells;
+using Server.SkillHandlers;
 
 namespace Server.Misc
 {
 	public class NotorietyHandlers
 	{
-		public static void Initialize()
+        public static int KILLS_FOR_MURDER = 5;
+
+        public static int NPC_KARMA_RED = -800;
+        public static int NPC_KARMA_GREY = 100;
+
+        public static int PLAYER_KARMA_RED = -9000;
+        public static int PLAYER_KARMA_GREY = -2500;
+
+        public static void Initialize()
 		{
             Notoriety.Hues[Notoriety.Innocent]      = 0x63;// 0x59;
 			Notoriety.Hues[Notoriety.Ally]			= 0x3F;
             Notoriety.Hues[Notoriety.CanBeAttacked] = 0x3b2;
 			Notoriety.Hues[Notoriety.Criminal]		= 0x3B2;
 			Notoriety.Hues[Notoriety.Enemy]			= 0x90;
-			Notoriety.Hues[Notoriety.Murderer]		= 0x22;
+			Notoriety.Hues[Notoriety.Murderer]		= 0x26; // maybe 33
 			Notoriety.Hues[Notoriety.Invulnerable]	= 0x35;
 
 			Notoriety.Handler = new NotorietyHandler( MobileNotoriety );
@@ -365,7 +374,7 @@ namespace Server.Misc
 			}
 		}
 
-		public static int MobileNotoriety( Mobile source, Mobile target )
+		public static int MobileNotorietyOld( Mobile source, Mobile target )
 		{
 			if( Core.AOS && (target.Blessed || (target is BaseVendor && ((BaseVendor)target).IsInvulnerable) || target is PlayerVendor || target is TownCrier) )
 				return Notoriety.Invulnerable;
@@ -395,7 +404,7 @@ namespace Server.Misc
 
 				master = bc.ControlMaster;
 
-				if ( Core.ML && master != null )
+				if (master != null )
 				{
 					if ( ( source == master && CheckAggressor( target.Aggressors, source ) ) || ( CheckAggressor( source.Aggressors, bc ) ) )
 						return Notoriety.CanBeAttacked;
@@ -471,8 +480,148 @@ namespace Server.Misc
 
 			return Notoriety.Innocent;
 		}
+        public static int MobileNotoriety(Mobile source, Mobile target)
+        {
+           
+            if (Core.AOS && (target.Blessed || (target is BaseVendor && ((BaseVendor)target).IsInvulnerable) || target is PlayerVendor || target is TownCrier))
+                return Notoriety.Invulnerable;
+            if (target is BaseVendor && target.Kills < KILLS_FOR_MURDER)
+                return Notoriety.Innocent;
 
-		public static bool CheckHouseFlag( Mobile from, Mobile m, Point3D p, Map map )
+            if (target is BaseCreature && (((BaseCreature)target).AlwaysMurderer || ((BaseCreature)target).IsAnimatedDead))
+                return Notoriety.Murderer;
+
+           // if (target is PlayerMobile && (((PlayerMobile)target).AlwaysMurderer))
+           //     return Notoriety.Murderer;
+
+            //All mobiles have same murder rules.
+            if (target.Kills >= KILLS_FOR_MURDER)
+                return Notoriety.Murderer;
+
+            //Target should be karma red before guild notoriety
+            if (target is PlayerMobile)
+            {
+                if (target.Karma <= PLAYER_KARMA_RED)
+                    return Notoriety.Murderer;
+            }
+
+            Guild sourceGuild = GetGuildFor(source.Guild as Guild, source);
+            Guild targetGuild = GetGuildFor(target.Guild as Guild, target);
+
+            if (sourceGuild != null && targetGuild != null)
+            {
+                if (sourceGuild == targetGuild || sourceGuild.IsAlly(targetGuild) || (sourceGuild.Type !=
+                    GuildType.Regular && sourceGuild.Type == targetGuild.Type))
+                    return Notoriety.Ally;
+                if (sourceGuild.IsEnemy(targetGuild))
+                    return Notoriety.Enemy;
+            }
+
+
+
+            if (target.AccessLevel > AccessLevel.Player)
+                return Notoriety.CanBeAttacked;
+
+            if (target is PlayerMobile) //Player mobile notoriety hierarchy
+            {
+                if (target.Criminal)
+                    return Notoriety.Criminal;
+                if (target.Karma <= PLAYER_KARMA_GREY)
+                    return Notoriety.CanBeAttacked;
+            }
+            else //Mobile notoriety hierarchy
+            {
+                if (target.Karma <= NPC_KARMA_RED)
+                    return Notoriety.Murderer;
+                if (target.Criminal)
+                    return Notoriety.Criminal;
+                if (target.Karma <= NPC_KARMA_GREY)
+                    return Notoriety.CanBeAttacked;
+            }
+
+            if (source.Player && !target.Player && source is PlayerMobile && target is BaseCreature)
+            {
+                BaseCreature bc = (BaseCreature)target;
+
+                Mobile master = bc.GetMaster();
+
+                if (master != null && master.AccessLevel > AccessLevel.Player)
+                    return Notoriety.CanBeAttacked;
+
+                if (!bc.Summoned && !bc.Controlled && ((PlayerMobile)source).EnemyOfOneType == target.GetType())
+                    return Notoriety.Enemy;
+
+                if (bc.ControlMaster == source)
+                    return Notoriety.CanBeAttacked;
+
+                master = bc.ControlMaster;
+
+                if (Core.ML && master != null)
+                {
+                    if (source == master && CheckAggressor(target.Aggressors, source))
+                        return Notoriety.CanBeAttacked;
+
+                    return MobileNotoriety(source, master);
+                }
+            }
+
+
+            Faction srcFaction = Faction.Find(source, true, true);
+            Faction trgFaction = Faction.Find(target, true, true);
+
+            if (srcFaction != null && trgFaction != null && srcFaction != trgFaction && source.Map == Faction.Facet)
+                return Notoriety.Enemy;
+
+            if (Stealing.ClassicMode && target is PlayerMobile && ((PlayerMobile)target).PermaFlags.Contains(source))
+                return Notoriety.CanBeAttacked;
+
+            if (target is BaseCreature && ((BaseCreature)target).AlwaysAttackable)
+                return Notoriety.CanBeAttacked;
+
+            if ((target is BaseGuard))
+                return Notoriety.Innocent;
+
+            //Maka - Repo update, might mess stuff upp
+            //Taran - Yeah it did, I had to uncomment it :P
+            //if (!(target is BaseCreature && ((BaseCreature)target).InitialInnocent))
+            //{
+            //  if( !target.Body.IsHuman && !target.Body.IsGhost && !IsPet( target as BaseCreature ) && !TransformationSpellHelper.UnderTransformation( target ) && !AnimalForm.UnderTransformation( target ) )
+            //      return Notoriety.CanBeAttacked;
+            //}
+
+            if (CheckAggressor(source.Aggressors, target))
+                return Notoriety.CanBeAttacked;
+
+            if (CheckAggressed(source.Aggressed, target))
+                return Notoriety.CanBeAttacked;
+
+            if (target is BaseCreature)
+            {
+                BaseCreature bc = (BaseCreature)target;
+
+                if (bc.Controlled && bc.ControlOrder == OrderType.Guard && bc.ControlTarget == source)
+                    return Notoriety.CanBeAttacked;
+            }
+
+            if (source is BaseCreature)
+            {
+                BaseCreature bc = (BaseCreature)source;
+
+                Mobile master = bc.GetMaster();
+                if (master != null && CheckAggressor(master.Aggressors, target))
+                    return Notoriety.CanBeAttacked;
+            }
+
+            return Notoriety.Innocent;
+        }
+
+
+
+
+
+
+
+        public static bool CheckHouseFlag( Mobile from, Mobile m, Point3D p, Map map )
 		{
 			BaseHouse house = BaseHouse.FindHouseAt( p, map, 16 );
 
