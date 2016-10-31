@@ -299,8 +299,8 @@ namespace Server.Spells
 
 		public static TimeSpan GetDuration( Mobile caster, Mobile target )
 		{
-			if( Core.AOS )
-				return TimeSpan.FromSeconds( ((6 * caster.Skills.EvalInt.Fixed) / 50) + 1 );
+			//if( Core.AOS )
+			//	return TimeSpan.FromSeconds( ((6 * caster.Skills.EvalInt.Fixed) / 50) + 1 );
 
 			return TimeSpan.FromSeconds( caster.Skills[SkillName.Magery].Value * 1.2 );
 		}
@@ -332,7 +332,7 @@ namespace Server.Spells
 
 		public static int GetOffset( Mobile caster, Mobile target, StatType type, bool curse )
 		{
-			if( Core.AOS )
+			/*if( Core.AOS )
 			{
 				if( !m_DisableSkillCheck )
 				{
@@ -353,7 +353,7 @@ namespace Server.Spells
 					case StatType.Int:
 						return (int)(target.RawInt * percent);
 				}
-			}
+			}*/
 
 			return 1 + (int)(caster.Skills[SkillName.Magery].Value * 0.1);
 		}
