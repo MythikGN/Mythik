@@ -94,7 +94,11 @@ namespace Server.Mobiles
 		}
 
 
-
+        public void SpellCheck()
+        {
+            if (Spell != null)
+                ((Spell)Spell).DoFizzle();
+        }
 
         private DesignContext m_DesignContext;
 
