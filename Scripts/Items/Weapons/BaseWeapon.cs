@@ -3441,8 +3441,18 @@ namespace Server.Items
 			if ( m_Hits >= 0 && m_MaxHits > 0 )
 				list.Add( 1060639, "{0}\t{1}", m_Hits, m_MaxHits ); // durability ~1_val~ / ~2_val~
 		}
+        public override void OnDoubleClick(Mobile from)
+        {
+            Item eq = from.FindItemOnLayer(this.Layer);
+            if (eq != null)
+            {
+                eq.DropToMobile(from, from, Point3D.Zero);
+            }
 
-		public override void OnSingleClick( Mobile from )
+            from.EquipItem(this);
+            base.OnDoubleClick(from);
+        }
+        public override void OnSingleClick( Mobile from )
 		{
             if (from.NetState.Version.Major <= 3)
             {
