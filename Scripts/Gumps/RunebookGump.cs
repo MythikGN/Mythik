@@ -155,7 +155,7 @@ namespace Server.Gumps
 				AddButton( 160 + (half * 140), 20, defButtonID, defButtonID, 2 + (index * 6) + 2, GumpButtonType.Reply, 0 );
 				AddHtmlLocalized( 175 + (half * 140), 15, 100, 18, 1011300, false, false ); // Set default
 
-				if ( Core.AOS )
+				if ( false )
 				{
 					AddButton( 135 + (half * 160), 140, 2103, 2104, 2 + (index * 6) + 3, GumpButtonType.Reply, 0 );
 					AddHtmlLocalized( 150 + (half * 160), 136, 110, 20, 1062722, false, false ); // Recall

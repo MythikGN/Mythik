@@ -129,7 +129,7 @@ namespace Server.Items
 		}
 
 		[Constructable]
-		public Runebook() : this( Core.SE ? 12 : 6 )
+		public Runebook() : this( 10 )
 		{
 		}
 
