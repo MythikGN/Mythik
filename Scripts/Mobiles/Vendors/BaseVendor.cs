@@ -161,7 +161,8 @@ namespace Server.Mobiles
 			this.Title = title;
 			InitBody();
 			InitOutfit();
-
+            SetFameLevel(1);
+            SetKarmaLevel(1);
 			Container pack;
 			//these packs MUST exist, or the client will crash when the packets are sent
 			pack = new Backpack();
