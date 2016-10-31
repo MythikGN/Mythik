@@ -1,40 +1,30 @@
 using System;
+using System.Collections;
+using Server.Items;
+using Server.Spells.Fourth;
 using Server.Targeting;
-using Server.Network;
 
 namespace Server.Spells.Third
 {
-	public class BlessSpell : MagerySpell
-	{
-		private static SpellInfo m_Info = new SpellInfo(
-				"Bless", "Rel Sanct",
-				203,
-				9061,
-				Reagent.Garlic,
-				Reagent.MandrakeRoot
-			);
+    public class BlessSpell : MagerySpell
+    {
+        public override SpellCircle Circle { get { return SpellCircle.Third; } }
+        public override int Sound { get { return 0x1EA; } }
 
-		public override SpellCircle Circle { get { return SpellCircle.Third; } }
+        //public override bool SpellDisabled { get { return true; } }
 
-		public BlessSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
-		{
-		}
+        private static readonly SpellInfo m_Info = new SpellInfo(
+                "Bless", "Rel Sanct",
+                212,
+                9061,
+                Reagent.Garlic,
+                Reagent.MandrakeRoot
+            );
 
-		public override bool CheckCast()
-		{
-			if ( Engines.ConPVP.DuelContext.CheckSuddenDeath( Caster ) )
-			{
-				Caster.SendMessage( 0x22, "You cannot cast this spell when in sudden death." );
-				return false;
-			}
+        public BlessSpell(Mobile caster, Item scroll) : base(caster, scroll, m_Info)
+        {
+        }
 
-			return base.CheckCast();
-		}
-
-		public override void OnCast()
-		{
-			Caster.Target = new InternalTarget( this );
-		}
         public override void OnPlayerCast()
         {
             if (SphereSpellTarget is Mobile)
@@ -42,55 +32,108 @@ namespace Server.Spells.Third
             else
                 DoFizzle();
         }
-        public void Target( Mobile m )
-		{
-			if ( !Caster.CanSee( m ) )
-			{
-				Caster.SendLocalizedMessage( 500237 ); // Target can not be seen.
-			}
-			else if ( CheckBSequence( m ) )
-			{
-				SpellHelper.Turn( Caster, m );
 
-				SpellHelper.AddStatBonus( Caster, m, StatType.Str ); SpellHelper.DisableSkillCheck = true;
-				SpellHelper.AddStatBonus( Caster, m, StatType.Dex );
-				SpellHelper.AddStatBonus( Caster, m, StatType.Int ); SpellHelper.DisableSkillCheck = false;
+        public override void OnCast()
+        {
+            Caster.Target = new InternalTarget(this);
+        }
 
-				m.FixedParticles( 0x373A, 10, 15, 5018, EffectLayer.Waist );
-				m.PlaySound( 0x1EA );
+        private static readonly Hashtable m_UnderEffect = new Hashtable();
 
-				int percentage = (int)(SpellHelper.GetOffsetScalar(Caster, m, false) * 100);
-				TimeSpan length = SpellHelper.GetDuration(Caster, m);
+        public static void RemoveEffect(object state)
+        {
+            Mobile m = (Mobile)state;
 
-				string args = String.Format("{0}\t{1}\t{2}", percentage, percentage, percentage);
+            m_UnderEffect.Remove(m);
 
-				BuffInfo.AddBuff(m, new BuffInfo(BuffIcon.Bless, 1075847, 1075848, length, m, args.ToString()));
-			}
+            m.UpdateResistances();
+        }
 
-			FinishSequence();
-		}
+        public static bool UnderEffect(Mobile m)
+        {
+            return m_UnderEffect.Contains(m);
+        }
 
-		private class InternalTarget : Target
-		{
-			private BlessSpell m_Owner;
+        public void Target(Mobile m)
+        {
+            if (!Caster.CanSee(m))
+            {
+                Caster.SendAsciiMessage("Target is not in line of sight."); DoFizzle();//One line so i could use VS Replace, feel free to change/remove comment:p
+            }
+            else if (CheckBSequence(m))
+            {
+                if ((m.Player && m.Int <= 150 && m.Str <= 150 && m.Dex <= 150 && m.RawStatTotal <= 400) || (!m.Player))
+                {
+                    if (CurseSpell.UnderEffect(m))
+                    {
+                        bool message = true;
 
-			public InternalTarget( BlessSpell owner ) : base( Core.ML ? 10 : 12, false, TargetFlags.Beneficial )
-			{
-				m_Owner = owner;
-			}
+                        if (m.Str < m.RawStr)
+                        {
+                            m.RemoveStatMod(String.Format("[Magic] {0} Offset", StatType.Str));
+                            message = false;
+                        }
+                        if (m.Dex < m.RawDex)
+                        {
+                            m.RemoveStatMod(String.Format("[Magic] {0} Offset", StatType.Dex));
+                            message = false;
+                        }
+                        if (m.Int < m.RawInt)
+                        {
+                            m.RemoveStatMod(String.Format("[Magic] {0} Offset", StatType.Int));
+                            message = false;
+                        }
 
-			protected override void OnTarget( Mobile from, object o )
-			{
-				if ( o is Mobile )
-				{
-					m_Owner.Target( (Mobile)o );
-				}
-			}
+                        if (message)
+                            m.SendAsciiMessage("You are under the effect of a curse spell and cannot get any stat bonuses");
+                    }
+                    else
+                    {
+                        SpellHelper.AddStatBonus(Caster, m, StatType.Str);
+                        SpellHelper.DisableSkillCheck = true;
+                        SpellHelper.AddStatBonus(Caster, m, StatType.Dex);
+                        SpellHelper.AddStatBonus(Caster, m, StatType.Int);
+                        SpellHelper.DisableSkillCheck = false;
+                    }
+                }
 
-			protected override void OnTargetFinish( Mobile from )
-			{
-				m_Owner.FinishSequence();
-			}
-		}
-	}
+                m.FixedParticles(0x373A, 10, 15, 5018, EffectLayer.Waist);
+                m.PlaySound(Sound);
+
+                int percentage = (int)(SpellHelper.GetOffsetScalar(Caster, m, false) * 100);
+                TimeSpan length = SpellHelper.GetDuration(Caster, m);
+
+                m_UnderEffect[m] = Timer.DelayCall(length, new TimerStateCallback(RemoveEffect), m);
+
+                string args = String.Format("{0}\t{1}\t{2}", percentage, percentage, percentage);
+
+                BuffInfo.AddBuff(m, new BuffInfo(BuffIcon.Bless, 1075847, 1075848, length, m, args));
+            }
+
+            FinishSequence();
+        }
+
+        private class InternalTarget : Target
+        {
+            private readonly BlessSpell m_Owner;
+
+            public InternalTarget(BlessSpell owner) : base(Core.ML ? 10 : 12, false, TargetFlags.Beneficial)
+            {
+                m_Owner = owner;
+            }
+
+            protected override void OnTarget(Mobile from, object o)
+            {
+                if (o is Mobile)
+                {
+                    m_Owner.Target((Mobile)o);
+                }
+            }
+
+            protected override void OnTargetFinish(Mobile from)
+            {
+                m_Owner.FinishSequence();
+            }
+        }
+    }
 }
