@@ -245,8 +245,6 @@ namespace Server.Items
 
 				if ( pack != null )
 				{
-					if ( (int) PotionEffect >= (int) PotionEffect.Invisibility )
-						return 1;
 
 					List<PotionKeg> kegs = pack.FindItemsByType<PotionKeg>();
 
