@@ -1,4 +1,5 @@
-﻿using Scripts.Mythik.Items.Craftables.Alch;
+﻿using Scripts.Mythik.Gumps;
+using Scripts.Mythik.Items.Craftables.Alch;
 using Server;
 using Server.Commands;
 using Server.Gumps;
@@ -25,7 +26,27 @@ namespace Scripts.Mythik.Commands
             CommandSystem.Register("fs", AccessLevel.Player, new CommandEventHandler(UseFSScroll));
             CommandSystem.Register("heal", AccessLevel.Player, new CommandEventHandler(UseBandage));
             CommandSystem.Register("title", AccessLevel.Player, new CommandEventHandler(OpenTitleMenu));
+            CommandSystem.Register("unnewbie", AccessLevel.Player, new CommandEventHandler(UnNewbie));
+            CommandSystem.Register("news", AccessLevel.Player, new CommandEventHandler(OpenNews));
 
+        }
+        [Usage("news")]
+        [Description("Open the News.")]
+        private static void OpenNews(CommandEventArgs e)
+        {
+            var player = e.Mobile as PlayerMobile;
+            if (player != null)
+                player.SendGump(new NewsGump());
+        }
+
+        [Usage("unnewbie")]
+        [Description("Removes young status")]
+        private static void UnNewbie(CommandEventArgs e)
+        {
+            var player = e.Mobile as PlayerMobile;
+            if (player != null)
+                player.Young = false;
+            player.SendAsciiMessage("Your newbie status has been removed.");
         }
 
         [Usage("title")]
