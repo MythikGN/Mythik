@@ -68,9 +68,7 @@ namespace Server.Spells.Sixth
                 {
                     if (!m.CanBeginAction(typeof(PolymorphSpell)))
                     {
-                        m.BodyMod = 0;
-                        m.HueMod = -1;
-                        m.EndAction(typeof(PolymorphSpell));
+                        PolymorphSpell.StopTimer(m);
                         res = true;
                     }
                 }

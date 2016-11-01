@@ -4,6 +4,7 @@ using Server.Custom.Polymorph;
 using Server.Items;
 using Server.Mobiles;
 using Server.Spells.Fifth;
+using Scripts.Mythik.Mobiles;
 
 namespace Server.Spells.Seventh
 {
@@ -202,7 +203,7 @@ namespace Server.Spells.Seventh
 
                 string modName = m_Owner.Serial + "Polymorph";
 
-                PlayerMobile pm = ((PlayerMobile)m_Owner);
+                MythikPlayerMobile pm = ((MythikPlayerMobile)m_Owner);
 
                 foreach (Custom.Polymorph.StatMod sm in PolymorphEntry.EntryInfo[m_PolymorphEntry.ArtID].StatMods)
                 {
@@ -219,8 +220,9 @@ namespace Server.Spells.Seventh
                             break;
                         case StatModType.Armor:
                             m_Owner.VirtualArmorMod = sm.Value;
+                            
                             break;
-                        /*case StatModType.MinDamage:
+                        case StatModType.MinDamage:
                             if (pm != null)
                                 pm.MinDamage = sm.Value;
                             break;
@@ -231,7 +233,7 @@ namespace Server.Spells.Seventh
                         case StatModType.SwingSpeed:
                             if (pm != null)
                                 pm.SwingSpeed = sm.Value;
-                            break;*/
+                            break;
                         default:
                             break;
                     }
@@ -251,12 +253,12 @@ namespace Server.Spells.Seventh
 
                     m_Owner.VirtualArmorMod = 0;
 
-                    if (m_Owner is PlayerMobile)
+                    if (m_Owner is MythikPlayerMobile)
                     {
-                        PlayerMobile pm = ((PlayerMobile)m_Owner);
-                       // pm.MinDamage = 0;
-                       // pm.MaxDamage = 0;
-                       // pm.SwingSpeed = 0;
+                        MythikPlayerMobile pm = ((MythikPlayerMobile)m_Owner);
+                       pm.MinDamage = 0;
+                       pm.MaxDamage = 0;
+                       pm.SwingSpeed = 0;
                     }
 
                     m_Owner.EndAction(typeof(PolymorphSpell));

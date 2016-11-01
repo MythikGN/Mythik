@@ -13,6 +13,7 @@ using Server.Engines.Craft;
 using System.Collections.Generic;
 using Server.Spells.Spellweaving;
 using Scripts.Mythik;
+using Scripts.Mythik.Mobiles;
 
 namespace Server.Items
 {
@@ -901,6 +902,8 @@ namespace Server.Items
 		public virtual TimeSpan GetDelay( Mobile m, Mobile defender = null)
 		{
 			double speed = this.Speed;
+            if (this is Fists && m is MythikPlayerMobile)
+                speed = (m as MythikPlayerMobile).SwingSpeed;
 
 			if ( speed == 0 )
 				return TimeSpan.FromHours( 1.0 );
@@ -2135,7 +2138,6 @@ namespace Server.Items
 					return;
 				}
 			}
-
 			min = MinDamage;
 			max = MaxDamage;
 		}

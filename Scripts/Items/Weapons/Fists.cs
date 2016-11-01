@@ -1,6 +1,7 @@
 using System;
 using Server.Items;
 using Server.Network;
+using Scripts.Mythik.Mobiles;
 
 namespace Server.Items
 {
@@ -46,7 +47,22 @@ namespace Server.Items
 		{
 		}
 
-		public override double GetDefendSkillValue( Mobile attacker, Mobile defender )
+        public override void GetBaseDamageRange(Mobile attacker, out int min, out int max)
+        {
+            //handle polymorph
+            var pm = attacker as MythikPlayerMobile;
+            if (pm != null && this is Fists)
+            {
+                min = pm.MinDamage;
+                max = pm.MaxDamage;
+                return;
+            }
+            base.GetBaseDamageRange(attacker, out min, out max);
+        }
+
+        
+
+        public override double GetDefendSkillValue( Mobile attacker, Mobile defender )
 		{
 			double wresValue = defender.Skills[SkillName.Wrestling].Value;
 			double anatValue = defender.Skills[SkillName.Anatomy].Value;

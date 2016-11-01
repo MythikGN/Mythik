@@ -29,6 +29,12 @@ namespace Scripts.Mythik.Mobiles
         internal Dictionary<int, AchieveData> Achievements = new Dictionary<int, AchieveData>();
         public int AchievementPointsTotal { get; set; }
 
+        #region PolymorphDamageMods
+        public int MinDamage { get; internal set; }
+        public int MaxDamage { get; internal set; }
+        public int SwingSpeed { get; internal set; }
+        #endregion
+
         private Dictionary<int, Tuple<int, int>> m_GumpLocations = new Dictionary<int, Tuple<int, int>>();
 
         public Tuple<int, int> GetGumpLoc(Type gump)
