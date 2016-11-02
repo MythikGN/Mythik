@@ -2590,11 +2590,14 @@ namespace Server.Mobiles
 					m_Mobile.FocusMob = null;
 				}
 			}
-
-			return (m_Mobile.FocusMob != null);
+            if (m_Mobile.FocusMob != null && m_Mobile.FocusMob is PlayerMobile)
+            { //say Attacking!
+                m_Mobile.PrivateOverheadMessage(MessageType.Whisper,0x22,true,m_Mobile.Name + " is attacking you!",m_Mobile.FocusMob.NetState);
+            }
+            return (m_Mobile.FocusMob != null);
 		}
 
-		private bool IsHostile( Mobile from )
+		public bool IsHostile( Mobile from )
 		{
 			int count = Math.Max( m_Mobile.Aggressors.Count, m_Mobile.Aggressed.Count );
 
