@@ -2145,8 +2145,7 @@ namespace Server.Network
 				m_Stream.Write( (ushort) s.BaseFixedPoint );
                 m_Stream.Write((byte)s.Lock);
                 if (from.NetState?.Version?.Major > 3)
-                {
-                    
+                { 
                     m_Stream.Write((ushort)s.CapFixedPoint);
                 }
 
@@ -2192,8 +2191,37 @@ namespace Server.Network
 			m_Stream.Write( (short) skill.CapFixedPoint );*/
 		}
 	}
+    public sealed class SkillChangePreAOS : Packet
+    {
+        public SkillChangePreAOS(Skill skill) : base(0x3A)
+        {
+            this.EnsureCapacity(11);
 
-	public sealed class LaunchBrowser : Packet
+            double v = skill.NonRacialValue;
+            int uv = (int)(v * 10);
+
+            if (uv < 0)
+                uv = 0;
+            else if (uv >= 0x10000)
+                uv = 0xFFFF;
+            //3a 00 0b ff 00 2e 00 02 00 02 00
+
+            m_Stream.Write((byte)0xFF);
+            m_Stream.Write((ushort)skill.Info.SkillID);
+            m_Stream.Write((ushort)uv);
+            m_Stream.Write((ushort)skill.BaseFixedPoint);
+            m_Stream.Write((byte)skill.Lock);
+            //m_Stream.Write((ushort)skill.CapFixedPoint);
+
+            /*m_Stream.Write( (short) skill.Info.SkillID );
+			m_Stream.Write( (short) (skill.Value * 10.0) );
+			m_Stream.Write( (short) (skill.Base * 10.0) );
+			m_Stream.Write( (byte) skill.Lock );
+			m_Stream.Write( (short) skill.CapFixedPoint );*/
+        }
+    }
+
+    public sealed class LaunchBrowser : Packet
 	{
 		public LaunchBrowser( string url ) : base( 0xA5 )
 		{
