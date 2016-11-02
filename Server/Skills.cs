@@ -1106,7 +1106,7 @@ namespace Server
 
 			if ( ns != null)
             {
-                if(ns.Version.Major <= 3)
+                if(ns.Version?.Major <= 3)
                     ns.Send(new SkillChangePreAOS(skill));
                 else
                     ns.Send(new SkillChange(skill));
