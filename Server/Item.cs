@@ -1809,7 +1809,8 @@ namespace Server
 
 		public void ReleaseWorldPackets()
 		{
-			Packet.Release( ref m_WorldPacket );
+            Packet.Release(ref m_WorldPacketPreAOS);
+            Packet.Release( ref m_WorldPacket );
 			Packet.Release( ref m_WorldPacketSA );
 			Packet.Release( ref m_WorldPacketHS );
 		}
