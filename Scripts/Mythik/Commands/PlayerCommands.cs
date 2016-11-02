@@ -28,7 +28,17 @@ namespace Scripts.Mythik.Commands
             CommandSystem.Register("title", AccessLevel.Player, new CommandEventHandler(OpenTitleMenu));
             CommandSystem.Register("unnewbie", AccessLevel.Player, new CommandEventHandler(UnNewbie));
             CommandSystem.Register("news", AccessLevel.Player, new CommandEventHandler(OpenNews));
+            CommandSystem.Register("followers", AccessLevel.Player, new CommandEventHandler(GetFollowers));
+        }
 
+
+        [Usage("followers")]
+        [Description("Display how many followers your currently have.")]
+        static void GetFollowers(CommandEventArgs e)
+        {
+            var pm = e.Mobile as PlayerMobile;
+            pm.SendAsciiMessage("You have a total of " + pm.Followers + " out of a max of " + pm.FollowersMax + ".");
+          
         }
         [Usage("news")]
         [Description("Open the News.")]

@@ -2545,12 +2545,7 @@ namespace Server
 			{
 				if( m_Followers != value )
 				{
-                    if (value > m_Followers)
-                        this.SendAsciiMessage("Your pet takes up " + (value - m_Followers) + " follower slots, you currently have " + (value) + " followers out of a cap of " + FollowersMax + ".");
-                    else
-                        this.SendAsciiMessage("You now have " + value + " follower slots available.");
-					m_Followers = value;
-
+                   	m_Followers = value;
 					Delta( MobileDelta.Followers );
 				}
 			}
