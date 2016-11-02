@@ -19,7 +19,7 @@ namespace Server.Misc
 	{
         public static int KILLS_FOR_MURDER = 5;
 
-        public static int NPC_KARMA_RED = -800;
+        public static int NPC_KARMA_RED = -850;
         public static int NPC_KARMA_GREY = 100;
 
         public static int PLAYER_KARMA_RED = -9000;
@@ -369,8 +369,13 @@ namespace Server.Misc
 					if( list[i] == source )
 						return Notoriety.CanBeAttacked;
 				}
-
-				return Notoriety.Innocent;
+                if (target.Owner is BaseCreature)
+                {
+                    var bc = target.Owner as BaseCreature;
+                    if (bc.AI == AIType.AI_Melee || bc.AI == AIType.AI_Archer || bc.AI == AIType.AI_Berserk || bc.AI == AIType.AI_Predator)
+                        return Notoriety.Murderer;
+                }
+                return Notoriety.Innocent;
 			}
 		}
 
@@ -490,6 +495,12 @@ namespace Server.Misc
 
             if (target is BaseCreature && (((BaseCreature)target).AlwaysMurderer || ((BaseCreature)target).IsAnimatedDead))
                 return Notoriety.Murderer;
+            if(target is BaseCreature)
+            {
+                var bc = target as BaseCreature;
+                if (bc.AI == AIType.AI_Melee || bc.AI == AIType.AI_Archer || bc.AI == AIType.AI_Berserk || bc.AI == AIType.AI_Predator)
+                    return Notoriety.Murderer;
+            }
 
            // if (target is PlayerMobile && (((PlayerMobile)target).AlwaysMurderer))
            //     return Notoriety.Murderer;
