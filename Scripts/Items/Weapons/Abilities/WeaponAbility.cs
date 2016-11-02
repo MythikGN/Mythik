@@ -365,6 +365,9 @@ namespace Server.Items
 
 		public static bool SetCurrentAbility( Mobile m, WeaponAbility a )
 		{
+            //Disabled special weapon moves
+
+            return false;
 			if ( !Core.AOS )
 			{
 				ClearCurrentAbility( m );
