@@ -3203,6 +3203,7 @@
     <Compile Include="Mythik\Systems\Loot\MythikLootSystem.cs" />
     <Compile Include="Mythik\Systems\MondainsQuests\Helpers\QuestHelper.cs" />
     <Compile Include="Mythik\Systems\MondainsQuests\Helpers\QuestReader.cs" />
+    <Compile Include="Mythik\Systems\MonsterLevels\MonsterLevels.cs" />
     <Compile Include="Mythik\Systems\Titles\SelectTitleGump.cs" />
     <Compile Include="Mythik\Systems\Titles\TitlesMenu.cs" />
     <Compile Include="Mythik\Systems\VendorSearch\RunicReforging.cs" />
