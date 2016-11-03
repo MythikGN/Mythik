@@ -17,10 +17,14 @@ namespace Scripts.Mythik.Systems
             CommandSystem.Register("chaton", AccessLevel.Player, new CommandEventHandler(EnableChat));
             CommandSystem.Register("chatoff", AccessLevel.Player, new CommandEventHandler(DisableChat));
             CommandSystem.Register("c", AccessLevel.Player, new CommandEventHandler(SendChatMessage));
+            CommandSystem.Register("ch", AccessLevel.Player, new CommandEventHandler(SendChatMessage));
             CommandSystem.Register("chat", AccessLevel.Player, new CommandEventHandler(SendChatMessage));
+            CommandSystem.Register("s", AccessLevel.Player, new CommandEventHandler(SendChatMessage));
+            CommandSystem.Register("sh", AccessLevel.Player, new CommandEventHandler(SendChatMessage));
             CommandSystem.Register("shout", AccessLevel.Player, new CommandEventHandler(SendChatMessage));
         }
         [Usage("c")]
+        [Aliases("ch","chat","s","sh","shout")]
         [Description("Send a chat message")]
         private static void SendChatMessage(CommandEventArgs e)
         {
