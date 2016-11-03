@@ -130,7 +130,7 @@ namespace Scripts.Mythik.Items.Craftables.Alch
                         if (!Server.Engines.ConPVP.DuelContext.IsFreeConsume(from))
                             this.Consume();
 
-                        Timer.DelayCall(TimeSpan.FromSeconds(Delay), new TimerStateCallback(ReleaseHealLock), from);
+                        Timer.DelayCall(TimeSpan.FromSeconds(Delay), new TimerStateCallback(ReleaseManaLock), from);
                     }
                     else
                     {
@@ -146,7 +146,7 @@ namespace Scripts.Mythik.Items.Craftables.Alch
             }
         }
 
-        private static void ReleaseHealLock(object state)
+        private static void ReleaseManaLock(object state)
         {
             ((Mobile)state).EndAction(typeof(BaseManaPotion));
         }

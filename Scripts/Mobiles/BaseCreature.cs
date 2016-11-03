@@ -17,6 +17,7 @@ using Server.Spells.Spellweaving;
 using Server.Spells.Necromancy;
 using Scripts.Mythik.Systems.Loot;
 using System.Linq;
+using Scripts.Mythik.Systems.MonsterLevels;
 
 namespace Server.Mobiles
 {
@@ -4396,8 +4397,11 @@ namespace Server.Mobiles
                     case AIType.AI_Vendor:
                       //  PrivateOverheadMessage(MessageType.Regular, 0x3b2, true, "[ Vendor ]", from.NetState);
                         break;
+                    case AIType.AI_Healer:
+                        break;
+                        
                     default:
-                        PrivateOverheadMessage(MessageType.Regular, 0x3b2, true, "[ " + GetMonsterDifficultyLevelText() + " ]", from.NetState);
+                        PrivateOverheadMessage(MessageType.Regular, 0x3b2, true, "[ " + MonsterLevels.GetMonsterDifficultyLevelText(this) + " ]", from.NetState);
                         PrivateOverheadMessage(MessageType.Regular, 0x3b2, true, "[ HP: " + Hits + "/" + HitsMax + " ]", from.NetState);
 
                         break;
@@ -4406,31 +4410,7 @@ namespace Server.Mobiles
 
 			base.OnSingleClick( from );
 		}
-        public int GetMonsterLevel()
-        {
-            var diff = BaseInstrument.GetBaseDifficulty(this);
-            if (diff < 35)
-                return 1;
-            if (diff < 60) 
-                return 2;
-            if (diff < 85)
-                return 3;
-            if (diff < 105)
-                return 4;
-            return 5;
-        }
-        public string GetMonsterDifficultyLevelText()
-        {
-            switch(GetMonsterLevel())
-            {
-                case 1: return "Easy";
-                case 2: return "Moderate";
-                case 3: return "Intermediate";
-                case 4: return "Difficult";
-                case 5: return "Challenging";
-                default: return "";
-            }
-        }
+       
 
         public virtual double TreasureMapChance{ get{ return TreasureMap.LootChance; } }
 		public virtual int TreasureMapLevel{ get{ return -1; } }

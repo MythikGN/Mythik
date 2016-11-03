@@ -198,8 +198,14 @@ namespace Scripts.Mythik.Systems.Loot
 
         public static void GenerateLoot(BaseCreature mob)
         {
+            if (mob is BaseHealer)
+                return;
+            if(mob.AI == AIType.AI_Animal)
+            {
+                // animal only loot?
 
-           switch(mob.GetMonsterLevel() + (mob.IsParagon == true ? 1 : 0)) // bump the loot level + 1 if paragon
+            }
+           switch(MonsterLevels.GetMonsterLevel(mob) + (mob.IsParagon == true ? 1 : 0)) // bump the loot level + 1 if paragon
             {
                 case 1:
                     mob.AddLoot(Level1);
