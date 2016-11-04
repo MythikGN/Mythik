@@ -376,7 +376,7 @@ namespace Server.Items
             return true;
         }
 
-        public void ColorKeg()
+        private void ColorKeg()
         {
             if (Held == 0)
                 Hue = 0;

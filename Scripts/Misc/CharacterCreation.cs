@@ -55,7 +55,7 @@ namespace Server.Misc
 
 			keg.Held = 100;
 			keg.Type = type;
-			keg.Hue = hue;
+			//keg.Hue = hue;
 
 			return MakeNewbie( keg );
 		}
@@ -114,7 +114,7 @@ namespace Server.Misc
 			cont.Name = "Tool Bag";
 
 			PlaceItemIn( cont, 30,  35, new TinkerTools( 1000 ) );
-			PlaceItemIn( cont, 60,  35, new HousePlacementTool() );
+			//PlaceItemIn( cont, 60,  35, new HousePlacementTool() );
 			PlaceItemIn( cont, 90,  35, new DovetailSaw( 1000 ) );
 			PlaceItemIn( cont, 30,  68, new Scissors() );
 			PlaceItemIn( cont, 45,  68, new MortarPestle( 1000 ) );
@@ -201,7 +201,17 @@ namespace Server.Misc
 			PlaceItemIn( cont, 79,  35, new ValoriteIngot( 5000 ) );
 			PlaceItemIn( cont, 86,  35, new IronIngot( 5000 ) );
 
-			PlaceItemIn( cont, 30,  59, new RedScales( 5000 ) );
+            PlaceItemIn(cont, 37, 80, new RoseIngot(5000));
+            PlaceItemIn(cont, 44, 80, new BloodRockIngot(5000));
+            PlaceItemIn(cont, 51, 80, new BlackRockIngot(5000));
+            PlaceItemIn(cont, 58, 80, new PlatniumIngot(5000));
+            PlaceItemIn(cont, 65, 80, new CarbonIngot(5000));
+            PlaceItemIn(cont, 72, 80, new KevlarIngot(5000));
+            PlaceItemIn(cont, 79, 80, new LiquidIngot(5000));
+            PlaceItemIn(cont, 86, 80, new RagnarokIngot(5000));
+
+
+            PlaceItemIn( cont, 30,  59, new RedScales( 5000 ) );
 			PlaceItemIn( cont, 36,  59, new YellowScales( 5000 ) );
 			PlaceItemIn( cont, 42,  59, new BlackScales( 5000 ) );
 			PlaceItemIn( cont, 48,  59, new GreenScales( 5000 ) );

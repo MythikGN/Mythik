@@ -65,7 +65,7 @@ namespace Scripts.Mythik.Systems
         {
             if (mob.Body == 0x190 || mob.Body == 0x191 || string.IsNullOrWhiteSpace(mob.Name))
                 return;
-            list.Add(new CreatureInfo() {Name = mob.Name, Difficulty = mob.GetMonsterDifficultyLevelText(), Hits = mob.Hits, GraphicID = ShrinkTable.Lookup(mob) });
+            list.Add(new CreatureInfo() {Name = mob.Name, Difficulty = MonsterLevels.GetMonsterDifficultyLevelText(mob), Hits = mob.Hits, GraphicID = ShrinkTable.Lookup(mob) });
         }
         [Usage("cguide")]
         [Description("Shows the Create Guide")]

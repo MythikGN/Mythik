@@ -51,13 +51,12 @@ namespace Scripts.Mythik.Systems
                     {
                         if (cnt >= (int)SkillName.RemoveTrap)
                             break;
-                        if (cnt == (int)SkillName.Magery)
-                            continue;
+                        
                         this.AddCheck(x, y, 209, 208, false, cnt);
                         this.AddLabel(x+25, y, 0, ((SkillName)cnt).ToString());
                         cnt++;
-
-                        
+                        if (cnt == (int)SkillName.Magery)
+                            cnt++;
                     }
                 }
                 this.AddButton(438, 549, 1153, 248, 1, GumpButtonType.Reply, 0);

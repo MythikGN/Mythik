@@ -17,7 +17,7 @@ using Server.Spells.Spellweaving;
 using Server.Spells.Necromancy;
 using Scripts.Mythik.Systems.Loot;
 using System.Linq;
-using Scripts.Mythik.Systems.MonsterLevels;
+using Scripts.Mythik.Systems;
 
 namespace Server.Mobiles
 {
@@ -4365,7 +4365,7 @@ namespace Server.Mobiles
                         list.Add("[ Vendor ]");
                         break;
                     default:
-                        list.Add("[ " + GetMonsterDifficultyLevelText() + " ]");
+                        list.Add("[ " + MonsterLevels.GetMonsterDifficultyLevelText(this) + " ]");
                         list.Add("[ HP: " + Hits + "/" + HitsMax + " ]");
                         break;
                 }

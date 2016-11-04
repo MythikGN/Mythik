@@ -24,7 +24,16 @@ namespace Server.Items
 		{
 		}
 
-		public override void Serialize( GenericWriter writer )
+        public override void OnDoubleClick(Mobile from)
+        {
+            var mortar = from.Backpack.FindItemByType<MortarPestle>();
+            if (mortar != null)
+                mortar.OnDoubleClick(from);
+            else
+                from.SendAsciiMessage("You require a mortar and pestle to work with these reagents.");
+        }
+
+        public override void Serialize( GenericWriter writer )
 		{
 			base.Serialize( writer );
 

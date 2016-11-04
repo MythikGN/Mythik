@@ -64,7 +64,7 @@ namespace Server.Items
 
 		public abstract HarvestSystem HarvestSystem{ get; }
 
-		public BaseHarvestTool( int itemID ) : this( 50, itemID )
+		public BaseHarvestTool( int itemID ) : this( 100, itemID )
 		{
 		}
 
@@ -118,6 +118,8 @@ namespace Server.Items
 
 		public static void AddContextMenuEntries( Mobile from, Item item, List<ContextMenuEntry> list, HarvestSystem system )
 		{
+            //Disable Sand/Stone mining for now.
+            return;
 			if ( system != Mining.System )
 				return;
 

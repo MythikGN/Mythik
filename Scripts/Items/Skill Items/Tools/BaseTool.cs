@@ -62,7 +62,7 @@ namespace Server.Items
 
 		public abstract CraftSystem CraftSystem{ get; }
 
-		public BaseTool( int itemID ) : this( Utility.RandomMinMax( 25, 75 ), itemID )
+		public BaseTool( int itemID ) : this( Utility.RandomMinMax( 125, 175 ), itemID )
 		{
 		}
 

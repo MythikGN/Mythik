@@ -1338,6 +1338,7 @@ namespace Server.Network
                 if(from.NetState.Version.Major <= 3)
                 {
                     var keylist = new List<int>();
+                    
                     if (text.ToLowerInvariant().Contains("vendor sell"))
                         keylist.Add(0x14D);
                     else if (text.ToLowerInvariant().Contains("vendor buy"))
@@ -1346,6 +1347,18 @@ namespace Server.Network
                         keylist.Add(0x171);
                     else if (text.ToLowerInvariant().Contains("sell"))
                         keylist.Add(0x177);
+
+                    else if (text.ToLowerInvariant().Contains("withdraw"))
+                        keylist.Add(0x0000);
+                    else if (text.ToLowerInvariant().Contains("balance"))
+                        keylist.Add(0x0001);
+                    else if (text.ToLowerInvariant().Contains("bank"))
+                        keylist.Add(0x0002);
+                    else if (text.ToLowerInvariant().Contains("check"))
+                        keylist.Add(0x0003);
+                    else if (text.ToLowerInvariant().Contains("cheque"))
+                        keylist.Add(0x0003);
+
                     else if (text.ToLowerInvariant().Contains("stable"))
                         keylist.Add(0x0008);
                     else if (text.ToLowerInvariant().Contains("claim"))
