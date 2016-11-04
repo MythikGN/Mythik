@@ -10,7 +10,7 @@ namespace Server.Items
 		public abstract double MinPoisoningSkill{ get; }
 		public abstract double MaxPoisoningSkill{ get; }
 
-		public BasePoisonPotion( PotionEffect effect ) : base( 0xF0A, effect )
+		public BasePoisonPotion( PotionEffect effect ) : base(0x0F0E, effect )
 		{
 		}
 

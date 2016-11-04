@@ -11,6 +11,9 @@ namespace Server.Items
 				new CureLevelInfo( Poison.Regular, 0.75 ), //  75% chance to cure regular poison
 				new CureLevelInfo( Poison.Greater, 0.50 ), //  50% chance to cure greater poison
 				new CureLevelInfo( Poison.Deadly,  0.15 )  //  15% chance to cure deadly poison
+
+
+               
 			};
 
 		private static CureLevelInfo[] m_AosLevelInfo = new CureLevelInfo[]
@@ -19,7 +22,14 @@ namespace Server.Items
 				new CureLevelInfo( Poison.Regular, 0.95 ),
 				new CureLevelInfo( Poison.Greater, 0.75 ),
 				new CureLevelInfo( Poison.Deadly,  0.50 ),
-				new CureLevelInfo( Poison.Lethal,  0.25 )
+				new CureLevelInfo( Poison.Lethal,  0.25 ),
+
+                new CureLevelInfo( Poison.Sphere0,  1.00 ), // 100% chance to cure lesser poison
+				new CureLevelInfo( Poison.Sphere1, 0.75 ), //  75% chance to cure regular poison
+				new CureLevelInfo( Poison.Sphere2, 0.50 ), //  50% chance to cure greater poison
+				new CureLevelInfo( Poison.Sphere3,  0.25 )  //  25% chance to cure deadly poison
+
+
 			};
 
 		public override CureLevelInfo[] LevelInfo{ get{ return Core.AOS ? m_AosLevelInfo : m_OldLevelInfo; } }

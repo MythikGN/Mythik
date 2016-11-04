@@ -7,7 +7,7 @@ namespace Server.Items
 	{
 		public abstract double Refresh{ get; }
 
-		public BaseRefreshPotion( PotionEffect effect ) : base( 0xF0B, effect )
+		public BaseRefreshPotion( PotionEffect effect ) : base(0x0F0E, effect )
 		{
 		}
 

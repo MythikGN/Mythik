@@ -8,7 +8,7 @@ namespace Server.Items
 		public abstract int StrOffset{ get; }
 		public abstract TimeSpan Duration{ get; }
 
-		public BaseStrengthPotion( PotionEffect effect ) : base( 0xF09, effect )
+		public BaseStrengthPotion( PotionEffect effect ) : base(0x0F0E, effect )
 		{
 		}
 

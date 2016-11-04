@@ -9,7 +9,7 @@ namespace Server.Items
 		public override int LabelNumber{ get{ return 1072941; } } // Potion of Invisibility
 
 		[Constructable]
-		public InvisibilityPotion() : base( 0xF0A, PotionEffect.Invisibility )
+		public InvisibilityPotion() : base(0x0F0E, PotionEffect.Invisibility )
 		{
 			Hue = 0x48D;
 		}

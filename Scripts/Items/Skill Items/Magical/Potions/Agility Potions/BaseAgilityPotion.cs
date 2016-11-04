@@ -8,7 +8,7 @@ namespace Server.Items
 		public abstract int DexOffset{ get; }
 		public abstract TimeSpan Duration{ get; }
 
-		public BaseAgilityPotion( PotionEffect effect ) : base( 0xF08, effect )
+		public BaseAgilityPotion( PotionEffect effect ) : base(0x0F0E, effect )
 		{
 		}
 

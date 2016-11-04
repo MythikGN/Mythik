@@ -14,18 +14,20 @@ namespace Server.Items
 
 		public override bool RequireFreeHand{ get{ return false; } }
 
-		private static bool LeveledExplosion = false; // Should explosion potions explode other nearby potions?
+		private static bool LeveledExplosion = true; // Should explosion potions explode other nearby potions?
 		private static bool InstantExplosion = false; // Should explosion potions explode on impact?
 		private static bool RelativeLocation = false; // Is the explosion target location relative for mobiles?
 		private const int ExplosionRange = 2; // How long is the blast radius?
 
 		public BaseExplosionPotion( PotionEffect effect ) : base( 0xF0D, effect )
 		{
+            Stackable = false;
 		}
 
 		public BaseExplosionPotion( Serial serial ) : base( serial )
 		{
-		}
+            Stackable = false;
+        }
 
 		public override void Serialize( GenericWriter writer )
 		{

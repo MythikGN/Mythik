@@ -21,7 +21,7 @@ namespace Scripts.Mythik.Items.Craftables.Alch
         }
 
         [Constructable]
-        public ShrinkPotion(int amount) : base(0xF0E, PotionEffect.Shrink)
+        public ShrinkPotion(int amount) : base(0x0F0E, PotionEffect.Shrink)
         {
             Stackable = true;
             Amount = amount;

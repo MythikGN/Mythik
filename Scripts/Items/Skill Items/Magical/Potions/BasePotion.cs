@@ -71,14 +71,72 @@ namespace Server.Items
 			m_PotionEffect = effect;
 
             Stackable = true;// Core.ML;
+            ColorPotion();
 			Weight = 1.0;
 		}
 
 		public BasePotion( Serial serial ) : base( serial )
 		{
 		}
+        private void ColorPotion()
+        {
+           
+                switch (m_PotionEffect)
+                {
+                    case PotionEffect.Strength:
+                    case PotionEffect.StrengthGreater:
+                        Hue = 0x481;
+                        break;
+                    case PotionEffect.Agility:
+                    case PotionEffect.AgilityGreater:
+                        Hue = 0x18e;
+                        break;
+                    case PotionEffect.Nightsight:
+                        Hue = 0x482;
+                        break;
+                    case PotionEffect.CureLesser:
+                    case PotionEffect.Cure:
+                    case PotionEffect.CureGreater:
+                        Hue = 0x2b;
+                        break;
+                    case PotionEffect.PoisonLesser:
+                    case PotionEffect.Poison:
 
-		public virtual bool RequireFreeHand{ get{ return true; } }
+                    case PotionEffect.PoisonGreater:
+                    case PotionEffect.PoisonDeadly:
+                        Hue = 0xa7;
+                        break;
+                    case PotionEffect.RefreshTotal:
+                    case PotionEffect.Refresh:
+                        Hue = 0x152;
+                        break;
+                    case PotionEffect.HealGreater:
+                    case PotionEffect.Heal:
+                    case PotionEffect.HealLesser:
+                        Hue = 0x35;
+                        break;
+                    case PotionEffect.ExplosionLesser:
+                    case PotionEffect.ExplosionGreater:
+                    case PotionEffect.Explosion:
+                        Hue = 20;
+                        break;
+                    case PotionEffect.Mana:
+                        Hue = 0x81b;
+                        break;
+                    case PotionEffect.ManaTotal:
+                        Hue = 0x81b;
+                        break;
+                    case PotionEffect.Shrink:
+                        Hue = 0x7ee;
+                        break;
+                    case PotionEffect.Invisibility:
+                        Hue = 17969;// 1686;
+                        break;
+                }
+            
+        }
+
+        public virtual bool RequireFreeHand{ get{ return true; } }
 
 		public static bool HasFreeHand( Mobile m )
 		{

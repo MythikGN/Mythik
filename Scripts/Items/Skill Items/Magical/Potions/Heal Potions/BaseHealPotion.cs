@@ -10,7 +10,7 @@ namespace Server.Items
 		public abstract int MaxHeal { get; }
 		public abstract double Delay { get; }
 
-		public BaseHealPotion( PotionEffect effect ) : base( 0xF0C, effect )
+		public BaseHealPotion( PotionEffect effect ) : base( 0x0F0E, effect )
 		{
 		}
 
@@ -50,7 +50,7 @@ namespace Server.Items
 				}
 				else
 				{
-					if ( from.BeginAction( typeof( BaseHealPotion ) ) )
+					if ( from.BeginAction( typeof(BasePotion) ) )
 					{
 						DoHeal( from );
 
@@ -75,7 +75,7 @@ namespace Server.Items
 
 		private static void ReleaseHealLock( object state )
 		{
-			((Mobile)state).EndAction( typeof( BaseHealPotion ) );
+			((Mobile)state).EndAction( typeof( BasePotion ) );
 		}
 	}
 }

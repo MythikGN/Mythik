@@ -77,7 +77,7 @@ namespace Scripts.Mythik.Items.Craftables.Alch
         public abstract int MaxHeal { get; }
         public abstract double Delay { get; }
 
-        public BaseManaPotion(PotionEffect effect) : base(0xF0C, effect)
+        public BaseManaPotion(PotionEffect effect) : base(0x0F0E, effect)
         {
             this.Hue = 0x081B;
             switch (effect)
@@ -121,7 +121,7 @@ namespace Scripts.Mythik.Items.Craftables.Alch
         {
             if (from.Mana < from.ManaMax)
             {
-                    if (from.BeginAction(typeof(BaseHealPotion)))
+                    if (from.BeginAction(typeof(BasePotion)))
                     {
                         DoMana(from);
 
@@ -148,7 +148,7 @@ namespace Scripts.Mythik.Items.Craftables.Alch
 
         private static void ReleaseManaLock(object state)
         {
-            ((Mobile)state).EndAction(typeof(BaseManaPotion));
+            ((Mobile)state).EndAction(typeof(BasePotion));
         }
     }
 }
