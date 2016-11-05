@@ -38,6 +38,32 @@ namespace Server.Spells.Sixth
                 DoFizzle();
         }
 
+        public static bool DoDispell(Mobile from, Mobile m)
+        {
+            var res = SpellHelper.RemoveStatMod(from, m, StatType.All, m != from);
+            if (!res)
+                res = SpellHelper.RemoveStatMod(from, m, StatType.Str, m != from);
+            if (!res)
+                res = SpellHelper.RemoveStatMod(from, m, StatType.Int, m != from);
+            if (!res)
+                res = SpellHelper.RemoveStatMod(from, m, StatType.Dex, m != from);
+            if (!res)
+            {
+                res = DisguiseTimers.RemoveTimer(m);
+                m.EndAction(typeof(IncognitoSpell));
+            }
+
+            if (!res)
+            {
+                if (!m.CanBeginAction(typeof(PolymorphSpell)))
+                {
+                    PolymorphSpell.StopTimer(m);
+                    res = true;
+                }
+            }
+            return res;
+        }
+
         public void Target(Mobile o)
         {
             Mobile m = (Mobile)o;
@@ -49,29 +75,9 @@ namespace Server.Spells.Sixth
                 return;
             }
 
-            if(bc == null)
+            if(bc == null || !bc.IsDispellable)
             {
-                var res = SpellHelper.RemoveStatMod(Caster, m, StatType.All, m != Caster);
-                if(!res)
-                    res = SpellHelper.RemoveStatMod(Caster, m, StatType.Str, m != Caster);
-                if (!res)
-                    res = SpellHelper.RemoveStatMod(Caster, m, StatType.Int, m != Caster);
-                if (!res)
-                    res = SpellHelper.RemoveStatMod(Caster, m, StatType.Dex, m != Caster);
-                if (!res)
-                {
-                    res = DisguiseTimers.RemoveTimer(m);
-                    m.EndAction(typeof(IncognitoSpell));
-                }
-                    
-                if (!res)
-                {
-                    if (!m.CanBeginAction(typeof(PolymorphSpell)))
-                    {
-                        PolymorphSpell.StopTimer(m);
-                        res = true;
-                    }
-                }
+                var res = DoDispell(from, m);
                 if (res)
                 {
                     Effects.SendLocationParticles(EffectItem.Create(m.Location, m.Map, EffectItem.DefaultDuration), 0x3728, 8, 20, 5042);
@@ -84,11 +90,6 @@ namespace Server.Spells.Sixth
                     from.SendAsciiMessage("There is nothing to dispel.");
                 }
                 return;
-            }
-
-            if (bc == null || !bc.IsDispellable)
-            {
-                from.SendLocalizedMessage(1005049); // That cannot be dispelled.
             }
             else if (CheckHSequence(m))
             {

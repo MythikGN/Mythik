@@ -5,6 +5,7 @@ using Server.Network;
 using Server.Items;
 using Server.Targeting;
 using Server.Mobiles;
+using Server.Spells.Sixth;
 
 namespace Server.Spells.Seventh
 {
@@ -64,10 +65,13 @@ namespace Server.Spells.Seventh
 				{
 					IPooledEnumerable eable = map.GetMobilesInRange( new Point3D( p ), 8 );
 
-					foreach ( Mobile m in eable )
-						if ( m is BaseCreature && (m as BaseCreature).IsDispellable && Caster.CanBeHarmful( m, false ) )
-							targets.Add( m );
-
+					foreach ( Mobile m in eable)
+                    {
+                        if (m is BaseCreature && (m as BaseCreature).IsDispellable && Caster.CanBeHarmful(m, false))
+                            targets.Add(m);
+                        if (m is PlayerMobile)
+                            targets.Add(m);
+                    }
 					eable.Free();
 				}
 
@@ -76,7 +80,21 @@ namespace Server.Spells.Seventh
 					Mobile m = targets[i];
 
 					BaseCreature bc = m as BaseCreature;
-
+                    var pm = m as PlayerMobile;
+                    if(pm != null)
+                    {
+                        var res = DispelSpell.DoDispell(Caster, m);
+                        if (res)
+                        {
+                            Effects.SendLocationParticles(EffectItem.Create(m.Location, m.Map, EffectItem.DefaultDuration), 0x3728, 8, 20, 5042);
+                            Effects.PlaySound(m, m.Map, 0x201);
+                        }
+                        else
+                        {
+                            m.FixedEffect(0x3779, 10, 20);
+                        }
+                        continue;
+                    }
 					if ( bc == null )
 						continue;
 
