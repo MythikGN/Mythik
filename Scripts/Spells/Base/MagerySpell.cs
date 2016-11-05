@@ -99,7 +99,7 @@ namespace Server.Spells
 
 		public override TimeSpan GetCastDelay()
 		{
-            return TimeSpan.FromSeconds(0.5 * (int)Circle);
+            return TimeSpan.FromSeconds(0.5 * ((int)Circle + 1));
 
 			if( !Core.ML && Scroll is BaseWand )
 				return TimeSpan.Zero;

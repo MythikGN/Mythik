@@ -21,7 +21,7 @@ namespace Server.Spells.First
         }
         public override TimeSpan GetCastDelay()
         {
-            return TimeSpan.FromSeconds(1.5 * (int)Circle);
+            return TimeSpan.FromSeconds(1.5);
         }
 
         private static SpellInfo m_Info = new SpellInfo(
