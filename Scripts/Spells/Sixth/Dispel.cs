@@ -48,6 +48,10 @@ namespace Server.Spells.Sixth
             if (!res)
                 res = SpellHelper.RemoveStatMod(from, m, StatType.Dex, m != from);
             if (!res)
+                res = Second.ProtectionSpell.EndProtection(m);
+            if (!res)
+                res = First.ReactiveArmorSpell.EndArmor(m);
+            if (!res)
             {
                 res = DisguiseTimers.RemoveTimer(m);
                 m.EndAction(typeof(IncognitoSpell));

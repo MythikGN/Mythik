@@ -87,20 +87,23 @@ namespace Server.Spells.Second
 			}
 		}
 
-		public static void EndProtection( Mobile m )
+		public static bool EndProtection( Mobile m )
 		{
 			if ( m_Table.Contains( m ) )
 			{
 				object[] mods = (object[]) m_Table[ m ];
 
 				m_Table.Remove( m );
-				//Registry.Remove( m );
-
-				m.RemoveResistanceMod( (ResistanceMod) mods[ 0 ] );
+                //Registry.Remove( m );
+                m.PlaySound(0x1ED);
+                m.FixedParticles(0x375A, 9, 20, 5016, EffectLayer.Waist);
+                m.RemoveResistanceMod( (ResistanceMod) mods[ 0 ] );
 				m.RemoveSkillMod( (SkillMod) mods[ 1 ] );
 
 				BuffInfo.RemoveBuff( m, BuffIcon.Protection );
+                return true;
 			}
+            return false;
 		}
 
 		public override void OnCast()

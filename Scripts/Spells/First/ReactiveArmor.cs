@@ -95,7 +95,7 @@ namespace Server.Spells.First
 
 		}
 
-		public static void EndArmor( Mobile m )
+		public static bool EndArmor( Mobile m )
 		{
 			if ( m_Table.Contains( m ) )
 			{
@@ -109,7 +109,9 @@ namespace Server.Spells.First
 
 				m_Table.Remove( m );
 				BuffInfo.RemoveBuff( m, BuffIcon.ReactiveArmor );
+                return true;
 			}
+            return false;
 		}
 	}
 }
