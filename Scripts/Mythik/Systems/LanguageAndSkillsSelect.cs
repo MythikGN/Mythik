@@ -33,35 +33,41 @@ namespace Scripts.Mythik.Systems
         {
             public SkillsSelectGump() : base(25,25)
             {
-                this.Closable = true;
+                this.Closable = false;
                 this.Disposable = true;
-                this.Dragable = false;
+                this.Dragable = true;
                 this.Resizable = false;
                 this.AddPage(0);
-                this.AddBackground(20, 11, 469, 571, 9200);
-                this.AddLabel(170, 29, 0, @"Welcome to Mythik");
-                this.AddLabel(130, 53, 0, @"Please select two skills to start at 60%");
-                this.AddLabel(170, 73, 0, @"Magery starts at 80");
-                int startx = 45;
-                int starty = 100;
+                this.AddBackground(25, 25, 677, 455, 9270);
+                this.AddBackground(40, 85, 155, 377, 3600);
+                this.AddBackground(203, 85, 155, 377, 3600);
+                this.AddBackground(366, 85, 155, 377, 3600);
+                this.AddBackground(528, 85, 155, 377, 3600);
+                this.AddButton(616, 55, 247, 248, 1, GumpButtonType.Reply, 0);
+
+                this.AddLabel(280, 40, 457, @"Mythik Skills Select");
+                this.AddLabel(177, 63, 0, @"Please select two skills to start at 60.");
+                this.AddLabel(428, 63, 0, @"Magery will start at 80.");
+
+                int off = 23;//label offset
+                int colStart = 61;
+                int colOffset = 162;
+                int rowStart = 105;
                 int cnt = 0;
-                for(int x = 45; x < 610;x+=165)
+                
+                for(int col = 0;col <= 3; col++)
                 {
-                    for(int y = 100;y <=480;y+=25)
+                    for(int row = 0;row <= 12;row++)
                     {
                         if (cnt >= (int)SkillName.RemoveTrap)
                             break;
-                        
-                        this.AddCheck(x, y, 209, 208, false, cnt);
-                        this.AddLabel(x+25, y, 0, ((SkillName)cnt).ToString());
+                        this.AddCheck(colStart + (col * colOffset), rowStart + (row * 25), 210, 211, false, cnt);
+                        this.AddLabel(colStart + off + (col * colOffset), rowStart + (row * 25), 1952, ((SkillName)cnt).ToString());
                         cnt++;
                         if (cnt == (int)SkillName.Magery)
                             cnt++;
                     }
                 }
-                this.AddButton(438, 549, 1153, 248, 1, GumpButtonType.Reply, 0);
-
-
             }
             public override void OnResponse(NetState sender, RelayInfo info)
             {
