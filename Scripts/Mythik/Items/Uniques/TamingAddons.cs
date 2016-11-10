@@ -23,6 +23,7 @@ namespace Scripts.Mythik.Items.Uniques
             Hue = 0x7a1;
             Name = "little bo-beeps skirt";
             SkillBonuses.SetValues(0, Server.SkillName.AnimalTaming, 2.0);
+			SkillBonuses.SetValues(0, Server.SkillName.AnimalLore, 2.0);
         }
         public TamingSkirt(Serial serial) : base(serial)
         {
@@ -91,6 +92,7 @@ namespace Scripts.Mythik.Items.Uniques
             Hue = 0x7a1;
             Name = "little bo-beeps cloak";
             SkillBonuses.SetValues(0, Server.SkillName.AnimalTaming, 4.0);
+			SkillBonuses.SetValues(0, Server.SkillName.AnimalLore, 4.0);
         }
         public TamingCloak(Serial serial) : base(serial)
         {
@@ -125,6 +127,7 @@ namespace Scripts.Mythik.Items.Uniques
             Hue = 0x7a1;
             Name = "little bo-beeps boots";
             SkillBonuses.SetValues(0, Server.SkillName.AnimalTaming, 6.0);
+			SkillBonuses.SetValues(0, Server.SkillName.AnimalLore, 6.0);
         }
         public TamingBoots(Serial serial) : base(serial)
         {
@@ -144,7 +147,8 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class TamingRobe : Robe, IUniqueItem
+	
+    public class TamingDoublet : Doublet, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -154,13 +158,14 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public TamingRobe()
+        public TamingDoublet()
         {
             Hue = 0x7a1;
-            Name = "little bo-beeps robe";
+            Name = "little bo-beeps doublet";
             SkillBonuses.SetValues(0, Server.SkillName.AnimalTaming, 8.0);
+			SkillBonuses.SetValues(0, Server.SkillName.AnimalLore, 8.0);
         }
-        public TamingRobe(Serial serial) : base(serial)
+        public TamingDoublet(Serial serial) : base(serial)
         {
 
         }
@@ -178,7 +183,8 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-   /* public class TamingDoublet : Robe, IUniqueItem
+	/*
+    public class TamingDoublet : Doublet, IUniqueItem
     {
         public int UniqueLevel
         {
@@ -211,8 +217,8 @@ namespace Scripts.Mythik.Items.Uniques
         }
 
 
-    }*/
-
+    }
+	*/
     public class TamingCrook : ShepherdsCrook, IUniqueItem
     {
         public RareLevel UniqueLevel
@@ -228,6 +234,7 @@ namespace Scripts.Mythik.Items.Uniques
             Hue = 0x7a1;
             Name = "little bo-beeps crook";
             SkillBonuses.SetValues(0, Server.SkillName.AnimalTaming, 10.0);
+			SkillBonuses.SetValues(0, Server.SkillName.AnimalLore, 10.0);
         }
         public TamingCrook(Serial serial) : base(serial)
         {

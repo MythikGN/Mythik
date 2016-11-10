@@ -1,4 +1,4 @@
-﻿using Server;
+using Server;
 using Server.Items;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Scripts.Mythik.Items.Uniques
 {
-    public class InscribeBoots : ThighBoots, IUniqueItem
+    public class FishingBoots : ThighBoots, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -18,13 +18,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public InscribeBoots()
+        public FishingBoots()
         {
-            Hue = 0x7FC;
-            Name = "Scribe's Thigh Boots";
-            SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 2.0);
+            Hue = 0x794;
+            Name = "Fishing Waders";
+            SkillBonuses.SetValues(0, Server.SkillName.Fishing, 2.0);
         }
-        public InscribeBoots(Serial serial) : base(serial)
+        public FishingBoots(Serial serial) : base(serial)
         {
 
         }
@@ -42,7 +42,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class InscribeKilt : Kilt, IUniqueItem
+    public class FishingShirt : Shirt, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -52,13 +52,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public InscribeKilt()
+        public FancyShirt()
         {
-            Hue = 0x7FC;
-            Name = "Infused Kilt of Inscription";
-            SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 4.0);
+            Hue = 0x794;
+            Name = "Fishing Shirt";
+            SkillBonuses.SetValues(0, Server.SkillName.Fishing, 4.0);
         }
-        public InscribeKilt(Serial serial) : base(serial)
+        public FancyShirt(Serial serial) : base(serial)
         {
 
         }
@@ -76,7 +76,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class InscribeShirt : FancyShirt, IUniqueItem
+    public class FishingKilt : Kilt, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -86,13 +86,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public InscribeShirt()
+        public FishingKilt()
         {
-            Hue = 0x7FC;
-            Name = "Scribe's Ink Proof Shirt";
-            SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 6.0);
+            Hue = 0x794;
+            Name = "Fisherman's Kilt";
+            SkillBonuses.SetValues(0, Server.SkillName.Fishing, 6.0);
         }
-        public InscribeShirt(Serial serial) : base(serial)
+        public FishingKilt(Serial serial) : base(serial)
         {
 
         }
@@ -110,7 +110,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class InscribeDoublet : Doublet, IUniqueItem
+    public class FishingCloak : Cloak, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -120,13 +120,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public InscribeDoublet()
+        public FishingCloak()
         {
-            Hue = 0x7FC;
-            Name = "Scribe's Ink Proof Doublet";
-            SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 8.0);
+            Hue = 0x794;
+            Name = "Fishing Cloak";
+            SkillBonuses.SetValues(0, Server.SkillName.Fishing, 8.0);
         }
-        public InscribeDoublet(Serial serial) : base(serial)
+        public FishingCloak(Serial serial) : base(serial)
         {
 
         }
@@ -145,7 +145,7 @@ namespace Scripts.Mythik.Items.Uniques
 
     }
 
-    public class InscribeSpellBook : SpellBook, IUniqueItem
+    public class FishingApron : FullApron, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -155,14 +155,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public InscribeSpellBook()
+        public FishingApron()
         {
-            Hue = 0x7FC;
-            Name = "Scribe's Enchanted SpellBook";
-            SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 10.0);
-			Content = ulong.MaxValue; // DarkLotus, check this. Should make full spellbook. -Pso
+            Hue = 0x794;
+            Name = "Fishing Apron";
+            SkillBonuses.SetValues(0, Server.SkillName.Fishing, 10.0);
         }
-        public InscribeSpellBook(Serial serial) : base(serial)
+        public FishingApron(Serial serial) : base(serial)
         {
 
         }

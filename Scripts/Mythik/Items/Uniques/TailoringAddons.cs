@@ -20,7 +20,7 @@ namespace Scripts.Mythik.Items.Uniques
         [Constructable]
         public TailorSandals()
         {
-            Hue = 0x98;
+            Hue = 0x798;
             Name = "Sandals of Tailoring";
             SkillBonuses.SetValues(0, Server.SkillName.Tailoring, 2.0);
         }
@@ -42,7 +42,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class TailorGloves : LeatherGloves, IUniqueItem
+    public class TailorCloak : Cloak, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -52,13 +52,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public TailorGloves()
+        public TailorCloak()
         {
-            Hue = 0x98;
-            Name = "Greater Gloves of Tailoring";
+            Hue = 0x798;
+            Name = "Greater Cloak of Tailoring";
             SkillBonuses.SetValues(0, Server.SkillName.Tailoring, 4.0);
         }
-        public TailorGloves(Serial serial) : base(serial)
+        public TailorCloak(Serial serial) : base(serial)
         {
 
         }
@@ -77,7 +77,7 @@ namespace Scripts.Mythik.Items.Uniques
 
     }
 
-    public class TailorHat : FloppyHat, IUniqueItem
+    public class TailorShirt : FancyShirt, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -87,13 +87,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public TailorHat()
+        public TailorShirt()
         {
-            Hue = 0x98;
-            Name = "Floppy Hat of Tailoring";
+            Hue = 0x798;
+            Name = "Shirt of Tailoring";
             SkillBonuses.SetValues(0, Server.SkillName.Mining, 6.0);
         }
-        public TailorHat(Serial serial) : base(serial)
+        public TailorShirt(Serial serial) : base(serial)
         {
 
         }
@@ -124,7 +124,7 @@ namespace Scripts.Mythik.Items.Uniques
         [Constructable]
         public TailoringDoublet()
         {
-            Hue = 0x98;
+            Hue = 0x798;
             Name = "Doublet of Tailoring";
             SkillBonuses.SetValues(0, Server.SkillName.Tailoring, 8.0);
         }
@@ -159,7 +159,7 @@ namespace Scripts.Mythik.Items.Uniques
         [Constructable]
         public TailorSkirt()
         {
-            Hue = 0x98;
+            Hue = 0x798;
             Name = "Skirt of Tailoring";
             SkillBonuses.SetValues(0, Server.SkillName.Tailoring, 10.0);
         }

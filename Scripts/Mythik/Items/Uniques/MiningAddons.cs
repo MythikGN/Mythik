@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Scripts.Mythik.Items.Uniques
 {
-    public class DamagedMiningHat : WizardsHat, IUniqueItem
+    public class MiningBoots : ThighBoots, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -18,13 +18,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public DamagedMiningHat()
+        public MiningBoots()
         {
             Hue = 0x082E;
-            Name = "Damaged Mining Hat";
+            Name = "Mining Boots";
             SkillBonuses.SetValues(0, Server.SkillName.Mining, 2.0);
         }
-        public DamagedMiningHat(Serial serial) : base(serial)
+        public MiningBoots(Serial serial) : base(serial)
         {
 
         }
@@ -42,7 +42,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class Miningboots : ThighBoots, IUniqueItem
+    public class MiningKilt : Kilt, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -52,13 +52,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public Miningboots()
+        public MiningKilt()
         {
             Hue = 0x082E;
-            Name = "Greater Boots of Mining";
+            Name = "Greater Mining Kilt";
             SkillBonuses.SetValues(0, Server.SkillName.Mining, 4.0);
         }
-        public Miningboots(Serial serial) : base(serial)
+        public MiningKilt(Serial serial) : base(serial)
         {
 
         }
@@ -112,7 +112,7 @@ namespace Scripts.Mythik.Items.Uniques
 
     }
 
-    public class MiningPants : LongPants, IUniqueItem
+    public class MiningCloak : Cloak, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -122,13 +122,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public MiningPants()
+        public MiningCloak()
         {
             Hue = 0x082E;
-            Name = "Long Pants of Mining";
+            Name = "Cloak of Mining";
             SkillBonuses.SetValues(0, Server.SkillName.Mining, 8.0);
         }
-        public MiningPants(Serial serial) : base(serial)
+        public MiningCloak(Serial serial) : base(serial)
         {
 
         }
@@ -147,7 +147,7 @@ namespace Scripts.Mythik.Items.Uniques
 
     }
 
-    public class MiningRobe : FullApron, IUniqueItem
+    public class MiningApron : FullApron, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -157,13 +157,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public MiningRobe()
+        public MiningApron()
         {
             Hue = 0x082E;
-            Name = "Robe of Geology";
+            Name = "Apron of Geology";
             SkillBonuses.SetValues(0, Server.SkillName.Mining, 10.0);
         }
-        public MiningRobe(Serial serial) : base(serial)
+        public MiningApron(Serial serial) : base(serial)
         {
 
         }

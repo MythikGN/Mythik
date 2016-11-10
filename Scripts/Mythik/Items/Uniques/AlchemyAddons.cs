@@ -42,7 +42,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class AlchemyBandena : Cap, IUniqueItem
+    public class AlchemySkirt : Skirt, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -52,13 +52,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public AlchemyBandena()
+        public AlchemySkirt()
         {
             Hue = 0x79c;
-            Name = "bandana of better alchemy";
+            Name = "skirt of better alchemy";
             SkillBonuses.SetValues(0, Server.SkillName.Alchemy, 4.0);
         }
-        public AlchemyBandena(Serial serial) : base(serial)
+        public AlchemySkirt(Serial serial) : base(serial)
         {
 
         }
@@ -110,7 +110,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class AlchemyGloves : LeatherGloves, IUniqueItem
+    public class AlchemyShirt : FancyShirt, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -120,13 +120,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public AlchemyGloves()
+        public AlchemyShirt()
         {
             Hue = 0x79c;
-            Name = "alchemist's rubber gloves";
+            Name = "alchemist's shirt";
             SkillBonuses.SetValues(0, Server.SkillName.Alchemy, 8.0);
         }
-        public AlchemyGloves(Serial serial) : base(serial)
+        public AlchemyShirt(Serial serial) : base(serial)
         {
 
         }

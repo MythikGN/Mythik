@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Scripts.Mythik.Items.Uniques
 {
-    public class TinkeringCap : SkullCap, IUniqueItem
+    public class TinkeringSkirt : Skirt, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -18,13 +18,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public TinkeringCap()
+        public TinkeringSkirt()
         {
             Hue = 0x07AA;
-            Name = "Cap of Greater Tinkering";
+            Name = "Skirt of Greater Tinkering";
             SkillBonuses.SetValues(0, Server.SkillName.Tinkering, 2.0);
         }
-        public TinkeringCap(Serial serial) : base(serial)
+        public TinkeringSkirt(Serial serial) : base(serial)
         {
 
         }
@@ -76,7 +76,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class TinkeringPants : LongPants, IUniqueItem
+    public class TinkeringBoots : Boots, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -86,13 +86,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public TinkeringPants()
+        public TinkeringBoots()
         {
             Hue = 0x07AA;
-            Name = "Long Pants of Tinkering";
+            Name = "Boots of Tinkering";
             SkillBonuses.SetValues(0, Server.SkillName.Tinkering, 6.0);
         }
-        public TinkeringPants(Serial serial) : base(serial)
+        public TinkeringBoots(Serial serial) : base(serial)
         {
 
         }
@@ -110,7 +110,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class TinkeringGloves : LeatherGloves, IUniqueItem
+    public class TinkeringCloak : LeatherCloak, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -120,13 +120,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public TinkeringGloves()
+        public TinkeringCloak()
         {
             Hue = 0x07AA;
-            Name = "Tinker's Safety Gloves";
+            Name = "Tinker's Safety Cloak";
             SkillBonuses.SetValues(0, Server.SkillName.Tinkering, 8.0);
         }
-        public TinkeringGloves(Serial serial) : base(serial)
+        public TinkeringCloak(Serial serial) : base(serial)
         {
 
         }

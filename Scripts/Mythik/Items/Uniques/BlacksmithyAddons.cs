@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Scripts.Mythik.Items.Uniques
 {
-    public class BlacksmithyArms : LeatherArms, IUniqueItem
+    public class BlacksmithySash : Sash, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -18,13 +18,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public BlacksmithyArms()
+        public BlacksmithySash()
         {
             Hue = 0x0787;
-            Name = "Blacksmithy Arm Guards";
+            Name = "Blacksmithy Sash";
             SkillBonuses.SetValues(0, Server.SkillName.Blacksmith, 2.0);
         }
-        public BlacksmithyArms(Serial serial) : base(serial)
+        public BlacksmithySash(Serial serial) : base(serial)
         {
 
         }
@@ -76,7 +76,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class BlacksmithBandana : Bandana, IUniqueItem
+    public class BlacksmithShirt : PlainShirt, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -86,13 +86,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public BlacksmithBandana()
+        public BlacksmithShirt()
         {
             Hue = 0x0787;
-            Name = "Bandana of Blacksmithy";
+            Name = "Shirt of Blacksmithy";
             SkillBonuses.SetValues(0, Server.SkillName.Blacksmith, 6.0);
         }
-        public BlacksmithBandana(Serial serial) : base(serial)
+        public BlacksmithShirt(Serial serial) : base(serial)
         {
 
         }
@@ -145,7 +145,7 @@ namespace Scripts.Mythik.Items.Uniques
 
     }
 
-    public class BlacksmithRobe : Robe, IUniqueItem
+    public class BlacksmithHammer : SmithHammer, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -155,12 +155,12 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public BlacksmithRobe() : base(10)
+        public BlacksmithHammer() : base(10)
         {
             Hue = 0x0787;
-            Name = "Master Blacksmiths Robe";
+            Name = "Master Blacksmiths Hammer";
         }
-        public BlacksmithRobe(Serial serial) : base(serial)
+        public BlacksmithHammer(Serial serial) : base(serial)
         {
 
         }

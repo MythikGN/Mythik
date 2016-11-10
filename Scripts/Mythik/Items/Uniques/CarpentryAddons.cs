@@ -42,7 +42,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class CarpentryCap : Cap, IUniqueItem
+    public class CarpentryKilt : Kilt, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -52,13 +52,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public CarpentryCap()
+        public CarpentryKilt()
         {
             Hue = 0x803;
-            Name = "cap of greater carpentry";
+            Name = "Kilt of greater carpentry";
             SkillBonuses.SetValues(0, Server.SkillName.Carpentry, 4.0);
         }
-        public CarpentryCap(Serial serial) : base(serial)
+        public CarpentryKilt(Serial serial) : base(serial)
         {
 
         }
@@ -110,7 +110,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class CarpentryGloves : LeatherGloves, IUniqueItem
+    public class CarpentryCloak : Cloak, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -120,13 +120,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public CarpentryGloves()
+        public CarpentryCloak()
         {
             Hue = 0x803;
-            Name = "carpenters's work gloves";
+            Name = "carpenters's cloak";
             SkillBonuses.SetValues(0, Server.SkillName.Carpentry, 8.0);
         }
-        public CarpentryGloves(Serial serial) : base(serial)
+        public CarpentryCloak(Serial serial) : base(serial)
         {
 
         }
@@ -145,7 +145,7 @@ namespace Scripts.Mythik.Items.Uniques
 
     }
 
-    public class CarpentryShirt : Shirt, IUniqueItem
+    public class CarpentryShirt : FancyShirt, IUniqueItem
     {
         public RareLevel UniqueLevel
         {

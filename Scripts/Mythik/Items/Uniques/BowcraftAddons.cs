@@ -1,4 +1,4 @@
-﻿using Server;
+using Server;
 using Server.Items;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Scripts.Mythik.Items.Uniques
 {
-    public class InscribeBoots : ThighBoots, IUniqueItem
+    public class BowcraftShoes : Shoes, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -18,13 +18,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public InscribeBoots()
+        public BowcraftShoes()
         {
-            Hue = 0x7FC;
-            Name = "Scribe's Thigh Boots";
-            SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 2.0);
+            Hue = 0x783;
+            Name = "Shoes of Better Bowcraft";
+            SkillBonuses.SetValues(0, Server.SkillName.Fletching, 2.0);
         }
-        public InscribeBoots(Serial serial) : base(serial)
+        public BowcraftShoes(Serial serial) : base(serial)
         {
 
         }
@@ -42,7 +42,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class InscribeKilt : Kilt, IUniqueItem
+    public class BowcraftSkirt : Skirt, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -52,13 +52,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public InscribeKilt()
+        public BowcraftSkirt()
         {
-            Hue = 0x7FC;
-            Name = "Infused Kilt of Inscription";
-            SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 4.0);
+            Hue = 0x783;
+            Name = "Bowcrafting Skirt";
+            SkillBonuses.SetValues(0, Server.SkillName.Fletching, 4.0);
         }
-        public InscribeKilt(Serial serial) : base(serial)
+        public BowcraftSkirt(Serial serial) : base(serial)
         {
 
         }
@@ -76,7 +76,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class InscribeShirt : FancyShirt, IUniqueItem
+    public class BowcraftShirt : FancyShirt, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -86,13 +86,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public InscribeShirt()
+        public BowcraftShirt()
         {
-            Hue = 0x7FC;
-            Name = "Scribe's Ink Proof Shirt";
-            SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 6.0);
+            Hue = 0x783;
+            Name = "Bowcrafter's Shirt";
+            SkillBonuses.SetValues(0, Server.SkillName.Fletching, 6.0);
         }
-        public InscribeShirt(Serial serial) : base(serial)
+        public BowcraftShirt(Serial serial) : base(serial)
         {
 
         }
@@ -110,7 +110,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class InscribeDoublet : Doublet, IUniqueItem
+    public class BowcraftDoublet : Doublet, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -120,13 +120,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public InscribeDoublet()
+        public BowcraftDoublet()
         {
-            Hue = 0x7FC;
-            Name = "Scribe's Ink Proof Doublet";
-            SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 8.0);
+            Hue = 0x783;
+            Name = "Bowcrafter's Doublet";
+            SkillBonuses.SetValues(0, Server.SkillName.Fletching, 8.0);
         }
-        public InscribeDoublet(Serial serial) : base(serial)
+        public BowcraftDoublet(Serial serial) : base(serial)
         {
 
         }
@@ -145,7 +145,7 @@ namespace Scripts.Mythik.Items.Uniques
 
     }
 
-    public class InscribeSpellBook : SpellBook, IUniqueItem
+    public class BowcraftDagger : Dagger, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -155,14 +155,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public InscribeSpellBook()
+        public BowcraftDagger()
         {
-            Hue = 0x7FC;
-            Name = "Scribe's Enchanted SpellBook";
-            SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 10.0);
-			Content = ulong.MaxValue; // DarkLotus, check this. Should make full spellbook. -Pso
+            Hue = 0x783;
+            Name = "Master Bowcrafter's Dagger";
+            SkillBonuses.SetValues(0, Server.SkillName.Fletching, 10.0);
         }
-        public InscribeSpellBook(Serial serial) : base(serial)
+        public BowcraftDagger(Serial serial) : base(serial)
         {
 
         }

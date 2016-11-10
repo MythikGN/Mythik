@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Scripts.Mythik.Items.Uniques
 {
-    public class LumberjackCap : Cap, IUniqueItem
+    public class LumberjackBoots : ThighBoots, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -18,13 +18,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public LumberjackCap()
+        public LumberjackBoots()
         {
-            Hue = 0x4D;
-            Name = "Cap of Forestry";
+            Hue = 0x7FF;
+            Name = "Tough Boots of Forestry";
             SkillBonuses.SetValues(0, Server.SkillName.Lumberjacking, 2.0);
         }
-        public LumberjackCap(Serial serial) : base(serial)
+        public LumberjackBoots(Serial serial) : base(serial)
         {
 
         }
@@ -42,7 +42,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class LumberjackGloves : LeatherGloves, IUniqueItem
+    public class LumberjackSkirt : Skirt, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -52,13 +52,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public LumberjackGloves()
+        public LumberjackSkirt()
         {
-            Hue = 0x4D;
-            Name = "Tough Gloves of Forestry";
+            Hue = 0x7FF;
+            Name = "Skirt of Forestry";
             SkillBonuses.SetValues(0, Server.SkillName.Lumberjacking, 4.0);
         }
-        public LumberjackGloves(Serial serial) : base(serial)
+        public LumberjackSkirt(Serial serial) : base(serial)
         {
 
         }
@@ -77,7 +77,7 @@ namespace Scripts.Mythik.Items.Uniques
 
     }
 
-    public class LumberjackShirt : LeatherGloves, IUniqueItem
+    public class LumberjackShirt : FancyShirt, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -89,7 +89,7 @@ namespace Scripts.Mythik.Items.Uniques
         [Constructable]
         public LumberjackShirt()
         {
-            Hue = 0x4D;
+            Hue = 0x7FF;
             Name = "Shirt of Forestry";
             SkillBonuses.SetValues(0, Server.SkillName.Lumberjacking, 6.0);
         }
@@ -112,7 +112,7 @@ namespace Scripts.Mythik.Items.Uniques
 
     }
 
-    public class LumberjackPants : LongPants, IUniqueItem
+    public class LumberjackCloak : Cloak, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -122,13 +122,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public LumberjackPants()
+        public LumberjackCloak()
         {
-            Hue = 0x4D;
-            Name = "Long Pants of Forestry";
+            Hue = 0x7FF;
+            Name = "Cloak of Forestry";
             SkillBonuses.SetValues(0, Server.SkillName.Lumberjacking, 8.0);
         }
-        public LumberjackPants(Serial serial) : base(serial)
+        public LumberjackCloak(Serial serial) : base(serial)
         {
 
         }
@@ -159,7 +159,7 @@ namespace Scripts.Mythik.Items.Uniques
         [Constructable]
         public LumberjackApron()
         {
-            Hue = 0x4D;
+            Hue = 0x7FF;
             Name = "Apron of Forestry";
             SkillBonuses.SetValues(0, Server.SkillName.Lumberjacking, 10.0);
         }
