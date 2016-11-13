@@ -25,14 +25,7 @@ namespace Scripts.Mythik.Items.Rares
         private short m_Uses;
         public short Uses { get { return m_Uses; } set { m_Uses = value; this.InvalidateProperties(); } }
         public short UsesMax { get; set; }
-
-        public RareLevel UniqueLevel
-        {
-            get
-            {
-                return RareLevel.Rare;
-            }
-        }
+        public abstract RareLevel UniqueLevel { get; }
 
         public override void Serialize(GenericWriter writer)
         {
@@ -56,7 +49,7 @@ namespace Scripts.Mythik.Items.Rares
 
         
     }
-    class RareClothDyeTub : LimitedUseDyeTub, IUniqueItem
+    class RareClothDyeTub : LimitedUseDyeTub
     {
         public override bool Redyable
         {
@@ -71,13 +64,15 @@ namespace Scripts.Mythik.Items.Rares
             }
         }
 
-        public RareLevel UniqueLevel
+        public override RareLevel UniqueLevel
         {
             get
             {
                 return RareLevel.Rare;
             }
         }
+
+       
         [Constructable]
         public RareClothDyeTub() : base()
         {
@@ -100,7 +95,7 @@ namespace Scripts.Mythik.Items.Rares
         }
     }
 
-    class RareLeatherDyeTub : LimitedUseDyeTub, IUniqueItem
+    class RareLeatherDyeTub : LimitedUseDyeTub
     {
         public override bool Redyable
         {
@@ -129,7 +124,7 @@ namespace Scripts.Mythik.Items.Rares
                 return false;
             }
         }
-        public RareLevel UniqueLevel
+        public override RareLevel UniqueLevel
         {
             get
             {

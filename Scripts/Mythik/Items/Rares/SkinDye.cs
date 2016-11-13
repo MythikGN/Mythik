@@ -27,8 +27,17 @@ namespace Scripts.Mythik.Items.Rares
 
         public override void OnDoubleClick(Mobile from)
         {
-            from.Hue = this.Hue;
-            this.Consume();
+            if (MythikStaticValues.RareClothHues.Contains(from.Hue))
+            {
+                from.SendAsciiMessage("Your skin appears to already be dyed.");
+            }
+            else
+            {
+                from.SendAsciiMessage("You apply the dye to your skin.");
+                from.Hue = this.Hue;
+                this.Consume();
+            }
+
         }
         [Constructable]
         public SkinDye(Serial serial) : base(serial)
