@@ -110,7 +110,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class TinkeringCloak : LeatherCloak, IUniqueItem
+    public class TinkeringCloak : Cloak, IUniqueItem
     {
         public RareLevel UniqueLevel
         {

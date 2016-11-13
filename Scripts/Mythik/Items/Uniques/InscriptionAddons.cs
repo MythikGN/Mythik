@@ -145,7 +145,7 @@ namespace Scripts.Mythik.Items.Uniques
 
     }
 
-    public class InscribeSpellBook : SpellBook, IUniqueItem
+    public class InscribeSpellBook : Spellbook, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -178,6 +178,6 @@ namespace Scripts.Mythik.Items.Uniques
             var version = reader.ReadInt();
         }
 
-
+    
     }
 }

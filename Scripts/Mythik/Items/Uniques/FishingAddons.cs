@@ -52,13 +52,13 @@ namespace Scripts.Mythik.Items.Uniques
             }
         }
         [Constructable]
-        public FancyShirt()
+        public FishingShirt()
         {
             Hue = 0x794;
             Name = "Fishing Shirt";
             SkillBonuses.SetValues(0, Server.SkillName.Fishing, 4.0);
         }
-        public FancyShirt(Serial serial) : base(serial)
+        public FishingShirt(Serial serial) : base(serial)
         {
 
         }

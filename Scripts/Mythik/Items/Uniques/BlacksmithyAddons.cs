@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Scripts.Mythik.Items.Uniques
 {
-    public class BlacksmithySash : Sash, IUniqueItem
+    public class BlacksmithySash : BodySash, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -76,7 +76,7 @@ namespace Scripts.Mythik.Items.Uniques
 
 
     }
-    public class BlacksmithShirt : PlainShirt, IUniqueItem
+    public class BlacksmithShirt : Shirt, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
