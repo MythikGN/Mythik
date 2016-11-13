@@ -902,7 +902,7 @@ namespace Server.Items
 		public virtual TimeSpan GetDelay( Mobile m, Mobile defender = null)
 		{
 			double speed = this.Speed;
-            if (this is Fists && m is MythikPlayerMobile)
+            if (this is Fists && (m is MythikPlayerMobile) && (m as MythikPlayerMobile)?.SwingSpeed != 0)
                 speed = (m as MythikPlayerMobile).SwingSpeed;
 
 			if ( speed == 0 )
@@ -1010,7 +1010,9 @@ namespace Server.Items
 					v = 1;
 
 				delayInSeconds = 15000.0 / v;
-			}
+                if (delayInSeconds < 1.25)
+                    delayInSeconds = 1.25;
+            }
 
 			return TimeSpan.FromSeconds( delayInSeconds );
 		}

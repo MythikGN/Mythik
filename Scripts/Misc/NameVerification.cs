@@ -121,8 +121,8 @@ namespace Server.Misc
 				"counselor",
 				"gm",
 				"admin",
-				"lady",
-				"lord"
+				/*"lady",
+				"lord"*/
 			};
 
 		private static string[] m_Disallowed = new string[]

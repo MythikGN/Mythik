@@ -7,7 +7,7 @@ namespace Server.Mobiles
 	[CorpseName( "a unicorn corpse" )]
 	public class Unicorn : BaseMount
 	{
-		public override bool AllowMaleRider{ get{ return false; } }
+		public override bool AllowMaleRider{ get{ return true; } }
 		public override bool AllowMaleTamer{ get{ return false; } }
 
 		public override bool InitialInnocent{ get{ return true; } }

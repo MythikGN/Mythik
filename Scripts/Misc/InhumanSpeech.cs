@@ -13,7 +13,7 @@ namespace Server.Misc
 		OnDeath		= 0x02,
 		OnMovement	= 0x04,
 		OnSpeech	= 0x08,
-		All			= OnDamaged | OnDeath | OnMovement
+		All			= OnDamaged | OnDeath | OnMovement | OnSpeech
 	} // NOTE: To enable monster conversations, add " | OnSpeech" to the "All" line
 
 	public class InhumanSpeech
