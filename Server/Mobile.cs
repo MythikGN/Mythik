@@ -37,6 +37,7 @@ using Server.Network;
 using Server.Prompts;
 using Server.Targeting;
 using System.Linq;
+using Server.Mythik;
 
 namespace Server
 {
@@ -8757,8 +8758,9 @@ namespace Server
 			{
 				if( m_Body != value && !IsBodyMod )
 				{
-					m_Body = SafeBody( value );
-
+                    
+					m_Body = BodyConverter.ConvertBodyToBase( SafeBody( value ));
+                    Hue = BodyConverter.GetBaseBodyHue(SafeBody(value));
 					Delta( MobileDelta.Body );
 					InvalidateProperties();
 

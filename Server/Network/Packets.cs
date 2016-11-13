@@ -35,6 +35,7 @@ using Server.Prompts;
 using Server.HuePickers;
 using Server.ContextMenus;
 using Server.Diagnostics;
+using Server.Mythik;
 
 namespace Server.Network
 {
@@ -1058,7 +1059,7 @@ namespace Server.Network
 			int itemID = item.ItemID & 0x3FFF;
             int amount = 0;
             if (item.ItemID == 0x2006 && preAOS)// if its a corpse and pre aos then convert body if needed
-                amount = Packet.ConvertBody203(item.Amount);
+                amount = BodyConverter.ConvertBody203(item.Amount);
             else
                 amount = item.Amount;
 			Point3D loc = item.Location;
@@ -3148,7 +3149,7 @@ namespace Server.Network
 			string name = m.Name;
 			if ( name == null ) name = "";
 
-			bool sendMLExtended = (Core.ML && ns != null && ns.SupportsExpansion( Expansion.ML ));
+			bool sendMLExtended = (ns != null && ns.SupportsExpansion( Expansion.ML ));
 
 			this.EnsureCapacity( sendMLExtended ? 91 : 88 );
 
@@ -3159,7 +3160,7 @@ namespace Server.Network
 			m_Stream.Write( (short) m.HitsMax );
 
 			m_Stream.Write( m.CanBeRenamedBy( m ) );
-            if(ns?.Version?.Major >= 3)
+            if(ns.SupportsExpansion(Expansion.AOS))
 			    m_Stream.Write( (byte)(sendMLExtended ? 0x05 : Core.AOS ? 0x04 : 0x03) ); // type
             else
                 m_Stream.Write((byte)(0x03)); // type
@@ -3191,7 +3192,7 @@ namespace Server.Network
 			m_Stream.Write( (byte) m.Followers );
 			m_Stream.Write( (byte) m.FollowersMax );
 
-			if ( Core.AOS && ns.Version.Major >= 4)
+			if ( Core.AOS && ns.SupportsExpansion(Expansion.AOS))
 			{
 				m_Stream.Write( (short) m.FireResistance ); // Fire
 				m_Stream.Write( (short) m.ColdResistance ); // Cold
@@ -3242,7 +3243,7 @@ namespace Server.Network
 
 			if ( beholder == beheld )
 			{
-                if (ns.Version?.Major >= 3)
+                if (ns.Version?.Major > 3)
                     m_Stream.Write((byte)(sendMLExtended ? 0x05 : Core.AOS ? 0x04 : 0x03)); // type
                 else
                     m_Stream.Write((byte)(0x03)); // type
@@ -3257,7 +3258,7 @@ namespace Server.Network
 				WriteAttr( beheld.Mana, beheld.ManaMax );
 
 				m_Stream.Write( (int) beheld.TotalGold );
-                if (ns.Version?.Major<= 3)
+                if (ns.Version?.Major <= 3)
                     m_Stream.Write((short)((int)(beheld.ArmorRating + 0.5)));
                 else
                     m_Stream.Write( (short) (Core.AOS ? beheld.PhysicalResistance : (int)(beheld.ArmorRating + 0.5)) );
@@ -3274,7 +3275,7 @@ namespace Server.Network
 				m_Stream.Write( (byte) beheld.Followers );
 				m_Stream.Write( (byte) beheld.FollowersMax );
 
-				if ( Core.AOS && ns.Version.Major >= 4)
+				if ( Core.AOS && ns.Version.Major > 3)
 				{
 					m_Stream.Write( (short) beheld.FireResistance ); // Fire
 					m_Stream.Write( (short) beheld.ColdResistance ); // Cold
@@ -3363,7 +3364,8 @@ namespace Server.Network
 				hue = m.SolidHueOverride;
 
 			m_Stream.Write( (int) m.Serial );
-			m_Stream.Write( (short) m.Body );
+            //Body is fixed in Netstate.cs
+            m_Stream.Write( (short) m.Body );
 			m_Stream.Write( (byte) 0 );
 			m_Stream.Write( (short) hue );
 			m_Stream.Write( (byte) m.GetPacketFlags() );
@@ -3387,7 +3389,7 @@ namespace Server.Network
 				hue = m.SolidHueOverride;
 
 			m_Stream.Write( (int) m.Serial );
-
+            //Body is fixed in Netstate.cs
             m_Stream.Write((short)m.Body);
             m_Stream.Write( (byte) 0 );
 			m_Stream.Write( (short) hue );
@@ -3430,7 +3432,7 @@ namespace Server.Network
 			m_Stream.Write( (int) beheld.Serial );
             if(beholder?.NetState?.Version?.Major <= 3)
             {
-                m_Stream.Write((short)ConvertBody203(beheld.Body,beholder));
+                m_Stream.Write((short)BodyConverter.ConvertBody203(beheld.Body,beholder));
             }
             else
                 m_Stream.Write((short)beheld.Body);
@@ -3563,7 +3565,7 @@ namespace Server.Network
 			m_Stream.Write( (int) beheld.Serial );
             if (beholder.NetState?.Version?.Major <= 3)
             {
-                m_Stream.Write((short)ConvertBody203(beheld.Body,beholder));
+                m_Stream.Write((short)BodyConverter.ConvertBody203(beheld.Body,beholder));
             }
             else
                 m_Stream.Write((short)beheld.Body);
@@ -4605,139 +4607,6 @@ namespace Server.Network
 			m_Stream = null;
 		}
 
-        internal static short ConvertBody203(Body body, Mobile mobile = null)
-        {
-            if(mobile != null)
-            {
-                
-            }
-            switch (body.BodyID)
-            {
-                case 132: // kirin
-                    return 11;
-                case 0x7A:// unicorn
-                    return 222;
-                case 0x317: // beetle
-                    return 224;
-                case 0x31A://swampdrag
-                    return 227;
-                case 318://darkfather aka demonknight
-                    return 19;
-                case 243://hiryu
-                    return 229;
-                case 246: // bake
-                    return 230;
-                case 244: //runebeetle
-                    return 20;
-                case 46: //aw
-                    return 23;
-                case 173://spider champ meph
-                    return 25;
-                case 149://succubus
-                    return 27;
-                case 40://balron
-                    return 32;
-                case 308://bone daemon
-                    return 34;
-                case 303://devourer
-                    return 37;
-                case 311: //shadowknight
-                    return 38;
-                case 312://abyss horror
-                    return 40;
-                case 316: //wanderer of void
-                    return 43;
-                case 104://skele drag
-                    return 46;
-                case 315://flesh renderer
-                    return 49;
-
-                case 304: //flesh golem
-                    return 62;
-                case 305: //gorefiend
-                    return 63;
-                case 306: //  impaler
-                    return 64;
-                case 307: //gibberling
-                    return 65;
-                case 309: //patch skele
-                    return 66;
-                case 310: // wailing banshee
-                    return 67;
-                case 313: // darknight creeper
-                    return 68;
-                case 314://ravager
-                    return 69;
-                case 317: //vampbat
-                    return 73;
-                case 319://maggots
-                    return 74;
-                case 157://spider
-                    return 77;
-                case 11: //Spider
-                    return 78;
-                case 20://spider
-                    return 79;
-                case 28://spider
-                    return 82;
-                case 101://centaur
-                    return 83;
-                case 102://new demon?
-                    return 9;//old demon
-                case 43: //icedemon
-                    return 84;
-                case 62://wyrven
-                    return 88;
-                case 74://imp
-                    return 46;
-                case 26://shade
-                    return 89;
-                case 76://titan?
-                    return 90;
-                case 764://juka
-                    return 91;
-                case 765:
-                    return 92;
-                case 766:
-                    return 93;
-                case 767://???
-                    return 94;
-                case 769://??
-                    return 96;
-                case 770://meer lady
-                    return 97;
-                case 771://meer guy
-                    return 98;
-                case 772://meer boss
-                    return 99;
-                case 773: //meer archer
-                    return 100;
-                case 776://sml hrde dnm
-                    return 101;
-                case 752://golem
-                    return 102;
-                case 781://solen worker
-                    return 105;
-                case 782://warrior
-                    return 106;
-                case 783://queen
-                    return 107;
-                case 784:
-                    return 108;
-                case 67: // garg
-                    return 109;
-                case 753:
-                    return 110;
-                case 754:
-                    return 111;
-                case 755:
-                    return 112;
-                case 758:
-                    return 113;
-                default:
-                    return (short)body.BodyID;
-
-            }
-        }
+        
     }
 }

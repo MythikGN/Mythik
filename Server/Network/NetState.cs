@@ -189,10 +189,11 @@ namespace Server.Network {
 				} else if ( value >= m_Version400a ) {
 					_ProtocolChanges = ProtocolChanges.Version400a;
 				}
-			}
+            }
 		}
+        private static ClientVersion m_Version203 = new ClientVersion("2.0.3");
 
-		private static ClientVersion m_Version400a	= new ClientVersion( "4.0.0a" );
+        private static ClientVersion m_Version400a	= new ClientVersion( "4.0.0a" );
 		private static ClientVersion m_Version407a	= new ClientVersion( "4.0.7a" );
 		private static ClientVersion m_Version500a	= new ClientVersion( "5.0.0a" );
 		private static ClientVersion m_Version502b	= new ClientVersion( "5.0.2b" );
@@ -582,14 +583,13 @@ namespace Server.Network {
 				m_CreatedCallback( this );
 			}
 		}
-        static Ultima.StringList _stringList = new Ultima.StringList("ENU");
 
 		public virtual void Send( Packet p ) {
 			if ( m_Socket == null || m_BlockAllPackets ) {
 				p.OnSend();
 				return;
 			}
-            if(this.Version != null && this.Version.Major < 3)
+            if(this.Version != null && this.Version.Major <= 3)
             {
                 if(p is ObjectPropertyList || p is OPLInfo)
                 {
@@ -600,7 +600,7 @@ namespace Server.Network {
                 {
                     var packet = p as MobileMovingOld;
 
-                    var newBody = MobileMovingOld.ConvertBody203(packet.Body,this.Mobile);
+                    var newBody = Mythik.BodyConverter.ConvertBody203(packet.Body,this.Mobile);
                     if(packet.Body != newBody)
                     {
                         var oldpos = p.UnderlyingStream.Position;
@@ -613,7 +613,7 @@ namespace Server.Network {
                 {
                     var packet = p as MobileUpdateOld;
 
-                    var newBody = MobileUpdateOld.ConvertBody203(packet.Body, this.Mobile);
+                    var newBody = Mythik.BodyConverter.ConvertBody203(packet.Body, this.Mobile);
                     if (packet.Body != newBody)
                     {
                         var oldpos = p.UnderlyingStream.Position;
