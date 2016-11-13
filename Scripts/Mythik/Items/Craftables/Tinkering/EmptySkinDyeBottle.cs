@@ -18,7 +18,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering
 
         public override void OnDoubleClick(Mobile from)
         {
-            if(from.Hue != 0)
+            if (MythikStaticValues.RareClothHues.Contains(from.Hue))
             {
                 var newItem = new SkinDye(from.Hue);
                 from.AddToBackpack(newItem);
