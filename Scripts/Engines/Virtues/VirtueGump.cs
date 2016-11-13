@@ -27,6 +27,8 @@ namespace Server
 
 		private static void EventSink_VirtueItemRequest( VirtueItemRequestEventArgs e )
 		{
+            e.Beholder.SendAsciiMessage("The Virtue system is currently disabled.");
+            return;
 			if ( e.Beholder != e.Beheld )
 				return;
 
@@ -49,7 +51,9 @@ namespace Server
 
 		private static void EventSink_VirtueMacroRequest( VirtueMacroRequestEventArgs e )
 		{
-			int virtueID = 0;
+            e.Beholder.SendAsciiMessage("The Virtue system is currently disabled.");
+            return;
+            int virtueID = 0;
 
 			switch ( e.VirtueID )
 			{
@@ -66,7 +70,9 @@ namespace Server
 
 		private static void EventSink_VirtueGumpRequest( VirtueGumpRequestEventArgs e )
 		{
-			Mobile beholder = e.Beholder;
+            e.Beholder.SendAsciiMessage("The Virtue system is currently disabled.");
+            return;
+            Mobile beholder = e.Beholder;
 			Mobile beheld = e.Beheld;
 
 			if ( beholder == beheld && beholder.Kills >= 5 )

@@ -8,7 +8,7 @@ namespace Server.Engines.Chat
 {
 	public class ChatSystem
 	{
-		private static bool m_Enabled = true;
+		private static bool m_Enabled = false;
 
 		public static bool Enabled
 		{
