@@ -93,7 +93,14 @@ namespace Server.Mobiles
 		{
 		}
 
-		public override void OnHarmfulSpell( Mobile from )
+        public override void OnSpeech(SpeechEventArgs e)
+        {
+            if(e.Speech.ToLowerInvariant().Contains(Name + " bag"))
+                PackAnimal.TryPackOpen(this, e.Mobile);
+            base.OnSpeech(e);
+        }
+
+        public override void OnHarmfulSpell( Mobile from )
 		{
 			if ( !Controlled && ControlMaster == null )
 				CurrentSpeed = BoostedSpeed;
