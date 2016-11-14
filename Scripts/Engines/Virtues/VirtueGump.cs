@@ -51,7 +51,7 @@ namespace Server
 
 		private static void EventSink_VirtueMacroRequest( VirtueMacroRequestEventArgs e )
 		{
-            e.Beholder.SendAsciiMessage("The Virtue system is currently disabled.");
+            e.Mobile.SendAsciiMessage("The Virtue system is currently disabled.");
             return;
             int virtueID = 0;
 

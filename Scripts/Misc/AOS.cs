@@ -770,8 +770,25 @@ namespace Server
 			}
 			m_Mods = null;
 		}
+        public void RemoveFrom(Mobile from)
+        {
+            if (m_Mods == null)
+                return;
 
-		public bool GetValues( int index, out SkillName skill, out double bonus )
+            for (int i = 0; i < m_Mods.Count; ++i)
+            {
+                
+                Mobile m = m_Mods[i].Owner;
+                if (from != m)
+                    continue;
+                m_Mods[i].Remove();
+
+                if (Core.ML)
+                    CheckCancelMorph(m);
+            }
+            m_Mods = null;
+        }
+        public bool GetValues( int index, out SkillName skill, out double bonus )
 		{
 			int v = GetValue( 1 << index );
 			int vSkill = 0;
