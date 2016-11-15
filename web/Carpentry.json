@@ -1,0 +1,2377 @@
+[
+  {
+    "Name": "barrel staves",
+    "hue": 0,
+    "type": 7857,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 0.0,
+        "maxskill": 25.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 5
+      }
+    ]
+  },
+  {
+    "Name": "barrel lid",
+    "hue": 0,
+    "type": 7608,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 11.0,
+        "maxskill": 36.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "short music stand (left)",
+    "hue": 0,
+    "type": 3766,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 78.9,
+        "maxskill": 103.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 15
+      }
+    ]
+  },
+  {
+    "Name": "tall music stand (left)",
+    "hue": 0,
+    "type": 3771,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 81.5,
+        "maxskill": 106.5
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 20
+      }
+    ]
+  },
+  {
+    "Name": "easel (south)",
+    "hue": 0,
+    "type": 3941,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 86.8,
+        "maxskill": 111.8
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 20
+      }
+    ]
+  },
+  {
+    "Name": "red hanging lantern",
+    "hue": 0,
+    "type": 9410,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 65.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 5
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "white hanging lantern",
+    "hue": 0,
+    "type": 9414,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 65.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 5
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "shoji screen",
+    "hue": 0,
+    "type": 9419,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 80.0,
+        "maxskill": 105.0
+      },
+      {
+        "skill": "Tailoring",
+        "minskill": 50.0,
+        "maxskill": 55.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 75
+      },
+      {
+        "res": "Cloth",
+        "qty": 60
+      }
+    ]
+  },
+  {
+    "Name": "bamboo screen",
+    "hue": 0,
+    "type": 9424,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 80.0,
+        "maxskill": 105.0
+      },
+      {
+        "skill": "Tailoring",
+        "minskill": 50.0,
+        "maxskill": 55.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 75
+      },
+      {
+        "res": "Cloth",
+        "qty": 60
+      }
+    ]
+  },
+  {
+    "Name": "fishing pole",
+    "hue": 0,
+    "type": 3520,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 68.4,
+        "maxskill": 93.4
+      },
+      {
+        "skill": "Tailoring",
+        "minskill": 40.0,
+        "maxskill": 45.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 5
+      },
+      {
+        "res": "Cloth",
+        "qty": 5
+      }
+    ]
+  },
+  {
+    "Name": "runed switch",
+    "hue": 0,
+    "type": 12129,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 70.0,
+        "maxskill": 120.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 2
+      },
+      {
+        "res": "Enchanted Switch",
+        "qty": 1
+      },
+      {
+        "res": "Runed Prism",
+        "qty": 1
+      },
+      {
+        "res": "jeweled filigree",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "foot stool",
+    "hue": 0,
+    "type": 2910,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 11.0,
+        "maxskill": 36.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 9
+      }
+    ]
+  },
+  {
+    "Name": "stool",
+    "hue": 0,
+    "type": 2602,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 11.0,
+        "maxskill": 36.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 9
+      }
+    ]
+  },
+  {
+    "Name": "straw chair",
+    "hue": 0,
+    "type": 2907,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 21.0,
+        "maxskill": 46.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 13
+      }
+    ]
+  },
+  {
+    "Name": "wooden chair",
+    "hue": 0,
+    "type": 2903,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 21.0,
+        "maxskill": 46.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 13
+      }
+    ]
+  },
+  {
+    "Name": "Vesper-style chair",
+    "hue": 0,
+    "type": 2895,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 42.1,
+        "maxskill": 67.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 15
+      }
+    ]
+  },
+  {
+    "Name": "Trinsic-style chair",
+    "hue": 0,
+    "type": 2899,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 42.1,
+        "maxskill": 67.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 13
+      }
+    ]
+  },
+  {
+    "Name": "wooden bench",
+    "hue": 0,
+    "type": 2861,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 52.6,
+        "maxskill": 77.6
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 17
+      }
+    ]
+  },
+  {
+    "Name": "wooden throne",
+    "hue": 0,
+    "type": 2862,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 52.6,
+        "maxskill": 77.6
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 17
+      }
+    ]
+  },
+  {
+    "Name": "Magincia-style throne",
+    "hue": 0,
+    "type": 2867,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 73.6,
+        "maxskill": 98.6
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 19
+      }
+    ]
+  },
+  {
+    "Name": "small table",
+    "hue": 0,
+    "type": 2869,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 42.1,
+        "maxskill": 67.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 17
+      }
+    ]
+  },
+  {
+    "Name": "writing table",
+    "hue": 0,
+    "type": 2890,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 63.1,
+        "maxskill": 88.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 17
+      }
+    ]
+  },
+  {
+    "Name": "large table",
+    "hue": 0,
+    "type": 2959,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 63.1,
+        "maxskill": 88.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 23
+      }
+    ]
+  },
+  {
+    "Name": "Yew-wood table",
+    "hue": 0,
+    "type": 2960,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 84.2,
+        "maxskill": 109.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 27
+      }
+    ]
+  },
+  {
+    "Name": "elegant low table",
+    "hue": 0,
+    "type": 10265,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 80.0,
+        "maxskill": 105.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 35
+      }
+    ]
+  },
+  {
+    "Name": "plain low table",
+    "hue": 0,
+    "type": 10266,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 80.0,
+        "maxskill": 105.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 35
+      }
+    ]
+  },
+  {
+    "Name": "wooden box",
+    "hue": 0,
+    "type": 2474,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 21.0,
+        "maxskill": 46.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "small crate",
+    "hue": 0,
+    "type": 2473,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 10.0,
+        "maxskill": 35.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "medium crate",
+    "hue": 0,
+    "type": 3647,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 31.0,
+        "maxskill": 56.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 15
+      }
+    ]
+  },
+  {
+    "Name": "large crate",
+    "hue": 0,
+    "type": 3645,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 47.3,
+        "maxskill": 72.3
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 18
+      }
+    ]
+  },
+  {
+    "Name": "wooden chest",
+    "hue": 0,
+    "type": 3651,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 73.6,
+        "maxskill": 98.6
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 20
+      }
+    ]
+  },
+  {
+    "Name": "wooden shelf",
+    "hue": 0,
+    "type": 2717,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 31.5,
+        "maxskill": 56.5
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "armoire (red)",
+    "hue": 0,
+    "type": 2637,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 84.2,
+        "maxskill": 109.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 35
+      }
+    ]
+  },
+  {
+    "Name": "armoire",
+    "hue": 0,
+    "type": 2639,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 84.2,
+        "maxskill": 109.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 35
+      }
+    ]
+  },
+  {
+    "Name": "plain wooden chest",
+    "hue": 0,
+    "type": 10251,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 90.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "ornate wooden chest",
+    "hue": 0,
+    "type": 10253,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 90.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "gilded wooden chest",
+    "hue": 0,
+    "type": 10255,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 90.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "wooden footlocker",
+    "hue": 0,
+    "type": 10257,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 90.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "finished wooden chest",
+    "hue": 0,
+    "type": 10259,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 90.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "tall cabinet",
+    "hue": 0,
+    "type": 10261,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 90.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 35
+      }
+    ]
+  },
+  {
+    "Name": "short cabinet",
+    "hue": 0,
+    "type": 10263,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 90.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 35
+      }
+    ]
+  },
+  {
+    "Name": "red armoire",
+    "hue": 0,
+    "type": 10327,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 90.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "elegant armoire",
+    "hue": 0,
+    "type": 10329,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 90.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "maple armoire",
+    "hue": 0,
+    "type": 10331,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 90.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "cherry armoire",
+    "hue": 0,
+    "type": 10333,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 90.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "keg",
+    "hue": 0,
+    "type": 3711,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 57.8,
+        "maxskill": 82.8
+      }
+    ],
+    "resources": [
+      {
+        "res": "Barrel Staves",
+        "qty": 3
+      },
+      {
+        "res": "Barrel Hoops",
+        "qty": 1
+      },
+      {
+        "res": "Barrel Lids",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "shepherd's crook",
+    "hue": 0,
+    "type": 3713,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 78.9,
+        "maxskill": 103.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 7
+      }
+    ]
+  },
+  {
+    "Name": "quarter staff",
+    "hue": 0,
+    "type": 3721,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 73.6,
+        "maxskill": 98.6
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 6
+      }
+    ]
+  },
+  {
+    "Name": "gnarled staff",
+    "hue": 0,
+    "type": 5112,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 78.9,
+        "maxskill": 103.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 7
+      }
+    ]
+  },
+  {
+    "Name": "wooden shield",
+    "hue": 0,
+    "type": 7034,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 52.6,
+        "maxskill": 77.6
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 9
+      }
+    ]
+  },
+  {
+    "Name": "bokuto",
+    "hue": 0,
+    "type": 10152,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 70.0,
+        "maxskill": 95.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 6
+      }
+    ]
+  },
+  {
+    "Name": "fukiya",
+    "hue": 0,
+    "type": 10154,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 60.0,
+        "maxskill": 85.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 6
+      }
+    ]
+  },
+  {
+    "Name": "tetsubo",
+    "hue": 0,
+    "type": 10150,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 80.0,
+        "maxskill": 140.3
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "lap harp",
+    "hue": 0,
+    "type": 3762,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 63.1,
+        "maxskill": 88.1
+      },
+      {
+        "skill": "Musicianship",
+        "minskill": 45.0,
+        "maxskill": 50.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 20
+      },
+      {
+        "res": "Cloth",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "standing harp",
+    "hue": 0,
+    "type": 3761,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 78.9,
+        "maxskill": 103.9
+      },
+      {
+        "skill": "Musicianship",
+        "minskill": 45.0,
+        "maxskill": 50.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 35
+      },
+      {
+        "res": "Cloth",
+        "qty": 15
+      }
+    ]
+  },
+  {
+    "Name": "drum",
+    "hue": 0,
+    "type": 3740,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 57.8,
+        "maxskill": 82.8
+      },
+      {
+        "skill": "Musicianship",
+        "minskill": 45.0,
+        "maxskill": 50.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 20
+      },
+      {
+        "res": "Cloth",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "lute",
+    "hue": 0,
+    "type": 3763,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 68.4,
+        "maxskill": 93.4
+      },
+      {
+        "skill": "Musicianship",
+        "minskill": 45.0,
+        "maxskill": 50.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 25
+      },
+      {
+        "res": "Cloth",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "tambourine",
+    "hue": 0,
+    "type": 3741,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 57.8,
+        "maxskill": 82.8
+      },
+      {
+        "skill": "Musicianship",
+        "minskill": 45.0,
+        "maxskill": 50.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 15
+      },
+      {
+        "res": "Cloth",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "tambourine (tassel)",
+    "hue": 0,
+    "type": 3742,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 57.8,
+        "maxskill": 82.8
+      },
+      {
+        "skill": "Musicianship",
+        "minskill": 45.0,
+        "maxskill": 50.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 15
+      },
+      {
+        "res": "Cloth",
+        "qty": 15
+      }
+    ]
+  },
+  {
+    "Name": "bamboo flute",
+    "hue": 0,
+    "type": 10245,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 80.0,
+        "maxskill": 105.0
+      },
+      {
+        "skill": "Musicianship",
+        "minskill": 45.0,
+        "maxskill": 50.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 15
+      }
+    ]
+  },
+  {
+    "Name": "deed part",
+    "hue": 0,
+    "type": 4084,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 70.0,
+        "maxskill": 119.8
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 300
+      },
+      {
+        "res": "Stone Ingots",
+        "qty": 300
+      }
+    ]
+  },
+  {
+    "Name": "small bed (south)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 94.7,
+        "maxskill": 119.8
+      },
+      {
+        "skill": "Tailoring",
+        "minskill": 75.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 2
+      },
+      {
+        "res": "Cloth",
+        "qty": 100
+      }
+    ]
+  },
+  {
+    "Name": "small bed (east)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 94.7,
+        "maxskill": 119.8
+      },
+      {
+        "skill": "Tailoring",
+        "minskill": 75.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 2
+      },
+      {
+        "res": "Cloth",
+        "qty": 100
+      }
+    ]
+  },
+  {
+    "Name": "large bed (south)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 94.7,
+        "maxskill": 119.8
+      },
+      {
+        "skill": "Tailoring",
+        "minskill": 75.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 3
+      },
+      {
+        "res": "Cloth",
+        "qty": 150
+      }
+    ]
+  },
+  {
+    "Name": "large bed (east)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 94.7,
+        "maxskill": 119.8
+      },
+      {
+        "skill": "Tailoring",
+        "minskill": 75.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 3
+      },
+      {
+        "res": "Cloth",
+        "qty": 150
+      }
+    ]
+  },
+  {
+    "Name": "dartboard (south)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 15.7,
+        "maxskill": 40.7
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "dartboard (east)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 15.7,
+        "maxskill": 40.7
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "ballot box",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 47.3,
+        "maxskill": 72.3
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "pentagram",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 100.0,
+        "maxskill": 125.0
+      },
+      {
+        "skill": "Magery",
+        "minskill": 75.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "abbatoir",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 100.0,
+        "maxskill": 125.0
+      },
+      {
+        "skill": "Magery",
+        "minskill": 50.0,
+        "maxskill": 55.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "bulletin board (east)",
+    "hue": 0,
+    "type": 8978,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 85.0,
+        "maxskill": 110.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 3
+      }
+    ]
+  },
+  {
+    "Name": "bulletin board (south)",
+    "hue": 0,
+    "type": 8977,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 85.0,
+        "maxskill": 110.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 3
+      }
+    ]
+  },
+  {
+    "Name": "guild stone",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 100.0,
+        "maxskill": 125.0
+      },
+      {
+        "skill": "Tinkering",
+        "minskill": 100.0,
+        "maxskill": 125.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "small forge",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 73.6,
+        "maxskill": 98.6
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 75.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 3
+      },
+      {
+        "res": "Ingots",
+        "qty": 75
+      }
+    ]
+  },
+  {
+    "Name": "large forge (east)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 78.9,
+        "maxskill": 103.9
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 80.0,
+        "maxskill": 85.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 5
+      },
+      {
+        "res": "Ingots",
+        "qty": 100
+      }
+    ]
+  },
+  {
+    "Name": "large forge (south)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 78.9,
+        "maxskill": 103.9
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 80.0,
+        "maxskill": 85.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 5
+      },
+      {
+        "res": "Ingots",
+        "qty": 100
+      }
+    ]
+  },
+  {
+    "Name": "anvil (east)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 73.6,
+        "maxskill": 98.6
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 75.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 3
+      },
+      {
+        "res": "Ingots",
+        "qty": 150
+      }
+    ]
+  },
+  {
+    "Name": "anvil (south)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 73.6,
+        "maxskill": 98.6
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 75.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 3
+      },
+      {
+        "res": "Ingots",
+        "qty": 150
+      }
+    ]
+  },
+  {
+    "Name": "training dummy (east)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 68.4,
+        "maxskill": 93.4
+      },
+      {
+        "skill": "Tailoring",
+        "minskill": 50.0,
+        "maxskill": 55.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 3
+      },
+      {
+        "res": "Cloth",
+        "qty": 60
+      }
+    ]
+  },
+  {
+    "Name": "training dummy (south)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 68.4,
+        "maxskill": 93.4
+      },
+      {
+        "skill": "Tailoring",
+        "minskill": 50.0,
+        "maxskill": 55.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 3
+      },
+      {
+        "res": "Cloth",
+        "qty": 60
+      }
+    ]
+  },
+  {
+    "Name": "pickpocket dip (east)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 73.6,
+        "maxskill": 98.6
+      },
+      {
+        "skill": "Tailoring",
+        "minskill": 50.0,
+        "maxskill": 55.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 3
+      },
+      {
+        "res": "Cloth",
+        "qty": 60
+      }
+    ]
+  },
+  {
+    "Name": "pickpocket dip (south)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 73.6,
+        "maxskill": 98.6
+      },
+      {
+        "skill": "Tailoring",
+        "minskill": 50.0,
+        "maxskill": 55.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 3
+      },
+      {
+        "res": "Cloth",
+        "qty": 60
+      }
+    ]
+  },
+  {
+    "Name": "dressform (front)",
+    "hue": 0,
+    "type": 3782,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 63.1,
+        "maxskill": 88.1
+      },
+      {
+        "skill": "Tailoring",
+        "minskill": 65.0,
+        "maxskill": 70.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 25
+      },
+      {
+        "res": "Cloth",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "spinning wheel (east)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 73.6,
+        "maxskill": 98.6
+      },
+      {
+        "skill": "Tailoring",
+        "minskill": 65.0,
+        "maxskill": 70.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 3
+      },
+      {
+        "res": "Cloth",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "spinning wheel (south)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 73.6,
+        "maxskill": 98.6
+      },
+      {
+        "skill": "Tailoring",
+        "minskill": 65.0,
+        "maxskill": 70.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 3
+      },
+      {
+        "res": "Cloth",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "loom (east)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 84.2,
+        "maxskill": 109.2
+      },
+      {
+        "skill": "Tailoring",
+        "minskill": 65.0,
+        "maxskill": 70.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 3
+      },
+      {
+        "res": "Cloth",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "loom (south)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 84.2,
+        "maxskill": 109.2
+      },
+      {
+        "skill": "Tailoring",
+        "minskill": 65.0,
+        "maxskill": 70.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 3
+      },
+      {
+        "res": "Cloth",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "stone oven (east)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 68.4,
+        "maxskill": 93.4
+      },
+      {
+        "skill": "Tinkering",
+        "minskill": 50.0,
+        "maxskill": 55.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "stone oven (south)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 68.4,
+        "maxskill": 93.4
+      },
+      {
+        "skill": "Tinkering",
+        "minskill": 50.0,
+        "maxskill": 55.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "flour mill (east)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 94.7,
+        "maxskill": 119.7
+      },
+      {
+        "skill": "Tinkering",
+        "minskill": 50.0,
+        "maxskill": 55.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "flour mill (south)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 94.7,
+        "maxskill": 119.7
+      },
+      {
+        "skill": "Tinkering",
+        "minskill": 50.0,
+        "maxskill": 55.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "water trough (east)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 94.7,
+        "maxskill": 119.7
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "water trough (south)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 94.7,
+        "maxskill": 119.7
+      }
+    ],
+    "resources": [
+      {
+        "res": "deed part",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "House Parts",
+    "hue": 0,
+    "type": 4084,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 65.0,
+        "maxskill": 110.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 300
+      },
+      {
+        "res": "Iron Ingots",
+        "qty": 300
+      },
+      {
+        "res": "Stone Ingots",
+        "qty": 300
+      }
+    ]
+  },
+  {
+    "Name": "Stone and plaster house",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 70.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "House Parts",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "Small brick house",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 70.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "House Parts",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "Wood and plaster house",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 70.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "House Parts",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "Wooden house",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 70.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "House Parts",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "Thatched-roof cottage",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 70.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "House Parts",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "Field stone house",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 70.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "House Parts",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "Sandstone house with patio",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 75.0,
+        "maxskill": 105.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "House Parts",
+        "qty": 22
+      }
+    ]
+  },
+  {
+    "Name": "Small stone workshop",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 80.0,
+        "maxskill": 110.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "House Parts",
+        "qty": 24
+      }
+    ]
+  },
+  {
+    "Name": "Small marble workshop",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 80.0,
+        "maxskill": 110.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "House Parts",
+        "qty": 24
+      }
+    ]
+  },
+  {
+    "Name": "Two-story log cabin",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 85.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "House Parts",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Small stone tower",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 82.0,
+        "maxskill": 112.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "House Parts",
+        "qty": 32
+      }
+    ]
+  },
+  {
+    "Name": "Brick house",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 80.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "House Parts",
+        "qty": 35
+      }
+    ]
+  },
+  {
+    "Name": "Two-story wood and plaster house",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 85.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "House Parts",
+        "qty": 45
+      }
+    ]
+  },
+  {
+    "Name": "Two-story stone and plaster house",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 85.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "House Parts",
+        "qty": 45
+      }
+    ]
+  },
+  {
+    "Name": "Two-story villa",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 87.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "House Parts",
+        "qty": 50
+      }
+    ]
+  },
+  {
+    "Name": "Large house with patio",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 85.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "House Parts",
+        "qty": 45
+      }
+    ]
+  },
+  {
+    "Name": "Marble house with patio",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 92.0,
+        "maxskill": 120.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "House Parts",
+        "qty": 55
+      }
+    ]
+  },
+  {
+    "Name": "Tower",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 95.0,
+        "maxskill": 125.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "House Parts",
+        "qty": 75
+      }
+    ]
+  },
+  {
+    "Name": "Small stone keep",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 98.0,
+        "maxskill": 130.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "House Parts",
+        "qty": 100
+      }
+    ]
+  },
+  {
+    "Name": "Castle",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Carpentry",
+        "minskill": 100.0,
+        "maxskill": 135.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "House Parts",
+        "qty": 125
+      }
+    ]
+  }
+]

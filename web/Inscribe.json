@@ -1,0 +1,2227 @@
+[
+  {
+    "Name": "Reactive Armor",
+    "hue": 0,
+    "type": 7981,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": -25.0,
+        "maxskill": 25.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Clumsy",
+    "hue": 0,
+    "type": 7982,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": -25.0,
+        "maxskill": 25.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Nightshade",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Create Food",
+    "hue": 0,
+    "type": 7983,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": -25.0,
+        "maxskill": 25.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Ginseng",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Feeblemind",
+    "hue": 0,
+    "type": 7984,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": -25.0,
+        "maxskill": 25.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Nightshade",
+        "qty": 1
+      },
+      {
+        "res": "Ginseng",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Heal",
+    "hue": 0,
+    "type": 7985,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": -25.0,
+        "maxskill": 25.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Ginseng",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Magic Arrow",
+    "hue": 0,
+    "type": 7986,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": -25.0,
+        "maxskill": 25.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Night Sight",
+    "hue": 0,
+    "type": 7987,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": -25.0,
+        "maxskill": 25.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Weaken",
+    "hue": 0,
+    "type": 7988,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": -25.0,
+        "maxskill": 25.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Nightshade",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Agility",
+    "hue": 0,
+    "type": 7989,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": -10.8,
+        "maxskill": 39.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Cunning",
+    "hue": 0,
+    "type": 7990,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": -10.8,
+        "maxskill": 39.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Nightshade",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Cure",
+    "hue": 0,
+    "type": 7991,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": -10.8,
+        "maxskill": 39.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Ginseng",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Harm",
+    "hue": 0,
+    "type": 7992,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": -10.8,
+        "maxskill": 39.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Nightshade",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Magic Trap",
+    "hue": 0,
+    "type": 7993,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": -10.8,
+        "maxskill": 39.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Magic Untrap",
+    "hue": 0,
+    "type": 7994,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": -10.8,
+        "maxskill": 39.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Protection",
+    "hue": 0,
+    "type": 7995,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": -10.8,
+        "maxskill": 39.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Ginseng",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Strength",
+    "hue": 0,
+    "type": 7996,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": -10.8,
+        "maxskill": 39.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Nightshade",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Bless",
+    "hue": 0,
+    "type": 7997,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 3.5,
+        "maxskill": 53.5
+      }
+    ],
+    "resources": [
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Fireball",
+    "hue": 0,
+    "type": 7998,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 3.5,
+        "maxskill": 53.5
+      }
+    ],
+    "resources": [
+      {
+        "res": "Black Pearl",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Magic Lock",
+    "hue": 0,
+    "type": 7999,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 3.5,
+        "maxskill": 53.5
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Poison",
+    "hue": 0,
+    "type": 8000,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 3.5,
+        "maxskill": 53.5
+      }
+    ],
+    "resources": [
+      {
+        "res": "Nightshade",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Telekinesis",
+    "hue": 0,
+    "type": 8001,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 3.5,
+        "maxskill": 53.5
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Teleport",
+    "hue": 0,
+    "type": 8002,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 3.5,
+        "maxskill": 53.5
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Unlock",
+    "hue": 0,
+    "type": 8003,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 3.5,
+        "maxskill": 53.5
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Wall of Stone",
+    "hue": 0,
+    "type": 8004,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 3.5,
+        "maxskill": 53.5
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Arch Cure",
+    "hue": 0,
+    "type": 8005,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 17.8,
+        "maxskill": 67.8
+      }
+    ],
+    "resources": [
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Ginseng",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Arch Protection",
+    "hue": 0,
+    "type": 8006,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 17.8,
+        "maxskill": 67.8
+      }
+    ],
+    "resources": [
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Ginseng",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Curse",
+    "hue": 0,
+    "type": 8007,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 17.8,
+        "maxskill": 67.8
+      }
+    ],
+    "resources": [
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Nightshade",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Fire Field",
+    "hue": 0,
+    "type": 8008,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 17.8,
+        "maxskill": 67.8
+      }
+    ],
+    "resources": [
+      {
+        "res": "Black Pearl",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Greater Heal",
+    "hue": 0,
+    "type": 8009,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 17.8,
+        "maxskill": 67.8
+      }
+    ],
+    "resources": [
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Ginseng",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Lightning",
+    "hue": 0,
+    "type": 8010,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 17.8,
+        "maxskill": 67.8
+      }
+    ],
+    "resources": [
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Mana Drain",
+    "hue": 0,
+    "type": 8011,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 17.8,
+        "maxskill": 67.8
+      }
+    ],
+    "resources": [
+      {
+        "res": "Black Pearl",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Recall",
+    "hue": 0,
+    "type": 8012,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 17.8,
+        "maxskill": 67.8
+      }
+    ],
+    "resources": [
+      {
+        "res": "Black Pearl",
+        "qty": 1
+      },
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Blade Spirits",
+    "hue": 0,
+    "type": 8013,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 32.1,
+        "maxskill": 82.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Black Pearl",
+        "qty": 1
+      },
+      {
+        "res": "Nightshade",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Dispel Field",
+    "hue": 0,
+    "type": 8014,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 32.1,
+        "maxskill": 82.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Black Pearl",
+        "qty": 1
+      },
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Incognito",
+    "hue": 0,
+    "type": 8015,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 32.1,
+        "maxskill": 82.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Nightshade",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Magic Reflection",
+    "hue": 0,
+    "type": 8016,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 32.1,
+        "maxskill": 82.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Mind Blast",
+    "hue": 0,
+    "type": 8017,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 32.1,
+        "maxskill": 82.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Black Pearl",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Nightshade",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Paralyze",
+    "hue": 0,
+    "type": 8018,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 32.1,
+        "maxskill": 82.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Poison Field",
+    "hue": 0,
+    "type": 8019,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 32.1,
+        "maxskill": 82.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Black Pearl",
+        "qty": 1
+      },
+      {
+        "res": "Nightshade",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Summon Creature",
+    "hue": 0,
+    "type": 8020,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 32.1,
+        "maxskill": 82.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Dispel",
+    "hue": 0,
+    "type": 8021,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 46.4,
+        "maxskill": 96.4
+      }
+    ],
+    "resources": [
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Energy Bolt",
+    "hue": 0,
+    "type": 8022,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 46.4,
+        "maxskill": 96.4
+      }
+    ],
+    "resources": [
+      {
+        "res": "Black Pearl",
+        "qty": 1
+      },
+      {
+        "res": "Nightshade",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Explosion",
+    "hue": 0,
+    "type": 8023,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 46.4,
+        "maxskill": 96.4
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Invisibility",
+    "hue": 0,
+    "type": 8024,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 46.4,
+        "maxskill": 96.4
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Nightshade",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Mark",
+    "hue": 0,
+    "type": 8025,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 46.4,
+        "maxskill": 96.4
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Black Pearl",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Mass Curse",
+    "hue": 0,
+    "type": 8026,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 46.4,
+        "maxskill": 96.4
+      }
+    ],
+    "resources": [
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Nightshade",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Paralyze Field",
+    "hue": 0,
+    "type": 8027,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 46.4,
+        "maxskill": 96.4
+      }
+    ],
+    "resources": [
+      {
+        "res": "Black Pearl",
+        "qty": 1
+      },
+      {
+        "res": "Ginseng",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Reveal",
+    "hue": 0,
+    "type": 8028,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 46.4,
+        "maxskill": 96.4
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Chain Lightning",
+    "hue": 0,
+    "type": 8029,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 60.7,
+        "maxskill": 110.7
+      }
+    ],
+    "resources": [
+      {
+        "res": "Black Pearl",
+        "qty": 1
+      },
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Energy Field",
+    "hue": 0,
+    "type": 8030,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 60.7,
+        "maxskill": 110.7
+      }
+    ],
+    "resources": [
+      {
+        "res": "Black Pearl",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Flamestrike",
+    "hue": 0,
+    "type": 8031,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 60.7,
+        "maxskill": 110.7
+      }
+    ],
+    "resources": [
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Gate Travel",
+    "hue": 0,
+    "type": 8032,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 60.7,
+        "maxskill": 110.7
+      }
+    ],
+    "resources": [
+      {
+        "res": "Black Pearl",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Mana Vampire",
+    "hue": 0,
+    "type": 8033,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 60.7,
+        "maxskill": 110.7
+      }
+    ],
+    "resources": [
+      {
+        "res": "Black Pearl",
+        "qty": 1
+      },
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Mass Dispel",
+    "hue": 0,
+    "type": 8034,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 60.7,
+        "maxskill": 110.7
+      }
+    ],
+    "resources": [
+      {
+        "res": "Black Pearl",
+        "qty": 1
+      },
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Meteor Swarm",
+    "hue": 0,
+    "type": 8035,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 60.7,
+        "maxskill": 110.7
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Polymorph",
+    "hue": 0,
+    "type": 8036,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 60.7,
+        "maxskill": 110.7
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Earthquake",
+    "hue": 0,
+    "type": 8037,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 75.0,
+        "maxskill": 125.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Ginseng",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Energy Vortex",
+    "hue": 0,
+    "type": 8038,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 75.0,
+        "maxskill": 125.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Black Pearl",
+        "qty": 1
+      },
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Nightshade",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Resurrection",
+    "hue": 0,
+    "type": 8039,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 75.0,
+        "maxskill": 125.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Ginseng",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Summon Air Elemental",
+    "hue": 0,
+    "type": 8040,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 75.0,
+        "maxskill": 125.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Summon Daemon",
+    "hue": 0,
+    "type": 8041,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 75.0,
+        "maxskill": 125.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Summon Earth Elemental",
+    "hue": 0,
+    "type": 8042,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 75.0,
+        "maxskill": 125.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Summon Fire Elemental",
+    "hue": 0,
+    "type": 8043,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 75.0,
+        "maxskill": 125.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Sulfurous Ash",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Summon Water Elemental",
+    "hue": 0,
+    "type": 8044,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 75.0,
+        "maxskill": 125.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Lumber Storage Book",
+    "hue": 0,
+    "type": 8786,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 94.9,
+        "maxskill": 124.9
+      },
+      {
+        "skill": "Lumberjacking",
+        "minskill": 94.9,
+        "maxskill": 94.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blank Scrolls",
+        "qty": 100
+      },
+      {
+        "res": "Uncommon Craft Mat A",
+        "qty": 2
+      },
+      {
+        "res": "Logs",
+        "qty": 100
+      }
+    ]
+  },
+  {
+    "Name": "Reagent Storage Book",
+    "hue": 0,
+    "type": 8786,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 84.9,
+        "maxskill": 114.9
+      },
+      {
+        "skill": "Magery",
+        "minskill": 84.9,
+        "maxskill": 84.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blank Scrolls",
+        "qty": 100
+      },
+      {
+        "res": "Uncommon Craft Mat A",
+        "qty": 2
+      },
+      {
+        "res": "BloodMoss",
+        "qty": 150
+      }
+    ]
+  },
+  {
+    "Name": "Ingot Storage Book",
+    "hue": 0,
+    "type": 8788,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 74.9,
+        "maxskill": 104.9
+      },
+      {
+        "skill": "Mining",
+        "minskill": 74.9,
+        "maxskill": 74.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blank Scrolls",
+        "qty": 100
+      },
+      {
+        "res": "Uncommon Craft Mat A",
+        "qty": 2
+      },
+      {
+        "res": "Iron Ingots",
+        "qty": 100
+      }
+    ]
+  },
+  {
+    "Name": "Runebook",
+    "hue": 0,
+    "type": 8901,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 85.0,
+        "maxskill": 95.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blank Scrolls",
+        "qty": 25
+      },
+      {
+        "res": "Recall Scrolls",
+        "qty": 25
+      },
+      {
+        "res": "Gate Scrolls",
+        "qty": 25
+      },
+      {
+        "res": "Mark Scroll",
+        "qty": 25
+      },
+      {
+        "res": "Unmarked Runes",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "Creature Guide Books",
+    "hue": 0,
+    "type": 8788,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 104.9,
+        "maxskill": 125.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blank Scrolls",
+        "qty": 100
+      },
+      {
+        "res": "Uncommon Craft Mat A",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "Bulk Order Book",
+    "hue": 0,
+    "type": 8793,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 104.9,
+        "maxskill": 125.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blank Scrolls",
+        "qty": 100
+      },
+      {
+        "res": "Uncommon Craft Mat A",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "Spellbook",
+    "hue": 0,
+    "type": 3834,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 50.0,
+        "maxskill": 126.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blank Scrolls",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "Animate Dead",
+    "hue": 0,
+    "type": 8800,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 101.9,
+        "maxskill": 131.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Grave Dust",
+        "qty": 1
+      },
+      {
+        "res": "Daemon Blood",
+        "qty": 5
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Blood Oath",
+    "hue": 0,
+    "type": 8801,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 109.6,
+        "maxskill": 139.6
+      }
+    ],
+    "resources": [
+      {
+        "res": "Daemon Blood",
+        "qty": 1
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Summon Familiar",
+    "hue": 0,
+    "type": 8811,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 124.9,
+        "maxskill": 154.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Batwing",
+        "qty": 1
+      },
+      {
+        "res": "Grave Dust",
+        "qty": 5
+      },
+      {
+        "res": "Daemon Blood",
+        "qty": 5
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Enemy Of One",
+    "hue": 0,
+    "type": 3642,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 124.9,
+        "maxskill": 154.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Black Pearl",
+        "qty": 5
+      },
+      {
+        "res": "Daemon Blood",
+        "qty": 5
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Enchanted Switch",
+    "hue": 0,
+    "type": 12124,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 45.0,
+        "maxskill": 95.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Black Pearl",
+        "qty": 1
+      },
+      {
+        "res": "Switch",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Runed Prism",
+    "hue": 0,
+    "type": 12119,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 45.0,
+        "maxskill": 95.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      },
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Black Pearl",
+        "qty": 1
+      },
+      {
+        "res": "hollow prism",
+        "qty": 1
+      }
+    ]
+  }
+]

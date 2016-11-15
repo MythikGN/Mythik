@@ -1,0 +1,954 @@
+[
+  {
+    "Name": "sack of flour",
+    "hue": 0,
+    "type": 4153,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Wheat",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "dough",
+    "hue": 0,
+    "type": 4157,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Flour",
+        "qty": 1
+      },
+      {
+        "res": "Water",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "sweet dough",
+    "hue": 0,
+    "type": 4157,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Dough",
+        "qty": 1
+      },
+      {
+        "res": "Honey",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "cake mix",
+    "hue": 0,
+    "type": 4159,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Flour",
+        "qty": 1
+      },
+      {
+        "res": "Sweet Dough",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "cookie mix",
+    "hue": 0,
+    "type": 4159,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Honey",
+        "qty": 1
+      },
+      {
+        "res": "Sweet Dough",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "cocoa butter",
+    "hue": 1111,
+    "type": 4164,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "cocoa pulp",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "cocoa liquor",
+    "hue": 1130,
+    "type": 4159,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "cocoa pulp",
+        "qty": 1
+      },
+      {
+        "res": "pewter bowl",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "unbaked quiche",
+    "hue": 0,
+    "type": 4162,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Dough",
+        "qty": 1
+      },
+      {
+        "res": "Eggs",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "unbaked meat pie",
+    "hue": 0,
+    "type": 4162,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Dough",
+        "qty": 1
+      },
+      {
+        "res": "Raw Meat",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "uncooked sausage pizza",
+    "hue": 0,
+    "type": 4227,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Dough",
+        "qty": 1
+      },
+      {
+        "res": "Sausage",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "uncooked cheese pizza",
+    "hue": 0,
+    "type": 4227,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Dough",
+        "qty": 1
+      },
+      {
+        "res": "Cheese",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "unbaked fruit pie",
+    "hue": 0,
+    "type": 4162,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Dough",
+        "qty": 1
+      },
+      {
+        "res": "Pears",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "unbaked peach cobbler",
+    "hue": 0,
+    "type": 4162,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Dough",
+        "qty": 1
+      },
+      {
+        "res": "Peaches",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "unbaked apple pie",
+    "hue": 0,
+    "type": 4162,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Dough",
+        "qty": 1
+      },
+      {
+        "res": "Apples",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "unbaked pumpkin pie",
+    "hue": 0,
+    "type": 4162,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Dough",
+        "qty": 1
+      },
+      {
+        "res": "Pumpkin",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Green Tea",
+    "hue": 0,
+    "type": 10316,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 80.0,
+        "maxskill": 130.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Green Tea",
+        "qty": 1
+      },
+      {
+        "res": "Water",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "wasabi clumps",
+    "hue": 0,
+    "type": 9451,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 70.0,
+        "maxskill": 120.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Water",
+        "qty": 1
+      },
+      {
+        "res": "bowl of peas",
+        "qty": 3
+      }
+    ]
+  },
+  {
+    "Name": "sushi rolls",
+    "hue": 0,
+    "type": 10302,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 90.0,
+        "maxskill": 120.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Water",
+        "qty": 1
+      },
+      {
+        "res": "Raw Fish Steaks",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "sushi platter",
+    "hue": 0,
+    "type": 10304,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 90.0,
+        "maxskill": 120.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Water",
+        "qty": 1
+      },
+      {
+        "res": "Raw Fish Steaks",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "savage kin paint",
+    "hue": 0,
+    "type": 2540,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 55.0,
+        "maxskill": 105.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Flour",
+        "qty": 1
+      },
+      {
+        "res": "Tribal Berries",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "egg bomb",
+    "hue": 0,
+    "type": 10248,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 90.0,
+        "maxskill": 120.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Eggs",
+        "qty": 1
+      },
+      {
+        "res": "Flour",
+        "qty": 3
+      }
+    ]
+  },
+  {
+    "Name": "bread loaf",
+    "hue": 0,
+    "type": 4155,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Dough",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "pan of cookies",
+    "hue": 0,
+    "type": 5643,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cookie Mix",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "cake",
+    "hue": 0,
+    "type": 2537,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cake Mix",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "muffins",
+    "hue": 0,
+    "type": 2539,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Sweet Dough",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "baked quiche",
+    "hue": 0,
+    "type": 4161,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Uncooked Quiches",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "baked meat pie",
+    "hue": 0,
+    "type": 4161,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Uncooked Meat Pies",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "sausage pizza",
+    "hue": 0,
+    "type": 4160,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Uncooked Sausage Pizzas",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "cheese pizza",
+    "hue": 0,
+    "type": 4160,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Uncooked Cheese Pizzas",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "baked fruit pie",
+    "hue": 0,
+    "type": 4161,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Uncooked Fruit Pies",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "baked peach cobbler",
+    "hue": 0,
+    "type": 4161,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Uncooked Peach Cobblers",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "baked apple pie",
+    "hue": 0,
+    "type": 4161,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Uncooked Apple Pies",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "baked pumpkin pie",
+    "hue": 0,
+    "type": 4161,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Unbaked Pumpkin Pies",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "miso soup",
+    "hue": 0,
+    "type": 10317,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 60.0,
+        "maxskill": 110.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Raw Fish Steaks",
+        "qty": 1
+      },
+      {
+        "res": "Water",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "white miso soup",
+    "hue": 0,
+    "type": 10318,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 60.0,
+        "maxskill": 110.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Raw Fish Steaks",
+        "qty": 1
+      },
+      {
+        "res": "Water",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "red miso soup",
+    "hue": 0,
+    "type": 10319,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 60.0,
+        "maxskill": 110.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Raw Fish Steaks",
+        "qty": 1
+      },
+      {
+        "res": "Water",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "awase miso soup",
+    "hue": 0,
+    "type": 10320,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 60.0,
+        "maxskill": 110.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Raw Fish Steaks",
+        "qty": 1
+      },
+      {
+        "res": "Water",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "cooked bird",
+    "hue": 0,
+    "type": 2487,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Raw Birds",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "chicken leg",
+    "hue": 0,
+    "type": 5640,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Raw Chicken Legs",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "fish steak",
+    "hue": 0,
+    "type": 2427,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Raw Fish Steaks",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "fried eggs",
+    "hue": 0,
+    "type": 2486,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Eggs",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "leg of lamb",
+    "hue": 0,
+    "type": 5642,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Raw Legs of Lamb",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "cut of ribs",
+    "hue": 0,
+    "type": 2546,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 0.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Raw Ribs",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "dark chocolate",
+    "hue": 1125,
+    "type": 3856,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 15.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "sack of sugar",
+        "qty": 1
+      },
+      {
+        "res": "cocoa butter",
+        "qty": 1
+      },
+      {
+        "res": "cocoa liquor",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "milk chocolate",
+    "hue": 1121,
+    "type": 3864,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 32.5,
+        "maxskill": 107.5
+      }
+    ],
+    "resources": [
+      {
+        "res": "sack of sugar",
+        "qty": 1
+      },
+      {
+        "res": "cocoa butter",
+        "qty": 1
+      },
+      {
+        "res": "cocoa liquor",
+        "qty": 1
+      },
+      {
+        "res": "milk",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "white chocolate",
+    "hue": 1150,
+    "type": 3857,
+    "skills": [
+      {
+        "skill": "Cooking",
+        "minskill": 52.5,
+        "maxskill": 127.5
+      }
+    ],
+    "resources": [
+      {
+        "res": "sack of sugar",
+        "qty": 1
+      },
+      {
+        "res": "cocoa butter",
+        "qty": 1
+      },
+      {
+        "res": "vanilla",
+        "qty": 1
+      },
+      {
+        "res": "milk",
+        "qty": 1
+      }
+    ]
+  }
+]

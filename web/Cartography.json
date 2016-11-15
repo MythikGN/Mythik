@@ -1,0 +1,92 @@
+[
+  {
+    "Name": "local map",
+    "hue": 0,
+    "type": 5356,
+    "skills": [
+      {
+        "skill": "Cartography",
+        "minskill": 10.0,
+        "maxskill": 70.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blank Maps or Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "city map",
+    "hue": 0,
+    "type": 5356,
+    "skills": [
+      {
+        "skill": "Cartography",
+        "minskill": 25.0,
+        "maxskill": 85.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blank Maps or Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "sea chart",
+    "hue": 0,
+    "type": 5356,
+    "skills": [
+      {
+        "skill": "Cartography",
+        "minskill": 35.0,
+        "maxskill": 95.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blank Maps or Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "world map",
+    "hue": 0,
+    "type": 5356,
+    "skills": [
+      {
+        "skill": "Cartography",
+        "minskill": 39.5,
+        "maxskill": 99.5
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blank Maps or Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "weather map",
+    "hue": 0,
+    "type": 5356,
+    "skills": [
+      {
+        "skill": "Cartography",
+        "minskill": 79.5,
+        "maxskill": 99.5
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blank Maps or Scrolls",
+        "qty": 1
+      }
+    ]
+  }
+]

@@ -1,0 +1,982 @@
+[
+  {
+    "points": "10",
+    "material": "Iron",
+    "materialindex": "0",
+    "qty": "10",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "sturdy shovel",
+        "type": 3897
+      }
+    ]
+  },
+  {
+    "points": "210",
+    "material": "Iron",
+    "materialindex": "0",
+    "qty": "10",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "a gargoyle's pickaxe",
+        "type": 3718
+      },
+      {
+        "Name": "prospector's tool",
+        "type": 4020
+      },
+      {
+        "Name": "studded leather blacksmith gloves of mining",
+        "type": 5077
+      }
+    ]
+  },
+  {
+    "points": "210",
+    "material": "DullCopper",
+    "materialindex": "1",
+    "qty": "10",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "a gargoyle's pickaxe",
+        "type": 3718
+      },
+      {
+        "Name": "prospector's tool",
+        "type": 4020
+      },
+      {
+        "Name": "studded leather blacksmith gloves of mining",
+        "type": 5077
+      }
+    ]
+  },
+  {
+    "points": "410",
+    "material": "DullCopper",
+    "materialindex": "1",
+    "qty": "10",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "a gargoyle's pickaxe",
+        "type": 3718
+      },
+      {
+        "Name": "prospector's tool",
+        "type": 4020
+      },
+      {
+        "Name": "powder of fortifying",
+        "type": 4102
+      }
+    ]
+  },
+  {
+    "points": "260",
+    "material": "ShadowIron",
+    "materialindex": "2",
+    "qty": "10",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "a gargoyle's pickaxe",
+        "type": 3718
+      },
+      {
+        "Name": "prospector's tool",
+        "type": 4020
+      },
+      {
+        "Name": "studded leather blacksmith gloves of mining",
+        "type": 5077
+      }
+    ]
+  },
+  {
+    "points": "460",
+    "material": "ShadowIron",
+    "materialindex": "2",
+    "qty": "10",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "powder of fortifying",
+        "type": 4102
+      },
+      {
+        "Name": "ringmail blacksmith gloves of mining",
+        "type": 5099
+      }
+    ]
+  },
+  {
+    "points": "310",
+    "material": "Copper",
+    "materialindex": "3",
+    "qty": "10",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "a gargoyle's pickaxe",
+        "type": 3718
+      },
+      {
+        "Name": "prospector's tool",
+        "type": 4020
+      },
+      {
+        "Name": "studded leather blacksmith gloves of mining",
+        "type": 5077
+      }
+    ]
+  },
+  {
+    "points": "510",
+    "material": "Copper",
+    "materialindex": "3",
+    "qty": "10",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "dull copper runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "360",
+    "material": "Bronze",
+    "materialindex": "4",
+    "qty": "10",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "a gargoyle's pickaxe",
+        "type": 3718
+      },
+      {
+        "Name": "prospector's tool",
+        "type": 4020
+      },
+      {
+        "Name": "studded leather blacksmith gloves of mining",
+        "type": 5077
+      }
+    ]
+  },
+  {
+    "points": "560",
+    "material": "Bronze",
+    "materialindex": "4",
+    "qty": "10",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "dull copper runic hammer",
+        "type": 5091
+      },
+      {
+        "Name": "shadow runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "410",
+    "material": "Gold",
+    "materialindex": "5",
+    "qty": "10",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "a gargoyle's pickaxe",
+        "type": 3718
+      },
+      {
+        "Name": "prospector's tool",
+        "type": 4020
+      },
+      {
+        "Name": "powder of fortifying",
+        "type": 4102
+      }
+    ]
+  },
+  {
+    "points": "610",
+    "material": "Gold",
+    "materialindex": "5",
+    "qty": "10",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "shadow runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "460",
+    "material": "Agapite",
+    "materialindex": "6",
+    "qty": "10",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "powder of fortifying",
+        "type": 4102
+      },
+      {
+        "Name": "ringmail blacksmith gloves of mining",
+        "type": 5099
+      }
+    ]
+  },
+  {
+    "points": "660",
+    "material": "Agapite",
+    "materialindex": "6",
+    "qty": "10",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "copper runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "510",
+    "material": "Verite",
+    "materialindex": "7",
+    "qty": "10",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "dull copper runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "710",
+    "material": "Verite",
+    "materialindex": "7",
+    "qty": "10",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "bronze runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "560",
+    "material": "Valorite",
+    "materialindex": "8",
+    "qty": "10",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "dull copper runic hammer",
+        "type": 5091
+      },
+      {
+        "Name": "shadow runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "760",
+    "material": "Valorite",
+    "materialindex": "8",
+    "qty": "10",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "ancient smithy hammer",
+        "type": 5092
+      }
+    ]
+  },
+  {
+    "points": "25",
+    "material": "Iron",
+    "materialindex": "0",
+    "qty": "15",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "sturdy pickaxe",
+        "type": 3718
+      }
+    ]
+  },
+  {
+    "points": "225",
+    "material": "Iron",
+    "materialindex": "0",
+    "qty": "15",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "a gargoyle's pickaxe",
+        "type": 3718
+      },
+      {
+        "Name": "prospector's tool",
+        "type": 4020
+      },
+      {
+        "Name": "studded leather blacksmith gloves of mining",
+        "type": 5077
+      }
+    ]
+  },
+  {
+    "points": "225",
+    "material": "DullCopper",
+    "materialindex": "1",
+    "qty": "15",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "a gargoyle's pickaxe",
+        "type": 3718
+      },
+      {
+        "Name": "prospector's tool",
+        "type": 4020
+      },
+      {
+        "Name": "studded leather blacksmith gloves of mining",
+        "type": 5077
+      }
+    ]
+  },
+  {
+    "points": "425",
+    "material": "DullCopper",
+    "materialindex": "1",
+    "qty": "15",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "a gargoyle's pickaxe",
+        "type": 3718
+      },
+      {
+        "Name": "prospector's tool",
+        "type": 4020
+      },
+      {
+        "Name": "powder of fortifying",
+        "type": 4102
+      }
+    ]
+  },
+  {
+    "points": "275",
+    "material": "ShadowIron",
+    "materialindex": "2",
+    "qty": "15",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "a gargoyle's pickaxe",
+        "type": 3718
+      },
+      {
+        "Name": "prospector's tool",
+        "type": 4020
+      },
+      {
+        "Name": "studded leather blacksmith gloves of mining",
+        "type": 5077
+      }
+    ]
+  },
+  {
+    "points": "475",
+    "material": "ShadowIron",
+    "materialindex": "2",
+    "qty": "15",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "powder of fortifying",
+        "type": 4102
+      },
+      {
+        "Name": "ringmail blacksmith gloves of mining",
+        "type": 5099
+      }
+    ]
+  },
+  {
+    "points": "325",
+    "material": "Copper",
+    "materialindex": "3",
+    "qty": "15",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "a gargoyle's pickaxe",
+        "type": 3718
+      },
+      {
+        "Name": "prospector's tool",
+        "type": 4020
+      },
+      {
+        "Name": "studded leather blacksmith gloves of mining",
+        "type": 5077
+      }
+    ]
+  },
+  {
+    "points": "525",
+    "material": "Copper",
+    "materialindex": "3",
+    "qty": "15",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "dull copper runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "375",
+    "material": "Bronze",
+    "materialindex": "4",
+    "qty": "15",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "a gargoyle's pickaxe",
+        "type": 3718
+      },
+      {
+        "Name": "prospector's tool",
+        "type": 4020
+      },
+      {
+        "Name": "studded leather blacksmith gloves of mining",
+        "type": 5077
+      }
+    ]
+  },
+  {
+    "points": "575",
+    "material": "Bronze",
+    "materialindex": "4",
+    "qty": "15",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "dull copper runic hammer",
+        "type": 5091
+      },
+      {
+        "Name": "shadow runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "425",
+    "material": "Gold",
+    "materialindex": "5",
+    "qty": "15",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "a gargoyle's pickaxe",
+        "type": 3718
+      },
+      {
+        "Name": "prospector's tool",
+        "type": 4020
+      },
+      {
+        "Name": "powder of fortifying",
+        "type": 4102
+      }
+    ]
+  },
+  {
+    "points": "625",
+    "material": "Gold",
+    "materialindex": "5",
+    "qty": "15",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "shadow runic hammer",
+        "type": 5091
+      },
+      {
+        "Name": "a power scroll of blacksmithy (105 Skill)",
+        "type": 5360
+      },
+      {
+        "Name": "anvil",
+        "type": 4015
+      }
+    ]
+  },
+  {
+    "points": "475",
+    "material": "Agapite",
+    "materialindex": "6",
+    "qty": "15",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "powder of fortifying",
+        "type": 4102
+      },
+      {
+        "Name": "ringmail blacksmith gloves of mining",
+        "type": 5099
+      }
+    ]
+  },
+  {
+    "points": "675",
+    "material": "Agapite",
+    "materialindex": "6",
+    "qty": "15",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "anvil",
+        "type": 4015
+      },
+      {
+        "Name": "a power scroll of blacksmithy (110 Skill)",
+        "type": 5360
+      },
+      {
+        "Name": "copper runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "525",
+    "material": "Verite",
+    "materialindex": "7",
+    "qty": "15",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "dull copper runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "725",
+    "material": "Verite",
+    "materialindex": "7",
+    "qty": "15",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "bronze runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "575",
+    "material": "Valorite",
+    "materialindex": "8",
+    "qty": "15",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "dull copper runic hammer",
+        "type": 5091
+      },
+      {
+        "Name": "shadow runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "775",
+    "material": "Valorite",
+    "materialindex": "8",
+    "qty": "15",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "ancient smithy hammer",
+        "type": 5092
+      }
+    ]
+  },
+  {
+    "points": "50",
+    "material": "Iron",
+    "materialindex": "0",
+    "qty": "20",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "sturdy shovel",
+        "type": 3897
+      },
+      {
+        "Name": "sturdy pickaxe",
+        "type": 3718
+      },
+      {
+        "Name": "leather blacksmith gloves of mining",
+        "type": 5062
+      }
+    ]
+  },
+  {
+    "points": "250",
+    "material": "Iron",
+    "materialindex": "0",
+    "qty": "20",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "a gargoyle's pickaxe",
+        "type": 3718
+      },
+      {
+        "Name": "prospector's tool",
+        "type": 4020
+      },
+      {
+        "Name": "studded leather blacksmith gloves of mining",
+        "type": 5077
+      }
+    ]
+  },
+  {
+    "points": "250",
+    "material": "DullCopper",
+    "materialindex": "1",
+    "qty": "20",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "a gargoyle's pickaxe",
+        "type": 3718
+      },
+      {
+        "Name": "prospector's tool",
+        "type": 4020
+      },
+      {
+        "Name": "studded leather blacksmith gloves of mining",
+        "type": 5077
+      }
+    ]
+  },
+  {
+    "points": "450",
+    "material": "DullCopper",
+    "materialindex": "1",
+    "qty": "20",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "powder of fortifying",
+        "type": 4102
+      },
+      {
+        "Name": "ringmail blacksmith gloves of mining",
+        "type": 5099
+      }
+    ]
+  },
+  {
+    "points": "300",
+    "material": "ShadowIron",
+    "materialindex": "2",
+    "qty": "20",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "a gargoyle's pickaxe",
+        "type": 3718
+      },
+      {
+        "Name": "prospector's tool",
+        "type": 4020
+      },
+      {
+        "Name": "studded leather blacksmith gloves of mining",
+        "type": 5077
+      }
+    ]
+  },
+  {
+    "points": "500",
+    "material": "ShadowIron",
+    "materialindex": "2",
+    "qty": "20",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "dull copper runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "350",
+    "material": "Copper",
+    "materialindex": "3",
+    "qty": "20",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "a gargoyle's pickaxe",
+        "type": 3718
+      },
+      {
+        "Name": "prospector's tool",
+        "type": 4020
+      },
+      {
+        "Name": "studded leather blacksmith gloves of mining",
+        "type": 5077
+      }
+    ]
+  },
+  {
+    "points": "550",
+    "material": "Copper",
+    "materialindex": "3",
+    "qty": "20",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "dull copper runic hammer",
+        "type": 5091
+      },
+      {
+        "Name": "shadow runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "400",
+    "material": "Bronze",
+    "materialindex": "4",
+    "qty": "20",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "a gargoyle's pickaxe",
+        "type": 3718
+      },
+      {
+        "Name": "prospector's tool",
+        "type": 4020
+      },
+      {
+        "Name": "powder of fortifying",
+        "type": 4102
+      }
+    ]
+  },
+  {
+    "points": "600",
+    "material": "Bronze",
+    "materialindex": "4",
+    "qty": "20",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "shadow runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "450",
+    "material": "Gold",
+    "materialindex": "5",
+    "qty": "20",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "powder of fortifying",
+        "type": 4102
+      },
+      {
+        "Name": "ringmail blacksmith gloves of mining",
+        "type": 5099
+      }
+    ]
+  },
+  {
+    "points": "650",
+    "material": "Gold",
+    "materialindex": "5",
+    "qty": "20",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "copper runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "500",
+    "material": "Agapite",
+    "materialindex": "6",
+    "qty": "20",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "dull copper runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "700",
+    "material": "Agapite",
+    "materialindex": "6",
+    "qty": "20",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "bronze runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "550",
+    "material": "Verite",
+    "materialindex": "7",
+    "qty": "20",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "dull copper runic hammer",
+        "type": 5091
+      },
+      {
+        "Name": "shadow runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "750",
+    "material": "Verite",
+    "materialindex": "7",
+    "qty": "20",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "ancient smithy hammer",
+        "type": 5092
+      }
+    ]
+  },
+  {
+    "points": "600",
+    "material": "Valorite",
+    "materialindex": "8",
+    "qty": "20",
+    "bodtype": "Armor",
+    "excep": false,
+    "rewards": [
+      {
+        "Name": "shadow runic hammer",
+        "type": 5091
+      }
+    ]
+  },
+  {
+    "points": "800",
+    "material": "Valorite",
+    "materialindex": "8",
+    "qty": "20",
+    "bodtype": "Armor",
+    "excep": true,
+    "rewards": [
+      {
+        "Name": "a power scroll of blacksmithy (115 Skill)",
+        "type": 5360
+      }
+    ]
+  }
+]

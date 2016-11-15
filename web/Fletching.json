@@ -1,0 +1,208 @@
+[
+  {
+    "Name": "kindling",
+    "hue": 0,
+    "type": 3553,
+    "skills": [
+      {
+        "skill": "Fletching",
+        "minskill": 0.0,
+        "maxskill": 0.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "shaft",
+    "hue": 0,
+    "type": 7124,
+    "skills": [
+      {
+        "skill": "Fletching",
+        "minskill": 0.0,
+        "maxskill": 40.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "arrow",
+    "hue": 0,
+    "type": 3903,
+    "skills": [
+      {
+        "skill": "Fletching",
+        "minskill": 0.0,
+        "maxskill": 40.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Arrow Shafts",
+        "qty": 1
+      },
+      {
+        "res": "Feathers",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "crossbow bolt",
+    "hue": 0,
+    "type": 7163,
+    "skills": [
+      {
+        "skill": "Fletching",
+        "minskill": 0.0,
+        "maxskill": 40.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Arrow Shafts",
+        "qty": 1
+      },
+      {
+        "res": "Feathers",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "fukiya dart",
+    "hue": 0,
+    "type": 10246,
+    "skills": [
+      {
+        "skill": "Fletching",
+        "minskill": 50.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "bow",
+    "hue": 0,
+    "type": 5042,
+    "skills": [
+      {
+        "skill": "Fletching",
+        "minskill": 30.0,
+        "maxskill": 70.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 7
+      }
+    ]
+  },
+  {
+    "Name": "crossbow",
+    "hue": 0,
+    "type": 3920,
+    "skills": [
+      {
+        "skill": "Fletching",
+        "minskill": 60.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 7
+      }
+    ]
+  },
+  {
+    "Name": "heavy crossbow",
+    "hue": 0,
+    "type": 5117,
+    "skills": [
+      {
+        "skill": "Fletching",
+        "minskill": 80.0,
+        "maxskill": 120.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "composite bow",
+    "hue": 0,
+    "type": 9922,
+    "skills": [
+      {
+        "skill": "Fletching",
+        "minskill": 70.0,
+        "maxskill": 110.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 7
+      }
+    ]
+  },
+  {
+    "Name": "repeating crossbow",
+    "hue": 0,
+    "type": 9923,
+    "skills": [
+      {
+        "skill": "Fletching",
+        "minskill": 90.0,
+        "maxskill": 130.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "yumi",
+    "hue": 0,
+    "type": 10149,
+    "skills": [
+      {
+        "skill": "Fletching",
+        "minskill": 90.0,
+        "maxskill": 130.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 10
+      }
+    ]
+  }
+]

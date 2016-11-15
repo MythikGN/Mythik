@@ -1,0 +1,1680 @@
+[
+  {
+    "Name": "skullcap",
+    "hue": 0,
+    "type": 5444,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 0.0,
+        "maxskill": 25.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "bandana",
+    "hue": 0,
+    "type": 5440,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 0.0,
+        "maxskill": 25.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "floppy hat",
+    "hue": 0,
+    "type": 5907,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 6.2,
+        "maxskill": 31.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 11
+      }
+    ]
+  },
+  {
+    "Name": "cap",
+    "hue": 0,
+    "type": 5909,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 6.2,
+        "maxskill": 31.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 11
+      }
+    ]
+  },
+  {
+    "Name": "wide-brim hat",
+    "hue": 0,
+    "type": 5908,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 6.2,
+        "maxskill": 31.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 12
+      }
+    ]
+  },
+  {
+    "Name": "straw hat",
+    "hue": 0,
+    "type": 5911,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 6.2,
+        "maxskill": 31.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "tall straw hat",
+    "hue": 0,
+    "type": 5910,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 6.7,
+        "maxskill": 31.7
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 13
+      }
+    ]
+  },
+  {
+    "Name": "wizard's hat",
+    "hue": 0,
+    "type": 5912,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 7.2,
+        "maxskill": 32.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 15
+      }
+    ]
+  },
+  {
+    "Name": "bonnet",
+    "hue": 0,
+    "type": 5913,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 6.2,
+        "maxskill": 31.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 11
+      }
+    ]
+  },
+  {
+    "Name": "feathered hat",
+    "hue": 0,
+    "type": 5914,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 6.2,
+        "maxskill": 31.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 12
+      }
+    ]
+  },
+  {
+    "Name": "tricorne hat",
+    "hue": 0,
+    "type": 5915,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 6.2,
+        "maxskill": 31.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 12
+      }
+    ]
+  },
+  {
+    "Name": "jester hat",
+    "hue": 0,
+    "type": 5916,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 7.2,
+        "maxskill": 32.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 15
+      }
+    ]
+  },
+  {
+    "Name": "doublet",
+    "hue": 0,
+    "type": 8059,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 0.0,
+        "maxskill": 25.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "shirt",
+    "hue": 0,
+    "type": 5399,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 20.7,
+        "maxskill": 45.7
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "fancy shirt",
+    "hue": 0,
+    "type": 7933,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 24.8,
+        "maxskill": 49.8
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "tunic",
+    "hue": 0,
+    "type": 8097,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 0.0,
+        "maxskill": 25.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 12
+      }
+    ]
+  },
+  {
+    "Name": "surcoat",
+    "hue": 0,
+    "type": 8189,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 8.2,
+        "maxskill": 33.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 14
+      }
+    ]
+  },
+  {
+    "Name": "plain dress",
+    "hue": 0,
+    "type": 7937,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 12.4,
+        "maxskill": 37.4
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "fancy dress",
+    "hue": 0,
+    "type": 7936,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 33.1,
+        "maxskill": 58.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 12
+      }
+    ]
+  },
+  {
+    "Name": "cloak",
+    "hue": 0,
+    "type": 5397,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 41.4,
+        "maxskill": 66.4
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 14
+      }
+    ]
+  },
+  {
+    "Name": "robe",
+    "hue": 0,
+    "type": 7939,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 53.9,
+        "maxskill": 78.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 16
+      }
+    ]
+  },
+  {
+    "Name": "jester suit",
+    "hue": 0,
+    "type": 8095,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 8.2,
+        "maxskill": 33.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 24
+      }
+    ]
+  },
+  {
+    "Name": "short pants",
+    "hue": 0,
+    "type": 5422,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 24.8,
+        "maxskill": 49.8
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 6
+      }
+    ]
+  },
+  {
+    "Name": "long pants",
+    "hue": 0,
+    "type": 5433,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 24.8,
+        "maxskill": 49.8
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "kilt",
+    "hue": 0,
+    "type": 5431,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 20.7,
+        "maxskill": 45.7
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "skirt",
+    "hue": 0,
+    "type": 5398,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 29.0,
+        "maxskill": 54.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "body sash",
+    "hue": 0,
+    "type": 5441,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 4.1,
+        "maxskill": 29.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "half apron",
+    "hue": 0,
+    "type": 5435,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 20.7,
+        "maxskill": 45.7
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 6
+      }
+    ]
+  },
+  {
+    "Name": "full apron",
+    "hue": 0,
+    "type": 5437,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 29.0,
+        "maxskill": 54.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "elven quiver",
+    "hue": 0,
+    "type": 12215,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 65.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 28
+      }
+    ]
+  },
+  {
+    "Name": "quiver of fire",
+    "hue": 0,
+    "type": 12215,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 65.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 28
+      },
+      {
+        "res": "Fire Ruby",
+        "qty": 15
+      }
+    ]
+  },
+  {
+    "Name": "quiver of ice",
+    "hue": 0,
+    "type": 12215,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 65.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 28
+      },
+      {
+        "res": "White Pearl",
+        "qty": 15
+      }
+    ]
+  },
+  {
+    "Name": "Quiver of Blight",
+    "hue": 0,
+    "type": 12215,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 65.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 28
+      },
+      {
+        "res": "Blight",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "Quiver of Lightning",
+    "hue": 0,
+    "type": 12215,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 65.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 28
+      },
+      {
+        "res": "Corruption",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "oil cloth",
+    "hue": 0,
+    "type": 5981,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 74.6,
+        "maxskill": 99.6
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "goza (east)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 55.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "goza (south)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 55.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "square goza (east)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 55.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "square goza (south)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 55.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "brocade goza (east)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 55.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "brocade goza (south)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 55.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "square brocade goza (east)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 55.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "square brocade goza (south)",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 55.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Cloth",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "sandals",
+    "hue": 0,
+    "type": 5901,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 12.4,
+        "maxskill": 37.4
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "shoes",
+    "hue": 0,
+    "type": 5903,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 16.5,
+        "maxskill": 41.5
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 6
+      }
+    ]
+  },
+  {
+    "Name": "boots",
+    "hue": 0,
+    "type": 5899,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 33.1,
+        "maxskill": 58.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "thigh boots",
+    "hue": 0,
+    "type": 5905,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 41.4,
+        "maxskill": 66.4
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "leather gorget",
+    "hue": 0,
+    "type": 5063,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 53.9,
+        "maxskill": 78.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "leather cap",
+    "hue": 0,
+    "type": 7609,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 6.2,
+        "maxskill": 31.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "leather gloves",
+    "hue": 0,
+    "type": 5062,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 51.8,
+        "maxskill": 76.8
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 3
+      }
+    ]
+  },
+  {
+    "Name": "leather sleeves",
+    "hue": 0,
+    "type": 5069,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 53.9,
+        "maxskill": 78.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "leather leggings",
+    "hue": 0,
+    "type": 5067,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 66.3,
+        "maxskill": 91.3
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "leather tunic",
+    "hue": 0,
+    "type": 5068,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 70.5,
+        "maxskill": 95.5
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 12
+      }
+    ]
+  },
+  {
+    "Name": "studded gorget",
+    "hue": 0,
+    "type": 5078,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 78.8,
+        "maxskill": 103.8
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 6
+      }
+    ]
+  },
+  {
+    "Name": "studded gloves",
+    "hue": 0,
+    "type": 5077,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 82.9,
+        "maxskill": 107.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "studded sleeves",
+    "hue": 0,
+    "type": 5084,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 87.1,
+        "maxskill": 112.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "studded leggings",
+    "hue": 0,
+    "type": 5082,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 91.2,
+        "maxskill": 116.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 12
+      }
+    ]
+  },
+  {
+    "Name": "studded tunic",
+    "hue": 0,
+    "type": 5083,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 94.0,
+        "maxskill": 119.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 14
+      }
+    ]
+  },
+  {
+    "Name": "leather shorts",
+    "hue": 0,
+    "type": 7168,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 62.2,
+        "maxskill": 87.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "leather skirt",
+    "hue": 0,
+    "type": 7176,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 58.0,
+        "maxskill": 83.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 6
+      }
+    ]
+  },
+  {
+    "Name": "leather bustier",
+    "hue": 0,
+    "type": 7178,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 58.0,
+        "maxskill": 83.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 6
+      }
+    ]
+  },
+  {
+    "Name": "studded bustier",
+    "hue": 0,
+    "type": 7180,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 82.9,
+        "maxskill": 107.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "female leather armor",
+    "hue": 0,
+    "type": 7174,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 62.2,
+        "maxskill": 87.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "studded armor",
+    "hue": 0,
+    "type": 7170,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 87.1,
+        "maxskill": 112.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "bone helmet",
+    "hue": 0,
+    "type": 5201,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 85.0,
+        "maxskill": 110.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 4
+      },
+      {
+        "res": "Bones",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "bone gloves",
+    "hue": 0,
+    "type": 5200,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 89.0,
+        "maxskill": 114.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 6
+      },
+      {
+        "res": "Bones",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "bone arms",
+    "hue": 0,
+    "type": 5198,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 92.0,
+        "maxskill": 117.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 8
+      },
+      {
+        "res": "Bones",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "bone leggings",
+    "hue": 0,
+    "type": 5202,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 95.0,
+        "maxskill": 120.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 10
+      },
+      {
+        "res": "Bones",
+        "qty": 6
+      }
+    ]
+  },
+  {
+    "Name": "bone armor",
+    "hue": 0,
+    "type": 5199,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 96.0,
+        "maxskill": 121.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 12
+      },
+      {
+        "res": "Bones",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "orc helm",
+    "hue": 0,
+    "type": 7947,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 90.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Leather or Hides",
+        "qty": 6
+      },
+      {
+        "res": "Bones",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "Pearl Leather Helm",
+    "hue": 0,
+    "type": 7609,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Tinkering",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "white pearl",
+        "qty": 240
+      },
+      {
+        "res": "Leather or Hides",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Pearl Leather Gorgot",
+    "hue": 0,
+    "type": 5063,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Tinkering",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "white pearl",
+        "qty": 160
+      },
+      {
+        "res": "Leather or Hides",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "Pearl Leather Chest",
+    "hue": 0,
+    "type": 5068,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 105.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Tinkering",
+        "minskill": 105.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "white pearl",
+        "qty": 400
+      },
+      {
+        "res": "Leather or Hides",
+        "qty": 50
+      }
+    ]
+  },
+  {
+    "Name": "Pearl Leather Arms",
+    "hue": 0,
+    "type": 5069,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Tinkering",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "white pearl",
+        "qty": 288
+      },
+      {
+        "res": "Leather or Hides",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "Pearl Leather Gloves",
+    "hue": 0,
+    "type": 5062,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Tinkering",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "white pearl",
+        "qty": 192
+      },
+      {
+        "res": "Leather or Hides",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Pearl Leather Legs",
+    "hue": 0,
+    "type": 5067,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 103.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Tinkering",
+        "minskill": 103.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "white pearl",
+        "qty": 320
+      },
+      {
+        "res": "Leather or Hides",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Pearl Heater Shield",
+    "hue": 0,
+    "type": 7030,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 104.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Tinkering",
+        "minskill": 104.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "white pearl",
+        "qty": 288
+      },
+      {
+        "res": "Ingots",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "Turquoise Leather Helm",
+    "hue": 0,
+    "type": 7609,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Tinkering",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "white pearl",
+        "qty": 240
+      },
+      {
+        "res": "Leather or Hides",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Turquoise Leather Gorgot",
+    "hue": 0,
+    "type": 5063,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Tinkering",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "white pearl",
+        "qty": 160
+      },
+      {
+        "res": "Leather or Hides",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "Turquoise Leather Chest",
+    "hue": 0,
+    "type": 5068,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 105.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Tinkering",
+        "minskill": 105.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "white pearl",
+        "qty": 400
+      },
+      {
+        "res": "Leather or Hides",
+        "qty": 50
+      }
+    ]
+  },
+  {
+    "Name": "Turquoise Leather Arms",
+    "hue": 0,
+    "type": 5069,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Tinkering",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "white pearl",
+        "qty": 288
+      },
+      {
+        "res": "Leather or Hides",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "Turquoise Leather Gloves",
+    "hue": 0,
+    "type": 5062,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Tinkering",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "white pearl",
+        "qty": 192
+      },
+      {
+        "res": "Leather or Hides",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Turquoise Leather Legs",
+    "hue": 0,
+    "type": 5067,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 103.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Tinkering",
+        "minskill": 103.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "white pearl",
+        "qty": 320
+      },
+      {
+        "res": "Leather or Hides",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Turquoise Heater Shield",
+    "hue": 0,
+    "type": 7030,
+    "skills": [
+      {
+        "skill": "Tailoring",
+        "minskill": 104.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Tinkering",
+        "minskill": 104.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "white pearl",
+        "qty": 288
+      },
+      {
+        "res": "Ingots",
+        "qty": 40
+      }
+    ]
+  }
+]

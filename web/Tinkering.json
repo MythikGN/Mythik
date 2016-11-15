@@ -1,0 +1,4436 @@
+[
+  {
+    "Name": "jointing plane",
+    "hue": 0,
+    "type": 4144,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 0.0,
+        "maxskill": 50.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "moulding planes",
+    "hue": 0,
+    "type": 4140,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 0.0,
+        "maxskill": 50.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "smoothing plane",
+    "hue": 0,
+    "type": 4146,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 0.0,
+        "maxskill": 50.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "clock frame",
+    "hue": 0,
+    "type": 4173,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 0.0,
+        "maxskill": 50.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 6
+      }
+    ]
+  },
+  {
+    "Name": "axle",
+    "hue": 0,
+    "type": 4187,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": -25.0,
+        "maxskill": 25.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "rolling pin",
+    "hue": 0,
+    "type": 4163,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 0.0,
+        "maxskill": 50.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 5
+      }
+    ]
+  },
+  {
+    "Name": "scissors",
+    "hue": 0,
+    "type": 3999,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 5.0,
+        "maxskill": 55.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "mortar and pestle",
+    "hue": 0,
+    "type": 3739,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 20.0,
+        "maxskill": 70.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 3
+      }
+    ]
+  },
+  {
+    "Name": "scorp",
+    "hue": 0,
+    "type": 4327,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 30.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "tinker's tools",
+    "hue": 0,
+    "type": 7864,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 10.0,
+        "maxskill": 60.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "hatchet",
+    "hue": 0,
+    "type": 3907,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 30.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "draw knife",
+    "hue": 0,
+    "type": 4324,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 30.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "sewing kit",
+    "hue": 0,
+    "type": 3997,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 10.0,
+        "maxskill": 70.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "saw",
+    "hue": 0,
+    "type": 4148,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 30.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "dovetail saw",
+    "hue": 0,
+    "type": 4136,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 30.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "froe",
+    "hue": 0,
+    "type": 4325,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 30.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "shovel",
+    "hue": 0,
+    "type": 3897,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "hammer",
+    "hue": 0,
+    "type": 4138,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 30.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "tongs",
+    "hue": 0,
+    "type": 4027,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 35.0,
+        "maxskill": 85.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "smith's hammer",
+    "hue": 0,
+    "type": 5091,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "sledge hammer",
+    "hue": 0,
+    "type": 4021,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "inshave",
+    "hue": 0,
+    "type": 4326,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 30.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "pickaxe",
+    "hue": 0,
+    "type": 3718,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "lockpick",
+    "hue": 0,
+    "type": 5372,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 45.0,
+        "maxskill": 95.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "skillet",
+    "hue": 0,
+    "type": 2431,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 30.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "flour sifter",
+    "hue": 0,
+    "type": 4158,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 50.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 3
+      }
+    ]
+  },
+  {
+    "Name": "fletcher's tools",
+    "hue": 0,
+    "type": 4130,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 35.0,
+        "maxskill": 85.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 3
+      }
+    ]
+  },
+  {
+    "Name": "mapmaker's pen",
+    "hue": 0,
+    "type": 4031,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 25.0,
+        "maxskill": 75.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "scribe's pen",
+    "hue": 0,
+    "type": 4031,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 25.0,
+        "maxskill": 75.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "gears",
+    "hue": 0,
+    "type": 4179,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 5.0,
+        "maxskill": 55.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "clock parts",
+    "hue": 0,
+    "type": 4175,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 25.0,
+        "maxskill": 75.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "barrel tap",
+    "hue": 0,
+    "type": 4100,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 35.0,
+        "maxskill": 85.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "springs",
+    "hue": 0,
+    "type": 4189,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 5.0,
+        "maxskill": 55.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "sextant parts",
+    "hue": 0,
+    "type": 4185,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 30.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "barrel hoops",
+    "hue": 0,
+    "type": 7607,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": -15.0,
+        "maxskill": 35.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 5
+      }
+    ]
+  },
+  {
+    "Name": "hinge",
+    "hue": 0,
+    "type": 4181,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 5.0,
+        "maxskill": 55.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "bola balls",
+    "hue": 0,
+    "type": 3699,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 45.0,
+        "maxskill": 95.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "butcher knife",
+    "hue": 0,
+    "type": 5110,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 25.0,
+        "maxskill": 75.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "spoon (left)",
+    "hue": 0,
+    "type": 2552,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 0.0,
+        "maxskill": 50.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "spoon (right)",
+    "hue": 0,
+    "type": 2553,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 0.0,
+        "maxskill": 50.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "plate",
+    "hue": 0,
+    "type": 2519,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 0.0,
+        "maxskill": 50.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "fork (left)",
+    "hue": 0,
+    "type": 2548,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 0.0,
+        "maxskill": 50.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "fork (right)",
+    "hue": 0,
+    "type": 2549,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 0.0,
+        "maxskill": 50.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "cleaver",
+    "hue": 0,
+    "type": 3779,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 20.0,
+        "maxskill": 70.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 3
+      }
+    ]
+  },
+  {
+    "Name": "knife (left)",
+    "hue": 0,
+    "type": 2550,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 0.0,
+        "maxskill": 50.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "knife (right)",
+    "hue": 0,
+    "type": 2551,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 0.0,
+        "maxskill": 50.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "goblet",
+    "hue": 0,
+    "type": 2458,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 10.0,
+        "maxskill": 60.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "pewter mug",
+    "hue": 0,
+    "type": 4095,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 10.0,
+        "maxskill": 60.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "skinning knife",
+    "hue": 0,
+    "type": 3780,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 25.0,
+        "maxskill": 75.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "key ring",
+    "hue": 0,
+    "type": 4113,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 10.0,
+        "maxskill": 60.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "candelabra",
+    "hue": 0,
+    "type": 2599,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 55.0,
+        "maxskill": 105.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "scales",
+    "hue": 0,
+    "type": 6226,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 60.0,
+        "maxskill": 110.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "iron key",
+    "hue": 0,
+    "type": 4112,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 20.0,
+        "maxskill": 70.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 3
+      }
+    ]
+  },
+  {
+    "Name": "globe",
+    "hue": 0,
+    "type": 4167,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 55.0,
+        "maxskill": 105.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "spyglass",
+    "hue": 0,
+    "type": 5365,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 60.0,
+        "maxskill": 110.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "lantern",
+    "hue": 0,
+    "type": 2597,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 30.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      }
+    ]
+  },
+  {
+    "Name": "heating stand",
+    "hue": 0,
+    "type": 6217,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 60.0,
+        "maxskill": 110.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 4
+      }
+    ]
+  },
+  {
+    "Name": "shoji lantern",
+    "hue": 0,
+    "type": 9404,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 65.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 10
+      },
+      {
+        "res": "Boards or Logs",
+        "qty": 5
+      }
+    ]
+  },
+  {
+    "Name": "paper lantern",
+    "hue": 0,
+    "type": 9406,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 65.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 10
+      },
+      {
+        "res": "Boards or Logs",
+        "qty": 5
+      }
+    ]
+  },
+  {
+    "Name": "round paper lantern",
+    "hue": 0,
+    "type": 9418,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 65.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 10
+      },
+      {
+        "res": "Boards or Logs",
+        "qty": 5
+      }
+    ]
+  },
+  {
+    "Name": "wind chimes",
+    "hue": 0,
+    "type": 10290,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 80.0,
+        "maxskill": 130.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 15
+      }
+    ]
+  },
+  {
+    "Name": "fancy wind chimes",
+    "hue": 0,
+    "type": 10291,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 80.0,
+        "maxskill": 130.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 15
+      }
+    ]
+  },
+  {
+    "Name": "star sapphire ring",
+    "hue": 0,
+    "type": 4234,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Star Sapphires",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "star sapphire necklace (silver)",
+    "hue": 0,
+    "type": 7941,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Star Sapphires",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "star sapphire necklace (jewelled)",
+    "hue": 0,
+    "type": 4232,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Star Sapphires",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "star sapphire earrings",
+    "hue": 0,
+    "type": 4231,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Star Sapphires",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "star sapphire necklace (golden)",
+    "hue": 0,
+    "type": 4233,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Star Sapphires",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "star sapphire bracelet",
+    "hue": 0,
+    "type": 4230,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Star Sapphires",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "emerald ring",
+    "hue": 0,
+    "type": 4234,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Emeralds",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "emerald necklace (silver)",
+    "hue": 0,
+    "type": 7941,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Emeralds",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "emerald necklace (jewelled)",
+    "hue": 0,
+    "type": 4232,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Emeralds",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "emerald earrings",
+    "hue": 0,
+    "type": 4231,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Emeralds",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "emerald necklace (golden)",
+    "hue": 0,
+    "type": 4233,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Emeralds",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "emerald bracelet",
+    "hue": 0,
+    "type": 4230,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Emeralds",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "sapphire ring",
+    "hue": 0,
+    "type": 4234,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Sapphires",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "sapphire necklace (silver)",
+    "hue": 0,
+    "type": 7941,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Sapphires",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "sapphire necklace (jewelled)",
+    "hue": 0,
+    "type": 4232,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Sapphires",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "sapphire earrings",
+    "hue": 0,
+    "type": 4231,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Sapphires",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "sapphire necklace (golden)",
+    "hue": 0,
+    "type": 4233,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Sapphires",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "sapphire bracelet",
+    "hue": 0,
+    "type": 4230,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Sapphires",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "ruby ring",
+    "hue": 0,
+    "type": 4234,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Rubies",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "ruby necklace (silver)",
+    "hue": 0,
+    "type": 7941,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Rubies",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "ruby necklace (jewelled)",
+    "hue": 0,
+    "type": 4232,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Rubies",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "ruby earrings",
+    "hue": 0,
+    "type": 4231,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Rubies",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "ruby necklace (golden)",
+    "hue": 0,
+    "type": 4233,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Rubies",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "ruby bracelet",
+    "hue": 0,
+    "type": 4230,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Rubies",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "citrine ring",
+    "hue": 0,
+    "type": 4234,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Citrines",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "citrine necklace (silver)",
+    "hue": 0,
+    "type": 7941,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Citrines",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "citrine necklace (jewelled)",
+    "hue": 0,
+    "type": 4232,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Citrines",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "citrine earrings",
+    "hue": 0,
+    "type": 4231,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Citrines",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "citrine necklace (golden)",
+    "hue": 0,
+    "type": 4233,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Citrines",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "citrine bracelet",
+    "hue": 0,
+    "type": 4230,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Citrines",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "amethyst ring",
+    "hue": 0,
+    "type": 4234,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Amethysts",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "amethyst necklace (silver)",
+    "hue": 0,
+    "type": 7941,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Amethysts",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "amethyst necklace (jewelled)",
+    "hue": 0,
+    "type": 4232,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Amethysts",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "amethyst earrings",
+    "hue": 0,
+    "type": 4231,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Amethysts",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "amethyst necklace (golden)",
+    "hue": 0,
+    "type": 4233,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Amethysts",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "amethyst bracelet",
+    "hue": 0,
+    "type": 4230,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Amethysts",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "tourmaline ring",
+    "hue": 0,
+    "type": 4234,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Tourmalines",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "tourmaline necklace (silver)",
+    "hue": 0,
+    "type": 7941,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Tourmalines",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "tourmaline necklace (jewelled)",
+    "hue": 0,
+    "type": 4232,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Tourmalines",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "tourmaline earrings",
+    "hue": 0,
+    "type": 4231,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Tourmalines",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "tourmaline necklace (golden)",
+    "hue": 0,
+    "type": 4233,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Tourmalines",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "tourmaline bracelet",
+    "hue": 0,
+    "type": 4230,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Tourmalines",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "amber ring",
+    "hue": 0,
+    "type": 4234,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Amber",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "amber necklace (silver)",
+    "hue": 0,
+    "type": 7941,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Amber",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "amber necklace (jewelled)",
+    "hue": 0,
+    "type": 4232,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Amber",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "amber earrings",
+    "hue": 0,
+    "type": 4231,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Amber",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "amber necklace (golden)",
+    "hue": 0,
+    "type": 4233,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Amber",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "amber bracelet",
+    "hue": 0,
+    "type": 4230,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Amber",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "diamond ring",
+    "hue": 0,
+    "type": 4234,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Diamonds",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "diamond necklace (silver)",
+    "hue": 0,
+    "type": 7941,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Diamonds",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "diamond necklace (jewelled)",
+    "hue": 0,
+    "type": 4232,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Diamonds",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "diamond earrings",
+    "hue": 0,
+    "type": 4231,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Diamonds",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "diamond necklace (golden)",
+    "hue": 0,
+    "type": 4233,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Diamonds",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "diamond bracelet",
+    "hue": 0,
+    "type": 4230,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 2
+      },
+      {
+        "res": "Diamonds",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "axle with gears",
+    "hue": 0,
+    "type": 4177,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 0.0,
+        "maxskill": 0.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Axles",
+        "qty": 1
+      },
+      {
+        "res": "Gears",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "clock parts",
+    "hue": 0,
+    "type": 4175,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 0.0,
+        "maxskill": 0.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Axles with Gears",
+        "qty": 1
+      },
+      {
+        "res": "Springs",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "sextant parts",
+    "hue": 0,
+    "type": 4185,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 0.0,
+        "maxskill": 0.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Axles with Gears",
+        "qty": 1
+      },
+      {
+        "res": "Hinges",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "clock (right)",
+    "hue": 0,
+    "type": 4171,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 0.0,
+        "maxskill": 0.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Clock Frames",
+        "qty": 1
+      },
+      {
+        "res": "Clock Parts",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "clock (left)",
+    "hue": 0,
+    "type": 4172,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 0.0,
+        "maxskill": 0.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Clock Frames",
+        "qty": 1
+      },
+      {
+        "res": "Clock Parts",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "sextant",
+    "hue": 0,
+    "type": 4184,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 0.0,
+        "maxskill": 0.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Sextant Parts",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "bola",
+    "hue": 0,
+    "type": 9900,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 60.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Bola Balls",
+        "qty": 4
+      },
+      {
+        "res": "Leather or Hides",
+        "qty": 3
+      }
+    ]
+  },
+  {
+    "Name": "potion keg",
+    "hue": 0,
+    "type": 6464,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 75.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Empty Kegs",
+        "qty": 1
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 10
+      },
+      {
+        "res": "Barrel Lids",
+        "qty": 1
+      },
+      {
+        "res": "Keg Taps",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "dart trap",
+    "hue": 0,
+    "type": 7164,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 30.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 1
+      },
+      {
+        "res": "Crossbow Bolts",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "poison trap",
+    "hue": 0,
+    "type": 4414,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 30.0,
+        "maxskill": 80.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 1
+      },
+      {
+        "res": "Green Potions",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "explosion trap",
+    "hue": 0,
+    "type": 14092,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 55.0,
+        "maxskill": 105.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 1
+      },
+      {
+        "res": "Purple Potions",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "faction gas trap",
+    "hue": 0,
+    "type": 4523,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 65.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Faction Silver",
+        "qty": 250
+      },
+      {
+        "res": "Ingots",
+        "qty": 10
+      },
+      {
+        "res": "Green Potions",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "faction explosion trap",
+    "hue": 0,
+    "type": 14034,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 65.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Faction Silver",
+        "qty": 250
+      },
+      {
+        "res": "Ingots",
+        "qty": 10
+      },
+      {
+        "res": "Purple Potions",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "faction saw trap",
+    "hue": 0,
+    "type": 4359,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 65.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Faction Silver",
+        "qty": 250
+      },
+      {
+        "res": "Ingots",
+        "qty": 10
+      },
+      {
+        "res": "Gears",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "faction spike trap",
+    "hue": 0,
+    "type": 4517,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 65.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Faction Silver",
+        "qty": 250
+      },
+      {
+        "res": "Ingots",
+        "qty": 10
+      },
+      {
+        "res": "Springs",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "faction trap removal kit",
+    "hue": 0,
+    "type": 7867,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 90.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Faction Silver",
+        "qty": 500
+      },
+      {
+        "res": "Ingots",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "Tourmaline Plate Helm",
+    "hue": 1162,
+    "type": 5138,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Tourmalines",
+        "qty": 240
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Tourmaline Plate Gorgot",
+    "hue": 1162,
+    "type": 5139,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Tourmalines",
+        "qty": 160
+      },
+      {
+        "res": "Ingots",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "Tourmaline Plate Chest",
+    "hue": 1162,
+    "type": 5141,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 105.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 105.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Tourmalines",
+        "qty": 400
+      },
+      {
+        "res": "Ingots",
+        "qty": 50
+      }
+    ]
+  },
+  {
+    "Name": "Tourmaline Plate Arms",
+    "hue": 1162,
+    "type": 5136,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Tourmalines",
+        "qty": 288
+      },
+      {
+        "res": "Ingots",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "Tourmaline Plate Gloves",
+    "hue": 1162,
+    "type": 5140,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 101.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Tourmalines",
+        "qty": 192
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Tourmaline Plate Legs",
+    "hue": 1162,
+    "type": 5137,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 103.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 103.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Tourmalines",
+        "qty": 320
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Tourmaline Heater Shield",
+    "hue": 1162,
+    "type": 7030,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 104.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 104.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Tourmalines",
+        "qty": 288
+      },
+      {
+        "res": "Ingots",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "Amber Plate Helm",
+    "hue": 48,
+    "type": 5138,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 106.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 106.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Amber",
+        "qty": 240
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Amber Plate Gorgot",
+    "hue": 48,
+    "type": 5139,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 106.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 106.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Amber",
+        "qty": 160
+      },
+      {
+        "res": "Ingots",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "Amber Plate Chest",
+    "hue": 48,
+    "type": 5141,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 110.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 110.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Amber",
+        "qty": 400
+      },
+      {
+        "res": "Ingots",
+        "qty": 50
+      }
+    ]
+  },
+  {
+    "Name": "Amber Plate Arms",
+    "hue": 48,
+    "type": 5136,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 108.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 108.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Amber",
+        "qty": 288
+      },
+      {
+        "res": "Ingots",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "Amber Plate Gloves",
+    "hue": 48,
+    "type": 5140,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 106.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 106.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Amber",
+        "qty": 192
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Amber Plate Legs",
+    "hue": 48,
+    "type": 5137,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 108.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 108.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Amber",
+        "qty": 320
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Amber Heater Shield",
+    "hue": 48,
+    "type": 7030,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 110.0,
+        "maxskill": 150.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 110.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Amber",
+        "qty": 288
+      },
+      {
+        "res": "Ingots",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "Amethyst Plate Helm",
+    "hue": 2055,
+    "type": 5138,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Amethysts",
+        "qty": 240
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Amethyst Plate Gorgot",
+    "hue": 2055,
+    "type": 5139,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Amethysts",
+        "qty": 160
+      },
+      {
+        "res": "Ingots",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "Amethyst Plate Chest",
+    "hue": 2055,
+    "type": 5141,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Amethysts",
+        "qty": 400
+      },
+      {
+        "res": "Ingots",
+        "qty": 50
+      }
+    ]
+  },
+  {
+    "Name": "Amethyst Plate Arms",
+    "hue": 2055,
+    "type": 5136,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Amethysts",
+        "qty": 288
+      },
+      {
+        "res": "Ingots",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "Amethyst Plate Gloves",
+    "hue": 2055,
+    "type": 5140,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Amethysts",
+        "qty": 192
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Amethyst Plate Legs",
+    "hue": 2055,
+    "type": 5137,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Amethysts",
+        "qty": 320
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Amethyst Heater Shield",
+    "hue": 2055,
+    "type": 7030,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Amethysts",
+        "qty": 288
+      },
+      {
+        "res": "Ingots",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "Citrine Plate Helm",
+    "hue": 48,
+    "type": 5138,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 112.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 122.0,
+        "maxskill": 160.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 30
+      },
+      {
+        "res": "Citrines",
+        "qty": 240
+      }
+    ]
+  },
+  {
+    "Name": "Citrine Plate Gorgot",
+    "hue": 48,
+    "type": 5139,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 112.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 122.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 25
+      },
+      {
+        "res": "Citrines",
+        "qty": 160
+      }
+    ]
+  },
+  {
+    "Name": "Citrine Plate Chest",
+    "hue": 48,
+    "type": 5141,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 115.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 122.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 50
+      },
+      {
+        "res": "Citrines",
+        "qty": 400
+      }
+    ]
+  },
+  {
+    "Name": "Citrine Plate Arms",
+    "hue": 48,
+    "type": 5136,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 112.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 122.0,
+        "maxskill": 160.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 40
+      },
+      {
+        "res": "Citrines",
+        "qty": 288
+      }
+    ]
+  },
+  {
+    "Name": "Citrine Plate Gloves",
+    "hue": 48,
+    "type": 5140,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 112.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 122.0,
+        "maxskill": 160.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 30
+      },
+      {
+        "res": "Citrines",
+        "qty": 192
+      }
+    ]
+  },
+  {
+    "Name": "Citrine Plate Legs",
+    "hue": 48,
+    "type": 5137,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 112.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 122.0,
+        "maxskill": 170.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 40
+      },
+      {
+        "res": "Citrines",
+        "qty": 320
+      }
+    ]
+  },
+  {
+    "Name": "Citrine Heater Shield",
+    "hue": 48,
+    "type": 7030,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 115.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 122.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 50
+      },
+      {
+        "res": "Citrines",
+        "qty": 288
+      }
+    ]
+  },
+  {
+    "Name": "Emerald Plate Helm",
+    "hue": 1964,
+    "type": 5138,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 114.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 118.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Emeralds",
+        "qty": 240
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Emerald Plate Gorgot",
+    "hue": 1964,
+    "type": 5139,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 114.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 118.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Emeralds",
+        "qty": 160
+      },
+      {
+        "res": "Ingots",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "Emerald Plate Chest",
+    "hue": 1964,
+    "type": 5141,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 118.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 118.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Emeralds",
+        "qty": 400
+      },
+      {
+        "res": "Ingots",
+        "qty": 50
+      }
+    ]
+  },
+  {
+    "Name": "Emerald Plate Arms",
+    "hue": 1964,
+    "type": 5136,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 116.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 118.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Emeralds",
+        "qty": 288
+      },
+      {
+        "res": "Ingots",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "Emerald Plate Gloves",
+    "hue": 1964,
+    "type": 5140,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 116.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 118.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Emeralds",
+        "qty": 192
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Emerald Plate Legs",
+    "hue": 1964,
+    "type": 5137,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 118.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 118.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Emeralds",
+        "qty": 320
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Emerald Heater Shield",
+    "hue": 1964,
+    "type": 7030,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 118.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 118.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Emeralds",
+        "qty": 288
+      },
+      {
+        "res": "Ingots",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "Ruby Plate Helm",
+    "hue": 2052,
+    "type": 5138,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 122.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 122.0,
+        "maxskill": 160.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 30
+      },
+      {
+        "res": "Rubies",
+        "qty": 240
+      }
+    ]
+  },
+  {
+    "Name": "Ruby Plate Gorgot",
+    "hue": 2052,
+    "type": 5139,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 122.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 122.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 25
+      },
+      {
+        "res": "Rubies",
+        "qty": 160
+      }
+    ]
+  },
+  {
+    "Name": "Ruby Plate Chest",
+    "hue": 2052,
+    "type": 5141,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 122.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 122.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 50
+      },
+      {
+        "res": "Rubies",
+        "qty": 400
+      }
+    ]
+  },
+  {
+    "Name": "Ruby Plate Arms",
+    "hue": 2052,
+    "type": 5136,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 122.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 122.0,
+        "maxskill": 160.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 40
+      },
+      {
+        "res": "Rubies",
+        "qty": 288
+      }
+    ]
+  },
+  {
+    "Name": "Ruby Plate Gloves",
+    "hue": 2052,
+    "type": 5140,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 122.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 122.0,
+        "maxskill": 160.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 30
+      },
+      {
+        "res": "Rubies",
+        "qty": 192
+      }
+    ]
+  },
+  {
+    "Name": "Ruby Plate Legs",
+    "hue": 2052,
+    "type": 5137,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 122.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 122.0,
+        "maxskill": 170.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 40
+      },
+      {
+        "res": "Rubies",
+        "qty": 320
+      }
+    ]
+  },
+  {
+    "Name": "Ruby Heater Shield",
+    "hue": 2052,
+    "type": 7030,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 122.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 122.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 50
+      },
+      {
+        "res": "Rubies",
+        "qty": 288
+      }
+    ]
+  },
+  {
+    "Name": "Sapphire Plate Helm",
+    "hue": 48,
+    "type": 5138,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 116.0,
+        "maxskill": 140.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Sapphires",
+        "qty": 240
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Sapphire Plate Gorgot",
+    "hue": 48,
+    "type": 5139,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 116.0,
+        "maxskill": 140.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Sapphires",
+        "qty": 160
+      },
+      {
+        "res": "Ingots",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "Sapphire Plate Chest",
+    "hue": 48,
+    "type": 5141,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 118.0,
+        "maxskill": 140.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Sapphires",
+        "qty": 400
+      },
+      {
+        "res": "Ingots",
+        "qty": 50
+      }
+    ]
+  },
+  {
+    "Name": "Sapphire Plate Arms",
+    "hue": 48,
+    "type": 5136,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 118.0,
+        "maxskill": 140.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Sapphires",
+        "qty": 288
+      },
+      {
+        "res": "Ingots",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "Sapphire Plate Gloves",
+    "hue": 48,
+    "type": 5140,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 116.0,
+        "maxskill": 140.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Sapphires",
+        "qty": 192
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Sapphire Plate Legs",
+    "hue": 48,
+    "type": 5137,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 116.0,
+        "maxskill": 140.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Sapphires",
+        "qty": 320
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Sapphire Heater Shield",
+    "hue": 48,
+    "type": 7030,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 118.0,
+        "maxskill": 140.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Sapphires",
+        "qty": 288
+      },
+      {
+        "res": "Ingots",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "StarSapphire Plate Helm",
+    "hue": 2053,
+    "type": 5138,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Star Sapphires",
+        "qty": 240
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "StarSapphire Plate Gorgot",
+    "hue": 2053,
+    "type": 5139,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Star Sapphires",
+        "qty": 160
+      },
+      {
+        "res": "Ingots",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "StarSapphire Plate Chest",
+    "hue": 2053,
+    "type": 5141,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Star Sapphires",
+        "qty": 400
+      },
+      {
+        "res": "Ingots",
+        "qty": 50
+      }
+    ]
+  },
+  {
+    "Name": "StarSapphire Plate Arms",
+    "hue": 2053,
+    "type": 5136,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Star Sapphires",
+        "qty": 288
+      },
+      {
+        "res": "Ingots",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "StarSapphire Plate Gloves",
+    "hue": 2053,
+    "type": 5140,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Star Sapphires",
+        "qty": 192
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "StarSapphire Plate Legs",
+    "hue": 2053,
+    "type": 5137,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Star Sapphires",
+        "qty": 320
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "StarSapphire Heater Shield",
+    "hue": 2053,
+    "type": 7030,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Star Sapphires",
+        "qty": 288
+      },
+      {
+        "res": "Ingots",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "Diamond Plate Helm",
+    "hue": 2057,
+    "type": 5138,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Diamonds",
+        "qty": 240
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Diamond Plate Gorgot",
+    "hue": 2057,
+    "type": 5139,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Diamonds",
+        "qty": 160
+      },
+      {
+        "res": "Ingots",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "Diamond Plate Chest",
+    "hue": 2057,
+    "type": 5141,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Diamonds",
+        "qty": 400
+      },
+      {
+        "res": "Ingots",
+        "qty": 50
+      }
+    ]
+  },
+  {
+    "Name": "Diamond Plate Arms",
+    "hue": 2057,
+    "type": 5136,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Diamonds",
+        "qty": 288
+      },
+      {
+        "res": "Ingots",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "Diamond Plate Gloves",
+    "hue": 2057,
+    "type": 5140,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Diamonds",
+        "qty": 192
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Diamond Plate Legs",
+    "hue": 2057,
+    "type": 5137,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Diamonds",
+        "qty": 320
+      },
+      {
+        "res": "Ingots",
+        "qty": 30
+      }
+    ]
+  },
+  {
+    "Name": "Diamond Heater Shield",
+    "hue": 2057,
+    "type": 7030,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      },
+      {
+        "skill": "Blacksmith",
+        "minskill": 125.0,
+        "maxskill": 180.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Diamonds",
+        "qty": 288
+      },
+      {
+        "res": "Ingots",
+        "qty": 40
+      }
+    ]
+  },
+  {
+    "Name": "Fusion Cube",
+    "hue": 0,
+    "type": 2480,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 80.0,
+        "maxskill": 110.0
+      },
+      {
+        "skill": "Magery",
+        "minskill": 75.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 500
+      },
+      {
+        "res": "gold ingots",
+        "qty": 500
+      }
+    ]
+  },
+  {
+    "Name": "Skin Dye Bottle",
+    "hue": 0,
+    "type": 6215,
+    "skills": [
+      {
+        "skill": "Tinkering",
+        "minskill": 80.0,
+        "maxskill": 110.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 100
+      }
+    ]
+  }
+]

@@ -1,0 +1,1046 @@
+[
+  {
+    "Name": "ringmail gloves",
+    "hue": 0,
+    "type": 5099,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 12.0,
+        "maxskill": 62.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "ringmail leggings",
+    "hue": 0,
+    "type": 5104,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 19.4,
+        "maxskill": 69.4
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 16
+      }
+    ]
+  },
+  {
+    "Name": "ringmail sleeves",
+    "hue": 0,
+    "type": 5102,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 16.9,
+        "maxskill": 66.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 14
+      }
+    ]
+  },
+  {
+    "Name": "ringmail tunic",
+    "hue": 0,
+    "type": 5100,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 21.9,
+        "maxskill": 71.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 18
+      }
+    ]
+  },
+  {
+    "Name": "chainmail coif",
+    "hue": 0,
+    "type": 5051,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 14.5,
+        "maxskill": 64.5
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "chainmail leggings",
+    "hue": 0,
+    "type": 5054,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 36.7,
+        "maxskill": 86.7
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 18
+      }
+    ]
+  },
+  {
+    "Name": "chainmail tunic",
+    "hue": 0,
+    "type": 5055,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 39.1,
+        "maxskill": 89.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 20
+      }
+    ]
+  },
+  {
+    "Name": "platemail arms",
+    "hue": 0,
+    "type": 5136,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 66.3,
+        "maxskill": 116.3
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 18
+      }
+    ]
+  },
+  {
+    "Name": "platemail gloves",
+    "hue": 0,
+    "type": 5140,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 58.9,
+        "maxskill": 108.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 12
+      }
+    ]
+  },
+  {
+    "Name": "platemail gorget",
+    "hue": 0,
+    "type": 5139,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 56.4,
+        "maxskill": 106.4
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "platemail legs",
+    "hue": 0,
+    "type": 5137,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 68.8,
+        "maxskill": 118.8
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 20
+      }
+    ]
+  },
+  {
+    "Name": "platemail (tunic)",
+    "hue": 0,
+    "type": 5141,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 75.0,
+        "maxskill": 125.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "platemail (female)",
+    "hue": 0,
+    "type": 7172,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 44.1,
+        "maxskill": 94.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 20
+      }
+    ]
+  },
+  {
+    "Name": "dragon barding deed",
+    "hue": 0,
+    "type": 5360,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 72.5,
+        "maxskill": 122.5
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 750
+      }
+    ]
+  },
+  {
+    "Name": "bascinet",
+    "hue": 0,
+    "type": 5132,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 8.3,
+        "maxskill": 58.3
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 15
+      }
+    ]
+  },
+  {
+    "Name": "close helmet",
+    "hue": 0,
+    "type": 5128,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 37.9,
+        "maxskill": 87.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 15
+      }
+    ]
+  },
+  {
+    "Name": "helmet",
+    "hue": 0,
+    "type": 5130,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 37.9,
+        "maxskill": 87.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 15
+      }
+    ]
+  },
+  {
+    "Name": "norse helm",
+    "hue": 0,
+    "type": 5134,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 37.9,
+        "maxskill": 87.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 15
+      }
+    ]
+  },
+  {
+    "Name": "plate helm",
+    "hue": 0,
+    "type": 5138,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 62.6,
+        "maxskill": 112.6
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 15
+      }
+    ]
+  },
+  {
+    "Name": "buckler ",
+    "hue": 0,
+    "type": 7027,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": -25.0,
+        "maxskill": 25.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "bronze shield",
+    "hue": 0,
+    "type": 7026,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": -15.2,
+        "maxskill": 34.8
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 12
+      }
+    ]
+  },
+  {
+    "Name": "heater shield",
+    "hue": 0,
+    "type": 7030,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 24.3,
+        "maxskill": 74.3
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 18
+      }
+    ]
+  },
+  {
+    "Name": "metal shield",
+    "hue": 0,
+    "type": 7035,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": -10.2,
+        "maxskill": 39.8
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 14
+      }
+    ]
+  },
+  {
+    "Name": "metal kite shield",
+    "hue": 0,
+    "type": 7028,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 4.6,
+        "maxskill": 54.6
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 16
+      }
+    ]
+  },
+  {
+    "Name": "tear kite shield",
+    "hue": 0,
+    "type": 7033,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": -15.2,
+        "maxskill": 34.8
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "broadsword",
+    "hue": 0,
+    "type": 3934,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 35.4,
+        "maxskill": 85.4
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "cutlass",
+    "hue": 0,
+    "type": 5185,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 24.3,
+        "maxskill": 74.3
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "dagger",
+    "hue": 0,
+    "type": 3922,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": -0.4,
+        "maxskill": 49.6
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 3
+      }
+    ]
+  },
+  {
+    "Name": "katana",
+    "hue": 0,
+    "type": 5119,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 44.1,
+        "maxskill": 94.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "kryss",
+    "hue": 0,
+    "type": 5121,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 36.7,
+        "maxskill": 86.7
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "longsword",
+    "hue": 0,
+    "type": 3937,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 28.0,
+        "maxskill": 78.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 12
+      }
+    ]
+  },
+  {
+    "Name": "scimitar",
+    "hue": 0,
+    "type": 5046,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 31.7,
+        "maxskill": 81.7
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "viking sword",
+    "hue": 0,
+    "type": 5049,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 24.3,
+        "maxskill": 74.3
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 14
+      }
+    ]
+  },
+  {
+    "Name": "no-dachi",
+    "hue": 0,
+    "type": 10146,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 75.0,
+        "maxskill": 125.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 18
+      }
+    ]
+  },
+  {
+    "Name": "wakizashi",
+    "hue": 0,
+    "type": 10148,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 50.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 8
+      }
+    ]
+  },
+  {
+    "Name": "lajatang",
+    "hue": 0,
+    "type": 10151,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 80.0,
+        "maxskill": 130.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 25
+      }
+    ]
+  },
+  {
+    "Name": "daisho",
+    "hue": 0,
+    "type": 10153,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 60.0,
+        "maxskill": 110.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 15
+      }
+    ]
+  },
+  {
+    "Name": "tekagi",
+    "hue": 0,
+    "type": 10155,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 55.0,
+        "maxskill": 105.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 12
+      }
+    ]
+  },
+  {
+    "Name": "shuriken",
+    "hue": 0,
+    "type": 10156,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 45.0,
+        "maxskill": 95.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 5
+      }
+    ]
+  },
+  {
+    "Name": "kama",
+    "hue": 0,
+    "type": 10157,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 40.0,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 14
+      }
+    ]
+  },
+  {
+    "Name": "sai",
+    "hue": 0,
+    "type": 10159,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 50.0,
+        "maxskill": 100.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 12
+      }
+    ]
+  },
+  {
+    "Name": "axe",
+    "hue": 0,
+    "type": 3913,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 34.2,
+        "maxskill": 84.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 14
+      }
+    ]
+  },
+  {
+    "Name": "battle axe",
+    "hue": 0,
+    "type": 3911,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 30.5,
+        "maxskill": 80.5
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 14
+      }
+    ]
+  },
+  {
+    "Name": "double axe",
+    "hue": 0,
+    "type": 3915,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 29.3,
+        "maxskill": 79.3
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 12
+      }
+    ]
+  },
+  {
+    "Name": "executioner's axe",
+    "hue": 0,
+    "type": 3909,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 34.2,
+        "maxskill": 84.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 14
+      }
+    ]
+  },
+  {
+    "Name": "large battle axe",
+    "hue": 0,
+    "type": 5115,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 28.0,
+        "maxskill": 78.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 12
+      }
+    ]
+  },
+  {
+    "Name": "two handed axe",
+    "hue": 0,
+    "type": 5187,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 33.0,
+        "maxskill": 83.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 16
+      }
+    ]
+  },
+  {
+    "Name": "war axe",
+    "hue": 0,
+    "type": 5040,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 39.1,
+        "maxskill": 89.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 16
+      }
+    ]
+  },
+  {
+    "Name": "bardiche",
+    "hue": 0,
+    "type": 3917,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 31.7,
+        "maxskill": 81.7
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 18
+      }
+    ]
+  },
+  {
+    "Name": "halberd",
+    "hue": 0,
+    "type": 5182,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 39.1,
+        "maxskill": 89.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 20
+      }
+    ]
+  },
+  {
+    "Name": "short spear",
+    "hue": 0,
+    "type": 5123,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 45.3,
+        "maxskill": 95.3
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 6
+      }
+    ]
+  },
+  {
+    "Name": "spear",
+    "hue": 0,
+    "type": 3938,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 49.0,
+        "maxskill": 99.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 12
+      }
+    ]
+  },
+  {
+    "Name": "war fork",
+    "hue": 0,
+    "type": 5125,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 42.9,
+        "maxskill": 92.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 12
+      }
+    ]
+  },
+  {
+    "Name": "hammer pick",
+    "hue": 0,
+    "type": 5181,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 34.2,
+        "maxskill": 84.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 16
+      }
+    ]
+  },
+  {
+    "Name": "mace",
+    "hue": 0,
+    "type": 3932,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 14.5,
+        "maxskill": 64.5
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 6
+      }
+    ]
+  },
+  {
+    "Name": "maul",
+    "hue": 0,
+    "type": 5179,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 19.4,
+        "maxskill": 69.4
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "war mace",
+    "hue": 0,
+    "type": 5127,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 28.0,
+        "maxskill": 78.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 14
+      }
+    ]
+  },
+  {
+    "Name": "war hammer",
+    "hue": 0,
+    "type": 5177,
+    "skills": [
+      {
+        "skill": "Blacksmith",
+        "minskill": 34.2,
+        "maxskill": 84.2
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ingots",
+        "qty": 16
+      }
+    ]
+  }
+]

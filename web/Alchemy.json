@@ -1,0 +1,508 @@
+[
+  {
+    "Name": "refresh",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": -25.0,
+        "maxskill": 25.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Black Pearl",
+        "qty": 1
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "greater refreshment",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": 25.0,
+        "maxskill": 75.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Black Pearl",
+        "qty": 5
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "agility",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": 15.0,
+        "maxskill": 65.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 1
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "greater agility",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": 35.0,
+        "maxskill": 85.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Blood Moss",
+        "qty": 3
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "night sight",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": -25.0,
+        "maxskill": 25.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Spiders' Silk",
+        "qty": 1
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "lesser heal",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": -25.0,
+        "maxskill": 25.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ginseng",
+        "qty": 1
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "heal",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": 15.0,
+        "maxskill": 65.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ginseng",
+        "qty": 3
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "greater heal",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": 55.0,
+        "maxskill": 105.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Ginseng",
+        "qty": 7
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "strength",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": 25.0,
+        "maxskill": 75.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Mandrake Root",
+        "qty": 2
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "greater strength",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": 45.0,
+        "maxskill": 95.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Mandrake Root",
+        "qty": 5
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "lesser poison",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": -5.0,
+        "maxskill": 45.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Nightshade",
+        "qty": 1
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "poison",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": 15.0,
+        "maxskill": 65.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Nightshade",
+        "qty": 2
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "greater poison",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": 55.0,
+        "maxskill": 105.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Nightshade",
+        "qty": 4
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "deadly poison",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": 90.0,
+        "maxskill": 140.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Nightshade",
+        "qty": 8
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "lesser cure",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": -10.0,
+        "maxskill": 40.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Garlic",
+        "qty": 1
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "cure",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": 25.0,
+        "maxskill": 75.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Garlic",
+        "qty": 3
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "greater cure",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": 65.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Garlic",
+        "qty": 6
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "lesser explosion",
+    "hue": 0,
+    "type": 3853,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": 5.0,
+        "maxskill": 55.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Sulfurous Ash",
+        "qty": 3
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "explosion",
+    "hue": 0,
+    "type": 3853,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": 35.0,
+        "maxskill": 85.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Sulfurous Ash",
+        "qty": 5
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "greater explosion",
+    "hue": 0,
+    "type": 3853,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": 65.0,
+        "maxskill": 115.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Sulfurous Ash",
+        "qty": 10
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Shrink Potion",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": 110.0,
+        "maxskill": 140.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Batwing",
+        "qty": 50
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Mana Potion",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": 65.1,
+        "maxskill": 90.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Eye of Newt",
+        "qty": 5
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Shrink Potion",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": 95.1,
+        "maxskill": 125.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Eye of Newt",
+        "qty": 10
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      }
+    ]
+  }
+]
