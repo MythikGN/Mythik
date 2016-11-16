@@ -106,15 +106,15 @@ namespace Scripts.Mythik.Systems.Achievements
 
 
 
-            CommandSystem.Register("feats", AccessLevel.Player, new CommandEventHandler(OpenGump));
+            CommandSystem.Register("feats", AccessLevel.Player, new CommandEventHandler(OpenGumpCommand));
 
         }
-        [Usage("feats")]
-        [Description("Opens the Achievements gump")]
-        private static void OpenGump(CommandEventArgs e)
+
+        public static void OpenGump(Mobile from, Mobile target)
         {
-            var player = e.Mobile as PlayerMobile;
-            if(player != null)
+            if (from == null || target == null)
+                return;
+            if (target != null)
             {
 #if STOREONITEM
            if (!AchievementSystemMemoryStone.GetInstance().Achievements.ContainsKey(player.Serial))
@@ -122,12 +122,17 @@ namespace Scripts.Mythik.Systems.Achievements
             var achieves = AchievementSystemMemoryStone.GetInstance().Achievements[player.Serial];
                 var total = AchievementSystemMemoryStone.GetInstance().GetPlayerPointsTotal(player);
 #else
-                var achieves = (player as MythikPlayerMobile).Achievements;
-                var total = (player as MythikPlayerMobile).AchievementPointsTotal;
+                var achieves = (target as MythikPlayerMobile).Achievements;
+                var total = (target as MythikPlayerMobile).AchievementPointsTotal;
 #endif
-                e.Mobile.SendGump(new AchievementGump(achieves, total));
+                from.SendGump(new AchievementGump(achieves, total));
             }
-            
+        }
+        [Usage("feats"), Aliases("ach", "achievement", "achs", "achievements")]
+        [Description("Opens the Achievements gump")]
+        private static void OpenGumpCommand(CommandEventArgs e)
+        {
+            OpenGump(e.Mobile, e.Mobile); 
         }
 
         internal static void SetAchievementStatus(PlayerMobile player, BaseAchievement ach, int progress)

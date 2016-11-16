@@ -81,9 +81,14 @@ namespace Scripts.Mythik.Mobiles
         }
         public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)
         {
-            list.Add(new Server.Engines.VendorSearhing.SearchVendors(this));
-            list.Add(new TitlesMenuEntry(this));
             base.GetContextMenuEntries(from, list);
+            if(from == this)
+            {
+                list.Add(new Server.Engines.VendorSearhing.SearchVendors(this));
+                list.Add(new TitlesMenuEntry(this));
+            }
+            if(from is PlayerMobile)
+                list.Add(new AchievementMenuEntry(from as PlayerMobile, this));
         }
 
         public override void Serialize(GenericWriter writer)
