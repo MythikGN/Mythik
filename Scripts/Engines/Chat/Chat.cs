@@ -45,7 +45,8 @@ namespace Server.Engines.Chat
 			if ( !m_Enabled )
 			{
 				from.SendMessage( "The chat system has been disabled." );
-				return;
+                from.SendMessage("You can chat using .chaton and then \".c message \" to chat");
+                return;
 			}
 
 			pvSrc.Seek( 2, System.IO.SeekOrigin.Begin );

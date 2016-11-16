@@ -81,6 +81,8 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
+            //equip before using
+            base.OnDoubleClick(from);
 			if ( HarvestSystem == null || Deleted )
 				return;
 

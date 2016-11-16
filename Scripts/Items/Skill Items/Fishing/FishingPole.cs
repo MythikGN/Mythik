@@ -24,9 +24,18 @@ namespace Server.Items
 
 			if ( !from.InLOS( loc ) || !from.InRange( loc, 2 ) )
 				from.LocalOverheadMessage( MessageType.Regular, 0x3E9, 1019045 ); // I can't reach that
-			else
-				Fishing.System.BeginHarvesting( from, this );
-		}
+            else
+            {
+                Item eq = from.FindItemOnLayer(this.Layer);
+                if (eq != null)
+                {
+                    eq.DropToMobile(from, from, Point3D.Zero);
+                }
+
+                from.EquipItem(this);
+                Fishing.System.BeginHarvesting(from, this);
+            }
+        }
 
 		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
 		{
