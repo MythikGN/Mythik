@@ -321,10 +321,10 @@ namespace Server.Mobiles
 
 		public void MountMe()
 		{
-            if (Rider.NetState.Version.Major <= 3)
-                ItemID = 0x3EA0;
-            else
-			    ItemID = m_MountedID;
+            //if (Rider.NetState.Version.Major <= 3)
+            //    ItemID = 0x3EA0;
+            //else
+                ItemID = m_MountedID;
 			Layer = Layer.Mount;
 			Movable = false;
 
