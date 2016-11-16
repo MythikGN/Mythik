@@ -5,18 +5,17 @@ namespace Server
 {
 	public class CurrentExpansion
 	{
-		private static readonly Expansion Expansion = Expansion.AOS;
+		private static readonly Expansion Expansion = Expansion.ML;
 
 		public static void Configure()
 		{
 			Core.Expansion = Expansion;
 
-			bool Enabled = Core.AOS;
 
-			Mobile.InsuranceEnabled = !Enabled;
+			Mobile.InsuranceEnabled = false;
 			ObjectPropertyList.Enabled = true;
-			Mobile.VisibleDamageType = Enabled ? VisibleDamageType.Related : VisibleDamageType.None;
-			Mobile.GuildClickMessage = !Enabled;
+			Mobile.VisibleDamageType = true ? VisibleDamageType.Related : VisibleDamageType.None;
+			Mobile.GuildClickMessage = false;
 			Mobile.AsciiClickMessage = true;
 
 			if (true)
