@@ -533,9 +533,9 @@ namespace Server.Engines.VendorSearhing
             if (type == typeof(StarSapphire)) return 1023855;
             if (type == typeof(Amethyst)) return 1023862;
 
-           // if (type == typeof(RelicFragment)) return 1031699;
-           // if (type == typeof(EnchantEssence)) return 1031698;
-           // if (type == typeof(MagicalResidue)) return 1031697;
+            if (type == typeof(RelicFragment)) return 1031699;
+            if (type == typeof(EnchantEssence)) return 1031698;
+            if (type == typeof(MagicalResidue)) return 1031697;
 
             if (type == typeof(DarkSapphire)) return 1032690;
             if (type == typeof(Turquoise)) return 1032691;

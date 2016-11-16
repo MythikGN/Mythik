@@ -67,64 +67,64 @@ namespace Scripts.Mythik.Systems.Loot
         public static readonly LootPackItem[] LevelOneUniques = new LootPackItem[]
             {
                 new LootPackItem( typeof( AlchemySandals ),1 ),
-                new LootPackItem( typeof( BlacksmithyArms ), 1 ),
+                //new LootPackItem( typeof( BlacksmithyArms ), 1 ),
                 new LootPackItem( typeof( CarpentryBoots ), 1 ),
                 new LootPackItem( typeof( TamingSkirt ), 1 ),
                 new LootPackItem( typeof( TailorSandals ), 1 ),
-                new LootPackItem( typeof( TinkeringCap ), 1 ),
+                //new LootPackItem( typeof( TinkeringCap ), 1 ),
                 new LootPackItem( typeof( InscribeBoots ), 1 ),
-                new LootPackItem( typeof( LumberjackCap ), 1 ),
-                new LootPackItem( typeof( DamagedMiningHat ), 1 )
+                //new LootPackItem( typeof( LumberjackCap ), 1 ),
+                //new LootPackItem( typeof( DamagedMiningHat ), 1 )
             };
         public static readonly LootPackItem[] LevelTwoUniques = new LootPackItem[]
     {
-                new LootPackItem( typeof( AlchemyBandena ),1 ),
+               // new LootPackItem( typeof( AlchemyBandena ),1 ),
                 new LootPackItem( typeof( BlacksmithShoes ), 1 ),
-                new LootPackItem( typeof( CarpentryCap ), 1 ),
+              //  new LootPackItem( typeof( CarpentryCap ), 1 ),
                 new LootPackItem( typeof( TamingCloak ), 1 ),
-                new LootPackItem( typeof( TailorGloves ), 1 ),
+               // new LootPackItem( typeof( TailorGloves ), 1 ),
                 new LootPackItem( typeof( TinkeringShirt ), 1 ),
-                new LootPackItem( typeof( InscribeHat ), 1 ),
-                new LootPackItem( typeof( LumberjackGloves ), 1 ),
-                new LootPackItem( typeof( Miningboots ), 1 )
+               // new LootPackItem( typeof( InscribeHat ), 1 ),
+               // new LootPackItem( typeof( LumberjackGloves ), 1 ),
+               // new LootPackItem( typeof( Miningboots ), 1 )
     };
 
         public static readonly LootPackItem[] LevelThreeUniques = new LootPackItem[]
 {
                 new LootPackItem( typeof( AlchemyApron ),1 ),
-                new LootPackItem( typeof( BlacksmithBandana ), 1 ),
+              //  new LootPackItem( typeof( BlacksmithBandana ), 1 ),
                 new LootPackItem( typeof( CarpentryApron ), 1 ),
                 new LootPackItem( typeof( TamingBoots ), 1 ),
-                new LootPackItem( typeof( TailorHat ), 1 ),
-                new LootPackItem( typeof( TinkeringPants ), 1 ),
-                new LootPackItem( typeof( InscribeApron ), 1 ),
+               // new LootPackItem( typeof( TailorHat ), 1 ),
+               // new LootPackItem( typeof( TinkeringPants ), 1 ),
+               // new LootPackItem( typeof( InscribeApron ), 1 ),
                 new LootPackItem( typeof( LumberjackShirt ), 1 )
 };
 
         public static readonly LootPackItem[] LevelFourniques = new LootPackItem[]
 {
-                new LootPackItem( typeof( AlchemyGloves ),1 ),
+              //  new LootPackItem( typeof( AlchemyGloves ),1 ),
                 new LootPackItem( typeof( BlacksmithApron ), 1 ),
-                new LootPackItem( typeof( CarpentryGloves ), 1 ),
-                new LootPackItem( typeof( TamingRobe ), 1 ),
+              //  new LootPackItem( typeof( CarpentryGloves ), 1 ),
+               // new LootPackItem( typeof( TamingRobe ), 1 ),
                 new LootPackItem( typeof( TailoringDoublet ), 1 ),
-                new LootPackItem( typeof( TinkeringGloves ), 1 ),
+               // new LootPackItem( typeof( TinkeringGloves  ), 1 ),
                 new LootPackItem( typeof( InscribeShirt ), 1 ),
-                new LootPackItem( typeof( LumberjackPants ), 1 ),
-                new LootPackItem( typeof( Miningboots ), 1 )
+              //  new LootPackItem( typeof( LumberjackPants ), 1 ),
+              //  new LootPackItem( typeof( Miningboots ), 1 )
 };
 
         public static readonly LootPackItem[] LevelFiveUniques = new LootPackItem[]
 {
                 new LootPackItem( typeof( AlchemyRobe ),1 ),
-                new LootPackItem( typeof( BlacksmithRobe ), 1 ),
+               // new LootPackItem( typeof( BlacksmithRobe ), 1 ),
                 new LootPackItem( typeof( CarpentryShirt ), 1 ),
                 new LootPackItem( typeof( TamingCrook ), 1 ),
                 new LootPackItem( typeof( TailorSkirt ), 1 ),
                 new LootPackItem( typeof( TinkeringApron ), 1 ),
                 new LootPackItem( typeof( InscribeShirt ), 1 ),
                 new LootPackItem( typeof( LumberjackApron ), 1 ),
-                new LootPackItem( typeof( MiningRobe ), 1 )
+              //  new LootPackItem( typeof( MiningRobe ), 1 )
 };
 
         public static readonly LootPackItem[] SkillJewels = new LootPackItem[]

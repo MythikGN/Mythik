@@ -97,7 +97,7 @@ namespace Scripts.Mythik.Systems
                 this.Resizable = false;
                 this.AddPage(0);
                 this.AddBackground(23, 18, 272, 270, 9250);
-                this.AddLabel(82, 42, 0, @"Welcome to Mythik!");
+                this.AddLabel(92, 42, 0, @"Welcome to Mythik!");
                 this.AddLabel(78, 92, 0, @"");
                 this.AddHtml(43, 79, 230, 80, @"Please select your language so we can<BR> localize text to your native language", (bool)false, (bool)false);
                 this.AddGroup(1);
