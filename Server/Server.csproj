@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>..\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;Framework_4_0;NewAsyncSockets</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;Framework_4_0;NewAsyncSockets;VS_BUILD</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>x86</PlatformTarget>
@@ -239,6 +239,7 @@
     <Compile Include="Mobile.cs" />
     <Compile Include="Movement.cs" />
     <Compile Include="MultiData.cs" />
+    <Compile Include="Mythik\BodyConverter.cs" />
     <Compile Include="NativeReader.cs" />
     <Compile Include="Network\BufferPool.cs" />
     <Compile Include="Network\ByteQueue.cs" />

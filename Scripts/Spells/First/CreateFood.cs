@@ -58,11 +58,6 @@ namespace Server.Spells.First
                 Caster.SendAsciiMessage("Target is not in line of sight.");
                 DoFizzle();
             }
-            else if (SphereSpellTarget is BaseWand)
-            {
-                BaseWand bw = SphereSpellTarget as BaseWand;
-                bw.RechargeWand(Caster, this);
-            }
             else if (CheckSequence())
             {
                 FoodInfo foodInfo = m_Food[Utility.Random(m_Food.Length)];
