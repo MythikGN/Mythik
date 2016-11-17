@@ -27,9 +27,10 @@ namespace Server.Multis
 	public class HousePlacement
 	{
 		private const int YardSize = 5;
+        private const int MineDist = 21; // Minimum distance to mine. -Pso
 
-		// Any land tile which matches one of these ID numbers is considered a road and cannot be placed over.
-		private static int[] m_RoadIDs = new int[]
+        // Any land tile which matches one of these ID numbers is considered a road and cannot be placed over.
+        private static int[] m_RoadIDs = new int[]
 			{
 				0x0071, 0x0078,
 				0x00E8, 0x00EB,
@@ -42,7 +43,37 @@ namespace Server.Multis
 				0x0150, 0x015C  // Furrows
 			};
 
-		public static HousePlacementResult Check( Mobile from, int multiID, Point3D center, out ArrayList toMove )
+        private static Point2D[] mines = new Point2D[]
+        {
+            new Point2D( 2472, 68 ),        // Minoc Cave 3
+            new Point2D( 2442, 94 ),        // Minoc Cave 2 
+            new Point2D( 2428, 177 ),       // Minoc Cave 1
+            new Point2D( 2404, 219 ),       // *Passage Way
+            new Point2D( 1992, 262 ),       // Wrong Entrance (The mine right near Wrong)
+            new Point2D( 1942, 325 ),       // Cave 3
+            new Point2D( 1920, 374 ),       // Cave 2
+            new Point2D( 1814, 850 ),       // *Sand Cave
+            new Point2D( 1825, 1030 ),      // *Near Big Swamp
+            new Point2D( 1264, 1253 ),      // *Big Britain Mine
+            new Point2D( 772, 1696 ),       // Yew Cave
+            new Point2D( 997, 1602 ),       // South End of Shame Mountain
+            new Point2D( 693, 3824 ),       // *Fire Island Mine 1
+            new Point2D( 855, 3770 ),       // *Fire Island Mine 2
+            new Point2D( 906, 3662 ),       // *Fire Island Mine 3a
+            new Point2D( 903, 3636 ),       // *Fire Island Mine 3b
+            new Point2D( 680, 3304 ),       // *Fire Island Mine 4
+            new Point2D( 644, 3172 ),       // *Fire Island Mine 5
+            new Point2D( 1652, 2893 ),      // *Volcano Tunnel A
+            new Point2D( 1662, 2938 ),      // *Volcano Tunnel B
+            new Point2D( 4045, 314 )        // *Ice Isle Cave 2
+        };
+        // Comments above with * is a description of the mine when .where is something ambiguous like Felucca.
+        // Covetous mines far enough down a path that they do not need to be checked.
+        // (356, 1462) Mine near Shame passage way is on a path and does not need to be checked.
+        // (4066, 439) Ice Isle Cave 1 is along a path and shouldn't need a check.
+        // Volcano Tunnel points will dissallow area(s) that do not need to be. Would need a more complicated check, though.
+
+        public static HousePlacementResult Check( Mobile from, int multiID, Point3D center, out ArrayList toMove )
 		{
 			// If this spot is considered valid, every item and mobile in this list will be moved under the house sign
 			toMove = new ArrayList();
@@ -284,7 +315,27 @@ namespace Server.Multis
 			{
 				Point2D borderPoint = borders[i];
 
-				LandTile landTile = map.Tiles.GetLandTile( borderPoint.X, borderPoint.Y );
+                // Mine Distance Checks
+                // Goes through each mine location to check if within MineDist (21) tiles.
+                // It will check the distance between EACH borderPoint (every surrounding tile of a house) and each
+                //     mine in mines[]
+                // A cleaner solution would be to check if center.x and center.y are within ~100 tiles of a mine and then
+                //     do a full check. May not be needed though.
+                for (int mineCheck = 0; mineCheck < mines.Length; mineCheck++)
+                {
+                    //from.SendMessage("Mine X {0} Y {1}", mines[mineCheck].X, mines[mineCheck].Y);
+                    int xMineDist = borderPoint.X - mines[mineCheck].X;
+                    int yMineDist = borderPoint.Y - mines[mineCheck].Y;
+                    if (Math.Sqrt((xMineDist * xMineDist) + (yMineDist * yMineDist)) < MineDist)
+                    {
+                        //from.SendMessage("Mine {0} is within 20 tiles.", mineCheck);
+                        from.SendMessage("This house would be too close to a mine.");
+                        return HousePlacementResult.BadRegion;
+                    }
+                }
+                // End Mine Distance Checks
+
+                LandTile landTile = map.Tiles.GetLandTile( borderPoint.X, borderPoint.Y );
 				int landID = landTile.ID & TileData.MaxLandValue;
 
 				if ( (TileData.LandTable[landID].Flags & TileFlag.Impassable) != 0 )
