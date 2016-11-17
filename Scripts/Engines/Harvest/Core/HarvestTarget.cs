@@ -53,16 +53,19 @@ namespace Server.Engines.Harvest
 				}
 			}
 
-			if ( m_System is Lumberjacking && targeted is IChopable )
+            if ( m_System is Lumberjacking && targeted is IChopable )
 				((IChopable)targeted).OnChop( from );
-			else if ( m_System is Lumberjacking && targeted is IAxe && m_Tool is BaseAxe )
+            else if (from.Mounted)
+                from.SendLocalizedMessage(1061130); // You can't do that while riding a mount.
+            else if (from.IsBodyMod && !from.Body.IsHuman)
+                from.SendLocalizedMessage(1061628); // You can't do that while polymorphed.
+            else if ( m_System is Lumberjacking && targeted is IAxe && m_Tool is BaseAxe )
 			{
 				IAxe obj = (IAxe)targeted;
 				Item item = (Item)targeted;
-					
-				if ( !item.IsChildOf( from.Backpack ) )
+                if ( !item.IsChildOf( from.Backpack ) )
 					from.SendLocalizedMessage( 1062334 ); // This item must be in your backpack to be used.
-				else if ( obj.Axe( from, (BaseAxe)m_Tool ) )
+                else if ( obj.Axe( from, (BaseAxe)m_Tool ) )
 					from.PlaySound( 0x13E );
 			}
 			else if ( m_System is Lumberjacking && targeted is ICarvable )
