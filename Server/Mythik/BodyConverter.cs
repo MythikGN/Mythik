@@ -21,7 +21,7 @@ namespace Server.Mythik
         /// </summary>
         public static void Initialize()
         {
-            string path = Files.GetFilePath("body.def");
+            string path = Path.Combine(Core.BaseDirectory,"Data/body.def");
             if (path == null)
                 return;
             using (var ip = new StreamReader(path))
