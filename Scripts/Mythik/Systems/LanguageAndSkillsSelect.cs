@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Server.Network;
 using Scripts.Mythik.Mobiles;
+using Server.Items;
 
 namespace Scripts.Mythik.Systems
 {
@@ -79,13 +80,108 @@ namespace Scripts.Mythik.Systems
                 }
                 var skillA = (SkillName)info.Switches[0];
                 var skillB = (SkillName)info.Switches[1];
+                
                 sender.Mobile.Skills[skillA].BaseFixedPoint = 600;
                 sender.Mobile.Skills[skillB].BaseFixedPoint = 600;
                 sender.Mobile.Skills[SkillName.Magery].BaseFixedPoint = 800;
                 (sender.Mobile as MythikPlayerMobile).HasSetLanguageSkills = true;
+                AddSkillStarterItems(sender.Mobile, skillA);
+                AddSkillStarterItems(sender.Mobile,skillB);
+
                 //base.OnResponse(sender, info);
             }
+
+
+            private void AddSkillStarterItems(Mobile player,SkillName skill)
+            {
+                switch(skill)
+                {
+                    case SkillName.Alchemy:
+                        player.AddToBackpack(new MortarPestle());
+                        player.AddToBackpack(new Bottle(10));
+                        break;
+
+                    case SkillName.Blacksmith:
+                        player.AddToBackpack(new SmithHammer());
+                        player.AddToBackpack(new IronIngot(50));
+                        break;
+                    case SkillName.Carpentry:
+                        player.AddToBackpack(new Saw());
+                        player.AddToBackpack(new Log(50));
+                        break;
+                    case SkillName.Cartography:
+                        player.AddToBackpack(new BlankMap());
+                        player.AddToBackpack(new BlankMap());
+                        player.AddToBackpack(new PenAndInk());
+                        break;
+                    case SkillName.Inscribe:
+                        player.AddToBackpack(new BlankScroll(10));
+                        player.AddToBackpack(new ScribesPen());
+                        break;
+                    case SkillName.Fishing:
+                        player.AddToBackpack(new FishingPole());
+                        break;
+                    case SkillName.Fletching:
+                        player.AddToBackpack(new FletcherTools());
+                        player.AddToBackpack(new Log(50));
+                        break;
+                    case SkillName.Veterinary:
+                    case SkillName.Healing:
+                        player.AddToBackpack(new Bandage(50));
+                        break;
+                    case SkillName.Lumberjacking:
+                        player.AddToBackpack(new Axe());
+
+                        break;
+                    case SkillName.Mining:
+                        player.AddToBackpack(new Pickaxe());
+
+                        break;
+                    case SkillName.Tinkering:
+                        player.AddToBackpack(new TinkerTools());
+
+                        break;
+                        
+                    case SkillName.Discordance:
+                    case SkillName.Provocation:
+                    case SkillName.Peacemaking:
+                        player.AddToBackpack(new Tambourine());
+                        break;
+
+                    case SkillName.Archery:
+                        player.AddToBackpack(new Bow() { Quality = WeaponQuality.Exceptional });
+                        player.AddToBackpack(new Arrow(50));
+                        goto case SkillName.Wrestling; // This craziness adds armor as well from wrestling case
+                        break;
+                    case SkillName.Swords:
+                        player.AddToBackpack(new Longsword() { Quality = WeaponQuality.Exceptional });
+                        goto case SkillName.Wrestling;
+                    case SkillName.Fencing:
+                        player.AddToBackpack(new Kryss() { Quality = WeaponQuality.Exceptional });
+
+                        goto case SkillName.Wrestling;
+                    case SkillName.Macing:
+                        player.AddToBackpack(new Mace() { Quality = WeaponQuality.Exceptional });
+
+                        goto case SkillName.Wrestling;
+                    case SkillName.Wrestling:
+                        
+                        player.AddToBackpack(new RingmailArms());
+                        player.AddToBackpack(new RingmailChest());
+                        player.AddToBackpack(new RingmailGloves());
+                        player.AddToBackpack(new RingmailLegs());
+                        player.AddToBackpack(new CloseHelm());
+                        player.AddToBackpack(new MetalShield());
+                        break;
+                    
+                }
+            }
         }
+
+
+
+
+
 
         private class LanguageSelectGump : Gump
         {
