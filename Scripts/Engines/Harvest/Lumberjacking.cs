@@ -36,16 +36,16 @@ namespace Server.Engines.Harvest
 			HarvestDefinition lumber = new HarvestDefinition();
 
 			// Resource banks are every 4x3 tiles
-			lumber.BankWidth = 4;
-			lumber.BankHeight = 3;
+			lumber.BankWidth = 1;
+			lumber.BankHeight = 1;
 
 			// Every bank holds from 20 to 45 logs
-			lumber.MinTotal = 20;
-			lumber.MaxTotal = 45;
+			lumber.MinTotal = 5;
+			lumber.MaxTotal = 15;
 
 			// A resource bank will respawn its content every 20 to 30 minutes
-			lumber.MinRespawn = TimeSpan.FromMinutes( 20.0 );
-			lumber.MaxRespawn = TimeSpan.FromMinutes( 30.0 );
+			lumber.MinRespawn = TimeSpan.FromMinutes( 60.0 );
+			lumber.MaxRespawn = TimeSpan.FromMinutes( 120.0 );
 
 			// Skill checking is done on the Lumberjacking skill
 			lumber.Skill = SkillName.Lumberjacking;
@@ -57,14 +57,15 @@ namespace Server.Engines.Harvest
 			lumber.MaxRange = 2;
 
 			// Ten logs per harvest action
-			lumber.ConsumedPerHarvest = 10;
-			lumber.ConsumedPerFeluccaHarvest = 20;
+			lumber.ConsumedPerHarvest = 1;
+			lumber.ConsumedPerFeluccaHarvest = 2;
 
 			// The chopping effect
 			lumber.EffectActions = new int[]{ 13 };
 			lumber.EffectSounds = new int[]{ 0x13E };
-			lumber.EffectCounts = (Core.AOS ? new int[]{ 1 } : new int[]{ 1, 2, 2, 2, 3 });
-			lumber.EffectDelay = TimeSpan.FromSeconds( 1.6 );
+            //lumber.EffectCounts = (Core.AOS ? new int[]{ 1 } : new int[]{ 1, 2, 2, 2, 3 });
+            lumber.EffectCounts = new int[] { 3 };
+            lumber.EffectDelay = TimeSpan.FromSeconds( 1.6 );
 			lumber.EffectSoundDelay = TimeSpan.FromSeconds( 0.9 );
 
 			lumber.NoResourcesMessage = 500493; // There's not enough wood here to harvest.
@@ -137,11 +138,11 @@ namespace Server.Engines.Harvest
 			if ( !base.CheckHarvest( from, tool ) )
 				return false;
 
-			if ( tool.Parent != from )
-			{
-				from.SendLocalizedMessage( 500487 ); // The axe must be equipped for any serious wood chopping.
-				return false;
-			}
+            if (tool.Parent != from)
+            {
+                from.SendLocalizedMessage(500487); // The axe must be equipped for any serious wood chopping.
+                return false;
+            }
 
 			return true;
 		}
@@ -151,11 +152,11 @@ namespace Server.Engines.Harvest
 			if ( !base.CheckHarvest( from, tool, def, toHarvest ) )
 				return false;
 
-			if ( tool.Parent != from )
-			{
-				from.SendLocalizedMessage( 500487 ); // The axe must be equipped for any serious wood chopping.
-				return false;
-			}
+            if (tool.Parent != from)
+            {
+                from.SendLocalizedMessage(500487); // The axe must be equipped for any serious wood chopping.
+                return false;
+            }
 
 			return true;
 		}
