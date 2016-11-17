@@ -160,7 +160,8 @@ namespace Scripts.Mythik.Items.Uniques
             Hue = 0x7FC;
             Name = "Scribe's Enchanted SpellBook";
             SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 10.0);
-			Content = ulong.MaxValue; // DarkLotus, check this. Should make full spellbook. -Pso
+			Content = ulong.MaxValue;
+            LootType = LootType.Regular;
         }
         public InscribeSpellBook(Serial serial) : base(serial)
         {
