@@ -149,32 +149,43 @@ namespace Scripts.Mythik.Systems
                         break;
 
                     case SkillName.Archery:
-                        player.AddToBackpack(new Bow() { Quality = WeaponQuality.Exceptional });
+                        EquipAnItem(player, new Bow() { Quality = WeaponQuality.Exceptional });
                         player.AddToBackpack(new Arrow(50));
                         goto case SkillName.Wrestling; // This craziness adds armor as well from wrestling case
                         break;
+
                     case SkillName.Swords:
-                        player.AddToBackpack(new Longsword() { Quality = WeaponQuality.Exceptional });
+                        EquipAnItem(player, new Longsword() { Quality = WeaponQuality.Exceptional });
+
                         goto case SkillName.Wrestling;
                     case SkillName.Fencing:
-                        player.AddToBackpack(new Kryss() { Quality = WeaponQuality.Exceptional });
+                        EquipAnItem(player, new Kryss() { Quality = WeaponQuality.Exceptional });
 
                         goto case SkillName.Wrestling;
                     case SkillName.Macing:
-                        player.AddToBackpack(new Mace() { Quality = WeaponQuality.Exceptional });
+                        EquipAnItem(player, new Mace() { Quality = WeaponQuality.Exceptional });
 
                         goto case SkillName.Wrestling;
                     case SkillName.Wrestling:
-                        
-                        player.AddToBackpack(new RingmailArms());
-                        player.AddToBackpack(new RingmailChest());
-                        player.AddToBackpack(new RingmailGloves());
-                        player.AddToBackpack(new RingmailLegs());
-                        player.AddToBackpack(new CloseHelm());
-                        player.AddToBackpack(new MetalShield());
+                        EquipAnItem(player, new RingmailLegs());
+                        EquipAnItem(player, new RingmailArms());
+                        EquipAnItem(player, new RingmailChest());
+                        EquipAnItem(player, new RingmailGloves());
+                        EquipAnItem(player, new CloseHelm());
+                        EquipAnItem(player, new MetalShield());
                         break;
                     
                 }
+            }
+
+            private void EquipAnItem(Mobile p, Item a)
+            {
+                Item equippedItem = null;
+                if((equippedItem = p.FindItemOnLayer(a.Layer)) != null)
+                {
+                    p.AddToBackpack(equippedItem);
+                }
+                p.EquipItem(a);
             }
         }
 
