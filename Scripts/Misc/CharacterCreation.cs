@@ -30,7 +30,8 @@ namespace Server.Misc
 			}
             PackItem(new Spellbook(UInt64.MaxValue));
             //PackItem( new RedBook( "a book", m.Name, 20, true ) );
-            PackItem( new Gold( 1000 ) ); // Starting gold can be customized here
+            PackItem( new Gold( 2000 ) ); // Starting gold can be customized here
+            PackItem( new BagOfReagents(25));
 			PackItem( new Dagger() );
 			PackItem( new Candle() );
 		}
@@ -666,8 +667,8 @@ namespace Server.Misc
 
 				pm.Profession = args.Profession;
 
-				if ( pm.AccessLevel == AccessLevel.Player && ((Account)pm.Account).Young )
-					young = pm.Young = true;
+				//if ( pm.AccessLevel == AccessLevel.Player && ((Account)pm.Account).Young )
+				//	young = pm.Young = true;
 			}
 
 			SetName( newChar, args.Name );
