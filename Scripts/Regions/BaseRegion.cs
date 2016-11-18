@@ -72,11 +72,15 @@ namespace Server.Regions
 				if ( br != null && br.RuneName != null )
 					return br.RuneName;
                 if (region.Parent == null)
-                    return br.Name;
+                {
+                    if(br.Name != null)
+                        return br.Name;
+                    return "Felucca";
+                }
+                    
 				region = region.Parent;
 			}
-
-			return null;
+            return "Felucca";
 		}
 
 		public override TimeSpan GetLogoutDelay( Mobile m )
