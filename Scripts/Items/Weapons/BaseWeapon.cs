@@ -2279,7 +2279,8 @@ namespace Server.Items
 			double  tacticsBonus = GetBonus( attacker.Skills[SkillName.Tactics].Value,			0.625, 100.0,  6.25 );
 			double   lumberBonus = GetBonus( attacker.Skills[SkillName.Lumberjacking].Value,	0.200, 100.0, 10.00 );
 
-			if ( Type != WeaponType.Axe )
+            //Disable LJ bonus for AOS weapons as well.
+			//if ( Type != WeaponType.Axe )
 				lumberBonus = 0.0;
 			#endregion
 
@@ -2364,7 +2365,8 @@ namespace Server.Items
 			 * : 1% bonus for every 5 points of lumberjacking
 			 * : +10% bonus at Grandmaster or higher
 			 */
-			if ( Type == WeaponType.Axe )
+             //LJ Bonus disabled
+			/*if ( Type == WeaponType.Axe )
 			{
 				double lumberValue = attacker.Skills[SkillName.Lumberjacking].Value;
 
@@ -2372,7 +2374,7 @@ namespace Server.Items
 
 				if ( lumberValue >= 100.0 )
 					modifiers += 0.1;
-			}
+			}*/
 
 			// New quality bonus:
 			if ( m_Quality != WeaponQuality.Regular )
