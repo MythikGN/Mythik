@@ -19,16 +19,17 @@ namespace Scripts.Mythik.Gumps
                 new TownEntry( "Jhelom",    new Point3D( 1381, 3817, 0 ) ),
                 new TownEntry( "Moonglow",  new Point3D( 4471, 1178, 0 ) ),
                 new TownEntry( "Nujel'm",   new Point3D( 3756, 1244, 0 ) ),
-                new TownEntry( "Occlo",     new Point3D( 3683, 2521, 0 ) ),
+                new TownEntry( "Occlo",     new Point3D( 3173,1730, 0 ) ),
                 new TownEntry( "Trinsic",   new Point3D( 1956, 2780, 10 ) ),
                 new TownEntry( "Vesper",    new Point3D( 2895, 688, 0 ) ),
                 new TownEntry( "Yew",       new Point3D( 546, 991, 0 ) ),
-                new TownEntry( "Serp's Hold",       new Point3D( 3021, 3397, 15 ) ),
+                new TownEntry("Magincia",   new Point3D(3205,1419,0)),
+                new TownEntry( "Serp's Hold",       new Point3D( 1874,3822, 15 ) ),
             };
 
         private static TownEntry[] m_UnguardedTowns =
             {
-                new TownEntry( "Buc's Den",         new Point3D[] { new Point3D( 2705, 2162, 0 ), new Point3D( 2713, 2232, 0 ), new Point3D( 2667, 2107, 0 ) } ),
+                new TownEntry( "Buc's Den",         new Point3D[] { new Point3D( 348,2764, 0 ), new Point3D( 338,2700, 0 ), new Point3D( 375,2699, 0 ) } ),
                 new TownEntry( "Minoc",             new Point3D[] { new Point3D( 2466, 443, 15 ), new Point3D( 2465, 544, 0 ), new Point3D( 2490, 486, 15 ) } ),
                 //new TownEntry( "Serp's Hold",       new Point3D( 3021, 3397, 15 ) ),
                 new TownEntry( "Skara Brae",        new Point3D( 592, 2155, 0 ) ),
@@ -58,7 +59,7 @@ namespace Scripts.Mythik.Gumps
 
             AddPage(0);
 
-            AddBackground(0, 0, 420, 300, 5054);
+            AddBackground(0, 0, 420, 350, 5054);
 
             AddImageTiled(10, 10, 400, 20, 2624);
             AddAlphaRegion(10, 10, 400, 20);

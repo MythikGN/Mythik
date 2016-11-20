@@ -39,7 +39,7 @@ namespace Scripts.Mythik.Gumps
                                                             new ItemStoneInfo( typeof( MandrakeRoot ), "Mandrake Root", 10, 0, true ),
                                                             new ItemStoneInfo( typeof( Nightshade ), "Nightshade", 10, 0, true ),
                                                             new ItemStoneInfo( typeof( SulfurousAsh ), "Sulfurous Ash", 10, 0, true ),
-                                                            new ItemStoneInfo( typeof( SpidersSilk  ), "Spider's silk", 10, 0, true )
+                                                            new ItemStoneInfo( typeof( SpidersSilk  ), "Spider's Silk", 10, 0, true )
                                                         } ),
                 new ItemStoneGroup( "Resources", new ItemStoneInfo[]
                                                         {
