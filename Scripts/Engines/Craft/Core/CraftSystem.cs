@@ -236,7 +236,8 @@ namespace Server.Engines.Craft
 		public void SetNeededExpansion( int index, Expansion expansion )
 		{
 			CraftItem craftItem = m_CraftItems.GetAt( index );
-			craftItem.RequiredExpansion = expansion;
+            //Skip the req expansion messages.
+			//craftItem.RequiredExpansion = expansion;
 		}
 
 		public void AddRes( int index, Type type, TextDefinition name, int amount )
