@@ -5,6 +5,7 @@ using Server.Multis;
 using Server.Targeting;
 using Server.Items;
 using Server.Regions;
+using Server.Gumps;
 
 namespace Server.Multis.Deeds
 {
@@ -171,21 +172,68 @@ namespace Server.Multis.Deeds
 				{
 					case HousePlacementResult.Valid:
 					{
-						BaseHouse house = GetHouse( from );
-						house.MoveToWorld( center, from.Map );
-						Delete();
+                            from.SendLocalizedMessage(1011576); // This is a valid location.
 
-						for ( int i = 0; i < toMove.Count; ++i )
-						{
-							object o = toMove[i];
+                            PreviewHouse prev = new PreviewHouse(m_MultiID);
 
-							if ( o is Mobile )
-								((Mobile)o).Location = house.BanLocation;
-							else if ( o is Item )
-								((Item)o).Location = house.BanLocation;
-						}
+                            MultiComponentList mcl = prev.Components;
 
-						break;
+                            Point3D banLoc = new Point3D(center.X + mcl.Min.X, center.Y + mcl.Max.Y + 1, center.Z);
+
+                            for (int i = 0; i < mcl.List.Length; ++i)
+                            {
+                                MultiTileEntry entry = mcl.List[i];
+
+                                int itemID = entry.m_ItemID;
+
+                                if (itemID >= 0xBA3 && itemID <= 0xC0E)
+                                {
+                                    banLoc = new Point3D(center.X + entry.m_OffsetX, center.Y + entry.m_OffsetY, center.Z);
+                                    break;
+                                }
+                            }
+
+                            for (int i = 0; i < toMove.Count; ++i)
+                            {
+                                object o = toMove[i];
+
+                                if (o is Mobile)
+                                    ((Mobile)o).Location = banLoc;
+                                else if (o is Item)
+                                    ((Item)o).Location = banLoc;
+                            }
+
+                            prev.MoveToWorld(center, from.Map);
+
+                            /* You are about to place a new house.
+                             * Placing this house will condemn any and all of your other houses that you may have.
+                             * All of your houses on all shards will be affected.
+                             * 
+                             * In addition, you will not be able to place another house or have one transferred to you for one (1) real-life week.
+                             * 
+                             * Once you accept these terms, these effects cannot be reversed.
+                             * Re-deeding or transferring your new house will not uncondemn your other house(s) nor will the one week timer be removed.
+                             * 
+                             * If you are absolutely certain you wish to proceed, click the button next to OKAY below.
+                             * If you do not wish to trade for this house, click CANCEL.
+                             */
+                            from.SendGump(new WarningGump(1060635, 30720, 1049583, 32512, 420, 280, new WarningGumpCallback(PlacementWarning_Callback), prev));
+
+                            /*BaseHouse house = GetHouse( from );
+                            house.MoveToWorld( center, from.Map );
+                            Delete();
+
+                            for ( int i = 0; i < toMove.Count; ++i )
+                            {
+                                object o = toMove[i];
+
+                                if ( o is Mobile )
+                                    ((Mobile)o).Location = house.BanLocation;
+                                else if ( o is Item )
+                                    ((Item)o).Location = house.BanLocation;
+                            }
+                            */
+                            break;
 					}
 					case HousePlacementResult.BadItem:
 					case HousePlacementResult.BadLand:
@@ -218,7 +266,52 @@ namespace Server.Multis.Deeds
 				}
 			}
 		}
-	}
+
+        private void PlacementWarning_Callback(Mobile from, bool okay, object state)
+        {
+            PreviewHouse prevHouse = (PreviewHouse)state;
+            if (Deleted || !okay || !from.CheckAlive() || from.Backpack == null || from.Backpack.FindItemByType(typeof(HouseDeed)) == null)
+            {
+                prevHouse.Delete();
+                return;
+            };
+
+
+
+            if (prevHouse.Deleted)
+            {
+                /* Too much time has passed and the test house you created has been deleted.
+				 * Please try again!
+				 */
+                from.SendGump(new NoticeGump(1060637, 30720, 1060647, 32512, 320, 180, null, null));
+
+                return;
+            }
+
+            Point3D center = prevHouse.Location;
+            Map map = prevHouse.Map;
+
+            prevHouse.Delete();
+
+            ArrayList toMove;
+            HousePlacementResult res = HousePlacement.Check(from, m_MultiID, center, out toMove);
+            BaseHouse house = GetHouse( from );
+            house.MoveToWorld( center, from.Map );
+            Delete();
+
+            for ( int i = 0; i < toMove.Count; ++i )
+            {
+                object o = toMove[i];
+
+                if ( o is Mobile )
+                    ((Mobile)o).Location = house.BanLocation;
+                else if ( o is Item )
+                    ((Item)o).Location = house.BanLocation;
+            }
+                            
+
+        }
+    }
 
 	public class StonePlasterHouseDeed : HouseDeed
 	{
