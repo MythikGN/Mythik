@@ -10,9 +10,10 @@ namespace Scripts.Mythik.Systems.Farming.Items
     public class FarmableDirt : Item
     {
 
-        public FarmableDirt() : base(0xff)
+        public FarmableDirt() : base(0x0914)
         {
             Movable = false;
+            this.Name = "tilled soil";
         }
     }
 }

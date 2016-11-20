@@ -115,11 +115,11 @@ namespace Scripts.Mythik.Systems
             herbs.BonusResources = new BonusHarvestResource[]
 			{
 				new BonusHarvestResource( 0, 83.9, null, null ),	//Nothing
-				new BonusHarvestResource( 100, 10.0, 1072548, typeof( CommonSeeds ) ),
+				//new BonusHarvestResource( 100, 10.0, 1072548, typeof( CommonSeeds ) ),
 				new BonusHarvestResource( 100, 03.0, 1072550, typeof( Seed ) ),
-				new BonusHarvestResource( 100, 02.0, 1072547, typeof( UnCommonSeeds ) ),
+				//new BonusHarvestResource( 100, 02.0, 1072547, typeof( UnCommonSeeds ) ),
 				new BonusHarvestResource( 100, 01.0, 1072549, typeof( ParasiticPlant ) ),
-				new BonusHarvestResource( 100, 00.1, 1072551, typeof( ExoticSeeds ) )
+				//new BonusHarvestResource( 100, 00.1, 1072551, typeof( ExoticSeeds ) )
 			};
 			
 

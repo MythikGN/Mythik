@@ -8,7 +8,8 @@ namespace Mythik.Systems.Farming
 {
 	public interface IFarm
     {
-        void AddFarmItem(Item item);
+        bool AddFarmItem(Item item);
+        void RemoveFarmitem(Item item);
     }
 
     public class SmallFarmDeed : HouseDeed
@@ -26,7 +27,7 @@ namespace Mythik.Systems.Farming
 
         public override BaseHouse GetHouse(Mobile owner)
         {
-            return new SmallFarm(owner, 0x24);
+            return new SmallFarm(owner, 0x13ec);
         }
 
         public override Rectangle2D[] Area { get { return AreaArray; } }
@@ -62,13 +63,24 @@ namespace Mythik.Systems.Farming
         {
             uint keyValue = CreateKeys(owner);
             AddSouthDoors(0, 3, 7,true);
-           // AddSouthDoor(0, 3, 7, keyValue);
-           // SetSign(2, 4, 5);
+            MultiComponentList mcl = MultiData.GetComponents(id);
+
+            if (id >= 0x13EC && id < 0x1D00)
+                HouseFoundation.AddStairsTo(ref mcl); // this is a AOS house, add the stairs
+                                                      // AddSouthDoor(0, 3, 7, keyValue);
+                                                      // SetSign(2, 4, 5);
         }
 
-        public void AddFarmItem(Item item)
+        public bool AddFarmItem(Item item)
         {
-            this.LockDowns.Add(item);
+            //TODO find existing dirt of plant item on this loc, refuse to add if so
+            this.Fixtures.Add(item);
+            return true;
+        }
+        public void RemoveFarmitem(Item item)
+        {
+            if (this.Fixtures.Contains(item))
+                this.Fixtures.Remove(item);
         }
 
 

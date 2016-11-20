@@ -25,7 +25,11 @@ namespace Scripts.Mythik.Systems.Farming
         {
 
         }
+        [Constructable]
+        public FarmingTool(Serial serial) : base(serial)
+        {
 
+        }
 
 
         public override void OnDoubleClick(Mobile from)
@@ -45,7 +49,7 @@ namespace Scripts.Mythik.Systems.Farming
             if (houseRegion == null || !(houseRegion.House is IFarm))
                 return;
 
-            if(!from.CheckSkill(SkillName.Begging, 0.75))
+            if(!from.CheckSkill(SkillName.Camping, 0.75))
             {
                 from.SendMessage("You fail to till the soil.");
                 return;
@@ -53,8 +57,15 @@ namespace Scripts.Mythik.Systems.Farming
             var dirt = new FarmableDirt();
             var loc = new Point3D(tile.X, tile.Y, tile.Z + 1);
             dirt.MoveToWorld(loc, from.Map);
-            (houseRegion.House as IFarm).AddFarmItem(dirt);
-            from.SendMessage("You till the soil.");
+            if ((houseRegion.House as IFarm).AddFarmItem(dirt)) {
+                from.SendMessage("You till the soil.");
+            }
+            else
+            {
+                from.SendMessage("The area appears to be in use already.");
+                dirt.Delete();
+            }
+            
         }
 
         public override void AddLootTypeProperty(ObjectPropertyList list)

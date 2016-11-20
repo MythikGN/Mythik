@@ -1,5 +1,7 @@
-﻿using Server;
+﻿using Mythik.Systems.Farming;
+using Server;
 using Server.Items;
+using Server.Regions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,20 +11,46 @@ using System.Threading.Tasks;
 namespace Scripts.Mythik.Systems.Farming.Items
 {
 
-    public abstract class  AbstractFarmSeed : Item, ICommodity
+    public class FarmSeed : Item, ICommodity
     {
-        
-        public AbstractFarmSeed(int artID) : base(artID)
+        [Constructable]
+        public FarmSeed() : this(PlantType.BlackPearl)
         {
+        }
+        [Constructable]
+        public FarmSeed(Serial serial) : base(serial)
+        {
+        }
+
+        [Constructable]
+        public FarmSeed(PlantType plantType) : base(0xDCF)
+        {
+            //TODO seeds either are like
+            // ginseng seeds, garlic seeds etc.
+            //or seeds are just seeds and select what you want to plant from a craft gump
+            this.PlantType = plantType;
+            this.Name = PlantType.ToString() + " seeds";
+            Weight = 0.1;
             Stackable = true;
         }
 
-        public AbstractFarmSeed(Serial serial) : base(serial)
+        public TextDefinition Description
         {
+            get
+            {
+                return this.Name;
+            }
         }
 
-        public abstract TextDefinition Description { get; }
-        public abstract bool IsDeedable { get; }
+        public bool IsDeedable
+        {
+            get
+            {
+                return false;
+            }
+        }
+
+        public PlantType PlantType { get; private set; }
 
         public override void OnDoubleClick(Mobile from)
         {
@@ -32,7 +60,7 @@ namespace Scripts.Mythik.Systems.Farming.Items
         private void OnTarget(Mobile from, object targeted)
         {
             var dirt = targeted as FarmableDirt;
-            if(dirt == null)
+            if (dirt == null)
             {
                 from.SendMessage("You can only plant this in tilled farm soil.");
                 return;
@@ -45,116 +73,24 @@ namespace Scripts.Mythik.Systems.Farming.Items
                 from.SendMessage("You fumble and lose the seed.");
                 return;
             }
-            var plant = new SmallPlant(PlantType.NightShade);
-            plant.Plant(from);
+            var region = Region.Find(dirt.Location, Map);
+            if (region == null)
+                return;
+            var houseRegion = region as HouseRegion;
+            if (houseRegion == null || !(houseRegion.House is IFarm))
+                return;
+
+
+            var plant = new FarmPlant(from, PlantType);
             plant.MoveToWorld(dirt.Location, dirt.Map);
-            dirt.Delete();
-
-        }
-    }
-    public class CommonSeeds : AbstractFarmSeed
-    {
-        [Constructable]
-        public CommonSeeds() : base(11)
-        {
-
-        }
-
-        public CommonSeeds(Serial serial) : base(serial) { }
-
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-        }
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-        }
-
-        public override TextDefinition Description
-        {
-            get
+            (houseRegion.House as IFarm).RemoveFarmitem(dirt);
+            dirt.Consume();
+            if ((houseRegion.House as IFarm).AddFarmItem(plant))
             {
-                return "Common Seeds";
+                from.SendMessage("You plant the seed.");
             }
-        }
-
-        public override bool IsDeedable
-        {
-            get
-            {
-                return true;
-            }
-        }
-    }
-    public class UnCommonSeeds : AbstractFarmSeed
-    {
-        [Constructable]
-        public UnCommonSeeds() : base(11)
-        {
-
-        }
-
-        public UnCommonSeeds(Serial serial) : base(serial) { }
-
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-        }
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-        }
-
-        public override TextDefinition Description
-        {
-            get
-            {
-                return "Uncommon Seeds";
-            }
-        }
-
-        public override bool IsDeedable
-        {
-            get
-            {
-                return true;
-            }
-        }
-    }
-    public class ExoticSeeds : AbstractFarmSeed
-    {
-        [Constructable]
-        public ExoticSeeds() : base(11)
-        {
-
-        }
-
-        public ExoticSeeds(Serial serial) : base(serial) { }
-
-        public override void Serialize(GenericWriter writer)
-        {
-            base.Serialize(writer);
-        }
-        public override void Deserialize(GenericReader reader)
-        {
-            base.Deserialize(reader);
-        }
-
-        public override TextDefinition Description
-        {
-            get
-            {
-                return "Exotic Seeds";
-            }
-        }
-
-        public override bool IsDeedable
-        {
-            get
-            {
-                return true;
-            }
+            
         }
     }
 }
+   
