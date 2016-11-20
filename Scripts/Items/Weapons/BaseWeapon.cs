@@ -686,8 +686,8 @@ namespace Server.Items
 				m_MageMod = new DefaultSkillMod( SkillName.Magery, true, -30 + m_AosWeaponAttributes.MageWeapon );
 				from.AddSkillMod( m_MageMod );
 			}
-
-			return true;
+            ValidateMobile(from);
+            return true;
 		}
 
 		public override void OnAdded( object parent )

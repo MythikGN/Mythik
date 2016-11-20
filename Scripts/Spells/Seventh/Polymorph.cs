@@ -123,6 +123,7 @@ namespace Server.Spells.Seventh
 
                         BaseArmor.ValidateMobile(Caster);
                         BaseWeapon.ValidateMobile(Caster);
+                        BaseJewel.ValidateMobile(Caster);
 
                         if (Caster.NameMod != null) //Caster has incognito, need to update name
                             Caster.NameMod = IncognitoSpell.GetNameMod(Caster.BodyValue);

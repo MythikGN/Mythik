@@ -140,12 +140,43 @@ namespace Server.Items
 
 			m_HitPoints = m_MaxHitPoints = Utility.RandomMinMax( InitMinHits, InitMaxHits );
 		}
+        public static void ValidateMobile(Mobile m)
+        {
+            if (m.AccessLevel >= AccessLevel.GameMaster)
+                return;
+            bool hasgotmessage = false;
+            for (int i = m.Items.Count - 1; i >= 0; --i)
+            {
+                if (i >= m.Items.Count)
+                    continue;
 
-		public override void OnAdded( object parent )
+                Item item = m.Items[i];
+
+                if (item is BaseJewel)
+                {
+                    BaseJewel armor = (BaseJewel)item;
+                    if (!m.Body.IsHuman)
+                    {
+                        if (!hasgotmessage)
+                        {
+                            m.SendAsciiMessage("You may not wear jewellery while polymorphed");
+                            hasgotmessage = true;
+                        }
+
+                        m.AddToBackpack(armor);
+                    }
+                   
+                }
+            }
+        }
+        public override void OnAdded( object parent )
 		{
-			if ( Core.AOS && parent is Mobile )
+			if (parent is Mobile )
 			{
-				Mobile from = (Mobile)parent;
+                //Polymorph check
+                ValidateMobile(parent as Mobile);
+
+                Mobile from = (Mobile)parent;
 
 				m_AosSkillBonuses.AddTo( from );
 

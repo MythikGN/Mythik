@@ -621,6 +621,8 @@ namespace Server.Items
 
 		public static void ValidateMobile( Mobile m )
 		{
+            if (m.AccessLevel >= AccessLevel.GameMaster)
+                return;
             bool hasgotmessage = false;
             for ( int i = m.Items.Count - 1; i >= 0; --i )
 			{
@@ -1295,7 +1297,7 @@ namespace Server.Items
 				if ( intBonus != 0 )
 					from.AddStatMod( new StatMod( StatType.Int, modName + "Int", intBonus, TimeSpan.Zero ) );
 			}
-
+            ValidateMobile(from);
 			return base.OnEquip( from );
 		}
 
