@@ -548,7 +548,7 @@ namespace Server.Engines.VendorSearhing
 
             if (type == typeof(ParasiticPlant)) return 1032688;
             if (type == typeof(LuminescentFungi)) return 1032689;
-
+            if (type == typeof(CrystallineBlackrock)) return 1077568;
             if (LocBuffer == null)
                 LocBuffer = new Dictionary<Type, int>();
 

@@ -55,6 +55,11 @@ namespace Scripts.Mythik.Systems
             }
 
         }
+        [Constructable]
+        public AuctionSystem(Serial serial) : base(serial)
+        {
+
+        }
 
         private void EventSink_Logout(LogoutEventArgs e)
         {
@@ -256,7 +261,7 @@ namespace Scripts.Mythik.Systems
                 pm.SendMessage("Please wait for your auction to finish");
                 return;
             }
-            pm.AuctionEnabled = false;//TODO serialize this
+            pm.AuctionEnabled = false;
             if(m_ListeningToAuction.Contains(pm))
             m_ListeningToAuction.Remove(pm);
         }

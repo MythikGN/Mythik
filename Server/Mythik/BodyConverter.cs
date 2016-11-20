@@ -53,7 +53,7 @@ namespace Server.Mythik
         {
             if (m_BodyTable.ContainsKey(v))
             {
-                Console.WriteLine("Converting: " + v + " to: " + m_BodyTable[v].Item1);
+                //Console.WriteLine("Converting: " + v + " to: " + m_BodyTable[v].Item1);
                 return m_BodyTable[v].Item1;
             }
             return v;
