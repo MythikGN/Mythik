@@ -65,6 +65,10 @@ namespace Server.Items
 			{
 				Eat( from );
 			}
+            else
+            {
+                from.SendAsciiMessage("You are too far away to eat this.");
+            }
 		}
 
 		public virtual bool Eat( Mobile from )
