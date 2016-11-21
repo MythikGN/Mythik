@@ -221,7 +221,7 @@ namespace Server.Misc
 				return;
 
             //Disable Focus gains
-			if ( skill.SkillName == SkillName.Focus /*&& from is BaseCreature*/ )
+			if ( skill.SkillName == SkillName.Focus && from is PlayerMobile )
 				return;
 
 			if ( skill.Base < skill.Cap && skill.Lock == SkillLock.Up )
@@ -277,7 +277,10 @@ namespace Server.Misc
 
 		public static bool CanLower( Mobile from, Stat stat )
 		{
-			switch ( stat )
+            //Disable stat loss for players.
+            if (from is PlayerMobile)
+                return false;
+            switch ( stat )
 			{
 				case Stat.Str: return ( from.StrLock == StatLockType.Down && from.RawStr > 10 );
 				case Stat.Dex: return ( from.DexLock == StatLockType.Down && from.RawDex > 10 );

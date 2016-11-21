@@ -3117,6 +3117,7 @@
     <Compile Include="Mythik\Items\Craftables\Tinkering\GemArmor\AmberArmor.cs" />
     <Compile Include="Mythik\Items\ItemSets.cs" />
     <Compile Include="Mythik\Items\Craftables\Tinkering\GemArmor\RubyArmor.cs" />
+    <Compile Include="Mythik\Items\Misc\BloodyBandage.cs" />
     <Compile Include="Mythik\Items\Misc\RareArmorDyes.cs" />
     <Compile Include="Mythik\Items\Rares\HairDye.cs" />
     <Compile Include="Mythik\Items\Rares\SkinDye.cs" />
