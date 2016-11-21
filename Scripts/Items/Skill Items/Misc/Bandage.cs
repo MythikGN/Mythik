@@ -60,7 +60,13 @@ namespace Server.Items
 
 		public override void OnDoubleClick( Mobile from )
 		{
-			if ( from.InRange( GetWorldLocation(), Range ) )
+            if (!Movable || from.Paralyzed)
+            {
+                from.SendAsciiMessage("You can't do that while frozen.");
+                return;
+            }
+
+            if ( from.InRange( GetWorldLocation(), Range ) )
 			{
 				from.RevealingAction();
 
@@ -414,7 +420,15 @@ namespace Server.Items
 				m_Healer.CheckSkill( secondarySkill, 0.0, 120.0 );
 				m_Healer.CheckSkill( primarySkill, 0.0, 120.0 );
 			}
-		}
+            //90% chance to get a bloody bandage back, lets have some consumption even 10%
+            if(Utility.Random(10) <= 9)
+            {
+                var bloody = new BloodyBandage();
+                m_Healer.AddToBackpack(bloody);
+                m_Healer.SendAsciiMessage("You put the {0} in your pack.", bloody.Name ?? CliLoc.LocToString(bloody.LabelNumber));
+
+            }
+        }
 
 		private class InternalTimer : Timer
 		{
