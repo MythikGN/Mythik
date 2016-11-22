@@ -40,6 +40,7 @@ namespace Server.Spells.Sixth
 
         public static bool DoDispell(Mobile from, Mobile m)
         {
+            // only remove beneficial if target is other.
             var res = SpellHelper.RemoveStatMod(from, m, StatType.All, m != from);
             if (!res)
                 res = SpellHelper.RemoveStatMod(from, m, StatType.Str, m != from);
@@ -47,9 +48,9 @@ namespace Server.Spells.Sixth
                 res = SpellHelper.RemoveStatMod(from, m, StatType.Int, m != from);
             if (!res)
                 res = SpellHelper.RemoveStatMod(from, m, StatType.Dex, m != from);
-            if (!res)
+            if (!res && m != from) // only dispel if not targeting self
                 res = Second.ProtectionSpell.EndProtection(m);
-            if (!res)
+            if (!res && m != from) // only dispel if not targeting self
                 res = First.ReactiveArmorSpell.EndArmor(m);
             if (!res)
             {
@@ -93,7 +94,6 @@ namespace Server.Spells.Sixth
                     m.FixedEffect(0x3779, 10, 20);
                     from.SendAsciiMessage("There is nothing to dispel.");
                 }
-                return;
             }
             else if (CheckHSequence(m))
             {
@@ -114,6 +114,7 @@ namespace Server.Spells.Sixth
                     from.SendLocalizedMessage(1010084); // The creature resisted the attempt to dispel it!
                 }
             }
+            FinishSequence();
         }
         public class InternalTarget : Target
 		{
