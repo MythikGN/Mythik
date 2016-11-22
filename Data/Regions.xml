@@ -207,20 +207,20 @@
 			</region>
 		</region>
 		<region type="TownRegion" priority="50" name="Ocllo">
-			<rect x="3587" y="2456" width="119" height="99" />
-			<rect x="3706" y="2460" width="2" height="95" />
-			<rect x="3587" y="2555" width="106" height="73" />
-			<rect x="3590" y="2628" width="103" height="58" />
-			<rect x="3693" y="2555" width="61" height="144" />
-			<rect x="3754" y="2558" width="7" height="141" />
-			<rect x="3761" y="2555" width="7" height="144" zmax="50" />
-			<rect x="3695" y="2699" width="66" height="13" />
-			<go x="3650" y="2519" z="0" />
+			<rect x="3075" y="1664" width="119" height="99" />
+			<rect x="3194" y="1668" width="2" height="95" />
+			<rect x="3075" y="1763" width="106" height="73" />
+			<rect x="3078" y="1836" width="103" height="58" />
+			<rect x="3181" y="1763" width="61" height="144" />
+			<rect x="3242" y="1766" width="7" height="141" />
+			<rect x="3249" y="1763" width="7" height="144" zmax="50" />
+			<rect x="3183" y="1907" width="66" height="13" />
+			<go x="3138" y="1727" z="0" />
 			<music name="Ocllo" />
 			<region>
-				<rect x="3664" y="2608" width="16" height="16" />
-				<rect x="3664" y="2640" width="8" height="16" />
-				<rect x="3672" y="2648" width="8" height="8" />
+				<rect x="3152" y="1816" width="16" height="16" />
+				<rect x="3152" y="1848" width="8" height="16" />
+				<rect x="3160" y="1856" width="8" height="8" />
 				<logoutDelay active="false" />
 			</region>
 		</region>
@@ -432,16 +432,16 @@
 			</region>
 		</region>
 		<region type="TownRegion" priority="50" name="Magincia">
-			<rect x="3653" y="2046" width="27" height="48" />
-			<rect x="3752" y="2046" width="52" height="48" />
-			<rect x="3680" y="2045" width="72" height="49" />
-			<rect x="3652" y="2094" width="160" height="180" />
-			<rect x="3649" y="2256" width="54" height="47" />
-			<go x="3714" y="2220" z="20" />
+			<rect x="3141" y="1254" width="27" height="48" />
+			<rect x="3240" y="1254" width="52" height="48" />
+			<rect x="3168" y="1253" width="72" height="49" />
+			<rect x="3140" y="1302" width="160" height="180" />
+			<rect x="3137" y="1464" width="54" height="47" />
+			<go x="3202" y="1428" z="20" />
 			<music name="Magincia" />
 			<region>
-				<rect x="3680" y="2152" width="24" height="8" />
-				<rect x="3720" y="2216" width="16" height="16" />
+				<rect x="3168" y="1360" width="24" height="8" />
+				<rect x="3208" y="1424" width="16" height="16" />
 				<logoutDelay active="false" />
 			</region>
 		</region>
