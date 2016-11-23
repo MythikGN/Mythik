@@ -3,6 +3,7 @@ using System.IO;
 using System.Collections;
 using Server;
 using Server.Regions;
+using Scripts.Mythik;
 
 namespace Server
 {
@@ -38,7 +39,9 @@ namespace Server
 
 							x = Convert.ToInt32( split[0] );
 							y = Convert.ToInt32( split[1] );
-
+                            //update loc's from old fel to new fel/ilsh
+                            var map = Map.Felucca;
+                            MythikStaticValues.UpdateLoc(ref x, ref y, ref map);
 							try
 							{
 								new TreasureRegion( x, y, Map.Felucca );

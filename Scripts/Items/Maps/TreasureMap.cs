@@ -7,6 +7,7 @@ using Server.Mobiles;
 using Server.Network;
 using Server.Targeting;
 using Server.ContextMenus;
+using Scripts.Mythik;
 
 namespace Server.Items
 {
@@ -95,8 +96,12 @@ namespace Server.Items
 							string[] split = line.Split( ' ' );
 
 							int x = Convert.ToInt32( split[0] ), y = Convert.ToInt32( split[1] );
+                            //update loc's from old fel to new fel/ilsh
+                            var map = Map.Felucca;
+                            MythikStaticValues.UpdateLoc(ref x, ref y, ref map);
 
-							Point2D loc = new Point2D( x, y );
+                            Point2D loc = new Point2D( x, y );
+
 							list.Add( loc );
 
 							if ( IsInHavenIsland( loc ) )
