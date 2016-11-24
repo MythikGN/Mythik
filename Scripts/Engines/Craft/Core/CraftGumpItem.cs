@@ -81,8 +81,13 @@ namespace Server.Engines.Craft
 				AddHtmlLocalized( 330, 40, 180, 18, craftItem.NameNumber, LabelColor, false, false );
 			else
 				AddLabel( 330, 40, LabelHue, craftItem.NameString );
+            //Comes first
+            if (craftItem.ItemType.IsSubclassOf(typeof(BaseArmor)) || craftItem.ItemType.IsSubclassOf(typeof(BaseWeapon)))
+            {
+                DrawSkillBonuses(craftItem);
+            }
 
-			if ( craftItem.UseAllRes )
+            if ( craftItem.UseAllRes )
 				AddHtmlLocalized( 170, 302 + (m_OtherCount++ * 20), 310, 18, 1048176, LabelColor, false, false ); // Makes as many as possible at once
 
 			DrawItem();
@@ -94,42 +99,62 @@ namespace Server.Engines.Craft
 				AddHtmlLocalized( 170, 302 + (m_OtherCount++ * 20), 310, 18, 1063363, LabelColor, false, false ); //* Requires the "Samurai Empire" expansion
 			 * */
 
-			if( craftItem.RequiredExpansion != Expansion.None )
+			/*if( craftItem.RequiredExpansion != Expansion.None )
 			{
 				bool supportsEx = (from.NetState != null && from.NetState.SupportsExpansion( craftItem.RequiredExpansion ));
 				TextDefinition.AddHtmlText( this, 170, 302 + (m_OtherCount++ * 20), 310, 18, RequiredExpansionMessage( craftItem.RequiredExpansion ), false, false, supportsEx ? LabelColor : RedLabelColor, supportsEx ? LabelHue : RedLabelHue );
-			}
+			}*/
 
 			if( needsRecipe )
 				AddHtmlLocalized( 170, 302 + (m_OtherCount++ * 20), 310, 18, 1073620, RedLabelColor, false, false ); // You have not learned this recipe.
 
-            if(craftItem.ItemType.IsSubclassOf(typeof(BaseArmor)) || craftItem.ItemType.IsSubclassOf(typeof(BaseWeapon)) )
-            {
-                Item item = null;
-                string text = "";
-                try { item = Activator.CreateInstance(craftItem.ItemType) as Item; } catch { }
 
-                var weap = item as BaseWeapon;
-                var arm = item as BaseArmor;
-                if(weap != null)
+        }
+
+        private void DrawSkillBonuses(CraftItem craftItem)
+        {
+            Item item = null;
+            string text = "";
+            try { item = Activator.CreateInstance(craftItem.ItemType) as Item; } catch { }
+
+            var weap = item as BaseWeapon;
+            var arm = item as BaseArmor;
+            int height = 36;
+            if (weap != null)
+            {
+                if (!weap.SkillBonuses.IsEmpty)
                 {
-                    if(!weap.SkillBonuses.IsEmpty)
+                    text += "+" + weap.SkillBonuses.GetBonus(0) + " " + weap.SkillBonuses.GetSkill(0) + " <br>";
+                    if (weap.SkillBonuses.GetBonus(1) >= 0.01)
                     {
-                        text += weap.SkillBonuses.GetBonus(0) + " " + weap.SkillBonuses.GetSkill(0) + "<br>";
+                        text += "+" + weap.SkillBonuses.GetBonus(1) + " " + weap.SkillBonuses.GetSkill(1) + " <br>";
+                        height += 18;
                     }
                 }
-                if (arm != null)
+            }
+            if (arm != null)
+            {
+                if (!arm.SkillBonuses.IsEmpty)
                 {
-                    if (!arm.SkillBonuses.IsEmpty)
+                    text += "+" +arm.SkillBonuses.GetBonus(0) + " " + arm.SkillBonuses.GetSkill(0) + " <br>";
+                    if (arm.SkillBonuses.GetBonus(1) >= 0.1)
                     {
-                        text += arm.SkillBonuses.GetBonus(0) + " " + arm.SkillBonuses.GetSkill(0) + "<br>";
+                        text += "+" + arm.SkillBonuses.GetBonus(1) + " " + arm.SkillBonuses.GetSkill(1) + " <br>";
+                        height += 18;
+
                     }
+
                 }
-                AddHtml(170, 302 + (m_OtherCount * 20), 310, 18, text, false, false);
+            }
+            if (!string.IsNullOrWhiteSpace(text))
+            {
+                //text = "Item Bonuses <br>" + text;
+                AddHtml(170, 302 + (m_OtherCount * 20), 310, height, "<BASEFONT COLOR=WHITE>" + text, false, false);
+                m_OtherCount += (height / 18);
             }
         }
 
-		private TextDefinition RequiredExpansionMessage( Expansion expansion )
+        private TextDefinition RequiredExpansionMessage( Expansion expansion )
 		{
 			switch( expansion )
 			{

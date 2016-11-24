@@ -55,7 +55,7 @@ namespace Server.Engines.Craft
 			AddImageTiled( 165, 292 + EXTRA_CATS, 355, 45, 2624 ); //MSG AREA
 			AddImageTiled( 10, 342 + EXTRA_CATS, 510, 85, 2624 );//large main sec bot
 			AddImageTiled( 10, 37, 200, 250 + EXTRA_CATS, 2624 ); // bg under the cats
-			AddImageTiled( 215, 37, 305, 250, 2624 );
+			AddImageTiled( 215, 37, 305, 250 + EXTRA_CATS, 2624 );
 			AddAlphaRegion( 10, 10, 510, 417 + EXTRA_CATS);
 
 			if ( craftSystem.GumpTitleNumber > 0 )
@@ -196,25 +196,26 @@ namespace Server.Engines.Craft
 				CreateItemList( context.LastGroupIndex );
 		}
 
-		public void CreateResList( bool opt, Mobile from )
+        int numitemsPerPage = 12;
+        public void CreateResList( bool opt, Mobile from )
 		{
 			CraftSubResCol res = ( opt ? m_CraftSystem.CraftSubRes2 : m_CraftSystem.CraftSubRes );
 
 			for ( int i = 0; i < res.Count; ++i )
 			{
-				int index = i % 10;
+				int index = i % numitemsPerPage;
 
 				CraftSubRes subResource = res.GetAt( i );
 
 				if ( index == 0 )
 				{
 					if ( i > 0 )
-						AddButton( 485, 260, 4005, 4007, 0, GumpButtonType.Page, (i / 10) + 1 );
+						AddButton( 485, 320, 4005, 4007, 0, GumpButtonType.Page, (i / numitemsPerPage) + 1 );
 
-					AddPage( (i / 10) + 1 );
+					AddPage( (i / numitemsPerPage) + 1 );
 
 					if ( i > 0 )
-						AddButton( 455, 260, 4014, 4015, 0, GumpButtonType.Page, i / 10 );
+						AddButton( 455, 320, 4014, 4015, 0, GumpButtonType.Page, i / numitemsPerPage);
 
 					CraftContext context = m_CraftSystem.GetContext( m_From );
 
@@ -314,9 +315,10 @@ namespace Server.Engines.Craft
 			CraftGroup craftGroup = craftGroupCol.GetAt( selectedGroup );
 			CraftItemCol craftItemCol = craftGroup.CraftItems;
 
+
 			for ( int i = 0; i < craftItemCol.Count; ++i )
 			{
-				int index = i % 10;
+				int index = i % numitemsPerPage;
 
 				CraftItem craftItem = craftItemCol.GetAt( i );
 
@@ -324,16 +326,16 @@ namespace Server.Engines.Craft
 				{
 					if ( i > 0 )
 					{
-						AddButton( 370, 260, 4005, 4007, 0, GumpButtonType.Page, (i / 10) + 1 );
-						AddHtmlLocalized( 405, 263, 100, 18, 1044045, LabelColor, false, false ); // NEXT PAGE
+						AddButton( 370, 300, 4005, 4007, 0, GumpButtonType.Page, (i / numitemsPerPage) + 1 );
+						AddHtmlLocalized( 405, 303, 100, 18, 1044045, LabelColor, false, false ); // NEXT PAGE
 					}
 
-					AddPage( (i / 10) + 1 );
+					AddPage( (i / numitemsPerPage) + 1 );
 
 					if ( i > 0 )
 					{
-						AddButton( 220, 260, 4014, 4015, 0, GumpButtonType.Page, i / 10 );
-						AddHtmlLocalized( 255, 263, 100, 18, 1044044, LabelColor, false, false ); // PREV PAGE
+						AddButton( 220, 300, 4014, 4015, 0, GumpButtonType.Page, i / numitemsPerPage);
+						AddHtmlLocalized( 255, 303, 100, 18, 1044044, LabelColor, false, false ); // PREV PAGE
 					}
 				}
 
