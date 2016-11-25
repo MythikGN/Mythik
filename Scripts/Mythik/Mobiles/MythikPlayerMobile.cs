@@ -19,7 +19,7 @@ namespace Scripts.Mythik.Mobiles
         public PokerGame PokerGame { get; set; }
 
 
-        public bool HasSetLanguageSkills { get; set; }
+        public bool HasSetSkills { get; set; }
         public bool AuctionEnabled { get; internal set; }
         public bool ChatEnabled { get; internal set; } = true;
 
@@ -95,7 +95,7 @@ namespace Scripts.Mythik.Mobiles
         {
             base.Serialize(writer);
             writer.Write((int)2);//version
-            writer.Write(HasSetLanguageSkills);
+            writer.Write(HasSetSkills);
             writer.Write(AuctionEnabled);
 
             writer.Write(AchievementPointsTotal);
@@ -120,7 +120,7 @@ namespace Scripts.Mythik.Mobiles
         {
             base.Deserialize(reader);
             int ver = reader.ReadInt();
-            HasSetLanguageSkills = reader.ReadBool();
+            HasSetSkills = reader.ReadBool();
             AuctionEnabled = reader.ReadBool();
             AchievementPointsTotal = reader.ReadInt();
             int count = reader.ReadInt();
