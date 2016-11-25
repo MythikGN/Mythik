@@ -39,10 +39,14 @@ namespace Scripts.Mythik.Systems
 
         //item is stored inside
         private List<MythikPlayerMobile> m_ListeningToAuction = new List<MythikPlayerMobile>();
+        public static AuctionSystem Instance;
+
+        public Mobile ItemOwner {  get { return m_ItemOwner; } }
 
         [Constructable]
         public AuctionSystem() : base(0x00)
         {
+            Instance = this;
             if(Enabled)
             {
                 CommandSystem.Register("auction", AccessLevel.Player, new CommandEventHandler(OnAuction));
@@ -58,7 +62,7 @@ namespace Scripts.Mythik.Systems
         [Constructable]
         public AuctionSystem(Serial serial) : base(serial)
         {
-
+            Instance = this;
         }
 
         private void EventSink_Logout(LogoutEventArgs e)
@@ -97,9 +101,10 @@ namespace Scripts.Mythik.Systems
                 if (m_CurrentBidder != null)
                 {
                     m_CurrentBidder.PlaceInBackpack(new BankCheck((int)(m_CurrentBid)));
+                    m_CurrentBidder.SendAsciiMessage("You have been outbid and " + m_CurrentBid + "gp has been returned to you.");
                     //return current bidders gold.
                 }
-                Broadcast(e.Mobile.Name + " bids " + e.Arguments[0] + " On the " + m_Item.Name);
+                Broadcast("[" + e.Mobile.Name + "] bids " + e.Arguments[0] + " On the " + m_Item.Name);
                 m_CurrentBid = bid;
                 m_CurrentBidder = pm;
                 this.m_timer = new AuctionTimer(this);
@@ -111,7 +116,7 @@ namespace Scripts.Mythik.Systems
         private void Broadcast(string msg)
         {
             foreach (var pm in m_ListeningToAuction)
-                pm.SendMessage(0xBAD,msg);
+                pm.SendMessage(0x71A,msg);
         }
         [Usage("auction")]
         [Description("Auction an Item using the Mythik Auction system")]
@@ -188,13 +193,19 @@ namespace Scripts.Mythik.Systems
             }
         }
 
-        private void StartAuction(Item item, int m_StartPrice)
+        private void StartAuction(Item item, int price)
         {
-
+            //-1 price cancel it.
+            if (price == -1)
+            {
+                m_ItemOwner.SendAsciiMessage("You failed to set a valid price and your auction was cancelled.");
+                EndAuction(false);
+                return;
+            }
             m_Item = item;
             Broadcast("Auction Starting!");
-            Broadcast(item.Amount + " " + item.Name + " Price: " + m_StartPrice);
-            m_CurrentBid = m_StartPrice;
+            Broadcast(item.Amount + " " + item.Name + " Price: " + price);
+            m_CurrentBid = price;
             this.m_timer = new AuctionTimer(this);
             m_timer.Start();
             m_auctionStatus = AuctionStatus.Ongoing;
@@ -223,10 +234,11 @@ namespace Scripts.Mythik.Systems
             Broadcast(m_Item.Amount + " " + m_Item.Name + " Price: " + m_CurrentBid + "  " + timeSpan.Seconds + " Remaining!");
         }
 
-        private void EndAuction()
+        private void EndAuction(bool sendbroadcast = true)
         {
             m_auctionStatus = AuctionStatus.Finishing;
-            Broadcast("Auction Ended");
+            if(sendbroadcast)
+                Broadcast("Auction Ended");
             if(m_CurrentBidder == null)
             {
                 m_ItemOwner.PlaceInBackpack(m_Item);
