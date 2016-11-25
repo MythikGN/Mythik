@@ -24,9 +24,10 @@ namespace Scripts.Mythik.Systems
 
         private static void EventSink_Login(LoginEventArgs e)
         {
-            if(!(e.Mobile as MythikPlayerMobile).HasSetLanguageSkills)
+            if(!(e.Mobile as MythikPlayerMobile).HasSetSkills)
             {
-                e.Mobile.SendGump(new LanguageSelectGump());
+                e.Mobile.CloseGump(typeof(SkillsSelectGump));
+                e.Mobile.SendGump(new SkillsSelectGump());
             }
         }
 
@@ -84,11 +85,11 @@ namespace Scripts.Mythik.Systems
                 sender.Mobile.Skills[skillA].BaseFixedPoint = 600;
                 sender.Mobile.Skills[skillB].BaseFixedPoint = 600;
                 sender.Mobile.Skills[SkillName.Magery].BaseFixedPoint = 800;
-                (sender.Mobile as MythikPlayerMobile).HasSetLanguageSkills = true;
+                (sender.Mobile as MythikPlayerMobile).HasSetSkills = true;
                 AddSkillStarterItems(sender.Mobile, skillA);
                 AddSkillStarterItems(sender.Mobile,skillB);
 
-                //base.OnResponse(sender, info);
+                base.OnResponse(sender, info);
             }
 
 
@@ -105,30 +106,37 @@ namespace Scripts.Mythik.Systems
                         player.AddToBackpack(new SmithHammer());
                         player.AddToBackpack(new IronIngot(50));
                         break;
+
                     case SkillName.Carpentry:
                         player.AddToBackpack(new Saw());
                         player.AddToBackpack(new Log(50));
                         break;
+
                     case SkillName.Cartography:
                         player.AddToBackpack(new BlankMap());
                         player.AddToBackpack(new BlankMap());
                         player.AddToBackpack(new PenAndInk());
                         break;
+
                     case SkillName.Inscribe:
                         player.AddToBackpack(new BlankScroll(10));
                         player.AddToBackpack(new ScribesPen());
                         break;
+
                     case SkillName.Fishing:
                         player.AddToBackpack(new FishingPole());
                         break;
+
                     case SkillName.Fletching:
                         player.AddToBackpack(new FletcherTools());
                         player.AddToBackpack(new Log(50));
                         break;
+
                     case SkillName.Veterinary:
                     case SkillName.Healing:
                         player.AddToBackpack(new Bandage(50));
                         break;
+
                     case SkillName.Lumberjacking:
                         player.AddToBackpack(new Axe());
 
@@ -156,16 +164,16 @@ namespace Scripts.Mythik.Systems
 
                     case SkillName.Swords:
                         EquipAnItem(player, new Longsword() { Quality = WeaponQuality.Exceptional });
-
                         goto case SkillName.Wrestling;
+
                     case SkillName.Fencing:
                         EquipAnItem(player, new Kryss() { Quality = WeaponQuality.Exceptional });
-
                         goto case SkillName.Wrestling;
+
                     case SkillName.Macing:
                         EquipAnItem(player, new Mace() { Quality = WeaponQuality.Exceptional });
-
                         goto case SkillName.Wrestling;
+
                     case SkillName.Wrestling:
                         EquipAnItem(player, new RingmailLegs());
                         EquipAnItem(player, new RingmailArms());
@@ -193,8 +201,8 @@ namespace Scripts.Mythik.Systems
 
 
 
-
-        private class LanguageSelectGump : Gump
+        //Disabled, no need to set language as language is set during login, and also each time client sends a unicode chat message.
+        /*private class LanguageSelectGump : Gump
         {
             public LanguageSelectGump(): base(25,25)
             {
@@ -243,6 +251,6 @@ namespace Scripts.Mythik.Systems
                 sender.Mobile.SendGump(new SkillsSelectGump());
                 base.OnResponse(sender, info);
             }
-        }
+        }*/
     }
 }

@@ -185,6 +185,7 @@ namespace Scripts.Mythik.Systems
             //start a timer to timeout if they dont fill in price
             if(m_StartPrice == -1)
             {
+                from.CloseGump(typeof(AuctionPriceGump));
                 from.SendGump(new AuctionPriceGump(from,item,StartAuction));
             }
             else
