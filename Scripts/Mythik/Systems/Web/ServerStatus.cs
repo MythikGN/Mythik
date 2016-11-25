@@ -21,16 +21,24 @@ namespace Scripts.Mythik.Systems.Web
         }
         public static void Initialize()
         {
-           /* var clientsListner = new HttpListener();
-            clientsListner.Prefixes.Add("http://play.mythikuo.com:3000/");
-            clientsListner.Start();
-            Task.Run(() => { while (clientsListner.IsListening) { SendResponse(clientsListner.GetContext().Response); } });
+            try
+            {
+                var clientsListner = new HttpListener();
+                clientsListner.Prefixes.Add("http://play.mythikuo.com:3000/");
+                clientsListner.Start();
+                Task.Run(() => { while (clientsListner.IsListening) { SendResponse(clientsListner.GetContext().Response); } });
 
-            var statsListner = new HttpListener();
-            statsListner.Prefixes.Add("http://play.mythikuo.com:3001/");
-            statsListner.Start();
-            Task.Run(() => { while (statsListner.IsListening) { SendStatsResponse(statsListner.GetContext().Response); } });
-            */
+                var statsListner = new HttpListener();
+                statsListner.Prefixes.Add("http://play.mythikuo.com:3001/");
+                statsListner.Start();
+                Task.Run(() => { while (statsListner.IsListening) { SendStatsResponse(statsListner.GetContext().Response); } });
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Web status error: " + e.Message);
+            }
+           
+            
         }
 
         private static void SendStatsResponse(HttpListenerResponse response)
