@@ -12,6 +12,9 @@ namespace Scripts.Mythik.Systems
 {
    public class ChatSystem
     {
+        public static int Hue = 0x7A1;
+        public static int GMHue = 0x44;
+
         public static void Initialize()
         {
             CommandSystem.Register("chaton", AccessLevel.Player, new CommandEventHandler(EnableChat));
@@ -29,19 +32,16 @@ namespace Scripts.Mythik.Systems
         private static void SendChatMessage(CommandEventArgs e)
         {
             var msg = "[" + e.Mobile.Name + "]: " + e.ArgString;
-            var hue = 0x7a1;
+            var hue = Hue;
             if (e.Mobile.AccessLevel > AccessLevel.Player)
-                hue = 0x44;
+                hue = GMHue;
             if(!(e.Mobile as MythikPlayerMobile).ChatEnabled)
             {
                 e.Mobile.SendAsciiMessage("Enable Chat with .chaton");
                 return;
             }
             Packet p = new AsciiMessage(Serial.MinusOne, -1, MessageType.Regular, hue, 3, "System", msg);
-            
-
             List<NetState> list = NetState.Instances;
-
             p.Acquire();
 
             for (int i = 0; i < list.Count; ++i)
@@ -49,9 +49,7 @@ namespace Scripts.Mythik.Systems
                 if (list[i].Mobile != null && ((MythikPlayerMobile)list[i].Mobile).ChatEnabled)
                     list[i].Send(p);
             }
-
             p.Release();
-
             NetState.FlushAll();
         }
 
@@ -60,13 +58,29 @@ namespace Scripts.Mythik.Systems
         [Description("Disable Chat")]
         private static void DisableChat(CommandEventArgs e)
         {
-            ((MythikPlayerMobile)e.Mobile).ChatEnabled = false;
+            if (((MythikPlayerMobile)e.Mobile).ChatEnabled)
+            {
+                ((MythikPlayerMobile)e.Mobile).ChatEnabled = false;
+                e.Mobile.SendAsciiMessage("You disable chat.");
+            }
+            else
+            {
+                e.Mobile.SendAsciiMessage("You already have chat disabled.");
+            }
         }
         [Usage("chaton")]
         [Description("Enable Chat")]
         private static void EnableChat(CommandEventArgs e)
         {
-            ((MythikPlayerMobile)e.Mobile).ChatEnabled = true;
+            if (!((MythikPlayerMobile)e.Mobile).ChatEnabled)
+            {
+                ((MythikPlayerMobile)e.Mobile).ChatEnabled = true;
+                e.Mobile.SendAsciiMessage("You enable chat.");
+            }
+            else
+            {
+                e.Mobile.SendAsciiMessage("You already have chat enabled.");
+            }
         }
     }
 }
