@@ -1,5 +1,6 @@
 using System;
 using Server.Items;
+using Server.Misc;
 
 namespace Server.Engines.Craft
 {
@@ -83,6 +84,9 @@ namespace Server.Engines.Craft
 			AddCraft( typeof(  CityMap ), 1044448, 1015231, 25.0, 85.0, typeof( BlankMap ), 1044449, 1, 1044450 );
 			AddCraft( typeof( SeaChart ), 1044448, 1015232, 35.0, 95.0, typeof( BlankMap ), 1044449, 1, 1044450 );
 			AddCraft( typeof( WorldMap ), 1044448, 1015233, 39.5, 99.5, typeof( BlankMap ), 1044449, 1, 1044450 );
-		}
-	}
+            AddCraft(typeof(WeatherMap), 1044448, "weather map", 79.5, 99.5, typeof(BlankMap), 1044449, 1, 1044450); // Seems like a cool idea, maybe it should require some more resources.
+
+
+        }
+    }
 }

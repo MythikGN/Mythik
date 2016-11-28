@@ -337,7 +337,7 @@ namespace Server.Engines.Craft
             AddNecroSpell(1, 13, 109.6, typeof(BloodOathScroll), RecipeName.BloodOathScroll, Reagent.DaemonBlood);
             //AddNecroSpell(12, 23, 114.9, typeof(VampiricEmbraceScroll), RecipeName.VampiricEmbraceScroll, Reagent.BatWing, Reagent.NoxCrystal, Reagent.PigIron);
             AddNecroSpell(11, 17, 124.9, typeof(SummonFamiliarScroll), RecipeName.SummonFamiliarScroll, Reagent.BatWing, Reagent.GraveDust, Reagent.DaemonBlood);
-            AddNecroSpell(11, 17, 124.9, typeof(ExorcismScroll), RecipeName.ExorcismScroll, Reagent.BatWing, Reagent.GraveDust, Reagent.DaemonBlood);
+            AddNecroSpell(16, 40, 129.9, typeof(ExorcismScroll), RecipeName.ExorcismScroll, Reagent.NoxCrystal, Reagent.GraveDust, Reagent.PigIron);
 
             AddChivSpell(11,"Enemy Of One", 17, 124.9, typeof(EnemyOfOneScroll), RecipeName.EnemyOfOneScroll, Reagent.Bloodmoss, Reagent.BlackPearl, Reagent.DaemonBlood);
             
@@ -365,7 +365,7 @@ namespace Server.Engines.Craft
 
 
 
-            if ( Core.ML )
+           /* if ( Core.ML )
 			{
 				index = AddCraft( typeof( EnchantedSwitch ), 1044294, 1072893, 45.0, 95.0, typeof( BlankScroll ), 1044377, 1, 1044378 );
 				AddRes( index, typeof( SpidersSilk ), 1044360, 1, 1044253 );
@@ -380,7 +380,7 @@ namespace Server.Engines.Craft
 				AddRes( index, typeof( HollowPrism ), 1072895, 1, 1044253 );
 				ForceNonExceptional( index );
 				SetNeededExpansion( index, Expansion.ML );
-			}
+			}*/
 			
 			
 

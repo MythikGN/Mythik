@@ -8,7 +8,7 @@ namespace Server.Misc
 {
 	public class TestCenter
 	{
-		private const bool m_Enabled = true;
+		private const bool m_Enabled = false;
 		public static bool Enabled { get{ return m_Enabled; } }
 
 		public static void Initialize()

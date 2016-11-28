@@ -34,7 +34,7 @@ namespace Scripts.Mythik.Items.Stones
             reags.AddItem(new TotalManaPotion() { Amount = 25 });
             reags.AddItem(new GreaterHealPotion() { Amount = 25 });
             reags.AddItem(new InvisibilityPotion() { Amount = 25 });
-            reags.AddItem(new GreaterCurePotion() { Amount = 25 });
+            reags.AddItem(new GreaterCurePotion() { Amount = 10 });
             reags.AddItem(new GreaterRestorePotion() { Amount = 25 });
             pm.AddToBackpack(reags);
             pm.SendMessage("A bag of PvP supplies has been added to your backpack.");

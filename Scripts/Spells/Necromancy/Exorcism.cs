@@ -22,7 +22,7 @@ namespace Server.Spells.Necromancy
 
 		public override TimeSpan CastDelayBase { get { return TimeSpan.FromSeconds( 2.0 ); } }
 
-		public override double RequiredSkill { get { return 80.0; } }
+		public override double RequiredSkill { get { return 0; } }
 		public override int RequiredMana { get { return 40; } }
 
 		public ExorcismSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )

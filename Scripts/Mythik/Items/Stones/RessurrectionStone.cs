@@ -34,7 +34,7 @@ namespace Scripts.Mythik.Items.Stones
             {
                 if (pm.InRange(GetWorldLocation(), 2))
                 {
-                    if(pm.CanBeginAction(this))
+                    if(pm.CanBeginAction(new DeathTimer(pm)))
                     {
                         pm.Frozen = true;
                         pm.SendGump(new ResurrectionStoneGump(from));
@@ -80,7 +80,7 @@ namespace Scripts.Mythik.Items.Stones
     public class DeathTimer : Timer
     {
         private PlayerMobile m_Owner;
-        private static TimeSpan RessurrectionTimer = TimeSpan.FromSeconds(20);
+        private static TimeSpan RessurrectionTimer = TimeSpan.FromSeconds(2);
         public DeathTimer(PlayerMobile owner) : base(RessurrectionTimer)
         {
             m_Owner = owner;
