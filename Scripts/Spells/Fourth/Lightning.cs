@@ -14,6 +14,11 @@ namespace Server.Spells.Fourth
 				Reagent.MandrakeRoot,
 				Reagent.SulfurousAsh
 			);
+
+        public override TimeSpan GetCastDelay()
+        {
+            return TimeSpan.FromSeconds(2.2);
+        }
         public override Tuple<int, int> SphereDamage
         {
             get

@@ -15,6 +15,10 @@ namespace Server.Spells.First
                 return new Tuple<int, int>(1, 5);
             }
         }
+        public override TimeSpan GetCastDelay()
+        {
+            return TimeSpan.FromSeconds(0.9);
+        }
         public override int Sound { get { return 0x1E5; } }
 
         private static SpellInfo m_Info = new SpellInfo(

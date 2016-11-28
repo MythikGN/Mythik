@@ -20,7 +20,7 @@ namespace Server.Spells.Fifth
         {
             get
             {
-                return new Tuple<int, int>(5, 20);
+                return new Tuple<int, int>(10, 25);
             }
         }
         public override SpellCircle Circle { get { return SpellCircle.Fifth; } }

@@ -13,8 +13,11 @@ namespace Server.Spells.First
 				Reagent.Ginseng,
 				Reagent.Nightshade
 			);
-
-		public override SpellCircle Circle { get { return SpellCircle.First; } }
+        public override TimeSpan GetCastDelay()
+        {
+            return TimeSpan.FromSeconds(0.7);
+        }
+        public override SpellCircle Circle { get { return SpellCircle.First; } }
 
 		public FeeblemindSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{

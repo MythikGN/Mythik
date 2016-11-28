@@ -13,8 +13,11 @@ namespace Server.Spells.Third
 				9051,
 				Reagent.Nightshade
 			);
-
-		public override SpellCircle Circle { get { return SpellCircle.Third; } }
+        public override TimeSpan GetCastDelay()
+        {
+            return TimeSpan.FromSeconds(1.2);
+        }
+        public override SpellCircle Circle { get { return SpellCircle.Third; } }
 
 		public PoisonSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{

@@ -13,8 +13,11 @@ namespace Server.Spells.Second
 				Reagent.Garlic,
 				Reagent.Ginseng
 			);
-
-		public override SpellCircle Circle { get { return SpellCircle.Second; } }
+        public override TimeSpan GetCastDelay()
+        {
+            return TimeSpan.FromSeconds(1.5);
+        }
+        public override SpellCircle Circle { get { return SpellCircle.Second; } }
 
 		public CureSpell( Mobile caster, Item scroll ) : base( caster, scroll, m_Info )
 		{

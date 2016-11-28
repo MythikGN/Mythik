@@ -24,7 +24,7 @@ namespace Server.Spells.Second
 
         public override TimeSpan GetCastDelay()
         {
-            return TimeSpan.FromSeconds(1.5);
+            return TimeSpan.FromSeconds(1.0);
         }
         public override SpellCircle Circle { get { return SpellCircle.Second; } }
 
