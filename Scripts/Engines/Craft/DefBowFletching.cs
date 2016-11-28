@@ -1,5 +1,6 @@
 using System;
 using Server.Items;
+using Scripts.Mythik.Items.Craftables.Fletching;
 
 namespace Server.Engines.Craft
 {
@@ -102,12 +103,12 @@ namespace Server.Engines.Craft
 			AddRes( index, typeof( Feather ), 1044562, 1, 1044563 );
 			SetUseAllRes( index, true );
 
-			if( Core.SE )
+			/*if( Core.SE )
 			{
 				index = AddCraft( typeof( FukiyaDarts ), 1044565, 1030246, 50.0, 90.0, typeof( Log ), 1044041, 1, 1044351 );
 				SetUseAllRes( index, true );
 				SetNeededExpansion( index, Expansion.SE );
-			}
+			}*/
 
 			// Weapons
 			AddCraft( typeof( Bow ), 1044566, 1025042, 30.0, 70.0, typeof( Log ), 1044041, 7, 1044351 );
@@ -126,7 +127,13 @@ namespace Server.Engines.Craft
 				SetNeededExpansion( index, Expansion.SE );
 			}
 
-			MarkOption = true;
+            index = AddCraft(typeof(BowOfFire), 1044566, "Bow of Fire", 110, 150, typeof(Log), 1044041, 300);
+            AddRes(index, typeof(Ruby), "Ruby", 50);
+
+            index = AddCraft(typeof(BowOfIce), 1044566, "Bow of Ice", 110, 150, typeof(Log), 1044041, 300);
+            AddRes(index, typeof(Sapphire), "Sapphire", 50);
+
+            MarkOption = true;
 			Repair = Core.AOS;
 		}
 	}
