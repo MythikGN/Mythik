@@ -41,6 +41,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -3097,12 +3098,15 @@
     <Compile Include="Mythik\Items\Craftables\Alch\ManaPotions.cs" />
     <Compile Include="Mythik\Items\Craftables\Alch\ShrinkPotion.cs" />
     <Compile Include="Mythik\Items\Craftables\DeedPart.cs" />
+    <Compile Include="Mythik\Items\Craftables\Fletching\BowOfIce.cs" />
+    <Compile Include="Mythik\Items\Craftables\Fletching\BowOfFire.cs" />
     <Compile Include="Mythik\Items\Craftables\HouseDeedPart.cs" />
     <Compile Include="Mythik\Items\Craftables\Inscription\CreatureGuideBook.cs" />
     <Compile Include="Mythik\Items\Craftables\Inscription\EnemyOfOneScroll.cs" />
     <Compile Include="Mythik\Items\Craftables\Inscription\LumberBook.cs" />
     <Compile Include="Mythik\Items\Craftables\Inscription\IngotBook.cs" />
     <Compile Include="Mythik\Items\Craftables\Inscription\ReagentBook.cs" />
+    <Compile Include="Mythik\Items\Craftables\Tailoring\RobeOfFire.cs" />
     <Compile Include="Mythik\Items\Craftables\Tinkering\EmptySkinDyeBottle.cs" />
     <Compile Include="Mythik\Items\Craftables\Tinkering\FusionCube.cs" />
     <Compile Include="Mythik\Items\Craftables\Tinkering\GemArmor\PearlArmor.cs" />
@@ -3123,7 +3127,7 @@
     <Compile Include="Mythik\Items\Rares\SkinDye.cs" />
     <Compile Include="Mythik\Items\Uniques\BowcraftAddons.cs" />
     <Compile Include="Mythik\Items\Uniques\FishingAddons.cs" />
-    <Compile Include="Mythik\Items\Uniques\PuritansSet.cs" />
+    <Compile Include="Mythik\Items\Craftables\Tailoring\PuritansSet.cs" />
     <Compile Include="Mythik\Mobiles\Monsters\Reptile\ShadowWyrm.cs" />
     <Compile Include="Mythik\Regions\NeutralZone.cs" />
     <Compile Include="Mythik\Regions\PvpArenas.cs" />
@@ -3541,7 +3545,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Mythik\Items\Craftables\Blacksmithy\" />
-    <Folder Include="Mythik\Items\Craftables\Tailoring\" />
     <Folder Include="Mythik\Systems\VendorSearch\Gumps\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

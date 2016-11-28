@@ -204,6 +204,7 @@ namespace Scripts.Mythik.Systems
                 return;
             }
             m_Item = item;
+            
             Broadcast("Auction Starting!");
             Broadcast(item.Amount + " " + item.Name + " Price: " + price);
             m_CurrentBid = price;

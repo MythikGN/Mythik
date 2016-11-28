@@ -25,7 +25,7 @@ namespace Scripts.Mythik.Items.Uniques
             {
 
                 Hue = 0x07AA;
-                Name = "Tinker's Safety Gloves";
+                Name = "Puritan's fancy shirt";
                 SkillBonuses.SetValues(0, Server.SkillName.Tinkering, 8.0);
             }
             public PuritanShirt(Serial serial) : base(serial)
