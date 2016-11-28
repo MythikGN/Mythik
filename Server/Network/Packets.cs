@@ -3258,9 +3258,9 @@ namespace Server.Network
 				WriteAttr( beheld.Mana, beheld.ManaMax );
 
 				m_Stream.Write( (int) beheld.TotalGold );
-                if (ns.Version?.Major <= 3)
-                    m_Stream.Write((short)((int)(beheld.ArmorRating + 0.5)));
-                else
+                //if (ns.Version?.Major <= 3)
+                //    m_Stream.Write((short)((int)(beheld.ArmorRating + 0.5)));
+               // else
                     m_Stream.Write( (short) (Core.AOS ? beheld.PhysicalResistance : (int)(beheld.ArmorRating + 0.5)) );
 				m_Stream.Write( (short) (Mobile.BodyWeight + beheld.TotalWeight) );
 

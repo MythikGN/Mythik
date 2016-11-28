@@ -1622,7 +1622,7 @@ namespace Server.Items
                 DisplayRarity(from);
                 from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3B2, 3, "", SphereUtils.ComputeName(this)));
                 //base.OnSingleClick(from);
-                from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3b2, 3, "", "[AR: " + this.ArmorRatingScaled + " Dura: " + this.HitPoints + "/" + this.MaxHitPoints + "]"));
+                from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3b2, 3, "", "[AR: " + this.PhysicalResistance + " Dura: " + this.HitPoints + "]"));
 
                 if (!SkillBonuses.IsEmpty)
                 {
