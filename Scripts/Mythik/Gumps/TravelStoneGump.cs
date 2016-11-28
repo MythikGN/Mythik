@@ -114,7 +114,7 @@ namespace Scripts.Mythik.Gumps
             AddAlphaRegion(x, 40, 130, 40);
 
             AddImageTiled(x, 85, 130, 205, 2624);
-            AddAlphaRegion(x, 85, 130, 205);
+            AddAlphaRegion(x, 85, 130, 255);
 
             AddHtml(x, 40, 130, 40, String.Format("<BASEFONT COLOR=\"#{0:X6}\"><CENTER>{1}<BR>[ {2} gps ]</CENTER></BASEFONT>", color, name, price), false, false);
         }
