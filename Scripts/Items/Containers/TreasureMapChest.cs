@@ -18,12 +18,12 @@ namespace Server.Items
 		private static Type[] m_Artifacts = new Type[]
 		{
 			typeof( CandelabraOfSouls ), typeof( GoldBricks ), typeof( PhillipsWoodenSteed ),
-			typeof( ArcticDeathDealer ), typeof( BlazeOfDeath ), typeof( BurglarsBandana ),
-			typeof( CavortingClub ), typeof( DreadPirateHat ),
-			typeof( EnchantedTitanLegBone ), typeof( GwennosHarp ), typeof( IolosLute ),
-			typeof( LunaLance ), typeof( NightsKiss ), typeof( NoxRangersHeavyCrossbow ),
-			typeof( PolarBearMask ), typeof( VioletCourage ), typeof( HeartOfTheLion ),
-			typeof( ColdBlood ), typeof( AlchemistsBauble )
+			//typeof( ArcticDeathDealer ), typeof( BlazeOfDeath ), typeof( BurglarsBandana ),
+			//typeof( CavortingClub ), typeof( DreadPirateHat ),
+			/*typeof( EnchantedTitanLegBone ),*/ typeof( GwennosHarp ), typeof( IolosLute ),
+			//typeof( LunaLance ), typeof( NightsKiss ), typeof( NoxRangersHeavyCrossbow ),
+			//typeof( PolarBearMask ), typeof( VioletCourage ), typeof( HeartOfTheLion ),
+			//typeof( ColdBlood ), typeof( AlchemistsBauble )
 		};
 
 		private int m_Level;
@@ -193,16 +193,16 @@ namespace Server.Items
 				{
 					Item item;
 
-					if ( Core.AOS )
-						item = Loot.RandomArmorOrShieldOrWeaponOrJewelry();
-					else
+					//if ( Core.AOS )
+					//	item = Loot.RandomArmorOrShieldOrWeaponOrJewelry();
+					//else
 						item = Loot.RandomArmorOrShieldOrWeapon();
 
 					if ( item is BaseWeapon )
 					{
 						BaseWeapon weapon = (BaseWeapon)item;
 
-						if ( Core.AOS )
+						/*if ( Core.AOS )
 						{
 							int attributeCount;
 							int min, max;
@@ -212,11 +212,11 @@ namespace Server.Items
 							BaseRunicTool.ApplyAttributesTo( weapon, attributeCount, min, max );
 						}
 						else
-						{
+						{*/
 							weapon.DamageLevel = (WeaponDamageLevel)Utility.Random( 6 );
 							weapon.AccuracyLevel = (WeaponAccuracyLevel)Utility.Random( 6 );
 							weapon.DurabilityLevel = (WeaponDurabilityLevel)Utility.Random( 6 );
-						}
+						//}
 
 						cont.DropItem( item );
 					}
@@ -224,7 +224,7 @@ namespace Server.Items
 					{
 						BaseArmor armor = (BaseArmor)item;
 
-						if ( Core.AOS )
+						/*if ( Core.AOS )
 						{
 							int attributeCount;
 							int min, max;
@@ -234,10 +234,10 @@ namespace Server.Items
 							BaseRunicTool.ApplyAttributesTo( armor, attributeCount, min, max );
 						}
 						else
-						{
+						{*/
 							armor.ProtectionLevel = (ArmorProtectionLevel)Utility.Random( 6 );
 							armor.Durability = (ArmorDurabilityLevel)Utility.Random( 6 );
-						}
+						//}
 
 						cont.DropItem( item );
 					}
@@ -245,7 +245,7 @@ namespace Server.Items
 					{
 						BaseHat hat = (BaseHat)item;
 
-						if( Core.AOS )
+						/*if( Core.AOS )
 						{
 							int attributeCount;
 							int min, max;
@@ -253,7 +253,7 @@ namespace Server.Items
 							GetRandomAOSStats( out attributeCount, out min, out  max );
 
 							BaseRunicTool.ApplyAttributesTo( hat, attributeCount, min, max );
-						}
+						}*/
 
 						cont.DropItem( item );
 					}
