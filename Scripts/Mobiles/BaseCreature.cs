@@ -5657,7 +5657,9 @@ namespace Server.Mobiles
 			// added code to handle removing of wild creatures in house regions
 			foreach ( BaseCreature c in toRemove )
 			{
-				c.Delete();
+                c.RemoveStep = 0;
+                Console.WriteLine("Not removing untamed creature : " + c.Name);
+				//c.Delete();
 			}
 		}
 	}
