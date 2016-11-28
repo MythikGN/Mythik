@@ -337,6 +337,7 @@ namespace Server.Engines.Craft
             AddNecroSpell(1, 13, 109.6, typeof(BloodOathScroll), RecipeName.BloodOathScroll, Reagent.DaemonBlood);
             //AddNecroSpell(12, 23, 114.9, typeof(VampiricEmbraceScroll), RecipeName.VampiricEmbraceScroll, Reagent.BatWing, Reagent.NoxCrystal, Reagent.PigIron);
             AddNecroSpell(11, 17, 124.9, typeof(SummonFamiliarScroll), RecipeName.SummonFamiliarScroll, Reagent.BatWing, Reagent.GraveDust, Reagent.DaemonBlood);
+            AddNecroSpell(11, 17, 124.9, typeof(ExorcismScroll), RecipeName.ExorcismScroll, Reagent.BatWing, Reagent.GraveDust, Reagent.DaemonBlood);
 
             AddChivSpell(11,"Enemy Of One", 17, 124.9, typeof(EnemyOfOneScroll), RecipeName.EnemyOfOneScroll, Reagent.Bloodmoss, Reagent.BlackPearl, Reagent.DaemonBlood);
             

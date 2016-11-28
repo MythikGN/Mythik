@@ -96,5 +96,28 @@ namespace Scripts.Mythik.Items.Rares.Recipes
             base.Deserialize(reader);
         }
     }
-  
+
+    public class ExorcismScrollRecipe : RecipeScroll
+    {
+        [Constructable]
+        public ExorcismScrollRecipe()
+            : base((int)RecipeName.ExorcismScroll)
+        {
+
+        }
+
+        public ExorcismScrollRecipe(Serial serial)
+            : base(serial)
+        {
+        }
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+        }
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+        }
+    }
+
 }

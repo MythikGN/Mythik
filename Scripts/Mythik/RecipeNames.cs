@@ -13,5 +13,6 @@ namespace Scripts.Mythik
         SummonFamiliarScroll = 902,
         VampiricEmbraceScroll = 903,
         EnemyOfOneScroll = 904,
+        ExorcismScroll = 905,
     }
 }
