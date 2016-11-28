@@ -107,13 +107,13 @@ namespace Server.Spells.Third
 
 			public override bool BlocksFit{ get{ return true; } }
 
-			public InternalItem( Point3D loc, Map map, Mobile caster ) : base( 0x82 )
+			public InternalItem( Point3D loc, Map map, Mobile caster ) : base( 0x80 )
 			{
 				Visible = false;
 				Movable = false;
-
 				MoveToWorld( loc, map );
-
+                //Fixes rubberbanding on 203
+                Amount = 0;
 				m_Caster = caster;
 
 				if ( caster.InLOS( this ) )
@@ -123,7 +123,6 @@ namespace Server.Spells.Third
 
 				if ( Deleted )
 					return;
-
 				m_Timer = new InternalTimer( this, TimeSpan.FromSeconds( 10.0 ) );
 				m_Timer.Start();
 
