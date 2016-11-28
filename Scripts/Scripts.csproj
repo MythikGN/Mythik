@@ -3096,6 +3096,7 @@
     <Compile Include="Mythik\Gumps\RessurrectionStoneGump.cs" />
     <Compile Include="Mythik\Gumps\TravelStoneGump.cs" />
     <Compile Include="Mythik\Items\Craftables\Alch\ManaPotions.cs" />
+    <Compile Include="Mythik\Items\Craftables\Alch\RestorePotions.cs" />
     <Compile Include="Mythik\Items\Craftables\Alch\ShrinkPotion.cs" />
     <Compile Include="Mythik\Items\Craftables\DeedPart.cs" />
     <Compile Include="Mythik\Items\Craftables\Fletching\BowOfIce.cs" />
@@ -3125,6 +3126,7 @@
     <Compile Include="Mythik\Items\Misc\RareArmorDyes.cs" />
     <Compile Include="Mythik\Items\Rares\HairDye.cs" />
     <Compile Include="Mythik\Items\Rares\SkinDye.cs" />
+    <Compile Include="Mythik\Items\Stones\PvPStone.cs" />
     <Compile Include="Mythik\Items\Uniques\BowcraftAddons.cs" />
     <Compile Include="Mythik\Items\Uniques\FishingAddons.cs" />
     <Compile Include="Mythik\Items\Craftables\Tailoring\PuritansSet.cs" />

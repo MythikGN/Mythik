@@ -40,6 +40,8 @@ namespace Server.Items
         Shrink = 100,
         Mana,
         ManaTotal,
+        Restore,
+        RestoreGreater
 
 
 	}
@@ -279,8 +281,7 @@ namespace Server.Items
 
 		public static int Scale( Mobile m, int v )
 		{
-			if ( !Core.AOS )
-				return v;
+            return v;
 
 			return AOS.Scale( v, 100 + EnhancePotions( m ) );
 		}

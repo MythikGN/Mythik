@@ -184,6 +184,15 @@ namespace Server.Engines.Craft
             AddRes(index, typeof(Bottle), 1044529, 1, 500315);
             index = AddCraft(typeof(TotalManaPotion), "Mythik Potions", "Shrink Potion", 95.1, 125.0, typeof(BatWing), 1023975, 10, 1044253);
             AddRes(index, typeof(Bottle), 1044529, 1, 500315);
+
+            index = AddCraft(typeof(RestorePotion), "Mythik Potions", "Restore Potion", 50.1, 75.1, typeof(BlackPearl), 1044353, 2, 1044253);
+            AddRes(index, typeof(Bottle), 1044529, 1, 500315);
+            AddRes(index, typeof(MandrakeRoot), 1044357, 1);
+
+            index = AddCraft(typeof(GreaterRestorePotion), "Mythik Potions", "Greater Restore Potion", 50.1, 75.1, typeof(BlackPearl), 1044353, 4, 1044253);
+            AddRes(index, typeof(Bottle), 1044529, 1, 500315);
+            AddRes(index, typeof(MandrakeRoot), 1044357, 2);
+
             //1016472 a alchemy flask
             //1026186 flask
         }
