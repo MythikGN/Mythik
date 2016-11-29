@@ -126,8 +126,9 @@ namespace Server
 				new ExpansionInfo( 2, "Renaissance",		ClientFlags.Trammel,		FeatureFlags.ExpansionUOR,	CharacterListFlags.ExpansionUOR,	0x0000 ),
 				new ExpansionInfo( 3, "Third Dawn",		ClientFlags.Ilshenar,		FeatureFlags.ExpansionUOTD,	CharacterListFlags.ExpansionUOTD,	0x0000 ),
 				new ExpansionInfo( 4, "Blackthorn's Revenge",	ClientFlags.Ilshenar,		FeatureFlags.ExpansionLBR,	CharacterListFlags.ExpansionLBR,	0x0000 ),
-				new ExpansionInfo( 5, "Age of Shadows",		ClientFlags.Malas,		FeatureFlags.ExpansionAOS,	CharacterListFlags.ExpansionAOS,	0x0000 ),
-				new ExpansionInfo( 6, "Samurai Empire",		ClientFlags.Tokuno,		FeatureFlags.ExpansionSE,	CharacterListFlags.ExpansionSE,		0x00C0 ), // 0x20 | 0x80
+				new ExpansionInfo( 5, "Age of Shadows",		ClientFlags.Malas,		FeatureFlags.ExpansionML,	CharacterListFlags.ExpansionML,	0x02C0 ),
+
+                new ExpansionInfo( 6, "Samurai Empire",		ClientFlags.Tokuno,		FeatureFlags.ExpansionSE,	CharacterListFlags.ExpansionSE,		0x00C0 ), // 0x20 | 0x80
 				new ExpansionInfo( 7, "Mondain's Legacy",	new ClientVersion( "5.0.0a" ),	FeatureFlags.ExpansionML,	CharacterListFlags.ExpansionML,		0x02C0 ), // 0x20 | 0x80 | 0x200
 				new ExpansionInfo( 8, "Stygian Abyss",		ClientFlags.TerMur,		FeatureFlags.ExpansionSA,	CharacterListFlags.ExpansionSA,		0xD02C0 ) // 0x20 | 0x80 | 0x200 | 0x10000 | 0x40000 | 0x80000
 			};

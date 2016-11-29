@@ -13,9 +13,9 @@ namespace Server.Misc
 		 * Example:
 		 *  private static string CustomPath = @"C:\Program Files\Ultima Online";
 		 */
-		private static string CustomPath = null;
-
-		/* The following is a list of files which a required for proper execution:
+		private static string CustomPath = @"/root/Server/rnuo2.3/mythikuo/";
+        //private static string CustomPath = @"mythikuo/";
+        /* The following is a list of files which a required for proper execution:
 		 * 
 		 * Multi.idx
 		 * Multi.mul
@@ -31,7 +31,7 @@ namespace Server.Misc
 		 * StaDifI*.mul
 		 */
 
-		public static void Configure()
+        public static void Configure()
 		{
 			string pathUO = GetPath( @"Origin Worlds Online\Ultima Online\1.0", "ExePath" );
 			string pathTD = GetPath( @"Origin Worlds Online\Ultima Online Third Dawn\1.0", "ExePath" ); //These refer to 2D & 3D, not the Third Dawn expansion
@@ -39,8 +39,10 @@ namespace Server.Misc
 			string pathSA = GetPath( @"Electronic Arts\EA Games\Ultima Online Stygian Abyss Classic", "InstallDir" );
 			string pathHS = GetPath( @"Electronic Arts\EA Games\Ultima Online Classic", "InstallDir" );
 
-			if ( CustomPath != null ) 
-				Core.DataDirectories.Add( CustomPath ); 
+            Core.DataDirectories.Add(@"mythikuo/");
+            if ( CustomPath != null ) 
+				Core.DataDirectories.Add( CustomPath );
+
 
 			if ( pathUO != null ) 
 				Core.DataDirectories.Add( pathUO ); 

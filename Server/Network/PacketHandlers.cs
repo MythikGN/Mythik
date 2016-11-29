@@ -36,6 +36,7 @@ using Server.HuePickers;
 using Server.ContextMenus;
 using Server.Diagnostics;
 using CV = Server.ClientVersion;
+using System.Linq;
 
 namespace Server.Network
 {
@@ -1338,6 +1339,7 @@ namespace Server.Network
                 if(from.NetState.Version.Major <= 3)
                 {
                     var keylist = new List<int>();
+                    /*
                     
                     if (text.ToLowerInvariant().Contains("vendor sell"))
                         keylist.Add(0x14D);
@@ -1454,7 +1456,15 @@ namespace Server.Network
                         keylist.Add(0x27);
                     else if (text.ToLowerInvariant().Contains("trash barrel"))
                         keylist.Add(0x28);
-
+*/
+                    var kw = Ultima.SpeechList.Entries.Where(e => e.KeyWord.Length > 1 && text.ToLowerInvariant().Contains(e.KeyWord.ToLowerInvariant()));
+                    if(kw !=null && kw.Count() > 0)
+                    {
+                        foreach (var k in kw)
+                            if(k.ID != 0)
+                                keylist.Add(k.ID);
+                    }
+                   
                     keywords = keylist.ToArray();
                 }
             }

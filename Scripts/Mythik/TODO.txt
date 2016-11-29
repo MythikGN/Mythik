@@ -1,0 +1,1 @@
+﻿Intergrate git history into news? or at least website

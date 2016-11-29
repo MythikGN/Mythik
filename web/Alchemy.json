@@ -504,5 +504,57 @@
         "qty": 1
       }
     ]
+  },
+  {
+    "Name": "Restore Potion",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": 50.1,
+        "maxskill": 75.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Black Pearl",
+        "qty": 2
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 1
+      }
+    ]
+  },
+  {
+    "Name": "Greater Restore Potion",
+    "hue": 0,
+    "type": 3854,
+    "skills": [
+      {
+        "skill": "Alchemy",
+        "minskill": 50.1,
+        "maxskill": 75.1
+      }
+    ],
+    "resources": [
+      {
+        "res": "Black Pearl",
+        "qty": 4
+      },
+      {
+        "res": "Empty Bottles",
+        "qty": 1
+      },
+      {
+        "res": "Mandrake Root",
+        "qty": 2
+      }
+    ]
   }
 ]

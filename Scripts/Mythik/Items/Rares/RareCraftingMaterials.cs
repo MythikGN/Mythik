@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 
 namespace Scripts.Mythik.Items.Rares
 {
+    // Replace these with ML rare crafting mats?
+
     /// <summary>
     /// Thinking odds around 1:100 or 1:200 for like a level 1-2
     /// require 1-5 for an item?

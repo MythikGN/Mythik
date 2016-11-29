@@ -80,24 +80,6 @@
     ]
   },
   {
-    "Name": "fukiya dart",
-    "hue": 0,
-    "type": 10246,
-    "skills": [
-      {
-        "skill": "Fletching",
-        "minskill": 50.0,
-        "maxskill": 90.0
-      }
-    ],
-    "resources": [
-      {
-        "res": "Boards or Logs",
-        "qty": 1
-      }
-    ]
-  },
-  {
     "Name": "bow",
     "hue": 0,
     "type": 5042,
@@ -202,6 +184,50 @@
       {
         "res": "Boards or Logs",
         "qty": 10
+      }
+    ]
+  },
+  {
+    "Name": "Bow of Fire",
+    "hue": 0,
+    "type": 5042,
+    "skills": [
+      {
+        "skill": "Fletching",
+        "minskill": 110.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 300
+      },
+      {
+        "res": "Ruby",
+        "qty": 50
+      }
+    ]
+  },
+  {
+    "Name": "Bow of Ice",
+    "hue": 0,
+    "type": 5042,
+    "skills": [
+      {
+        "skill": "Fletching",
+        "minskill": 110.0,
+        "maxskill": 150.0
+      }
+    ],
+    "resources": [
+      {
+        "res": "Boards or Logs",
+        "qty": 300
+      },
+      {
+        "res": "Sapphire",
+        "qty": 50
       }
     ]
   }

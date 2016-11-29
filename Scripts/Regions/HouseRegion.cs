@@ -60,8 +60,18 @@ namespace Server.Regions
 
 			return area;
 		}
-
-		public override bool SendInaccessibleMessage( Item item, Mobile from )
+        public override void OnEnter(Mobile m)
+        {
+            base.OnEnter(m);
+            if(!m.NetState.SupportsExpansion(Expansion.AOS))
+            {
+                var home = this.House as HouseFoundation;
+                if (home != null)
+                    home.OnEnter(m);
+            }
+            
+        }
+        public override bool SendInaccessibleMessage( Item item, Mobile from )
 		{
 			if ( item is Container )
 				item.SendLocalizedMessageTo( from, 501647 ); // That is secure.

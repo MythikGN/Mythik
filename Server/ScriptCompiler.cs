@@ -246,7 +246,9 @@ namespace Server
 											break;
 										}
 									}
+#if VS_BUILD
                                     valid = true;
+#endif
                                     if ( valid )
 									{
 										assembly = Assembly.LoadFrom( "Scripts/Output/Scripts.CS.dll" );
@@ -271,12 +273,34 @@ namespace Server
 			}
 
 			DeleteFiles( "Scripts.CS*.dll" );
+            string path = GetUnusedPath("Scripts.CS");
 
-            return RosylnBuild(debug, cache, out assembly);
+            var res = RosylnBuild(debug, cache, out assembly);
+            if(res)
+            {
+                if (cache && Path.GetFileName(path) == "Scripts.CS.dll")
+                {
+                    try
+                    {
+                        byte[] hashCode = GetHashCode(path, files, debug);
 
+                        using (FileStream fs = new FileStream("Scripts/Output/Scripts.CS.hash", FileMode.Create, FileAccess.Write, FileShare.None))
+                        {
+                            using (BinaryWriter bin = new BinaryWriter(fs))
+                            {
+                                bin.Write(hashCode, 0, hashCode.Length);
+                            }
+                        }
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+            return res;
             using ( CSharpCodeProvider provider = new CSharpCodeProvider() )
 			{
-				string path = GetUnusedPath( "Scripts.CS" );
+				//string path = GetUnusedPath( "Scripts.CS" );
 
                 CompilerParameters parms = new CompilerParameters( GetReferenceAssemblies(), path, debug );
 

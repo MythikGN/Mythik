@@ -1,0 +1,28 @@
+Server Crash Report
+===================
+
+RunUO Version 2.2, Build 6166.24505
+Operating System: Microsoft Windows NT 6.2.9200.0
+.NET Framework: 4.0.30319.42000
+Time: 20/11/2016 4:50:56 AM
+Mobiles: 992
+Items: 84437
+Exception:
+System.TypeInitializationException: The type initializer for 'Scripts.Mythik.Systems.Farming.PlantTypes' threw an exception. ---> System.NullReferenceException: Object reference not set to an instance of an object.
+   at Scripts.Mythik.Systems.Farming.PlantTypes.AddPlant(PlantInfo plant) in Y:\rnuo2.3\Scripts\Mythik\Systems\Farming\PlantTypes.cs:line 97
+   at Scripts.Mythik.Systems.Farming.PlantTypes..cctor() in Y:\rnuo2.3\Scripts\Mythik\Systems\Farming\PlantTypes.cs:line 88
+   --- End of inner exception stack trace ---
+   at Scripts.Mythik.Systems.Farming.PlantTypes.GetPlantInfo(PlantType plantType)
+   at Scripts.Mythik.Systems.Farming.Items.FarmPlant.get_PlantInfo() in Y:\rnuo2.3\Scripts\Mythik\Systems\Farming\Items\CommonPlants.cs:line 16
+   at Scripts.Mythik.Systems.Farming.Items.FarmPlant..ctor(Mobile from, PlantType type) in Y:\rnuo2.3\Scripts\Mythik\Systems\Farming\Items\CommonPlants.cs:line 28
+   at Scripts.Mythik.Systems.Farming.Items.FarmSeed.OnTarget(Mobile from, Object targeted) in Y:\rnuo2.3\Scripts\Mythik\Systems\Farming\Items\Seeds.cs:line 82
+   at Server.Mobile.SimpleTarget.OnTarget(Mobile from, Object targeted) in Y:\rnuo2.3\Server\Mobile.cs:line 2683
+   at Server.Targeting.Target.Invoke(Mobile from, Object targeted) in Y:\rnuo2.3\Server\Targeting\Target.cs:line 283
+   at Server.Network.PacketHandlers.TargetResponse(NetState state, PacketReader pvSrc) in Y:\rnuo2.3\Server\Network\PacketHandlers.cs:line 1148
+   at Server.Network.MessagePump.HandleReceive(NetState ns) in Y:\rnuo2.3\Server\Network\MessagePump.cs:line 268
+   at Server.Network.MessagePump.Slice() in Y:\rnuo2.3\Server\Network\MessagePump.cs:line 129
+   at Server.Core.Main(String[] args) in Y:\rnuo2.3\Server\Main.cs:line 518
+
+Clients:
+- Count: 1
++ 192.168.1.5: (account = admin) (mobile = 0x246 'Lotus')

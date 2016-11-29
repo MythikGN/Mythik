@@ -401,13 +401,13 @@ namespace Server.Gumps
 			for ( int i = 0; i < count; ++i )
 			{
 				e = m_Entries[i];
-                if (ns?.Version?.Major <= 3 && e is GumpHtmlLocalized)
+                if (e is GumpHtmlLocalized && ns?.Version?.Major <= 3)
                 {
                     
                     var localized = e as GumpHtmlLocalized;
                     if (localized.Type == GumpHtmlLocalizedType.Color)
                         localized.Type = GumpHtmlLocalizedType.Plain;
-                    if(localized.Number > 1043000)
+                    if(localized.Number > 1030000)
                     {
                         var text = CliLoc.LocToString(localized.Number, localized.Args);//  GetClioc(ns).Entries.Where(cl => cl.Number == localized.Number).FirstOrDefault()?.Text;
 

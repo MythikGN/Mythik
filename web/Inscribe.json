@@ -2135,6 +2135,36 @@
     ]
   },
   {
+    "Name": "Exorcism",
+    "hue": 0,
+    "type": 8816,
+    "skills": [
+      {
+        "skill": "Inscribe",
+        "minskill": 129.9,
+        "maxskill": 159.9
+      }
+    ],
+    "resources": [
+      {
+        "res": "Nox Crystal",
+        "qty": 1
+      },
+      {
+        "res": "Grave Dust",
+        "qty": 5
+      },
+      {
+        "res": "Pig Iron",
+        "qty": 5
+      },
+      {
+        "res": "Blank Scrolls",
+        "qty": 1
+      }
+    ]
+  },
+  {
     "Name": "Enemy Of One",
     "hue": 0,
     "type": 3642,
@@ -2160,66 +2190,6 @@
       },
       {
         "res": "Blank Scrolls",
-        "qty": 1
-      }
-    ]
-  },
-  {
-    "Name": "Enchanted Switch",
-    "hue": 0,
-    "type": 12124,
-    "skills": [
-      {
-        "skill": "Inscribe",
-        "minskill": 45.0,
-        "maxskill": 95.0
-      }
-    ],
-    "resources": [
-      {
-        "res": "Blank Scrolls",
-        "qty": 1
-      },
-      {
-        "res": "Spiders' Silk",
-        "qty": 1
-      },
-      {
-        "res": "Black Pearl",
-        "qty": 1
-      },
-      {
-        "res": "Switch",
-        "qty": 1
-      }
-    ]
-  },
-  {
-    "Name": "Runed Prism",
-    "hue": 0,
-    "type": 12119,
-    "skills": [
-      {
-        "skill": "Inscribe",
-        "minskill": 45.0,
-        "maxskill": 95.0
-      }
-    ],
-    "resources": [
-      {
-        "res": "Blank Scrolls",
-        "qty": 1
-      },
-      {
-        "res": "Spiders' Silk",
-        "qty": 1
-      },
-      {
-        "res": "Black Pearl",
-        "qty": 1
-      },
-      {
-        "res": "hollow prism",
         "qty": 1
       }
     ]

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<accounts count="2">
+	<account>
+		<username>admin</username>
+		<newCryptPassword>DD-94-70-95-28-BB-1C-83-D0-8F-30-88-D4-04-3F-47-42-89-1F-4F</newCryptPassword>
+		<accessLevel>Owner</accessLevel>
+		<created>2016-07-23T21:38:08.063818+10:00</created>
+		<lastLogin>2016-11-26T13:49:16.9966485+11:00</lastLogin>
+		<totalGameTime>PT8H46M26.879009S</totalGameTime>
+		<chars>
+			<char index="0">582</char>
+		</chars>
+		<addressList count="3">
+			<ip>192.168.1.10</ip>
+			<ip>192.168.1.3</ip>
+			<ip>192.168.1.5</ip>
+		</addressList>
+	</account>
+	<account>
+		<username>admin2</username>
+		<newCryptPassword>A6-6B-D6-A6-AA-ED-1B-BE-CD-7F-57-53-D8-92-D9-A5-0E-C3-5F-87</newCryptPassword>
+		<created>2016-11-22T18:40:22.0537547+11:00</created>
+		<lastLogin>2016-11-22T18:43:19.4496442+11:00</lastLogin>
+		<totalGameTime>PT1H2M1.847171S</totalGameTime>
+		<chars>
+			<char index="0">645</char>
+		</chars>
+		<addressList count="1">
+			<ip>192.168.1.5</ip>
+		</addressList>
+	</account>
+</accounts>

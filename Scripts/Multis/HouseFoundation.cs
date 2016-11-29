@@ -676,9 +676,10 @@ namespace Server.Multis
 
 			DesignState.SendDetailedInfoTo( ns );
 		}
-        public override bool OnMoveOver(Mobile m)
+
+        public void OnEnter(Mobile m)
         {
-            var state = m.NetState;
+            /*var state = m.NetState;
             if (state?.Version?.Major <= 3)
             {
                 base.SendInfoTo(state, false);
@@ -689,9 +690,9 @@ namespace Server.Multis
                     toSend = DesignState;
                 else
                     toSend = CurrentState;
-                int startID = 10000;
                 foreach (var i in toSend.Components.List)
                 {
+                    
                     Item aa = new Item((int)i.m_ItemID);
                     aa.Movable = false;
                     var X = i.m_OffsetX + this.X;
@@ -701,54 +702,17 @@ namespace Server.Multis
                     aa.Map = this.Map;
                     state.Send(aa.WorldPacket);
                 }
-                /* for(int x = 0; x < toSend.Components.Width;x++)
-                 {
-                     for (int y = 0; y < toSend.Components.Height; y++)
-                     {
-                         for (int z = 0; z < 3; z++)
-                         {
-                             if (x > toSend.Components.Tiles.Length - 1)
-                                 continue;
-                             if (y > toSend.Components.Tiles[x].Length - 1)
-                                 continue;
-                             if (z > toSend.Components.Tiles[x][y].Length - 1)
-                                 continue;
-                             var tile = toSend.Components.Tiles[x][y][z];
-                             var X = x + this.Location.X -3;
-                             var Y = y + this.Location.Y - 3;
-                             var Z = z + this.Location.Z + 0;
-                             Item aa = new Item(tile.ID);
-                             aa.Location = new Point3D(X, Y, Z);
-                             aa.Map = this.Map;
-                             state.Send(aa.WorldPacket);
-                             // state.Send(new WorldItem(startID++, tile.ID, 1, X, Y, Z, 0, 0, 0, false));
-
-                         }
-                     }
-                 }*/
-
-                foreach (var i in toSend.Fixtures)
-                {
-                    Item aa = new Item((int)i.m_ItemID);
-                    var X = i.m_OffsetX + this.X;
-                    var Y = i.m_OffsetY + this.Y;
-                    var Z = i.m_OffsetZ + this.Z;
-                    aa.Location = new Point3D(X, Y, Z);
-                    aa.Map = this.Map;
-                    state.Send(aa.WorldPacket);
-
-                    //state.Send(new WorldItem(startID++, i.m_ItemID, 1, X, Y, Z, 0, 0, 0, true));
-                }
             }
 
-            return base.OnMoveOver(m);
+            return;*/
         }
 
         public override void SendInfoTo( NetState state, bool sendOplPacket )
 		{
             if(state?.Version?.Major <= 3)
             {
-                  return;
+                //base.SendInfoTo(state, false);
+                return;
             }
 
 			base.SendInfoTo( state, sendOplPacket );

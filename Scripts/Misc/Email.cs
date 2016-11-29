@@ -22,10 +22,10 @@ namespace Server.Misc
 		 *  public static readonly string SpeechLogPageAddresses = "first@email.here,second@email.here,third@email.here";
 		 */
 
-		public static readonly string EmailServer = null;
-		public static readonly string FromAddress = null;
+		public static readonly string EmailServer = "localhost";
+		public static readonly string FromAddress = "root@mythikuo.com";
 
-		public static readonly string CrashAddresses = null;
+		public static readonly string CrashAddresses = "kklolk@gmail.com";
 		public static readonly string SpeechLogPageAddresses = null;
 
 		private static Regex _pattern = new Regex( @"^[a-z0-9.+_-]+@([a-z0-9-]+\.)+[a-z]+$", RegexOptions.Compiled | RegexOptions.IgnoreCase );

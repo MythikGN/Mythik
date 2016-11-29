@@ -6,7 +6,7 @@ namespace Server.Spells.Spellweaving
 {
 	public abstract class ArcaneSummon<T> : ArcanistSpell where T : BaseCreature
 	{
-		public abstract int Sound { get; }
+		public abstract override int Sound { get; }
 
 		public ArcaneSummon( Mobile caster, Item scroll, SpellInfo info )
 			: base( caster, scroll, info )

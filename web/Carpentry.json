@@ -215,36 +215,6 @@
     ]
   },
   {
-    "Name": "runed switch",
-    "hue": 0,
-    "type": 12129,
-    "skills": [
-      {
-        "skill": "Carpentry",
-        "minskill": 70.0,
-        "maxskill": 120.0
-      }
-    ],
-    "resources": [
-      {
-        "res": "Boards or Logs",
-        "qty": 2
-      },
-      {
-        "res": "Enchanted Switch",
-        "qty": 1
-      },
-      {
-        "res": "Runed Prism",
-        "qty": 1
-      },
-      {
-        "res": "jeweled filigree",
-        "qty": 1
-      }
-    ]
-  },
-  {
     "Name": "foot stool",
     "hue": 0,
     "type": 2910,
