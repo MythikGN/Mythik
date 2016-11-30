@@ -119,6 +119,34 @@ namespace Scripts.Mythik.Items.Craftables
         }
     }
 
+    public class CartographyEssence : Item
+    {
+        [Constructable]
+        public CartographyEssence() : base(0x3193)
+        {
+            Weight = 1;
+            Hue = 0x7AD;
+            Name = "Cartography Essence";
+        }
+        public CartographyEssence(Serial serial) : base(serial)
+        {
+        }
+
+        public override void Serialize(GenericWriter writer)
+        {
+            base.Serialize(writer);
+
+            writer.Write((int)0); // version 
+        }
+
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+
+            int version = reader.ReadInt();
+        }
+    }
+
     public class FishingEssence : Item
     {
         [Constructable]

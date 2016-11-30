@@ -3107,6 +3107,7 @@
     <Compile Include="Mythik\Items\Craftables\Inscription\LumberBook.cs" />
     <Compile Include="Mythik\Items\Craftables\Inscription\IngotBook.cs" />
     <Compile Include="Mythik\Items\Craftables\Inscription\ReagentBook.cs" />
+    <Compile Include="Mythik\Items\Craftables\SkillEssence.cs" />
     <Compile Include="Mythik\Items\Craftables\Tailoring\RobeOfFire.cs" />
     <Compile Include="Mythik\Items\Craftables\Tinkering\EmptySkinDyeBottle.cs" />
     <Compile Include="Mythik\Items\Craftables\Tinkering\FusionCube.cs" />
