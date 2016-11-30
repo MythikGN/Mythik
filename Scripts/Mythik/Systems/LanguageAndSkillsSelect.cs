@@ -48,8 +48,8 @@ namespace Scripts.Mythik.Systems
                 this.AddButton(616, 55, 247, 248, 1, GumpButtonType.Reply, 0);
 
                 this.AddLabel(280, 40, 457, @"Mythik Skills Select");
-                this.AddLabel(177, 63, 0, @"Please select two skills to start at 60.");
-                this.AddLabel(428, 63, 0, @"Magery will start at 80.");
+                this.AddLabel(177, 63, 457, @"Please select two skills to start at 60.");
+                this.AddLabel(428, 63, 457, @"Magery will start at 80.");
 
                 int off = 23;//label offset
                 int colStart = 61;

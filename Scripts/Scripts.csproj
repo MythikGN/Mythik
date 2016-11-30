@@ -3228,7 +3228,6 @@
     <Compile Include="Mythik\Systems\Web\GenerateCraftTables.cs" />
     <Compile Include="Mythik\Systems\Web\GenerateMobiles.cs" />
     <Compile Include="Mythik\Systems\Web\ServerStatus.cs" />
-    <Compile Include="Mythik\test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Regions\BaseRegion.cs" />
     <Compile Include="Regions\DungeonRegion.cs" />
