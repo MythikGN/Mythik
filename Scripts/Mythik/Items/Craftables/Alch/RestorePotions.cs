@@ -92,10 +92,9 @@ namespace Scripts.Mythik.Items.Craftables.Alch
 
         public abstract Tuple<int,int> StamHeal { get; }
         public abstract double Delay { get; }
-
+        public override int LabelNumber { get { return 0; } }
         public BaseRestorePotion(PotionEffect effect) : base(0x0F0E, effect)
         {
-            this.Hue = 0x09f8;
             switch (effect)
             {
                 case PotionEffect.Restore:

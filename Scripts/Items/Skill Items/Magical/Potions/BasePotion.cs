@@ -79,7 +79,9 @@ namespace Server.Items
 
 		public BasePotion( Serial serial ) : base( serial )
 		{
-		}
+            ColorPotion();
+
+        }
         private void ColorPotion()
         {
            
@@ -132,8 +134,12 @@ namespace Server.Items
                         Hue = 0x7ee;
                         break;
                     case PotionEffect.Invisibility:
-                        Hue = 17969;// 1686;
-                        break;
+                        Hue = 0x0631;// 1686;
+                    break;
+                case PotionEffect.Restore:
+                case PotionEffect.RestoreGreater:
+                    Hue = 0x481;
+                   break;
                 }
             
         }

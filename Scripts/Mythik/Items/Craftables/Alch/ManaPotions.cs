@@ -76,10 +76,9 @@ namespace Scripts.Mythik.Items.Craftables.Alch
         public abstract int MinHeal { get; }
         public abstract int MaxHeal { get; }
         public abstract double Delay { get; }
-
+        public override int LabelNumber { get { return 0; } }
         public BaseManaPotion(PotionEffect effect) : base(0x0F0E, effect)
         {
-            this.Hue = 0x081B;
             switch (effect)
             {
                 case PotionEffect.Mana:
@@ -119,7 +118,11 @@ namespace Scripts.Mythik.Items.Craftables.Alch
 
         public override void Drink(Mobile from)
         {
-            if (from.Mana < from.ManaMax)
+            /*if(!BasePotion.HasFreeHand(from))
+            {
+                from.NonlocalOverheadMessage(MessageType.Regular, 0x22, true, "You need a free hand to drink a potion.");
+            }
+            else */if (from.Mana < from.ManaMax)
             {
                     if (from.BeginAction(typeof(BasePotion)))
                     {

@@ -11,7 +11,7 @@ namespace Server.Items
 		[Constructable]
 		public InvisibilityPotion() : base(0x0F0E, PotionEffect.Invisibility )
 		{
-			Hue = 0x48D;
+			
 		}
 
 		public InvisibilityPotion( Serial serial ) : base( serial )

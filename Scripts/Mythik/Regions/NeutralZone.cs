@@ -20,7 +20,7 @@ namespace Server.Regions
             this.Register();
 		}
 
-        public override bool AllowBeneficial(Mobile from, Mobile target)
+       /* public override bool AllowBeneficial(Mobile from, Mobile target)
         {
             if (from.AccessLevel == AccessLevel.Player)
                 from.SendMessage("You may not do that in Neutral Zone.");
@@ -34,7 +34,7 @@ namespace Server.Regions
 				from.SendMessage( "You may not do that in Neutral Zone." );
 
 			return ( from.AccessLevel > AccessLevel.Player );
-		}
+		}*/
 
 		public override bool AllowHousing( Mobile from, Point3D p )
 		{
@@ -46,7 +46,7 @@ namespace Server.Regions
 			global = LightCycle.DayLevel;
 		}
 
-		public override bool OnBeginSpellCast( Mobile from, ISpell s )
+		/*public override bool OnBeginSpellCast( Mobile from, ISpell s )
 		{
 			if ( from.AccessLevel == AccessLevel.Player )
 				from.SendLocalizedMessage( 502629 ); // You cannot cast spells here.
@@ -65,6 +65,6 @@ namespace Server.Regions
 		public override bool OnCombatantChange( Mobile from, Mobile Old, Mobile New )
 		{
 			return ( from.AccessLevel > AccessLevel.Player );
-		}
+		}*/
 	}
 }

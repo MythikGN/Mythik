@@ -14,6 +14,7 @@ namespace Scripts.Mythik.Items.Craftables.Alch
     //Thanks to Lux for this one too.
     public class ShrinkPotion : BasePotion
     {
+        public override int LabelNumber { get { return 0; } }
         [Constructable]
         public ShrinkPotion() : this(1)
         {
@@ -26,7 +27,6 @@ namespace Scripts.Mythik.Items.Craftables.Alch
             Stackable = true;
             Amount = amount;
             Name = "shrink potion";
-            Hue = 0x07EE;
         }
 
         public ShrinkPotion(Serial serial) : base(serial)
