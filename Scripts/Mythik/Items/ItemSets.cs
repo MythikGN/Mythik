@@ -130,7 +130,7 @@ namespace Scripts.Mythik.Items
     {
         //TODO corect hue
         public BlueChromeSet() : base(new DefaultSkillMod(SkillName.Parry, true, 10.0), 6,
-             0x804, new DefaultSkillMod(Server.SkillName.Parry, true, 2.0))
+             0x800, new DefaultSkillMod(Server.SkillName.Parry, true, 2.0))
         {
 
         }
@@ -171,7 +171,7 @@ namespace Scripts.Mythik.Items
             new DefaultSkillMod(SkillName.Inscribe, true, 8.0)
             },
             6,
-             0x30, 
+             0x7AD, 
              new SkillMod[] {
                  new DefaultSkillMod(SkillName.Cartography, true, 1.0),
                  new DefaultSkillMod(SkillName.Inscribe, true, 1.0)
