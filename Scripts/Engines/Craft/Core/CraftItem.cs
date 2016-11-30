@@ -1301,7 +1301,7 @@ namespace Server.Engines.Craft
 			private Type m_TypeRes;
 			private BaseTool m_Tool;
 
-			public InternalTimer( Mobile from, CraftSystem craftSystem, CraftItem craftItem, Type typeRes, BaseTool tool, int iCountMax ) : base( TimeSpan.Zero, TimeSpan.FromSeconds( craftSystem.Delay ), iCountMax )
+			public InternalTimer( Mobile from, CraftSystem craftSystem, CraftItem craftItem, Type typeRes, BaseTool tool, int iCountMax ) : base( TimeSpan.Zero, CalculateDelay(from,craftSystem,craftItem), iCountMax )
 			{
 				m_From = from;
 				m_CraftItem = craftItem;
@@ -1310,9 +1310,20 @@ namespace Server.Engines.Craft
 				m_CraftSystem = craftSystem;
 				m_TypeRes = typeRes;
 				m_Tool = tool;
-			}
+            }
 
-			protected override void OnTick()
+            private static TimeSpan CalculateDelay(Mobile from, CraftSystem craftSystem, CraftItem craftItem)
+            {
+                var delay = 4.0;
+                delay -= ((from.Skills[craftSystem.MainSkill].BaseFixedPoint / craftItem.Skills.GetAt(0).MinSkill) / 50);
+                //Todo should check resource here as well because resource skill may be > item skill
+                from.SendAsciiMessage("Craft delay: " + delay + "s");
+                return TimeSpan.FromSeconds(delay);// craftSystem.Delay);
+            }
+
+            
+
+            protected override void OnTick()
 			{
 				m_iCount++;
 
