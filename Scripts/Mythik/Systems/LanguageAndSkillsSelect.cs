@@ -24,17 +24,48 @@ namespace Scripts.Mythik.Systems
 
         private static void EventSink_Login(LoginEventArgs e)
         {
-            if(!(e.Mobile as MythikPlayerMobile).HasSetSkills)
+            if (!(e.Mobile as MythikPlayerMobile).HasSetSkills)
             {
-                e.Mobile.CloseGump(typeof(SkillsSelectGump));
-                e.Mobile.SendGump(new SkillsSelectGump());
+                e.Mobile.CloseGump(typeof(WelcomeInfoGump));
+                e.Mobile.SendGump(new WelcomeInfoGump());
+            }
+        }
+        private class WelcomeInfoGump : Gump
+        {
+            public WelcomeInfoGump() : base(50, 50)
+            {
+                this.Closable = true;
+                this.Disposable = true;
+                this.Dragable = true;
+                this.Resizable = false;
+                this.AddPage(0);
+                this.AddBackground(40, 45, 399, 370, 9270);
+                this.AddBackground(57, 61, 365, 59, 3600);
+                this.AddLabel(212, 80, 1152, @"Mythik");
+                this.AddBackground(58, 130, 365, 270, 3600);
+                this.AddHtml(78, 151, 323, 200, @"<CENTER><COLOR=WHITE>Welcome to Mythik<BR> On the next screen you will be able to choose two skills at 60.<BR>You will then be able to choose two further skills at 50.", (bool)false, (bool)false);
+                this.AddButton(335, 357, 247, 248, 1, GumpButtonType.Reply, 0);
+            }
+
+            public override void OnResponse(NetState sender, RelayInfo info)
+            {
+                foreach (Skill s in sender.Mobile.Skills)
+                {
+                    s.BaseFixedPoint = 0;
+                }
+                sender.Mobile.SendGump(new SkillsSelectGump(60));
+                base.OnResponse(sender, info);
             }
         }
 
+
+
         private class SkillsSelectGump : Gump
         {
-            public SkillsSelectGump() : base(25,25)
+            private int m_value;
+            public SkillsSelectGump(int val) : base(25, 25)
             {
+                this.m_value = val;
                 this.Closable = false;
                 this.Disposable = true;
                 this.Dragable = true;
@@ -56,10 +87,10 @@ namespace Scripts.Mythik.Systems
                 int colOffset = 162;
                 int rowStart = 105;
                 int cnt = 0;
-                
-                for(int col = 0;col <= 3; col++)
+
+                for (int col = 0; col <= 3; col++)
                 {
-                    for(int row = 0;row <= 12;row++)
+                    for (int row = 0; row <= 12; row++)
                     {
                         if (cnt >= (int)SkillName.RemoveTrap)
                             break;
@@ -73,7 +104,7 @@ namespace Scripts.Mythik.Systems
             }
             public override void OnResponse(NetState sender, RelayInfo info)
             {
-                if(info.Switches.Length != 2)
+                if (info.Switches.Length != 2)
                 {
                     sender.Mobile.SendMessage("Please select two Skills.");
                     sender.Mobile.SendGump(this);
@@ -81,21 +112,29 @@ namespace Scripts.Mythik.Systems
                 }
                 var skillA = (SkillName)info.Switches[0];
                 var skillB = (SkillName)info.Switches[1];
-                
-                sender.Mobile.Skills[skillA].BaseFixedPoint = 600;
-                sender.Mobile.Skills[skillB].BaseFixedPoint = 600;
-                sender.Mobile.Skills[SkillName.Magery].BaseFixedPoint = 800;
-                (sender.Mobile as MythikPlayerMobile).HasSetSkills = true;
-                AddSkillStarterItems(sender.Mobile, skillA);
-                AddSkillStarterItems(sender.Mobile,skillB);
+
+                sender.Mobile.Skills[skillA].BaseFixedPoint = m_value * 10;
+                sender.Mobile.Skills[skillB].BaseFixedPoint = m_value * 10;
+                if (m_value == 50)
+                {
+                    sender.Mobile.Skills[SkillName.Magery].BaseFixedPoint = 800;
+                    (sender.Mobile as MythikPlayerMobile).HasSetSkills = true;
+                    AddSkillStarterItems(sender.Mobile, skillA);
+                    AddSkillStarterItems(sender.Mobile, skillB);
+                }
+                else
+                {
+                    sender.Mobile.SendGump(new SkillsSelectGump(50));
+                }
+
 
                 base.OnResponse(sender, info);
             }
 
 
-            private void AddSkillStarterItems(Mobile player,SkillName skill)
+            private void AddSkillStarterItems(Mobile player, SkillName skill)
             {
-                switch(skill)
+                switch (skill)
                 {
                     case SkillName.Alchemy:
                         player.AddToBackpack(new MortarPestle());
@@ -149,7 +188,7 @@ namespace Scripts.Mythik.Systems
                         player.AddToBackpack(new TinkerTools());
 
                         break;
-                        
+
                     case SkillName.Discordance:
                     case SkillName.Provocation:
                     case SkillName.Peacemaking:
@@ -182,14 +221,14 @@ namespace Scripts.Mythik.Systems
                         EquipAnItem(player, new CloseHelm());
                         EquipAnItem(player, new MetalShield());
                         break;
-                    
+
                 }
             }
 
             private void EquipAnItem(Mobile p, Item a)
             {
                 Item equippedItem = null;
-                if((equippedItem = p.FindItemOnLayer(a.Layer)) != null)
+                if ((equippedItem = p.FindItemOnLayer(a.Layer)) != null)
                 {
                     p.AddToBackpack(equippedItem);
                 }
