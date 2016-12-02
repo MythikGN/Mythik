@@ -1,4 +1,5 @@
-﻿using Scripts.Mythik.Items.Stones;
+﻿using Scripts.Mythik.Items.Rares;
+using Scripts.Mythik.Items.Stones;
 using Server;
 using Server.Gumps;
 using Server.Items;
@@ -24,8 +25,9 @@ namespace Scripts.Mythik.Gumps
                                                             new ItemStoneInfo( typeof( Bag ), "Bag", 300, 0, false ),
 															//new ItemStoneInfo( typeof( BookDyeTub ), "Book Dye Tub", 250000, 0, false ),
 															//new ItemStoneInfo( typeof( BroadcastTicket ), "Broadcast Ticket", 5000, 0, true ),
-															//new ItemStoneInfo( typeof( DyetubCharger ), "Dyetub Charger", 1000, 0, false ),
+															new ItemStoneInfo( typeof( DyeTubRecharger ), "+10 Dyetub Charger", 10000, 0, false ),
 															//new ItemStoneInfo( typeof( FullSpellBook ), "Full Spellbook", 5000, 0, false ),
+                                                            new ItemStoneInfo(typeof(DyeDeed),"Empty Dye Deed",5000,0,false),
 															new ItemStoneInfo( typeof( Runebook ), "Runebook", 20000, 0, false )
 															//new ItemStoneInfo( typeof( ShipRune ), "Ship Rune", 200, 0, false ),
 															

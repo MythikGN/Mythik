@@ -238,7 +238,7 @@ namespace Scripts.Mythik.Systems.Loot
         /// Killers luck also effects drop rate.
         /// </summary>
         public static Type[] LesserArtifacts = new Type[] {
-            typeof(RareClothDyeTub),typeof( RareLeatherDyeTub ), typeof(RuneBookChargeDeed),
+            typeof(RareClothDyeTub),typeof( RareLeatherDyeTub ), typeof(BaseRuneBookChargeDeed),
             typeof(AnimateDeadScrollRecipe),typeof(BloodOathScrollRecipe),typeof(SummonFamiliarScrollRecipe),
             typeof(EnemyOfOneScrollRecipe), typeof(HolyWarFork), typeof(SkillBracelet), typeof(SkillRing), typeof(SkillNecklace), typeof(SkillEarrings),
             typeof(SkinDye),typeof(RareHairDye), typeof(ExorcismScrollRecipe),

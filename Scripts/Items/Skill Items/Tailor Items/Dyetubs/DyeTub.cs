@@ -130,8 +130,13 @@ namespace Server.Items
 			Weight = 10.0;
 			m_Redyable = true;
 		}
-		
-		public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
+        [Constructable]
+        public DyeTub(int itemID) : base(itemID)
+        {
+            Weight = 10.0;
+            m_Redyable = true;
+        }
+        public override void GetContextMenuEntries( Mobile from, List<ContextMenuEntry> list )
 		{
 			base.GetContextMenuEntries( from, list );
 			SetSecureLevelEntry.AddTo( from, this, list );
@@ -189,7 +194,14 @@ namespace Server.Items
                     {
                         if (limited != null)
                             limited.Uses--;
-                        (item as Hair).Hue = m_Tub.DyedHue;
+                        (item as Beard).Hue = m_Tub.DyedHue;
+                        from.PlaySound(0x23E);
+                    }
+                    else if (item is DyeDeed && item.Parent == from.Backpack)
+                    {
+                        if (limited != null)
+                            limited.Uses--;
+                        (item as DyeDeed).Hue = (item as DyeDeed).DyedHue = m_Tub.DyedHue;
                         from.PlaySound(0x23E);
                     }
                     else if ( item is IDyable && m_Tub.AllowDyables )

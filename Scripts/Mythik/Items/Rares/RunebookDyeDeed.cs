@@ -8,8 +8,8 @@ using System.Threading.Tasks;
 
 namespace Scripts.Mythik.Items.Rares
 {
-  
-    public class RunebookDyeDeed : Item , IUniqueItem
+ 
+   /* public class RunebookDyeDeed : Item , IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -75,5 +75,5 @@ namespace Scripts.Mythik.Items.Rares
             var version = reader.ReadInt();
 
         }
-    }
+    }*/
 }

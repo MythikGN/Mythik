@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Scripts.Mythik.Items.Rares
 {
-    public class RuneBookChargeDeed5: RuneBookChargeDeed
+    public class RuneBookChargeDeed5: BaseRuneBookChargeDeed
     {
         [Constructable]
         public RuneBookChargeDeed5() : base(5)
@@ -31,7 +31,7 @@ namespace Scripts.Mythik.Items.Rares
         }
 
     }
-    public class RuneBookChargeDeed10 : RuneBookChargeDeed
+    public class RuneBookChargeDeed10 : BaseRuneBookChargeDeed
     {
         [Constructable]
         public RuneBookChargeDeed10() : base(10)
@@ -54,7 +54,7 @@ namespace Scripts.Mythik.Items.Rares
         }
 
     }
-    public class RuneBookChargeDeed15 : RuneBookChargeDeed
+    public class RuneBookChargeDeed15 : BaseRuneBookChargeDeed
     {
         [Constructable]
         public RuneBookChargeDeed15() : base(15)
@@ -77,7 +77,7 @@ namespace Scripts.Mythik.Items.Rares
         }
 
     }
-    public class RuneBookChargeDeed20 : RuneBookChargeDeed
+    public class RuneBookChargeDeed20 : BaseRuneBookChargeDeed
     {
         [Constructable]
         public RuneBookChargeDeed20() : base(20)
@@ -102,7 +102,7 @@ namespace Scripts.Mythik.Items.Rares
     }
 
 
-    public abstract class RuneBookChargeDeed : Item, IUniqueItem
+    public abstract class BaseRuneBookChargeDeed : Item, IUniqueItem
     {
         private int m_ChargeAmount = 0;
 
@@ -115,13 +115,13 @@ namespace Scripts.Mythik.Items.Rares
         }
 
         [Constructable]
-        public RuneBookChargeDeed(int amount) : base(0x1F1D)
+        public BaseRuneBookChargeDeed(int amount) : base(0x1F1D)
         {
             m_ChargeAmount = amount;
             Name = string.Format("+{0} Runebook Charge Crystal", m_ChargeAmount);
         }
         [Constructable]
-        public RuneBookChargeDeed(Serial serial) : base(serial)
+        public BaseRuneBookChargeDeed(Serial serial) : base(serial)
         {
 
         }
