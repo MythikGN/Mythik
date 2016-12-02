@@ -1336,7 +1336,7 @@ namespace Server.Network
 			{
 				text = pvSrc.ReadUnicodeStringSafe();    
 				keywords = m_EmptyInts;
-                if(from.NetState.Version.Major <= 3)
+                if(from?.NetState?.Version?.Major <= 3)
                 {
                     var keylist = new List<int>();
                     /*
@@ -1457,12 +1457,15 @@ namespace Server.Network
                     else if (text.ToLowerInvariant().Contains("trash barrel"))
                         keylist.Add(0x28);
 */
-                    var kw = Ultima.SpeechList.Entries.Where(e => e.KeyWord.Length > 1 && text.ToLowerInvariant().Contains(e.KeyWord.ToLowerInvariant()));
+                    var kw = Ultima.SpeechList.Entries.Where(e => e.KeyWord.Length > 1 && text.ToLowerInvariant().Contains(e.KeyWord.ToLowerInvariant().Trim(new char[] { '*' })));
+
                     if(kw !=null && kw.Count() > 0)
                     {
                         foreach (var k in kw)
-                            if(k.ID != 0)
-                                keylist.Add(k.ID);
+                        {
+                            keylist.Add(k.ID); // some keys
+                            keylist.Add(k.ID + 256); // some keys are actually + 256 example, "friend" is ID 91, but server expects 0x15B and new clients send this.
+                        }
                     }
                    
                     keywords = keylist.ToArray();
