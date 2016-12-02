@@ -177,26 +177,34 @@ namespace Server.Items
 				if ( targeted is Item )
 				{
 					Item item = (Item)targeted;
-
-					if ( item is IDyable && m_Tub.AllowDyables )
-					{
-                        var limited = m_Tub as LimitedUseDyeTub;
-                        if(limited != null)
-                        {
-                            if(limited.Uses <= 0)
-                            {
-                                from.SendAsciiMessage("The dye tub has no more charges.");
-                                return;
-                            }
+                    var limited = m_Tub as LimitedUseDyeTub;
+                    if (item is Hair && item.Parent == from && m_Tub.AllowDyables)
+                    {
+                        if (limited != null)
                             limited.Uses--;
-                        }
+                        (item as Hair).Hue = m_Tub.DyedHue;
+                        from.PlaySound(0x23E);
+                    }
+                    else if (item is Beard && item.Parent == from && m_Tub.AllowDyables)
+                    {
+                        if (limited != null)
+                            limited.Uses--;
+                        (item as Hair).Hue = m_Tub.DyedHue;
+                        from.PlaySound(0x23E);
+                    }
+                    else if ( item is IDyable && m_Tub.AllowDyables )
+					{
 						if ( !from.InRange( m_Tub.GetWorldLocation(), 1 ) || !from.InRange( item.GetWorldLocation(), 1 ) )
 							from.SendLocalizedMessage( 500446 ); // That is too far away.
 						else if ( item.Parent is Mobile )
 							from.SendLocalizedMessage( 500861 ); // Can't Dye clothing that is being worn.
-						else if ( ((IDyable)item).Dye( from, m_Tub ) )
-							from.PlaySound( 0x23E );
-                         
+						else if ( ((IDyable)item).Dye( from, m_Tub ))
+                        {
+                            from.PlaySound(0x23E);
+                            if(limited != null)
+                                limited.Uses--;
+                        }
+
 
                     }
 					else if ( (FurnitureAttribute.Check( item ) || (item is PotionKeg)) && m_Tub.AllowFurniture )
@@ -230,14 +238,8 @@ namespace Server.Items
 
 							if ( okay )
 							{
-                                var limited = m_Tub as LimitedUseDyeTub;
                                 if (limited != null)
                                 {
-                                    if (limited.Uses <= 0)
-                                    {
-                                        from.SendAsciiMessage("The dye tub has no more charges.");
-                                        return;
-                                    }
                                     limited.Uses--;
                                 }
                                 item.Hue = m_Tub.DyedHue;
@@ -257,14 +259,8 @@ namespace Server.Items
 						}
 						else
 						{
-                            var limited = m_Tub as LimitedUseDyeTub;
                             if (limited != null)
                             {
-                                if (limited.Uses <= 0)
-                                {
-                                    from.SendAsciiMessage("The dye tub has no more charges.");
-                                    return;
-                                }
                                 limited.Uses--;
                             }
                             item.Hue = m_Tub.DyedHue;
@@ -283,14 +279,8 @@ namespace Server.Items
 						}
 						else
 						{
-                            var limited = m_Tub as LimitedUseDyeTub;
                             if (limited != null)
                             {
-                                if (limited.Uses <= 0)
-                                {
-                                    from.SendAsciiMessage("The dye tub has no more charges.");
-                                    return;
-                                }
                                 limited.Uses--;
                             }
                             item.Hue = m_Tub.DyedHue;
@@ -313,14 +303,8 @@ namespace Server.Items
 						}
 						else
 						{
-                            var limited = m_Tub as LimitedUseDyeTub;
                             if (limited != null)
                             {
-                                if (limited.Uses <= 0)
-                                {
-                                    from.SendAsciiMessage("The dye tub has no more charges.");
-                                    return;
-                                }
                                 limited.Uses--;
                             }
                             item.Hue = m_Tub.DyedHue;

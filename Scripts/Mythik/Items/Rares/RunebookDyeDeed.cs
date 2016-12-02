@@ -52,6 +52,11 @@ namespace Scripts.Mythik.Items.Rares
                 from.SendAsciiMessage("That is not a Runebook.");
                 return;
             }
+            if(rb.Parent != from.Backpack)
+            {
+                from.SendAsciiMessage("You may only dye a runebook currently in your backpack.");
+                return;
+            }
 
             rb.Hue = this.Hue;
             from.SendAsciiMessage("You dye the Runebook.");

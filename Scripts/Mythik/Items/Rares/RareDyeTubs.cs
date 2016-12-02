@@ -34,6 +34,16 @@ namespace Scripts.Mythik.Items.Rares
             writer.Write(Uses);
             writer.Write(UsesMax);
         }
+        public override void OnDoubleClick(Mobile from)
+        {
+            if (Uses <= 0)
+            {
+                from.SendAsciiMessage("The dye tub has no more charges.");
+                return;
+            }
+            base.OnDoubleClick(from);
+        }
+
         public override void Deserialize(GenericReader reader)
         {
             base.Deserialize(reader);
