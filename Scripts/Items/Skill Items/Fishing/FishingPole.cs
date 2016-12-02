@@ -26,6 +26,9 @@ namespace Server.Items
 				from.LocalOverheadMessage( MessageType.Regular, 0x3E9, 1019045 ); // I can't reach that
             else
             {
+                //Only can equip via double click if its in your pack.
+                if (this.Parent != from.Backpack)
+                    return;
                 Item eq = from.FindItemOnLayer(this.Layer);
                 if (eq != null)
                 {

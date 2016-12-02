@@ -675,6 +675,9 @@ namespace Server.Items
 		}
         public override void OnDoubleClick(Mobile from)
         {
+            //Only can equip via double click if its in your pack.
+            if (this.Parent != from.Backpack)
+                return;
             Item eq = from.FindItemOnLayer(this.Layer);
             if(eq != null)
             {
