@@ -50,7 +50,7 @@ namespace Server.Mobiles
 
 				Add( new GenericBuyInfo( typeof( SkinningKnife ), 15, 20, 0xEC4, 0 ) );
 
-				Add( new GenericBuyInfo( "1041279", typeof( TaxidermyKit ), 100000, 20, 0x1EBA, 0 ) );
+				//Add( new GenericBuyInfo( "1041279", typeof( TaxidermyKit ), 100000, 20, 0x1EBA, 0 ) );
 			}
 		}
 

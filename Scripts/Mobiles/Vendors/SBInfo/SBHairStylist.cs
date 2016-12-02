@@ -20,8 +20,8 @@ namespace Server.Mobiles
 		{ 
 			public InternalBuyInfo() 
 			{ 
-				Add( new GenericBuyInfo( "special beard dye", typeof( SpecialBeardDye ), 500000, 20, 0xE26, 0 ) ); 
-				Add( new GenericBuyInfo( "special hair dye", typeof( SpecialHairDye ), 500000, 20, 0xE26, 0 ) ); 
+				//Add( new GenericBuyInfo( "special beard dye", typeof( SpecialBeardDye ), 500000, 20, 0xE26, 0 ) ); 
+				//Add( new GenericBuyInfo( "special hair dye", typeof( SpecialHairDye ), 500000, 20, 0xE26, 0 ) ); 
 				Add( new GenericBuyInfo( "1041060", typeof( HairDye ), 60, 20, 0xEFF, 0 ) ); 
 			} 
 		} 

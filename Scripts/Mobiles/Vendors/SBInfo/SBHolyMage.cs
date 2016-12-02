@@ -35,14 +35,14 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( typeof( StrengthPotion ), 15, 20, 0xF09, 0 ) );
 				Add( new GenericBuyInfo( typeof( LesserCurePotion ), 15, 20, 0xF07, 0 ) );
 
-				Add( new GenericBuyInfo( typeof( BlackPearl ), 5, 20, 0xF7A, 0 ) );
-				Add( new GenericBuyInfo( typeof( Bloodmoss ), 5, 20, 0xF7B, 0 ) );
-				Add( new GenericBuyInfo( typeof( Garlic ), 3, 20, 0xF84, 0 ) );
-				Add( new GenericBuyInfo( typeof( Ginseng ), 3, 20, 0xF85, 0 ) );
-				Add( new GenericBuyInfo( typeof( MandrakeRoot ), 3, 20, 0xF86, 0 ) );
-				Add( new GenericBuyInfo( typeof( Nightshade ), 3, 20, 0xF88, 0 ) );
-				Add( new GenericBuyInfo( typeof( SpidersSilk ), 3, 20, 0xF8D, 0 ) );
-				Add( new GenericBuyInfo( typeof( SulfurousAsh ), 3, 20, 0xF8C, 0 ) );
+				Add( new GenericBuyInfo( typeof( BlackPearl ), 5, 80, 0xF7A, 0 ) ); //This set was 20 amount.
+				Add( new GenericBuyInfo( typeof( Bloodmoss ), 5, 80, 0xF7B, 0 ) );
+				Add( new GenericBuyInfo( typeof( Garlic ), 3, 80, 0xF84, 0 ) );
+				Add( new GenericBuyInfo( typeof( Ginseng ), 3, 80, 0xF85, 0 ) );
+				Add( new GenericBuyInfo( typeof( MandrakeRoot ), 3, 80, 0xF86, 0 ) );
+				Add( new GenericBuyInfo( typeof( Nightshade ), 3, 80, 0xF88, 0 ) );
+				Add( new GenericBuyInfo( typeof( SpidersSilk ), 3, 80, 0xF8D, 0 ) );
+				Add( new GenericBuyInfo( typeof( SulfurousAsh ), 3, 80, 0xF8C, 0 ) );
 
 				Type[] types = Loot.RegularScrollTypes;
 

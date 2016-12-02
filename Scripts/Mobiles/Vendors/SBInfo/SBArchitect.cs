@@ -21,8 +21,8 @@ namespace Server.Mobiles
 			public InternalBuyInfo()
 			{
 				Add( new GenericBuyInfo( "1041280", typeof( InteriorDecorator ), 10001, 20, 0xFC1, 0 ) );
-				if ( Core.AOS )
-					Add( new GenericBuyInfo( "1060651", typeof( HousePlacementTool ), 627, 20, 0x14F6, 0 ));
+				//if ( Core.AOS )
+				//	Add( new GenericBuyInfo( "1060651", typeof( HousePlacementTool ), 627, 20, 0x14F6, 0 ));
 			}
 		}
 
@@ -32,8 +32,8 @@ namespace Server.Mobiles
 			{
 				Add( typeof( InteriorDecorator ), 5000 );
 
-				if ( Core.AOS )
-					Add( typeof( HousePlacementTool ), 301 );
+				//if ( Core.AOS )
+				//	Add( typeof( HousePlacementTool ), 301 );
 			}
 		}
 	}

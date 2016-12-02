@@ -42,7 +42,7 @@ namespace Server.Mobiles
 
 				Add( new GenericBuyInfo( typeof( Bottle ), 5, 100, 0xF0E, 0 ) ); 
 
-				Add( new GenericBuyInfo( typeof( HeatingStand ), 2, 100, 0x1849, 0 ) ); 
+				Add( new GenericBuyInfo( typeof( HeatingStand ), 2, 10, 0x1849, 0 ) ); 
 
 				Add( new GenericBuyInfo( "Crafting Glass With Glassblowing", typeof( GlassblowingBook ), 10637, 30, 0xFF4, 0 ) );
 				Add( new GenericBuyInfo( "Finding Glass-Quality Sand", typeof( SandMiningBook ), 10637, 30, 0xFF4, 0 ) );

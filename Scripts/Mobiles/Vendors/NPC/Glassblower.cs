@@ -13,7 +13,7 @@ namespace Server.Mobiles
 		public override NpcGuild NpcGuild{ get{ return NpcGuild.MagesGuild; } }
 
 		[Constructable]
-		public Glassblower() : base( "the alchemist" )
+		public Glassblower() : base( "the glassblower" )
 		{
 			SetSkill( SkillName.Alchemy, 85.0, 100.0 );
 			SetSkill( SkillName.TasteID, 85.0, 100.0 );
@@ -22,7 +22,7 @@ namespace Server.Mobiles
 		public override void InitSBInfo()
 		{
 			m_SBInfos.Add( new SBGlassblower() );
-			m_SBInfos.Add( new SBAlchemist() );
+			//m_SBInfos.Add( new SBAlchemist() );
 		}
 
 		public Glassblower( Serial serial ) : base( serial )
