@@ -36,7 +36,10 @@ namespace Scripts.Mythik
         {
             return RareClothHues[Utility.Random(RareClothHues.Length)];
         }
-
+        public static int GetGMRewardHue()
+        {
+            return RareClothHues[Utility.Random(RareClothHues.Length)];
+        }
         public static Rectangle2D UpdateDoomBounds(Rectangle2D bounds)
         {
             return new Rectangle2D(bounds.X + 5616, bounds.Y + 3544, bounds.Width, bounds.Height);

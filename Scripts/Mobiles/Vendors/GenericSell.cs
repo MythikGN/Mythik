@@ -19,6 +19,13 @@ namespace Server.Mobiles
 			m_Types = null;
 		}
 
+        public int GetSellPriceFor(Type t)
+        {
+            int price = 0;
+            m_Table.TryGetValue(t, out price);
+            return price;
+        }
+
 		public int GetSellPriceFor( Item item )
 		{
 			int price = 0;
