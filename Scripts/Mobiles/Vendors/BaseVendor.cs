@@ -848,7 +848,13 @@ namespace Server.Mobiles
 				fullPurchase = false;
 				return;
 			}
-
+            uint tempTotal = (uint)totalCost + (uint)(bii.Price * amount);
+            if(tempTotal > Int32.MaxValue)
+            {
+                Console.WriteLine("Purchase attempted that would have overflowed total price:");
+                fullPurchase = false
+                    return;
+            }
 			totalCost += bii.Price * amount;
 			validBuy.Add( buy );
 		}
@@ -982,9 +988,18 @@ namespace Server.Mobiles
 							{
 								if ( ssi.IsResellable( item ) )
 								{
-									totalCost += ssi.GetBuyPriceFor( item ) * amount;
-									validBuy.Add( buy );
-									break;
+                                    uint tempTotal = (uint)totalCost + (uint)(ssi.GetBuyPriceFor(item) * amount);
+                                    if (tempTotal > Int32.MaxValue)
+                                    {
+                                        Console.WriteLine("Purchase attempted that would have overflowed total price:");
+                                        fullPurchase = false;     
+                                    }
+                                    else
+                                    {
+                                        totalCost += ssi.GetBuyPriceFor(item) * amount;
+                                        validBuy.Add(buy);
+                                        break;
+                                    }  
 								}
 							}
 						}
