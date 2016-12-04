@@ -407,7 +407,7 @@ namespace Server.Gumps
                     var localized = e as GumpHtmlLocalized;
                     if (localized.Type == GumpHtmlLocalizedType.Color)
                         localized.Type = GumpHtmlLocalizedType.Plain;
-                    if(localized.Number > 1030000)
+                    if(localized.Number > 0)
                     {
                         var text = CliLoc.LocToString(localized.Number, localized.Args);//  GetClioc(ns).Entries.Where(cl => cl.Number == localized.Number).FirstOrDefault()?.Text;
 
