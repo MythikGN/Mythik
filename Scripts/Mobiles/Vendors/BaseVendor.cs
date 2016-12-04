@@ -852,7 +852,7 @@ namespace Server.Mobiles
             if(tempTotal > Int32.MaxValue)
             {
                 Console.WriteLine("Purchase attempted that would have overflowed total price:");
-                fullPurchase = false
+                fullPurchase = false;
                     return;
             }
 			totalCost += bii.Price * amount;

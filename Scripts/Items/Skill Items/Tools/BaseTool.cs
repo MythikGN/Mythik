@@ -117,9 +117,10 @@ namespace Server.Items
 
 		public override void OnSingleClick( Mobile from )
 		{
-			
+			base.OnSingleClick( from );
 
-			base.OnSingleClick( from ); DisplayDurabilityTo(from);
+            if (from.NetState?.Version?.Major <= 3)
+                from.Send(new AsciiMessage(this.Serial, this.ItemID, MessageType.Label, 0x3B2, 3, "", "UsesLeft " + UsesRemaining));
         }
 
 		public override void OnDoubleClick( Mobile from )

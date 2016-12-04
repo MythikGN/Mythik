@@ -1307,9 +1307,7 @@ namespace Server
 
 		public void LabelToAffix( Mobile to, int number, AffixType type, string affix )
 		{
-            if(to.NetState.Version.Major <= 3)
-                to.Send(new AsciiMessage(m_Serial, m_ItemID, MessageType.Label, 0x3B2, 3,"","UsesLeft " + affix));
-            else
+
                 to.Send( new MessageLocalizedAffix( m_Serial, m_ItemID, MessageType.Label, 0x3B2, 3, number, "", type, affix, "" ) );
 		}
 
