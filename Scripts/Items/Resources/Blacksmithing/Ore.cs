@@ -69,7 +69,9 @@ namespace Server.Items
 
 		private static int RandomSize()
 		{
-			double rand = Utility.RandomDouble();
+            //only large graphic
+            return 0x19B9;
+            double rand = Utility.RandomDouble();
 
 			if ( rand < 0.12 )
 				return 0x19B7;
@@ -90,7 +92,7 @@ namespace Server.Items
 			Stackable = true;
 			Amount = amount;
 			Hue = CraftResources.GetHue( resource );
-
+            Weight = 5;
 			m_Resource = resource;
 		}
 
