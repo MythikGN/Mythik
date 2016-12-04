@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using Server.Items;
+using Server.Engines.Craft;
+using System.Linq;
 
 namespace Server.Mobiles
 {
@@ -33,16 +35,16 @@ namespace Server.Mobiles
 
 				Add( new GenericBuyInfo( typeof( RecallRune ), 15, 10, 0x1F14, 0 ) );
 
-				Add( new GenericBuyInfo( typeof( RefreshPotion ), 15, 10, 0xF0B, 0 ) );
-				Add( new GenericBuyInfo( typeof( AgilityPotion ), 15, 10, 0xF08, 0 ) );
-				Add( new GenericBuyInfo( typeof( NightSightPotion ), 15, 10, 0xF06, 0 ) );
-				Add( new GenericBuyInfo( typeof( LesserHealPotion ), 15, 10, 0xF0C, 0 ) );
-				Add( new GenericBuyInfo( typeof( StrengthPotion ), 15, 10, 0xF09, 0 ) );
-				Add( new GenericBuyInfo( typeof( LesserPoisonPotion ), 15, 10, 0xF0A, 0 ) );
- 				Add( new GenericBuyInfo( typeof( LesserCurePotion ), 15, 10, 0xF07, 0 ) );
-				Add( new GenericBuyInfo( typeof( LesserExplosionPotion ), 21, 10, 0xF0D, 0 ) );
+                Add(new GenericBuyInfo("Refresh", typeof(RefreshPotion), 15, 10, 0xF0B, 0));
+                Add(new GenericBuyInfo("Agility", typeof(AgilityPotion), 15, 10, 0xF08, 0));
+                Add(new GenericBuyInfo("Nightsight", typeof(NightSightPotion), 15, 10, 0xF06, 0));
+                Add(new GenericBuyInfo("Lesser Heal", typeof(LesserHealPotion), 15, 10, 0xF0C, 0));
+                Add(new GenericBuyInfo("Strength", typeof(StrengthPotion), 15, 10, 0xF09, 0));
+                Add(new GenericBuyInfo("Lesser Poison", typeof(LesserPoisonPotion), 15, 10, 0xF0A, 0));
+                Add(new GenericBuyInfo("Lesser Cure", typeof(LesserCurePotion), 15, 10, 0xF07, 0));
+                Add(new GenericBuyInfo("Lesser Explosion", typeof(LesserExplosionPotion), 21, 10, 0xF0D, 0));
 
-				Add( new GenericBuyInfo( typeof( BlackPearl ), 5, 80, 0xF7A, 0 ) ); // This group was all 20 count.
+                Add( new GenericBuyInfo( typeof( BlackPearl ), 5, 80, 0xF7A, 0 ) ); // This group was all 20 count.
 				Add( new GenericBuyInfo( typeof( Bloodmoss ), 5, 80, 0xF7B, 0 ) );
 				Add( new GenericBuyInfo( typeof( Garlic ), 3, 80, 0xF84, 0 ) );
 				Add( new GenericBuyInfo( typeof( Ginseng ), 3, 80, 0xF85, 0 ) );
@@ -103,14 +105,33 @@ namespace Server.Mobiles
 
 				Add( typeof( RecallRune ), 13 );
 				Add( typeof( Spellbook ), 25 );
+                Add(typeof(BlankScroll), 3);
+                Type[] types = Loot.RegularScrollTypes;
+                 //For this to work, all resources required for the item must already be listed under BuyInfo we use the prices vendors sell, not the price they pay
+                 var buyInfo = new InternalBuyInfo();
+                for ( int i = 0; i < types.Length; ++i)
+                {
+                    var cItem = Engines.Craft.DefInscription.CraftSystem.CraftItems.SearchFor(types[i]);
+                    var price = 0;
+                    foreach(CraftRes res in cItem.Resources)
+                    {
+                        var resPrice = 0;
+                        var info = buyInfo.FirstOrDefault(x => x.Type == res.ItemType);
+                        if(info != null)
+                            price += info.Price;
+                    }
+                    //Modify the price based on difficulty to craft, for scribe this ranges from -25 to 75 for mage scrolls
+                    // gives us a price mod of -1.25 - 4
+                    //so lvl 1-2-3 will lose cash then you make more and more higher you go
+                    price += (int)cItem.Skills.GetAt(0).MinSkill / 20;
 
-				Type[] types = Loot.RegularScrollTypes;
+                    Add(types[i], price);
+                   
+                                        //Add(types[i], ((i / 8) + 2) * 2);
 
-				for ( int i = 0; i < types.Length; ++i )
-					Add( types[i], ((i / 8) + 2) * 2 );
+                }
 
-
-				if ( Core.SE )
+                if ( Core.SE )
 				{				
 					Add( typeof( ExorcismScroll ), 3 );
 					Add( typeof( AnimateDeadScroll ), 8 );
