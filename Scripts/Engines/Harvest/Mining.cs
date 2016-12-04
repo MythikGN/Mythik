@@ -287,7 +287,12 @@ namespace Server.Engines.Harvest
 			{
 				from.SendLocalizedMessage( 501865 ); // You can't mine while polymorphed.
 				return false;
-			}
+			} //Cant mine if at 0 stam
+            else if(from.Stam == 0)
+            {
+                from.SendAsciiMessage("You can't mine while at zero stamina.");
+                return false;
+            }
 
 			return true;
 		}
@@ -319,6 +324,8 @@ namespace Server.Engines.Harvest
 
 		public override void OnHarvestFinished( Mobile from, Item tool, HarvestDefinition def, HarvestVein vein, HarvestBank bank, HarvestResource resource, object harvested )
 		{
+            //Reduce player stam 1 per reap
+            from.Stam -= 1;
 			if ( tool is GargoylesPickaxe && def == m_OreAndStone && 0.1 > Utility.RandomDouble() )
 			{
 				HarvestResource res = vein.PrimaryResource;

@@ -133,7 +133,14 @@ namespace Server.Engines.Harvest
 			#endregion
 		}
 
-		public override bool CheckHarvest( Mobile from, Item tool )
+        public override void OnHarvestFinished(Mobile from, Item tool, HarvestDefinition def, HarvestVein vein, HarvestBank bank, HarvestResource resource, object harvested)
+        {
+            //Reduce player stam 1 per reap
+            from.Stam -= 1;
+            base.OnHarvestFinished(from, tool, def, vein, bank, resource, harvested);
+        }
+
+        public override bool CheckHarvest( Mobile from, Item tool )
 		{
 			if ( !base.CheckHarvest( from, tool ) )
 				return false;
@@ -143,8 +150,13 @@ namespace Server.Engines.Harvest
                 from.SendLocalizedMessage(500487); // The axe must be equipped for any serious wood chopping.
                 return false;
             }
+            else if (from.Stam == 0)
+            {
+                from.SendAsciiMessage("You can't chop while at zero stamina.");
+                return false;
+            }
 
-			return true;
+            return true;
 		}
 
 		public override bool CheckHarvest( Mobile from, Item tool, HarvestDefinition def, object toHarvest )
@@ -157,8 +169,13 @@ namespace Server.Engines.Harvest
                 from.SendLocalizedMessage(500487); // The axe must be equipped for any serious wood chopping.
                 return false;
             }
+            else if (from.Stam == 0)
+            {
+                from.SendAsciiMessage("You can't chop while at zero stamina.");
+                return false;
+            }
 
-			return true;
+            return true;
 		}
 
 		public override void OnBadHarvestTarget( Mobile from, Item tool, object toHarvest )
