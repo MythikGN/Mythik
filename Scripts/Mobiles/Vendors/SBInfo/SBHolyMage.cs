@@ -28,12 +28,12 @@ namespace Server.Mobiles
 
 				Add( new GenericBuyInfo( typeof( RecallRune ), 15, 10, 0x1f14, 0 ) );
 
-				Add( new GenericBuyInfo( typeof( RefreshPotion ), 15, 20, 0xF0B, 0 ) );
-				Add( new GenericBuyInfo( typeof( AgilityPotion ), 15, 20, 0xF08, 0 ) );
-				Add( new GenericBuyInfo( typeof( NightSightPotion ), 15, 20, 0xF06, 0 ) ); 
-				Add( new GenericBuyInfo( typeof( LesserHealPotion ), 15, 20, 0xF0C, 0 ) );
-				Add( new GenericBuyInfo( typeof( StrengthPotion ), 15, 20, 0xF09, 0 ) );
-				Add( new GenericBuyInfo( typeof( LesserCurePotion ), 15, 20, 0xF07, 0 ) );
+                Add(new GenericBuyInfo("Refresh", typeof(RefreshPotion), 15, 10, 0xF0B, 0));
+                Add(new GenericBuyInfo("Agility", typeof(AgilityPotion), 15, 10, 0xF08, 0));
+                Add(new GenericBuyInfo("Nightsight", typeof(NightSightPotion), 15, 10, 0xF06, 0));
+                Add(new GenericBuyInfo("Lesser Heal", typeof(LesserHealPotion), 15, 10, 0xF0C, 0));
+                Add(new GenericBuyInfo("Strength", typeof(StrengthPotion), 15, 10, 0xF09, 0));
+                Add(new GenericBuyInfo("Lesser Cure", typeof(LesserCurePotion), 15, 10, 0xF07, 0));
 
 				Add( new GenericBuyInfo( typeof( BlackPearl ), 5, 80, 0xF7A, 0 ) ); //This set was 20 amount.
 				Add( new GenericBuyInfo( typeof( Bloodmoss ), 5, 80, 0xF7B, 0 ) );
