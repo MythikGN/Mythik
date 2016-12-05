@@ -80,10 +80,16 @@ namespace Scripts.Mythik.Mobiles
         {
 
         }
-        public override void OnStatsQuery(Mobile from)
+        public override void OpenPropsGump(Item targ)
         {
-            base.OnStatsQuery(from);
+            SendGump(new EquipInfoGump(this, targ));
+
         }
+        public override void ClosePropsGump()
+        {
+            this.CloseGump(typeof(EquipInfoGump));
+        }
+
         public override void ProcessDelta()
         {
             if (NetState.Version?.Major <= 3)

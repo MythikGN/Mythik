@@ -1620,22 +1620,25 @@ namespace Server.Items
 
         public override void OnSingleClick( Mobile from )
 		{
-            if (from.NetState.Version.Major <= 3)
+            if (from.NetState?.Version?.Major <= 3)
             {
-                from.SendGump(new SkillHandlers.EquipInfoGump(from as Scripts.Mythik.Mobiles.MythikPlayerMobile, this));
                 DisplayRarity(from);
                 from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3B2, 3, "", SphereUtils.ComputeName(this)));
+                if (this is IUniqueItem)
+                    from.OpenPropsGump(this);
+                else
+                    from.ClosePropsGump();
                 //base.OnSingleClick(from);
-                //from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3b2, 3, "", "[AR: " + this.PhysicalResistance + " Dura: " + this.HitPoints + "]"));
+                from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3b2, 3, "", "[AR: " + this.PhysicalResistance + " HP: " + this.HitPoints + "]"));
 
-                if (!SkillBonuses.IsEmpty)
+               /* if (!SkillBonuses.IsEmpty)
                 {
                     if (SkillBonuses.Skill_1_Value > 0)
                         from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x803, 3, "", "[ +" + SkillBonuses.Skill_1_Value + " " + SkillBonuses.Skill_1_Name.ToString() + " ]"));
                     if (SkillBonuses.Skill_2_Value > 0)
                         from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x803, 3, "", "[ +" + SkillBonuses.Skill_2_Value + " " + SkillBonuses.Skill_2_Name.ToString() + " ]"));
 
-                }
+                }*/
                 return;
             }
 

@@ -4499,6 +4499,8 @@ namespace Server
 			if ( Deleted || !from.CanSee( this ) )
 				return;
 
+
+
 			if ( DisplayLootType )
 				LabelLootTypeTo( from );
 
@@ -4506,10 +4508,20 @@ namespace Server
 
 			if ( ns != null )
 			{
+                if(ns.Version?.Major <= 3)
+                {
+                    if (this is IUniqueItem)
+                        from.OpenPropsGump(this);
+                    else
+                        from.ClosePropsGump();
+                }
+               
+
                 if (this is IUniqueItem)
                 {
                     var uni = this as IUniqueItem;
                     DisplayRarity(from);
+
                     ns.Send(new UnicodeMessage(m_Serial, m_ItemID, MessageType.Label, 0x803, 3, "ENU", "", myTI.ToTitleCase(this.Name ?? "") + (m_Amount > 1 ? " : " + m_Amount : "")));
                     return;
                 }

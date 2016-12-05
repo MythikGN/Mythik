@@ -3463,7 +3463,7 @@ namespace Server.Items
         }
         public override void OnSingleClick( Mobile from )
 		{
-            if (from.NetState.Version.Major <= 3)
+            if (from.NetState?.Version?.Major <= 3)
             {
                 DisplayRarity(from);
                 //base.OnSingleClick(from);
@@ -3476,16 +3476,21 @@ namespace Server.Items
 
                 damage = ScaleDamageByDurability((int)damage);
 
-                from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3B2, 3, "", "[Dmg: " + damage + " Dura: " + this.HitPoints + "/" + this.MaxHitPoints + "]"));
+                from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3B2, 3, "", "[Dmg: " + damage + " HP: " + this.HitPoints + "/" + this.MaxHitPoints + "]"));
 
-                if (!SkillBonuses.IsEmpty)
-                {
-                    if (SkillBonuses.Skill_1_Value > 0)
-                        from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x803, 3, "", "[ +" + SkillBonuses.Skill_1_Value + " " + SkillBonuses.Skill_1_Name.ToString() + " ]"));
-                    if (SkillBonuses.Skill_2_Value > 0)
-                        from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x803, 3, "", "[ +" + SkillBonuses.Skill_2_Value + " " + SkillBonuses.Skill_2_Name.ToString() + " ]"));
+                if (this is IUniqueItem)
+                    from.OpenPropsGump(this);
+                else
+                    from.ClosePropsGump();
 
-                }
+                /*  if (!SkillBonuses.IsEmpty)
+                  {
+                      if (SkillBonuses.Skill_1_Value > 0)
+                          from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x803, 3, "", "[ +" + SkillBonuses.Skill_1_Value + " " + SkillBonuses.Skill_1_Name.ToString() + " ]"));
+                      if (SkillBonuses.Skill_2_Value > 0)
+                          from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x803, 3, "", "[ +" + SkillBonuses.Skill_2_Value + " " + SkillBonuses.Skill_2_Name.ToString() + " ]"));
+
+                  }*/
                 return;
             }
             List<EquipInfoAttribute> attrs = new List<EquipInfoAttribute>();
