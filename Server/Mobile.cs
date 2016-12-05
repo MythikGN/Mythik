@@ -10910,7 +10910,7 @@ namespace Server
 		public virtual void OnStatsQuery( Mobile from )
 		{
 			if( from.Map == this.Map && Utility.InUpdateRange( this, from ) && from.CanSee( this ) )
-				from.Send( new MobileStatus( from, this, m_NetState ) );
+				from.Send( new MobileStatus( from, this, from.NetState ) );
 
 			if( from == this )
 				Send( new StatLockInfo( this ) );

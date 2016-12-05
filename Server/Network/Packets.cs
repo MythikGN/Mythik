@@ -3217,7 +3217,7 @@ namespace Server.Network
 
 	public sealed class MobileStatus : Packet
 	{
-		public MobileStatus( Mobile beholder, Mobile beheld ) : this( beholder, beheld, beheld.NetState )
+		public MobileStatus( Mobile beholder, Mobile beheld ) : this( beholder, beheld, beholder.NetState )
 		{
 		}
 
@@ -3275,7 +3275,7 @@ namespace Server.Network
 				m_Stream.Write( (byte) beheld.Followers );
 				m_Stream.Write( (byte) beheld.FollowersMax );
 
-				if ( Core.AOS && ns.Version.Major > 3)
+				if ( Core.AOS && ns.Version?.Major > 3)
 				{
 					m_Stream.Write( (short) beheld.FireResistance ); // Fire
 					m_Stream.Write( (short) beheld.ColdResistance ); // Cold
