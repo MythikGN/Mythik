@@ -1301,7 +1301,7 @@ namespace Server.Engines.Craft
 			private Type m_TypeRes;
 			private BaseTool m_Tool;
 
-			public InternalTimer( Mobile from, CraftSystem craftSystem, CraftItem craftItem, Type typeRes, BaseTool tool, int iCountMax ) : base( TimeSpan.Zero, CalculateDelay(from,craftSystem,craftItem), iCountMax )
+			public InternalTimer( Mobile from, CraftSystem craftSystem, CraftItem craftItem, Type typeRes, BaseTool tool, int iCountMax ) : base( TimeSpan.Zero, CalculateDelay(from,craftSystem,craftItem, typeRes), iCountMax )
 			{
 				m_From = from;
 				m_CraftItem = craftItem;
@@ -1312,11 +1312,17 @@ namespace Server.Engines.Craft
 				m_Tool = tool;
             }
 
-            private static TimeSpan CalculateDelay(Mobile from, CraftSystem craftSystem, CraftItem craftItem)
+            private static TimeSpan CalculateDelay(Mobile from, CraftSystem craftSystem, CraftItem craftItem,Type typeRes)
             {
                 var delay = 4.0;
-                delay -= ((from.Skills[craftSystem.MainSkill].BaseFixedPoint / craftItem.Skills.GetAt(0).MinSkill) / 50);
-                //Todo should check resource here as well because resource skill may be > item skill
+                //Get whichever is higher item or resource skill.
+                var resourceDelay = craftSystem.CraftSubRes.SearchFor(typeRes)?.RequiredSkill;
+                var minSkill = Math.Max(craftItem.Skills.GetAt(0).MinSkill, resourceDelay ?? 0);
+                //Mod delay based on required skill vs player skill
+                delay -= ((from.Skills[craftSystem.MainSkill].BaseFixedPoint / minSkill) / 50);
+                //cap the delays with a min/max incase of outliers.
+                delay = Math.Min(5, delay);
+                delay = Math.Max(2, delay);
                 from.SendAsciiMessage("Craft delay: " + delay + "s");
                 return TimeSpan.FromSeconds(delay);// craftSystem.Delay);
             }
