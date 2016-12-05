@@ -82,13 +82,11 @@ namespace Scripts.Mythik.Mobiles
         }
         public override void OnStatsQuery(Mobile from)
         {
-            if (from.NetState.Expansion < Expansion.AOS)
-                from.SendGump(new StatusGump(from as MythikPlayerMobile));
             base.OnStatsQuery(from);
         }
         public override void ProcessDelta()
         {
-            if (NetState.Version.Major <= 3)
+            if (NetState.Version?.Major <= 3)
             {
                 Mobile m = this;
                 MobileDelta delta;
