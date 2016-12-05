@@ -10,6 +10,7 @@ using Scripts.Mythik.Systems.Achievements;
 using Server.SkillHandlers;
 using Server.ContextMenus;
 using Server.Gumps;
+using Server.Mythik;
 
 namespace Scripts.Mythik.Mobiles
 {
@@ -78,6 +79,33 @@ namespace Scripts.Mythik.Mobiles
         public MythikPlayerMobile() : base ()
         {
 
+        }
+        public override void OnStatsQuery(Mobile from)
+        {
+            if (from.NetState.Expansion < Expansion.AOS)
+                from.SendGump(new StatusGump(from as MythikPlayerMobile));
+            base.OnStatsQuery(from);
+        }
+        public override void ProcessDelta()
+        {
+            if (NetState.Version.Major <= 3)
+            {
+                Mobile m = this;
+                MobileDelta delta;
+
+                delta = m.m_DeltaFlags;
+
+                if (delta == MobileDelta.None)
+                    return;
+
+                MobileDelta attrs = delta & MobileDelta.Attributes;
+                if ((delta & (MobileDelta.Hits | MobileDelta.Stam | MobileDelta.Mana | MobileDelta.WeaponDamage | MobileDelta.Resistances | MobileDelta.Stat | MobileDelta.Weight | MobileDelta.Gold | MobileDelta.Armor | MobileDelta.StatCap | MobileDelta.Followers)) != 0)
+                {
+                    SendGump(new StatusGump(this));
+                }
+            }
+                
+            base.ProcessDelta();
         }
         public override void GetContextMenuEntries(Mobile from, List<ContextMenuEntry> list)
         {

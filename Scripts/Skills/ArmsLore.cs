@@ -10,7 +10,10 @@ namespace Server.SkillHandlers
 {
     public class EquipInfoGump : Gump
     {
+        public EquipInfoGump(Scripts.Mythik.Mobiles.MythikPlayerMobile from) :this(from,null)
+        {
 
+        }
         public EquipInfoGump(Scripts.Mythik.Mobiles.MythikPlayerMobile from, Item item) : base(from.GetGumpLoc(typeof(EquipInfoGump)).Item1, from.GetGumpLoc(typeof(EquipInfoGump)).Item2)
         {
             from.CloseGump(typeof(EquipInfoGump));
@@ -23,15 +26,15 @@ namespace Server.SkillHandlers
             if(item != null)
                 height = CliLoc.GetPropertiesList(item).Count * 23;
             height += 5;
-            this.AddBackground(82, 78, 196, 46 + height, 9270);
-            this.AddBackground(89, 87, 182, 29 + height, 9270);
-            this.AddAlphaRegion(80, 77, 191, 50+height);
-            this.AddButton(236, 90, 4011, 4012, 1, GumpButtonType.Reply, 0);
+            this.AddBackground(2, 8, 196, 46 + height, 9270);
+            this.AddBackground(9, 17, 182, 29 + height, 9270);
+            this.AddAlphaRegion(0, 7, 191, 50+height);
+            this.AddButton(156, 20, 4011, 4012, 1, GumpButtonType.Reply, 0);
             if (item == null)
                 return;
             var text = @"<CENTER><BASEFONT COLOR=GREEN>";
             var textHeader = @"<CENTER><BASEFONT COLOR=WHITE>";
-            int y = 90;
+            int y = 20;
             //if (string.IsNullOrWhiteSpace(item.Name))
             //    AddHtmlLocalized(98, y += 17, 100, 15, item.LabelNumber, false, false);
             // else
@@ -40,9 +43,9 @@ namespace Server.SkillHandlers
             foreach (var prop in CliLoc.GetPropertiesList(item))
             {
                 if (cnt == 0 && prop?.Length > 1)
-                    AddHtml(98, y += 23, 160, 17, textHeader + char.ToUpper(prop[0]) + prop.Substring(1), false, false);
+                    AddHtml(18, y += 23, 160, 17, textHeader + char.ToUpper(prop[0]) + prop.Substring(1), false, false);
                 else
-                    AddHtml(98, y += 23, 160, 17, text + prop, false, false);
+                    AddHtml(18, y += 23, 160, 17, text + prop, false, false);
                 cnt++;
                 /*if (prop.Item2 == null)
                     AddHtmlLocalized(98, y += 17, 100, 15, prop.Item1, false, false);
@@ -160,7 +163,8 @@ namespace Server.SkillHandlers
                     break;
             }
             from.SendGump(new SetLocationGump(sender, type));
-            from.SendGump(new EquipInfoGump(from, null));
+            var gump = (Gump)Activator.CreateInstance(type, new object[] { from });
+            from.SendGump(gump);
         }
     }
 

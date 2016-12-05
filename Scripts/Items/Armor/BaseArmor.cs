@@ -1622,10 +1622,11 @@ namespace Server.Items
 		{
             if (from.NetState.Version.Major <= 3)
             {
+                from.SendGump(new SkillHandlers.EquipInfoGump(from as Scripts.Mythik.Mobiles.MythikPlayerMobile, this));
                 DisplayRarity(from);
                 from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3B2, 3, "", SphereUtils.ComputeName(this)));
                 //base.OnSingleClick(from);
-                from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3b2, 3, "", "[AR: " + this.PhysicalResistance + " Dura: " + this.HitPoints + "]"));
+                //from.Send(new AsciiMessage(Serial, ItemID, MessageType.Label, 0x3b2, 3, "", "[AR: " + this.PhysicalResistance + " Dura: " + this.HitPoints + "]"));
 
                 if (!SkillBonuses.IsEmpty)
                 {

@@ -3135,6 +3135,7 @@
     <Compile Include="Mythik\Regions\NeutralZone.cs" />
     <Compile Include="Mythik\Regions\PvpArenas.cs" />
     <Compile Include="Mythik\Regions\VendorMall.cs" />
+    <Compile Include="Mythik\StatusGump.cs" />
     <Compile Include="Mythik\Systems\Achievements\AcheivmentEntry.cs" />
     <Compile Include="Mythik\Systems\Achievements\AchieveTypes\BaseAchievement.cs" />
     <Compile Include="Mythik\Systems\Achievements\AchieveTypes\DiscoveryAchievement.cs" />

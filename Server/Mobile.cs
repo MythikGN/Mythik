@@ -9899,7 +9899,7 @@ namespace Server
 		private static Queue<Mobile> m_DeltaQueue = new Queue<Mobile>();
 
 		private bool m_InDeltaQueue;
-		private MobileDelta m_DeltaFlags;
+		public MobileDelta m_DeltaFlags;
 
 		public virtual void Delta( MobileDelta flag )
 		{
