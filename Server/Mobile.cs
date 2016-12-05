@@ -11308,5 +11308,12 @@ namespace Server
 		public virtual void OnSectorDeactivate()
 		{
 		}
-	}
+
+        public virtual void OpenPropsGump(Item targ)
+        {
+        }
+        public virtual void ClosePropsGump()
+        {
+        }
+    }
 }
