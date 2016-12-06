@@ -20,7 +20,7 @@ namespace Server.Mobiles
 		{
 			public InternalBuyInfo()
 			{
-				Add( new GenericBuyInfo( "deed to a stone-and-plaster house", typeof( StonePlasterHouseDeed ), 43800, 20, 0x14F0, 0 ) );
+				/*Add( new GenericBuyInfo( "deed to a stone-and-plaster house", typeof( StonePlasterHouseDeed ), 43800, 20, 0x14F0, 0 ) );
 				Add( new GenericBuyInfo( "deed to a field stone house", typeof( FieldStoneHouseDeed ), 43800, 20, 0x14F0, 0 ) );
 				Add( new GenericBuyInfo( "deed to a small brick house", typeof( SmallBrickHouseDeed), 43800, 20, 0x14F0, 0 ) );
 				Add( new GenericBuyInfo( "deed to a wooden house", typeof( WoodHouseDeed ), 43800, 20, 0x14F0, 0 ) );
@@ -38,7 +38,7 @@ namespace Server.Mobiles
 				Add( new GenericBuyInfo( "deed to a sandstone house with patio", typeof( SandstonePatioDeed ), 90900, 20, 0x14F0, 0 ) );
 				Add( new GenericBuyInfo( "deed to a two story villa", typeof( VillaDeed ), 136500, 20, 0x14F0, 0 ) );
 				Add( new GenericBuyInfo( "deed to a small stone workshop", typeof( StoneWorkshopDeed ), 60600, 20, 0x14F0, 0 ) );
-				Add( new GenericBuyInfo( "deed to a small marble workshop", typeof( MarbleWorkshopDeed ), 63000, 20, 0x14F0, 0 ) );
+				Add( new GenericBuyInfo( "deed to a small marble workshop", typeof( MarbleWorkshopDeed ), 63000, 20, 0x14F0, 0 ) );*/
 			}
 		}
 

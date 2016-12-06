@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using Server.Items;
+using Server.Engines.Craft;
+using System.Linq;
 
 namespace Server.Mobiles
 {
@@ -76,18 +78,62 @@ namespace Server.Mobiles
 				Add( typeof( Spellbook ), 9 );
 				Add( typeof( BlankScroll ), 3 );
 
-				Add( typeof( NightSightPotion ), 7 );
+                /*Add( typeof( NightSightPotion ), 7 );
 				Add( typeof( AgilityPotion ), 7 );
 				Add( typeof( StrengthPotion ), 7 );
 				Add( typeof( RefreshPotion ), 7 );
 				Add( typeof( LesserCurePotion ), 7 );
-				Add( typeof( LesserHealPotion ), 7 );
+				Add( typeof( LesserHealPotion ), 7 );*/
+                AddPotions();
 
-				Type[] types = Loot.RegularScrollTypes;
 
-				for ( int i = 0; i < types.Length; ++i )
-					Add( types[ i ], ( ( i / 8 ) + 2 ) * 2 );
-			}
-		}
+                Type[] types = Loot.RegularScrollTypes;
+                var buyInfo = new InternalBuyInfo();
+                for (int i = 0; i < types.Length; ++i)
+                {
+                    var cItem = Engines.Craft.DefInscription.CraftSystem.CraftItems.SearchFor(types[i]);
+                    var price = 0;
+                    foreach (CraftRes res in cItem.Resources)
+                    {
+                        var info = buyInfo.FirstOrDefault(x => x.Type == res.ItemType);
+                        if (info != null)
+                            price += info.Price;
+                    }
+                    //Modify the price based on difficulty to craft, for scribe this ranges from  25-125 for mage scrolls
+                    // gives us a price mod of 1.25-6.25
+                    //so lvl 1-2-3 will lose cash then you make more and more higher you go
+                    price += (int)cItem.Skills.GetAt(0).MaxSkill / 20;
+                    price += 3; // Add 3 to the base price so now profit will be 4-10 depending on circle.
+
+                    Add(types[i], price);
+                    //Add(types[i], ((i / 8) + 2) * 2);
+
+                }
+
+            }
+            private void AddPotions()
+            {
+                var buyInfo = new InternalBuyInfo();
+                foreach (CraftItem item in DefAlchemy.CraftSystem.CraftItems)
+                {
+                    var price = 0;
+                    foreach (CraftRes res in item.Resources)
+                    {
+                        var info = buyInfo.FirstOrDefault(x => x.Type == res.ItemType);
+                        if (info != null)
+                            price += info.Price;
+                    }
+                    //Modify the price based on difficulty to craft, for scribe this ranges from  25-125 for mage scrolls
+                    // gives us a price mod of 1.25-6.25
+                    //so lvl 1-2-3 will lose cash then you make more and more higher you go
+                    price += (int)item.Skills.GetAt(0).MaxSkill / 20;
+                    price += 3; // Add 3 to the base price so now profit will be 4-10 depending on circle.
+                    if (price != 0)
+                        Add(item.ItemType, price);
+                }
+
+
+            }
+        }
 	}
 }

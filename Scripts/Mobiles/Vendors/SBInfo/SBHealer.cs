@@ -33,8 +33,8 @@ namespace Server.Mobiles
 			public InternalSellInfo()
 			{
 				Add( typeof( Bandage ), 1 );
-				Add( typeof( LesserHealPotion ), 7 );
-				Add( typeof( RefreshPotion ), 7 );
+				//Add( typeof( LesserHealPotion ), 7 );
+				//Add( typeof( RefreshPotion ), 7 );
 				Add( typeof( Garlic ), 2 );
 				Add( typeof( Ginseng ), 2 );
 			}

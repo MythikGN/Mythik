@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using Server.Items;
+using Server.Engines.Craft;
+using System.Linq;
 
 namespace Server.Mobiles
 {
@@ -44,9 +46,9 @@ namespace Server.Mobiles
 
 				Add( new GenericBuyInfo( typeof( HeatingStand ), 2, 10, 0x1849, 0 ) ); 
 
-				Add( new GenericBuyInfo( "Crafting Glass With Glassblowing", typeof( GlassblowingBook ), 10637, 30, 0xFF4, 0 ) );
-				Add( new GenericBuyInfo( "Finding Glass-Quality Sand", typeof( SandMiningBook ), 10637, 30, 0xFF4, 0 ) );
-				Add( new GenericBuyInfo( "1044608", typeof( Blowpipe ), 21, 100, 0xE8A, 0x3B9 ) );
+				//Add( new GenericBuyInfo( "Crafting Glass With Glassblowing", typeof( GlassblowingBook ), 10637, 30, 0xFF4, 0 ) );
+				//Add( new GenericBuyInfo( "Finding Glass-Quality Sand", typeof( SandMiningBook ), 10637, 30, 0xFF4, 0 ) );
+				//Add( new GenericBuyInfo( "1044608", typeof( Blowpipe ), 21, 100, 0xE8A, 0x3B9 ) );
 			}
 		}
 
@@ -65,19 +67,43 @@ namespace Server.Mobiles
 				Add( typeof( Bottle ), 3 );
 				Add( typeof( MortarPestle ), 4 );
 
-				Add( typeof( NightSightPotion ), 7 );
+                /*Add( typeof( NightSightPotion ), 7 );
 				Add( typeof( AgilityPotion ), 7 );
 				Add( typeof( StrengthPotion ), 7 );
 				Add( typeof( RefreshPotion ), 7 );
 				Add( typeof( LesserCurePotion ), 7 );
 				Add( typeof( LesserHealPotion ), 7 );
 				Add( typeof( LesserPoisonPotion ), 7 );
-				Add( typeof( LesserExplosionPotion ), 10 );
-
-				Add( typeof( GlassblowingBook ), 5000 );
+				Add( typeof( LesserExplosionPotion ), 10 );*/
+                AddPotions();
+                Add( typeof( GlassblowingBook ), 5000 );
 				Add( typeof( SandMiningBook ), 5000 );
 				Add( typeof( Blowpipe ), 10 );
 			}
-		}
+
+            private void AddPotions()
+            {
+                var buyInfo = new InternalBuyInfo();
+                foreach (CraftItem item in DefAlchemy.CraftSystem.CraftItems)
+                {
+                    var price = 0;
+                    foreach (CraftRes res in item.Resources)
+                    {
+                        var info = buyInfo.FirstOrDefault(x => x.Type == res.ItemType);
+                        if (info != null)
+                            price += info.Price;
+                    }
+                    //Modify the price based on difficulty to craft, for scribe this ranges from  25-125 for mage scrolls
+                    // gives us a price mod of 1.25-6.25
+                    //so lvl 1-2-3 will lose cash then you make more and more higher you go
+                    price += (int)item.Skills.GetAt(0).MaxSkill / 20;
+                    price += 3; // Add 3 to the base price so now profit will be 4-10 depending on circle.
+                    if (price != 0)
+                        Add(item.ItemType, price);
+                }
+
+
+            }
+        }
 	}
 }
