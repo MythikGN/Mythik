@@ -105,7 +105,14 @@ namespace Server.Mobiles
 
 		public override int Meat{ get{ return 1; } }
 		public override int Hides{ get{ return 1; } }
-		public override bool BardImmune{ get{ return !Core.AOS; } }
+        public override HideType HideType
+        {
+            get
+            {
+                return HideType.RabbitFur;
+            }
+        }
+        public override bool BardImmune{ get{ return !Core.AOS; } }
 
 		public VorpalBunny( Serial serial ) : base( serial )
 		{

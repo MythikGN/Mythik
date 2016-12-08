@@ -105,7 +105,8 @@ namespace Server.Mobiles
 		Regular,
 		Spined,
 		Horned,
-		Barbed
+		Barbed,
+        RabbitFur
 	}
 
 	#endregion
@@ -1510,9 +1511,11 @@ namespace Server.Mobiles
 							case HideType.Spined: leather = new SpinedLeather( hides ); break;
 							case HideType.Horned: leather = new HornedLeather( hides ); break;
 							case HideType.Barbed: leather = new BarbedLeather( hides ); break;
-						}
+                            case HideType.RabbitFur: leather = new Scripts.Mythik.Items.Craftables.Tailoring.RabbitFur(hides); break;
 
-						if ( leather != null )
+                        }
+
+                        if ( leather != null )
 						{
 							if ( !from.PlaceInBackpack( leather ) )
 							{
@@ -1535,8 +1538,10 @@ namespace Server.Mobiles
 							corpse.DropItem( new HornedHides( hides ) );
 						else if ( HideType == HideType.Barbed )
 							corpse.DropItem( new BarbedHides( hides ) );
+                        else if(HideType == HideType.RabbitFur)
+                            corpse.DropItem(new Scripts.Mythik.Items.Craftables.Tailoring.RabbitFur(hides));
 
-						from.SendLocalizedMessage( 500471 ); // You skin it, and the hides are now in the corpse.
+                        from.SendLocalizedMessage( 500471 ); // You skin it, and the hides are now in the corpse.
 					}
 				}
 
