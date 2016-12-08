@@ -22,7 +22,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x07AA;
             Name = "Skirt of Greater Tinkering";
-            SkillBonuses.SetValues(0, Server.SkillName.Tinkering, 2.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Tinkering, 1.0);
         }
         public TinkeringSkirt(Serial serial) : base(serial)
         {
@@ -56,7 +56,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x07AA;
             Name = "Shirt of Better Tinkering";
-            SkillBonuses.SetValues(0, Server.SkillName.Tinkering, 4.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Tinkering, 2.0);
         }
         public TinkeringShirt(Serial serial) : base(serial)
         {
@@ -90,7 +90,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x07AA;
             Name = "Boots of Tinkering";
-            SkillBonuses.SetValues(0, Server.SkillName.Tinkering, 6.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Tinkering, 4.0);
         }
         public TinkeringBoots(Serial serial) : base(serial)
         {
@@ -124,7 +124,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x07AA;
             Name = "Tinker's Safety Cloak";
-            SkillBonuses.SetValues(0, Server.SkillName.Tinkering, 8.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Tinkering, 5.0);
         }
         public TinkeringCloak(Serial serial) : base(serial)
         {
@@ -159,7 +159,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x07AA;
             Name = "Tinker's Full Apron";
-            SkillBonuses.SetValues(0, Server.SkillName.Tinkering, 10.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Tinkering, 8.0);
         }
         public TinkeringApron(Serial serial) : base(serial)
         {

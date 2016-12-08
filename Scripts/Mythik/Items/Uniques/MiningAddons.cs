@@ -22,7 +22,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x082E;
             Name = "Mining Boots";
-            SkillBonuses.SetValues(0, Server.SkillName.Mining, 2.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Mining, 1.0);
         }
         public MiningBoots(Serial serial) : base(serial)
         {
@@ -56,7 +56,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x082E;
             Name = "Greater Mining Kilt";
-            SkillBonuses.SetValues(0, Server.SkillName.Mining, 4.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Mining, 2.0);
         }
         public MiningKilt(Serial serial) : base(serial)
         {
@@ -91,7 +91,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x082E;
             Name = "Greater Mining Shirt";
-            SkillBonuses.SetValues(0, Server.SkillName.Mining, 6.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Mining, 4.0);
         }
         public MiningShirt(Serial serial) : base(serial)
         {
@@ -126,7 +126,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x082E;
             Name = "Cloak of Mining";
-            SkillBonuses.SetValues(0, Server.SkillName.Mining, 8.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Mining, 5.0);
         }
         public MiningCloak(Serial serial) : base(serial)
         {
@@ -161,7 +161,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x082E;
             Name = "Apron of Geology";
-            SkillBonuses.SetValues(0, Server.SkillName.Mining, 10.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Mining, 8.0);
         }
         public MiningApron(Serial serial) : base(serial)
         {

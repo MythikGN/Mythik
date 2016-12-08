@@ -22,7 +22,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x7FF;
             Name = "Tough Boots of Forestry";
-            SkillBonuses.SetValues(0, Server.SkillName.Lumberjacking, 2.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Lumberjacking, 1.0);
         }
         public LumberjackBoots(Serial serial) : base(serial)
         {
@@ -56,7 +56,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x7FF;
             Name = "Skirt of Forestry";
-            SkillBonuses.SetValues(0, Server.SkillName.Lumberjacking, 4.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Lumberjacking, 2.0);
         }
         public LumberjackSkirt(Serial serial) : base(serial)
         {
@@ -91,7 +91,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x7FF;
             Name = "Shirt of Forestry";
-            SkillBonuses.SetValues(0, Server.SkillName.Lumberjacking, 6.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Lumberjacking, 4.0);
         }
         public LumberjackShirt(Serial serial) : base(serial)
         {
@@ -126,7 +126,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x7FF;
             Name = "Cloak of Forestry";
-            SkillBonuses.SetValues(0, Server.SkillName.Lumberjacking, 8.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Lumberjacking, 5.0);
         }
         public LumberjackCloak(Serial serial) : base(serial)
         {
@@ -161,7 +161,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x7FF;
             Name = "Apron of Forestry";
-            SkillBonuses.SetValues(0, Server.SkillName.Lumberjacking, 10.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Lumberjacking, 8.0);
         }
         public LumberjackApron(Serial serial) : base(serial)
         {

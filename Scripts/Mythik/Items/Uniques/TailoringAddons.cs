@@ -22,7 +22,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x798;
             Name = "Sandals of Tailoring";
-            SkillBonuses.SetValues(0, Server.SkillName.Tailoring, 2.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Tailoring, 1.0);
         }
         public TailorSandals(Serial serial) : base(serial)
         {
@@ -56,7 +56,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x798;
             Name = "Greater Cloak of Tailoring";
-            SkillBonuses.SetValues(0, Server.SkillName.Tailoring, 4.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Tailoring, 2.0);
         }
         public TailorCloak(Serial serial) : base(serial)
         {
@@ -91,7 +91,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x798;
             Name = "Shirt of Tailoring";
-            SkillBonuses.SetValues(0, Server.SkillName.Mining, 6.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Mining, 4.0);
         }
         public TailorShirt(Serial serial) : base(serial)
         {
@@ -126,7 +126,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x798;
             Name = "Doublet of Tailoring";
-            SkillBonuses.SetValues(0, Server.SkillName.Tailoring, 8.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Tailoring, 5.0);
         }
         public TailoringDoublet(Serial serial) : base(serial)
         {
@@ -161,7 +161,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x798;
             Name = "Skirt of Tailoring";
-            SkillBonuses.SetValues(0, Server.SkillName.Tailoring, 10.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Tailoring, 8.0);
         }
         public TailorSkirt(Serial serial) : base(serial)
         {

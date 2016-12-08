@@ -29,13 +29,13 @@ using System.Threading.Tasks;
 //emerald    - Carp
 //ruby       - taming/lore 
 //citrine    - Tink / item id
-//amber      - carto
+//amber      - carto 
 //tourmaline - fishing/cooking
 //starsaph   - Tailor
 //amethyst   - bowcraft
-//diamond    - Scribe / Mage - combine with carto?
+//diamond    - Scribe / Mage - combine with carto? X
 //Turquoise  - Smith / arms lore
-//Pearl      - Alch
+//Pearl      - Alch X
 
 namespace Scripts.Mythik.Items
 {
@@ -60,7 +60,7 @@ namespace Scripts.Mythik.Items
     public class TurquoiseArmorSet : BaseGearSet
     {
         //set bonus, number items for set bonus, hue, bonus for single item
-        public TurquoiseArmorSet() : base(new DefaultSkillMod(SkillName.Blacksmith, true, 8.0),
+        public TurquoiseArmorSet() : base(new DefaultSkillMod(SkillName.Blacksmith, true, 4.0),
             6, 0x80b,
             new DefaultSkillMod(Server.SkillName.Blacksmith, true, 1.0))
         {
@@ -69,7 +69,7 @@ namespace Scripts.Mythik.Items
     }
     public class PearlArmorSet : BaseGearSet
     {
-        public PearlArmorSet() : base(new DefaultSkillMod(SkillName.Alchemy, true, 8.0),
+        public PearlArmorSet() : base(new DefaultSkillMod(SkillName.Alchemy, true, 4.0),
             6, 0x810,
             new DefaultSkillMod(Server.SkillName.Alchemy, true, 1.0))
         {
@@ -78,7 +78,7 @@ namespace Scripts.Mythik.Items
     }
     public class EmeraldArmorSet : BaseGearSet
     {
-        public EmeraldArmorSet() : base(new DefaultSkillMod(SkillName.Carpentry, true, 8.0),
+        public EmeraldArmorSet() : base(new DefaultSkillMod(SkillName.Carpentry, true, 4.0),
             6, 0x7ac, 
             new DefaultSkillMod(Server.SkillName.Carpentry, true, 1.0))
         {
@@ -88,9 +88,9 @@ namespace Scripts.Mythik.Items
     public class DiamondArmorSet : BaseGearSet
     {
         //set bonus, number items for set bonus, hue, bonus for single item
-        public DiamondArmorSet() : base(new DefaultSkillMod(SkillName.Camping, true, 10.0),
+        public DiamondArmorSet() : base(new DefaultSkillMod(SkillName.Inscribe, true, 4.0),
             6, 0x809,
-            new DefaultSkillMod(Server.SkillName.Camping, true, 2.0))
+            new DefaultSkillMod(Server.SkillName.Inscribe, true, 2.0))
         {
 
         }
@@ -98,7 +98,7 @@ namespace Scripts.Mythik.Items
     public class AmethystArmorSet : BaseGearSet
     {
         //set bonus, number items for set bonus, hue, bonus for single item
-        public AmethystArmorSet() : base(new DefaultSkillMod(SkillName.Fletching, true, 8.0),
+        public AmethystArmorSet() : base(new DefaultSkillMod(SkillName.Fletching, true, 4.0),
             6, 0x807,
             new DefaultSkillMod(Server.SkillName.Fletching, true, 1.0))
         {
@@ -108,7 +108,7 @@ namespace Scripts.Mythik.Items
     public class StarSapphireArmorSet : BaseGearSet
     {
         //set bonus, number items for set bonus, hue, bonus for single item
-        public StarSapphireArmorSet() : base(new DefaultSkillMod(SkillName.Tailoring, true, 8.0),
+        public StarSapphireArmorSet() : base(new DefaultSkillMod(SkillName.Tailoring, true, 4.0),
             6, 0x805,
             new DefaultSkillMod(Server.SkillName.Tailoring, true, 1.0))
         {
@@ -118,7 +118,7 @@ namespace Scripts.Mythik.Items
     public class TourmalineArmorSet : BaseGearSet
     {
         //set bonus, number items for set bonus, hue, bonus for single item
-        public TourmalineArmorSet() : base(new DefaultSkillMod(SkillName.Fishing, true, 8.0),
+        public TourmalineArmorSet() : base(new DefaultSkillMod(SkillName.Fishing, true, 4.0),
             6, 0x48a,
             new DefaultSkillMod(Server.SkillName.Fishing, true, 1.0))
         {
@@ -129,8 +129,8 @@ namespace Scripts.Mythik.Items
     public class BlueChromeSet : BaseGearSet
     {
         //TODO corect hue
-        public BlueChromeSet() : base(new DefaultSkillMod(SkillName.Parry, true, 10.0), 6,
-             0x800, new DefaultSkillMod(Server.SkillName.Parry, true, 2.0))
+        public BlueChromeSet() : base(new DefaultSkillMod(SkillName.Parry, true, 4.0), 6,
+             0x800, new DefaultSkillMod(Server.SkillName.Parry, true, 1.0))
         {
 
         }
@@ -138,8 +138,8 @@ namespace Scripts.Mythik.Items
     public class RubyArmorSet : BaseGearSet
     {
         //set bonus, number items for set bonus, hue, bonus for single item
-        public RubyArmorSet() : base(new DefaultSkillMod(SkillName.AnimalTaming, true, 6.0), 6,
-             0x804, new DefaultSkillMod(Server.SkillName.AnimalTaming, true, 2.0))
+        public RubyArmorSet() : base(new DefaultSkillMod(SkillName.AnimalTaming, true, 4.0), 6,
+             0x804, new DefaultSkillMod(Server.SkillName.AnimalTaming, true, 1.0))
         {
 
         }
@@ -147,7 +147,7 @@ namespace Scripts.Mythik.Items
     public class CitrineArmorSet : BaseGearSet
     {
         //set bonus, number items for set bonus, hue, bonus for single item
-        public CitrineArmorSet() : base(new DefaultSkillMod(SkillName.Tinkering, true, 8.0), 6,
+        public CitrineArmorSet() : base(new DefaultSkillMod(SkillName.Tinkering, true, 4.0), 6,
              0x80d, new DefaultSkillMod(Server.SkillName.Tinkering, true, 1.0))
         {
 
@@ -156,7 +156,7 @@ namespace Scripts.Mythik.Items
     public class SapphireArmorSet : BaseGearSet
     {
         //set bonus, number items for set bonus, hue, bonus for single item
-        public SapphireArmorSet() : base(new DefaultSkillMod(SkillName.Mining, true, 8.0), 6,
+        public SapphireArmorSet() : base(new DefaultSkillMod(SkillName.Mining, true, 4.0), 6,
              0x803, new DefaultSkillMod(Server.SkillName.Mining, true, 1.0))
         {
 
@@ -167,14 +167,14 @@ namespace Scripts.Mythik.Items
         //set bonus, number items for set bonus, hue, bonus for single item
         public AmberArmorSet() : base(
             new SkillMod[] {
-            new DefaultSkillMod(SkillName.Cartography, true, 8.0),
-            new DefaultSkillMod(SkillName.Inscribe, true, 8.0)
+            new DefaultSkillMod(SkillName.Cartography, true, 4.0),
+            
             },
             6,
              0x7AD, 
              new SkillMod[] {
                  new DefaultSkillMod(SkillName.Cartography, true, 1.0),
-                 new DefaultSkillMod(SkillName.Inscribe, true, 1.0)
+                 
              }
              )
         {

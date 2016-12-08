@@ -22,7 +22,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x803;
             Name = "boots of better carpentry";
-            SkillBonuses.SetValues(0, Server.SkillName.Carpentry, 2.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Carpentry, 1.0);
         }
         public CarpentryBoots(Serial serial) : base(serial)
         {
@@ -56,7 +56,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x803;
             Name = "Kilt of greater carpentry";
-            SkillBonuses.SetValues(0, Server.SkillName.Carpentry, 4.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Carpentry, 2.0);
         }
         public CarpentryKilt(Serial serial) : base(serial)
         {
@@ -90,7 +90,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x803;
             Name = "carpenter's apron";
-            SkillBonuses.SetValues(0, Server.SkillName.Carpentry, 6.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Carpentry, 4.0);
         }
         public CarpentryApron(Serial serial) : base(serial)
         {
@@ -124,7 +124,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x803;
             Name = "carpenters's cloak";
-            SkillBonuses.SetValues(0, Server.SkillName.Carpentry, 8.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Carpentry, 5.0);
         }
         public CarpentryCloak(Serial serial) : base(serial)
         {
@@ -159,7 +159,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x803;
             Name = "carpenter's work shirt";
-            SkillBonuses.SetValues(0, Server.SkillName.Carpentry, 10.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Carpentry, 8.0);
         }
         public CarpentryShirt(Serial serial) : base(serial)
         {

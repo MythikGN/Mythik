@@ -22,7 +22,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x7FC;
             Name = "Scribe's Thigh Boots";
-            SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 2.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 1.0);
         }
         public InscribeBoots(Serial serial) : base(serial)
         {
@@ -56,7 +56,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x7FC;
             Name = "Infused Kilt of Inscription";
-            SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 4.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 2.0);
         }
         public InscribeKilt(Serial serial) : base(serial)
         {
@@ -90,7 +90,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x7FC;
             Name = "Scribe's Ink Proof Shirt";
-            SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 6.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 4.0);
         }
         public InscribeShirt(Serial serial) : base(serial)
         {
@@ -124,7 +124,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x7FC;
             Name = "Scribe's Ink Proof Doublet";
-            SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 8.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 5.0);
         }
         public InscribeDoublet(Serial serial) : base(serial)
         {
@@ -159,7 +159,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x7FC;
             Name = "Scribe's Enchanted SpellBook";
-            SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 10.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Inscribe, 8.0);
 			Content = ulong.MaxValue;
             LootType = LootType.Regular;
         }

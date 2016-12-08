@@ -22,7 +22,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x783;
             Name = "Shoes of Better Bowcraft";
-            SkillBonuses.SetValues(0, Server.SkillName.Fletching, 2.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Fletching, 1.0);
         }
         public BowcraftShoes(Serial serial) : base(serial)
         {
@@ -56,7 +56,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x783;
             Name = "Bowcrafting Skirt";
-            SkillBonuses.SetValues(0, Server.SkillName.Fletching, 4.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Fletching, 2.0);
         }
         public BowcraftSkirt(Serial serial) : base(serial)
         {
@@ -90,7 +90,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x783;
             Name = "Bowcrafter's Shirt";
-            SkillBonuses.SetValues(0, Server.SkillName.Fletching, 6.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Fletching, 4.0);
         }
         public BowcraftShirt(Serial serial) : base(serial)
         {
@@ -124,7 +124,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x783;
             Name = "Bowcrafter's Doublet";
-            SkillBonuses.SetValues(0, Server.SkillName.Fletching, 8.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Fletching, 5.0);
         }
         public BowcraftDoublet(Serial serial) : base(serial)
         {
@@ -159,7 +159,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x783;
             Name = "Master Bowcrafter's Dagger";
-            SkillBonuses.SetValues(0, Server.SkillName.Fletching, 10.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Fletching, 8.0);
         }
         public BowcraftDagger(Serial serial) : base(serial)
         {

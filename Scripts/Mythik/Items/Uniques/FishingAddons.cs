@@ -22,7 +22,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x794;
             Name = "Fishing Waders";
-            SkillBonuses.SetValues(0, Server.SkillName.Fishing, 2.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Fishing, 1.0);
         }
         public FishingBoots(Serial serial) : base(serial)
         {
@@ -56,7 +56,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x794;
             Name = "Fishing Shirt";
-            SkillBonuses.SetValues(0, Server.SkillName.Fishing, 4.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Fishing, 2.0);
         }
         public FishingShirt(Serial serial) : base(serial)
         {
@@ -90,7 +90,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x794;
             Name = "Fisherman's Kilt";
-            SkillBonuses.SetValues(0, Server.SkillName.Fishing, 6.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Fishing, 4.0);
         }
         public FishingKilt(Serial serial) : base(serial)
         {
@@ -124,7 +124,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x794;
             Name = "Fishing Cloak";
-            SkillBonuses.SetValues(0, Server.SkillName.Fishing, 8.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Fishing, 5.0);
         }
         public FishingCloak(Serial serial) : base(serial)
         {
@@ -159,7 +159,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x794;
             Name = "Fishing Apron";
-            SkillBonuses.SetValues(0, Server.SkillName.Fishing, 10.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Fishing, 8.0);
         }
         public FishingApron(Serial serial) : base(serial)
         {

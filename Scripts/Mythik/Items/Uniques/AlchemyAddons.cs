@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Scripts.Mythik.Items.Uniques
 {
+    
     public class AlchemySandals : Sandals, IUniqueItem
     {
         public RareLevel UniqueLevel
@@ -22,7 +23,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x79c;
             Name = "sandals of better alchemy";
-            SkillBonuses.SetValues(0, Server.SkillName.Alchemy, 2.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Alchemy, 1.0);
         }
         public AlchemySandals(Serial serial) : base(serial)
         {
@@ -56,7 +57,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x79c;
             Name = "skirt of better alchemy";
-            SkillBonuses.SetValues(0, Server.SkillName.Alchemy, 4.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Alchemy, 2.0);
         }
         public AlchemySkirt(Serial serial) : base(serial)
         {
@@ -90,7 +91,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x79c;
             Name = "alchemist's apron";
-            SkillBonuses.SetValues(0, Server.SkillName.Alchemy, 6.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Alchemy, 4.0);
         }
         public AlchemyApron(Serial serial) : base(serial)
         {
@@ -124,7 +125,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x79c;
             Name = "alchemist's shirt";
-            SkillBonuses.SetValues(0, Server.SkillName.Alchemy, 8.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Alchemy, 5.0);
         }
         public AlchemyShirt(Serial serial) : base(serial)
         {
@@ -159,7 +160,7 @@ namespace Scripts.Mythik.Items.Uniques
         {
             Hue = 0x79c;
             Name = "alchemist's lab coat";
-            SkillBonuses.SetValues(0, Server.SkillName.Alchemy, 10.0);
+            SkillBonuses.SetValues(0, Server.SkillName.Alchemy, 8.0);
         }
         public AlchemyRobe(Serial serial) : base(serial)
         {
