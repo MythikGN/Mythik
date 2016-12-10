@@ -67,70 +67,81 @@ namespace Scripts.Mythik.Systems.Loot
         public static readonly LootPackItem[] LevelOneUniques = new LootPackItem[]
             {
                 new LootPackItem( typeof( AlchemySandals ),1 ),
-                //new LootPackItem( typeof( BlacksmithyArms ), 1 ),
+                new LootPackItem( typeof( BlacksmithySash ), 1 ),
+                new LootPackItem( typeof( BowcraftShoes ), 1 ),
                 new LootPackItem( typeof( CarpentryBoots ), 1 ),
+                new LootPackItem( typeof( FishingBoots ), 1 ),
                 new LootPackItem( typeof( TamingSkirt ), 1 ),
                 new LootPackItem( typeof( TailorSandals ), 1 ),
-                //new LootPackItem( typeof( TinkeringCap ), 1 ),
+                new LootPackItem( typeof( TinkeringSkirt ), 1 ),
                 new LootPackItem( typeof( InscribeBoots ), 1 ),
-                //new LootPackItem( typeof( LumberjackCap ), 1 ),
-                //new LootPackItem( typeof( DamagedMiningHat ), 1 )
+                new LootPackItem( typeof( LumberjackBoots ), 1 ),
+                new LootPackItem( typeof( MiningBoots ), 1 )
             };
         public static readonly LootPackItem[] LevelTwoUniques = new LootPackItem[]
     {
-               // new LootPackItem( typeof( AlchemyBandena ),1 ),
+                new LootPackItem( typeof( AlchemySkirt ),1 ),
                 new LootPackItem( typeof( BlacksmithShoes ), 1 ),
-              //  new LootPackItem( typeof( CarpentryCap ), 1 ),
+                new LootPackItem( typeof( BowcraftSkirt ), 1 ),
+                new LootPackItem( typeof( CarpentryKilt ), 1 ),
+                new LootPackItem( typeof( FishingShirt ), 1 ), 
                 new LootPackItem( typeof( TamingCloak ), 1 ),
-               // new LootPackItem( typeof( TailorGloves ), 1 ),
+                new LootPackItem( typeof( TailorCloak ), 1 ),
                 new LootPackItem( typeof( TinkeringShirt ), 1 ),
-               // new LootPackItem( typeof( InscribeHat ), 1 ),
-               // new LootPackItem( typeof( LumberjackGloves ), 1 ),
-               // new LootPackItem( typeof( Miningboots ), 1 )
+                new LootPackItem( typeof( InscribeKilt ), 1 ),
+                new LootPackItem( typeof( LumberjackSkirt ), 1 ),
+                new LootPackItem( typeof( MiningKilt ), 1 )
     };
 
         public static readonly LootPackItem[] LevelThreeUniques = new LootPackItem[]
 {
                 new LootPackItem( typeof( AlchemyApron ),1 ),
-              //  new LootPackItem( typeof( BlacksmithBandana ), 1 ),
+                new LootPackItem( typeof( BlacksmithShirt ), 1 ),
+                new LootPackItem( typeof( BowcraftShirt ), 1 ),
                 new LootPackItem( typeof( CarpentryApron ), 1 ),
+                new LootPackItem( typeof( FishingKilt ), 1 ),
+                new LootPackItem( typeof( MiningShirt ), 1 ),
                 new LootPackItem( typeof( TamingBoots ), 1 ),
-               // new LootPackItem( typeof( TailorHat ), 1 ),
-               // new LootPackItem( typeof( TinkeringPants ), 1 ),
-               // new LootPackItem( typeof( InscribeApron ), 1 ),
+                new LootPackItem( typeof( TailorShirt ), 1 ),
+                new LootPackItem( typeof( TinkeringBoots ), 1 ),
+                new LootPackItem( typeof( InscribeShirt ), 1 ),
                 new LootPackItem( typeof( LumberjackShirt ), 1 )
 };
 
         public static readonly LootPackItem[] LevelFourniques = new LootPackItem[]
 {
-              //  new LootPackItem( typeof( AlchemyGloves ),1 ),
+                new LootPackItem( typeof( AlchemyShirt ),1 ),
                 new LootPackItem( typeof( BlacksmithApron ), 1 ),
-              //  new LootPackItem( typeof( CarpentryGloves ), 1 ),
-               // new LootPackItem( typeof( TamingRobe ), 1 ),
+                new LootPackItem( typeof( BowcraftDoublet ), 1 ),
+                new LootPackItem( typeof( CarpentryCloak ), 1 ),
+                new LootPackItem( typeof( FishingCloak ), 1 ),
+                new LootPackItem( typeof( TamingDoublet ), 1 ),
                 new LootPackItem( typeof( TailoringDoublet ), 1 ),
-               // new LootPackItem( typeof( TinkeringGloves  ), 1 ),
-                new LootPackItem( typeof( InscribeShirt ), 1 ),
-              //  new LootPackItem( typeof( LumberjackPants ), 1 ),
-              //  new LootPackItem( typeof( Miningboots ), 1 )
+                new LootPackItem( typeof( TinkeringCloak  ), 1 ),
+                new LootPackItem( typeof( InscribeDoublet ), 1 ),
+                new LootPackItem( typeof( LumberjackCloak ), 1 ),
+                new LootPackItem( typeof( MiningCloak ), 1 )
 };
 
         public static readonly LootPackItem[] LevelFiveUniques = new LootPackItem[]
 {
                 new LootPackItem( typeof( AlchemyRobe ),1 ),
-               // new LootPackItem( typeof( BlacksmithRobe ), 1 ),
+                new LootPackItem( typeof( BlacksmithHammer ), 1 ),
+                new LootPackItem( typeof( BowcraftDagger ), 1 ),
                 new LootPackItem( typeof( CarpentryShirt ), 1 ),
+                new LootPackItem( typeof( FishingApron ), 1 ),
                 new LootPackItem( typeof( TamingCrook ), 1 ),
                 new LootPackItem( typeof( TailorSkirt ), 1 ),
                 new LootPackItem( typeof( TinkeringApron ), 1 ),
-                new LootPackItem( typeof( InscribeShirt ), 1 ),
+                new LootPackItem( typeof( InscribeSpellBook ), 1 ),
                 new LootPackItem( typeof( LumberjackApron ), 1 ),
-              //  new LootPackItem( typeof( MiningRobe ), 1 )
+                new LootPackItem( typeof( MiningApron ), 1 )
 };
 
         public static readonly LootPackItem[] SkillJewels = new LootPackItem[]
 {
                 new LootPackItem( typeof( SkillRing ),1 ),
-                new LootPackItem( typeof( SkillNecklace ), 1 ),
+                //new LootPackItem( typeof( SkillNecklace ), 1 ),
                 new LootPackItem( typeof( SkillEarrings ), 1 ),
                 new LootPackItem( typeof( SkillBracelet ), 1 ),
 };
@@ -140,6 +151,7 @@ namespace Scripts.Mythik.Systems.Loot
         /// </summary>
         public static readonly LootPack Level1 = new LootPack(new LootPackEntry[]
             {
+                //2 dice with 120 sides both rolled, so 0-240 then plus 25 (i think )
                 new LootPackEntry(  false, Gold,                     100.00, "2d120+25" ),
                 new LootPackEntry( false, PotionItems,              45.0,      2 ),
                 new LootPackEntry( false, LowScrollItems,           35.0,      1 ),
@@ -196,39 +208,30 @@ namespace Scripts.Mythik.Systems.Loot
                 new LootPackEntry( false, LevelFiveUniques,          0.17,   1 ) // 0.13 is equiv to 1 in 769
 });
 
-        public static void GenerateLoot(BaseCreature mob)
+        //handy dandy accessor
+        public static readonly LootPack[] Levels = { Level1, Level2, Level3, Level4, Level5 };
+
+        public static bool GenerateLoot(BaseCreature mob)
         {
-            if (mob is BaseHealer)
-                return;
-            if(mob.AI == AIType.AI_Animal)
-            {
-                // animal only loot?
+            //Return false to let default loot handler take over.
+            if (mob is BaseHealer || mob.AI == AIType.AI_Animal)
+                return false;
 
-            }
-           switch(MonsterLevels.GetMonsterLevel(mob) + (mob.IsParagon == true ? 1 : 0)) // bump the loot level + 1 if paragon
+            
+            LootPack levelBasedLootToAdd = Levels[MonsterLevels.GetMonsterLevel(mob) - 1]; ;
+            mob.AddLoot(levelBasedLootToAdd);
+           
+            //Double loot on paragons for now thus 2 chances for a uni
+            if(mob.IsParagon)
             {
-                case 1:
-                    mob.AddLoot(Level1);
-                    break;
-                case 2:
-                    mob.AddLoot(Level2);
-                    break;
-                case 3:
-                    mob.AddLoot(Level3);
-                    break;
-                case 4:
-                    mob.AddLoot(Level4);
-                    break;
-                case 5:
-                    mob.AddLoot(Level5);
-                    break;
-                default:
-                    break;
+                mob.AddLoot(levelBasedLootToAdd);
             }
-            if(mob.Region.IsPartOf("Doom"))
+            //Todo region spefic loot etc,
+            if (mob.Region.IsPartOf("Doom"))
             {
 
             }
+            return true;
         }
 
         // probably via tmaps? TODO
@@ -240,7 +243,7 @@ namespace Scripts.Mythik.Systems.Loot
         public static Type[] LesserArtifacts = new Type[] {
             typeof(RareClothDyeTub),typeof( RareLeatherDyeTub ), typeof(BaseRuneBookChargeDeed),
             typeof(AnimateDeadScrollRecipe),typeof(BloodOathScrollRecipe),typeof(SummonFamiliarScrollRecipe),
-            typeof(EnemyOfOneScrollRecipe), typeof(HolyWarFork), typeof(SkillBracelet), typeof(SkillRing), typeof(SkillNecklace), typeof(SkillEarrings),
+            typeof(EnemyOfOneScrollRecipe), typeof(HolyWarFork), typeof(SkillBracelet), typeof(SkillRing), typeof(SkillEarrings),
             typeof(SkinDye),typeof(RareHairDye), typeof(ExorcismScrollRecipe),
 
         };

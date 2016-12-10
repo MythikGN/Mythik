@@ -77,7 +77,7 @@ namespace Scripts.Mythik.Items.Rares.Equipment
         public static SkillMod GenerateBonus()
         {
             SkillName skill = (SkillName)Utility.Random(0, 48);
-            var bonus = Utility.Random(0, 500) / 100.0;
+            var bonus = Utility.Random(0, 300) / 100.0;
 
             return new DefaultSkillMod(skill, true, bonus);
         }
@@ -113,7 +113,7 @@ namespace Scripts.Mythik.Items.Rares.Equipment
             base.Deserialize(reader);
         }
     }
-    public class SkillNecklace : GoldNecklace, IUniqueItem
+  /*  public class SkillNecklace : GoldNecklace, IUniqueItem
     {
         public RareLevel UniqueLevel
         {
@@ -142,7 +142,7 @@ namespace Scripts.Mythik.Items.Rares.Equipment
         {
             base.Deserialize(reader);
         }
-    }
+    }*/
 
     public class SkillEarrings : GoldEarrings, IUniqueItem
     {

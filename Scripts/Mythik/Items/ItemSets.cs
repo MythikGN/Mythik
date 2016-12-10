@@ -128,9 +128,8 @@ namespace Scripts.Mythik.Items
 
     public class BlueChromeSet : BaseGearSet
     {
-        //TODO corect hue
-        public BlueChromeSet() : base(new DefaultSkillMod(SkillName.Parry, true, 4.0), 6,
-             0x800, new DefaultSkillMod(Server.SkillName.Parry, true, 1.0))
+        public BlueChromeSet() : base(new DefaultSkillMod(SkillName.Tactics, true, 4.0), 6,
+             0x800, new DefaultSkillMod(SkillName.Tactics, true, 1.0))
         {
 
         }

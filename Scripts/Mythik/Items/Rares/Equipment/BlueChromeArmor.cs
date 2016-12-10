@@ -8,10 +8,6 @@ using System.Threading.Tasks;
 
 namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
 {
-   // Currently +2 tact/parry per piece and + 10 parry on full set
-   // TODO check / tweak AR/resists.
-
-
 
     public class BlueChromePlateChest : PlateChest, IItemSet
     {
@@ -30,6 +26,7 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
             Hue = GetItemSet.Hue;
             int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
             ArmorAttributes.SelfRepair = 1;
+            Attributes.ReflectPhysical = 5;
         }
         public BlueChromePlateChest(Serial serial) : base(serial)
         {
@@ -62,6 +59,8 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
             Hue = GetItemSet.Hue;
             int i = 0; GetItemSet.ItemBonus.ForEach((e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
             ArmorAttributes.SelfRepair = 1;
+            Attributes.ReflectPhysical = 5;
+
         }
         public BlueChromePlateLegs(Serial serial) : base(serial)
         {
@@ -94,6 +93,8 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
             Hue = GetItemSet.Hue;
             int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
             ArmorAttributes.SelfRepair = 1;
+            Attributes.ReflectPhysical = 5;
+
         }
         public BlueChromePlateHelm(Serial serial) : base(serial)
         {
@@ -126,6 +127,8 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
             Hue = GetItemSet.Hue;
             int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
             ArmorAttributes.SelfRepair = 1;
+            Attributes.ReflectPhysical = 5;
+
         }
         public BlueChromePlateGorgot(Serial serial) : base(serial)
         {
@@ -156,6 +159,8 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
             Name = "BlueChrome Platemail Arms";
             Hue = GetItemSet.Hue;
             int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
+            ArmorAttributes.SelfRepair = 1;
+            Attributes.ReflectPhysical = 5;
         }
         public BlueChromePlateArms(Serial serial) : base(serial)
         {
@@ -186,6 +191,8 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
             Name = "BlueChrome Platemail Gloves";
             Hue = GetItemSet.Hue;
             int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
+            ArmorAttributes.SelfRepair = 1;
+            Attributes.ReflectPhysical = 5;
         }
         public BlueChromePlateGloves(Serial serial) : base(serial)
         {
@@ -217,6 +224,8 @@ namespace Scripts.Mythik.Items.Craftables.Tinkering.GemArmor
             Name = "BlueChrome heater Shield";
             Hue = GetItemSet.Hue;
             int i = 0; GetItemSet.ItemBonus.ForEach( (e) => { SkillBonuses.SetValues(i++, e.Skill, e.Value); });
+            ArmorAttributes.SelfRepair = 1;
+            Attributes.ReflectPhysical = 5;
         }
         public BlueChromeHeaterShield(Serial serial) : base(serial)
         {
