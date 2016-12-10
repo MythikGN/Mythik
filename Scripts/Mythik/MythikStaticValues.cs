@@ -32,7 +32,7 @@ namespace Scripts.Mythik
             return res;
         }
 
-        public static int GetSkinDyeHue()
+        public static int GetRandomRareSkinDyeHue()
         {
             return RareClothHues[Utility.Random(RareClothHues.Length)];
         }

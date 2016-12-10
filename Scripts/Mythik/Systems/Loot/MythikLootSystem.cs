@@ -244,7 +244,7 @@ namespace Scripts.Mythik.Systems.Loot
             typeof(RareClothDyeTub),typeof( RareLeatherDyeTub ), typeof(BaseRuneBookChargeDeed),
             typeof(AnimateDeadScrollRecipe),typeof(BloodOathScrollRecipe),typeof(SummonFamiliarScrollRecipe),
             typeof(EnemyOfOneScrollRecipe), typeof(HolyWarFork), typeof(SkillBracelet), typeof(SkillRing), typeof(SkillEarrings),
-            typeof(SkinDye),typeof(RareHairDye), typeof(ExorcismScrollRecipe),
+            typeof(SkinDye),typeof(RareHairDye), typeof(ExorcismScrollRecipe),typeof(UnHolyWarFork)
 
         };
         /// <summary>

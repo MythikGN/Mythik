@@ -22,7 +22,7 @@ namespace Scripts.Mythik.Items.Rares
         public SkinDye() : base(0x1847)
         {
             Name = "Rare Skin Dye";
-            Hue = MythikStaticValues.GetSkinDyeHue();
+            Hue = MythikStaticValues.GetRandomRareSkinDyeHue();
         }
 
         public override void OnDoubleClick(Mobile from)
