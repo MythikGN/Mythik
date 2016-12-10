@@ -2905,6 +2905,13 @@
     <Compile Include="Multis\HouseTeleporter.cs" />
     <Compile Include="Multis\MovingCrate.cs" />
     <Compile Include="Multis\PreviewHouse.cs" />
+    <Compile Include="Mythik\3rdParty\BountySystem\BountiedHead.cs" />
+    <Compile Include="Mythik\3rdParty\BountySystem\BountyBoard.cs" />
+    <Compile Include="Mythik\3rdParty\BountySystem\BountyCorpse.cs" />
+    <Compile Include="Mythik\3rdParty\BountySystem\BountyGuard.cs" />
+    <Compile Include="Mythik\3rdParty\BountySystem\BountyInformation.cs" />
+    <Compile Include="Mythik\3rdParty\BountySystem\BountyPackets.cs" />
+    <Compile Include="Mythik\3rdParty\BountySystem\ReportMurdererBountyGump.cs" />
     <Compile Include="Mythik\3rdParty\Custom Regions\CustomRegion.cs" />
     <Compile Include="Mythik\3rdParty\Custom Regions\RegionBounds.cs" />
     <Compile Include="Mythik\3rdParty\Custom Regions\RegionControl.cs" />
@@ -3109,6 +3116,7 @@
     <Compile Include="Mythik\Items\Craftables\Inscription\ReagentBook.cs" />
     <Compile Include="Mythik\Items\Craftables\SkillEssence.cs" />
     <Compile Include="Mythik\Items\Craftables\Tailoring\RobeOfFire.cs" />
+    <Compile Include="Mythik\Items\Craftables\Tailoring\VetsRabbitCloak.cs" />
     <Compile Include="Mythik\Items\Craftables\Tinkering\EmptySkinDyeBottle.cs" />
     <Compile Include="Mythik\Items\Craftables\Tinkering\FusionCube.cs" />
     <Compile Include="Mythik\Items\Craftables\Tinkering\GemArmor\PearlArmor.cs" />
