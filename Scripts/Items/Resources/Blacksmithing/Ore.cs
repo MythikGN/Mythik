@@ -302,6 +302,18 @@ namespace Server.Items
 						case CraftResource.Agapite: difficulty = 90.0; break;
 						case CraftResource.Verite: difficulty = 95.0; break;
 						case CraftResource.Valorite: difficulty = 99.0; break;
+
+					    case CraftResource.Bloodrock: difficulty = 119.0; break;
+					    case CraftResource.Blackrock: difficulty = 124.0; break;
+					    case CraftResource.Platnium: difficulty = 129.0; break;
+					    case CraftResource.Carbon: difficulty = 134.0; break;
+					    case CraftResource.Kevlar: difficulty = 139.0; break;
+					    case CraftResource.Liquid: difficulty = 144.0; break;
+					    case CraftResource.Delta: difficulty = 149.0; break;
+					    case CraftResource.Ragnarok: difficulty = 154.0; break;
+
+					    case CraftResource.Stone: difficulty = 55.0; break;
+					    case CraftResource.Rose: difficulty = 90.0; break;
 					}
 
 					double minSkill = difficulty - 25.0;
