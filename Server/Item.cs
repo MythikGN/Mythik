@@ -4523,7 +4523,7 @@ namespace Server
 				else
 				{
                     
-					ns.Send( new UnicodeMessage( m_Serial, m_ItemID, MessageType.Label, 0x3B2, 3, "ENU", "", this.Name + ( m_Amount > 1 ? " : " + m_Amount : "" ) ) );
+					ns.Send( new UnicodeMessage( m_Serial, m_ItemID, MessageType.Label, 0x3B2, 3, "ENU", "", (m_Amount > 1 ? m_Amount + " " : "") + this.Name ) );
 				}
 			}
 		}
