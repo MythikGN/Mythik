@@ -13,6 +13,23 @@ namespace Scripts.Mythik.Systems.Farming.Items
 
     public class FarmSeed : Item, ICommodity
     {
+        public PlantType PlantType { get; private set; }
+        public TextDefinition Description
+        {
+            get
+            {
+                return this.Name;
+            }
+        }
+
+        public bool IsDeedable
+        {
+            get
+            {
+                return false;
+            }
+        }
+
         [Constructable]
         public FarmSeed() : this(PlantType.BlackPearl)
         {
@@ -33,24 +50,21 @@ namespace Scripts.Mythik.Systems.Farming.Items
             Weight = 0.1;
             Stackable = true;
         }
-
-        public TextDefinition Description
+        public override void Serialize(GenericWriter writer)
         {
-            get
-            {
-                return this.Name;
-            }
+            base.Serialize(writer);
+            writer.Write((int)1);
+            writer.Write((int)PlantType);
+        }
+        public override void Deserialize(GenericReader reader)
+        {
+            base.Deserialize(reader);
+            var version = reader.ReadInt();
+            PlantType = (PlantType)reader.ReadInt();
         }
 
-        public bool IsDeedable
-        {
-            get
-            {
-                return false;
-            }
-        }
 
-        public PlantType PlantType { get; private set; }
+
 
         public override void OnDoubleClick(Mobile from)
         {

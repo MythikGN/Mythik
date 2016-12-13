@@ -56,11 +56,12 @@ namespace Scripts.Mythik.Systems.Farming
         
 
         //Med plants
+        MediumPlants,
         Hedge = 100,
 
 
         //Large
-
+        LargePlants,
         TreeApple = 200,
     }
     public enum PlantLifeStage
@@ -79,9 +80,9 @@ namespace Scripts.Mythik.Systems.Farming
     public static class PlantTypes
     {
         public static Dictionary<PlantType,PlantInfo> AllPlants { get; private set; }
-        public static IEnumerable<PlantInfo> SmallPlants { get { return AllPlants.Values.Where(p => (int)p.Type < 100); } }
-        public static IEnumerable<PlantInfo> MediumPlants { get { return AllPlants.Values.Where(p => (int)p.Type >= 100 && (int)p.Type < 200); } }
-        public static IEnumerable<PlantInfo> LargePlants { get { return AllPlants.Values.Where(p => (int)p.Type >= 200); } }
+        public static IEnumerable<PlantInfo> SmallPlants { get { return AllPlants.Values.Where(p => p.Type < PlantType.MediumPlants); } }
+        public static IEnumerable<PlantInfo> MediumPlants { get { return AllPlants.Values.Where(p => p.Type > PlantType.MediumPlants && p.Type < PlantType.LargePlants); } }
+        public static IEnumerable<PlantInfo> LargePlants { get { return AllPlants.Values.Where(p => p.Type > PlantType.LargePlants); } }
 
         public static void Initialize()
         {
