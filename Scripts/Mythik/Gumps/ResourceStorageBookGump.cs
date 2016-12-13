@@ -11,11 +11,7 @@ using System.Threading.Tasks;
 
 namespace Scripts.Mythik.Gumps
 {
-    public enum ResourceStorageGumpPage
-    {
-        Regular = 0,
-        Pagan,
-    }
+
 
     public class ResourceStorageBookGump : Gump
     {
@@ -25,7 +21,7 @@ namespace Scripts.Mythik.Gumps
         private int m_defValue;
 
      
-        public ResourceStorageBookGump(Mobile mobile, ResourceBook book, ResourceStorageGumpPage page, int defValue) : base(150, 200)
+        public ResourceStorageBookGump(Mobile mobile, ResourceBook book, int defValue) : base(150, 200)
         {
             mobile.CloseGump(typeof(ResourceStorageBookGump));
 

@@ -42,7 +42,7 @@ namespace Scripts.Mythik.Items.Craftables.Inscription
         public override void OnDoubleClick(Mobile from)
         {
             if (from.InRange(GetWorldLocation(), 1))
-                from.SendGump(new ResourceStorageBookGump(from, this, ResourceStorageGumpPage.Regular, 0));
+                from.SendGump(new ResourceStorageBookGump(from, this, 0));
 
         }
 
