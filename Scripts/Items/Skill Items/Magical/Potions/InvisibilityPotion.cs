@@ -6,12 +6,12 @@ namespace Server.Items
 {
 	public class InvisibilityPotion : BasePotion
 	{		
-		public override int LabelNumber{ get{ return 1072941; } } // Potion of Invisibility
+		public override int LabelNumber { get { return 0; } }// 1072941; } } // Potion of Invisibility
 
 		[Constructable]
 		public InvisibilityPotion() : base(0x0F0E, PotionEffect.Invisibility )
 		{
-			
+            Name = "Invisibility potion";
 		}
 
 		public InvisibilityPotion( Serial serial ) : base( serial )

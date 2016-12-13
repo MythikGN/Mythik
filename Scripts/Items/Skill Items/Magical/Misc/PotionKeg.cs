@@ -258,6 +258,13 @@ namespace Server.Items
                     case PotionEffect.ConfusionBlastGreater:
                         LabelTo(from, "Greater Confusion Blast keg containing {0} potion{1}", m_Held, m_Held != 1 ? "s" : "");
                         break;
+
+                    case PotionEffect.Restore:
+                        LabelTo(from, "Restore keg containing {0} potion{1}", m_Held, m_Held != 1 ? "s" : "");
+                        break;
+                    case PotionEffect.RestoreGreater:
+                        LabelTo(from, "Greater restore keg containing {0} potion{1}", m_Held, m_Held != 1 ? "s" : "");
+                        break;
                 }
         }
 
