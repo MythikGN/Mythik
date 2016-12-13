@@ -220,6 +220,8 @@ namespace Scripts.Mythik.Systems.Loot
             
             LootPack levelBasedLootToAdd = Levels[MonsterLevels.GetMonsterLevel(mob) - 1]; ;
             mob.AddLoot(levelBasedLootToAdd);
+            //Add extra 0-250gold
+            mob.AddLoot(new LootPack(new LootPackEntry[]{ new LootPackEntry(false,Gold,100,"2d"+(int)BaseInstrument.GetBaseDifficulty(mob)), }));
            
             //Double loot on paragons for now thus 2 chances for a uni
             if(mob.IsParagon)

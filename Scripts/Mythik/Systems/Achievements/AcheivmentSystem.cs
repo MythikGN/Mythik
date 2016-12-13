@@ -3,6 +3,8 @@
 using Server;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Scripts.Mythik.Systems.Achievements.AchieveTypes;
 using Server.Mobiles;
 using Server.Items;
 using Server.Commands;
@@ -14,6 +16,7 @@ using Scripts.Mythik.Mobiles;
 #endif
 
 using Scripts.Mythik.Systems.Achievements.Gumps;
+using Server.Gumps;
 
 namespace Scripts.Mythik.Systems.Achievements
 {
@@ -61,6 +64,10 @@ namespace Scripts.Mythik.Systems.Achievements
             Categories.Add(new AchievementCategory(3000, 0, "Hunting"));
             Categories.Add(new AchievementCategory(4000, 0, "Character Development"));
             Categories.Add(new AchievementCategory(5000, 0, "Other"));
+
+            Achievements.Add(new SkillProgressAchievement(4000,4000,0x14EB,false,null,100,"Fisherman","GM the Fishing Skill",SkillName.Fishing,5,typeof(TitleRewardScroll)));
+            Achievements.Add(new SkillProgressAchievement(4001,4000,0x14EB,true,Achievements.Last(),120,"Fisherman","Legendary the Fishing Skill",SkillName.Fishing,5,typeof(TitleRewardScroll)));
+
 
 
             Achievements.Add(new DiscoveryAchievement(0, 2, 0x14EB, false, null, "Cove!", "Discover the Cove Township", 5, "Cove"));

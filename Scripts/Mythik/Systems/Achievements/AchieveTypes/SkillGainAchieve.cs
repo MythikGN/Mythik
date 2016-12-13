@@ -21,17 +21,17 @@ namespace Scripts.Mythik.Systems.Achievements.AchieveTypes
             m_Skill = skill;
             //ServUO is missing this event sink, you can create it your self and reenable if you wish.
 
-            //EventSink.SkillGain += EventSink_SkillGain;
+            EventSink.SkillGain += EventSink_SkillGain;
         }
 
-        /*private void EventSink_SkillGain(SkillGainEventArgs e)
+        private void EventSink_SkillGain(SkillGainEventArgs e)
         {
             if (e.From is PlayerMobile && e.Skill.SkillID == (int)m_Skill)
             {
                 if (e.Skill.BaseFixedPoint >= CompletionTotal)
                     AchievmentSystem.SetAchievementStatus(e.From as PlayerMobile, this, e.Skill.BaseFixedPoint);
             }
-        }*/
+        }
 
 
     }
