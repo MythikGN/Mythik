@@ -14,7 +14,7 @@ namespace Scripts.Mythik.Systems
     {
         public static int Hue = 0x7A1;
         public static int GMHue = 0x44;
-
+        public static event EventHandler ChatMessageSent;
         public static void Initialize()
         {
             CommandSystem.Register("chaton", AccessLevel.Player, new CommandEventHandler(EnableChat));
@@ -41,6 +41,23 @@ namespace Scripts.Mythik.Systems
                 return;
             }
             Packet p = new AsciiMessage(Serial.MinusOne, -1, MessageType.Regular, hue, 3, "System", msg);
+            List<NetState> list = NetState.Instances;
+            p.Acquire();
+
+            for (int i = 0; i < list.Count; ++i)
+            {
+                if (list[i].Mobile != null && ((MythikPlayerMobile)list[i].Mobile).ChatEnabled)
+                    list[i].Send(p);
+            }
+            p.Release();
+            NetState.FlushAll();
+            ChatMessageSent?.Invoke(msg, new EventArgs());
+        }
+
+        public static void SendChatMessage(string from, string msg)
+        {
+            msg = "[" + from + "]: " + msg;
+            Packet p = new AsciiMessage(Serial.MinusOne, -1, MessageType.Regular, Hue, 3, "System", msg);
             List<NetState> list = NetState.Instances;
             p.Acquire();
 

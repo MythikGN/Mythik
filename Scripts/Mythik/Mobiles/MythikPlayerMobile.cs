@@ -18,15 +18,18 @@ namespace Scripts.Mythik.Mobiles
 
         public PokerGame PokerGame { get; set; }
 
-
+        [CommandProperty(AccessLevel.GameMaster)]
         public bool HasSetSkills { get; set; }
+        [CommandProperty(AccessLevel.GameMaster)]
         public bool AuctionEnabled { get; internal set; }
+        [CommandProperty(AccessLevel.GameMaster)]
         public bool ChatEnabled { get; internal set; } = true;
 
         /// <summary>
         /// AcheivID , Progress
         /// </summary>
         internal Dictionary<int, AchieveData> Achievements = new Dictionary<int, AchieveData>();
+        [CommandProperty(AccessLevel.GameMaster)]
         public int AchievementPointsTotal { get; set; }
 
         #region PolymorphDamageMods
@@ -84,7 +87,7 @@ namespace Scripts.Mythik.Mobiles
             base.GetContextMenuEntries(from, list);
             if(from == this)
             {
-                list.Add(new Server.Engines.VendorSearhing.SearchVendors(this));
+                //list.Add(new Server.Engines.VendorSearhing.SearchVendors(this));
                 list.Add(new TitlesMenuEntry(this));
             }
             if(from is PlayerMobile)

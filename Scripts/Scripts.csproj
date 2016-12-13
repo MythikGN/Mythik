@@ -3180,7 +3180,7 @@
     <Compile Include="Mythik\Systems\CommunityCollection\ICollection.cs" />
     <Compile Include="Mythik\Systems\CreatureGuide.cs" />
     <Compile Include="Mythik\Items\Misc\EyeOfNewt.cs" />
-    <Compile Include="Mythik\Systems\Farming\DefFarming.cs" />
+    <Compile Include="Mythik\Systems\DiscordBridge.cs" />
     <Compile Include="Mythik\Systems\Farming\Items\CommonPlants.cs" />
     <Compile Include="Mythik\Systems\Farming\Items\FarmableDirt.cs" />
     <Compile Include="Mythik\Systems\Farming\Items\FarmingTool.cs" />
@@ -3228,6 +3228,7 @@
     <Compile Include="Mythik\Systems\MondainsQuests\Helpers\QuestReader.cs" />
     <Compile Include="Mythik\Systems\MonsterLevels\MonsterLevels.cs" />
     <Compile Include="Mythik\Systems\Titles\SelectTitleGump.cs" />
+    <Compile Include="Mythik\Systems\Titles\TitleRewardScroll.cs" />
     <Compile Include="Mythik\Systems\Titles\TitlesMenu.cs" />
     <Compile Include="Mythik\Systems\VendorSearch\RunicReforging.cs" />
     <Compile Include="Mythik\Systems\VendorSearch\VendorSearch.cs" />

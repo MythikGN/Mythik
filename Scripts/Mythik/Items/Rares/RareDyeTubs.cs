@@ -26,7 +26,9 @@ namespace Scripts.Mythik.Items.Rares
            
         }
         private short m_Uses;
+        [CommandProperty(AccessLevel.GameMaster)]
         public short Uses { get { return m_Uses; } set { m_Uses = value; this.InvalidateProperties(); } }
+        [CommandProperty(AccessLevel.GameMaster)]
         public short UsesMax { get; set; }
         public abstract RareLevel UniqueLevel { get; }
 
