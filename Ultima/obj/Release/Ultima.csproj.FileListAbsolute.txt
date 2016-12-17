@@ -1,0 +1,3 @@
+Y:\ServUO\Ultima\obj\Release\Ultima.csprojResolveAssemblyReference.cache
+Y:\ServUO\Ultima\obj\Release\Ultima.dll
+Y:\ServUO\Ultima.dll

@@ -1,0 +1,5 @@
+Y:\rnuo2.3\Ultima\obj\Debug\Ultima.csprojResolveAssemblyReference.cache
+Y:\rnuo2.3\Ultima\obj\Debug\Ultima.dll
+Y:\rnuo2.3\Ultima\obj\Debug\Ultima.pdb
+Y:\rnuo2.3\Ultima.dll
+Y:\rnuo2.3\Ultima.pdb
