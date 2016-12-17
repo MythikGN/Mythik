@@ -4,10 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection; 				//needed for ConstructorInfo
-using Server;
-using Server.Items;
 using System.Text;
-using Ultima;
+
 
 namespace Server
 {

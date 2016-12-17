@@ -1,0 +1,4 @@
+language: csharp
+solution: Server.sln
+install:
+  - nuget restore Server.sln

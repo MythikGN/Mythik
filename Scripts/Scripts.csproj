@@ -50,10 +50,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="Ultima, Version=4.3.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Ultima.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accounting\AccessRestrictions.cs" />
@@ -3550,6 +3546,10 @@
     <ProjectReference Include="..\Server\Server.csproj">
       <Project>{84c52b21-e70d-499b-acae-d94addcecc2b}</Project>
       <Name>Server</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Ultima\Ultima.csproj">
+      <Project>{e08cfbe4-e013-44ee-8829-426d05bc083f}</Project>
+      <Name>Ultima</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
