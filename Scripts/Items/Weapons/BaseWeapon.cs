@@ -910,8 +910,8 @@ namespace Server.Items
 
 			double delayInSeconds;
 
-			//if ( Core.SE )
-			//{
+			if ( false )
+			{
 				/*
 				 * This is likely true for Core.AOS as well... both guides report the same
 				 * formula, and both are wrong.
@@ -973,8 +973,8 @@ namespace Server.Items
 					ticks = 5;
 
 				delayInSeconds = ticks * 0.25;
-			//}
-			/*else// if ( Core.AOS )
+			}
+			else// if ( Core.AOS )
 			{
 				int v = (m.Stam + 100) * (int) speed;
 
@@ -1000,11 +1000,11 @@ namespace Server.Items
 				// OSI dev said that it has and is supposed to be 1.25
 				if ( delayInSeconds < 1.25 )
 					delayInSeconds = 1.25;
-			}*/
+			}
 
-            if(m is PlayerMobile && defender != null && defender is PlayerMobile)
+           /* if(m is PlayerMobile && defender != null && defender is PlayerMobile)
 			{
-				int v = (m.Stam + 50) * (int) speed; //100 changed to 50 make weaps nice and SLOWWWWW
+				int v = (m.Stam + 100) * (int) speed; //100 changed to 50 make weaps nice and SLOWWWWW
 
 				if ( v <= 0 )
 					v = 1;
@@ -1012,7 +1012,7 @@ namespace Server.Items
 				delayInSeconds = 15000.0 / v;
                 if (delayInSeconds < 1.25)
                     delayInSeconds = 1.25;
-            }
+            }*/
 
 			return TimeSpan.FromSeconds( delayInSeconds );
 		}

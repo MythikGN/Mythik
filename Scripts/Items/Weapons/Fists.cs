@@ -51,7 +51,7 @@ namespace Server.Items
         {
             //handle polymorph
             var pm = attacker as MythikPlayerMobile;
-            if (pm != null && this is Fists)
+            if (pm != null && this is Fists && pm.MinDamage != 0 && pm.MaxDamage != 0)
             {
                 min = pm.MinDamage;
                 max = pm.MaxDamage;
